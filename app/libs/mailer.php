@@ -24,8 +24,12 @@ require 'vendor/autoload.php';
             if (!$mail->send()) {
                 echo 'Mailer Error: ' . $mail->ErrorInfo;
             } else {
+<<<<<<< HEAD
                 // echo 'The email message was sent.';
                 return true;
+=======
+                echo 'The email message was sent.';
+>>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225
             }
         }
     }

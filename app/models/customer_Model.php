@@ -28,7 +28,11 @@ class Customer_Model extends Model{
     }
 
     function makeCustomer($fname, $lname, $uname, $email, $mobile, $hashedpwd, $token){
+<<<<<<< HEAD
         $columns = array('Username', 'PASSWORD', 'Email');
+=======
+        $columns = array('Username', 'Password', 'Email');
+>>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225
         $values = array($uname, $hashedpwd, $email);
         $result = $this->db->insert("users", $columns, $values);
         if($result != "Success"){
@@ -47,7 +51,11 @@ class Customer_Model extends Model{
     }
     function getCustID($uname){
         $result = $this->db->select("users.User_ID", "users", "INNER JOIN customer ON customer.User_ID = users.User_ID WHERE users.Username = '$uname';");
+<<<<<<< HEAD
         //echo $result;
+=======
+        echo $result;
+>>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225
         return $result;
     }
 

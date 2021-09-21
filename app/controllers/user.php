@@ -1,10 +1,16 @@
 <?php
+<<<<<<< HEAD
 // echo getcwd();
+=======
+>>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225
 require 'libs/mailer.php';
 
 session_start();
 $_SESSION['error'] = '';
+<<<<<<< HEAD
 $_SESSION['changePwdVerifyBox'] = 0;
+=======
+>>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225
 
 class User extends Controller{
 
@@ -26,6 +32,13 @@ class User extends Controller{
 
     function passwordChange(){
 
+<<<<<<< HEAD
+=======
+        if(!isset($_POST['send_pwd_email'])){
+            header("Location: login");
+        }
+
+>>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225
         $email = $_POST["email_to_send_pwd"];
 
         if($this->model->passwordExists($email)){
@@ -46,7 +59,13 @@ class User extends Controller{
                 $output='<p>Dear user,</p>';
                 $output.='<p>Please click on the following link to reset your password.</p>';
                 $output.='<p>-------------------------------------------------------------</p>';
+<<<<<<< HEAD
                 $output.='<p><a href="http://www.wandiwash.com/user/goToEnterNewPassword/'.$key.'/'.$email.'">Click Here</a></p>';		
+=======
+                $output.='<p><a href="http://www.wandiwash.com/user/goToEnterNewPassword/'.$key.'/'.$email.'">
+                https://www.wandiwash.com/user/goToEnterNewPassword
+                ?key='.$key.'&email='.$email.'&action=reset</a></p>';		
+>>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225
                 $output.='<p>-------------------------------------------------------------</p>';
                 $output.='<p>Please be sure to copy the entire link into your browser.
                 The link will expire after 1 day for security reason.</p>';
@@ -58,10 +77,14 @@ class User extends Controller{
                 $body = $output; 
                 $subject = "Password Recovery - wandiwash.com";
 
+<<<<<<< HEAD
                 if($mail->mailto($subject,$email,$body)){
                     $_SESSION['changePwdVerifyBox'] = 1;
                     $this->view->render('userForgotPwd');
                 }
+=======
+                $mail->mailto($subject,$email,$body);
+>>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225
             }
             else{
                 echo "insertion error";
@@ -95,6 +118,7 @@ class User extends Controller{
     }
 
     function updatePassword(){
+<<<<<<< HEAD
         
             $email = $_SESSION['email'];
             $newPassword = $_POST["new_pwd"];
@@ -122,11 +146,41 @@ class User extends Controller{
         $uname = $_POST['usernameemail'];
         $pwd = $_POST['pwd'];
         
+=======
+        if(!isset($_POST['confirm_new_pwd'])){
+            header("Location: login");
+        }
+    
+        $email = $_SESSION['email'];
+        $newPassword = $_POST["new_pwd"];
+
+        echo $email;
+        $options = ['cost' => 12];
+        $hashedpwd = password_hash($newPassword, PASSWORD_BCRYPT, $options);
+
+        $this->model->updateUserPassword($email, $hashedpwd);
+        $this->model->deletePwdTempTable($email);
+        echo "Password changed";
+        $this->view->render('userHome'); 
+    }
+
+    function home(){
+        if(!isset($_POST['login'])){
+            header("Location: login");
+        }
+        
+        $uname = $_POST['usernameemail'];
+        $pwd = $_POST['pwd'];
+
+>>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225
         if($this->model->authenticate($uname, $pwd)){
             
             $_SESSION["time"] = date("h:i:sa");
             $_SESSION["login"] = "loggedin";
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225
             if($this->model->checkCustomer($uname)){
                 $_SESSION["role"] = "customer";
                 $value = $this->model->checkVerified($uname);
@@ -138,7 +192,10 @@ class User extends Controller{
                     $_SESSION['Verified'] = "False";
                     $this->view->render('customerVerify');
                 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225
             }
             else if($this->model->checkManager($uname)){
                 $_SESSION["role"] = "manager";
