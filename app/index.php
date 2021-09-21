@@ -6,5 +6,5 @@
     require 'libs/model.php';
     require 'libs/view.php';
 
-    $app = new App();c
+    $app = new App();
 ?>
