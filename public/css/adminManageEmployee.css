@@ -1,0 +1,96 @@
+.manageEmployee-heading{
+    color: #085394;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table { max-width: 100%; }
+table, th, td { 
+    border: solid 1px #085394;
+    border-collapse: collapse; 
+    padding: 8px 3px; 
+    text-align: center;
+    margin: 0px auto;
+}
+
+th{
+    max-width: 130px;
+}
+
+td{
+    max-width: 130px;
+}
+
+tr{
+    max-width: 100%;
+}
+
+#addRow, #bt{
+    display: block;
+    margin: 30px auto;
+    padding: 8px 8px;
+    background-color: #085394;
+    color: white;
+    border-radius: 5px;
+    border-color: white;
+}
+
+#addRow:hover, #bt:hover{
+    color: #70a2ce;
+}
+
+#removeBtn{
+    background-color: red;
+    padding: 5px 5px;
+    color: white;
+    border-radius: 5px;
+    border-color: white;
+}
+
+#removeBtn:hover{
+    background-color: darkred;
+}
+
+#tb-input{
+    padding: 5px;
+    font-size: 17px;
+    border-color: grey;
+    max-width: 110px;
+}
+
+/* .admin-EmpSearch-box{
+   
+} */
+
+#adminSearchEmployee{
+    padding: 10px 10px;
+    border-color: #085394;
+    border-radius: 5px;
+    margin: 20px auto;
+    display: block;
+    font-size: 15px;
+}
+
+#adminViewEmp{
+    display: block;
+    margin: 30px auto;
+    padding: 8px 8px;
+    background-color: #085394;
+    color: white;
+    border-radius: 5px;
+    border-color: white;
+}
+
+#adminViewEmp:hover{
+    color: #70a2ce;;
+}
+
+
+
+
+/* @media only screen and (min-width: 770px) {
+    .manageEmployee-heading{
+        font-size: 30px;
+    }
+} */
