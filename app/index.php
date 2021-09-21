@@ -4,7 +4,7 @@
     require 'libs/controller.php';
     require 'libs/database.php';
     require 'libs/model.php';
-    require 'libs/view.php';
+    require 'libs/view.php';cccc
 
     $app = new App();
 ?>
