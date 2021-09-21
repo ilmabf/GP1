@@ -5,10 +5,7 @@
     session_start();
     $_SESSION['error'] = '';
     $_SESSION['flag'] = 0;
-<<<<<<< HEAD
     $_SESSION['verifyBox'] = 0; 
-=======
->>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225
     
 class Customer extends Controller{
 
@@ -42,12 +39,6 @@ class Customer extends Controller{
         $token = bin2hex(random_bytes(50));
         $result = $this->model->makeCustomer($fname, $lname, $uname, $email, $mobile, $hashedpwd, $token);
         $uid = $this->model->getCustID($uname);
-<<<<<<< HEAD
-        //echo "Echooo";
-        //echo $uid[0]['User_ID'];
-        
-=======
->>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225
         if($result){
             
             $mail=new Mailer();
@@ -68,15 +59,10 @@ class Customer extends Controller{
             $body = $output; 
             $subject = "Welcome to WandiWash!";
 
-<<<<<<< HEAD
             if($mail->mailto($subject,$email,$body)){
                 $_SESSION['verifyBox'] = 1;
                 $this->view->render('customerSignup');
             }
-=======
-            $mail->mailto($subject,$email,$body);
-            $this->view->render('customerVerify');
->>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225
         }
         
     }
@@ -91,12 +77,9 @@ class Customer extends Controller{
         } 
     }
 
-<<<<<<< HEAD
     function bookAwash() {
         $this->view->render('customerBookAWash');
     }
 
-=======
->>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225
 }
 
