@@ -4,9 +4,15 @@ class App {
 
     private $_url = null;
     private $_controller = null;
+<<<<<<< HEAD
+                
+    function __construct() {     
+        $this->_getURL();        
+=======
 
     function __construct() {
         $this->_getURL();
+>>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225
 
         if (empty($this->_url[0])) {
             $this->_loadDeafultController();
@@ -33,10 +39,17 @@ class App {
 
     private function _loadController() {
         $file = 'controllers/' . $this->_url[0] . '.php';
+<<<<<<< HEAD
+        
+        if (file_exists($file)) {
+            require $file;
+            $this->_controller = new $this->_url[0]; 
+=======
 
         if (file_exists($file)) {
             require $file;
             $this->_controller = new $this->_url[0];
+>>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225
             $this->_controller->loadModel($this->_url[0]);
             return true;
         } else {
@@ -63,7 +76,11 @@ class App {
 
     private function _loadControllerMethod() {
 
+<<<<<<< HEAD
+        $urlLength = count($this->_url); 
+=======
         $urlLength = count($this->_url);
+>>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225
         if ($urlLength > 1) {
             if (!method_exists($this->_controller, $this->_url[1])) {
                 echo "Requested method not found!";

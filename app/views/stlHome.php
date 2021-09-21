@@ -1,7 +1,11 @@
 <!-- <main> -->
 
 <?php
+<<<<<<< HEAD
+    include 'userHeader.php';
+=======
     include 'userLoggedInHeader.php';
+>>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225
 ?>
 <div style="min-height: 110px;"></div>
 
