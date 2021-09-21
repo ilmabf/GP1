@@ -3,7 +3,10 @@
 ?>
 <main>
     <div id="container">
+<<<<<<< HEAD
+=======
         <div>
+>>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225
             
             <div class="login-signupbox">
                 <div class="login-signupform">
@@ -19,11 +22,27 @@
 
                 </div>
             </div>
+<<<<<<< HEAD
+
+            <?php
+
+            if($_SESSION['changePwdVerifyBox'] == 1){?>
+                <div id="signupVerify" class="toVerifySingupBox">
+                <div class="toVerifySignupBoxContent">
+                    <!-- <span class="close-signupVerifyMessage">&times;</span> -->
+                    <h3>Email was sent.<br>Click the link in email to enter your new password</h3>
+                </div>
+                </div>
+      <?php } ?>
+
+        </div>
+=======
         </div>
 
 
     </div>
 
+>>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225
     
 
 </main>

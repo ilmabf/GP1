@@ -26,8 +26,11 @@
                     <p id="length" class="invalid">Minimum <b>8 characters</b></p>
                 </div>
             </div>
+<<<<<<< HEAD
+=======
         
 
+>>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225
 
     </div>
 

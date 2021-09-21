@@ -47,7 +47,11 @@
                         <br>
                         <input class="input-box" id="signup-confirm-pwd" type="password" name="confirm_pwd" autofocus placeholder="Confirm Password" required>
                         
+<<<<<<< HEAD
+                        <button id="mySignupButton" class="input-box loggin-signup-button" type="submit" name="signup">Signup</button>
+=======
                         <button class="input-box loggin-signup-button" type="submit" name="signup">Signup</button>
+>>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225
                     </form>
 
                 </div>
@@ -60,6 +64,22 @@
             </div>
             <p id="link-to-go-login"><a href="/user/login">Already have an account? Login</a></p>
 
+<<<<<<< HEAD
+            <?php
+
+            if($_SESSION['verifyBox'] == 1){?>
+                <div id="signupVerify" class="toVerifySingupBox">
+                <div class="toVerifySignupBoxContent">
+                    <!-- <span class="close-signupVerifyMessage">&times;</span> -->
+                    <h3>Thank you for signing up!<br>Please verify your email address to complete setting up your account.</h2>
+                </div>
+                </div>
+      <?php } ?>
+
+            
+
+=======
+>>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225
            
 
         </div>
@@ -78,4 +98,8 @@
 
 
 
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225
