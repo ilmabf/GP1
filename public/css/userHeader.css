@@ -1,0 +1,116 @@
+header{
+    position: fixed;
+    background-color: #085394;
+    width: 100%;
+    height: 100px;
+    z-index: 1;
+}
+
+header nav{
+    margin-left: 0px;
+}
+
+.header-logo{
+    width: 200px;
+    height: 60px;
+    background-image: url('../images/logo.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: 0px auto 15px auto;
+}
+
+header nav ul{
+    display: block;
+    list-style-type: none;
+    padding-inline-start: 0px;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+header nav ul li{
+    display: inline-block;
+    list-style: none;
+    padding: 0 15px;
+}
+
+header nav ul li a{
+    font-size: 10px;
+    color: white;
+
+}
+
+.header-button{
+    display: none;
+}
+
+.header-button-login{
+    display: none;
+}
+
+.header-button-signup{
+    display: none;
+}
+
+
+header nav ul button a{
+    display: none;
+}
+
+@media only screen and (min-width: 770px) {
+
+    header{
+        height: 80px;
+    }
+
+    .header-logo {
+        position: relative;
+        top: -30px;
+        width: 250px;
+        height: 100px;
+        background-image: url('../images/logo.png');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        float: left;
+        margin: 10px auto 0px auto;
+        border-right: 3px solid white;
+        border-right-width: 1px;
+        line-height: 10px;
+    }
+
+    header nav{
+        float: right;
+        margin-top: 30px;
+        margin-right: 20px;
+    }
+
+    header nav ul{
+        display: inline;
+    }
+
+    header nav ul li a{
+        font-size: 16px;
+        color: white;
+    }
+
+    .header-button-login {
+        display: inline;
+        margin-left: 20px;
+        font-size: 16px;
+        color: white;
+        border: 1px solid white;
+        float: right;
+    }
+
+    .header-button-signup {
+        display: inline;
+        margin-left: 20px;
+        font-size: 16px;
+        color: white;
+        border: 1px solid white;
+        float: right;
+    }
+
+
+
+    
+}
