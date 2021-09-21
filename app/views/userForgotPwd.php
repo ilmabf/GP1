@@ -3,10 +3,6 @@
 ?>
 <main>
     <div id="container">
-<<<<<<< HEAD
-=======
-        <div>
->>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225
             
             <div class="login-signupbox">
                 <div class="login-signupform">
@@ -22,7 +18,6 @@
 
                 </div>
             </div>
-<<<<<<< HEAD
 
             <?php
 
@@ -36,13 +31,6 @@
       <?php } ?>
 
         </div>
-=======
-        </div>
-
-
-    </div>
-
->>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225
     
 
 </main>

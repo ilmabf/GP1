@@ -40,11 +40,7 @@ class Database extends PDO{
             $query.=" FROM ".$table." ". $condition;
             $stmt = $this->prepare($query);
             $stmt->execute();
-<<<<<<< HEAD
             $result = $stmt->fetchAll();
-=======
-            $result = $stmt->fetchAll();        
->>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225
             return $result;
         }
     }
@@ -87,13 +83,11 @@ class Database extends PDO{
     }
 
     function update($table, $columns, $values, $condition){
-<<<<<<< HEAD
         $query = "UPDATE ". $table . " SET ";
 
         if(gettype($columns) == 'string' && gettype($values) == 'string'){
             $query .=  "$columns = '$values'";
         }
-=======
         // $query = "UPDATE ".$table . " SET ";
 
         // if(gettype($columns) == 'string' && gettype($values) == 'string'){
@@ -106,7 +100,6 @@ class Database extends PDO{
             $query.="$columns = $values";
         }
         
->>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225
         else if(gettype($columns) == 'array' && gettype($values) == 'array'){
             for($i=0; $i<count($columns)-1; $i++) {
                 if($i<count($columns)-1){
@@ -117,11 +110,8 @@ class Database extends PDO{
                 }
               }
         }
-<<<<<<< HEAD
     
-=======
 
->>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225
         $query.=" ".$condition;
         $stmt = $this->prepare($query);
         $result = $stmt->execute();
