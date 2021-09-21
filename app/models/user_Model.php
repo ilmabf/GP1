@@ -8,8 +8,13 @@ class User_Model extends Model{
 
     public function authenticate($uname, $pwd){
         if($this->db->select('count', "users", "WHERE Username = '$uname' OR Email = '$uname' ;") > 0){ 
+<<<<<<< HEAD
+            $hashed = $this->db->select("PASSWORD", "users", "WHERE Username = '$uname' OR Email = '$uname' ;");
+            if(password_verify($pwd, $hashed[0]['PASSWORD'])){
+=======
             $hashed = $this->db->select("Password", "users", "WHERE Username = '$uname' OR Email = '$uname' ;");
             if(password_verify($pwd, $hashed[0]['Password'])){
+>>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225
                 return true; 
             }
             else return false;
@@ -45,10 +50,20 @@ class User_Model extends Model{
             return false;
         }
     }
+<<<<<<< HEAD
+
+    public function checkVerified($uname){
+
+        $result = $this->db->select("customer.Verified", "customer", "INNER JOIN users ON customer.User_ID = users.User_ID WHERE users.Username = '$uname' OR users.Email = '$uname';");
+
+        return $result;
+
+=======
     
     public function checkVerified($uname){
         $result = $this->db->select("customer.Verified", "customer", "INNER JOIN users ON customer.User_ID = users.User_ID WHERE users.Username = '$uname' OR users.Email = '$uname';");
         return $result;
+>>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225
     }
 
     // public function checkSystemAdmin($uname){
@@ -78,7 +93,11 @@ class User_Model extends Model{
         if($result == "Success"){
             return true;
         }else{
+<<<<<<< HEAD
+            //print_r($result);
+=======
             print_r($result);
+>>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225
             return false;
         }
     }
