@@ -44,7 +44,7 @@
 
             <div class="section2-blocks4">
                 <div class="customer-home-section2-block-img4"></div>
-                <div class="section2-block-heading"><button><h3><a href="customerGiveReviews.php">Give Reviews</a></h3></button></div>
+                <div class="section2-block-heading"><button><h3><a href="/review/write">Give Reviews</a></h3></button></div>
                 <div class="section2-block-para"><p>Give your thoughts on about our service</p></div>
 
             </div>

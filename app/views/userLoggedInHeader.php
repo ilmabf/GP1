@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="/public/css/customerBookAWash3.css">
     <link rel="stylesheet" href="/public/css/customerOrderSummary.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/public/css/customerGiveReview.css">
     <title>WandiWash</title>
 </head>
 <body>
@@ -33,10 +34,9 @@
 
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="#about-tag">About</a></li>
+                <li><a href="/user/home">Home</a></li>
                 <li><a href="#footer">Contact</a></li>
-                <li><a href="/user/reviews">Reviews</a></li>
+                <li><a href="/review/">Reviews</a></li>
             </ul>
             <a href="/index/logout" class="header-button-login">Logout</a>
         </nav>

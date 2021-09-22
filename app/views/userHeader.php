@@ -36,7 +36,7 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="#about-tag">About</a></li>
                 <li><a href="#footer">Contact</a></li>
-                <li><a href="/user/reviews">Reviews</a></li>
+                <li><a href="/review/">Reviews</a></li>
             </ul>
             <a href="/user/login" class="header-button-login">Login</a>
             <a href="/customer/signup" class="header-button-signup">Signup</a>

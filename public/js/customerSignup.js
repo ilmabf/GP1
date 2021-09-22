@@ -6,11 +6,9 @@ var length = document.getElementById("length");
 
 var confirm_pwd = document.getElementById("signup-confirm-pwd");
 
-
 var signupVerify = document.getElementById("signupVerify");
 var mySignupButton = document.getElementById("mySignupButton");
 var span = document.getElementsByClassName("close-signupVerifyMessage")[0];
-
 
 myInput.onfocus = function() {
   document.getElementById("pwd-validate-message").style.display = "block";
@@ -73,7 +71,6 @@ function validatePassword(){
 }
 
 myInput.onchange = validatePassword;
-
 confirm_pwd.onkeyup = validatePassword;
 
 // mySignupButton.onclick = function() {
