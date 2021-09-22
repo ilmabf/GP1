@@ -124,7 +124,11 @@
     margin-bottom: 20px;
 }
 
+<<<<<<< HEAD
 .next-pg{
+=======
+.next-pg1{
+>>>>>>> c169898cf3ffb632477a67e7391876fae5c3033a
     float: right;
     margin: 25px 50px;
 }
@@ -141,6 +145,7 @@
 .next-button:hover{
     background-color: #366c9b;
 }
+<<<<<<< HEAD
 
 @media only screen and (max-width: 770px){
 
@@ -193,3 +198,5 @@
         margin: 35px 50px;
     }
 }
+=======
+>>>>>>> c169898cf3ffb632477a67e7391876fae5c3033a
