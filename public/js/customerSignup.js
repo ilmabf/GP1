@@ -6,12 +6,9 @@ var length = document.getElementById("length");
 
 var confirm_pwd = document.getElementById("signup-confirm-pwd");
 
-<<<<<<< HEAD
 var signupVerify = document.getElementById("signupVerify");
 var mySignupButton = document.getElementById("mySignupButton");
 var span = document.getElementsByClassName("close-signupVerifyMessage")[0];
-=======
->>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225
 
 myInput.onfocus = function() {
   document.getElementById("pwd-validate-message").style.display = "block";
@@ -74,7 +71,6 @@ function validatePassword(){
 }
 
 myInput.onchange = validatePassword;
-<<<<<<< HEAD
 confirm_pwd.onkeyup = validatePassword;
 
 // mySignupButton.onclick = function() {
@@ -92,6 +88,3 @@ confirm_pwd.onkeyup = validatePassword;
 //     }
 //   }
 // }
-=======
-confirm_pwd.onkeyup = validatePassword;
->>>>>>> 7922f5c304c26b90092f474e73bc74af00ae6225

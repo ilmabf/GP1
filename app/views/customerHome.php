@@ -9,7 +9,7 @@
 
         <section class="customer-home-main-section1">
             <div class="bookAwash">
-                <h3>We wash your<br>vehicle at your Doorstep!</h3>
+                <h3>We wash your<br>vehicle at your doorstep!</h3>
                 <div class="bookAwash-button">
                     <button class="customer-home-main-section1-button"><a href="/customer/bookAWash">Book a wash</a></button>
                 </div>
@@ -44,7 +44,7 @@
 
             <div class="section2-blocks4">
                 <div class="customer-home-section2-block-img4"></div>
-                <div class="section2-block-heading"><button><h3><a href="customerGiveReviews.php">Give Reviews</a></h3></button></div>
+                <div class="section2-block-heading"><button><h3><a href="/review/write">Give Reviews</a></h3></button></div>
                 <div class="section2-block-para"><p>Give your thoughts on about our service</p></div>
 
             </div>

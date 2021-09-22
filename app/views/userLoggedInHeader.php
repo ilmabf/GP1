@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="/public/css/stlHome.css">
     <link rel="stylesheet" href="/public/css/adminHome.css">
     <link rel="stylesheet" href="/public/css/userFooter.css">
+    <link rel="stylesheet" href="/public/css/customerGiveReview.css">
     <title>WandiWash</title>
 </head>
 <body>
@@ -27,10 +28,9 @@
 
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="#about-tag">About</a></li>
+                <li><a href="/user/home">Home</a></li>
                 <li><a href="#footer">Contact</a></li>
-                <li><a href="/user/reviews">Reviews</a></li>
+                <li><a href="/review/">Reviews</a></li>
             </ul>
             <a href="/index/logout" class="header-button-login">Logout</a>
         </nav>
