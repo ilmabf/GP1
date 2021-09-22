@@ -31,6 +31,10 @@ class User extends Controller{
 
             $expDate = date("Y-m-d H:i:s",$expFormat);
             $key = md5(2418*2+$email);
+<<<<<<< HEAD
+
+=======
+>>>>>>> c169898cf3ffb632477a67e7391876fae5c3033a
             $addKey = substr(md5(uniqid(rand(),1)),3,10);
             $key = $key . $addKey;
 
