@@ -1,0 +1,69 @@
+.review-box{
+    border-color: whitesmoke;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+
+.review-box1{
+    display: block;
+    background-color:white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px 50px 20px 30px;
+    width: 40%;
+
+}
+
+.review-box2{
+    background-color:white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-25%, -25%);
+    padding: 30px 50px 20px 30px;
+    display: inline-block;
+}
+
+.review-header{
+    text-align: center;
+    color: #085394;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    display: inline-block;
+}
+
+.review-box-button{
+    display: block;
+    margin: 20px auto 10px auto;
+    width: 100px;
+    height: 40px;
+    color: white;
+    border-radius: 5px;
+    background-color: #085394;
+    cursor: pointer;
+    float: left;
+}
+/* 
+@media  only screen and (max-width: 770px) {
+    .review-box1{
+      width: 40%;
+    }
+  } */
+
