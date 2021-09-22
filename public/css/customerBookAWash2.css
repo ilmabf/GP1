@@ -1,0 +1,92 @@
+.heading-time{
+    color: #085394;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: larger;
+}
+
+.wash-date{
+    margin: 35px 80px;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);   
+}
+
+.wash-date h3{
+    color: #085394;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.select-time{
+    margin: 35px 80px;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);   
+}
+
+.select-time h3{
+    color: #085394;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.select-time-box{
+    display: block;
+    text-align: center;
+    margin: auto auto;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+#time-types{
+    font-size: 15px;
+    padding: 8px 8px;
+    border-radius: 5px;
+    border-color: #085394;
+    font-weight: bold;
+}
+
+.next-pg{
+    float: right;
+    margin: 25px 50px;
+}
+
+.next-button{
+    background-color: #085394;
+    padding: 10px 30px;
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.next-button:hover{
+    background-color: #366c9b;
+}
+
+@media only screen and (max-width: 770px) {
+    .heading-time{
+        font-size: 15px;
+    }
+
+    .wash-date h3{
+        font-size: 15px;
+    }
+
+    .select-time h3{
+        font-size: 15px;
+    }
+
+    .wash-date{
+        margin: 35px 50px;  
+    }
+
+    .select-time{
+        margin: 35px 50px;
+    }
+
+}
+
