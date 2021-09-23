@@ -9,9 +9,15 @@
 
         <section class="customer-home-main-section1">
             <div class="bookAwash">
+<<<<<<< HEAD
+                <h3>We wash your<br>vehicle at your Doorstep!</h3>
+                <div class="bookAwash-button">
+                    <button class="customer-home-main-section1-button"><a href="/booking/bookAWash">Book a wash</a></button>
+=======
                 <h3>We wash your<br>vehicle at your doorstep!</h3>
                 <div class="bookAwash-button">
                     <button class="customer-home-main-section1-button"><a href="/customer/bookAWash">Book a wash</a></button>
+>>>>>>> c169898cf3ffb632477a67e7391876fae5c3033a
                 </div>
             </div>
 

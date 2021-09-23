@@ -124,7 +124,11 @@
     margin-bottom: 20px;
 }
 
+<<<<<<< HEAD
+.next-pg{
+=======
 .next-pg1{
+>>>>>>> c169898cf3ffb632477a67e7391876fae5c3033a
     float: right;
     margin: 25px 50px;
 }
@@ -141,3 +145,58 @@
 .next-button:hover{
     background-color: #366c9b;
 }
+<<<<<<< HEAD
+
+@media only screen and (max-width: 770px){
+
+    .heading{
+        font-size: 15px;
+    }
+
+    .sub-heading{
+        font-size: 12px;
+    }
+
+    .wash-date h3{
+        font-size: 15px;
+    }
+
+    .select-vehicle h3{
+        font-size: 15px;
+    }
+
+    .wash-type h3{
+        font-size: 15px;
+    }
+
+    .price h3{
+        font-size: 15px;
+    }
+
+    .next-button{
+        padding: 5px 8px;
+        font-size: 15px;
+    }
+
+    .next-button a{
+        font-size: 15px;
+    }
+
+    .wash-date{
+        margin: 35px 50px;
+    }
+
+    .select-vehicle{
+        margin: 35px 50px;
+    }
+
+    .wash-type{
+        margin: 35px 50px;
+    }
+
+    .price{
+        margin: 35px 50px;
+    }
+}
+=======
+>>>>>>> c169898cf3ffb632477a67e7391876fae5c3033a

@@ -1,5 +1,11 @@
+<<<<<<< HEAD
+<?php 
+    
+    include 'userLoggedInHeader.php';
+=======
 <?php
     include 'userHeader.php';
+>>>>>>> c169898cf3ffb632477a67e7391876fae5c3033a
 ?>
 
 <body onload="typeWriter()">
@@ -51,8 +57,13 @@
         <div class="price-display"></div>
     </div>
 
+<<<<<<< HEAD
+    <div class="next-pg">
+        <button class="next-button"><a href="/booking/bookAWash2" style="color: white;">Next</a></button>
+=======
     <div class="next-pg1">
         <button class="next-button">Next</button>
+>>>>>>> c169898cf3ffb632477a67e7391876fae5c3033a
     </div>
  
 
