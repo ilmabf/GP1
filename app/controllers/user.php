@@ -4,6 +4,7 @@ require 'libs/mailer.php';
 session_start();
 $_SESSION['error'] = '';
 $_SESSION['changePwdVerifyBox'] = 0;
+$_SESSION['login'] = '';
 
 class User extends Controller{
 
@@ -152,7 +153,6 @@ class User extends Controller{
             $_SESSION['time'] = date("h:i:sa");
             $_SESSION['login'] = "loggedin";
             $_SESSION['usernameemail'] = $uname;
-            echo $_SESSION['usernameemail'];
             if($this->model->checkCustomer($uname)){
                 $_SESSION['role'] = "customer";
                 $value = $this->model->checkVerified($uname);
