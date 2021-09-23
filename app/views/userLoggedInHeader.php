@@ -18,15 +18,12 @@
     <link rel="stylesheet" href="/public/css/stlHome.css">
     <link rel="stylesheet" href="/public/css/adminHome.css">
     <link rel="stylesheet" href="/public/css/userFooter.css">
-<<<<<<< HEAD
     <link rel="stylesheet" href="/public/css/adminManageEmployee.css">
     <link rel="stylesheet" href="/public/css/customerBookAWash.css">
     <link rel="stylesheet" href="/public/css/customerBookAWash2.css">
     <link rel="stylesheet" href="/public/css/customerBookAWash3.css">
     <link rel="stylesheet" href="/public/css/customerOrderSummary.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-=======
->>>>>>> c169898cf3ffb632477a67e7391876fae5c3033a
     <link rel="stylesheet" href="/public/css/customerGiveReview.css">
     <title>WandiWash</title>
 </head>

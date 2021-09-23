@@ -88,9 +88,6 @@ confirm_pwd.onkeyup = validatePassword;
 //     }
 //   }
 // }
-<<<<<<< HEAD
 
 //confirm_pwd.onkeyup = validatePassword;
 
-=======
->>>>>>> c169898cf3ffb632477a67e7391876fae5c3033a
