@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 class Review extends Controller{
 
     function __construct(){

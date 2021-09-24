@@ -1,5 +1,12 @@
-<?php 
-    include 'userHeader.php';
+<?php     
+
+    if(isset($_SESSION['login'])){
+        include 'userLoggedInHeader.php';
+    }
+    else{
+        include 'userHeader.php';
+    }
+    
 ?>
 <main>
 

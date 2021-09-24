@@ -97,7 +97,7 @@ class User extends Controller{
         $email = $_SESSION['email'];
         $newPassword = $_POST["new_pwd"];
 
-        echo $email;
+        
         $options = ['cost' => 12];
         $hashedpwd = password_hash($newPassword, PASSWORD_BCRYPT, $options);
 
@@ -112,24 +112,20 @@ class User extends Controller{
             header("Location: login");
         }
         
-        if($_SESSION['login'] == "loggedin"){
-            if($this->model->checkCustomer($_SESSION['usernameemail'])){
-                $_SESSION['role'] = "customer";
+        if(isset($_SESSION['login'])){
+            if($_SESSION['role'] == "customer"){
                 $this->view->render('customerHome');
                 exit;
             }
-            else if($this->model->checkManager($_SESSION['usernameemail'])){
-                $_SESSION['role'] = "manager";
+            else if($_SESSION['role'] = "manager"){
                 $this->view->render('managerHome');
                 exit;
             }
-            else if($this->model->checkSTL($_SESSION['usernameemail'])){
-                $_SESSION['role'] = "stl";
+            else if($_SESSION['role'] = "stl"){
                 $this->view->render('stlHome');
                 exit;
             }
             else{
-                $_SESSION['role'] = "systemadmin";
                 $this->view->render('systemAdminHome');
                 exit;
             }
