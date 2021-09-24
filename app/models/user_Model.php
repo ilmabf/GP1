@@ -114,5 +114,4 @@ class User_Model extends Model{
         }
         else print_r($result);
     }
-    
 }

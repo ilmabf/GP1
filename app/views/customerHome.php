@@ -23,7 +23,7 @@
 
             <div class="section2-blocks1">
                 <div class="customer-home-section2-block-img1"></div>
-                <div class="section2-block-heading"><button><h3><a href="customerMyAccount.php">My Account</a></h3></button></div>
+                <div class="section2-block-heading"><button><h3><a href="/account/">My Account</a></h3></button></div>
                 <div class="section2-block-para"><p>Add or update your vehicle and location details</p></div>
 
             </div>
