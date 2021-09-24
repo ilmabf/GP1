@@ -11,7 +11,7 @@
             <div class="bookAwash">
                 <h3>We wash your<br>vehicle at your doorstep!</h3>
                 <div class="bookAwash-button">
-                    <button class="customer-home-main-section1-button"><a href="/customer/bookAWash">Book a wash</a></button>
+                    <button class="customer-home-main-section1-button"><a href="/booking/bookAWash">Book a wash</a></button>
                 </div>
             </div>
 
@@ -23,7 +23,7 @@
 
             <div class="section2-blocks1">
                 <div class="customer-home-section2-block-img1"></div>
-                <div class="section2-block-heading"><button><h3><a href="customerMyAccount.php">My Account</a></h3></button></div>
+                <div class="section2-block-heading"><button><h3><a href="/account/">My Account</a></h3></button></div>
                 <div class="section2-block-para"><p>Add or update your vehicle and location details</p></div>
 
             </div>
