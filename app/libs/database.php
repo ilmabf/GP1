@@ -7,9 +7,16 @@ class Database extends PDO{
 
     function select($selection, $table, $condition){
         if($selection == "*"){
-            $query = "SELECT * FROM ".$table." ".$condition;
+
+            if($condition == "Null"){
+                $query = "SELECT * FROM ".$table;
+            }
+            else{
+                $query = "SELECT * FROM ".$table." ".$condition;
+            }
             $stmt = $this->prepare($query);
             $stmt->execute();
+            $_SESSION['rowCount'] = $stmt->rowCount();
             $result = $stmt->fetchAll();
             return $result;
         }
@@ -26,7 +33,7 @@ class Database extends PDO{
             if(gettype($selection) == 'array'){
                 $query = "SELECT";
                 foreach($selection as $element){
-                    if($element = $selection[count($selection)-1]){
+                    if($element == $selection[count($selection)-1]){
                         $query = $query . " " . $element;
                     }
                     else{

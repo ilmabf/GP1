@@ -31,8 +31,6 @@ class User extends Controller{
 
             $expDate = date("Y-m-d H:i:s",$expFormat);
             $key = md5(2418*2+$email);
-
-
             $addKey = substr(md5(uniqid(rand(),1)),3,10);
             $key = $key . $addKey;
 
@@ -99,7 +97,7 @@ class User extends Controller{
         $email = $_SESSION['email'];
         $newPassword = $_POST["new_pwd"];
 
-        echo $email;
+        
         $options = ['cost' => 12];
         $hashedpwd = password_hash($newPassword, PASSWORD_BCRYPT, $options);
 
@@ -110,37 +108,24 @@ class User extends Controller{
     }
 
     function home(){
-        if(!isset($_POST['login']) && $_SESSION['login'] != "loggedin"){
+        if(!isset($_POST['login']) && !isset($_SESSION['login'])){
             header("Location: login");
         }
         
-        if($_SESSION['login'] == "loggedin"){
-            if($this->model->checkCustomer($_SESSION['usernameemail'])){
-                $_SESSION["role"] = "customer";
-                $value = $this->model->checkVerified($_SESSION['usernameemail']);
-                if($value[0]['Verified'] == "1"){
-                    $_SESSION['Verified'] = "True";
-                    $this->view->render('customerHome');
-                    exit;
-                }
-                else{
-                    $_SESSION['Verified'] = "False";
-                    $this->view->render('customerVerify');
-                    exit;
-                }
+        if(isset($_SESSION['login'])){
+            if($_SESSION['role'] == "customer"){
+                $this->view->render('customerHome');
+                exit;
             }
-            else if($this->model->checkManager($_SESSION['usernameemail'])){
-                $_SESSION["role"] = "manager";
+            else if($_SESSION['role'] = "manager"){
                 $this->view->render('managerHome');
                 exit;
             }
-            else if($this->model->checkSTL($_SESSION['usernameemail'])){
-                $_SESSION["role"] = "stl";
+            else if($_SESSION['role'] = "stl"){
                 $this->view->render('stlHome');
                 exit;
             }
             else{
-                $_SESSION["role"] = "systemadmin";
                 $this->view->render('systemAdminHome');
                 exit;
             }
@@ -154,7 +139,6 @@ class User extends Controller{
             $_SESSION['time'] = date("h:i:sa");
             $_SESSION['login'] = "loggedin";
             $_SESSION['usernameemail'] = $uname;
-            echo $_SESSION['usernameemail'];
             if($this->model->checkCustomer($uname)){
                 $_SESSION['role'] = "customer";
                 $value = $this->model->checkVerified($uname);
