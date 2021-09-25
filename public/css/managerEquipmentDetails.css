@@ -1,0 +1,41 @@
+.heading{
+    color: #085394;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: larger;
+}
+
+.Equipment-search-box{
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 40px;
+}
+
+#managerSearchEquipments{
+    border-color: #085394;
+    padding: 10px 10px;
+}
+
+#managerViewEquip{
+    background-color: #085394;
+    cursor: pointer;
+    padding: 6px 15px;
+    color: white;
+    border-radius: 5px;
+}
+
+#managerViewEquip:hover{
+    background-color: #032a4d;
+}
+
+@media only screen and (max-width: 770px){
+
+    .heading{
+        font-size: 15px;
+    }
+
+    .Equipment-search-box{
+        margin-bottom: 2px;
+    }
+}

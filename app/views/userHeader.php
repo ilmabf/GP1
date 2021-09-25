@@ -20,12 +20,9 @@
     <link rel="stylesheet" href="/public/css/userFooter.css">
     <link rel="stylesheet" href="/public/css/adminManageEmployee.css">
     <link rel="stylesheet" href="/public/css/customerBookAWash.css">
-<<<<<<< HEAD
     <link rel="stylesheet" href="/public/css/customerBookAWash2.css">
     <link rel="stylesheet" href="/public/css/customerBookAWash3.css">
     <link rel="stylesheet" href="/public/css/customerOrderSummary.css">
-=======
->>>>>>> c169898cf3ffb632477a67e7391876fae5c3033a
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>WandiWash</title>
 </head>

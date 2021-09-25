@@ -206,6 +206,137 @@
 }
 
 
+.cancelPopUpclass {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .cancelPopUpContent-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+
+  .cancelPopUpContent-content p{
+      font-weight: 500;
+  }
+  
+  /* The Close Button */
+  .closeCancel {
+    color: green;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .closeCancel:hover,
+  .closeCancel:focus {
+    color: darkgreen;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .yesCancel{
+      display: block;
+      float: left;
+      margin: 25px 15px;
+  }
+
+  .btnCancel{
+      background-color: red;
+      padding: 8px 20px;
+      border-radius: 5px;
+  }
+
+  .btnCancel:hover{
+      background-color: darkred;
+  }
+
+  .yesCancel button a{
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+  }
+
+
+
+  .confirmPopUpclass {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .confirmPopUpContent-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+
+  .confirmPopUpContent-content p{
+      font-weight: 500;
+  }
+  
+  /* The Close Button */
+  .closeConfirm {
+    color: green;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .closeConfirm:hover,
+  .closeConfirm:focus {
+    color: darkgreen;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .yesConfirm{
+      display: block;
+      float: left;
+      margin: 25px 15px;
+  }
+
+  .btnConfirm{
+      background-color: #085394;
+      padding: 8px 20px;
+      border-radius: 5px;
+  }
+
+  .btnConfirm:hover{
+      background-color: #033663;
+  }
+
+  .yesConfirm button a{
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+  }
+
+
 @media only screen and (max-width: 770px) {
 
     .order-box{

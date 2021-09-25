@@ -10,18 +10,18 @@ function typeWriter() {
   }
 } 
 
-const btnsTip = document.querySelectorAll(".button");
-let activeBtn = null;
+// const btnsTip = document.querySelectorAll(".input");
+// let activeBtn = null;
 
-btnsTip.forEach((btnTip) => {
-  btnTip.addEventListener("click", (e) => {
-    e.currentTarget.classList.add("active");
+// btnsTip.forEach((btnTip) => {
+//   btnTip.addEventListener("click", (e) => {
+//     e.currentTarget.classList.add("active");
 
-    if ((activeBtn != null && activeBtn != e.currentTarget)) {
-      activeBtn.classList.remove("active");
-    }
+//     if ((activeBtn != null && activeBtn != e.currentTarget)) {
+//       activeBtn.classList.remove("active");
+//     }
 
-    activeBtn = e.currentTarget;
-  });
-});
+//     activeBtn = e.currentTarget;
+//   });
+// });
 

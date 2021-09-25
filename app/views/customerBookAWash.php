@@ -1,11 +1,6 @@
-<<<<<<< HEAD
 <?php 
     
     include 'userLoggedInHeader.php';
-=======
-<?php
-    include 'userHeader.php';
->>>>>>> c169898cf3ffb632477a67e7391876fae5c3033a
 ?>
 
 <body onload="typeWriter()">
@@ -29,26 +24,56 @@
         </div>
     </div>
 
+    <div class="select-time">
+        <h3>Select Time Period</h3>
+
+        <div class="select-time-box">
+            <form action="" method="post">
+                <select name="time" id="time-types">
+                    <option value="8 am - 10 am">8 am - 10 am</option>
+                    <option value="12 pm - 2 pm">12 am - 2 pm</option>
+                    <option value="4 pm - 6 pm">4 pm - 6 pm</option>
+                </select>
+            </form>
+        </div>
+    </div>
+
     <div class="select-vehicle">
         <h3>Select Your Vehicle</h3>
 
         <div class="select-vehcile-box">
-            <select name="vehicle" id="vehicle-types">
-                <option value="JQ - 4323">JQ - 4323</option>
-                <option value="AS - 4256">AS - 4256</option>
-                <option value="BH - 8975">BH - 8975</option>
-                <option value="AZ - 4623">AZ - 4623</option>
-            </select>
+            <form action="" method="post">
+                <select name="vehicle" id="vehicle-types">
+                    <option value="JQ - 4323">JQ - 4323</option>
+                    <option value="AS - 4256">AS - 4256</option>
+                    <option value="BH - 8975">BH - 8975</option>
+                    <option value="AZ - 4623">AZ - 4623</option>
+                </select>
+            </form>
         </div>
     </div>
 
     <div class="wash-type">
+
         <h3>Select Your Wash Type</h3>
-        <div class="select-wash-type">
-            <button class="button">Interior Cleaning</button>
-            <button class="button">Exterior Washing & Interior Cleaning</button>
-            <button class="button">Sanitization</button>
-        </div>
+
+        <form action="" method="post">
+            <div class="wash-select-radio">
+                <input type="radio" name="washType" id="interiorCleaning" class="washType1" value="Interior Cleaning" checked>
+                <label for="washType">Interior Cleaning</label>
+            </div>
+
+            <div class="wash-select-radio">
+                <input type="radio" name="washType" id="interior&ExteriorCleaning" class="washType1" value="Exterior Washing & Interior Cleaning">
+                <label for="washType">Exterior Washing & Interior Cleaning</label>
+            </div>
+            
+            <div class="wash-select-radio">
+                <input type="radio" name="washType" id="interior&ExteriorCleaning" class="washType1" value="Sanitization">
+                <label for="washType">Sanitization</label>
+            </div>
+                
+        </form>
 
     </div>
 
@@ -57,13 +82,8 @@
         <div class="price-display"></div>
     </div>
 
-<<<<<<< HEAD
     <div class="next-pg">
         <button class="next-button"><a href="/booking/bookAWash2" style="color: white;">Next</a></button>
-=======
-    <div class="next-pg1">
-        <button class="next-button">Next</button>
->>>>>>> c169898cf3ffb632477a67e7391876fae5c3033a
     </div>
  
 

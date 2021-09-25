@@ -1,0 +1,49 @@
+.heading{
+    color: #085394;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: larger;
+}
+
+.manager-EmpSearch-box{
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 40px;
+}
+
+#managerSearchEmployee{
+    border-color: #085394;
+    padding: 8px 10px;
+}
+
+#serviceTeam-types{
+    padding: 6px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    border-color: #085394;
+}
+
+/* #managerViewEmp{
+    background-color: #085394;
+    cursor: pointer;
+    padding: 6px 15px;
+    color: white;
+    border-radius: 5px;
+}
+
+#managerViewEmp:hover{
+    background-color: #032a4d;
+} */
+
+
+@media only screen and (max-width: 770px){
+
+    .heading{
+        font-size: 15px;
+    }
+
+    .manager-EmpSearch-box{
+        margin-bottom: 2px;
+    }
+}
