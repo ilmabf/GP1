@@ -14,11 +14,11 @@ class Booking extends Controller{
         $this->view->render('customerBookAWash2');
     }
 
-    function bookAWash3() {
-        $this->view->render('customerBookAWash3');
-    }
-
     function orderSummary() {
         $this->view->render('customerOrderSummary');
+    }
+
+    function customerHome() {
+        $this->view->render('customerHome');
     }
 }

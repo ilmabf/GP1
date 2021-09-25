@@ -1,0 +1,13 @@
+.heading{
+    color: #085394;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: larger;
+}
+
+@media only screen and (max-width: 770px){
+
+    .heading{
+        font-size: 15px;
+    }
+}

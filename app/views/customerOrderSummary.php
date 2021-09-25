@@ -23,7 +23,7 @@
         <div class="orderTime">
             <h3 class="a3">Time</h3>
             <p class="a3 p1">8 am - 10 am</p>
-            <button class="a3"><a href="/booking/bookAWash2">Change</a></button>
+            <button class="a3"><a href="/booking/bookAWash">Change</a></button>
         </div>
         <div class="orderVehicle">
             <h3 class="a4">Vehicle</h3>
@@ -38,7 +38,7 @@
         <div class="orderLocation">
             <h3 class="a6">Location</h3>
             <p class="a6 p1">ABC Road Kandy</p>
-            <button class="a6"><a href="/booking/bookAWash3">Change</a></button>
+            <button class="a6"><a href="/booking/bookAWash2">Change</a></button>
         </div>
         <div class="orderPrice">
             <h3 class="a7">Price Rs.</h3>
@@ -49,9 +49,38 @@
 </div>
 
 <div class="order-buttons">
-    <button class="orderButtons a8"><a>Cancel Order</a></button>
-    <button class="orderButtons a9"><a>Confirm Order</a></button>
+    <button class="orderButtons a8" id="cancelBtn"><a>Cancel Order</a></button>
+    <button class="orderButtons a9" id="confirmBtn"><a>Confirm Order</a></button>
 </div>
+
+<div id="cancelPopUpId" class="cancelPopUpclass">
+
+  <!-- Modal content -->
+    <div class="cancelPopUpContent-content">
+        <span class="closeCancel">&times;</span>
+        <p>Do you need to Cancel your Booking ?</p>
+        <div class="yesCancel">
+            <button class="btnCancel"><a href="/booking/customerHome">Yes</a></button>
+        </div>
+    </div>
+
+</div>
+
+<div id="confirmPopUpId" class="confirmPopUpclass">
+
+  
+    <div class="confirmPopUpContent-content">
+        <span class="closeConfirm">&times;</span>
+        <p>Your Order is success. Thank You!</p>
+        <div class="yesConfirm">
+            <button class="btnConfirm"><a href="/booking/customerHome">Retrun to Home Page</a></button>
+        </div>
+    </div>
+
+</div>
+
+<script src="/public/js/customerOrderSummary.js"></script> 
+
 
 <?php
     include 'userFooter.php';

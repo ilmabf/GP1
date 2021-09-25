@@ -23,6 +23,10 @@
     <link rel="stylesheet" href="/public/css/customerBookAWash2.css">
     <link rel="stylesheet" href="/public/css/customerBookAWash3.css">
     <link rel="stylesheet" href="/public/css/customerOrderSummary.css">
+    <link rel="stylesheet" href="/public/css/managerDashboard.css">
+    <link rel="stylesheet" href="/public/css/managerEquipmentDetails.css">
+    <link rel="stylesheet" href="/public/css/managerEmployeeDetails.css">
+    <link rel="stylesheet" href="/public/css/managerServiceDetails.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="/public/css/customerGiveReview.css">
     <link rel="stylesheet" href="/public/css/userReviews.css">

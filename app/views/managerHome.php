@@ -22,19 +22,19 @@
             </div>
 
             <div class="managerHome-block3">
-                <h3><a href="managerServiceDetails.php">Service Details</a></h3>
+                <h3><a href="/manager/serviceDetails">Service Details</a></h3>
             </div>
 
             <div class="managerHome-block4">
-                <h3><a href="managerEmployeeDetails">Employee Details</a></h3>
+                <h3><a href="/manager/employeeDetails">Employee Details</a></h3>
             </div>
 
             <div class="managerHome-block5">
-                <h3><a href="managerEquipmentDetails.php">Equipment Details</a></h3>
+                <h3><a href="/manager/viewEquipments">Equipment Details</a></h3>
             </div>
 
             <div class="managerHome-block6">
-                <h3><a href="managerDashboard.php">Manager Dashboard</a></h3>
+                <h3><a href="/manager/managerDashboard">Manager Dashboard</a></h3>
             </div>
 
         </div>

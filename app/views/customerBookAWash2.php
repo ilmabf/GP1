@@ -5,36 +5,30 @@
 
 <div style="min-height: 110px;"></div>
 
-<div class="heading">
-    <h2>Pick Your Time</h2>
+<div class="heading-location">
+    <h2>Select Your Location</h2>
 </div>
 
-<div class="wash-date">
-    <h3>Wash Date</h3>
+<div class="select-location">
 
-    <div id="closeOnClick">
-        <button class="btncls" onclick="closeOnClickDemo()">Click to open date picker</button>
-        <input type="text" id="datedemo">
-
+    <div class="select-location-box">
+        <form action="" method="post">
+            <select name="location" id="location-types">
+                <option value="ABC Road Kandy">ABC Road Kandy</option>
+                <option value="23/A Galagedara">23/A Galagedara</option>
+                <option value="32/C Galagedara">32/C Galagedara</option>
+            </select>
+        </form>
     </div>
 </div>
 
-<div class="select-time">
-    <h3>Select Time Period</h3>
-
-    <div class="select-time-box">
-        <select name="time" id="time-types">
-            <option value="8 am - 10 am">8 am - 10 am</option>
-            <option value="12 pm - 2 pm">12 am - 2 pm</option>
-            <option value="4 pm - 6 pm">4 pm - 6 pm</option>
-        </select>
-    </div>
+<div class="google-location">
+    <!-- google api -->
 </div>
 
 <div class="next-pg">
-    <button class="next-button"><a href="/booking/bookAWash3" style="color: white;">Next</a></button>
+    <button class="next-button"><a href="/booking/orderSummary" style="color: white;">Next</a></button>
 </div>
- 
 
 <?php
     include 'userFooter.php';

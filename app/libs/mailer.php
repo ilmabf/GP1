@@ -12,7 +12,7 @@ require 'vendor/autoload.php';
             $mail->Port = 587;
             $mail->SMTPAuth = true;
             $mail->Username = 'hello@wandiwash.com';
-            $mail->Password = 'Abuwandiwas123@.com';
+            $mail->Password = 'Abuwandiwash123@.com';
             $mail->setFrom('hello@wandiwash.com', 'wandiwash');
             $mail->addReplyTo('wandiwash@gmail.com', 'wandiwash');
             $mail->addAddress($to); 
