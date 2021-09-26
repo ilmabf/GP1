@@ -1,0 +1,357 @@
+.heading{
+    color: #085394;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: larger;
+}
+
+.order-box{
+    margin: 35px 80px;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); 
+    text-align: center; 
+}
+
+.order-subBox{
+    display: inline-block;
+    margin: 0 auto;
+    padding: 3px;
+}
+
+.orderID{
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.orderDate{
+    margin-bottom: 30px;
+}
+
+.orderDate button{
+    background-color:#085394;
+    padding: 7px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.orderDate button a{
+    color: white;
+    font-weight: 700;
+}
+
+.orderTime {
+    margin-bottom: 30px;
+}
+
+.orderTime button{
+    background-color:#085394;
+    padding: 7px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.orderTime button a{
+    color: white;
+    font-weight: 700;
+}
+
+.orderVehicle{
+    margin-bottom: 30px;
+}
+
+.orderVehicle button{
+    background-color:#085394;
+    padding: 7px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.orderVehicle button a{
+    color: white;
+    font-weight: 700;
+}
+
+.orderServiceType{
+    margin-bottom: 30px;
+}
+
+.orderServiceType button{
+    background-color:#085394;
+    padding: 7px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.orderServiceType button a{
+    color: white;
+    font-weight: 700;
+}
+
+.orderLocation{
+    margin-bottom: 30px;
+}
+
+.orderLocation button{
+    background-color:#085394;
+    padding: 7px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.orderLocation button a{
+    color: white;
+    font-weight: 700;
+}
+
+.orderPrice{
+    margin-bottom: 30px;
+}
+
+.orderPrice h3 a{
+   text-decoration: underline;
+   color: #085394;
+}
+
+.a1{
+    display: inline;
+    margin-right: 15px;
+}
+
+.a2{
+    display: inline;
+    margin-right: 15px;
+}
+
+.a3{
+    display: inline;
+    margin-right: 15px;
+}
+
+.a4{
+    display: inline;
+    margin-right: 15px;
+}
+
+.a5{
+    display: inline;
+    margin-right: 15px;
+}
+
+.a6{
+    display: inline;
+    margin-right: 15px;
+}
+
+.a7{
+    display: inline;
+    margin-right: 15px;
+}
+
+.service-team{
+    margin: 35px 80px;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    text-align: center; 
+}
+
+.service-team h3{
+    text-align: left;
+    color: #085394;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.service-team-box{
+    display: inline-block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#serviceTeam-types{
+    font-size: 15px;
+    text-align: center;
+    margin :  auto auto;
+    padding: 8px 8px;
+    border-radius: 5px;
+    border-color: #085394;
+    font-weight: bold;
+}
+
+.reservation-buttons{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.reservationButtons{
+    display: inline;
+    margin-bottom: 30px;
+}
+
+.a8{
+    float: left;
+    margin-left: 40px;
+    background-color: red;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.a8:hover{
+    background-color: darkred;
+}
+
+.reservation-buttons a{
+    font-size: 15px;
+    color: white;
+}
+
+.a9{
+    float: right;
+    margin-right: 40px;
+    background-color: red;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.a9:hover{
+    background-color: darkred;
+}
+
+.assignPopUpclass {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .assignPopUpContent-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+
+  .assignPopUpContent-content p{
+      font-weight: 500;
+  }
+  
+  /* The Close Button */
+  .closeCancelAssign{
+    color: green;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .closeCancelAssign:hover,
+  .closeCancelAssign:focus {
+    color: darkgreen;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .yesCancelAssign{
+      display: block;
+      float: left;
+      margin: 25px 15px;
+  }
+
+  .btnCancelAssign{
+      background-color: red;
+      padding: 8px 20px;
+      border-radius: 5px;
+  }
+
+  .btnCancelAssign:hover{
+      background-color: darkred;
+  }
+
+  .yesCancelAssign button a{
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+  }
+
+
+
+  .cancelReservationPopUpclass{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .cancelReservationPopUpContent-content{
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+
+  .cancelReservationPopUpContent-content p{
+      font-weight: 500;
+  }
+  
+  /* The Close Button */
+  .closeCancelReservation{
+    color: green;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .closeCancelReservation:hover,
+  .closeCancelReservation:focus {
+    color: darkgreen;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .yesCancelReservation{
+      display: block;
+      float: left;
+      margin: 25px 15px;
+  }
+
+  .btnCancelReservation{
+      background-color: red;
+      padding: 8px 20px;
+      border-radius: 5px;
+  }
+
+  .btnCancelReservation:hover{
+    background-color: darkred;
+  }
+
+  .yesCancelReservation button a{
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+  }
+
+
