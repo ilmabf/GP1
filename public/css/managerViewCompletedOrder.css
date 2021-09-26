@@ -1,0 +1,187 @@
+.heading{
+    color: #085394;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: larger;
+}
+
+.order-box{
+    margin: 35px 80px;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); 
+    text-align: center; 
+}
+
+.order-subBox{
+    display: inline-block;
+    margin: 0 auto;
+    padding: 3px;
+}
+
+.orderID{
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.orderDate{
+    margin-bottom: 30px;
+}
+
+.orderDate button{
+    background-color:#085394;
+    padding: 7px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.orderDate button a{
+    color: white;
+    font-weight: 700;
+}
+
+.orderTime {
+    margin-bottom: 30px;
+}
+
+.orderTime button{
+    background-color:#085394;
+    padding: 7px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.orderTime button a{
+    color: white;
+    font-weight: 700;
+}
+
+.orderVehicle{
+    margin-bottom: 30px;
+}
+
+.orderVehicle button{
+    background-color:#085394;
+    padding: 7px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.orderVehicle button a{
+    color: white;
+    font-weight: 700;
+}
+
+.orderServiceType{
+    margin-bottom: 30px;
+}
+
+.orderServiceType button{
+    background-color:#085394;
+    padding: 7px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.orderServiceType button a{
+    color: white;
+    font-weight: 700;
+}
+
+.orderLocation{
+    margin-bottom: 30px;
+}
+
+.orderLocation button{
+    background-color:#085394;
+    padding: 7px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.orderLocation button a{
+    color: white;
+    font-weight: 700;
+}
+
+.orderPrice{
+    margin-bottom: 30px;
+}
+
+.orderPrice h3 a{
+   text-decoration: underline;
+   color: #085394;
+}
+
+.a1{
+    display: inline;
+    margin-right: 15px;
+}
+
+.a2{
+    display: inline;
+    margin-right: 15px;
+}
+
+.a3{
+    display: inline;
+    margin-right: 15px;
+}
+
+.a4{
+    display: inline;
+    margin-right: 15px;
+}
+
+.a5{
+    display: inline;
+    margin-right: 15px;
+}
+
+.a6{
+    display: inline;
+    margin-right: 15px;
+}
+
+.a7{
+    display: inline;
+    margin-right: 15px;
+}
+
+.service-feedback{
+    margin: 35px 80px;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); 
+    text-align: center; 
+}
+
+.stars1 {
+    width: 180px;
+}
+
+.rate1{
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.rate1 p{
+    font-size: 15px;
+    font-weight: 600;
+}
+ 
+.rating__star {
+    cursor: pointer;
+    color: #f1ce07b2;
+}
+
+.viewPhotos{
+    display: inline-block;
+    margin-bottom: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+

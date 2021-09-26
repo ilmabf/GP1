@@ -14,11 +14,11 @@
         <div class="manager-home-main-flex">
 
             <div class="managerHome-block1">
-                <h3><a href="managerUpcomingReservations.php">Upcoming Reservations</a></h3>
+                <h3><a href="/manager/upcomingReservation">Upcoming Reservations</a></h3>
             </div>
 
             <div class="managerHome-block2">
-                <h3><a href="managerReservationsCompleted.php">Reservations Completed</a></h3>
+                <h3><a href="/manager/completedReservations">Reservations Completed</a></h3>
             </div>
 
             <div class="managerHome-block3">

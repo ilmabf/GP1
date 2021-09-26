@@ -21,4 +21,20 @@ class Manager extends Controller{
     function serviceDetails(){
         $this->view->render('managerServiceDetails');
     }
+
+    function completedReservations(){
+        $this->view->render('managerReservationCompleted');
+    }
+
+    function viewOrder(){
+        $this->view->render('managerViewCompletedOrder');
+    }
+
+    function upcomingReservation(){
+        $this->view->render('managerReservationUpcoming');
+    }
+
+    function viewUpcomingOrder(){
+        $this->view->render('managerViewUpcomingOrder');
+    }
 }

@@ -117,11 +117,11 @@ class User extends Controller{
                 $this->view->render('customerHome');
                 exit;
             }
-            else if($_SESSION['role'] = "manager"){
+            else if($_SESSION['role'] == "manager"){
                 $this->view->render('managerHome');
                 exit;
             }
-            else if($_SESSION['role'] = "stl"){
+            else if($_SESSION['role'] == "stl"){
                 $this->view->render('stlHome');
                 exit;
             }
