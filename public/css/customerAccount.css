@@ -9,8 +9,48 @@
     transform: translate(-50%, -50%);
     padding: 30px 50px 20px 30px;
     width: fit-content;
-
+    margin-top: 200px;
 }
+.map-box{
+    display: block;
+}
+
+.vehicle-box:hover > .btn2 {
+    display: block;
+    opacity: 1;
+  }
+  
+  .btn2 {
+    position: absolute;
+    top: 373px;
+    right: 40px;
+    opacity: 0.4;
+  }
+
+  .vehicle-box:hover > .btn3 {
+    display: block;
+    opacity: 1;
+  }
+  
+  .btn3 {
+    position: absolute;
+    top: 684px;
+    right: 59px;
+    opacity: 0.7;
+  }
+
+
+  .btn {
+    opacity: 0.4;
+    position: absolute;
+    top: 115px;
+    right: 40px;
+  }
+
+  .account-box2:hover > .btn {
+    display: block;
+    opacity: 1;
+  }
 
 .account-header{
     top: 25%;
@@ -173,5 +213,17 @@
      .vehicle{
         /* margin-left: 2%; */
         /* font-size: 50%; */
+     }
+
+     .btn{
+        top: 107px;
+     }
+
+     .btn2{
+        top: 347px;
+     }
+
+     .btn3{
+        top: 659px;
      }
   }
