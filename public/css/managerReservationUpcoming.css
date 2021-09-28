@@ -27,16 +27,18 @@
     margin: auto auto;
 }
 
-.completedOrders{
+.upcomingOrders{
+    display: flex;
+    flex-wrap: wrap;
     text-align: center;
     margin: 35px 80px;
     padding: 10px 20px;
     background-color: white;
     border-radius: 5px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);   
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);  
 }
 
-.completedOrders h3{
+.upcomingOrders h3{
     text-align: left;
     color: #085394;
     padding-top: 15px;
@@ -44,19 +46,18 @@
     margin-bottom: 30px;
 }
 
-.sub-box{
-    display: block;
+.sub-box1{
     text-align: center;
-    margin: 50px 100px;
+    margin: 20px 20px;
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
-    padding: 20px 40px; 
+    padding: 20px 20px; 
 }
 
 .orderID{
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .vehicleNo{
@@ -68,10 +69,11 @@
 }
 
 .orderView{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .viewLink{
+    margin-bottom: 10px;
     text-align: center;
     color: #085394;
 }
@@ -87,9 +89,8 @@
 }
 
 .team{
-    text-align: center;
-    float: right;
-    font-size: 15px;
+    float: left;
+    font-size: 13px;
     color: red;
 }
 
@@ -107,17 +108,19 @@
         margin: 35px 50px;
     }
 
-    .completedOrders h3{
+    .upcomingOrders h3{
         font-size: 15px;
     }
 
-    .completedOrders{
+    .upcomingOrders{
+        display: block;
         margin: 25px 20px;
     }
 
-    .sub-box{
-        margin: 50px 20px;
-        padding: 20px 40px; 
+    .sub-box1{
+        display: block;
+        margin: 20px 20px;
+        padding: 20px 20px; 
     }
 
     .orderView .viewLink a{

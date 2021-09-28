@@ -160,7 +160,9 @@
 </div>
 
 </main>
-<div class = "space" ></div>
+
+<div style="min-height: 110px;"></div>
+
 <?php 
     include 'userFooter.php';
 ?>

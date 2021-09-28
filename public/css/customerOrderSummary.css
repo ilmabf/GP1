@@ -6,7 +6,10 @@
 }
 
 .order-box{
-    margin: 35px 80px;
+    margin-top: 35px;
+    margin-bottom: 35px;
+    margin-left: 140px; 
+    margin-right: 140px;
     padding: 10px 20px;
     background-color: white;
     border-radius: 5px;
@@ -14,15 +17,15 @@
     text-align: center; 
 }
 
-.order-subBox{
-    display: inline-block;
-    margin: 0 auto;
-    padding: 3px;
-}
+/* .order-subBox{
+    /* display: inline-block; */
+    /* margin: 0 10px;
+    padding: 3px; */
+/* } */ 
 
 .orderID{
     margin-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .orderDate{
@@ -127,6 +130,7 @@
 
 .orderPrice{
     margin-bottom: 30px;
+    text-align: center;
 }
 
 .a1{
@@ -336,12 +340,34 @@
       font-weight: 600;
   }
 
+  @media only screen and (min-width: 770px){
+    .order-box{
+        margin-top: 35px;
+        margin-bottom: 35px;
+        margin-left: 140px; 
+        margin-right: 140px;
+    }
+
+    .order-subBox{
+        text-align: left;
+    }
+
+    .orderDetails{
+        display: inline-block;
+        margin-left: 40px;
+        margin-right: 40px;
+        margin-bottom: 30px;
+        border: 5px 5px #888;
+        padding: 20px 20px;
+    }
+  }
+
 
 @media only screen and (max-width: 770px) {
 
     .order-box{
-        margin: 35px 30px;
-        padding: 10px 20px;
+        margin: 35px 10px;
+        padding: 10px 10px;
         background-color: white;
         border-radius: 5px;
         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); 

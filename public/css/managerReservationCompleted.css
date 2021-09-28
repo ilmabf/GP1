@@ -28,6 +28,8 @@
 }
 
 .completedOrders{
+    display: flex;
+    flex-wrap: wrap;
     text-align: center;
     margin: 35px 80px;
     padding: 10px 20px;
@@ -47,7 +49,7 @@
 .sub-box{
     display: block;
     text-align: center;
-    margin: 50px 100px;
+    margin: 50px 20px;
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
