@@ -57,6 +57,25 @@
             <p class="team">Completed by Service Team B</p>
         </div>
     </div>
+
+    <div class="sub-box">
+        <div class="orderID">
+            <h3 class="a1">Order ID</h3>
+            <p class="a1 p1">AAAA</p>
+        </div>
+        <div class="vehicleNo">
+            <h3 class="a2">Vecicle No</h3>
+            <p class="a2 p1">AD - 2234</p>
+        </div>
+        <div class="orderTime">
+            <h3 class="a3">Time</h3>
+            <p class="a3 p1">8 am - 10 am</p>
+        </div>
+        <div class="orderView">
+            <p class="viewLink"><a href="/manager/viewOrder">View order</a></p>
+            <p class="team">Completed by Service Team A</p>
+        </div>
+    </div>
 </div>
 
 <div style="min-height: 110px;"></div>

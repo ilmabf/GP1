@@ -5,7 +5,7 @@
     font-size: larger;
 }
 
-.order-box{
+.order-box3{
     margin: 35px 80px;
     padding: 10px 20px;
     background-color: white;
@@ -14,11 +14,11 @@
     text-align: center; 
 }
 
-.order-subBox{
+/* .order-subBox{
     display: inline-block;
     margin: 0 auto;
     padding: 3px;
-}
+} */
 
 .orderID{
     margin-top: 20px;
@@ -149,6 +149,10 @@
     margin-right: 15px;
 }
 
+.p1{
+    color: #085394;
+}
+
 .service-team{
     margin: 35px 80px;
     padding: 10px 20px;
@@ -211,7 +215,7 @@
     color: white;
 }
 
-.a9{
+.a10{
     float: right;
     margin-right: 40px;
     background-color: red;
@@ -220,7 +224,7 @@
     cursor: pointer;
 }
 
-.a9:hover{
+.a10:hover{
     background-color: darkred;
 }
 
@@ -353,5 +357,26 @@
       font-size: 15px;
       font-weight: 600;
   }
+
+
+  @media only screen and (min-width: 770px) {
+      .order-box{
+          display: flex;
+          flex-wrap: nowrap;
+      }
+
+      .viewCompleteOrder{
+          margin: 10px 20px;
+          text-align: center;
+      }
+  }
+
+  @media only screen and (max-width: 770px) {
+        .a8, .a10{
+            width: 120px;
+            padding: 5px 10px;
+            font-size: 5px;
+        }   
+}
 
 
