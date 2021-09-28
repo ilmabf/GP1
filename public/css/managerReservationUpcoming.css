@@ -5,20 +5,32 @@
     font-size: larger;
 }
 
+input[type=text3]{
+    width: 100%;
+    padding: 0px 0px 12px 0px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
 .reservation-date{
     text-align: center;
-    margin: 35px 80px;
+    margin: 35px 236px;
     padding: 10px 20px;
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);   
 }
-
+.order{
+    margin-top: 20px;
+    margin-bottom: 25px;
+    
+}
 .reservation-date h3{
     text-align: left;
     color: #085394;
     padding-top: 15px;
     padding-bottom: 15px;
+    
 }
 
 #closeClick{
@@ -27,11 +39,24 @@
     margin: auto auto;
 }
 
+.orderitem{
+    width: 50%;
+    display: inline;
+    margin-right: 100px;
+    font-weight: bold;
+    color: #085394;
+}
+.orderitem1{
+    float: right;
+    color: #000000;
+    position: relative;
+    left: -45%;
+    transform: translate(95%, 4%);
+}
 .upcomingOrders{
     display: flex;
     flex-wrap: wrap;
-    text-align: center;
-    margin: 35px 80px;
+    margin: 35px 238px;
     padding: 10px 20px;
     background-color: white;
     border-radius: 5px;
@@ -41,13 +66,14 @@
 .upcomingOrders h3{
     text-align: left;
     color: #085394;
-    padding-top: 15px;
+    /* padding-top: 15px;
     padding-bottom: 15px;
     margin-bottom: 30px;
+    padding-right: 41px; */
+    margin-right: 93px;
 }
 
 .sub-box1{
-    text-align: center;
     margin: 20px 20px;
     background-color: white;
     border-radius: 5px;
@@ -89,9 +115,18 @@
 }
 
 .team{
-    float: left;
+    margin-top: 20px;
+    float: initial;
     font-size: 13px;
     color: red;
+}
+
+.team2{
+    text-align: center;
+    margin-top: 20px;
+    float: initial;
+    font-size: 13px;
+    color: rgb(3, 3, 3);
 }
 
 @media only screen and (max-width: 770px){
@@ -131,5 +166,13 @@
     .team{
         margin-top: 20px;
         font-size: 12px;
+    }
+
+    .orderitem{
+        margin-right: 0px;
+    }
+
+    .reservation-date{
+        margin: 35px 20px;
     }
 }

@@ -21,12 +21,44 @@
 } */
 
 .orderID{
-    margin-top: 20px;
+    /* margin-top: 20px;
     margin-bottom: 40px;
+    margin-right: 40px;
+    display: inline; */
+    
+    display: flex;
 }
 
+
 .orderDate{
-    margin-bottom: 30px;
+    /* margin-bottom: 30px;
+    color: #085394;
+    font-weight: bold;
+    display: inline; */
+    top: 25%;
+    color: #085394;
+    margin-top: 10px;
+    margin-bottom: 12px;
+    font-size: 18px;
+    padding: 0px 30px 0px 10px;
+    text-align: center;
+    display: inline;
+     
+    
+}
+
+.orderDate1{
+    /* margin-bottom: 30px;
+    color: #000000;
+    display: inline; */
+
+    display: inline;
+    color: #000000;
+    /* padding: 12px 30px; */
+    border-radius: 4px;
+    /* left: 30%; */
+    position: relative;
+    float: right;
 }
 
 .orderDate button{
@@ -154,7 +186,7 @@
 }
 
 .service-team{
-    margin: 35px 80px;
+    margin: 35px 164px;
     padding: 10px 20px;
     background-color: white;
     border-radius: 5px;
@@ -163,10 +195,10 @@
 }
 
 .service-team h3{
-    text-align: left;
     color: #085394;
     padding-top: 15px;
     padding-bottom: 15px;
+    font-size: 18px;
 }
 
 .service-team-box{
@@ -190,6 +222,7 @@
 .reservation-buttons{
     margin-top: 30px;
     margin-bottom: 30px;
+    width: 100%;
 }
 
 .reservationButtons{
@@ -199,7 +232,7 @@
 
 .a8{
     float: left;
-    margin-left: 40px;
+    margin-left: 0px;
     background-color: red;
     padding: 10px 20px;
     border-radius: 5px;
@@ -215,9 +248,19 @@
     color: white;
 }
 
+.upcoming{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 35px 166px;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 40%);
+}
+
 .a10{
     float: right;
-    margin-right: 40px;
+    margin-right: 161px;
     background-color: red;
     padding: 10px 20px;
     border-radius: 5px;
@@ -308,6 +351,9 @@
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   }
   
+  .detail{
+    padding-bottom: 20px;
+  }
   /* Modal Content */
   .cancelReservationPopUpContent-content{
     background-color: #fefefe;
@@ -358,18 +404,12 @@
       font-weight: 600;
   }
 
-
-  @media only screen and (min-width: 770px) {
-      .order-box{
-          display: flex;
-          flex-wrap: nowrap;
-      }
-
-      .viewCompleteOrder{
-          margin: 10px 20px;
-          text-align: center;
-      }
-  }
+.boxx{
+    margin: 20px 20px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px 20px; 
+}
 
   @media only screen and (max-width: 770px) {
         .a8, .a10{
@@ -377,6 +417,28 @@
             padding: 5px 10px;
             font-size: 5px;
         }   
+
+        .boxx{
+            display: block;
+            margin: 20px 20px;
+            padding: 0px 0px;
+        }
+
+        .upcoming{
+            display: block;
+    margin: 25px 20px;
+        }
+
+        .service-team{
+            margin: 35px 20px;
+        }
+        .reservation-buttons{
+
+        }
+
+        .a10{
+            margin-right: 20px;
+        }
 }
 
 
