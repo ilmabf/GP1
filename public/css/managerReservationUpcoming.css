@@ -30,7 +30,6 @@
 .upcomingOrders{
     display: flex;
     flex-wrap: wrap;
-    text-align: center;
     margin: 35px 80px;
     padding: 10px 20px;
     background-color: white;
@@ -47,7 +46,6 @@
 }
 
 .sub-box1{
-    text-align: center;
     margin: 20px 20px;
     background-color: white;
     border-radius: 5px;
@@ -93,6 +91,15 @@
     font-size: 13px;
     color: red;
 }
+
+.p11{
+    color: black;
+}
+
+.a22{
+    text-align: left;
+}
+
 
 @media only screen and (max-width: 770px){
 

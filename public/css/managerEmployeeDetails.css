@@ -5,45 +5,60 @@
     font-size: larger;
 }
 
-.manager-EmpSearch-box{
+.Mg-EmpSearch{
     display: inline-block;
+}
+
+.mgEmpSearch1{
+    margin-left: 20px;
+}
+
+.mgEmpSearch2{
+    float: right;
     margin-left: 20px;
     margin-right: 20px;
-    margin-top: 40px;
+}
+
+#serviceTeams-types{
+    font-weight: 600;
+    border-radius: 5px;
+    border: 2px outset #085394;
+}
+
+#serviceTeamLeaders-types{
+    font-weight: 600;
+    border-radius: 5px;
+    border: 2px outset #085394;
 }
 
 #managerSearchEmployee{
-    border-color: #085394;
-    padding: 8px 10px;
+    font-size: 15px;
+    border: 2px outset #085394;
 }
-
-#serviceTeam-types{
-    padding: 6px 15px;
-    border-radius: 5px;
-    font-weight: 600;
-    border-color: #085394;
-}
-
-/* #managerViewEmp{
-    background-color: #085394;
-    cursor: pointer;
-    padding: 6px 15px;
-    color: white;
-    border-radius: 5px;
-}
-
-#managerViewEmp:hover{
-    background-color: #032a4d;
-} */
-
 
 @media only screen and (max-width: 770px){
 
     .heading{
-        font-size: 15px;
+        font-size: 12px;
+        text-align: center;
     }
 
-    .manager-EmpSearch-box{
-        margin-bottom: 2px;
+    .Mg-EmpSearch{
+        display: block;
+        text-align: center;
+        margin: 10px auto;
     }
+
+    #managerSearchEmployee{
+        font-size: 12px;
+        margin-right: 50px;
+        margin-left: 50px;
+    }
+
+    .mgEmpSearch2{
+        float: left;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
 }
