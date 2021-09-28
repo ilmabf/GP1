@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="/public/css/managerEmployeeDetails.css">
     <link rel="stylesheet" href="/public/css/managerServiceDetails.css">
     <link rel="stylesheet" href="/public/css/managerReservationCompleted.css">
-    <link rel="stylesheet" href="/public/css/managerUpcomingReservation.css">
+    <link rel="stylesheet" href="/public/css/managerReservationUpcoming.css">
     <link rel="stylesheet" href="/public/css/managerViewCompletedOrder.css">
     <link rel="stylesheet" href="/public/css/managerViewUpcomingOrder.css">
     <link rel="stylesheet" href="/public/css/customerGiveReview.css">

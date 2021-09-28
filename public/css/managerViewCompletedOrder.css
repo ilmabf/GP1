@@ -5,20 +5,20 @@
     font-size: larger;
 }
 
-.order-box{
-    margin: 35px 80px;
+.order-box3{
+    margin: 35px 30px;
     padding: 10px 20px;
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); 
-    text-align: center; 
+    text-align: left; 
 }
 
-.order-subBox{
+/* .order-subBox{
     display: inline-block;
     margin: 0 auto;
     padding: 3px;
-}
+} */
 
 .orderID{
     margin-top: 20px;
@@ -149,7 +149,12 @@
     margin-right: 15px;
 }
 
+.p1{
+    color: #085394;
+}
+
 .service-feedback{
+    color: #085394;
     margin: 35px 80px;
     padding: 10px 20px;
     background-color: white;
@@ -185,3 +190,19 @@
     margin-right: 40px;
 }
 
+@media only screen and (min-width: 770px){
+    .order-box3{
+        margin: 35px 80px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .viewCompleteOrder{
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 20px;
+        text-align: left;
+        /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);  */
+        padding: 20px 20px;
+    }
+}
