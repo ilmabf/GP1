@@ -67,7 +67,7 @@
 
 <div class="price">
     <h3>Price</h3>
-    <div class="price-display"></div>
+    <div class="price-display"> Rs 1000</div>
 </div>
 
 
