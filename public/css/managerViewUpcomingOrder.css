@@ -230,6 +230,19 @@
     margin-bottom: 30px;
 }
 
+.a12{
+    float: left;
+    margin-left: 0px;
+    background-color: #085394;
+    padding: 6px 9px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.a12:hover{
+    background-color: #05325a;
+}
+
 .a8{
     float: left;
     margin-left: 0px;
@@ -432,9 +445,9 @@
         .service-team{
             margin: 35px 20px;
         }
-        .reservation-buttons{
+        /* .reservation-buttons{
 
-        }
+        } */
 
         .a10{
             margin-right: 20px;

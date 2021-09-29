@@ -67,7 +67,7 @@
         <span class="closeCancel">&times;</span>
         <p>Do you need to Cancel your Booking ?</p>
         <div class="yesCancel">
-            <button class="btnCancel"><a href="/booking/customerHome">Yes</a></button>
+            <button class="btnCancel"><a href="/user/home">Yes</a></button>
         </div>
     </div>
 
@@ -80,7 +80,7 @@
         <span class="closeConfirm">&times;</span>
         <p>Your Order is success. Thank You!</p>
         <div class="yesConfirm">
-            <button class="btnConfirm"><a href="/booking/customerHome">Return to Home Page</a></button>
+            <button class="btnConfirm"><a href="/user/home">Return to Home Page</a></button>
         </div>
     </div>
 

@@ -2,19 +2,36 @@
     include 'userLoggedInHeader.php';
 ?>
 
+<div class="addVehicleform" id = "stldetails">
+                <div class="forma">
+                    <div class="loguser-icon"></div>
+                    <h2 class="login-signupheader">Details of the team Leader</h2>
+
+                    <form action="" method="post" id="customer-signup">
+                        <ul>
+                        <li><img src="/public/images/userIcon.jpg" style = "width: 250px;"></img></li><br>
+                        <li>Name - Mr. John Smith</li><br>
+                        <li>Contact Number - 077 123 4567</li>
+                        <button id="VehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closestlForm()" style = "float:none">Close</button>
+                    </form>
+
+                </div>
+            </div>
+
 <div style="min-height: 110px;"></div>
 
 <div class="heading">
     <h2>Upcoming Order -  <span style="color:black;">AAAA</span></h2>
 </div>
 
+<div  id = "upcoming">
 <div class="upcoming">
     <!-- <div class="order-subBox"> -->
 
         <div class="boxx">
 
             <div class="order">
-                <div class="orderitem">Customer Name</div>
+                <div class="orderitem">Name</div>
                 <div class="orderitem1">Gihan Anthony</div>
             </div>
             <div class="order">
@@ -62,46 +79,25 @@
             <div class="order">
                 <div class="orderitem"><a href="">View Location</a></div>
             </div>
+            <div class="order">
+                <div class="orderitem"><a href="">Service Team</a></div>
+                <p class="orderitem1">
+                    <button class="reservationButtons a12" id="cancelAssignBtn" style = "color:white;" onclick="openstlForm()"><a>View Details</a></button>
+                </p>
+            </div>
         </div>
     <!-- </div> -->
 </div>
 
 
-<div class="service-team">
-    <h3>Service Team</h3>
-
-    <div class="service-team-box">
-        <form action="" method="post">
-            <select name="serviceTeam" id="serviceTeam-types">
-                <option value="Not Selected">Team A</option>
-            </select>
-            <div class="reservation-buttons">
-        <button class="reservationButtons a8" id="cancelAssignBtn"><a>Cancel Assign</a></button>
-    </div>
-        </form>
-        
-    </div>
-    
-</div>
-
 <div class="reservation-buttons">
-       
+<div class = "reschedule">
+        <h3>Do you want to reschedule?</h3>
+                <button class="reservationButtons a13" id="cancelAssignBtn"><a>Click here</a></button></div>
         <button class="reservationButtons a10" id="cancelReservationBtn"><a>Cancel Reservation</a></button>
 </div>
 
-<div id="assignPopUpId" class="assignPopUpclass">
-
-  <!-- Modal content -->
-    <div class="assignPopUpContent-content">
-        <span class="closeCancelAssign">&times;</span>
-        <p>Do you need to Cancel Assign ?</p>
-        <div class="yesCancelAssign">
-            <button class="btnCancelAssign"><a href="/manager/viewUpcomingOrder">Yes</a></button>
-        </div>
-    </div>
-
 </div>
-
 <div id="cancelReservationPopUpId" class="cancelReservationPopUpclass">
 
   
@@ -117,4 +113,4 @@
 
 <div style="min-height: 110px;"></div>
 
-<script src="/public/js/managerViewUpcomingOrder.js"></script> 
+<script src="/public/js/customerViewUpcomingOrder.js"></script> 
