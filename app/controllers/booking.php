@@ -29,4 +29,8 @@ class Booking extends Controller{
     function upcomingOrder(){
         $this->view->render('customerViewUpcomingOrder');
     }
+
+    function reschedule(){
+        $this->view->render('customerReschedule');
+    }
 }

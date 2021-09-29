@@ -18,6 +18,19 @@
                 </div>
             </div>
 
+<div class="addVehicleform" id = "cancel">
+    <div class="forma">
+        <div class="loguser-icon"></div>
+        <h2 class="login-signupheader">Do you want to cancel the reservation?</h2>
+
+        <form action="" method="post" id="customer-signup">
+            <button id="VehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closecencelForm()">Close</button>
+            <button id="VehicleFormSubmitButton" class="formSubmitButton" type="submit" name="signup"><a href="/booking/upcoming" style = "color:white;">Yes</a></button>
+        </form>
+
+    </div>
+</div>
+
 <div style="min-height: 110px;"></div>
 
 <div class="heading">
@@ -93,21 +106,13 @@
 <div class="reservation-buttons">
 <div class = "reschedule">
         <h3>Do you want to reschedule?</h3>
-                <button class="reservationButtons a13" id="cancelAssignBtn"><a>Click here</a></button></div>
-        <button class="reservationButtons a10" id="cancelReservationBtn"><a>Cancel Reservation</a></button>
+                <button class="reservationButtons a13" id="cancelAssignBtn"><a href="/booking/reschedule" style = "color:white;">Click here</a></button></div>
+        <button class="reservationButtons a10" id="cancelReservationBtn" onclick="opencancelForm()" ><a>Cancel Reservation</a></button>
 </div>
 
 </div>
 <div id="cancelReservationPopUpId" class="cancelReservationPopUpclass">
 
-  
-    <div class="cancelReservationPopUpContent-content">
-        <span class="closeCancelReservation">&times;</span>
-        <p>Do you need to Cancel Reservation ?</p>
-        <div class="yesCancelReservation">
-            <button class="btnCancelReservation"><a href="/manager/viewUpcomingOrder">Yes</a></button>
-        </div>
-    </div>
 
 </div>
 
