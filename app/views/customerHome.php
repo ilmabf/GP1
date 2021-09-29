@@ -30,14 +30,14 @@
 
             <div class="section2-blocks2">
                 <div class="customer-home-section2-block-img2"></div>
-                <div class="section2-block-heading"><button><h3><a href="customerMyUpcomingReservations.php">Upcoming Reservations</a></h3></button></div>
+                <div class="section2-block-heading"><button><h3><a href="/booking/upcoming">Upcoming Reservations</a></h3></button></div>
                 <div class="section2-block-para"><p>Check your upcoming reservations</p></div>
 
             </div>
 
             <div class="section2-blocks3">
                 <div class="customer-home-section2-block-img3"></div>
-                <div class="section2-block-heading"><button><h3><a href="customerMyPastReservations.php">Past Reservations</a></h3></button></div>
+                <div class="section2-block-heading"><button><h3><a href="/booking/completed">Past Reservations</a></h3></button></div>
                 <div class="section2-block-para"><p>Check your past reservations</p></div>
 
             </div>

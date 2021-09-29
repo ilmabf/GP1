@@ -21,4 +21,12 @@ class Booking extends Controller{
     function customerHome() {
         $this->view->render('customerHome');
     }
+
+    function upcoming(){
+        $this->view->render('customerUpcomingReservations');
+    }
+
+    function upcomingOrder(){
+        $this->view->render('customerViewUpcomingOrder');
+    }
 }

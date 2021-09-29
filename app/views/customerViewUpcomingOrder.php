@@ -14,7 +14,7 @@
         <div class="boxx">
 
             <div class="order">
-                <div class="orderitem">Customer Name</div>
+                <div class="orderitem">Name</div>
                 <div class="orderitem1">Gihan Anthony</div>
             </div>
             <div class="order">
@@ -62,30 +62,21 @@
             <div class="order">
                 <div class="orderitem"><a href="">View Location</a></div>
             </div>
+            <div class="order">
+                <div class="orderitem"><a href="">Service Team</a></div>
+                <p class="orderitem1">
+                    <button class="reservationButtons a12" id="cancelAssignBtn" style = "color:white;"><a>View Details</a></button>
+                </p>
+            </div>
         </div>
     <!-- </div> -->
 </div>
 
 
-<div class="service-team">
-    <h3>Service Team</h3>
-
-    <div class="service-team-box">
-        <form action="" method="post">
-            <select name="serviceTeam" id="serviceTeam-types">
-                <option value="Not Selected">Team A</option>
-            </select>
-            <div class="reservation-buttons">
-        <button class="reservationButtons a8" id="cancelAssignBtn"><a>Cancel Assign</a></button>
-    </div>
-        </form>
-        
-    </div>
-    
-</div>
-
 <div class="reservation-buttons">
-       
+<div class = "reschedule">
+        <h3>Do you want to reschedule?</h3>
+                <button class="reservationButtons a13" id="cancelAssignBtn"><a>Click here</a></button></div>
         <button class="reservationButtons a10" id="cancelReservationBtn"><a>Cancel Reservation</a></button>
 </div>
 
