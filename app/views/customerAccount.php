@@ -12,7 +12,7 @@
                     <div class="loguser-icon"></div>
                     <h2 class="login-signupheader">Add a vehicle</h2>
 
-                    <form action="/acount/addVehicle" method="post" id="customer-signup">
+                    <form action="/account/addVehicle" method="post" id="customer-signup">
                         
                         <input class="input-box" id="vin" type="text2" name="vin" autofocus placeholder="Vehicle Identification No." required>
                         <br>
@@ -31,12 +31,57 @@
                 </div>
             </div>
 
+            <div class="addVehicleform" id = "editvehicleForm">
+                <div class="forma">
+                    <div class="loguser-icon"></div>
+                    <h2 class="login-signupheader">Edit Vehicle details</h2>
+
+                    <form action="/account/editVehicle" method="post" id="customer-signup">
+                        
+                        <label style="text-align:center; display: block;">VIN - ABC 123</label>
+                        <br>
+                        <input class="input-box" type="text2" name="model" autofocus placeholder="123456" required>
+                        <br>
+                        <input class="input-box" type="text2" name="color" autofocus placeholder="Blue" required>
+                        <br>
+                        <input class="input-box" type="text2" name="type" autofocus placeholder="Car" required>
+                        <br>
+                        <input class="input-box" type="text2" name="manufacturer" autofocus placeholder="XYZ" required>
+                        <br>
+                        <button id="EditVehicleFormSubmitButton" class="formSubmitButton" type="submit" name="signup">Submit</button>
+                        <button id="EditVehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closeEditVehicleForm()">Cancel</button>
+                    </form>
+
+                </div>
+            </div>
+
+            <div class="addVehicleform" id = "editdetailsForm">
+                <div class="forma">
+                    <div class="loguser-icon"></div>
+                    <h2 class="login-signupheader">Edit details</h2>
+
+                    <form action="/account/editDetails" method="post" id="customer-signup">
+                        
+                        <input class="input-box" id="fn" type="text2" name="fn" autofocus placeholder="First Name" required>
+                        <br>
+                        <input class="input-box" type="text2" name="ln" autofocus placeholder="Last Name" required>
+                        <br>
+                        <input class="input-box" type="text2" name="email" autofocus placeholder="Email" required>
+                        <br>
+                        <input class="input-box" type="text2" name="mobile" autofocus placeholder="Mobile Number" required>
+                        <br>
+                        <button id="EditDetailsFormSubmitButton" class="formSubmitButton" type="submit" name="signup">Submit</button>
+                        <button id="EditDetailsFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closeDetailsVehicleForm()">Cancel</button>
+                    </form>
+
+                </div>
+            </div>
     <div id = "box"class = "box">
     <div class="account-box1">
         <div class = "account-prof">
             <div class="account-header">My Account</div>
             <div class="account-box2">
-            <button class="btn">Edit</button>
+            <button class="btn" onclick="openDetailsVehicleForm()">Edit</button>
                 <div class = "account-image">    </div>   
                 <div class = "account-details" >
                     <div class = "account-name">
@@ -66,7 +111,7 @@
             </div>
 
             <div class="vehicle-box">
-                <button class="btn2" >Edit</button>
+                <button class="btn2" onclick="openEditVehicleForm()">Edit</button>
                 <div class = "item1">
                     <div class = "vehicle">Model</div>
                     <div class = "vehicle-specs">
