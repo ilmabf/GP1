@@ -33,4 +33,12 @@ class Booking extends Controller{
     function reschedule(){
         $this->view->render('customerReschedule');
     }
+
+    function completed(){
+        $this->view->render('customerCompletedReservations');
+    }
+
+    function completedOrder(){
+        $this->view->render('customerViewCompletedOrder');
+    }
 }

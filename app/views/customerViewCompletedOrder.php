@@ -18,23 +18,10 @@
                 </div>
             </div>
 
-<div class="addVehicleform" id = "cancel">
-    <div class="forma">
-        <div class="loguser-icon"></div>
-        <h2 class="login-signupheader">Do you want to cancel the reservation?</h2>
-
-        <form action="" method="post" id="customer-signup">
-            <button id="VehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closecencelForm()">Close</button>
-            <button id="VehicleFormSubmitButton" class="formSubmitButton" type="submit" name="signup"><a href="/booking/upcoming" style = "color:white;">Yes</a></button>
-        </form>
-
-    </div>
-</div>
-
 <div style="min-height: 110px;"></div>
 
 <div class="heading">
-    <h2>Upcoming Order</h2>
+    <h2>Completed Order</h2>
 </div>
 
 <div  id = "upcoming">
@@ -99,22 +86,39 @@
                 </p>
             </div>
         </div>
+
+        
+        
+
     <!-- </div> -->
 </div>
 
+<div class="service-team">
+    
 
-<div class="reservation-buttons">
-<div class = "reschedule">
-        <h3>Do you want to reschedule?</h3>
-                <button class="reservationButtons a13" id="cancelAssignBtn"><a href="/booking/reschedule" style = "color:white;">Click here</a></button></div>
-        <button class="reservationButtons a10" id="cancelReservationBtn" onclick="opencancelForm()" ><a>Cancel Reservation</a></button>
+    <div class="rate1">
+    
+        <h3>How was the service? Give a rating!</h3>
+    </div>
+    <div class="rate1 stars1">
+        <i class="rating__star far fa-star"></i>
+        <i class="rating__star far fa-star"></i>
+        <i class="rating__star far fa-star"></i>
+        <i class="rating__star far fa-star"></i>
+        <i class="rating__star far fa-star"></i>
+    </div>
+    
+    <!-- <div class="rate2">
+        <h3>Rate of Service Type</h3>
+    </div> -->
+    <div class="rate2 stars2">
+
+    </div>
+
+    
 </div>
 
-</div>
-<div id="cancelReservationPopUpId" class="cancelReservationPopUpclass">
-
-
-</div>
+<button class="reservationButtons a10" id="cancelAssignBtn" style = "color:white; background-color:green" onclick="openstlForm()"><a>View Invoice</a></button>
 
 <div style="min-height: 110px;"></div>
 

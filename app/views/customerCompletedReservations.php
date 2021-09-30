@@ -34,7 +34,7 @@
             <p class="orderitem1">8 am - 10 am</p>
         </div>
         <div class="orderView">
-            <p class="viewLink"><a href="/booking/upcomingOrder">View order</a></p>
+            <p class="viewLink"><a href="/booking/CompletedOrder">View order</a></p>
             <p class="team2">A service team has been assigned for you</p>
         </div>
     </div>
@@ -53,7 +53,7 @@
             <p class="orderitem1">10 am - 12 pm</p>
         </div>
         <div class="orderView">
-            <p class="viewLink"><a href="/booking/upcomingOrder">View order</a></p>
+            <p class="viewLink"><a href="/booking/CompletedOrder">View order</a></p>
         </div>
     </div>
 
@@ -71,7 +71,7 @@
             <p class="orderitem1">2 pm - 4 pm</p>
         </div>
         <div class="orderView">
-            <p class="viewLink"><a href="/booking/upcomingOrder">View order</a></p>
+            <p class="viewLink"><a href="/booking/CompletedOrder">View order</a></p>
         </div>
     </div>
 

@@ -429,17 +429,17 @@
         font-size: 13px;
     }
     .box3 {
-        width: 60%;
-        display: flex;
-        flex-wrap: wrap;
-        /* margin: 9px 166px; */
-        padding: 10px 0px 0px 0px;
-        background-color: white;
-        border-radius: 5px;
-        box-shadow: 0 3px 10px rgb(0 0 0 / 40%);
-        left: 20%;
-        position: relative;
-        font-size: smaller;
+        width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+    /* margin: 9px 166px; */
+    padding: 10px 0px 0px 0px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 40%);
+    left: 13%;
+    position: relative;
+    font-size: smaller;
     }
 
     .orderitem2 {
@@ -458,8 +458,8 @@
     }
 
     .order-buttons{
-        margin-left: 151px;
-        margin-right: 112px;
+        margin-left: 50px;
+        margin-right: 4px;
     }
 
     .changebutton{
@@ -467,11 +467,11 @@
     }
 
     .box2{
-        margin: 20px 65px;
-        background-color: white;
-        border-radius: 5px;
-        padding: 20px 20px;
-        margin-left: 3px;
-        font-size: smaller;
+            /* margin: 20px -36px; */
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px 20px;
+    /* margin-left: -129px; */
+    font-size: smaller;
     }
 }

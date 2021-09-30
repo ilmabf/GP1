@@ -428,7 +428,7 @@
         .a8, .a10{
             width: 120px;
             padding: 5px 10px;
-            font-size: 5px;
+            /* font-size: 5px; */
         }   
 
         .boxx{
