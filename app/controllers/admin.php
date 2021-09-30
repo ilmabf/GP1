@@ -10,4 +10,8 @@ class Admin extends Controller{
         $this->view->render('adminManageEmployee');
     }
 
+    function manageService(){
+        $this->view->render('adminManageService');
+    }
+
 }
