@@ -1,0 +1,65 @@
+.stl-assigned-orders-h1{
+    color: #085394;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.reservation-date{
+    text-align: center;
+    margin: 35px 80px;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);   
+}
+
+.reservation-date h3{
+    text-align: center;
+    color: #085394;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.order-box{
+    margin: 35px 80px;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); 
+    text-align: center; 
+}
+.order-sub-box{
+    flex: auto;
+    text-align: center;
+    padding: 20px 0px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 8px;
+    margin-right: 8px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+}
+.order-box-main-flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+.a1{
+    display: inline;
+    margin-right: 15px;
+}
+
+.prev-pg{
+    float: left;
+    margin: 25px 50px;
+}
+.previous-button {
+    background-color: #FF0000;
+    padding: 10px 30px;
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.previous-button:hover{
+    background-color: #800000;
+}
