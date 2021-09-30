@@ -133,7 +133,7 @@
     margin-bottom: 11px;
 }
 .box3{
-    width: 36%;
+    width: 60%;
     display: flex;
     flex-wrap: wrap;
     /* margin: 9px 166px; */
@@ -141,16 +141,17 @@
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 3px 10px rgb(0 0 0 / 40%);
-    left: 31%;
+    left: 20%;
     position: relative;
     justify-content: center;
 }
 .box2{
-    margin: 21px 65px;
+    margin: 21px 50px;
     background-color: white;
     border-radius: 5px;
     padding: 20px 20px;
-    margin-left: -33px;
+    text-align: left;
+    margin-left: -38px;
 }
 .orderPrice{
     margin-bottom: 30px;
@@ -214,10 +215,10 @@
 }
 
 .order-buttons{
-    margin-top: 30px;
-    margin-bottom: 30px;
-    margin-left: 465px;
-    margin-right: 452px;
+    display: block;
+    margin-top: 20px;
+    margin-left: 270px;
+    margin-right: 270px;
 }
 
 .orderButtons{
@@ -227,7 +228,7 @@
 
 .a8{
     float: left;
-    margin-left: 40px;
+    margin-left: 150px;
     background-color: red;
     padding: 10px 20px;
     border-radius: 5px;
@@ -245,7 +246,7 @@
 
 .a9{
     float: right;
-    margin-right: 40px;
+    /* margin-right: 150px; */
     background-color: green;
     padding: 10px 20px;
     border-radius: 5px;
@@ -429,7 +430,7 @@
         font-size: 13px;
     }
     .box3 {
-        width: 60%;
+        width: 80%;
         display: flex;
         flex-wrap: wrap;
         /* margin: 9px 166px; */
@@ -437,7 +438,7 @@
         background-color: white;
         border-radius: 5px;
         box-shadow: 0 3px 10px rgb(0 0 0 / 40%);
-        left: 20%;
+        left: 10%;
         position: relative;
         font-size: smaller;
     }
@@ -453,25 +454,50 @@
         float: right;
         color: #000000;
         position: relative;
-        left: -34%;
+        /* left: -34%; */
         transform: translate(95%, 4%);
     }
 
-    .order-buttons{
-        margin-left: 151px;
-        margin-right: 112px;
+    /* .order-buttons{
+        display: block;
+        margin-top: 30px;
+    } */
+
+    .order-buttons a{
+        font-size: 12px;
     }
+
+    /* .orderButtons{
+        padding: 3px 5px;
+    } */
 
     .changebutton{
         padding: 1px 3px;
     }
 
     .box2{
-        margin: 20px 65px;
+        margin: 20px 100px;
         background-color: white;
         border-radius: 5px;
         padding: 20px 20px;
         margin-left: 3px;
         font-size: smaller;
+        text-align: left;
+    }
+
+    .order-buttons{
+        display: block;
+        margin-top: 20px;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    
+    .orderButtons{
+        display: inline;
+        padding: 4px 12px;
+    }
+
+    #cancelBtn{
+        padding: 4px 4px;
     }
 }
