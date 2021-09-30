@@ -161,8 +161,8 @@
 
 </main>
 
-<div style="min-height: 110px;"></div>
-
+<div style="min-height: 3%;"></div>
+                </body>
 <?php 
     include 'userFooter.php';
 ?>
