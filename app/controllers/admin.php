@@ -9,5 +9,5 @@ class Admin extends Controller{
     function manageEmployee(){
         $this->view->render('adminManageEmployee');
     }
-
+   
 }

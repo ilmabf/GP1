@@ -1,0 +1,249 @@
+.stl-orders-h1{
+    color: #085394;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.order-box{
+    margin: 35px 80px;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); 
+    text-align: center; 
+}
+.sub-box{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    text-align: left;
+    padding: 20px 20px;
+}
+.a1{
+    display: inline;
+    margin-right: 15px;
+}
+.view-location{
+    background-color: #085394;
+    padding: 10px 30px;
+    font-size: 20px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.next-pg{
+    float: right;
+    margin: 10px 20px;
+}
+
+.next-button{
+    background-color: #00FF00 ;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 3px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.next-button:hover{
+    background-color: #008000 ;
+}
+
+.prev-pg{
+    float: left;
+    margin: 10px 20px;
+}
+.previous-button {
+    background-color: #FF0000;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 3px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.previous-button:hover{
+    background-color: #800000;
+}
+.uploadImage{
+   
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    text-align: center; 
+    padding: 5px 5px;
+  
+}
+.uploadImagesLink{
+    background-color: #808080;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 3px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.heading{
+    color: #085394;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: larger;
+}
+
+.order-box3{
+    margin: 35px 80px;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); 
+    text-align: center; 
+}
+
+/* .order-subBox{
+    display: inline-block;
+    margin: 0 auto;
+    padding: 3px;
+} */
+
+.orderID{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.orderCustomer{
+    margin-bottom: 10px;
+}
+.orderDate{
+    margin-bottom: 10px;
+}
+
+.orderTime {
+    margin-bottom: 10px;
+}
+
+
+.orderVehicle{
+    margin-bottom: 10px;
+}
+
+
+
+.orderServiceType{
+    margin-bottom: 10px;
+}
+
+
+
+.orderLocation{
+    margin-bottom: 10px;
+    
+}
+.orderLocation h3 a{
+   text-decoration: underline;
+   color: #085394;
+}
+
+
+.orderPrice{
+    margin-bottom: 10px;
+}
+
+.orderPrice h3 a{
+   text-decoration: underline;
+   color: #085394;
+}
+
+.a1{
+    display: inline;
+    margin-right: 15px;
+}
+
+.a2{
+    display: inline;
+    margin-right: 15px;
+}
+
+.a3{
+    display: inline;
+    margin-right: 15px;
+}
+
+.a4{
+    display: inline;
+    margin-right: 15px;
+}
+
+.a5{
+    display: inline;
+    margin-right: 15px;
+}
+
+.a6{
+    display: inline;
+    margin-right: 15px;
+}
+
+.a7{
+    display: inline;
+    margin-right: 15px;
+}
+
+.p1{
+    color: #085394;
+}
+
+.reservation-buttons{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.reservationButtons{
+    display: inline;
+    margin-bottom: 30px;
+}
+
+.a8{
+    float: left;
+    margin-left: 40px;
+    background-color: red;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.a8:hover{
+    background-color: darkred;
+}
+
+
+.a10{
+    float: right;
+    margin-right: 40px;
+    background-color: red;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.a10:hover{
+    background-color: darkred;
+}
+
+  @media only screen and (min-width: 770px) {
+      .order-box{
+          display: flex;
+          flex-wrap: nowrap;
+      }
+
+      .viewCompleteOrder{
+          margin: 10px 20px;
+          text-align: center;
+      }
+  }
+
+  @media only screen and (max-width: 770px) {
+        .a8, .a10{
+            width: 120px;
+            padding: 5px 10px;
+            font-size: 5px;
+        }   
+}

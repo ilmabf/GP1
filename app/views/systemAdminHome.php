@@ -17,7 +17,7 @@
             </div>
 
             <div class="adminHome-block2">
-                <h3><a href="adminManageEquipments.php">Manage Equipments</a></h3>
+                <h3><a href="/admin/manageEquipment">Manage Equipments</a></h3>
             </div>
             
             <div class="adminHome-block3">

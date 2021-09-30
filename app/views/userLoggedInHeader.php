@@ -31,6 +31,9 @@
     <link rel="stylesheet" href="/public/css/customerGiveReview.css">
     <link rel="stylesheet" href="/public/css/userReviews.css">
     <link rel="stylesheet" href="/public/css/customerAccount.css">
+    <link rel="stylesheet" href="/public/css/stlViewAssignedOrders.css">
+    <link rel="stylesheet" href="/public/css/stlViewDashboard.css">
+    <link rel="stylesheet" href="/public/css/stlOrderDetails.css">
     <title>WandiWash</title>
 </head>
 <body>
