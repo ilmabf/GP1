@@ -21,7 +21,7 @@
             </div>
             
             <div class="adminHome-block3">
-                <h3 class="admin-manage-services-heading"><a href="adminManageServices.php">Manage Services</a></h3>
+                <h3 class="admin-manage-services-heading"><a href="/admin/manageService">Manage Services</a></h3>
                 <!-- <div class="adminHome-sub-block3">
                     <p><a href="adminServicetype.php">Service Type</a></p>
                 </div>
