@@ -1,0 +1,32 @@
+.reschedule{
+    margin-left: 161px;
+}
+
+.a13{
+    float: left;
+    margin-left: 0px;
+    background-color: #085394;
+    padding: 6px 9px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.a13:hover{
+    background-color: #05325a;
+}
+
+.addVehicleform ul{
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+    list-style: none;
+}
+@media only screen and (max-width: 770px) {
+
+    .reschedule{
+        margin-left: 20px;
+    }
+    .reschedule h3{
+        font-size: 15px;
+    }
+}

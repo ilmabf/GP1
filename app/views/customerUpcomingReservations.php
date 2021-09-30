@@ -5,7 +5,7 @@
 <div style="min-height: 110px;"></div>
 
 <div class="heading">
-    <h2>Completed Reservations</h2>
+    <h2 >Upcoming Reservations</h2>
 </div>
 
 <div class="reservation-date">
@@ -17,46 +17,9 @@
 
     </div>
 </div>
-
+<!-- <h2  style="text-align: center; color:#085394;">My Reservations</h3> -->
 <div class="upcomingOrders">
-    <div class="sub-box1">
-        <div class="order">
-            <div class="orderitem">Order ID</div>
-            <div class="orderitem1">AAAA</div>
-        </div>
-        <div class="order">
-            <div class="orderitem">Vecicle No</div>
-            <div class="orderitem1">AD - 2234</div>
-        </div>
-        <div class="order">
-            <div class="orderitem">Time</div>
-            <div class="orderitem1">8 am - 10 am</div>
-        </div>
-        <div class="orderView">
-            <p class="viewLink"><a href="/manager/viewOrder">View order</a></p>
-            <p class="team">Completed by Service Team A</p>
-        </div>
-    </div>
-
-    <div class="sub-box1">
-        <div class="order">
-            <div class="orderitem">Order ID</div>
-            <div class="orderitem1">BBBB</div>
-        </div>
-        <div class="order">
-            <div class="orderitem">Vecicle No</div>
-            <div class="orderitem1">XZ - 2874</div>
-        </div>
-        <div class="order">
-            <div class="orderitem">Time</div>
-            <div class="orderitem1">10 am - 12 pm</div>
-        </div>
-        <div class="orderView">
-            <p class="viewLink"><a href="/manager/viewOrder">View order</a></p>
-            <p class="team">Completed by Service Team B</p>
-        </div>
-    </div>
-
+    
     <div class="sub-box1">
         <div class="order">
             <div class="orderitem">Order ID</div>
@@ -64,17 +27,54 @@
         </div>
         <div class="order">
             <div class="orderitem">Vecicle No</div>
-            <div class="orderitem1">AD - 2234</div>
+            <p class="orderitem1">AD - 2234</p>
         </div>
         <div class="order">
             <div class="orderitem">Time</div>
-            <div class="orderitem1">8 am - 10 am</div>
+            <p class="orderitem1">8 am - 10 am</p>
         </div>
         <div class="orderView">
-            <p class="viewLink"><a href="/manager/viewOrder">View order</a></p>
-            <p class="team">Completed by Service Team A</p>
+            <p class="viewLink"><a href="/booking/upcomingOrder">View order</a></p>
+            <p class="team2">A service team has been assigned for you</p>
         </div>
     </div>
+
+    <div class="sub-box1">
+        <div class="order">
+            <div class="orderitem">Order ID</div>
+            <p class="orderitem1">BBBB</p>
+        </div>
+        <div class="order">
+            <div class="orderitem">Vecicle No</div>
+            <p class="orderitem1">XZ - 2874</p>
+        </div>
+        <div class="order">
+            <div class="orderitem">Time</div>
+            <p class="orderitem1">10 am - 12 pm</p>
+        </div>
+        <div class="orderView">
+            <p class="viewLink"><a href="/booking/viewUpcomingOrder">View order</a></p>
+        </div>
+    </div>
+
+    <div class="sub-box1">
+        <div class="order">
+            <div class="orderitem">Order ID</div>
+            <p class="orderitem1">CCCC</p>
+        </div>
+        <div class="order">
+            <div class="orderitem">Vecicle No</div>
+            <p class="orderitem1">AR - 1142</p>
+        </div>
+        <div class="order">
+            <div class="orderitem">Time</div>
+            <p class="orderitem1">2 pm - 4 pm</p>
+        </div>
+        <div class="orderView">
+            <p class="viewLink"><a href="/booking/viewUpcomingOrder">View order</a></p>
+        </div>
+    </div>
+
 </div>
 
 <div style="min-height: 110px;"></div>

@@ -5,78 +5,78 @@
 <div style="min-height: 110px;"></div>
 
 <div class="heading">
-    <h2>Completed Order</h2>
+<h2>Order -  <span style="color:black;">BBBB</span></h2>
 </div>
 
-<div class="order-box3">
+<div class="upcoming">
     <!-- <div class="order-subBox"> -->
-        <div class="orderID">
+        <!-- <div class="orderID">
             <h3 class="a1 p1">Order ID</h3>
             <p class="a1">BBBB</p>
-        </div>
+        </div> -->
 
-        <div class="viewCompleteOrder">
+        <div class="boxx">
 
-            <div class="orderDate">
-                <h3 class="a2 p1">Customer Name</h3>
-                <p class="a2">Kamal Silva</p>
+            <div class="order">
+                <div class="orderitem">Customer Name</div>
+                <div class="orderitem1">Kamal Silva</div>
             </div>
-            <div class="orderPrice">
-                <h3 class="a7 p1">Date</h3>
-                <p class="a7">2021/10/03</p>
+            <div class="order">
+                <div class="orderitem">Date</div>
+                <div class="orderitem1">2021/10/03</div>
             </div>
-            <div class="orderPrice">
-                <h3 class="a7 p1">Time</h3>
-                <p class="a7">12 pm - 2 pm</p>
+            <div class="order">
+                <div class="orderitem">Time</div>
+                <div class="orderitem1">12 pm - 2 pm</div>
             </div>
-            <div class="orderTime">
-                <h3 class="a3 p1">Contact No</h3>
-                <p class="a3">0769012345</p>
-            </div>
-        </div>
-
-        <div class="viewCompleteOrder">
-            <div class="orderVehicle">
-                <h3 class="a4 p1">Vehicle No</h3>
-                <p class="a4">CS - 1528</p>
-            </div>
-            <div class="orderServiceType">
-                <h3 class="a5 p1">Model</h3>
-                <p class="a5">Premio</p>
-            </div>
-            <div class="orderLocation">
-                <h3 class="a6 p1">Vehicle Type</h3>
-                <p class="a6">Sedan</p>
-            </div>
-            <div class="orderPrice">
-                <h3 class="a7 p1">Color</h3>
-                <p class="a7">Red</p>
+            <div class="order">
+                <div class="orderitem">Contact No</div>
+                <div class="orderitem1">0769012345</div>
             </div>
         </div>
 
-        <div class="viewCompleteOrder">
-        <div class="orderPrice">
-            <h3 class="a7 p1">Service Type</h3>
-            <p class="a7">Sanitization</p>
+        <div class="boxx">
+            <div class="order">
+                <div class="orderitem">Vehicle No</div>
+                <p class="orderitem1">CS - 1528</p>
+            </div>
+            <div class="order">
+                <div class="orderitem">Model</div>
+                <p class="orderitem1">Premio</p>
+            </div>
+            <div class="order">
+                <div class="orderitem">Vehicle Type</div>
+                <p class="orderitem1">Sedan</p>
+            </div>
+            <div class="order">
+                <div class="orderitem">Color</div>
+                <p class="orderitem1">Red</p>
+            </div>
         </div>
-        <div class="orderPrice">
-            <h3 class="a7 p1">Price</h3>
-            <p class="a7">500</p>
+
+        <div class="boxx">
+        <div class="order">
+            <div class="orderitem">Service Type</div>
+            <p class="orderitem1">Sanitization</p>
         </div>
-        <div class="orderPrice">
-            <h3 class="a7 p1">Done by</h3>
-            <p class="a7">Team A</p></p>
+        <div class="order">
+            <div class="orderitem">Price</div>
+            <p class="orderitem1">500</p>
         </div>
-        <div class="orderPrice">
-            <h3 class="a7"><a href="">Location</a></h3>
+        <div class="order">
+            <div class="orderitem">Done by</div>
+            <p class="orderitem1">Team A</p></p>
+        </div>
+        <div class="order">
+            <div class="orderitem"><a href="">View Location</a></div>
         </div>
         </div>
     <!-- </div> -->
 </div>
 
-<div class="service-feedback">
+<div class="service-team">
     <div class="rate1">
-        <h3>Rate of Service Team</h3>
+        <h3>Rating of the service</h3>
     </div>
     <div class="rate1 stars1">
         <i class="rating__star far fa-star"></i>
@@ -95,9 +95,11 @@
 
     <div class="viewPhotos vp1">
         <h3>Before Service</h3>
+        <img src="/public/images/ImageIcon.png" style = "width:20%;"></img>
     </div>
     <div class="viewPhotos vp2">
         <h3>After Service</h3>
+        <img src="/public/images/ImageIcon.png" style = "width:20%;"></img>
     </div>
 
 </div>
