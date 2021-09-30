@@ -60,7 +60,7 @@
                 <p class="orderitem1">1000</p>
             </div>
             <div class="order">
-                <div class="orderitem"><a href="">Location</a></div>
+                <div class="orderitem"><a href="">View Location</a></div>
             </div>
         </div>
     <!-- </div> -->

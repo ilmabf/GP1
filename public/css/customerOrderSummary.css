@@ -128,11 +128,56 @@
     font-weight: 700;
 }
 
+.res{
+    margin-top: 8px;
+    margin-bottom: 11px;
+}
+.box3{
+    width: 36%;
+    display: flex;
+    flex-wrap: wrap;
+    /* margin: 9px 166px; */
+    padding: 10px 0px 0px 0px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 40%);
+    left: 31%;
+    position: relative;
+    justify-content: center;
+}
+.box2{
+    margin: 21px 65px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px 20px;
+    margin-left: -33px;
+}
 .orderPrice{
     margin-bottom: 30px;
     text-align: center;
 }
 
+.orderitemx{
+    float: right;
+    color: #000000;
+    position: relative;
+    left: -34%;
+    transform: translate(95%, 4%);
+}
+.orderitem2{
+    color: #000000;
+    position: relative;
+    left: 128%;
+    transform: translate(-14%, -81%);
+}
+.changebutton{
+    margin-left: 0px;
+    background-color: #085394;
+    padding: 6px 9px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+}
 .a1{
     display: inline;
     margin-right: 15px;
@@ -171,6 +216,8 @@
 .order-buttons{
     margin-top: 30px;
     margin-bottom: 30px;
+    margin-left: 465px;
+    margin-right: 452px;
 }
 
 .orderButtons{
@@ -380,5 +427,51 @@
 
     .p1{
         font-size: 13px;
+    }
+    .box3 {
+        width: 60%;
+        display: flex;
+        flex-wrap: wrap;
+        /* margin: 9px 166px; */
+        padding: 10px 0px 0px 0px;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 40%);
+        left: 20%;
+        position: relative;
+        font-size: smaller;
+    }
+
+    .orderitem2 {
+        color: #000000;
+        position: relative;
+        left: 150%;
+        transform: translate(-14%, -81%);
+    }
+
+    .orderitemx {
+        float: right;
+        color: #000000;
+        position: relative;
+        left: -34%;
+        transform: translate(95%, 4%);
+    }
+
+    .order-buttons{
+        margin-left: 151px;
+        margin-right: 112px;
+    }
+
+    .changebutton{
+        padding: 1px 3px;
+    }
+
+    .box2{
+        margin: 20px 65px;
+        background-color: white;
+        border-radius: 5px;
+        padding: 20px 20px;
+        margin-left: 3px;
+        font-size: smaller;
     }
 }
