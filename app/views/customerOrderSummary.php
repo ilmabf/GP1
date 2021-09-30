@@ -58,7 +58,7 @@
 </div>
 
 <div class="order-buttons">
-    <button class="orderButtons a8" id="cancelBtn"><a>Cancel Order</a></button>
+    <button class="orderButtons a8 a81" id="cancelBtn"><a>Cancel Order</a></button>
     <button class="orderButtons a9" id="confirmBtn"><a>Confirm Order</a></button>
 </div>
 
@@ -89,7 +89,7 @@
 </div>
 
 <script src="/public/js/customerOrderSummary.js"></script> 
-
+<div style="min-height: 110px;"></div>
 
 <?php
     include 'userFooter.php';

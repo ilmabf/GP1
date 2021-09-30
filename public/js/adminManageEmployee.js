@@ -1,5 +1,5 @@
 var arrHead = new Array();	// array for header.
-    arrHead = ['', 'First Name', 'Last Name', 'Contact Number', 'Email', 'Date Enrolled', 'Salary', 'NIC No', 'Team', 'STL_ID'];
+    arrHead = ['', 'First Name', 'Last Name', 'Contact Number', 'Email', 'Date Enrolled', 'Salary', 'NIC No', 'Team', 'Leader'];
 
     // first create TABLE structure with the headers. 
     function createTable() {
