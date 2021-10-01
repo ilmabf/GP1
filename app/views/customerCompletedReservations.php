@@ -5,7 +5,7 @@
 <div style="min-height: 110px;"></div>
 
 <div class="heading">
-    <h2 >Upcoming Reservations</h2>
+    <h2 >Past Reservations</h2>
 </div>
 
 <div class="reservation-date">
@@ -34,8 +34,7 @@
             <p class="orderitem1">8 am - 10 am</p>
         </div>
         <div class="orderView">
-            <p class="viewLink"><a href="/booking/CompletedOrder">View order</a></p>
-            <p class="team2">A service team has been assigned for you</p>
+            <p class="viewLink"><a href="/booking/CompletedOrder">View Invoice</a></p>
         </div>
     </div>
 
@@ -53,7 +52,7 @@
             <p class="orderitem1">10 am - 12 pm</p>
         </div>
         <div class="orderView">
-            <p class="viewLink"><a href="/booking/CompletedOrder">View order</a></p>
+            <p class="viewLink"><a href="/booking/CompletedOrder">View Invoice</a></p>
         </div>
     </div>
 
@@ -71,7 +70,7 @@
             <p class="orderitem1">2 pm - 4 pm</p>
         </div>
         <div class="orderView">
-            <p class="viewLink"><a href="/booking/CompletedOrder">View order</a></p>
+            <p class="viewLink"><a href="/booking/CompletedOrder">View Invoice</a></p>
         </div>
     </div>
 

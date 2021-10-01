@@ -21,7 +21,7 @@
 <div style="min-height: 110px;"></div>
 
 <div class="heading">
-    <h2>Completed Order</h2>
+    <h2>Invoice - <span style = "color:black;">1257</span></h2>
 </div>
 
 <div  id = "upcoming">
@@ -117,8 +117,6 @@
 
     
 </div>
-
-<button class="reservationButtons a10" id="cancelAssignBtn" style = "color:white; background-color:green" onclick="openstlForm()"><a>View Invoice</a></button>
 
 <div style="min-height: 110px;"></div>
 
