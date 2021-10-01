@@ -7,8 +7,8 @@
 
   
 
-    <div class="prev-pg">
-        <button class="previous-button"><a href="/stl/stlHome" style="color: white;">Back</a></button>
+    <div class="previous-pg">
+        <button class="back-button"><a href="/stl/stlHome" style="color: white;">Back</a></button>
     </div>
 
 

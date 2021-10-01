@@ -4,18 +4,18 @@
     text-align: center;
     margin-bottom: 20px;
 }
-.prev-pg{
+.previous-pg{
     float: left;
-    margin: 25px 50px;
+    margin: 10px 20px;
 }
-.previous-button {
+.back-button {
     background-color: #FF0000;
-    padding: 10px 30px;
+    padding: 5px 10px;
     color: white;
-    border-radius: 5px;
-    font-size: 20px;
+    border-radius: 3px;
+    font-size: 15px;
     cursor: pointer;
 }
-.previous-button:hover{
+.back-button:hover{
     background-color: #800000;
 }
