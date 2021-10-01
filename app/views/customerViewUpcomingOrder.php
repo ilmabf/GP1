@@ -34,7 +34,7 @@
 <div style="min-height: 110px;"></div>
 
 <div class="heading">
-    <h2>Upcoming Order -  <span style="color:black;">AAAA</span></h2>
+    <h2>Upcoming Order</h2>
 </div>
 
 <div  id = "upcoming">

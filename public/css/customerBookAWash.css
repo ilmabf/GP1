@@ -108,7 +108,7 @@
 
 .wash-type{
     text-align: center;
-    margin: 35px 40px;
+    margin: 35px 77px;
     padding: 10px 20px;
     background-color: white;
     border-radius: 5px;
@@ -250,6 +250,9 @@
     }
 
     .price{
+        margin: 35px 50px;
+    }
+    .select-time{
         margin: 35px 50px;
     }
 }

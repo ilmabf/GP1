@@ -22,12 +22,12 @@
     
     <div class="sub-box1">
         <div class="order">
-            <div class="orderitem">Order ID</div>
-            <p class="orderitem1">AAAA</p>
+            <div class="orderitem">Vehicle No</div>
+            <p class="orderitem1">AD - 2234</p>
         </div>
         <div class="order">
-            <div class="orderitem">Vecicle No</div>
-            <p class="orderitem1">AD - 2234</p>
+            <div class="orderitem">Date</div>
+            <p class="orderitem1">2021/10/18</p>
         </div>
         <div class="order">
             <div class="orderitem">Time</div>
@@ -41,37 +41,37 @@
 
     <div class="sub-box1">
         <div class="order">
-            <div class="orderitem">Order ID</div>
-            <p class="orderitem1">BBBB</p>
+            <div class="orderitem">Vehicle No</div>
+            <p class="orderitem1">AD - 2234</p>
         </div>
         <div class="order">
-            <div class="orderitem">Vecicle No</div>
-            <p class="orderitem1">XZ - 2874</p>
+            <div class="orderitem">Date</div>
+            <p class="orderitem1">2021/10/30</p>
         </div>
         <div class="order">
             <div class="orderitem">Time</div>
             <p class="orderitem1">10 am - 12 pm</p>
         </div>
         <div class="orderView">
-            <p class="viewLink"><a href="/booking/viewUpcomingOrder">View order</a></p>
+            <p class="viewLink"><a href="/booking/upcomingOrder">View order</a></p>
         </div>
     </div>
 
     <div class="sub-box1">
         <div class="order">
-            <div class="orderitem">Order ID</div>
-            <p class="orderitem1">CCCC</p>
+            <div class="orderitem">Vehicle No</div>
+            <p class="orderitem1">AD - 2234</p>
         </div>
         <div class="order">
-            <div class="orderitem">Vecicle No</div>
-            <p class="orderitem1">AR - 1142</p>
+            <div class="orderitem">Date</div>
+            <p class="orderitem1">2021/11/18</p>
         </div>
         <div class="order">
             <div class="orderitem">Time</div>
             <p class="orderitem1">2 pm - 4 pm</p>
         </div>
         <div class="orderView">
-            <p class="viewLink"><a href="/booking/viewUpcomingOrder">View order</a></p>
+            <p class="viewLink"><a href="/booking/upcomingOrder">View order</a></p>
         </div>
     </div>
 
