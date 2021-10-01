@@ -1,0 +1,25 @@
+.stl-dashboard-h1{
+    color: #085394;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.stlChartsR1, .stlChartsR2{
+    text-align: center;
+ }
+   
+ .stlChart1, .stlChart2{
+     width: 40%;
+     margin: auto 20px;
+     display: inline-block;
+ } 
+ 
+ .stlChart3, .stlChart4{
+     text-align: center;
+     width: 40%;
+     display: inline-block;
+     margin: auto 20px;
+ }
+

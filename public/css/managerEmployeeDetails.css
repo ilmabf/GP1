@@ -36,6 +36,49 @@
     border: 2px outset #085394;
 }
 
+
+.Table-search {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    align-items: center;
+}
+
+.table-wrapper {
+    overflow: auto;
+    max-width: 100%;
+}
+
+tr {
+    border-bottom: 1px solid;
+}
+
+th {
+    color: #085394;
+    /* white-space: nowrap; */
+    cursor: pointer;
+    border: solid 1px #085394;
+}
+
+th, td {
+    border: solid 1px #085394;
+    text-align: left;
+    padding: 0.5em 1em;
+    max-width: fit-content;
+}
+
+input[type=search] {
+    border: 1px solid;
+    font-size: initial;
+    margin-bottom: 1em;
+    padding: 0.25em;
+}
+
+.hidden {
+    display: none;
+}
+
+
 @media only screen and (max-width: 770px){
 
     .heading{

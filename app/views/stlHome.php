@@ -13,11 +13,11 @@
         <div class="stl-home-main-flex">
 
             <div class="stlHome-block1">
-                <h3><a href="stlAssignedReservations.php">Assigned Reservations</a></h3>
+                <h3><a href="/stl/viewAssignedOrders">Assigned Reservations</a></h3>
             </div>
 
             <div class="stlHome-block2">
-                <h3><a href="stlDashboard.php">Service Team Leader Dashboard</a></h3>
+                <h3><a href="/stl/viewSTLDashboard">Service Team Leader Dashboard</a></h3>
             </div>
 
         </div>

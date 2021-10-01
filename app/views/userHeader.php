@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="/public/css/customerBookAWash3.css">
     <link rel="stylesheet" href="/public/css/customerOrderSummary.css">
     <link rel="stylesheet" href="/public/css/userReviews.css">
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>WandiWash</title>
 </head>
