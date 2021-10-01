@@ -78,7 +78,7 @@ var arrHead = new Array();	// array for header.
                     arrValues.push("'" + element.childNodes[0].value + "'");
                 }
             }
-        }
+       }
         
         // The final output.
         document.getElementById('output').innerHTML = arrValues;

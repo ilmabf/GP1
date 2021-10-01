@@ -8,7 +8,7 @@
     <div style="min-height: 110px;"></div>
     <h2 class="manageEmployee-heading">Manage Employee</h2> 
     <p>
-    <input type="button" id="addRow" value="Add Employee" onclick="addRow()" />
+    <input type="button" id="addRow" value="Add Employee" onclick="addRow(); this.onclick=null;" />
     </p>
     <!-- <form action=""> -->
     <div id="cont"></div>  <!-- the container to add the TABLE -->
@@ -60,8 +60,6 @@
     </div>
 
 </div>
-
-
 
 <div class="Table-search">
   <!-- <label>
