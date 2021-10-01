@@ -4,18 +4,22 @@
     text-align: center;
     margin-bottom: 20px;
 }
-.previous-pg{
-    float: left;
-    margin: 10px 20px;
-}
-.back-button {
-    background-color: #FF0000;
-    padding: 5px 10px;
-    color: white;
-    border-radius: 3px;
-    font-size: 15px;
-    cursor: pointer;
-}
-.back-button:hover{
-    background-color: #800000;
-}
+
+
+.stlChartsR1, .stlChartsR2{
+    text-align: center;
+ }
+   
+ .stlChart1, .stlChart2{
+     width: 40%;
+     margin: auto 20px;
+     display: inline-block;
+ } 
+ 
+ .stlChart3, .stlChart4{
+     text-align: center;
+     width: 40%;
+     display: inline-block;
+     margin: auto 20px;
+ }
+

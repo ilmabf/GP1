@@ -6,5 +6,15 @@
 <div style="min-height: 110px;"></div>
 
 <div class="heading">
-    <h2>Manager Dashboard</h2>
+    <h2>Dashboard</h2>
+</div>
+
+<div class="managerChartsR1">
+  <img src="/public/images/ManagerChart1.png" class="managerChart1">
+  <img src="/public/images/ManagerChart2.png" class="managerChart2">
+</div>
+
+<div class="managerChartsR2">
+    <img src="/public/images/ManagerChart3.png" class="managerChart3">
+    <img src="/public/images/ManagerChart4.png" class="managerChart4">
 </div>
