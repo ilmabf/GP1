@@ -34,16 +34,13 @@
     <link rel="stylesheet" href="/public/css/customerGiveReview.css">
     <link rel="stylesheet" href="/public/css/userReviews.css">
     <link rel="stylesheet" href="/public/css/customerAccount.css">
-<<<<<<< HEAD
     <link rel="stylesheet" href="/public/css/stlViewAssignedOrders.css">
     <link rel="stylesheet" href="/public/css/stlViewDashboard.css">
     <link rel="stylesheet" href="/public/css/stlOrderDetails.css">
-=======
     <link rel="stylesheet" href="/public/css/adminManageService.css">
     <link rel="stylesheet" href="/public/css/customerViewUpcomingOrder.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
->>>>>>> 69070d4877a3aed7e97625db61962db7e10f0cce
     <title>WandiWash</title>
 </head>
 <body>
