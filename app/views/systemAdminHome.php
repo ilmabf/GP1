@@ -1,12 +1,13 @@
 <!-- <main> -->
-
+<div class="bgImage" style="height: 100%; max-width:100%;">
 <?php
     include 'userLoggedInHeader.php';
 ?>
+
 <div style="min-height: 110px;"></div>
 
 <div>
-    <h1 class="admin-home-h1">System Admin Home</h1>
+    <h1 class="admin-home-h1">Home</h1>
 
     <div class="admin-home-main">
 
@@ -44,3 +45,4 @@
 
 <!-- </main> -->
 
+</div>

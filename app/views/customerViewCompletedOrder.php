@@ -1,7 +1,8 @@
+
 <?php 
     include 'userLoggedInHeader.php';
 ?>
-
+<div class="bgImage">
 <div class="addVehicleform" id = "stldetails">
                 <div class="forma">
                     <div class="loguser-icon"></div>

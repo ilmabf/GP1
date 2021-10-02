@@ -292,3 +292,14 @@ section .home-main-section1-button a{
     
 
 } 
+
+
+
+.bgImage { 
+    background: url(/public/images/car_desktop.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    
+}

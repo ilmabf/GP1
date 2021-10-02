@@ -1,3 +1,5 @@
+<div class="bgImage">
+
 <?php 
     include 'userHeader.php';
 ?>
@@ -19,7 +21,7 @@
                         <br>
                         <input class="input-box" type="text" name="username" autofocus placeholder="Username" required>
                         <br>
-                        <p style="font-size: 15px; padding-bottom: 5px; color:red;"><?php 
+                        <p style="font-size: 11px; padding-bottom: 5px; color:red; max-width 200px;"><?php 
                                 if($_SESSION['flag'] == 1){
                                     echo($_SESSION['error']);
                                 }
@@ -28,7 +30,7 @@
                  
                         <input class="input-box" type="email" name="email" autofocus placeholder="Email" required>
                         <br>
-                        <p style="font-size: 15px; padding-bottom: 5px; color:red;"><?php 
+                        <p style="font-size: 11px; padding-bottom: 5px; color:red; max-width 200px;"><?php 
                                 if($_SESSION['flag'] == 2){
                                     echo($_SESSION['error']);
                                 }
@@ -37,7 +39,7 @@
                         </p>
                         <input class="input-box" type="tel" name="mobilenumber" autofocus placeholder="Mobile No" pattern="[0-9]{10}" required>
                         <p class="form-input-error-msg" style="font-size: 10px; padding-bottom: 5px;"><b>Format: 07****</b></p>
-                        <p style="font-size: 15px; padding-bottom: 5px; color:red;"><?php 
+                        <p style="font-size: 11px; padding-bottom: 5px; color:red; max-width 200px;"><?php 
                                 if($_SESSION['flag'] == 3){
                                     echo($_SESSION['error']);
                                 }
@@ -82,6 +84,8 @@
     
         <script src="/public/js/customerSignup.js"></script>   
 </main>
+
+<div style="min-height: 110px;"></div>
 
 
 

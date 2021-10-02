@@ -2,10 +2,14 @@
     include 'userLoggedInHeader.php';
 ?>
 
+
+<div class="bgImage">
 <div style="min-height: 110px;"></div>
 
+
+
 <div class="heading">
-    <h2 >Upcoming Reservations</h2>
+    <h2>Upcoming Reservations</h2>
 </div>
 
 <div class="reservation-date">
@@ -77,4 +81,7 @@
 
 </div>
 
+
+
 <div style="min-height: 110px;"></div>
+</div>

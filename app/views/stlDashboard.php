@@ -3,7 +3,6 @@
 ?>
 <div style="min-height: 110px;"></div>
 <div>
-
     <h1 class="stl-dashboard-h1">Dashboard</h1>
 </div>
 

@@ -1,6 +1,9 @@
+
 <?php
     include 'userLoggedInHeader.php';
 ?>
+
+<div class="bgImage">
 <div style="min-height: 110px;"></div>
 <div>
     <h1 class="stl-orders-h1">Order Details</h1>

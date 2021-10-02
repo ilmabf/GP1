@@ -12,13 +12,13 @@ var span = document.getElementsByClassName("close-signupVerifyMessage")[0];
 
 myInput.onfocus = function() {
   document.getElementById("pwd-validate-message").style.display = "block";
-  document.getElementById("link-to-go-login").style.top = "94%";
+  document.getElementById("link-to-go-login").style.top = "97%";
 }
 
 
 myInput.onblur = function() {
   document.getElementById("pwd-validate-message").style.display = "none";
-  document.getElementById("link-to-go-login").style.top = "88%";
+  document.getElementById("link-to-go-login").style.top = "91%";
 }
 
 

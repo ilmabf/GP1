@@ -1,5 +1,5 @@
 <!-- <main> -->
-
+<div class="bgImage" style="height: 100%;">
 <?php
     include 'userLoggedInHeader.php';
 ?>
