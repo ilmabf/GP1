@@ -1,3 +1,5 @@
+<div class="bgImage">
+
 <?php     
 
     if(isset($_SESSION['login'])){
@@ -8,6 +10,8 @@
     }
     
 ?>
+
+
 <main>
 
 <div id="container">

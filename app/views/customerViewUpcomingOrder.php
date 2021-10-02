@@ -1,7 +1,8 @@
+
 <?php 
     include 'userLoggedInHeader.php';
 ?>
-
+<div class="bgImage">
 <div class="addVehicleform" id = "stldetails">
                 <div class="forma">
                     <div class="loguser-icon"></div>
@@ -105,8 +106,8 @@
 
 <div class="reservation-buttons">
 <div class = "reschedule">
-        <h3>Do you want to reschedule?</h3>
-                <button class="reservationButtons a13" id="cancelAssignBtn"><a href="/booking/reschedule" style = "color:white;">Click here</a></button></div>
+        <h3 style="color:black">Do you want to reschedule?</h3>
+                <button class="reservationButtons a13" id="cancelAssignBtn"><a href="/booking/reschedule" style = "color:white;">Click here to Reschedule</a></button></div>
         <button class="reservationButtons a10" id="cancelReservationBtn" onclick="opencancelForm()" ><a>Cancel Reservation</a></button>
 </div>
 

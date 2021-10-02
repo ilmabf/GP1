@@ -61,7 +61,7 @@ input:valid {
 .forget_pwd{
     width: 100%;
     position: absolute;
-    top: 74%;
+    top: 75%;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -74,12 +74,16 @@ input:valid {
     text-decoration: underline;
 }
 
+.errorDisplay{
+    text-align: left;
+}
+
 @media only screen and (max-width: 770px){
 
     .link-to-go-signup{
         width: 100%;
         position: absolute;
-        top: 77%;
+        top: 78%;
         margin-left: auto;
         margin-right: auto;
         text-align: center;

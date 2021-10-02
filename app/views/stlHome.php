@@ -1,12 +1,12 @@
 <!-- <main> -->
-
+<div class="bgImage" style="height: 100%;">
 <?php
     include 'userLoggedInHeader.php';
 ?>
 <div style="min-height: 110px;"></div>
 
 <div>
-    <h1 class="stl-home-h1">Service Team Leader Home</h1>
+    <h1 class="stl-home-h1">Home</h1>
 
     <div class="stl-home-main">
 

@@ -1,9 +1,12 @@
+
+
 <?php
     include 'userLoggedInHeader.php';
 ?>
+<div class="bgImage" style="height: 100%;">
 <div style="min-height: 110px;"></div>
 <div>
-    <h1 class="stl-dashboard-h1">Service Team Leader <br> Assigned Orders</br></h1>
+    <h1 class="stl-dashboard-h1">Assigned Orders</br></h1>
 
     <div class="stl-reservation-date">
         <h3>2021 / 10 / 18</h3>

@@ -1,3 +1,5 @@
+<div class="bgImage">
+
 <?php 
     include 'userHeader.php';
 ?>
@@ -17,7 +19,7 @@
                         <br>
                         <input class="input-box" type="password" name="pwd" autofocus placeholder="Password" required>
                         <br>
-                        <p style="font-size: 15px; padding-bottom: 5px; color:red;"><?php echo($_SESSION['error']);?></p>
+                        <p class="errorDisplay" style="font-size: 11px; padding-bottom: 5px; color:red; max-width: 200px;"><?php echo($_SESSION['error']);?></p>
                         <button class="input-box loggin-signup-button" type="submit" name="login">Login</button>
                     </form>
 

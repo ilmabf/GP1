@@ -1,3 +1,5 @@
+<div class="bgImage">
+
 <?php 
     include 'userLoggedInHeader.php';
 ?>
