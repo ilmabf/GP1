@@ -3,10 +3,13 @@
 <?php
     include 'userLoggedInHeader.php';
 ?>
-
+<body>
+    
+<div class="bgImage" style="height:100%">
 <div style="min-height: 110px;"></div>
 
 <div>
+
     <h1 class="manager-home-h1">Manager Home</h1>
 
     <div class="manager-home-main">
@@ -40,8 +43,9 @@
         </div>
 
     </div>
-
 </div>
-
+</body>
 <!-- </main> -->
+
+
 

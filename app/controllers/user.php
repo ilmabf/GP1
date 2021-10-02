@@ -165,7 +165,7 @@ class User extends Controller{
             }
         }
         else{
-            $_SESSION['error'] = 'The email and password <br> that you entered did not match <br> our records.';
+            $_SESSION['error'] = 'The email and password that you entered did not match our records.';
             $this->view->render('userLogin');
         }
     }

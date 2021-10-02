@@ -1,3 +1,4 @@
+<div class="bgImage">
 <?php 
   
     include 'userLoggedInHeader.php';
@@ -6,6 +7,7 @@
 ?>
 
 <main>
+
 
 <div class="addVehicleform" id = "vehicleForm">
                 <div class="forma">
@@ -161,7 +163,7 @@
 
 </main>
 
-<div style="min-height: 3%;"></div>
+<div style="min-height: 100px;"></div>
                 </body>
 <?php 
     include 'userFooter.php';
@@ -169,4 +171,5 @@
 
 
 <script src="/public/js/customerAccount.js"></script> 
-</html>
+</div>
+

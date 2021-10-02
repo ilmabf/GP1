@@ -1,5 +1,5 @@
 var arrHead = new Array();	// array for header.
-    arrHead = ['', 'First Name', 'Last Name', 'Contact Number', 'Email', 'Date Enrolled', 'Salary', 'NIC No', 'Team', 'Leader'];
+    arrHead = ['','First Name', 'Last Name', 'Contact Number', 'Email', 'Date Enrolled', 'Salary', 'NIC No', 'Team', 'Leader'];
 
     // first create TABLE structure with the headers. 
     function createTable() {
@@ -33,7 +33,7 @@ var arrHead = new Array();	// array for header.
                 // add a button in every new row in the first column.
                 var button = document.createElement('input');
 
-                //document.getElementsByTagName("input").required = true;
+                document.getElementsByTagName("input").required = true;
 
 
                 // set input attributes.
@@ -49,7 +49,54 @@ var arrHead = new Array();	// array for header.
             else {
                 // 2nd, 3rd and 4th column, will have textbox.
                 var ele = document.createElement('input');
-                ele.setAttribute('type', 'text');
+
+                if(c==1){
+                    ele.setAttribute('name', 'firstName');
+                    ele.setAttribute('type', 'text');
+                }
+
+                else if(c==2){
+                    ele.setAttribute('name', 'lastName');
+                    ele.setAttribute('type', 'text');
+                }
+
+                else if(c==3){
+                    ele.setAttribute('name', 'contactNumber');
+                    ele.setAttribute('type', 'text');
+                }
+
+                else if(c==4){
+                    ele.setAttribute('name', 'email');
+                    ele.setAttribute('type', 'text');
+                }
+
+                else if(c==5){
+                    ele.setAttribute('name','dateEnrolled');
+                    ele.setAttribute('type', 'date');
+                }
+
+                else if(c==6){
+                    ele.setAttribute('name','salary');
+                    ele.setAttribute('type', 'number');
+                }
+
+                else if(c==7){
+                    ele.setAttribute('name','nicNo');
+                    ele.setAttribute('type', 'text');
+                }
+
+                else if(c==8){
+                    ele.setAttribute('name','team');
+                    ele.setAttribute('type', 'text');
+                    ele.setAttribute('placeholder','1 or 2 etc');
+                }
+
+                else if(c==9){
+                    ele.setAttribute('name','leader');
+                    ele.setAttribute('type', 'number');
+                    ele.setAttribute('placeholder','1 or 2 etc');
+                }
+
                 ele.setAttribute('value', '');
                 ele.setAttribute('id', 'tb-input');
 
@@ -65,23 +112,23 @@ var arrHead = new Array();	// array for header.
     }
 
     // function to extract and submit table data.
-    function submit() {
-        var myTab = document.getElementById('empTable');
-        var arrValues = new Array();
+    // function submit() {
+    //     var myTab = document.getElementById('empTable');
+    //     var arrValues = new Array();
 
-        // loop through each row of the table.
-        for (row = 1; row < myTab.rows.length - 1; row++) {
-        	// loop through each cell in a row.
-            for (c = 0; c < myTab.rows[row].cells.length; c++) {  
-                var element = myTab.rows.item(row).cells[c];
-                if (element.childNodes[0].getAttribute('type') == 'text') {
-                    arrValues.push("'" + element.childNodes[0].value + "'");
-                }
-            }
-        }
+        
+    //     for (row = 1; row < myTab.rows.length - 1; row++) {
+        	
+    //         for (c = 0; c < myTab.rows[row].cells.length; c++) {  
+    //             var element = myTab.rows.item(row).cells[c];
+    //             if (element.childNodes[0].getAttribute('type') == 'text') {
+    //                 arrValues.push("'" + element.childNodes[0].value + "'");
+    //             }
+    //         }
+    //    }
         
         // The final output.
-        document.getElementById('output').innerHTML = arrValues;
+        //document.getElementById('output').innerHTML = arrValues;
         //console.log (arrValues);   // you can see the array values in your browsers console window. Thanks :-) 
-    }
+    //}
 

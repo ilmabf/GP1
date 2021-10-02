@@ -1,7 +1,7 @@
 <?php 
     include 'userLoggedInHeader.php';
 ?>
-
+<div class="bgImage">
 <div style="min-height: 110px;"></div>
 
 <div class="heading">
@@ -77,3 +77,5 @@
 </div>
 
 <div style="min-height: 110px;"></div>
+
+</div>

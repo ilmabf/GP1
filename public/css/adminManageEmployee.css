@@ -12,7 +12,7 @@ table {
 table, th, td { 
     border: solid 1px #085394;
     border-collapse: collapse; 
-    padding: 8px 3px; 
+    padding: 2px 2px; 
     text-align: center;
     margin: 0px auto;
 }
@@ -22,7 +22,7 @@ th{
 }
 
 td{
-    max-width: 130px;
+    max-width: 150px;
 }
 
 tr{
@@ -31,7 +31,7 @@ tr{
 
 #addRow, #bt{
     display: block;
-    margin: 30px auto;
+    margin: 20px auto;
     padding: 8px 8px;
     background-color: #085394;
     color: white;
@@ -56,8 +56,8 @@ tr{
 }
 
 #tb-input{
-    padding: 5px;
-    font-size: 17px;
+    padding: 4px;
+    font-size: 12px;
     border-color: grey;
     max-width: 110px;
 }

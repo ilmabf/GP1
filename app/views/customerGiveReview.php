@@ -1,6 +1,9 @@
+<div class="bgImage">
 <?php 
     include 'userLoggedInHeader.php';
 ?>
+
+<div style="min-height: 110px;"></div>
 <main>
 
     <div id="container">
@@ -17,13 +20,19 @@
             </div>
 
     </div>
-    
+
 </main>
+
 
 <?php 
     include 'userFooter.php';
 ?>
 
+</div>
+
+
 
 
 </html>
+
+</div>
