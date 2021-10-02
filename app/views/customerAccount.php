@@ -121,7 +121,7 @@
                 <div class = "item1">
                     <div class = "vehicle">Color</div>
                     <div class = "vehicle-specs">
-                        <?php echo "Blue"; ?>
+                        <div class="color-box" style="background-color:#8a0b0b;"></div>
                     </div>
                 </div>
                 <div class = "item1">

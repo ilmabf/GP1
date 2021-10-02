@@ -3,67 +3,67 @@
 ?>
 <div style="min-height: 110px;"></div>
 <div>
-    <h1 class="stl-dashboard-h1">Service Team Leader <br> Assigned Orders</br></h1>
+    <h1 class="stl-dashboard-h1">Today's Reservations</br></h1>
 
-    <div class="stl-reservation-date">
-        <h3>2021 / 10 / 18</h3>
+        <h3 style = "text-align:center;"><?php echo date("Y-m-d"); ?> </h3>
+
+
+        <div class="upcomingOrders">
+    
+    <div class="sub-box1">
+        <div class="order">
+            <div class="orderitem">Service</div>
+            <p class="orderitem1">Interior</p>
+        </div>
+        <div class="order">
+            <div class="orderitem">Vecicle No</div>
+            <p class="orderitem1">AD - 2234</p>
+        </div>
+        <div class="order">
+            <div class="orderitem">Time</div>
+            <p class="orderitem1">8 am - 10 am</p>
+        </div>
+        <div class="orderView">
+            <p class="viewLink"><a href="/calendar/orderDetails">View order</a></p>
+        </div>
     </div>
 
-    <div class ="stl-order-box"> 
-        <div class="stl-order-box-main-flex">
-            <div class="stl-order-sub-box">
-                <div class="sub-box-2">
-                    <div class="order-title">Order ID</div>
-                    <div class="order-description">AAAA</div>
-                </div>
-                <div class="sub-box-2">
-                    <div class="order-title">Vehicle NO</div>
-                    <div class="order-description">CP ABC-1234</div>
-                </div>
-                <div class="sub-box-2">
-                    <div class="order-title">Time</div>
-                    <div class="order-description">8 am - 10 am</div>
-                </div>
-                <h3 style="text-decoration: underline;color: #085394;text-align:center"><a href="/stl/viewReservationDetails">View more</a></h3>
-            </div>
-            <div class="stl-order-sub-box">
-                <div class="sub-box-2">
-                    <div class="order-title">Order ID</div>
-                    <div class="order-description">AAAA</div>
-                </div>
-                <div class="sub-box-2">
-                    <div class="order-title">Vehicle NO</div>
-                    <div class="order-description">CP ABC-1234</div>
-                </div>
-                <div class="sub-box-2">
-                    <div class="order-title">Time</div>
-                    <div class="order-description">8 am - 10 am</div>
-                </div>
-                <h3 style="text-decoration: underline;color: #085394;text-align:center"><a href="/stl/viewReservationDetails">View more</a></h3>
-            </div>
-            <div class="stl-order-sub-box">
-                <div class="sub-box-2">
-                    <div class="order-title">Order ID</div>
-                    <div class="order-description">AAAA</div>
-                </div>
-                <div class="sub-box-2">
-                    <div class="order-title">Vehicle NO</div>
-                    <div class="order-description">CP ABC-1234</div>
-                </div>
-                <div class="sub-box-2">
-                    <div class="order-title">Time</div>
-                    <div class="order-description">8 am - 10 am</div>
-                </div>
-                <h3 style="text-decoration: underline;color: #085394;text-align:center"><a href="/stl/viewReservationDetails">View more</a></h3>
-            </div>
-           
-    
+    <div class="sub-box1">
+        <div class="order">
+            <div class="orderitem">Service</div>
+            <p class="orderitem1">Exterior</p>
         </div>
+        <div class="order">
+            <div class="orderitem">Vecicle No</div>
+            <p class="orderitem1">XZ - 2874</p>
+        </div>
+        <div class="order">
+            <div class="orderitem">Time</div>
+            <p class="orderitem1">10 am - 12 pm</p>
+        </div>
+        <div class="orderView">
+            <p class="viewLink"><a href="/calendar/orderDetails">View order</a></p>
+        </div>
+    </div>
 
+    <div class="sub-box1">
+        <div class="order">
+            <div class="orderitem">Service</div>
+            <p class="orderitem1">Sanitization</p>
         </div>
-
-        <div class="previous-pg">
-            <button class="back-button"><a href="/stl/stlHome" style="color: white;">Back</a></button>
+        <div class="order">
+            <div class="orderitem">Vecicle No</div>
+            <p class="orderitem1">AR - 1142</p>
         </div>
+        <div class="order">
+            <div class="orderitem">Time</div>
+            <p class="orderitem1">2 pm - 4 pm</p>
+        </div>
+        <div class="orderView">
+            <p class="viewLink"><a href="/calendar/orderDetails">View order</a></p>
+        </div>
+    </div>
 
 </div>
+
+<div style="min-height: 110px;"></div>
