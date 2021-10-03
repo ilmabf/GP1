@@ -29,8 +29,18 @@ tr{
     max-width: 100%;
 }
 
-#addRow, #bt{
+#addRow{
     display: block;
+    margin: 35px auto;
+    padding: 8px 8px;
+    background-color: #085394;
+    color: white;
+    border-radius: 5px;
+    border-color: white;
+}
+
+#bt{
+    display: none;
     margin: 20px auto;
     padding: 8px 8px;
     background-color: #085394;
