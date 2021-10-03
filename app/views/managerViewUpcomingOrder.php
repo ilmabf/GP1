@@ -21,6 +21,8 @@
 <div class="heading">
     <h2>Upcoming Order -  <span style="color:black;">AAAA</span></h2>
 </div>
+
+
 <div id = "upcoming">
 <div class="upcoming">
     <!-- <div class="order-subBox"> -->
@@ -90,7 +92,7 @@
                 <option value="Not Selected">Team A</option>
             </select>
             <div class="reservation-buttons">
-        <button class="reservationButtons a8" id="cancelAssignBtn" onclick="openassign()"><a>Cancel Assign</a></button>
+        <button class="reservationButtons a8" type="button" id="cancelAssignBtn" onclick="openassign()"><a>Cancel Assign</a></button>
     </div>
         
         

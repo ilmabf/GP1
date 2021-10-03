@@ -76,5 +76,9 @@ class Customer extends Controller{
             $this->view->render('customerHome');
         } 
     }
+
+    function help(){
+        $this->view->render('customerHelp');
+    }
 }
 

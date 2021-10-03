@@ -66,8 +66,9 @@ section .home-main-section1-button a{
     height: 40px;
     margin-right: 10px;
     background-color: #085394;
-    opacity: 0.7;
+    /* opacity: 0.7; */
     border-radius: 5px;
+    /* z-index: 6; */
 }
 
 /* section-2 */

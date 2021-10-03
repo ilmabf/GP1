@@ -30,8 +30,24 @@
 </head>
 <body>
     
-    <header>
-        <div class="header-logo"></div>
+    <header class="header-desk">
+        <div class="header-logo-1"></div>
+        <div class="buttons-header-desk">
+            <button class="loginColor"><a href="/user/login" class="header-button-login">Login</a></button>
+            <button class="signupColor"><a href="/customer/signup" class="header-button-signup">Signup</a></button>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#about-tag">About</a></li>
+                <li><a href="#footer">Contact</a></li>
+                <li><a href="/review/">Reviews</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <header class="header-mobile">
+        <div class="header-logo-2"></div>
 
         <nav>
             <ul>

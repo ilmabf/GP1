@@ -54,7 +54,6 @@
         </section>
     </div>
 
-    
 
 </main>
 
@@ -63,3 +62,11 @@
 ?>
 
 </html>
+
+<div class="help-icon-desk">
+    <a href="/customer/help"><img src="https://img.icons8.com/fluency/75/000000/help.png"/></a>
+</div>
+
+<div class="help-icon-mob">
+    <a href="#"><img src="https://img.icons8.com/fluency/48/000000/help.png"/></a>
+</div>
