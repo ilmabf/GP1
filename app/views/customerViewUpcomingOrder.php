@@ -106,7 +106,7 @@
 
 <div class="reservation-buttons">
 <div class = "reschedule">
-        <h3 style="color:black">Do you want to reschedule?</h3>
+        <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Do you want to reschedule?</h3>
                 <button class="reservationButtons a13" id="cancelAssignBtn"><a href="/booking/reschedule" style = "color:white;">Click here to Reschedule</a></button></div>
         <button class="reservationButtons a10" id="cancelReservationBtn" onclick="opencancelForm()" ><a>Cancel Reservation</a></button>
 </div>
