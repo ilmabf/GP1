@@ -35,9 +35,9 @@ function openassign(){
     y.classList.add("blur");
     // z.classList.add("blur");
   } 
-  // else {
-  //   x.style.display = "none";
-  // }
+  else {
+    x.style.display = "none";
+  }
 }
 
 function closeassign(){

@@ -3,17 +3,15 @@
     include 'userLoggedInHeader.php';
 ?>
 
-<div class="cancelAssignForm" id = "assign">
-    <div class="forma">
-        <div class="loguser-icon"></div>
+<div class="cancelAssignForm" id = "assign" style = "display:none;">
+    
+   
         <h2 class="login-signupheader">Do you want to cancel the assignment?</h2>
 
-        <form action="" method="post" id="customer-signup">
-            <button id="CloseCancelAssignButton" class="formCancelButton" type="submit" name="signup" onclick="closeassign()">Close</button>
-            <button id="SubmitCancelAssignButton" class="formSubmitButton" type="submit" name="signup"><a href="/booking/upcoming" style = "color:white;">Yes</a></button>
-        </form>
-
-    </div>
+        
+            <button id="CloseCancelAssignButton" class="formCancelButton" type="button" name="signup" onclick="closeassign()">Close</button>
+            <button id="SubmitCancelAssignButton" class="formSubmitButton" type="button" name="signup"><a href="" style = "color:white;">Yes</a></button>
+     
 </div>
 
 <div style="min-height: 110px;"></div>
@@ -90,7 +88,7 @@
                 <option value="Not Selected">Team A</option>
             </select>
             <div class="reservation-buttons">
-        <button class="reservationButtons a8" id="cancelAssignBtn" onclick="openassign()"><a>Cancel Assign</a></button>
+        <button class="reservationButtons a8" id="cancelAssignBtn" type = "button" onclick="openassign()"><a>Cancel Assign</a></button>
     </div>
         </form>
         
@@ -104,12 +102,13 @@
 </div>
 
 </div>
-<div class="addVehicleform" id = "cancelForm">
+<div class="addVehicleform" id = "cancelForm" style = "display:none;">
     <div class="forma">
         <div class="loguser-icon"></div>
         <h2 class="login-signupheader">Do you want to cancel the reservation?</h2>
 
         <form action="" method="post" id="customer-signup">
+        
             <button id="VehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closecancel()">Close</button>
             <button id="VehicleFormSubmitButton" class="formSubmitButton" type="submit" name="signup"><a href="/booking/upcoming" style = "color:white;">Yes</a></button>
         </form>
