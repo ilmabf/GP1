@@ -19,6 +19,10 @@ var arrHead = new Array();	// array for header.
 
     // now, add a new to the TABLE.
     function addRow() {
+
+        var submitBtn = document.getElementById('bt');
+        submitBtn.style.display = "block";
+
         var empTab = document.getElementById('empTable');
 
         var rowCnt = empTab.rows.length;   // table row count.
@@ -53,42 +57,50 @@ var arrHead = new Array();	// array for header.
                 if(c==1){
                     ele.setAttribute('name', 'firstName');
                     ele.setAttribute('type', 'text');
+                    ele.setAttribute('required', '');
                 }
 
                 else if(c==2){
                     ele.setAttribute('name', 'lastName');
                     ele.setAttribute('type', 'text');
+                    ele.setAttribute('required', '');
                 }
 
                 else if(c==3){
                     ele.setAttribute('name', 'contactNumber');
                     ele.setAttribute('type', 'text');
+                    ele.setAttribute('required', '');
                 }
 
                 else if(c==4){
                     ele.setAttribute('name', 'email');
                     ele.setAttribute('type', 'text');
+                    ele.setAttribute('required', '');
                 }
 
                 else if(c==5){
                     ele.setAttribute('name','dateEnrolled');
                     ele.setAttribute('type', 'date');
+                    ele.setAttribute('required', '');
                 }
 
                 else if(c==6){
                     ele.setAttribute('name','salary');
                     ele.setAttribute('type', 'number');
+                    ele.setAttribute('required', '');
                 }
 
                 else if(c==7){
                     ele.setAttribute('name','nicNo');
                     ele.setAttribute('type', 'text');
+                    ele.setAttribute('required', '');
                 }
 
                 else if(c==8){
                     ele.setAttribute('name','team');
                     ele.setAttribute('type', 'text');
                     ele.setAttribute('placeholder','1 or 2 etc');
+                    ele.setAttribute('required', '');
                 }
 
                 else if(c==9){
