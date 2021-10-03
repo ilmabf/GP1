@@ -79,22 +79,26 @@
 </div>
 
 
-<div class="service-team" id = service-team>
+<form action="" method="post">
+<div class="service-team">
+
     <h3>Service Team</h3>
 
     <div class="service-team-box">
-        <form action="" method="post">
+
             <select name="serviceTeam" id="serviceTeam-types">
                 <option value="Not Selected">Team A</option>
             </select>
             <div class="reservation-buttons">
         <button class="reservationButtons a8" id="cancelAssignBtn" type = "button" onclick="openassign()"><a>Cancel Assign</a></button>
     </div>
-        </form>
+        
         
     </div>
     
+    
 </div>
+</form>
 
 <div class="reservation-buttons">
        
