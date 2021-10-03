@@ -10,18 +10,18 @@
 
 <div>
 
-    <h1 class="manager-home-h1">Manager Home</h1>
+    <h1 class="manager-home-h1">Home</h1>
 
     <div class="manager-home-main">
 
         <div class="manager-home-main-flex">
 
             <div class="managerHome-block1">
-                <h3><a href="/manager/upcomingReservation">Upcoming Reservations</a></h3>
+                <h3><a href="/booking/upcoming">Upcoming Reservations</a></h3>
             </div>
 
             <div class="managerHome-block2">
-                <h3><a href="/manager/completedReservations">Reservations Completed</a></h3>
+                <h3><a href="/booking/completed">Completed Reservations</a></h3>
             </div>
 
             <div class="managerHome-block3">
@@ -37,7 +37,7 @@
             </div>
 
             <div class="managerHome-block6">
-                <h3><a href="/manager/managerDashboard">Manager Dashboard</a></h3>
+                <h3><a href="/dashboard/">Dashboard</a></h3>
             </div>
 
         </div>
