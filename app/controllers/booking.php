@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 class Booking extends Controller{
 
     function __construct(){
@@ -22,23 +22,55 @@ class Booking extends Controller{
         $this->view->render('customerHome');
     }
 
-    function upcoming(){
-        $this->view->render('customerUpcomingReservations');
-    }
-
-    function upcomingOrder(){
-        $this->view->render('customerViewUpcomingOrder');
-    }
-
     function reschedule(){
         $this->view->render('customerReschedule');
     }
 
+    function upcoming(){
+        
+        if($_SESSION['role'] == "customer"){
+            $this->view->render('customerUpcomingReservations');
+            exit;
+        }
+        else if($_SESSION['role'] == "manager"){
+            $this->view->render('managerUpcomingReservations');
+        }
+    }
+
+    function upcomingOrder(){
+
+        if($_SESSION['role'] == "customer"){
+            $this->view->render('customerViewUpcomingOrder');
+            exit;
+        }
+        else if($_SESSION['role'] == "manager"){
+            $this->view->render('managerViewUpcomingOrder');
+        }
+        
+    }
+
     function completed(){
-        $this->view->render('customerCompletedReservations');
+        
+        if($_SESSION['role'] == "customer"){
+            $this->view->render('customerCompletedReservations');
+            exit;
+        }
+        else if($_SESSION['role'] == "manager"){
+            $this->view->render('managerCompletedReservations');
+        }
+
     }
 
     function completedOrder(){
-        $this->view->render('customerViewCompletedOrder');
+
+        if($_SESSION['role'] == "customer"){
+            $this->view->render('customerViewCompletedOrder');
+            exit;
+        }
+        else if($_SESSION['role'] == "manager"){
+            $this->view->render('managerViewCompletedOrder');
+        }
+        
     }
+
 }

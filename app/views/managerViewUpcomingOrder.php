@@ -3,12 +3,25 @@
     include 'userLoggedInHeader.php';
 ?>
 
+<div class="cancelAssignForm" id = "assign">
+    <div class="forma">
+        <div class="loguser-icon"></div>
+        <h2 class="login-signupheader">Do you want to cancel the assignment?</h2>
+
+        <form action="" method="post" id="customer-signup">
+            <button id="CloseCancelAssignButton" class="formCancelButton" type="submit" name="signup" onclick="closeassign()">Close</button>
+            <button id="SubmitCancelAssignButton" class="formSubmitButton" type="submit" name="signup"><a href="/booking/upcoming" style = "color:white;">Yes</a></button>
+        </form>
+
+    </div>
+</div>
+
 <div style="min-height: 110px;"></div>
 
 <div class="heading">
     <h2>Upcoming Order -  <span style="color:black;">AAAA</span></h2>
 </div>
-
+<div id = "upcoming">
 <div class="upcoming">
     <!-- <div class="order-subBox"> -->
 
@@ -77,7 +90,7 @@
                 <option value="Not Selected">Team A</option>
             </select>
             <div class="reservation-buttons">
-        <button class="reservationButtons a8" id="cancelAssignBtn"><a>Cancel Assign</a></button>
+        <button class="reservationButtons a8" id="cancelAssignBtn" onclick="openassign()"><a>Cancel Assign</a></button>
     </div>
         
         
@@ -89,34 +102,23 @@
 
 <div class="reservation-buttons">
        
-        <button class="reservationButtons a10" id="cancelReservationBtn"><a>Cancel Reservation</a></button>
+        <button class="reservationButtons a10" id="cancelReservationBtn" onclick="opencancel()"><a>Cancel Reservation</a></button>
 </div>
 
-<div id="assignPopUpId" class="assignPopUpclass">
+</div>
+<div class="addVehicleform" id = "cancelForm">
+    <div class="forma">
+        <div class="loguser-icon"></div>
+        <h2 class="login-signupheader">Do you want to cancel the reservation?</h2>
 
-  <!-- Modal content -->
-    <div class="assignPopUpContent-content">
-        <span class="closeCancelAssign">&times;</span>
-        <p>Do you need to Cancel Assign ?</p>
-        <div class="yesCancelAssign">
-            <button class="btnCancelAssign"><a href="/manager/viewUpcomingOrder">Yes</a></button>
-        </div>
+        <form action="" method="post" id="customer-signup">
+            <button id="VehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closecancel()">Close</button>
+            <button id="VehicleFormSubmitButton" class="formSubmitButton" type="submit" name="signup"><a href="/booking/upcoming" style = "color:white;">Yes</a></button>
+        </form>
+
     </div>
-
 </div>
 
-<div id="cancelReservationPopUpId" class="cancelReservationPopUpclass">
-
-  
-    <div class="cancelReservationPopUpContent-content">
-        <span class="closeCancelReservation">&times;</span>
-        <p>Do you need to Cancel Reservation ?</p>
-        <div class="yesCancelReservation">
-            <button class="btnCancelReservation"><a href="/manager/viewUpcomingOrder">Yes</a></button>
-        </div>
-    </div>
-
-</div>
 
 <div style="min-height: 110px;"></div>
 

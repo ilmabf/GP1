@@ -122,3 +122,4 @@
 <div style="min-height: 110px;"></div>
 
 <script src="/public/js/customerViewUpcomingOrder.js"></script> 
+<script src="/public/js/managerViewCompletedOrder.js"></script> 
