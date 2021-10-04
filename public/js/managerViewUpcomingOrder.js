@@ -17,7 +17,7 @@ function closecancel(){
   var y = document.getElementById("upcoming");
   // var z = document.getElementById("service-team");
   if (x.style.display === "block") {
-    x.style.display = "none";
+    x.style.display = "block";
     y.classList.remove("blur");
     // z.classList.remove("blur");
   } else {

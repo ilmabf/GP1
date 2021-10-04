@@ -1,7 +1,8 @@
-<div class="bgImage">
+
 <?php 
     include 'userLoggedInHeader.php';
 ?>
+<div class="bgImage">
 
 <div class="cancelAssignForm" id = "assign" style = "display:none;">
     
@@ -19,6 +20,8 @@
 <div class="heading">
     <h2>Upcoming Order -  <span style="color:black;">AAAA</span></h2>
 </div>
+
+
 <div id = "upcoming">
 <div class="upcoming">
     <!-- <div class="order-subBox"> -->
@@ -78,10 +81,8 @@
     <!-- </div> -->
 </div>
 
-
 <form action="" method="post">
 <div class="service-team">
-
     <h3>Service Team</h3>
 
     <div class="service-team-box">

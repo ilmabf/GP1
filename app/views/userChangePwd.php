@@ -5,8 +5,6 @@
 ?>
 <main>
     <div id="container">
-      
-            
             <div class="login-signupbox">
                 <div class="login-signupform">
                     <div class="loguser-icon"></div>

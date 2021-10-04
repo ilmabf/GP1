@@ -41,24 +41,45 @@
 
     <link rel="stylesheet" href="/public/css/adminManageService.css">
     <link rel="stylesheet" href="/public/css/customerViewUpcomingOrder.css">
+    <link rel="stylesheet" href="/public/css/customerHelp.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>WandiWash</title>
 </head>
 <body>
     
-    <header>
-        <div class="header-logo"></div>
+<header class="header-desk">
+    <div class="header-logo-1"></div>
+    <div class="buttons-header-desk">
+        <button class="signupColor"><a href="/index/logout" class="header-button-login">Logout</a></button>
+        <!-- <button class="signupColor"><a href="/customer/signup" class="header-button-signup">Signup</a></button> -->
+    </div>
+    <nav>
+        <ul>
+            <li><a href="/user/home">Home</a></li>
+            <!-- <li><a href="#about-tag">About</a></li>
+            <li><a href="#footer">Contact</a></li> -->
+            <li><a href="/review/">Reviews</a></li>
+        </ul>
+    </nav>
+</header>
 
-        <nav>
-            <ul>
-                <li><a href="/user/home">Home</a></li>
-                <li><a href="#footer">Contact</a></li>
-                <li><a href="/review/">Reviews</a></li>
-            </ul>
-            <a href="/index/logout" class="header-button-login">Logout</a>
-        </nav>
-    </header>
+<header class="header-mobile">
+    <div class="header-logo-2"></div>
+
+    <nav>
+        <ul class="nav-nav nav-links">
+            <li><a href="/user/home">Home</a></li>
+            <!-- <li><a href="#about-tag">About</a></li>
+            <li><a href="#footer">Contact</a></li> -->
+            <li><a href="/review/">Reviews</a></li>
+            <li><button><a href="/index/logout" class="header-button-logout">Logout</a></button></li>
+        </ul>
+        <!-- <button class="nav-nav nav-logoutBtn"><a href="/index/logout" class="header-button-logout">Logout</a></button> -->
+    </nav>
+</header>
+
+    
 
 
 
