@@ -8,6 +8,15 @@
     height: 400px;
 }
 
+.Givereview-box{
+    border-color: whitesmoke;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+
 .userReview{
     margin: 30px 0px 0px 0px;
 }
