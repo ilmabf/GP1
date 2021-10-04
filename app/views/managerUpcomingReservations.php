@@ -1,8 +1,8 @@
-<div class="bgImage">
-
 <?php 
     include 'userLoggedInHeader.php';
 ?>
+
+<div class="bgImage">
 
 <div style="min-height: 110px;"></div>
 

@@ -1,7 +1,8 @@
-<div class="bgImage">
+
 <?php 
     include 'userLoggedInHeader.php';
 ?>
+<div class="bgImage">
 
 <div class="cancelAssignForm" id = "assign" style = "display:none;">
     

@@ -1,8 +1,7 @@
-<div class="bgImage">
-
 <?php 
     include 'userHeader.php';
 ?>
+<div class="bgImage" style="height:100%">
 <main>
 
     <div id="container">

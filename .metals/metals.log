@@ -274,3 +274,6 @@ INFO: Unsupported notification method: $/setTrace
 [0m2021.10.03 22:31:01 INFO  time: initialize in 1.93s[0m
 [0m2021.10.03 22:31:07 WARN  Build server is not auto-connectable.[0m
 [0m2021.10.03 22:31:07 WARN  no build tool detected in workspace 'C:\xampp\htdocs\wandiwash'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+Oct 04, 2021 1:21:46 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+[0m2021.10.04 01:37:04 INFO  shutting down Metals[0m

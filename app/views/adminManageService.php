@@ -189,12 +189,12 @@
             </form>
         </div>
 
-        <div class="cancelAddNewVehicles">
+        <!-- <div class="cancelAddNewVehicles">
             <button type="button" form="addVehicleTypeForm" class="btnAddNewVehicle" value="Done">Add vehicle type</button>
             <button type="button" class="btnCancelAddVehicle">Cancel</button>
-        </div>
+        </div> -->
     </div>
-</div> -->
+</div>
 
 <div class="addVehicleform" id = "vehicleAddForm">
                 <div class="forma">

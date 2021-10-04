@@ -1,8 +1,9 @@
 <!-- <main> -->
-<div class="bgImage" style="height: 100%;">
 <?php
     include 'userLoggedInHeader.php';
 ?>
+
+<div class="bgImage" style="height: 100%;">
 <div style="min-height: 110px;"></div>
 
 <div>

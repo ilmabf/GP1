@@ -1,33 +1,33 @@
-const prev = document.querySelector('.prev');
+const previous = document.querySelector('.previous');
 const next = document.querySelector('.next');
-const images = document.querySelector('.carousel').children;
-const totalImages = images.length;
-let index = 0;
+const images = document.querySelector('.slides').children;
+const noOfslides = images.length;
+let indexNo = 0;
 
-prev.addEventListener('click', () => {
-  nextImage('next');
+previous.addEventListener('click', () => {
+  nextSlide('next');
 })
 
 next.addEventListener('click', () => {
-  nextImage('prev');
+  nextSlide('previous');
 })
 
-function nextImage(direction) {
+function nextSlide(direction) {
   if(direction == 'next') {
-    index++;
-    if(index == totalImages) {
-      index = 0;
+    indexNo++;
+    if(index == noOfslides) {
+      indexNo = 0;
     }
   } else {
-    if(index == 0) {
-      index = totalImages - 1;
+    if(indexNo == 0) {
+      indexNo = noOfslides - 1;
     } else {
-      index--;
+      indexNo--;
     }
   }
 
   for(let i = 0; i < images.length; i++) {
     images[i].classList.remove('main');
   }
-  images[index].classList.add('main');
+  images[indexNo].classList.add('main');
 }
