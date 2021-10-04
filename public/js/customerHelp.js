@@ -13,9 +13,9 @@ next.addEventListener('click', () => {
 })
 
 function nextSlide(direction) {
-  if(direction == 'next') {
+  if(direction == 'previous') {
     indexNo++;
-    if(index == noOfslides) {
+    if(indexNo == noOfslides) {
       indexNo = 0;
     }
   } else {

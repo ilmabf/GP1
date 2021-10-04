@@ -4,8 +4,13 @@
     margin-top: 5px;
     margin-bottom: 5px;
     width: 100%;
+    overflow: scroll;
+    height: 400px;
 }
 
+.userReview{
+    margin: 30px 0px 0px 0px;
+}
 .review-box1{
     display: block;
     background-color:white;
