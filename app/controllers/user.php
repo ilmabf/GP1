@@ -103,7 +103,7 @@ class User extends Controller{
 
         $this->model->updateUserPassword($email, $hashedpwd);
         $this->model->deletePwdTempTable($email);
-        echo "Password changed";
+        //echo "Password changed";
         $this->view->render('userHome'); 
     }
 
@@ -111,6 +111,8 @@ class User extends Controller{
         if(!isset($_POST['login']) && !isset($_SESSION['login'])){
             header("Location: login");
         }
+
+        //echo $_SESSION['login'];
         
         if(isset($_SESSION['login'])){
             if($_SESSION['role'] == "customer"){

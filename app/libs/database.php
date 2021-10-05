@@ -121,6 +121,7 @@ class Database extends PDO{
 
         $query.=" ".$condition;
         $stmt = $this->prepare($query);
+        //echo $query;
         $result = $stmt->execute();
 
         if(!$result){
