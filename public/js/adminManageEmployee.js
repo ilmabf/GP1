@@ -1,7 +1,9 @@
 var arrHead = new Array();	// array for header.
-    arrHead = ['First Name', 'Last Name', 'Contact Number', 'Email', 'Date Enrolled', 'Salary', 'NIC No', 'Team', 'Leader',''];
+    arrHead = ['First Name', 'Last Name', 'Contact Number', 'Email', 'Date Enrolled', 'Salary', 'NIC No', 'Team',''];
 
 var submitBtn = document.getElementById('bt');
+
+var empInsertSuccess = document.getElementById('empAddSuccess');
     // first create TABLE structure with the headers. 
 function createTable() {
     var empTable = document.createElement('table');
@@ -33,7 +35,7 @@ function addRow() {
         var td = document.createElement('td'); // table definition.
         td = tr.insertCell(c);
 
-        if (c == 9) {      // the first column.
+        if (c == 8) {      // the first column.
             // add a button in every new row in the first column.
             var button = document.createElement('input');
 
@@ -103,12 +105,6 @@ function addRow() {
                 ele.setAttribute('required', '');
             }
 
-            else if(c==8){
-                ele.setAttribute('name','leader');
-                ele.setAttribute('type', 'number');
-                ele.setAttribute('placeholder','1 or 2 etc');
-            }
-
             ele.setAttribute('value', '');
             ele.setAttribute('id', 'tb-input');
 
@@ -145,4 +141,8 @@ function removeRow(oButton) {
         //document.getElementById('output').innerHTML = arrValues;
         //console.log (arrValues);   // you can see the array values in your browsers console window. Thanks :-) 
     //}
+
+// setTimeout(function(){
+//     empInsertSuccess.show();
+//     }, 5000);
 
