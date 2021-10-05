@@ -37,6 +37,7 @@ tr{
     color: white;
     border-radius: 5px;
     border-color: white;
+    cursor: pointer;
 }
 
 #bt{
@@ -47,6 +48,7 @@ tr{
     color: white;
     border-radius: 5px;
     border-color: white;
+    cursor: pointer;
 }
 
 #addRow:hover, #bt:hover{
@@ -175,6 +177,38 @@ input[type=search] {
 
 .hidden {
     display: none;
+}
+
+.empAddSuccess{
+    display: block;
+    text-align: center;
+    margin: auto auto;
+    color: green;
+    font-weight: 800;
+}
+
+.edit_btn {
+    text-decoration: none;
+    padding: 2px 5px;
+    background: green;
+    color: white;
+    border-radius: 3px;
+}
+
+.edit_btn:hover {
+    background: rgb(12, 161, 12);
+}
+
+.del_btn {
+    text-decoration: none;
+    padding: 2px 5px;
+    color: white;
+    border-radius: 3px;
+    background: rgb(145, 20, 20);
+}
+
+.del_btn:hover {
+    background: rgb(187, 13, 13);
 }
 
 

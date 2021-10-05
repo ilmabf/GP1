@@ -14,7 +14,7 @@
         <div class="admin-home-main-flex">
 
             <div class="adminHome-block1">
-                <h3><a href="/admin/manageEmployee">Manage Employee</a></h3>
+                <h3><a href="/employee/adminManageEmployee">Manage Employee</a></h3>
             </div>
 
             <div class="adminHome-block2">

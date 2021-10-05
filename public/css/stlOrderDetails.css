@@ -71,7 +71,7 @@ box-shadow: 0 3px 10px rgb(0 0 0 / 40%);
 }
 
 .completed-button{
-    background-color: #00FF00 ;
+    background-color: green ;
     padding: 5px 10px;
     color: white;
     border-radius: 3px;
@@ -80,7 +80,7 @@ box-shadow: 0 3px 10px rgb(0 0 0 / 40%);
 }
 
 .completed-button:hover{
-    background-color: #008000 ;
+    background-color: rgb(12, 161, 12) ;
 }
 
 .upload-box{
