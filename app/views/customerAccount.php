@@ -3,6 +3,7 @@
   
     include 'userLoggedInHeader.php';
     $details = $_SESSION['userDetails'];
+    $vehicles = $_SESSION['vehicles'];
     
 ?>
 
@@ -22,11 +23,11 @@
                         <input class="input-box" type="text2" name="model"required>
                         <br>
                         <label for="Color" style = "padding: 0px 139px 0px 0px;">Color</label>
-                        <input type = "color" required>
+                        <input type = "color" name = "color" required>
                         <br>
                         <label for="Vehicle Type" style = "padding: 0px 87px 0px 0px;">Vehicle Type</label>
-                        <select name="serviceTeamLeader" class="Mg-Emp-Search" id="serviceTeamLeaders-types" style = "width:50%; margin-bottom: 5px;">
-                            <option value="select service team leader"> </option>
+                        <select name="vehicleType" class="Mg-Emp-Search" id="serviceTeamLeaders-types" style = "width:50%; margin-bottom: 5px;" required>
+                            <option value=""> </option>
                             <option value="Type A">Sedan</option>
                             <option value="Type B">SUV</option>
                             <option value="Type C">Luxury</option>
@@ -102,7 +103,7 @@
     <div class = "box">
     <div class="account-box1">
         <div class = "account-prof">
-            <div class="account-header">My Account</div>
+            <div class="account-header">My Account<?php print_r($vehicles);?></div>
             <div class="account-box2">
             <button class="btn" onclick="openDetailsVehicleForm()">Edit</button>
                 <div class = "account-image">    </div>   
@@ -111,7 +112,7 @@
                         <?php echo $details[0]['First_Name']. " " .$details[0]['Last_Name'];?></div>
             
                     <div class = "account-email">
-                        <?php echo $details[0]['Email']; ?></div>
+                        <?php echo $details[0]['Email']; $_SESSION['rowCount'];?></div>
 
                     <div class = "account-email">
                         <?php echo $details[0]['Contact_Number']; ?></div>
@@ -125,9 +126,15 @@
             <div class="account-box3">
                 <div class = "vehicle-list">
                     <select name="Vehicles" id="Customer-Vehicles">
-                        <option value="select service team">ABC 123</option>
-                        <option value="Team A">QRZ 000</option>
-                        <option value="Team B">JQ 942</option>
+                        <?php
+                        $count  = 0; 
+                        while($count < $_SESSION['rowCount']){
+                            echo "<option value='v1'>";
+                            echo $vehicles[$count]['VID'];
+                            echo "</option>";
+                            $count = $count + 1;
+                        }
+                        ?>
                     </select>
                 </div>
                 <button class = "button" onclick="openVehicleForm()"> + Add </button>
