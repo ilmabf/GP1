@@ -98,7 +98,8 @@
 
                 </div>
             </div>
-    <div id = "box"class = "box">
+<div id = "mainbox">
+    <div class = "box">
     <div class="account-box1">
         <div class = "account-prof">
             <div class="account-header">My Account</div>
@@ -182,7 +183,7 @@
 
 </div>
 
-
+                </div>
 <!-- <div style="min-height: 110px;"></div>  -->
 
 

@@ -1,7 +1,7 @@
 
 function openVehicleForm(){
   var x = document.getElementById("vehicleForm");
-  var y = document.getElementById("box");
+  var y = document.getElementById("mainbox");
   if (x.style.display === "none") {
     x.style.display = "block";
     y.classList.add("blurAccount");
@@ -12,7 +12,7 @@ function openVehicleForm(){
 
 function closeVehicleForm(){
     var x = document.getElementById("vehicleForm");
-    var y = document.getElementById("box");
+    var y = document.getElementById("mainbox");
     if (x.style.display === "block") {
       x.style.display = "none";
       y.classList.remove("blurAccount");
@@ -24,7 +24,7 @@ function closeVehicleForm(){
   
   function openEditVehicleForm(){
     var x = document.getElementById("editvehicleForm");
-    var y = document.getElementById("box");
+    var y = document.getElementById("mainbox");
     if (x.style.display === "none") {
       x.style.display = "block";
       y.classList.add("blurAccount");
@@ -36,7 +36,7 @@ function closeVehicleForm(){
 
   function closeEditVehicleForm(){
     var x = document.getElementById("editvehicleForm");
-    var y = document.getElementById("box");
+    var y = document.getElementById("mainbox");
     if (x.style.display === "block") {
       x.style.display = "none";
       y.classList.remove("blurAccount");
@@ -48,7 +48,7 @@ function closeVehicleForm(){
 
   function openDetailsVehicleForm(){
     var x = document.getElementById("editdetailsForm");
-    var y = document.getElementById("box");
+    var y = document.getElementById("mainbox");
     if (x.style.display === "none") {
       x.style.display = "block";
       y.classList.add("blurAccount");
@@ -59,7 +59,7 @@ function closeVehicleForm(){
 
   function closeDetailsVehicleForm(){
     var x = document.getElementById("editdetailsForm");
-    var y = document.getElementById("box");
+    var y = document.getElementById("mainbox");
     if (x.style.display === "block") {
       x.style.display = "none";
       y.classList.remove("blurAccount");
