@@ -46,6 +46,13 @@ input[type=color]{
     height: 100%;
 }
 
+.blurAccount   {
+    filter: blur(3px);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
 .formSubmitButton{
     float: right;
     display: block;

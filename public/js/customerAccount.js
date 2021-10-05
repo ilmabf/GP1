@@ -4,7 +4,7 @@ function openVehicleForm(){
   var y = document.getElementById("box");
   if (x.style.display === "none") {
     x.style.display = "block";
-    y.classList.add("blur");
+    y.classList.add("blurAccount");
   } else {
     x.style.display = "none";
   }
@@ -15,7 +15,7 @@ function closeVehicleForm(){
     var y = document.getElementById("box");
     if (x.style.display === "block") {
       x.style.display = "none";
-      y.classList.remove("blur");
+      y.classList.remove("blurAccount");
     } else {
       x.style.display = "block";
       
@@ -27,7 +27,7 @@ function closeVehicleForm(){
     var y = document.getElementById("box");
     if (x.style.display === "none") {
       x.style.display = "block";
-      y.classList.add("blur");
+      y.classList.add("blurAccount");
     } else {
       x.style.display = "none";
       
@@ -39,7 +39,7 @@ function closeVehicleForm(){
     var y = document.getElementById("box");
     if (x.style.display === "block") {
       x.style.display = "none";
-      y.classList.remove("blur");
+      y.classList.remove("blurAccount");
     } else {
       x.style.display = "block";
       
@@ -51,7 +51,7 @@ function closeVehicleForm(){
     var y = document.getElementById("box");
     if (x.style.display === "none") {
       x.style.display = "block";
-      y.classList.add("blur");
+      y.classList.add("blurAccount");
     } else {
       x.style.display = "none";
     }
@@ -62,7 +62,7 @@ function closeVehicleForm(){
     var y = document.getElementById("box");
     if (x.style.display === "block") {
       x.style.display = "none";
-      y.classList.remove("blur");
+      y.classList.remove("blurAccount");
     } else {
       x.style.display = "block";
       
