@@ -10,6 +10,7 @@
 
 <main>
 
+<div class="bgImage" style = "min-height:100%;">
 <div class="addVehicleform" id = "vehicleForm">
                 <div class="forma">
                     <div class="loguser-icon"></div>
@@ -180,6 +181,7 @@
             </div>
                 
 </div>
+<!-- <div style="min-height: 100px;"></div> -->
 </div>
 </main>
 </body>
@@ -198,5 +200,4 @@
 ?>
 
 <script src="/public/js/customerAccount.js"></script> 
-
 

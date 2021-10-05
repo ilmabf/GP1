@@ -74,7 +74,10 @@ class Customer extends Controller{
             // $_SESSION["login"] = "loggedin";
 
             // $this->view->render('customerHome');
+<<<<<<< HEAD
 
+=======
+>>>>>>> 87527cdb9d8efe981bc089809771003dff631ba0
             header("Location: /user/home");
         } 
     }

@@ -1,6 +1,6 @@
 <?php
-session_start();
 
+session_start();
 class Account extends Controller{
 
     function __construct(){
@@ -8,9 +8,10 @@ class Account extends Controller{
     }
 
     function index(){
-        $uname = $_SESSION['usernameemail'];
-        $result = $this->model->getCustDetails($uname);
-        $_SESSION['userDetails'] = $result;
+        // $uname = $_SESSION['usernameemail'];
+        // $result = $this->model->getCustDetails($uname);
+        // $_SESSION['userDetails'] = $result;
+        // print_r($_SESSION['userDetails']);
         $this->view->render('customerAccount');
     }
    

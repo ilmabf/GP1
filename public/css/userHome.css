@@ -291,6 +291,7 @@ section .home-main-section1-button a{
         flex: 25%;
     }
     
+    
 
 } 
 
@@ -303,4 +304,10 @@ section .home-main-section1-button a{
     -o-background-size: cover;
     background-size: cover;
     
+}
+
+@media only screen and (max-width: 770px){
+    .bgImage{
+        height: 1000px;
+    }
 }

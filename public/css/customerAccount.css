@@ -289,7 +289,9 @@ input[type=text2]{
         font-size: 20px;
     }
 
-
+    .box{
+        overflow: visible;
+    }
     .account-box1{
         padding: 30px 50px 20px 30px;
     }
