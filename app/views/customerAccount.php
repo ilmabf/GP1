@@ -7,10 +7,6 @@
 ?>
 <div class="bgImage" style="min-height: 100%;">
 
-
-<main>
-
-<div class="bgImage" style = "min-height:100%;">
 <div class="addVehicleform" id = "vehicleForm">
                 <div class="forma">
                     <div class="loguser-icon"></div>
@@ -183,7 +179,7 @@
 </div>
 <!-- <div style="min-height: 100px;"></div> -->
 </div>
-</main>
+
 </body>
 
 <div style="min-height: 110px;"></div> 
@@ -191,13 +187,6 @@
 
 
     <!-- include 'userFooter.php'; -->
-
-    <?php 
-  
-  include 'userFooter.php';
-  
-  
-?>
 
 <script src="/public/js/customerAccount.js"></script> 
 

@@ -343,10 +343,6 @@ input[type=text2]{
     .space{
         min-height: 400px;
     }
-
-    .addVehicleform{
-        overflow: visible;
-    }
   }
 
   @media  only screen and (max-width: 327px){
