@@ -1,13 +1,14 @@
-<div class="bgImage">
+
 <?php 
   
     include 'userLoggedInHeader.php';
     $details = $_SESSION['userDetails'];
     
 ?>
+<div class="bgImage" style="min-height: 100%;">
+
 
 <main>
-
 
 <div class="addVehicleform" id = "vehicleForm">
                 <div class="forma">
@@ -180,16 +181,22 @@
                 
 </div>
 </div>
-
 </main>
+</body>
 
-<div style="min-height: 100px;"></div>
-                </body>
-<?php 
-    include 'userFooter.php';
+<div style="min-height: 110px;"></div> 
+
+
+
+    <!-- include 'userFooter.php'; -->
+
+    <?php 
+  
+  include 'userFooter.php';
+  
+  
 ?>
 
-
 <script src="/public/js/customerAccount.js"></script> 
-</div>
+
 

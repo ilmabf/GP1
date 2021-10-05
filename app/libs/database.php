@@ -101,11 +101,11 @@ class Database extends PDO{
         //     $query .=  $columns . " = " . $values;
         // }
 
-        $query="UPDATE ".$table." "."SET ";
+        // $query="UPDATE ".$table." "."SET ";
 
-        if((gettype($columns)=="string") && (gettype($values)=="string")){
-            $query.="$columns = $values";
-        }
+        // if((gettype($columns)=="string") && (gettype($values)=="string")){
+        //     $query.="$columns = $values";
+        // }
         
         else if(gettype($columns) == 'array' && gettype($values) == 'array'){
             for($i=0; $i<count($columns)-1; $i++) {
@@ -121,6 +121,7 @@ class Database extends PDO{
 
         $query.=" ".$condition;
         $stmt = $this->prepare($query);
+        //echo $query;
         $result = $stmt->execute();
 
         if(!$result){

@@ -105,6 +105,7 @@ class User_Model extends Model{
             return true;
         }
         else print_r($result);
+        //echo $result;
     }
 
     public function deletePwdTempTable($email){

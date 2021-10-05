@@ -70,10 +70,12 @@ class Customer extends Controller{
     function verify($uid, $token){
         if($this->model->checkToken($uid, $token)){
 
-            $_SESSION["time"] = date("h:i:sa");
-            $_SESSION["login"] = "loggedin";
+            // $_SESSION["time"] = date("h:i:sa");
+            // $_SESSION["login"] = "loggedin";
 
-            $this->view->render('customerHome');
+            // $this->view->render('customerHome');
+
+            header("Location: /user/home");
         } 
     }
 
