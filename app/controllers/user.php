@@ -112,7 +112,7 @@ class User extends Controller{
             header("Location: login");
         }
 
-        echo $_SESSION['login'];
+        //echo $_SESSION['login'];
         
         if(isset($_SESSION['login'])){
             if($_SESSION['role'] == "customer"){

@@ -68,5 +68,5 @@
 </div>
 
 <div class="help-icon-mob">
-    <a href="#"><img src="https://img.icons8.com/fluency/48/000000/help.png"/></a>
+    <a href="/customer/help"><img src="https://img.icons8.com/fluency/48/000000/help.png"/></a>
 </div>

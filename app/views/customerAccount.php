@@ -1,11 +1,13 @@
-
+<div class="bgImage1">
 <?php 
   
     include 'userLoggedInHeader.php';
     $details = $_SESSION['userDetails'];
     
 ?>
-<div class="bgImage" style="min-height: 100%;">
+
+<div style="min-height: 110px;"></div> 
+
 
 <div class="addVehicleform" id = "vehicleForm">
                 <div class="forma">
@@ -177,12 +179,11 @@
             </div>
                 
 </div>
-<!-- <div style="min-height: 100px;"></div> -->
+
 </div>
 
-</body>
 
-<div style="min-height: 110px;"></div> 
+<!-- <div style="min-height: 110px;"></div>  -->
 
 
 
