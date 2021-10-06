@@ -2,11 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\controllers",
-    "\\app\\views",
     "\\public",
-    "\\public\\css"
+    "\\public\\js"
   ],
-  "SelectedNode": "\\public\\css\\customerMyOrders.css",
+  "SelectedNode": "\\public\\js\\adminManageEquipment.js",
   "PreviewInSolutionExplorer": false
 }

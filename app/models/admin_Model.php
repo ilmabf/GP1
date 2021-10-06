@@ -12,4 +12,11 @@ class Admin_Model extends Model{
         $result = $this->db->insert("employee", $columns, $values);
         echo $result;
     }
+    function addEquipmet($name, $price, $dateAcquired,$team){
+        $columns = array('Name', 'Price', 'Date_Acquired','Team');
+        $values = array($name, $price, $dateAcquired,$team);
+        $result = $this->db->insert("equipment", $columns, $values);
+        echo $result;
+    }
+
 }

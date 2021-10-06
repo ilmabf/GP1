@@ -35,4 +35,24 @@ class Admin extends Controller{
         $this->view->render('adminManageService');
     }
 
+    function manageEquipment(){
+        $this->view->render('adminManageEquipment');
+    }
+    function addNewEquipment(){
+
+        $name = $_POST['name'];
+        $price = $_POST['price'];
+        $dateAcquired = $_POST['dateAcquired'];
+        $team = $_POST['team'];
+
+        if(isset($name) && isset($price) &&  isset($dateAcquired) && isset($team) ) {
+            $equipmentInsertResult = $this->model->addEquipment($name, $price, $dateAcquired,$team);
+        }else{
+            echo "Errorrrr";
+        }
+
+
+    }
+
+
 }
