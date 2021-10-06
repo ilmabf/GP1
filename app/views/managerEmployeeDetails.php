@@ -20,8 +20,8 @@
         <form action="" method="post">
             <select name="serviceTeam" class="Mg-Emp-Search" id="serviceTeams-types">
                 <option value="select service team">Select Service Team</option>
-                <option value="Team A">Team A</option>
-                <option value="Team B">Team B</option>
+                <option value="Team A">Team 1</option>
+                <option value="Team B">Team 2</option>
             </select>
         </form>
 
@@ -31,8 +31,8 @@
         <form action="" method="post">
             <select name="serviceTeamLeader" class="Mg-Emp-Search" id="serviceTeamLeaders-types">
                 <option value="select service team leader">Select Service Team Leader</option>
-                <option value="Team A">Team A Leader</option>
-                <option value="Team B">Team B Leader</option>
+                <option value="Team A">Team 1 Leader</option>
+                <option value="Team B">Team 2 Leader</option>
             </select>
         </form>
     </div>
@@ -70,8 +70,8 @@
           <td>2021 03 20</td>
           <td>35000</td>
           <td>12324532V</td>
-          <td>A</td>
-          <td></td>
+          <td>1</td>
+          <td>1</td>
         </tr>
         <tr>
           <td>Nirosh</td>
@@ -81,8 +81,8 @@
           <td>2021 04 10</td>
           <td>25000</td>
           <td>897645322V</td>
-          <td>B</td>
-          <td>B</td>
+          <td>2</td>
+          <td></td>
         </tr>
         <tr>
           <td>Janith</td>
@@ -92,7 +92,7 @@
           <td>2020 12 10</td>
           <td>30000</td>
           <td>89787654V</td>
-          <td>B</td>
+          <td>2</td>
           <td></td>
         </tr>
         <tr>
@@ -103,8 +103,8 @@
           <td>2021 01 10</td>
           <td>28000</td>
           <td>23456721V</td>
-          <td>A</td>
-          <td>A</td>
+          <td>2</td>
+          <td>2</td>
         </tr>
         <tr>
           <td>Karun</td>
@@ -114,7 +114,7 @@
           <td>2020 10 18</td>
           <td>32000</td>
           <td>123245634V</td>
-          <td>B</td>
+          <td>1</td>
           <td></td>
         </tr>
         <tr>
@@ -125,7 +125,7 @@
           <td>2020 09 12</td>
           <td>26000</td>
           <td>23243323V</td>
-          <td>A</td>
+          <td>1</td>
           <td></td>
         </tr>
         </tbody>
