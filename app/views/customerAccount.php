@@ -103,7 +103,7 @@
     <div class = "box">
     <div class="account-box1">
         <div class = "account-prof">
-            <div class="account-header">My Account<?php print_r($vehicles);?></div>
+            <div class="account-header">My Account</div>
             <div class="account-box2">
             <button class="btn" onclick="openDetailsVehicleForm()">Edit</button>
                 <div class = "account-image">    </div>   
@@ -129,7 +129,9 @@
                         <?php
                         $count  = 0; 
                         while($count < $_SESSION['rowCount']){
-                            echo "<option value='v1'>";
+                            echo "<option value='";
+                            echo $count + 1; 
+                            echo "'>";
                             echo $vehicles[$count]['VID'];
                             echo "</option>";
                             $count = $count + 1;
@@ -142,10 +144,51 @@
 
             <div class="vehicle-box">
                 <button class="btn2" onclick="openEditVehicleForm()">Edit</button>
-                <div class = "item1">
+
+                <?php $countvehicle = 0; 
+                    while($countvehicle < $_SESSION['rowCount']){
+
+                    echo "<div id='";
+                    echo $countvehicle+1;
+                    echo "' style='display:none;'>";
+
+                    echo "<div class = 'item1'>";
+                    echo "<div class = 'vehicle'>Model</div>";
+                    echo "<div class = 'vehicle-specs'>";
+                    echo $vehicles[$countvehicle]['Model'];
+                    echo "</div>";
+                    echo "</div>";
+
+                    echo "<div class = 'item1'>";
+                    echo "<div class = 'vehicle'>Color</div>";
+                    echo "<div class = 'vehicle-specs'>";
+                    echo "<div class='color-box' style='background-color:";
+                    echo $vehicles[$countvehicle]['Colour'];
+                    echo ";'></div>";
+                    echo "</div>";
+                    echo "</div>";
+
+                    echo "<div class = 'item1'>";
+                    echo "<div class = 'vehicle'>Type</div>";
+                    echo "<div class = 'vehicle-specs'>";
+                    echo $vehicles[$countvehicle]['Type'];
+                    echo "</div>";
+                    echo "</div>";
+
+                    echo "<div class = 'item1'>";
+                    echo "<div class = 'vehicle'>Manufacturer</div>";
+                    echo "<div class = 'vehicle-specs'>";
+                    echo $vehicles[$countvehicle]['Manufacturer'];
+                    echo "</div>";
+                    echo "</div>";
+
+                    echo "</div>";
+                    $countvehicle = $countvehicle + 1;
+                    }?>
+                <!-- <div class = "item1">
                     <div class = "vehicle">Model</div>
                     <div class = "vehicle-specs">
-                        <?php echo "123456"; ?>
+                        <?php echo ""; ?>
                     </div>
                 </div>
                 <div class = "item1">
@@ -157,15 +200,15 @@
                 <div class = "item1">
                     <div class = "vehicle">Type</div>
                     <div class = "vehicle-specs">
-                        <?php echo "SUV"; ?>
+                        <?php echo ""; ?>
                     </div>
                 </div>
                 <div class = "item1">
                     <div class = "vehicle">Manufacturer</div>
                     <div class = "vehicle-specs">
-                        <?php echo "XYZ"; ?>
+                        <?php echo ""; ?>
                     </div>
-                </div>
+                </div> -->
             </div><br>
             </div>
             <div class = "account-det2">
