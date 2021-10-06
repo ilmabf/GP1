@@ -33,6 +33,7 @@ input[type=color]{
     display: inline-block;
     position: absolute;
     top: 8px;
+    border: 1px solid #085394;
 }
 
 .box{
@@ -291,6 +292,10 @@ input[type=text2]{
     color: #f5f5f5;
 }
 
+.inv {
+    display: none;
+}
+
 .bgImage1 { 
     background: url(/public/images/car_desktop.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
@@ -301,7 +306,7 @@ input[type=text2]{
 }
 
 .bgImage1{
-    min-height: 800px;
+    min-height: 1000px;
 }
 
 @media  only screen and (max-width: 770px) {
