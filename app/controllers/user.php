@@ -145,7 +145,10 @@ class User extends Controller{
             if($this->model->checkCustomer($uname)){
                 $Details = $this->model->getCustDetails($uname);
                 $_SESSION['userDetails'] = $Details;
-                // print_r($_SESSION['userDetails']);
+                
+                $vehicles = $this->model->getVehicles($_SESSION['userDetails'][0]['User_ID']);
+                $_SESSION['vehicles'] = $vehicles;
+                
                 $_SESSION['role'] = "customer";
                 $value = $this->model->checkVerified($uname);
                 if($value[0]['Verified'] == "1"){
