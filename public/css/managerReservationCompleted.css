@@ -92,7 +92,7 @@
     text-align: center;
     float: right;
     font-size: 15px;
-    color: red;
+    color: rgb(145, 20, 20);
 }
 
 @media only screen and (max-width: 770px){

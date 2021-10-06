@@ -29,7 +29,7 @@
   
   /* Add a red text color and an "x" icon when the requirements are wrong */
 .invalid {
-    color: red;
+    color: rgb(145, 20, 20);
 }
   
 .invalid:before{

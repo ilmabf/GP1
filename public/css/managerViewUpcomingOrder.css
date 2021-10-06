@@ -259,14 +259,14 @@
 .a8{
     float: left;
     margin-left: 0px;
-    background-color: rgb(145,20,20);
+    background-color: rgb(145, 20, 20);
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .a8:hover{
-    background-color: darkred;
+    background-color: rgb(187, 13, 13);
 }
 
 .reservation-buttons a{
@@ -287,14 +287,14 @@
 .a10{
     float: right;
     margin-right: 161px;
-    background-color: rgb(145,20,20);
+    background-color: rgb(145, 20, 20);
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .a10:hover{
-    background-color: darkred;
+    background-color: rgb(187, 13, 13);
 }
 
 .assignPopUpclass {
@@ -334,7 +334,7 @@
   
   .closeCancelAssign:hover,
   .closeCancelAssign:focus {
-    color: darkgreen;
+    color: rgb(12, 161, 12);
     text-decoration: none;
     cursor: pointer;
   }
@@ -352,7 +352,7 @@
   }
 
   .btnCancelAssign:hover{
-      background-color: darkred;
+      background-color: rgb(187, 13, 13);
   }
 
   .yesCancelAssign button a{
@@ -403,7 +403,7 @@
   
   .closeCancelReservation:hover,
   .closeCancelReservation:focus {
-    color: darkgreen;
+    color: rgb(12, 161, 12);
     text-decoration: none;
     cursor: pointer;
   }
@@ -421,7 +421,7 @@
   }
 
   .btnCancelReservation:hover{
-    background-color: darkred;
+    background-color: rgb(187, 13, 13);
   }
 
   .yesCancelReservation button a{
