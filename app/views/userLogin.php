@@ -1,5 +1,18 @@
 <?php 
     include 'userHeader.php';
+    if (isset($_SESSION["locked"])){
+        $difference = time() - $_SESSION["locked"];
+        echo $difference;
+        if ($difference > 30){
+            unset($_SESSION["locked"]);
+            unset($_SESSION["login_attempts"]);
+        }
+    }
+    // if (isset($_SESSION["login_attempts"])){
+    //     if($_SESSION["login_attempts"] > 2){
+    //         $_SESSION["locked"] = time();
+    //     }
+    // }
 ?>
 <div class="bgImage" style="height:100%">
 <main>
@@ -19,7 +32,18 @@
                         <input class="input-box" type="password" name="pwd" autofocus placeholder="Password" required>
                         <br>
                         <p class="errorDisplay" style="font-size: 11px; padding-bottom: 5px; color:red; max-width: 200px;"><?php echo($_SESSION['error']);?></p>
-                        <button class="input-box loggin-signup-button" type="submit" name="login">Login</button>
+                        <?php 
+                            // echo time(); echo $difference;
+                            // echo " " . $_SESSION["locked"];
+                            if (isset($_SESSION["locked"]))
+                            {
+                                // echo $_SESSION["login_attempts"];
+                                echo "Please wait for 30 seconds";
+                            }
+                            else{
+                                echo "<button class='input-box loggin-signup-button' type='submit' name='login'>Login</button>";
+                            }
+                        ?>
                     </form>
 
                 </div>
