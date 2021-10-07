@@ -17,27 +17,27 @@
         <div class="manager-home-main-flex">
 
             <div class="managerHome-block1">
-                <h3><a href="/booking/upcoming">Upcoming Reservations</a></h3>
+                <h3><a href="/booking/upcoming" style = "color:#085394;">Upcoming Reservations</a></h3>
             </div>
 
             <div class="managerHome-block2">
-                <h3><a href="/booking/completed">Completed Reservations</a></h3>
+                <h3><a href="/booking/completed" style = "color:#085394;">Completed Reservations</a></h3>
             </div>
 
             <div class="managerHome-block3">
-                <h3><a href="/manager/serviceDetails">Service Details</a></h3>
+                <h3><a href="/service/washPackage" style = "color:#085394;">Service Details</a></h3>
             </div>
 
             <div class="managerHome-block4">
-                <h3><a href="/manager/employeeDetails">Employee Details</a></h3>
+                <h3><a href="/employee/" style = "color:#085394;">Employee Details</a></h3>
             </div>
 
             <div class="managerHome-block5">
-                <h3><a href="/manager/viewEquipments">Equipment Details</a></h3>
+                <h3><a href="/service/equipment" style = "color:#085394;">Equipment Details</a></h3>
             </div>
 
             <div class="managerHome-block6">
-                <h3><a href="/dashboard/">Dashboard</a></h3>
+                <h3><a href="/dashboard/" style = "color:#085394;">Dashboard</a></h3>
             </div>
 
         </div>
