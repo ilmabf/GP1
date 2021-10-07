@@ -9,14 +9,28 @@ class Employee extends Controller{
         parent::__construct();
     }
 
-    function adminManageEmployee(){
+    function index(){
+
         $result = $this->model->getEmployeeDetails();
         $_SESSION['employeeDetails'] = $result;
 
-        $this->view->render('adminManageEmployee');
+        if($_SESSION['role'] == "systemadmin"){
+            $this->view->render('adminEmployee');
+            exit;
+        }
+        else if($_SESSION['role'] == "manager"){
+            $this->view->render('managerEmployee');
+        }
     }
 
-    function addNewEmployee(){
+    // function adminManageEmployee(){
+    //     $result = $this->model->getEmployeeDetails();
+    //     $_SESSION['employeeDetails'] = $result;
+
+    //     $this->view->render('adminManageEmployee');
+    // }
+
+    function add(){
 
         $firstName = $_POST['firstName'];
         $lastName = $_POST['lastName'];
@@ -32,7 +46,7 @@ class Employee extends Controller{
             
             if($this->model->makeEmployee($firstName, $lastName, $contactNumber, $email, $dateEnrolled, $salary, $nic, $team)){
                 $_SESSION['insertSuccess'] = 'Employee added successfully';
-                header("Location: /employee/adminManageEmployee");
+                header("Location: /employee/");
             }
         }else{
             Echo "Errrorr";

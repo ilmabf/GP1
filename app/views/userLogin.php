@@ -49,7 +49,7 @@
                 </div>
             </div>
             <p class="forget_pwd"><a href="/user/passwordReset" style = "color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Forgot password?</a></p>
-            <p class="link-to-go-signup"><a href="/customer/signup">Create Account? SignUp</a></p>
+            <p class="link-to-go-signup"><a href="/customer/signup" style = "color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Create Account? SignUp</a></p>
         </div>
 
         
