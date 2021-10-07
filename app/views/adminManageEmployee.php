@@ -10,17 +10,18 @@
     <p>
     <input type="button" id="addRow" value="Add Employee" onclick="addRow(); this.onclick=null;" />
     </p>
-    <form action="/admin/addNewEmployee" name="Form" method="post">
+    <form action="/employee/addNewEmployee" name="Form" method="post">
       <div id="cont"></div>  <!-- the container to add the TABLE -->
 
      
       <input type="submit" id="bt" value="Submit Data"/> 
     </form>
 
-     
-    
-    
 </body>
+
+<div class="empAddSuccess" id="empAddSuccess">
+  <?php echo($_SESSION['insertSuccess']);?>
+</div>
 
 <div style="height: 50px;"></div> 
 
@@ -61,6 +62,7 @@
 
 </div>
 
+
 <div class="Table-search">
   <!-- <label>
     <span>Search:</span>
@@ -79,76 +81,28 @@
           <th data-type="text">Salary</th>
           <th data-type="number">NIC No</th>
           <th data-type="text">Team</th>
-          <th data-type="text">Leader</th>
+          <th colspan="2" style="text-align: center;">Action</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Sahan</td>
-          <td>Dias</td>
-          <td>0769023432</td>
-          <td>sahandias@gmail.com</td>
-          <td>2021 03 20</td>
-          <td>35000</td>
-          <td>12324532V</td>
-          <td>A</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Nirosh</td>
-          <td>Perera</td>
-          <td>0776787643</td>
-          <td>niroshperera@gmail.com</td>
-          <td>2021 04 10</td>
-          <td>25000</td>
-          <td>897645322V</td>
-          <td>B</td>
-          <td>B</td>
-        </tr>
-        <tr>
-          <td>Janith</td>
-          <td>Ryan</td>
-          <td>0776745654</td>
-          <td>janithryan@gmail.com</td>
-          <td>2020 12 10</td>
-          <td>30000</td>
-          <td>89787654V</td>
-          <td>B</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Nimal</td>
-          <td>Lansa</td>
-          <td>0756765789</td>
-          <td>nimallansa@gmail.com</td>
-          <td>2021 01 10</td>
-          <td>28000</td>
-          <td>23456721V</td>
-          <td>A</td>
-          <td>A</td>
-        </tr>
-        <tr>
-          <td>Karun</td>
-          <td>Nair</td>
-          <td>0768987789</td>
-          <td>karunnair@gmail.com</td>
-          <td>2020 10 18</td>
-          <td>32000</td>
-          <td>123245634V</td>
-          <td>B</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Heshan</td>
-          <td>Silva</td>
-          <td>0778987657</td>
-          <td>heshansilva@gmail.com</td>
-          <td>2020 09 12</td>
-          <td>26000</td>
-          <td>23243323V</td>
-          <td>A</td>
-          <td></td>
-        </tr>
+        <?php 
+          $count = 0; $result = $_SESSION['employeeDetails'];
+          while ($count < $_SESSION['rowCount']){?>
+             <tr>
+               <td><?php echo $result[$count]['First_Name']?></td>
+               <td><?php echo $result[$count]['Last_Name']?></td>
+               <td><?php echo $result[$count]['Contact_Number']?></td>
+               <td><?php echo $result[$count]['Email']?></td>
+               <td><?php echo $result[$count]['Date_Enrolled']?></td>
+               <td><?php echo $result[$count]['Salary']?>.00</td>
+               <td><?php echo $result[$count]['NIC_No']?></td>
+               <td><?php echo $result[$count]['Team']?></td>
+               <td><a href="#" class="edit_btn">Edit</a></td>
+               <td><a href="#" class="del_btn">Delete</a></td>
+             </tr>
+          <?php $count = $count + 1;
+          }?>
+        
         </tbody>
     </table>
   </div>

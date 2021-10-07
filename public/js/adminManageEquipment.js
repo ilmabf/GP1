@@ -1,7 +1,8 @@
 var arrHead = new Array();	// array for header.
-    arrHead = ['Name', 'Price', 'Date Acquired','Team', ''];
+    arrHead = ['Name', 'Price', 'Date Acquired', ''];
 
 var submitBtn = document.getElementById('bt');
+var equipInsertSuccess = document.getElementById('equipAddSuccess');
     // first create TABLE structure with the headers. 
 function createTable() {
     var equipTable = document.createElement('table');
@@ -33,7 +34,7 @@ function addRow() {
         var td = document.createElement('td'); // table definition.
         td = tr.insertCell(c);
 
-        if (c == 4) {      // the first column.
+        if (c == 3) {      // the first column.
             // add a button in every new row in the first column.
             var button = document.createElement('input');
 
@@ -71,13 +72,7 @@ function addRow() {
                 ele.setAttribute('type', 'date');
                 ele.setAttribute('required', '');
             }
-
-            else if(c==3){
-                ele.setAttribute('name','team');
-                ele.setAttribute('type', 'text');
-                ele.setAttribute('placeholder','1 or 2 etc');
-                ele.setAttribute('required', '');
-            }
+            
             ele.setAttribute('value', '');
             ele.setAttribute('id', 'tb-input');
 

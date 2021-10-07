@@ -6,53 +6,37 @@ class Admin extends Controller{
         parent::__construct();
     }
 
-    function manageEmployee(){
-        $this->view->render('adminManageEmployee');
-    }
+    // function manageEmployee(){
+    //     $this->view->render('adminManageEmployee');
+    // }
 
-    function addNewEmployee(){
+    // function addNewEmployee(){
 
-        $firstName = $_POST['firstName'];
-        $lastName = $_POST['lastName'];
-        $contactNumber = $_POST['contactNumber'];
-        $email = $_POST['email'];
-        $dateEnrolled = $_POST['dateEnrolled'];
-        $salary = $_POST['salary'];
-        $nic = $_POST['nicNo'];
-        $team = $_POST['team'];
-        $leader = $_POST['leader'];
+    //     $firstName = $_POST['firstName'];
+    //     $lastName = $_POST['lastName'];
+    //     $contactNumber = $_POST['contactNumber'];
+    //     $email = $_POST['email'];
+    //     $dateEnrolled = $_POST['dateEnrolled'];
+    //     $salary = $_POST['salary'];
+    //     $nic = $_POST['nicNo'];
+    //     $team = $_POST['team'];
+    //     $leader = $_POST['leader'];
 
-        if(isset($firstName) && isset($lastName) && isset($contactNumber) && isset($email) && isset($dateEnrolled) && isset($salary) && isset($nic) && isset($team)) {
-            $employeeInsertResult = $this->model->makeEmployee($firstName, $lastName, $contactNumber, $email, $dateEnrolled, $salary, $nic, $team);
-        }else{
-            echo "Errorrrr";
-        }
+    //     if(isset($firstName) && isset($lastName) && isset($contactNumber) && isset($email) && isset($dateEnrolled) && isset($salary) && isset($nic) && isset($team)) {
+    //         $employeeInsertResult = $this->model->makeEmployee($firstName, $lastName, $contactNumber, $email, $dateEnrolled, $salary, $nic, $team);
+    //     }else{
+    //         echo "Errorrrr";
+    //     }
 
 
-    }
+    // }
 
     function manageService(){
         $this->view->render('adminManageService');
     }
 
-    function manageEquipment(){
-        $this->view->render('adminManageEquipment');
-    }
-    function addNewEquipment(){
-
-        $name = $_POST['name'];
-        $price = $_POST['price'];
-        $dateAcquired = $_POST['dateAcquired'];
-        $team = $_POST['team'];
-
-        if(isset($name) && isset($price) &&  isset($dateAcquired) && isset($team) ) {
-            $equipmentInsertResult = $this->model->addEquipment($name, $price, $dateAcquired,$team);
-        }else{
-            echo "Errorrrr";
-        }
-
-
-    }
+   
+ 
 
 
 }

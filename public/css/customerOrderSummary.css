@@ -229,14 +229,14 @@
 .a8{
     float: left;
     margin-left: 150px;
-    background-color: red;
+    background-color: rgb(145, 20, 20);
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .a8:hover{
-    background-color: darkred;
+    background-color: rgb(187, 13, 13);
 }
 
 .order-buttons a{
@@ -254,7 +254,7 @@
 }
 
 .a9:hover{
-    background-color: darkgreen;
+    background-color: rgb(12, 161, 12);
 }
 
 
@@ -295,7 +295,7 @@
   
   .closeCancel:hover,
   .closeCancel:focus {
-    color: darkgreen;
+    color: rgb(12, 161, 12);
     text-decoration: none;
     cursor: pointer;
   }
@@ -307,13 +307,13 @@
   }
 
   .btnCancel{
-      background-color: red;
+      background-color: rgb(145, 20, 20);
       padding: 8px 20px;
       border-radius: 5px;
   }
 
   .btnCancel:hover{
-      background-color: darkred;
+      background-color: rgb(187, 13, 13);
   }
 
   .yesCancel button a{
@@ -361,7 +361,7 @@
   
   .closeConfirm:hover,
   .closeConfirm:focus {
-    color: darkgreen;
+    color: rgb(12, 161, 12);
     text-decoration: none;
     cursor: pointer;
   }
