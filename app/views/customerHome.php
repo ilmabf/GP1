@@ -23,28 +23,28 @@
 
             <div class="section2-blocks1">
                 <div class="customer-home-section2-block-img1"></div>
-                <div class="section2-block-heading"><button><h3><a href="/account/">My Account</a></h3></button></div>
+                <div class="section2-block-heading"><button><h3><a href="/account/" style = "color:#085394;">My Account</a></h3></button></div>
                 <div class="section2-block-para"><p>Add or update your vehicle and location details</p></div>
 
             </div>
 
             <div class="section2-blocks2">
                 <div class="customer-home-section2-block-img2"></div>
-                <div class="section2-block-heading"><button><h3><a href="/booking/upcoming">Upcoming Reservations</a></h3></button></div>
+                <div class="section2-block-heading"><button><h3><a href="/booking/upcoming" style = "color:#085394;">Upcoming Reservations</a></h3></button></div>
                 <div class="section2-block-para"><p>Check your upcoming reservations</p></div>
 
             </div>
 
             <div class="section2-blocks3">
                 <div class="customer-home-section2-block-img3"></div>
-                <div class="section2-block-heading"><button><h3><a href="/booking/completed">Past Reservations</a></h3></button></div>
+                <div class="section2-block-heading"><button><h3><a href="/booking/completed" style = "color:#085394;">Past Reservations</a></h3></button></div>
                 <div class="section2-block-para"><p>Check your past reservations</p></div>
 
             </div>
 
             <div class="section2-blocks4">
                 <div class="customer-home-section2-block-img4"></div>
-                <div class="section2-block-heading"><button><h3><a href="/review/write">Give Reviews</a></h3></button></div>
+                <div class="section2-block-heading"><button><h3><a href="/review/write" style = "color:#085394;">Give Reviews</a></h3></button></div>
                 <div class="section2-block-para"><p>Give your thoughts on about our service</p></div>
 
             </div>
