@@ -11,7 +11,7 @@
     <p>
     <input type="button" id="addRow" value="Add Equipment" onclick="addRow(); this.onclick=null;" />
     </p>
-    <form action="/admin/addNewEquipment" name="Form" method="post">
+    <form action="/equipment/addNewEquipment" name="Form" method="post">
       <div id="cont">
         
       </div>  <!-- the container to add the TABLE -->
@@ -58,6 +58,7 @@
           <th data-type="text" >Price</th>
           <th data-type="text">Date Acquired</th>
           <th data-type="text">Team</th>
+          <th></th>
         </tr>
       </thead>
        <tbody>
