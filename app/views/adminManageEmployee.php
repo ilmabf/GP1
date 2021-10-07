@@ -43,8 +43,8 @@
         <form action="" method="post">
             <select name="serviceTeam" class="ad-Emp-Search" id="AdminserviceTeams-types">
                 <option value="select service team">Select Service Team</option>
-                <option value="Team A">Team A</option>
-                <option value="Team B">Team B</option>
+                <option value="Team 1">Team 1</option>
+                <option value="Team 2">Team 2</option>
             </select>
         </form>
 
@@ -54,8 +54,8 @@
         <form action="" method="post">
             <select name="serviceTeamLeader" class="ad-Emp-Search" id="AdminserviceTeamLeaders-types">
                 <option value="select service team leader">Select Service Team Leader</option>
-                <option value="Team A">Team A Leader</option>
-                <option value="Team B">Team B Leader</option>
+                <option value="Team 1">Team 1 Leader</option>
+                <option value="Team 2">Team 2 Leader</option>
             </select>
         </form>
     </div>

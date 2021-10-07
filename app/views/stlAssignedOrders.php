@@ -3,7 +3,7 @@
 <?php
     include 'userLoggedInHeader.php';
 ?>
-<div class="bgImage" style="height: 100%;">
+<div class="bgImage" style="min-height: 100%;">
 <div style="min-height: 110px;"></div>
 <div>
     <h1 class="stl-dashboard-h1">Today's Reservations</br></h1>

@@ -5,6 +5,18 @@ session_start();
 $_SESSION['error'] = '';
 $_SESSION['changePwdVerifyBox'] = 0;
 
+// if (isset($_SESSION["locked"]))
+// {
+//     $difference = time() - $_SESSION["locked"];
+//     if ($difference > 30)
+//     {
+//         unset($_SESSION["locked"]);
+//         // unset($_SESSION["login_attempts"]);
+//         $_SESSION["login_attempts"] = 0;
+//     }
+// }
+
+
 class User extends Controller{
 
     function __construct(){
@@ -12,6 +24,7 @@ class User extends Controller{
     }
 
     function login(){
+        
         $this->view->render('userLogin');
     }
 
@@ -145,7 +158,10 @@ class User extends Controller{
             if($this->model->checkCustomer($uname)){
                 $Details = $this->model->getCustDetails($uname);
                 $_SESSION['userDetails'] = $Details;
-                // print_r($_SESSION['userDetails']);
+                
+                $vehicles = $this->model->getVehicles($_SESSION['userDetails'][0]['User_ID']);
+                $_SESSION['vehicles'] = $vehicles;
+                
                 $_SESSION['role'] = "customer";
                 $value = $this->model->checkVerified($uname);
                 if($value[0]['Verified'] == "1"){
@@ -172,7 +188,22 @@ class User extends Controller{
         }
         else{
             $_SESSION['error'] = 'The email and password that you entered did not match our records.';
+            
+            $_SESSION["login_failed"] = 1;
+            if(isset($_SESSION['login_failed'])){
+                if(!isset($_SESSION["login_attempts"])){
+                    $_SESSION["login_attempts"] = 1;
+                }
+                else{
+                    $_SESSION["login_attempts"] += 1;
+                }
+                if ($_SESSION["login_attempts"] > 2){
+                    $_SESSION["locked"] = time();
+                }
+            }
+
             $this->view->render('userLogin');
+            // header("Location: /user/login");
         }
     }
 }

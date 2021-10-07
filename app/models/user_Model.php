@@ -122,4 +122,9 @@ class User_Model extends Model{
         // print_r($result);
     }
 
+    public function getVehicles($uid){
+        $result = $this->db->select("*", "customer_vehicle","WHERE User_ID = '$uid';");
+        return $result;
+        // print_r($result);
+    }
 }
