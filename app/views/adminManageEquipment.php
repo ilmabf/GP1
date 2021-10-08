@@ -5,20 +5,20 @@
 ?>
 
 <main>
-<body onload="createTable()">
+<body onload="createEquipTable()">
 
     <div style="min-height: 110px;"></div>
     <h2 class="manageEquipment-heading">Manage Equipment</h2> 
     <p>
-    <input type="button" id="addRow" value="Add Equipment" onclick="addRow(); this.onclick=null;" />
+    <input type="button" id="addNewRow" value="Add Equipment" onclick="addNewRow(); this.onclick=null;" />
     </p>
     <form action="/service/addNewEquipment" name="Form" method="post">
-      <div id="cont">
+      <div id="container">
         
       </div>  <!-- the container to add the TABLE -->
 
      
-      <input type="submit" id="bt" value="Submit Data"/> 
+      <input type="submit" id="submitButton" value="Submit Data"/> 
     </form>
     </body>
 
@@ -33,7 +33,7 @@
 
         <div class="Admin-EquipSearch adEquipSearch2">
             <form action="" method="post">
-                <select name="serviceTeam" class="ad-Equip-Search" id="AdminserviceTeams-types">
+                <select name="serviceTeam" class="ad-Equip-Search" id="AdminserviceTeamTypes">
                     <option value="select service team">Select Service Team</option>
                     <option value="Team A">Team A</option>
                     <option value="Team B">Team B</option>
@@ -42,14 +42,14 @@
          </div>
     </div>
 </div>
-<div class="Table-search">
+<div class="Search-Table">
   <!-- <label>
     <span>Search:</span>
     <input placeholder="Enter search term" type="search" id="searchInput">
   </label> -->
   
-  <div class="table-wrapper">
-    <table id="filterTable">
+  <div class="table-wrap">
+    <table id="ViewAsTable">
       <thead>
         <tr>
           <th data-type="text">Equipment ID</th>

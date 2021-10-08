@@ -27,7 +27,7 @@ td{
 tr{
     max-width: 100%;
 }
-#addRow{
+#addNewRow{
     display: block;
     margin: 35px auto;
     padding: 8px 8px;
@@ -37,7 +37,7 @@ tr{
     border-color: white;
 }
 
-#bt{
+#submitButton{
     display: none;
     margin: 20px auto;
     padding: 8px 8px;
@@ -46,12 +46,17 @@ tr{
     border-radius: 5px;
     border-color: white;
 }
-
-#addRow:hover, #bt:hover{
+#container{
+    display:block;
+    overflow:auto;
+    margin:0;
+    padding-bottom:10px;
+}
+#addNewRow:hover, #bt:hover{
     color: #70a2ce;
 }
 
-#removeBtn{
+#removeButton{
     background-color: red;
     padding: 5px 5px;
     color: white;
@@ -59,7 +64,7 @@ tr{
     border-color: white;
 }
 
-#removeBtn:hover{
+#removeButton:hover{
     background-color: darkred;
 }
 
@@ -108,29 +113,27 @@ tr{
     margin-right: 150px;
 }
 
-#AdminserviceTeams-types{
+#AdminserviceTeamTypes{
     font-weight: 600;
     border-radius: 5px;
     border: 2px outset #085394;
 }
 
-.aaa{
-    margin-right: 15px;
-}
+
 
 #adminSearchEquipment{
     font-size: 15px;
     border: 2px outset #085394;
 }
 
-.Table-search {
+.Search-Table {
     display: flex;
     flex-direction: column;
     padding: 1em;
     align-items: center;
 }
 
-.table-wrapper {
+.table-wrap {
     overflow: auto;
     max-width: 100%;
 }
@@ -160,7 +163,7 @@ input[type=search] {
     padding: 0.25em;
 }
 
-.hidden {
+.hiddenRow {
     display: none;
 }
 
