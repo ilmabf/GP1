@@ -12,17 +12,18 @@ table {
 table, th, td { 
     border: solid 1px #085394;
     border-collapse: collapse; 
-    padding: 2px 2px; 
     text-align: center;
     margin: 0px auto;
 }
 
 th{
     max-width: 130px;
+    padding: 0.35em 0.35em; 
 }
 
 td{
-    max-width: 150px;
+    /* max-width: 170px; */
+    padding: 0.35em 0.35em;
 }
 
 tr{
@@ -30,14 +31,33 @@ tr{
 }
 
 #addRow{
-    display: block;
-    margin: 35px auto;
+    margin: 35px 20px;
     padding: 8px 8px;
     background-color: #085394;
     color: white;
     border-radius: 5px;
     border-color: white;
     cursor: pointer;
+}
+
+#addStlRow{
+    margin: 35px 20px;
+    padding: 8px 8px;
+    background-color: #085394;
+    color: white;
+    border-radius: 5px;
+    border-color: white;
+    cursor: pointer;
+}
+
+.addTableEmp{
+    display: inline-block;
+    text-align: center;
+    margin: auto;
+}
+
+.addBtnEmps{
+    text-align: center;
 }
 
 #bt{
@@ -51,27 +71,39 @@ tr{
     cursor: pointer;
 }
 
-#addRow:hover, #bt:hover{
+#btStl{
+    display: none;
+    margin: 20px auto;
+    padding: 8px 8px;
+    background-color: #085394;
+    color: white;
+    border-radius: 5px;
+    border-color: white;
+    cursor: pointer;
+}
+
+#addRow:hover, #bt:hover, #addStlRow:hover, #btStl:hover{
     color: #70a2ce;
 }
 
-#removeBtn{
-    background-color: red;
+#removeBtn, #removeStlBtn{
+    background-color: rgb(145, 20, 20);
     padding: 5px 5px;
     color: white;
     border-radius: 5px;
     border-color: white;
+    cursor: pointer;
 }
 
-#removeBtn:hover{
-    background-color: darkred;
+#removeBtn:hover, #removeStlBtn:hover{
+    background-color: rgb(187, 13, 13);
 }
 
-#tb-input{
-    padding: 4px;
-    font-size: 12px;
+#tb-input, #tb-Stlinput{
+    padding: 2px;
+    font-size: 14px;
     border-color: grey;
-    max-width: 110px;
+    max-width: 115px;
 }
 
 /* .admin-EmpSearch-box{
@@ -164,7 +196,7 @@ th {
 th, td {
     border: solid 1px #085394;
     text-align: left;
-    padding: 0.5em 1em;
+    padding: 2px 2px;
     max-width: fit-content;
 }
 
@@ -209,6 +241,14 @@ input[type=search] {
 
 .del_btn:hover {
     background: rgb(187, 13, 13);
+}
+
+.addTb2{
+    display: none;
+}
+
+::-webkit-calendar-picker-indicator{
+    margin-left: 0px;
 }
 
 
