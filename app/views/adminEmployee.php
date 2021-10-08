@@ -3,21 +3,37 @@
     include 'userLoggedInHeader.php';
 ?>
 <main>
-<body onload="createTable()">
 
     <div style="min-height: 110px;"></div>
-    <h2 class="manageEmployee-heading">Manage Employee</h2> 
-    <p>
-    <input type="button" id="addRow" value="Add Employee" onclick="addRow(); this.onclick=null;" />
-    </p>
-    <form action="/employee/add" name="Form" method="post">
-      <div id="cont"></div>  <!-- the container to add the TABLE -->
+    <h2 class="manageEmployee-heading">Manage Employee</h2>
+    <div class="addBtnEmps">
+      <input type="button" id="addRow" value="Add Employee" class="addTableEmp" onclick="addRow(); this.onclick=null;" />
+      <input type="button" id="addStlRow" value="Add Service Team Leader" class="addTableEmp" onclick="addStlRow(); this.onclick=null;" />
+    </div>
 
-     
-      <input type="submit" id="bt" value="Submit Data"/> 
-    </form>
+    <!-- <body onload="createTable()"> -->
+      <div>
+        <form action="/employee/add" name="Form" method="post">
+          <div id="cont" class="addTb1"></div>  <!-- the container to add the TABLE -->
 
-</body>
+        
+          <input type="submit" id="bt" value="Submit Employee"/> 
+        </form>
+
+      </div>
+    <!-- </body> -->
+
+    <!-- <body onload="createStlAddTable()"> -->
+      <div>
+        <form action="/stl/add" method="post">
+          <div id="cont2" class="addTb2"></div>
+
+          <input type="submit" id="btStl" value="Submit Stl"/>
+        </form>  
+      </div>
+      
+    <!-- </body> -->
+
 
 <div class="empAddSuccess" id="empAddSuccess">
   <?php echo($_SESSION['insertSuccess']);?>
