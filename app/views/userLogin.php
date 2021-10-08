@@ -36,10 +36,10 @@
                             // echo time(); echo $difference;
                             // echo " " . $_SESSION["locked"];
                             if (isset($_SESSION["locked"]))
-                            {
-                                // echo $_SESSION["login_attempts"];
-                                echo "Please wait for 30 seconds";
-                            }
+                            {?>
+                                <!-- echo $_SESSION["login_attempts"]; -->
+                                <p style='font-size:12px;'><?php echo "Please wait for 30 seconds";?></p>
+                      <?php }
                             else{
                                 echo "<button class='input-box loggin-signup-button' type='submit' name='login'>Login</button>";
                             }

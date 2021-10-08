@@ -10,13 +10,13 @@
 }
 
 .mgEmpSearch1{
-    margin-left: 20px;
+    margin-left: 160px;
 }
 
 .mgEmpSearch2{
     float: right;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: -100px;
+    margin-right: 160px;
 }
 
 #serviceTeams-types{
