@@ -85,13 +85,13 @@
         <script src="/public/js/customerSignup.js"></script>   
 </main>
 
-<div style="min-height: 110px;"></div>
+<div style="min-height: 110px;">
 
 
 
 <?php 
     include 'userFooter.php';
-?>
+?> 
 
 
 

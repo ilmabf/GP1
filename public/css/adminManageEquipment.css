@@ -1,0 +1,193 @@
+.manageEquipment-heading{
+    color: #085394;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+table { 
+    max-width: 100%; 
+}
+
+table, th, td { 
+    border: solid 1px #085394;
+    border-collapse: collapse; 
+    padding: 2px 2px; 
+    text-align: center;
+    margin: 0px auto;
+}
+
+th{
+    max-width: 130px;
+}
+
+td{
+    max-width: 150px;
+}
+
+tr{
+    max-width: 100%;
+}
+#addRow{
+    display: block;
+    margin: 35px auto;
+    padding: 8px 8px;
+    background-color: #085394;
+    color: white;
+    border-radius: 5px;
+    border-color: white;
+}
+
+#bt{
+    display: none;
+    margin: 20px auto;
+    padding: 8px 8px;
+    background-color: #085394;
+    color: white;
+    border-radius: 5px;
+    border-color: white;
+}
+
+#addRow:hover, #bt:hover{
+    color: #70a2ce;
+}
+
+#removeBtn{
+    background-color: red;
+    padding: 5px 5px;
+    color: white;
+    border-radius: 5px;
+    border-color: white;
+}
+
+#removeBtn:hover{
+    background-color: darkred;
+}
+
+#tb-input{
+    padding: 4px;
+    font-size: 12px;
+    border-color: grey;
+    max-width: 110px;
+}
+#adminSearchEquipment{
+    padding: 10px 10px;
+    border-color: #085394;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 135px;
+    display: block;
+    font-size: 15px;
+}
+
+#adminViewEquip{
+    display: block;
+    margin: 30px auto;
+    padding: 8px 8px;
+    background-color: #085394;
+    color: white;
+    border-radius: 5px;
+    border-color: white;
+}
+
+#adminViewEquip:hover{
+    color: #70a2ce;;
+}
+
+.Admin-EquipSearch{
+    display: inline-block;
+}
+
+.adEquipSearch1{
+    margin-left: 20px;
+}
+
+.adEquipSearch2{
+    float: right;
+    margin-left: 20px;
+    margin-right: 150px;
+}
+
+#AdminserviceTeams-types{
+    font-weight: 600;
+    border-radius: 5px;
+    border: 2px outset #085394;
+}
+
+.aaa{
+    margin-right: 15px;
+}
+
+#adminSearchEquipment{
+    font-size: 15px;
+    border: 2px outset #085394;
+}
+
+.Table-search {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    align-items: center;
+}
+
+.table-wrapper {
+    overflow: auto;
+    max-width: 100%;
+}
+
+tr {
+    border-bottom: 1px solid;
+}
+
+th {
+    color: #085394;
+    /* white-space: nowrap; */
+    cursor: pointer;
+    border: solid 1px #085394;
+}
+
+th, td {
+    border: solid 1px #085394;
+    text-align: left;
+    padding: 0.5em 1em;
+    max-width: fit-content;
+}
+
+input[type=search] {
+    border: 1px solid;
+    font-size: initial;
+    margin-bottom: 1em;
+    padding: 0.25em;
+}
+
+.hidden {
+    display: none;
+}
+
+
+@media only screen and (max-width: 770px){
+
+    .heading{
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .ad-EquipSearch{
+        display: block;
+        text-align: center;
+        margin: 10px auto;
+    }
+
+    #adminSearchEquipment{
+        font-size: 12px;
+        margin-right: 50px;
+        margin-left: 50px;
+    }
+
+    .adEquipSearch2{
+        float: left;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+}

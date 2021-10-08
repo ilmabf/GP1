@@ -18,7 +18,9 @@
             </div>
 
             <div class="adminHome-block2">
+
                 <h3><a href="/service/equipment" style = "color:#085394;">Manage Equipments</a></h3>
+
             </div>
             
             <div class="adminHome-block3">

@@ -2,11 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\app",
+    "\\app\\config",
     "\\app\\controllers",
+    "\\app\\models",
     "\\app\\views",
     "\\public",
-    "\\public\\css"
+    "\\public\\js"
   ],
-  "SelectedNode": "\\public\\css\\customerMyOrders.css",
+  "SelectedNode": "\\app\\config\\databaseConf.php",
   "PreviewInSolutionExplorer": false
 }

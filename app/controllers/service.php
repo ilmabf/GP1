@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 class Service extends Controller{
 
     function __construct(){
@@ -7,8 +8,9 @@ class Service extends Controller{
     }
 
     function equipment(){
+        $_SESSION['equipmentDetails'] = $this->model->getEquipmentDetails();
         if($_SESSION['role'] == "systemadmin"){
-            $this->view->render('adminEquipment');
+            $this->view->render('adminManageEquipment');
             exit;
         }
         else if($_SESSION['role'] == "manager"){
@@ -29,5 +31,20 @@ class Service extends Controller{
             $this->view->render('managerService');
         }
     }
+   
+    function addNewEquipment(){
+       
+        $name = $_POST['name'];
+        $price = $_POST['price'];
+        $dateAcquired = $_POST['dateAcquired'];
 
+        if(isset($name) && isset($price) &&  isset($dateAcquired) ) {
+            
+            if($this->model->addEquipment($name, $price, $dateAcquired)){
+                header("Location: /service/equipment");
+            }
+        }else{
+            echo "Errorrrr";
+        }
+    }
 }
