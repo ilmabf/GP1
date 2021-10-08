@@ -10,7 +10,7 @@ class Service extends Controller{
     function equipment(){
         $_SESSION['equipmentDetails'] = $this->model->getEquipmentDetails();
         if($_SESSION['role'] == "systemadmin"){
-            $this->view->render('adminManageEquipment');
+            $this->view->render('adminEquipment');
             exit;
         }
         else if($_SESSION['role'] == "manager"){
