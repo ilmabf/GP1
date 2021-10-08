@@ -14,15 +14,17 @@
         <div class="admin-home-main-flex">
 
             <div class="adminHome-block1">
-                <h3><a href="/employee/adminManageEmployee">Manage Employee</a></h3>
+                <h3><a href="/employee/" style = "color:#085394;">Manage Employee</a></h3>
             </div>
 
             <div class="adminHome-block2">
-                <h3><a href="/equipment/adminManageEquipment">Manage Equipment</a></h3>
+
+                <h3><a href="/service/equipment" style = "color:#085394;">Manage Equipments</a></h3>
+
             </div>
             
             <div class="adminHome-block3">
-                <h3 class="admin-manage-services-heading"><a href="/admin/manageService">Manage Services</a></h3>
+                <h3 class="admin-manage-services-heading"><a href="/service/washPackage" style = "color:#085394;">Manage Services</a></h3>
                 <!-- <div class="adminHome-sub-block3">
                     <p><a href="adminServicetype.php">Service Type</a></p>
                 </div>

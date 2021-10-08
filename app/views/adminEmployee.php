@@ -10,7 +10,7 @@
     <p>
     <input type="button" id="addRow" value="Add Employee" onclick="addRow(); this.onclick=null;" />
     </p>
-    <form action="/employee/addNewEmployee" name="Form" method="post">
+    <form action="/employee/add" name="Form" method="post">
       <div id="cont"></div>  <!-- the container to add the TABLE -->
 
      

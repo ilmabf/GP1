@@ -54,7 +54,7 @@ function addRow() {
         else {
             // 2nd, 3rd and 4th column, will have textbox.
             var ele = document.createElement('input');
-
+         
             if(c==0){
                 ele.setAttribute('name', 'name');
                 ele.setAttribute('type', 'text');

@@ -1,7 +1,7 @@
 <?php
 
 
-class Equipment_Model extends Model{
+class Service_Model extends Model{
     function __construct(){
         parent::__construct();
     }
@@ -10,10 +10,13 @@ class Equipment_Model extends Model{
         $columns = array('Name', 'Price', 'Date_Acquired');
         $values = array($name, $price,  $dateAcquired);
         $result = $this->db->insert("equipment", $columns, $values);
-        return $result;
+         if($result == "Success"){
+            return true;
+        }
+        else print_r($result);
     }
 
-    function getEquipmentDetails(){
+    public function getEquipmentDetails(){
         $result = $this->db->select("*", "equipment", "Null");
         return $result;
     }
