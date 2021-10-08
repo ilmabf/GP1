@@ -1,10 +1,10 @@
 var arrHead = new Array();	// array for header.
     arrHead = ['Name', 'Price', 'Date Acquired', ''];
 
-var submitBtn = document.getElementById('bt');
+var submitBtn = document.getElementById('submitButton');
 var equipInsertSuccess = document.getElementById('equipAddSuccess');
     // first create TABLE structure with the headers. 
-function createTable() {
+function createEquipTable() {
     var equipTable = document.createElement('table');
     equipTable.setAttribute('id', 'equipTable'); // table id.
 
@@ -15,12 +15,12 @@ function createTable() {
         tr.appendChild(th);
     }
 
-    var div = document.getElementById('cont');
+    var div = document.getElementById('container');
     div.appendChild(equipTable);  // add the TABLE to the container.
 }
 
 // now, add a new to the TABLE.
-function addRow() {
+function addNewRow() {
 
     submitBtn.style.display = "block";
 
@@ -44,7 +44,7 @@ function addRow() {
             // set input attributes.
             button.setAttribute('type', 'button');
             button.setAttribute('value', 'Remove');
-            button.setAttribute('id', 'removeBtn');
+            button.setAttribute('id', 'removeButton');
 
             // add button's 'onclick' event.
             button.setAttribute('onclick', 'removeRow(this)');
@@ -82,7 +82,7 @@ function addRow() {
 }
 
 // delete TABLE row function.
-function removeRow(oButton) {
+function removeARow(oButton) {
     var equipTab = document.getElementById('equipTable');
     equipTab.deleteRow(oButton.parentNode.parentNode.rowIndex); // button -> td -> tr.
 
