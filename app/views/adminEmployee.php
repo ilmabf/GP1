@@ -97,6 +97,7 @@
           <th data-type="text">Salary</th>
           <th data-type="number">NIC No</th>
           <th data-type="text">Team</th>
+          <th data-type="text">Leader</th>
           <th colspan="2" style="text-align: center;">Action</th>
         </tr>
       </thead>
@@ -113,6 +114,7 @@
                <td><?php echo $result[$count]['Salary']?>.00</td>
                <td><?php echo $result[$count]['NIC_No']?></td>
                <td><?php echo $result[$count]['Team']?></td>
+               <td><?php echo ""?></td>
                <td><a href="#" class="edit_btn">Edit</a></td>
                <td><a href="#" class="del_btn">Delete</a></td>
              </tr>
