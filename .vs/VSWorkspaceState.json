@@ -2,9 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\models",
-    "\\public"
+    "\\app\\views",
+    "\\public",
+    "\\public\\css"
   ],
-  "SelectedNode": "\\app\\models\\service_Model.php",
+  "SelectedNode": "\\app\\views\\adminManageEquipment.php",
   "PreviewInSolutionExplorer": false
 }

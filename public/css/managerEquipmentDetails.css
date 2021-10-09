@@ -4,30 +4,78 @@
     text-align: center;
     font-size: larger;
 }
-
-.Equipment-search-box{
-    display: inline-block;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 40px;
-}
-
-#managerSearchEquipments{
-    border-color: #085394;
+#managerSearchEquipment{
     padding: 10px 10px;
-}
-
-#managerViewEquip{
-    background-color: #085394;
-    cursor: pointer;
-    padding: 6px 15px;
-    color: white;
+    border-color: #085394;
     border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 135px;
+    display: block;
+    font-size: 15px;
 }
 
-#managerViewEquip:hover{
-    background-color: #032a4d;
+.Manager-EquipSearch{
+    display: inline-block;
 }
+
+.managerEquipSearch1{
+    margin-left: 100px;
+}
+
+.managerEquipSearch2{
+    float: right;
+    margin-left: 20px;
+    margin-right: 250px;
+}
+
+#Manager-AssignedEquip-TeamTypes{
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    border: 2px outset #085394;
+}
+
+#managerSearchEquipment{
+    font-size: 15px;
+    border: 2px outset #085394;
+}
+
+.Manager-equip-Table{
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    align-items: center;
+}
+
+.manager-equip-table-wrap {
+    overflow: auto;
+    max-width: 100%;
+}
+table { 
+    max-width: 100%; 
+}
+
+table, th, td { 
+    border: solid 1px #085394;
+    border-collapse: collapse; 
+    padding: 2px 2px; 
+    text-align: center;
+    margin: 0px auto;
+}
+
+th{
+    max-width: 130px;
+}
+
+td{
+    max-width: 150px;
+}
+
+tr{
+    max-width: 100%;
+}
+
 
 @media only screen and (max-width: 770px){
 
