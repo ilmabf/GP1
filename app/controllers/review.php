@@ -25,7 +25,7 @@ class Review extends Controller{
         // $time = $dt->format('H:i:s');
         $details = $_SESSION['userDetails'];
         $id = $details[0]['User_ID'];
-        $reviewData = array(date('Y-m-d'), date("h:i:s"), $review, $id);
+        $reviewData = array(date('Y-m-d'), date("H:i:s"), $review, $id);
         if($this->model->storeReview($reviewData)){
             header("Location: /user/home");
         }
