@@ -44,10 +44,10 @@ function addNewRow() {
             // set input attributes.
             button.setAttribute('type', 'button');
             button.setAttribute('value', 'Remove');
-            button.setAttribute('id', 'removeButton');
+            button.setAttribute('id', 'removeButton1');
 
             // add button's 'onclick' event.
-            button.setAttribute('onclick', 'removeRow(this)');
+            button.setAttribute('onclick', 'removeRow1(this)');
 
             td.appendChild(button);
         }
@@ -82,31 +82,11 @@ function addNewRow() {
 }
 
 // delete TABLE row function.
-function removeARow(oButton) {
+function removeRow1(oButton) {
     var equipTab = document.getElementById('equipTable');
     equipTab.deleteRow(oButton.parentNode.parentNode.rowIndex); // button -> td -> tr.
 
     submitBtn.style.display = "none";
 }
 
-    // function to extract and submit table data.
-    // function submit() {
-    //     var myTab = document.getElementById('empTable');
-    //     var arrValues = new Array();
-
-        
-    //     for (row = 1; row < myTab.rows.length - 1; row++) {
-        	
-    //         for (c = 0; c < myTab.rows[row].cells.length; c++) {  
-    //             var element = myTab.rows.item(row).cells[c];
-    //             if (element.childNodes[0].getAttribute('type') == 'text') {
-    //                 arrValues.push("'" + element.childNodes[0].value + "'");
-    //             }
-    //         }
-    //    }
-        
-        // The final output.
-        //document.getElementById('output').innerHTML = arrValues;
-        //console.log (arrValues);   // you can see the array values in your browsers console window. Thanks :-) 
-    //}
 

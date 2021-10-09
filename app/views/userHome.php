@@ -69,8 +69,10 @@
         </section>
 
         </div>
+    
         
     </main>
+
 
 <?php 
     include 'userFooter.php';
