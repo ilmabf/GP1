@@ -16,7 +16,7 @@
 
 <div id="container">
 
-            <div class="review-box1">
+            <div class="review-box1" style = "background-color: rgb(255,255,255,0.9);">
             <div class="review-header">Feedback from our customers</div>
                             <div class = "review-box">
                                 <?php
