@@ -44,7 +44,6 @@
 <!-- <div class="admin-EmpSearch-box">
     <input type="text" id="adminSearchEmployee" onkeyup="myFunction()" placeholder="Search for Employees." title="Type in a name">
 </div>
-
 <p>
     <input type="button" id="adminViewEmp" value="View Employee" onclick="viewEmp()" />
 </p> -->
@@ -136,4 +135,3 @@
 <script src="/public/js/adminEmployeeTable.js"></script>  
 
 </main>
-

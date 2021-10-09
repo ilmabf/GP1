@@ -28,10 +28,11 @@
                         <label for="Vehicle Type" style = "padding: 0px 87px 0px 0px;">Vehicle Type</label>
                         <select name="vehicleType" class="Mg-Emp-Search" id="serviceTeamLeaders-types" style = "width:50%; margin-bottom: 5px;" required>
                             <option value=""> </option>
-                            <option value="Type A">Sedan</option>
-                            <option value="Type B">SUV</option>
-                            <option value="Type C">Luxury</option>
-                            <option value="Type D">Van</option>
+                            <option value="Sedan">Sedan</option>
+                            <option value="SUV">SUV</option>
+                            <option value="Luxury">Luxury</option>
+                            <option value="Van">Van</option>
+                            <option value="H-Black">H-Black</option>
                         </select>
                         <br>
                         <label for="Manufacturer" style = "padding: 0px 80px 0px 0px;">Manufacturer</label>
@@ -59,10 +60,11 @@
                         <br>
                         <label for="Vehicle Type" style = "padding: 0px 87px 0px 0px;">Vehicle Type</label>
                         <select name="serviceTeamLeader" class="Mg-Emp-Search" id="serviceTeamLeaders-types" style = "width:50%; margin-bottom: 5px;">
-                            <option value="select service team leader">SUV</option>
-                            <option value="Type A">Sedan</option>
-                            <option value="Type C">Luxury</option>
-                            <option value="Type D">Van</option>
+                            <option value="Sedan">Sedan</option>
+                            <option value="SUV">SUV</option>
+                            <option value="Luxury">Luxury</option>
+                            <option value="Van">Van</option>
+                            <option value="H-Black">H-Black</option>
                         </select>
                         <br>
                         <label for="Manufacturer" style = "padding: 0px 80px 0px 0px;">Manufacturer</label>
@@ -99,9 +101,10 @@
 
                 </div>
             </div>
-<div id = "mainbox">
+
     <div class = "box">
-    <div class="account-box1">
+    <!-- <div > -->
+    <div class="account-box1" id = "mainbox">
         <div class = "account-prof">
             <div class="account-header">My Account</div>
             <div class="account-box2">
@@ -231,7 +234,7 @@
                 
 </div>
 
-</div>
+<!-- </div> -->
 
                 </div>
 <!-- <div style="min-height: 110px;"></div>  -->
