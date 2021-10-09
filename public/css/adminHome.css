@@ -17,6 +17,7 @@
     text-align: center; 
     padding-top: 20px;
     padding-bottom: 20px;
+    background-color: rgb(255,255,255,0.1);
 }
 
 .admin-home-main-flex{
@@ -72,6 +73,7 @@ h3{
         margin-left: 100px;
         margin-right: 100px;
         margin-top: 80px;
+        background-color: rgb(255,255,255,0.1);
     }
 
     .adminHome-block1, .adminHome-block2, .adminHome-block3{

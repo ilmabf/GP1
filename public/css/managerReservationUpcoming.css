@@ -16,7 +16,8 @@ input[type=text3]{
     text-align: center;
     margin: 35px 236px;
     padding: 10px 20px;
-    background-color: white;
+    /* background-color: white; */
+    background-color: rgb(255,255,255,0);
     border-radius: 5px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);   
 }
@@ -54,13 +55,22 @@ input[type=text3]{
     transform: translate(95%, 4%);
 }
 .upcomingOrders{
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
     margin: 35px 238px;
     padding: 10px 20px;
     background-color: white;
     border-radius: 5px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);  
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);   */
+
+    display: -webkit-inline-box;
+    flex-wrap: wrap;
+    margin: 35px 238px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 40%);
+    align-content: center;
+    background-color: rgb(211,211,211,0.6);
 }
 
 .upcomingOrders h3{
