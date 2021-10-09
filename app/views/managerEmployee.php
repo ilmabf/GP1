@@ -12,11 +12,11 @@
 
 <div class="main-Mg-EmpSearch">
 
-    <div class="Mg-EmpSearch mgEmpSearch1 marginFix">
+    <div class="Mg-EmpSearch mgEmpSearch1 marginFix"  style = "margin-left: 214px;">
         <input type="text" class="Mg-Emp-Search" id="managerSearchEmployee" onkeyup="myFunction()" placeholder="Search for Employee..." title="Type in a name">
     </div>
 
-    <div class="Mg-EmpSearch mgEmpSearch2">
+    <div class="Mg-EmpSearch mgEmpSearch2" style="margin-right: 212px;">
         <form action="" method="post">
             <select name="serviceTeam" class="Mg-Emp-Search" id="serviceTeams-types">
                 <option value="select service team">Select Service Team</option>

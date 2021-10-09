@@ -141,7 +141,7 @@ class User extends Controller{
                 exit;
             }
             else{
-                $this->view->render('systemAdminHome');
+                $this->view->render('adminHome');
                 exit;
             }
         }
@@ -183,7 +183,7 @@ class User extends Controller{
             }
             else{
                 $_SESSION['role'] = "systemadmin";
-                $this->view->render('systemAdminHome');
+                $this->view->render('adminHome');
             }
         }
         else{
