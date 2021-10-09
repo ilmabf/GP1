@@ -298,7 +298,7 @@ input[type=text2]{
 }
 
 .bgImage1 { 
-    background: url(/public/images/car_desktop.jpg) no-repeat center center fixed; 
+    background: url(/public/images/carblur_desktop.png) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
