@@ -1,13 +1,16 @@
 <?php
 date_default_timezone_set("Asia/Colombo");
 session_start();
-class Review extends Controller{
+class Review extends Controller
+{
 
-    function __construct(){
+    function __construct()
+    {
         parent::__construct();
     }
 
-    function index(){
+    function index()
+    {
         $result = $this->model->getUserReviews();
         $_SESSION['reviews'] = $result;
         // $result = $this->model->getCustomers();
@@ -15,20 +18,21 @@ class Review extends Controller{
         $this->view->render('userReviews');
     }
 
-    function write(){
+    function write()
+    {
         $this->view->render('customerGiveReview');
     }
-   
-    function store(){
+
+    function store()
+    {
         $review = $_POST['review'];
         // $dt = new DateTime("now", new DateTimeZone('Asia/Colombo'));
         // $time = $dt->format('H:i:s');
         $details = $_SESSION['userDetails'];
         $id = $details[0]['User_ID'];
         $reviewData = array(date('Y-m-d'), date("H:i:s"), $review, $id);
-        if($this->model->storeReview($reviewData)){
+        if ($this->model->storeReview($reviewData)) {
             header("Location: /user/home");
-        }
-        else echo "ERROR";
+        } else echo "ERROR";
     }
 }

@@ -13,7 +13,8 @@
     border-radius: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
-    width: 100%;
+    /* width: 100%; */
+    width: 96%;
 }
 
 
@@ -32,6 +33,20 @@
     padding: 30px 50px 20px 30px;
     width: 40%;
 
+}
+
+.custGiveReview{
+    display: block;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 40%);
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px 26px 20px 22px;
+    width: 40%;
+    height: 237px;
 }
 
 .review-header{
@@ -68,8 +83,16 @@
         font-size: smaller;
     }
 
+    .custGiveReview{
+        width: 59%;
+        top: 69%;
+        font-size: smaller;
+    }
+    .Givereview-box{
+        width: 89%;
+    }
+    
     .review-datetime{
         padding: 5px 5px 0px 2px;
     }
   }
-

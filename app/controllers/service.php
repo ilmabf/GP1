@@ -1,19 +1,21 @@
 <?php
 session_start();
 
-class Service extends Controller{
+class Service extends Controller
+{
 
-    function __construct(){
+    function __construct()
+    {
         parent::__construct();
     }
 
-    function equipment(){
+    function equipment()
+    {
         $_SESSION['equipmentDetails'] = $this->model->getEquipmentDetails();
-        if($_SESSION['role'] == "systemadmin"){
+        if ($_SESSION['role'] == "systemadmin") {
             $this->view->render('adminEquipment');
             exit;
-        }
-        else if($_SESSION['role'] == "manager"){
+        } else if ($_SESSION['role'] == "manager") {
             $this->view->render('managerEquipment');
         }
     }
@@ -22,29 +24,31 @@ class Service extends Controller{
     //     $this->view->render('managerEmployeeDetails');
     // }
 
-    function washPackage(){
-        if($_SESSION['role'] == "systemadmin"){
+    function washPackage()
+    {
+        if ($_SESSION['role'] == "systemadmin") {
             $this->view->render('adminService');
             exit;
-        }
-        else if($_SESSION['role'] == "manager"){
+        } else if ($_SESSION['role'] == "manager") {
             $this->view->render('managerService');
         }
     }
-   
-    function addNewEquipment(){
-       
-        $name = $_POST['name'];
-        $price = $_POST['price'];
-        $dateAcquired = $_POST['dateAcquired'];
 
-        if(isset($name) && isset($price) &&  isset($dateAcquired) ) {
-            
-            if($this->model->addEquipment($name, $price, $dateAcquired)){
-                header("Location: /service/equipment");
+    function addNewEquipment()
+    {
+        if ($_SESSION['role'] == "systemadmin") {
+            $name = $_POST['name'];
+            $price = $_POST['price'];
+            $dateAcquired = $_POST['dateAcquired'];
+
+            if (isset($name) && isset($price) &&  isset($dateAcquired)) {
+
+                if ($this->model->addEquipment($name, $price, $dateAcquired)) {
+                    header("Location: /service/equipment");
+                }
+            } else {
+                echo "Errorrrr";
             }
-        }else{
-            echo "Errorrrr";
         }
     }
 }
