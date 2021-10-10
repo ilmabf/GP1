@@ -1,12 +1,15 @@
 <?php
 
-class Controller {
+class Controller
+{
 
-    function __construct() {
+    function __construct()
+    {
         $this->view = new View();
     }
 
-    public function loadModel($modelName) {
+    public function loadModel($modelName)
+    {
         $path = 'models/' . $modelName . '_Model.php';
         if (file_exists($path)) {
             require $path;

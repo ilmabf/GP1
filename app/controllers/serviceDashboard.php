@@ -1,13 +1,15 @@
 <?php
 
-class ServiceDashboard extends controller{
+class ServiceDashboard extends controller
+{
 
-    function __construct(){
+    function __construct()
+    {
         parent::__construct();
     }
 
-    function index(){
+    function index()
+    {
         $this->view->render('stlDashboard');
     }
-} 
-
+}

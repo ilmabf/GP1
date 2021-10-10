@@ -9,6 +9,7 @@
     <h2>Order Summary</h2>
     
 </div>
+<div  id = "box3">
 <p style="color: red; font-size: 12px; text-align:center">* please do the changes or cancel order before 24 hours of reservation time</p>
 <div class="box3">
         
@@ -55,16 +56,16 @@
 
         
     </div>
-</div>
+
 
 <div class="order-buttons">
-    <button class="orderButtons a8 a81" id="cancelBtn"><a>Cancel Order</a></button>
-    <button class="orderButtons a9" id="confirmBtn"><a>Confirm Order</a></button>
+    <button class="orderButtons a8 a81" id="cancelBtn" onclick = "openCancelOrder()"><a>Cancel Order</a></button>
+    <button class="orderButtons a9" id="confirmBtn" onclick = "openConfirmOrder()"><a>Confirm Order</a></button>
 </div>
+</div>
+<!-- <div id="cancelPopUpId" class="cancelPopUpclass">
 
-<div id="cancelPopUpId" class="cancelPopUpclass">
-
-  <!-- Modal content -->
+  Modal content
     <div class="cancelPopUpContent-content">
         <span class="closeCancel">&times;</span>
         <p>Do you need to Cancel your Booking ?</p>
@@ -73,8 +74,8 @@
         </div>
     </div>
 
-</div>
-
+</div> -->
+<!-- 
 <div id="confirmPopUpId" class="confirmPopUpclass">
 
   
@@ -86,8 +87,34 @@
         </div>
     </div>
 
+</div> -->
+
+<div class="addVehicleform" id = "cancelPopUpId">
+    <div class="forma">
+        
+        <h2 class="login-signupheader">Do you want to cancel your booking?</h2>
+
+        <form action="" method="post" id="customer-signup">
+            
+            <button id="VehicleFormSubmitButton" class="formSubmitButton" type="button" name="signup"><a href="/user/home" style = "color:White;">Yes</a></button>
+            <button id="VehicleFormCloseButton" class="formCancelButton" type="button" name="signup" onclick = "closeCancelOrder()">No</button>
+        </form>
+
+    </div>
 </div>
 
+<div class="addVehicleform" id = "confirmPopUpId">
+    <div class="forma">
+        
+        <h2 class="login-signupheader">Your order has been confirmed. Thank you!</h2>
+
+        <form action="" method="post" id="customer-signup">
+            
+            <button id="VehicleFormSubmitButton" class="formSubmitButton" type="button" name="signup" style = "width: 115px;"><a href="/user/home" style = "color:White; ">Return Home</a></button>
+        </form>
+
+    </div>
+</div>
 <script src="/public/js/customerOrderSummary.js"></script> 
 <div style="min-height: 110px;"></div>
 

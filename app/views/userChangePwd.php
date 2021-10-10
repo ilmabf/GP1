@@ -1,10 +1,10 @@
 <div class="bgImage">
 
-<?php 
+    <?php
     include 'userHeader.php';
-?>
-<main>
-    <div id="container">
+    ?>
+    <main>
+        <div id="container">
             <div class="login-signupbox">
                 <div class="login-signupform">
                     <div class="loguser-icon"></div>
@@ -27,15 +27,15 @@
                 </div>
             </div>
 
-    </div>
+        </div>
 
-    <script src="/public/js/userChangePwd.js"></script>  
+        <script src="/public/js/userChangePwd.js"></script>
 
-</main>
+    </main>
 
 
-<?php 
+    <?php
     include 'userFooter.php';
-?>
+    ?>
 
-</html>
+    </html>
