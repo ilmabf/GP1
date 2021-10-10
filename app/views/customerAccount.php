@@ -17,10 +17,10 @@
 
             <form action="/account/addVehicle" method="post" id="customer-signup">
                 <label for="fname">Vehicle Identification No.</label>
-                <input class="input-box" id="vin" type="text2" name="vin" maxlength="50" automatic placeholder = "Eg:- KP 8717" required>
+                <input class="input-box" id="vin" type="text2" name="vin" maxlength="50" automatic placeholder="Eg:- KP 8717" required>
                 <br>
                 <label for="Model" style="padding: 0px 132px 0px 0px;">Model</label>
-                <input class="input-box" type="text2" name="model" maxlength="50" automatic placeholder = "Eg:- Aqua" required>
+                <input class="input-box" type="text2" name="model" maxlength="50" automatic placeholder="Eg:- Aqua" required>
                 <br>
                 <label for="Color" style="padding: 0px 139px 0px 0px;">Color</label>
                 <input type="color" name="color" required>
@@ -36,7 +36,7 @@
                 </select>
                 <br>
                 <label for="Manufacturer" style="padding: 0px 80px 0px 0px;">Manufacturer</label>
-                <input class="input-box" type="text2" name="manufacturer" maxlength="50" automatic placeholder = "Eg:- Toyota" required>
+                <input class="input-box" type="text2" name="manufacturer" maxlength="50" automatic placeholder="Eg:- Toyota" required>
                 <br>
                 <button id="VehicleFormSubmitButton" class="formSubmitButton" type="submit" name="signup">Submit</button>
                 <button id="VehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closeVehicleForm()">Cancel</button>
