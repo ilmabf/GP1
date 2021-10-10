@@ -29,7 +29,3 @@ require 'vendor/autoload.php';
             }
         }
     }
-    
-    
-    
-?>

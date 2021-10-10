@@ -1,7 +1,6 @@
+<?php
 
-<?php 
-    
-    include 'userLoggedInHeader.php';
+include 'userLoggedInHeader.php';
 ?>
 
 <body onload="typeWriter()">
@@ -68,12 +67,12 @@
                 <input type="radio" name="washType" id="interior&ExteriorCleaning" class="washType1" value="Exterior Washing & Interior Cleaning">
                 <label for="washType">Exterior Washing & Interior Cleaning</label>
             </div>
-            
+
             <div class="wash-select-radio">
                 <input type="radio" name="washType" id="interior&ExteriorCleaning" class="washType1" value="Sanitization">
                 <label for="washType">Sanitization</label>
             </div>
-                
+
         </form>
 
     </div>
@@ -86,14 +85,12 @@
     <div class="next-pg">
         <button class="next-button"><a href="/booking/bookAWash2" style="color: white;">Next</a></button>
     </div>
- 
 
-<?php
+
+    <?php
     include 'userFooter.php';
-?>
+    ?>
 
-<script src="/public/js/customerBookAWash.js"></script> 
-    
+    <script src="/public/js/customerBookAWash.js"></script>
+
 </body>
-
-

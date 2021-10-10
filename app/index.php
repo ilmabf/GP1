@@ -7,4 +7,3 @@
     require 'libs/view.php';
 
     $app = new App();
-?>

@@ -1,5 +1,5 @@
 <?php
-    include 'userLoggedInHeader.php';
+include 'userLoggedInHeader.php';
 ?>
 <div style="min-height: 110px;"></div>
 <div>
@@ -9,9 +9,9 @@
 <div style="min-height: 50px;"></div>
 
 <div class="stlChartsR1">
-  <img src="/public/images/stlChart1.png" class="stlChart1">
-  <img src="/public/images/ManagerChart3.png" class="stlChart3">
-  <!-- <img src="/public/images/ManagerChart2.png" class="stlChart2"> -->
+    <img src="/public/images/stlChart1.png" class="stlChart1">
+    <img src="/public/images/ManagerChart3.png" class="stlChart3">
+    <!-- <img src="/public/images/ManagerChart2.png" class="stlChart2"> -->
 </div>
 
 <div class="stlChartsR2">
