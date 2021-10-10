@@ -56,6 +56,7 @@
 
 
 </main>
+<div style="min-height: 60px;"></div>
 
 <?php 
     include 'userFooter.php';

@@ -10,8 +10,8 @@
 </div>
 
 <div class="managerChartsR1">
-  <img src="/public/images/ManagerChart1.png" class="managerChart1">
-  <img src="/public/images/ManagerChart2.png" class="managerChart2">
+  <img src="/public/images/dashboardNoBooking.png" class="managerChart1">
+  <img src="/public/images/dashboardRevenue.png" class="managerChart2">
 </div>
 
 <div class="managerChartsR2">

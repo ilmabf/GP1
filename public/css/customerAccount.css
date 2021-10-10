@@ -303,11 +303,10 @@ input[type=text2]{
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    
 }
 
 .bgImage1{
-    min-height: 1000px;
+    min-height: 105%;
 }
 
 @media  only screen and (max-width: 770px) {
@@ -375,6 +374,10 @@ input[type=text2]{
     }
     .account-box2{
         padding: 20px 10px 20px 10px;
+    }
+
+    .bgImage1{
+        min-height: 120%;
     }
     
   }
