@@ -60,10 +60,21 @@ input[type=text], select, textarea {
     cursor: pointer;
     float: left;
 }
-/* 
+
+.bgImage2{
+    background: url(/public/images/carblur_desktop.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 100%;
+}
+
+
+
 @media  only screen and (max-width: 770px) {
-    .review-box1{
-      width: 40%;
-    }
-  } */
+    .bgImage2{
+        min-height: 110%;
+    }    
+}
 

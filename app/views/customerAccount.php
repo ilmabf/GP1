@@ -11,96 +11,96 @@
 
 
 <div class="addVehicleform" id = "vehicleForm">
-                <div class="forma">
-                    <div class="loguser-icon"></div>
-                    <h2 class="login-signupheader">Add a vehicle</h2>
+    <div class="forma">
+        <div class="loguser-icon"></div>
+        <h2 class="login-signupheader">Add a vehicle</h2>
 
-                    <form action="/account/addVehicle" method="post" id="customer-signup">
-                        <label for="fname">Vehicle Identification No.</label>
-                        <input class="input-box" id="vin" type="text2" name="vin" required>
-                        <br>
-                        <label for="Model" style = "padding: 0px 132px 0px 0px;">Model</label>
-                        <input class="input-box" type="text2" name="model"required>
-                        <br>
-                        <label for="Color" style = "padding: 0px 139px 0px 0px;">Color</label>
-                        <input type = "color" name = "color" required>
-                        <br>
-                        <label for="Vehicle Type" style = "padding: 0px 87px 0px 0px;">Vehicle Type</label>
-                        <select name="vehicleType" class="Mg-Emp-Search" id="serviceTeamLeaders-types" style = "width:50%; margin-bottom: 5px;" required>
-                            <option value=""> </option>
-                            <option value="Sedan">Sedan</option>
-                            <option value="SUV">SUV</option>
-                            <option value="Luxury">Luxury</option>
-                            <option value="Van">Van</option>
-                            <option value="H-Black">H-Black</option>
-                        </select>
-                        <br>
-                        <label for="Manufacturer" style = "padding: 0px 80px 0px 0px;">Manufacturer</label>
-                        <input class="input-box" type="text2" name="manufacturer" required>
-                        <br>
-                        <button id="VehicleFormSubmitButton" class="formSubmitButton" type="submit" name="signup">Submit</button>
-                        <button id="VehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closeVehicleForm()">Cancel</button>
-                    </form>
+        <form action="/account/addVehicle" method="post" id="customer-signup">
+            <label for="fname">Vehicle Identification No.</label>
+            <input class="input-box" id="vin" type="text2" name="vin" required>
+            <br>
+            <label for="Model" style = "padding: 0px 132px 0px 0px;">Model</label>
+            <input class="input-box" type="text2" name="model"required>
+            <br>
+            <label for="Color" style = "padding: 0px 139px 0px 0px;">Color</label>
+            <input type = "color" name = "color" required>
+            <br>
+            <label for="Vehicle Type" style = "padding: 0px 87px 0px 0px;">Vehicle Type</label>
+            <select name="vehicleType" class="Mg-Emp-Search" id="serviceTeamLeaders-types" style = "width:50%; margin-bottom: 5px;" required>
+                <option value=""> </option>
+                <option value="Sedan">Sedan</option>
+                <option value="SUV">SUV</option>
+                <option value="Luxury">Luxury</option>
+                <option value="Van">Van</option>
+                <option value="H-Black">H-Black</option>
+            </select>
+            <br>
+            <label for="Manufacturer" style = "padding: 0px 80px 0px 0px;">Manufacturer</label>
+            <input class="input-box" type="text2" name="manufacturer" required>
+            <br>
+            <button id="VehicleFormSubmitButton" class="formSubmitButton" type="submit" name="signup">Submit</button>
+            <button id="VehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closeVehicleForm()">Cancel</button>
+        </form>
 
-                </div>
-            </div>
+    </div>
+</div>
 
-            <div class="addVehicleform" id = "editvehicleForm">
-                <div class="forma">
-                    <div class="loguser-icon"></div>
-                    <h2 class="login-signupheader">Edit Vehicle - ABC 123</h2>
+<div class="addVehicleform" id = "editvehicleForm">
+    <div class="forma">
+        <div class="loguser-icon"></div>
+        <h2 class="login-signupheader">Edit Vehicle - ABC 123</h2>
 
-                    <form action="/account/editVehicle" method="post" id="customer-signup">
-                    
-                        <label for="Model" style = "padding: 0px 132px 0px 0px;">Model</label>
-                        <input class="input-box" type="text2" name="model" autofocus placeholder="123456" required>
-                        <br>
-                        <label for="Color" style = "padding: 0px 139px 0px 0px;">Color</label>
-                        <input type = "color" required>
-                        <br>
-                        <label for="Vehicle Type" style = "padding: 0px 87px 0px 0px;">Vehicle Type</label>
-                        <select name="serviceTeamLeader" class="Mg-Emp-Search" id="serviceTeamLeaders-types" style = "width:50%; margin-bottom: 5px;">
-                            <option value="Sedan">Sedan</option>
-                            <option value="SUV">SUV</option>
-                            <option value="Luxury">Luxury</option>
-                            <option value="Van">Van</option>
-                            <option value="H-Black">H-Black</option>
-                        </select>
-                        <br>
-                        <label for="Manufacturer" style = "padding: 0px 80px 0px 0px;">Manufacturer</label>
-                        <input class="input-box" type="text2" name="manufacturer" autofocus placeholder="XYZ" required>
-                        <br>
-                        <button id="EditVehicleFormSubmitButton" class="formSubmitButton" type="submit" name="signup">Submit</button>
-                        <button id="EditVehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closeEditVehicleForm()">Cancel</button>
-                    </form>
+        <form action="/account/editVehicle" method="post" id="customer-signup">
+        
+            <label for="Model" style = "padding: 0px 132px 0px 0px;">Model</label>
+            <input class="input-box" type="text2" name="model" autofocus placeholder="123456" required>
+            <br>
+            <label for="Color" style = "padding: 0px 139px 0px 0px;">Color</label>
+            <input type = "color" required>
+            <br>
+            <label for="Vehicle Type" style = "padding: 0px 87px 0px 0px;">Vehicle Type</label>
+            <select name="serviceTeamLeader" class="Mg-Emp-Search" id="serviceTeamLeaders-types" style = "width:50%; margin-bottom: 5px;">
+                <option value="Sedan">Sedan</option>
+                <option value="SUV">SUV</option>
+                <option value="Luxury">Luxury</option>
+                <option value="Van">Van</option>
+                <option value="H-Black">H-Black</option>
+            </select>
+            <br>
+            <label for="Manufacturer" style = "padding: 0px 80px 0px 0px;">Manufacturer</label>
+            <input class="input-box" type="text2" name="manufacturer" autofocus placeholder="XYZ" required>
+            <br>
+            <button id="EditVehicleFormSubmitButton" class="formSubmitButton" type="submit" name="signup">Submit</button>
+            <button id="EditVehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closeEditVehicleForm()">Cancel</button>
+        </form>
 
-                </div>
-            </div>
+    </div>
+</div>
 
-            <div class="addVehicleform" id = "editdetailsForm">
-                <div class="forma">
-                    <div class="loguser-icon"></div>
-                    <h2 class="login-signupheader">Edit details</h2>
+<div class="addVehicleform" id = "editdetailsForm">
+    <div class="forma">
+        <div class="loguser-icon"></div>
+        <h2 class="login-signupheader">Edit details</h2>
 
-                    <form action="/account/editDetails" method="post" id="customer-signup">
-                        <label for="fname" style = "padding: 0px 73px 0px 0px;">First Name</label>
-                        <input class="input-box" id="fn" type="text2" name="fn" autofocus placeholder="<?php echo $details[0]['First_Name']?>" required>
-                        <br>
-                        <label for="fname" style = "padding: 0px 73px 0px 0px;">Last Name</label>
-                        <input class="input-box" type="text2" name="ln" autofocus placeholder="<?php echo $details[0]['Last_Name']?>" required>
-                        <br>
-                        <label for="fname" style = "padding: 0px 111px 0px 0px;">Email</label>
-                        <input class="input-box" type="text2" name="email" autofocus placeholder="<?php echo $details[0]['Email']?>" required>
-                        <br>
-                        <label for="fname" style = "padding: 0px 40px 0px 0px;">Mobile Number</label>
-                        <input class="input-box" type="text2" name="mobile" autofocus placeholder="<?php echo $details[0]['Contact_Number']?>" required>
-                        <br>
-                        <button id="EditDetailsFormSubmitButton" class="formSubmitButton" type="submit" name="signup">Submit</button>
-                        <button id="EditDetailsFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closeDetailsVehicleForm()">Cancel</button>
-                    </form>
+        <form action="/account/editDetails" method="post" id="customer-signup">
+            <label for="fname" style = "padding: 0px 73px 0px 0px;">First Name</label>
+            <input class="input-box" id="fn" type="text2" name="fn" autofocus placeholder="<?php echo $details[0]['First_Name']?>" required>
+            <br>
+            <label for="fname" style = "padding: 0px 73px 0px 0px;">Last Name</label>
+            <input class="input-box" type="text2" name="ln" autofocus placeholder="<?php echo $details[0]['Last_Name']?>" required>
+            <br>
+            <label for="fname" style = "padding: 0px 111px 0px 0px;">Email</label>
+            <input class="input-box" type="text2" name="email" autofocus placeholder="<?php echo $details[0]['Email']?>" required>
+            <br>
+            <label for="fname" style = "padding: 0px 40px 0px 0px;">Mobile Number</label>
+            <input class="input-box" type="text2" name="mobile" autofocus placeholder="<?php echo $details[0]['Contact_Number']?>" required>
+            <br>
+            <button id="EditDetailsFormSubmitButton" class="formSubmitButton" type="submit" name="signup">Submit</button>
+            <button id="EditDetailsFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closeDetailsVehicleForm()">Cancel</button>
+        </form>
 
-                </div>
-            </div>
+    </div>
+</div>
 
     <div class = "box">
     <!-- <div > -->
