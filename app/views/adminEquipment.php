@@ -69,9 +69,9 @@ $details = $_SESSION['equipmentDetails'];
             <tr>
               <td><?php echo $details[$count]['Equipment_ID'] ?></td>
               <td><?php echo $details[$count]['Name'] ?></td>
-              <td><?php echo $details[$count]['Price'] ?>.00</td>
+              <td style="text-align:right"><?php echo $details[$count]['Price'] ?>.00</td>
               <td><?php echo $details[$count]['Date_Acquired'] ?></td>
-              <td><?php echo $details[$count]['Team'] ?></td>
+              <td style="text-align:right"><?php echo $details[$count]['Team'] ?></td>
               <td><a href="#" class="edit_btn">Edit</a></td>
               <td><a href="#" class="del_btn">Delete</a></td>
             </tr>

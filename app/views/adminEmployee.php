@@ -111,9 +111,9 @@ include 'userLoggedInHeader.php';
               <td><?php echo $result[$count]['Contact_Number'] ?></td>
               <td><?php echo $result[$count]['Email'] ?></td>
               <td><?php echo $result[$count]['Date_Enrolled'] ?></td>
-              <td><?php echo $result[$count]['Salary'] ?>.00</td>
-              <td><?php echo $result[$count]['NIC_No'] ?></td>
-              <td><?php echo $result[$count]['Team'] ?></td>
+              <td style="text-align:right"><?php echo $result[$count]['Salary'] ?>.00</td>
+              <td style="text-align:right"><?php echo $result[$count]['NIC_No'] ?></td>
+              <td style="text-align:right"><?php echo $result[$count]['Team'] ?></td>
               <td><?php echo "" ?></td>
               <td><a href="#" class="edit_btn">Edit</a></td>
               <td><a href="#" class="del_btn">Delete</a></td>
