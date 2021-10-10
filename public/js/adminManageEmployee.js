@@ -2,7 +2,7 @@ var arrHead = new Array();	// array for header.
     arrHead = ['First Name', 'Last Name', 'Contact Number', 'Email', 'Date Enrolled', 'Salary', 'NIC No', 'Team',''];
 
 var arrStlHead = new Array();    
-    arrStlHead = ['Team', 'First Name', 'Last Name', 'Photo', ''];
+    arrStlHead = ['Team', 'NIC', 'Photo', ''];
 
 var submitBtn = document.getElementById('bt');
 
@@ -67,7 +67,7 @@ function addRow() {
 
             // set input attributes.
             button.setAttribute('type', 'button');
-            button.setAttribute('value', 'Remove');
+            button.setAttribute('value', 'Close');
             button.setAttribute('id', 'removeBtn');
 
             // add button's 'onclick' event.
@@ -83,23 +83,26 @@ function addRow() {
                 ele1.setAttribute('name', 'firstName');
                 ele1.setAttribute('type', 'text');
                 ele1.setAttribute('required', '');
+                ele1.setAttribute('maxlength', '50');
             }
 
             else if(c1==1){
                 ele1.setAttribute('name', 'lastName');
                 ele1.setAttribute('type', 'text');
                 ele1.setAttribute('required', '');
+                ele1.setAttribute('maxlength', '50');
             }
 
             else if(c1==2){
                 ele1.setAttribute('name', 'contactNumber');
                 ele1.setAttribute('type', 'text');
                 ele1.setAttribute('required', '');
+                ele1.setAttribute('maxlength', '10');
             }
 
             else if(c1==3){
                 ele1.setAttribute('name', 'email');
-                ele1.setAttribute('type', 'text');
+                ele1.setAttribute('type', 'email');
                 ele1.setAttribute('required', '');
             }
 
@@ -119,6 +122,7 @@ function addRow() {
                 ele1.setAttribute('name','nicNo');
                 ele1.setAttribute('type', 'text');
                 ele1.setAttribute('required', '');
+                ele1.setAttribute('maxlength', '12');
             }
 
             else if(c1==7){
@@ -162,7 +166,7 @@ function addStlRow() {
         var td2 = document.createElement('td'); // table definition.
         td2 = tr22.insertCell(c2);
 
-        if (c2 == 4) {      // the first column.
+        if (c2 == 3) {      // the first column.
             // add a button in every new row in the first column.
             var button1 = document.createElement('input');
 
@@ -171,7 +175,7 @@ function addStlRow() {
 
             // set input attributes.
             button1.setAttribute('type', 'button');
-            button1.setAttribute('value', 'Remove');
+            button1.setAttribute('value', 'Close');
             button1.setAttribute('id', 'removeStlBtn');
 
             // add button's 'onclick' event.
@@ -186,21 +190,17 @@ function addStlRow() {
                 ele2.setAttribute('name', 'stlTeam');
                 ele2.setAttribute('type', 'text');
                 ele2.setAttribute('required', '');
+                ele2.setAttribute('placeholder','1 or 2 etc');
             }
 
             else if(c2==1){
-                ele2.setAttribute('name', 'firstName');
+                ele2.setAttribute('name', 'NIC');
                 ele2.setAttribute('type', 'text');
                 ele2.setAttribute('required', '');
+                ele2.setAttribute('maxlength', '12');
             }
 
             else if(c2==2){
-                ele2.setAttribute('name', 'lastName');
-                ele2.setAttribute('type', 'text');
-                ele2.setAttribute('required', '');
-            }
-
-            else if(c2==3){
                 ele2.setAttribute('name', 'stlPhoto');
                 ele2.setAttribute('type', 'file');
                 ele2.setAttribute('required', '');

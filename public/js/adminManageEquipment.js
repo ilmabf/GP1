@@ -43,7 +43,7 @@ function addNewRow() {
 
             // set input attributes.
             button.setAttribute('type', 'button');
-            button.setAttribute('value', 'Remove');
+            button.setAttribute('value', 'Close');
             button.setAttribute('id', 'removeButton1');
 
             // add button's 'onclick' event.
