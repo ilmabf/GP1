@@ -36,7 +36,18 @@ tr{
     border-radius: 5px;
     border-color: white;
 }
-
+#addNewRow:hover, #bt:hover{
+    color: #70a2ce;
+}
+#assignEquipment{
+    display: block;
+    margin: 35px auto;
+    padding: 8px 8px;
+    background-color: #085394;
+    color: white;
+    border-radius: 5px;
+    border-color: white;
+}
 #submitButton{
     display: none;
     margin: 20px auto;
@@ -46,15 +57,28 @@ tr{
     border-radius: 5px;
     border-color: white;
 }
-#container{
+#saveButton{
+    display: none;
+    margin: 20px auto;
+    padding: 8px 8px;
+    background-color: #085394;
+    color: white;
+    border-radius: 5px;
+    border-color: white;
+}
+#container1{
     display:block;
     overflow:auto;
     margin:0;
     padding-bottom:10px;
 }
-#addNewRow:hover, #bt:hover{
-    color: #70a2ce;
+#container2{
+    display:block;
+    overflow:auto;
+    margin:0;
+    padding-bottom:10px;
 }
+
 
 #removeButton{
     background-color: red;
