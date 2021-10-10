@@ -36,18 +36,19 @@ class Service extends Controller
 
     function addNewEquipment()
     {
+        if ($_SESSION['role'] == "systemadmin") {
+            $name = $_POST['name'];
+            $price = $_POST['price'];
+            $dateAcquired = $_POST['dateAcquired'];
 
-        $name = $_POST['name'];
-        $price = $_POST['price'];
-        $dateAcquired = $_POST['dateAcquired'];
+            if (isset($name) && isset($price) &&  isset($dateAcquired)) {
 
-        if (isset($name) && isset($price) &&  isset($dateAcquired)) {
-
-            if ($this->model->addEquipment($name, $price, $dateAcquired)) {
-                header("Location: /service/equipment");
+                if ($this->model->addEquipment($name, $price, $dateAcquired)) {
+                    header("Location: /service/equipment");
+                }
+            } else {
+                echo "Errorrrr";
             }
-        } else {
-            echo "Errorrrr";
         }
     }
 }
