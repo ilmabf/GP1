@@ -31,6 +31,13 @@ class User extends Controller
         $this->view->render('userLogin');
     }
 
+    function logout()
+    {
+        session_unset();
+        session_destroy();
+        header("Location: /");
+    }
+
     function passwordReset()
     {
         $this->view->render('userForgotPwd');
