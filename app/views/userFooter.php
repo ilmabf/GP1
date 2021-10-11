@@ -1,20 +1,5 @@
 <footer id="footer">
 
-    <!-- <div class="footer-main">
-        <div class="footer-content1">
-            <p>Contact - 011 987 5321</h3>
-            <address>Email - <a href="mailto:wandiwash@gmail.com">wandiwash@gmail.com</a></address>
-            <address>Address - ABC Rd, Kandy</address>
-        </div>
-
-        <div class="footer-img"></div>
-
-    </div>
-
-    <div class="footer-copyright">
-        <p>&copy; wandiwash 2021</p>
-    </div> -->
-
     <div class="footer-content">
         <div class="footer-content1">
             <div class="footer-image"></div>

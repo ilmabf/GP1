@@ -7,6 +7,8 @@ class Calendar extends Controller
     {
         parent::__construct();
     }
+
+    //Get reservations for today
     function reservations()
     {
         $this->view->render('stlAssignedOrders');

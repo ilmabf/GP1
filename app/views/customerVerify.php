@@ -24,19 +24,4 @@ include 'userHeader.php';
 include 'userFooter.php';
 ?>
 
-
-
 </html>
-
-
-<!-- <br>
-    <div class="select-user">
-        <label class="user-label" for="users">Who you are?:</label>
-        <br>
-        <select class="input-box" name="users" id="users">
-        <option value="user">Customer</option>
-        <option value="admin">Admin</option>
-        <option value="manager">Manager</option>
-        <option value="service-team-leader">Service Team Leader</option>
-        </select>
-    </div> -->

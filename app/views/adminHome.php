@@ -1,5 +1,3 @@
-<!-- <main> -->
-
 <?php
 include 'userLoggedInHeader.php';
 ?>
@@ -25,26 +23,12 @@ include 'userLoggedInHeader.php';
 
                 <div class="adminHome-block3">
                     <h3 class="admin-manage-services-heading"><a href="/service/washPackage" style="color:#085394;">Manage Services</a></h3>
-                    <!-- <div class="adminHome-sub-block3">
-                    <p><a href="adminServicetype.php">Service Type</a></p>
                 </div>
-                <div class="adminHome-sub-block3">
-                    <p><a href="adminVehicleType.php">Vehicle Type</a></p>
-                </div>
-                <div class="adminHome-sub-block3">
-                    <p><a href="adminPrice.php">Price</a></p>
-                </div> -->
-                </div>
-
-
-
-
             </div>
 
         </div>
 
     </div>
 
-    <!-- </main> -->
 
 </div>

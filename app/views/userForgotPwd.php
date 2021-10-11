@@ -26,7 +26,6 @@
             if ($_SESSION['changePwdVerifyBox'] == 1) { ?>
                 <div id="signupVerify" class="toVerifySingupBox">
                     <div class="toVerifySignupBoxContent">
-                        <!-- <span class="close-signupVerifyMessage">&times;</span> -->
                         <h3>Email was sent.<br>Click the link in email to enter your new password</h3>
                     </div>
                 </div>

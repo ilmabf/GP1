@@ -1,4 +1,4 @@
-<!-- <main> -->
+
 <?php
 include 'userLoggedInHeader.php';
 ?>
@@ -26,5 +26,3 @@ include 'userLoggedInHeader.php';
         </div>
 
     </div>
-
-    <!-- </main> -->

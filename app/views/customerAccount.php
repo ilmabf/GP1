@@ -103,7 +103,6 @@
     </div>
 
     <div class="box">
-        <!-- <div > -->
         <div class="account-box1" id="mainbox">
             <div class="account-prof">
                 <div class="account-header">My Account</div>
@@ -190,30 +189,6 @@
                         echo "</div>";
                         $countvehicle = $countvehicle + 1;
                     } ?>
-                    <!-- <div class = "item1">
-                    <div class = "vehicle">Model</div>
-                    <div class = "vehicle-specs">
-                        <?php echo ""; ?>
-                    </div>
-                </div>
-                <div class = "item1">
-                    <div class = "vehicle">Color</div>
-                    <div class = "vehicle-specs">
-                        <div class="color-box" style="background-color:#8a0b0b;"></div>
-                    </div>
-                </div>
-                <div class = "item1">
-                    <div class = "vehicle">Type</div>
-                    <div class = "vehicle-specs">
-                        <?php echo ""; ?>
-                    </div>
-                </div>
-                <div class = "item1">
-                    <div class = "vehicle">Manufacturer</div>
-                    <div class = "vehicle-specs">
-                        <?php echo ""; ?>
-                    </div>
-                </div> -->
                 </div><br>
             </div>
             <div class="account-det2">
@@ -233,16 +208,6 @@
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.8229579296126!2d80.50619191725059!3d7.373730722101816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae341aee58e2aad%3A0xc15b721347b882fb!2sMalwathugoda%20Auto%20Service%20Station!5e0!3m2!1sen!2slk!4v1629713877312!5m2!1sen!2slk" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div><br>
             </div>
-
         </div>
-
-        <!-- </div> -->
-
     </div>
-    <!-- <div style="min-height: 110px;"></div>  -->
-
-
-
-    <!-- include 'userFooter.php'; -->
-
     <script src="/public/js/customerAccount.js"></script>

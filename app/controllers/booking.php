@@ -13,6 +13,7 @@ class Booking extends Controller
         $this->view->render('customerBookAWash');
     }
 
+    //get location for booking
     function bookAWash2()
     {
         $this->view->render('customerBookAWash2');
@@ -33,6 +34,7 @@ class Booking extends Controller
         $this->view->render('customerReschedule');
     }
 
+    // upcoming reservations
     function upcoming()
     {
 
@@ -44,6 +46,7 @@ class Booking extends Controller
         }
     }
 
+    //upcoming reservation - x
     function upcomingOrder()
     {
 
@@ -55,6 +58,7 @@ class Booking extends Controller
         }
     }
 
+    //completed reservations
     function completed()
     {
 
@@ -66,6 +70,7 @@ class Booking extends Controller
         }
     }
 
+    //completed reservation - x
     function completedOrder()
     {
 

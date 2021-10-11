@@ -67,7 +67,6 @@
             if ($_SESSION['verifyBox'] == 1) { ?>
                 <div id="signupVerify" class="toVerifySingupBox">
                     <div class="toVerifySignupBoxContent">
-                        <!-- <span class="close-signupVerifyMessage">&times;</span> -->
                         <h3>Thank you for signing up!<br>Please verify your email address to complete setting up your account.</h2>
                     </div>
                 </div>

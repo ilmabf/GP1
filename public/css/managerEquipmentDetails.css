@@ -20,13 +20,15 @@
 }
 
 .managerEquipSearch1{
-    margin-left: 100px;
+    /* margin-left: 100px; */
+    margin-left: 291px;
 }
 
 .managerEquipSearch2{
     float: right;
     margin-left: 20px;
-    margin-right: 250px;
+    /* margin-right: 250px; */
+    margin-right: 426px;
 }
 
 #Manager-AssignedEquip-TeamTypes{
