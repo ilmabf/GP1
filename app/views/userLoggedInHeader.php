@@ -63,7 +63,7 @@
                 <!-- <li><a href="#about-tag">About</a></li>
             <li><a href="#footer">Contact</a></li> -->
             <li><a href="/review/">Reviews</a></li>
-            <li><button><a href="/index/logout" class="header-button-logout"><b>Logout</b></a></button></li>
+            
         </ul>
         <!-- <button class="nav-nav nav-logoutBtn"><a href="/index/logout" class="header-button-logout">Logout</a></button> -->
     </nav>
