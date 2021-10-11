@@ -60,7 +60,7 @@ $details = $_SESSION['equipmentDetails'];
   </label> -->
 
     <div class="table-wrap">
-      <table id="ViewAsTable">
+      <table id="viewAsTable">
         <thead>
           <tr>
             <th data-type="text">Equipment ID</th>

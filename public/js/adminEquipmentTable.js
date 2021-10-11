@@ -2,7 +2,7 @@ const searchInput = document.getElementById('adminSearchEquipment')
 const table = document.getElementById('viewAsTable')
 const trArray = Array.prototype.slice.call(table.querySelectorAll('tbody tr'))
 
-const filterTable = event => {
+const viewAsTable = event => {
   const searchTerm = event.target.value.toLowerCase()
   trArray.forEach(row => {
     row.classList.add('hiddenRow')
@@ -15,4 +15,4 @@ const filterTable = event => {
   })
 }
 
-searchInput.addEventListener('keyup', filterTable, false)
+searchInput.addEventListener('keyup', viewAsTable, false)
