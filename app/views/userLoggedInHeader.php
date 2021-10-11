@@ -62,10 +62,16 @@
                 <li><a href="/user/home">Home</a></li>
                 <!-- <li><a href="#about-tag">About</a></li>
             <li><a href="#footer">Contact</a></li> -->
-                <li><a href="/review/">Reviews</a></li>
-            </ul>
-        </nav>
-    </header>
+            <li><a href="/review/">Reviews</a></li>
+            
+        </ul>
+        <!-- <button class="nav-nav nav-logoutBtn"><a href="/index/logout" class="header-button-logout">Logout</a></button> -->
+    </nav>
+</header>
+
+    
+
+
 
     <header class="header-mobile">
         <div class="header-logo-2"></div>
