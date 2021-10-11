@@ -6,22 +6,32 @@ $details = $_SESSION['equipmentDetails'];
 
 <main>
 
-  <body onload="createEquipTable()">
+        <div style="min-height: 110px;"></div>
+        <h2 class="manageEquipment-heading">Manage Equipment</h2> 
 
-    <div style="min-height: 110px;"></div>
-    <h2 class="manageEquipment-heading">Manage Equipment</h2>
-    <p>
-      <input type="button" id="addNewRow" value="Add Equipment" onclick="addNewRow(); this.onclick=null;" />
-    </p>
-    <form action="/service/addNewEquipment" name="Form" method="post">
-      <div id="container">
-
-      </div> <!-- the container to add the TABLE -->
-
-
-      <input type="submit" id="submitButton" value="Submit Data" />
-    </form>
-  </body>
+        <div style="display:block;text-align:center;">
+            <input type="button" id="addNewRow" value="Add Equipment" style="display:inline-block;text-align:center;" onclick="addNewRow(); this.onclick=null;"/>
+            <input type="button" id="assignEquipment" value="Assign Equipment" style="display:inline-block;text-align:center;" onclick="assignEquipment(); this.onclick=null;" />
+        </div>
+        <!--><body onload="createEquipTable()">-->
+        <div>
+            <form action="/service/addNewEquipment" name="Form" method="post">
+                <div id="container1">
+                  
+                </div>  <!-- the container to add the TABLE -->
+                <input type="submit" id="submitButton" value="Submit Data"/> 
+            </form>
+        </div>
+      
+     
+        <div>
+            <form action="/service/assignEquipment" method="post">
+                <div id="container2">
+                </div>  <!-- the container to add the TABLE -->
+                <input type="submit" id="saveButton" value="Save Data"/> 
+            </form>
+        </div>
+ 
 
 
   <div style="height: 50px;"></div>

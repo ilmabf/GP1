@@ -1,8 +1,15 @@
 var arrHead = new Array();	// array for header.
     arrHead = ['Name', 'Price', 'Date Acquired', ''];
 
+var arrHeader = new Array();	// array for header.
+    arrHeader = ['Equipment ID', 'Team',''];
+
 var submitBtn = document.getElementById('submitButton');
-var equipInsertSuccess = document.getElementById('equipAddSuccess');
+var saveBtn = document.getElementById('saveButton');
+
+var div1 = document.getElementById('container1');
+var div2 = document.getElementById('container2');
+
     // first create TABLE structure with the headers. 
 function createEquipTable() {
     var equipTable = document.createElement('table');
@@ -15,14 +22,29 @@ function createEquipTable() {
         tr.appendChild(th);
     }
 
-    var div = document.getElementById('container');
-    div.appendChild(equipTable);  // add the TABLE to the container.
+    div1.appendChild(equipTable);  // add the TABLE to the container.
 }
 
+function createAssignTable() {
+    var equipAssignTable = document.createElement('table');
+    equipAssignTable.setAttribute('id', 'equipAssignTable'); // table id.
+
+    var tr1 = equipAssignTable.insertRow(-1);
+    for (var h1 = 0; h1 < arrHeader.length; h1++) {
+        var th1 = document.createElement('th'); // create table headers
+        th1.innerHTML = arrHeader[h1];
+        tr1.appendChild(th1);
+    }
+
+    div2.appendChild(equipAssignTable);  // add the TABLE to the container.
+}
 // now, add a new to the TABLE.
 function addNewRow() {
-
+    div1.style.display = "block";
     submitBtn.style.display = "block";
+
+    saveBtn.style.display = "none";
+    div2.style.display = "none";
 
     var equipTab = document.getElementById('equipTable');
 
@@ -82,11 +104,77 @@ function addNewRow() {
 }
 
 // delete TABLE row function.
-function removeRow1(oButton) {
+
+function removeRow1(removeButton1) {
     var equipTab = document.getElementById('equipTable');
-    equipTab.deleteRow(oButton.parentNode.parentNode.rowIndex); // button -> td -> tr.
+    equipTab.deleteRow(removeButton1.parentNode.parentNode.rowIndex); // button -> td -> tr.
 
     submitBtn.style.display = "none";
 }
 
+function assignEquipment() {
+    createAssignTable();
+    div2.style.display="block";
+    saveBtn.style.display = "block";
+    
+    submitBtn.style.display = "none";
+    div1.style.display = "none";
+
+    var equipAssignTab = document.getElementById('equipAssignTable');
+
+    var rowCnt1 = equipAssignTab.rows.length;   // table row count.
+    var tr2 = equipAssignTab.insertRow(rowCnt1); // the table row.
+    tr2 = equipAssignTab.insertRow(rowCnt1);
+
+    for (var c1 = 0; c1 < arrHeader.length; c1++) {
+        var td2 = document.createElement('td'); // table definition.
+        td2 = tr2.insertCell(c1);
+
+        if (c1 == 2) {      // the first column.
+            // add a button in every new row in the first column.
+            var button1 = document.createElement('input');
+
+            document.getElementsByTagName("input").required = true;
+
+
+            // set input attributes.
+            button1.setAttribute('type', 'button');
+            button1.setAttribute('value', 'Close');
+            button1.setAttribute('id', 'closeButton');
+
+            // add button's 'onclick' event.
+            button1.setAttribute('onclick', 'closeARow(this)');
+
+            td2.appendChild(button1);
+        }
+        else {
+            // 2nd, 3rd and 4th column, will have textbox.
+            var ele1 = document.createElement('input');
+         
+            if(c1==0){
+                ele1.setAttribute('name', 'equip_id');
+                ele1.setAttribute('type', 'text');
+                ele1.setAttribute('required', '');
+            }
+
+            else if(c1==1){
+                ele1.setAttribute('name', 'team');
+                ele1.setAttribute('type', 'number');
+                ele1.setAttribute('required', '');
+            }
+
+            
+            ele1.setAttribute('value', '');
+            ele1.setAttribute('id', 'tb1-input');
+
+            td2.appendChild(ele1);
+        }
+    }
+}
+function closeARow(closeButton) {
+    var equipAssignTab = document.getElementById('equipAssignTable');
+    equipAssignTab.deleteRow(closeButton.parentNode.parentNode.rowIndex); // button -> td -> tr.
+
+    saveBtn.style.display = "none";
+}
 
