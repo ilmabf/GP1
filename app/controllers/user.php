@@ -5,18 +5,6 @@ session_start();
 $_SESSION['error'] = '';
 $_SESSION['changePwdVerifyBox'] = 0;
 
-// if (isset($_SESSION["locked"]))
-// {
-//     $difference = time() - $_SESSION["locked"];
-//     if ($difference > 30)
-//     {
-//         unset($_SESSION["locked"]);
-//         // unset($_SESSION["login_attempts"]);
-//         $_SESSION["login_attempts"] = 0;
-//     }
-// }
-
-
 class User extends Controller
 {
 
@@ -33,6 +21,7 @@ class User extends Controller
 
     function logout()
     {
+        //destroy session variables
         session_unset();
         session_destroy();
         header("Location: /");
@@ -45,11 +34,12 @@ class User extends Controller
 
     function passwordChange()
     {
-
+        //get email
         $email = $_POST["email_to_send_pwd"];
 
         if ($this->model->passwordExists($email)) {
 
+            //set expiration date for key
             $expFormat = mktime(
                 date("H"),
                 date("i"),
@@ -60,12 +50,16 @@ class User extends Controller
             );
 
             $expDate = date("Y-m-d H:i:s", $expFormat);
+
+            //generate key
             $key = md5(2418 * 2 + $email);
             $addKey = substr(md5(uniqid(rand(), 1)), 3, 10);
             $key = $key . $addKey;
 
+            //store temperory key
             if ($this->model->insertToPwdTemp($email, $key, $expDate)) {
 
+                //send password reset email
                 $mail = new Mailer();
 
                 $output = '<p>Dear user,</p>';
@@ -101,8 +95,10 @@ class User extends Controller
 
         $curDate = date("Y-m-d H:i:s");
 
+        //validate key
         if ($this->model->checkPasswordResetKey($key, $email)) {
 
+            //get expiration date of key
             $date = $this->model->getPasswordResetExpDate($key, $email);
             if ($date[0]['expDate'] >= $curDate) {
                 $_SESSION['email'] = $email;
@@ -119,27 +115,29 @@ class User extends Controller
             header("Location: login");
         }
 
+        //get email and new password
         $email = $_SESSION['email'];
         $newPassword = $_POST["new_pwd"];
 
-
+        //password hashing
         $options = ['cost' => 12];
         $hashedpwd = password_hash($newPassword, PASSWORD_BCRYPT, $options);
 
+        //update password
         $this->model->updateUserPassword($email, $hashedpwd);
         $this->model->deletePwdTempTable($email);
-        //echo "Password changed";
+        
         $this->view->render('userHome');
     }
 
     function home()
     {
+        //redirect to login if not logged in or login button in not clicked
         if (!isset($_POST['login']) && !isset($_SESSION['login'])) {
             header("Location: login");
         }
 
-        //echo $_SESSION['login'];
-
+        //if already logged in redirect according to user roles
         if (isset($_SESSION['login'])) {
             if ($_SESSION['role'] == "customer") {
                 $this->view->render('customerHome');
@@ -156,23 +154,31 @@ class User extends Controller
             }
         }
 
+        //get POST data from login page
         $uname = $_POST['usernameemail'];
         $pwd = $_POST['pwd'];
 
+        //authenticate user
         if ($this->model->authenticate($uname, $pwd)) {
 
-            // $_SESSION['time'] = date("h:i:sa");
+            //set session variables
             $_SESSION['login'] = "loggedin";
             $_SESSION['usernameemail'] = $uname;
 
             if ($this->model->checkCustomer($uname)) {
+
+                //get customer details
                 $Details = $this->model->getCustDetails($uname);
                 $_SESSION['userDetails'] = $Details;
 
+                //get customer vehicles
                 $vehicles = $this->model->getVehicles($_SESSION['userDetails'][0]['User_ID']);
                 $_SESSION['vehicles'] = $vehicles;
 
+                //assign user role
                 $_SESSION['role'] = "customer";
+
+                //check customer verification status
                 $value = $this->model->checkVerified($uname);
                 if ($value[0]['Verified'] == "1") {
                     $_SESSION['Verified'] = "True";
@@ -182,18 +188,22 @@ class User extends Controller
                     $this->view->render('customerVerify');
                 }
             } else if ($this->model->checkManager($uname)) {
+                //assign user role
                 $_SESSION['role'] = "manager";
                 $this->view->render('managerHome');
             } else if ($this->model->checkSTL($uname)) {
+                //assign user role
                 $_SESSION['role'] = "stl";
                 $this->view->render('stlHome');
             } else {
+                //assign user role
                 $_SESSION['role'] = "systemadmin";
                 $this->view->render('adminHome');
             }
         } else {
             $_SESSION['error'] = 'The email and password that you entered did not match our records.';
 
+            //lock user if there are more than three failed attempts
             $_SESSION["login_failed"] = 1;
             if (isset($_SESSION['login_failed'])) {
                 if (!isset($_SESSION["login_attempts"])) {
@@ -207,7 +217,6 @@ class User extends Controller
             }
 
             $this->view->render('userLogin');
-            // header("Location: /user/login");
         }
     }
 }

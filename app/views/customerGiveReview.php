@@ -2,7 +2,6 @@
 include 'userLoggedInHeader.php';
 ?>
 <div class="bgImage2">
-    <!-- <div style="min-height: 110px;"></div> -->
 
     <div id="container1">
 

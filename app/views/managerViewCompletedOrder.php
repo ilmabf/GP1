@@ -11,11 +11,6 @@ include 'userLoggedInHeader.php';
     </div>
 
     <div class="upcoming">
-        <!-- <div class="order-subBox"> -->
-        <!-- <div class="orderID">
-            <h3 class="a1 p1">Order ID</h3>
-            <p class="a1">BBBB</p>
-        </div> -->
 
         <div class="boxx">
 
@@ -74,7 +69,6 @@ include 'userLoggedInHeader.php';
                 <div class="orderitem"><a href="">View Location</a></div>
             </div>
         </div>
-        <!-- </div> -->
     </div>
 
     <div class="service-team">
@@ -89,9 +83,6 @@ include 'userLoggedInHeader.php';
             <i class="rating__star far fa-star"></i>
         </div>
 
-        <!-- <div class="rate2">
-        <h3>Rate of Service Type</h3>
-    </div> -->
         <div class="rate2 stars2">
 
         </div>

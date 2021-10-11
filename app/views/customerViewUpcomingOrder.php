@@ -39,7 +39,6 @@ include 'userLoggedInHeader.php';
 
     <div id="upcoming">
         <div class="upcoming">
-            <!-- <div class="order-subBox"> -->
 
             <div class="boxx">
 
@@ -99,7 +98,6 @@ include 'userLoggedInHeader.php';
                     </p>
                 </div>
             </div>
-            <!-- </div> -->
         </div>
 
 

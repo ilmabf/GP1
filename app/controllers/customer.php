@@ -23,8 +23,8 @@ class Customer extends Controller
     function register()
     {
 
-        $_SESSION["time"] = date("h:i:sa");
-
+        
+        //get POST data
         $fname = $_POST['firstname'];
         $lname = $_POST['lastname'];
         $uname = $_POST['username'];
@@ -34,17 +34,25 @@ class Customer extends Controller
 
         $array = array($uname, $email, $mobile);
 
+        //check for duplicate customer
         if ($this->model->checkDuplicate($array)) {
             $this->view->render('customerSignup');
             exit;
         }
+
+        //password hashing
         $options = ['cost' => 12];
         $hashedpwd = password_hash($pwd, PASSWORD_BCRYPT, $options);
         $token = bin2hex(random_bytes(50));
+
+        //insert customer data in DB
         $result = $this->model->makeCustomer($fname, $lname, $uname, $email, $mobile, $hashedpwd, $token);
+
+        //get the customer ID (user ID)
         $uid = $this->model->getCustID($uname);
         if ($result) {
 
+            //send verification email to customer
             $mail = new Mailer();
 
             $output = '<p>Dear User,</p>';
@@ -64,6 +72,7 @@ class Customer extends Controller
             $subject = "Welcome to WandiWash!";
 
             if ($mail->mailto($subject, $email, $body)) {
+                //email has been sent
                 $_SESSION['verifyBox'] = 1;
                 $this->view->render('customerSignup');
             }
@@ -74,10 +83,7 @@ class Customer extends Controller
     {
         if ($this->model->checkToken($uid, $token)) {
 
-            // $_SESSION["time"] = date("h:i:sa");
-            // $_SESSION["login"] = "loggedin";
-
-            // $this->view->render('customerHome');
+            //customer verified. Redirect to login page
             header("Location: /user/home");
         }
     }

@@ -16,7 +16,7 @@ $details = $_SESSION['equipmentDetails'];
     <form action="/service/addNewEquipment" name="Form" method="post">
       <div id="container">
 
-      </div> <!-- the container to add the TABLE -->
+      </div> 
 
 
       <input type="submit" id="submitButton" value="Submit Data" />
@@ -44,10 +44,6 @@ $details = $_SESSION['equipmentDetails'];
   </div>
   </div>
   <div class="Search-Table">
-    <!-- <label>
-    <span>Search:</span>
-    <input placeholder="Enter search term" type="search" id="searchInput">
-  </label> -->
 
     <div class="table-wrap">
       <table id="ViewAsTable">

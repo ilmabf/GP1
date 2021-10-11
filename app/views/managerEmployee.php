@@ -41,10 +41,6 @@ include 'userLoggedInHeader.php';
 
 
 <div class="Table-search">
-  <!-- <label>
-    <span>Search:</span>
-    <input placeholder="Enter search term" type="search" id="searchInput">
-  </label> -->
 
   <div class="table-wrapper">
     <table id="filterTable">

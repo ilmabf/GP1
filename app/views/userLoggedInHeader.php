@@ -55,13 +55,10 @@
         <div class="header-logo-1"></div>
         <div class="buttons-header-desk">
             <button class="signupColor"><a href="/user/logout" class="header-button-login">Logout</a></button>
-            <!-- <button class="signupColor"><a href="/customer/signup" class="header-button-signup">Signup</a></button> -->
         </div>
         <nav>
             <ul>
                 <li><a href="/user/home">Home</a></li>
-                <!-- <li><a href="#about-tag">About</a></li>
-            <li><a href="#footer">Contact</a></li> -->
                 <li><a href="/review/">Reviews</a></li>
             </ul>
         </nav>
@@ -73,11 +70,8 @@
         <nav>
             <ul class="nav-nav nav-links">
                 <li><a href="/user/home">Home</a></li>
-                <!-- <li><a href="#about-tag">About</a></li>
-            <li><a href="#footer">Contact</a></li> -->
                 <li><a href="/review/">Reviews</a></li>
                 <li><button><a href="/user/logout" class="header-button-logout">Logout</a></button></li>
             </ul>
-            <!-- <button class="nav-nav nav-logoutBtn"><a href="/index/logout" class="header-button-logout">Logout</a></button> -->
         </nav>
     </header>

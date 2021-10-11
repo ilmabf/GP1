@@ -11,10 +11,9 @@ class Review extends Controller
 
     function index()
     {
+        //Fetch reviews
         $result = $this->model->getUserReviews();
         $_SESSION['reviews'] = $result;
-        // $result = $this->model->getCustomers();
-        // $_SESSION['customers'] = $result;
         $this->view->render('userReviews');
     }
 
@@ -25,11 +24,14 @@ class Review extends Controller
 
     function store()
     {
+        //get POST data
         $review = $_POST['review'];
-        // $dt = new DateTime("now", new DateTimeZone('Asia/Colombo'));
-        // $time = $dt->format('H:i:s');
+
+        //get user data
         $details = $_SESSION['userDetails'];
         $id = $details[0]['User_ID'];
+
+        //store review
         $reviewData = array(date('Y-m-d'), date("H:i:s"), $review, $id);
         if ($this->model->storeReview($reviewData)) {
             header("Location: /user/home");

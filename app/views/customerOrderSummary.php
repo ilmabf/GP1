@@ -63,32 +63,6 @@
     <button class="orderButtons a9" id="confirmBtn" onclick = "openConfirmOrder()"><a>Confirm Order</a></button>
 </div>
 </div>
-<!-- <div id="cancelPopUpId" class="cancelPopUpclass">
-
-  Modal content
-    <div class="cancelPopUpContent-content">
-        <span class="closeCancel">&times;</span>
-        <p>Do you need to Cancel your Booking ?</p>
-        <div class="yesCancel">
-            <button class="btnCancel"><a href="/user/home">Yes</a></button>
-        </div>
-    </div>
-
-</div> -->
-<!-- 
-<div id="confirmPopUpId" class="confirmPopUpclass">
-
-  
-    <div class="confirmPopUpContent-content">
-        <span class="closeConfirm">&times;</span>
-        <p>Your Order is success. Thank You!</p>
-        <div class="yesConfirm">
-            <button class="btnConfirm"><a href="/user/home">Return to Home Page</a></button>
-        </div>
-    </div>
-
-</div> -->
-
 <div class="addVehicleform" id = "cancelPopUpId">
     <div class="forma">
         

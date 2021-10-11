@@ -26,11 +26,6 @@ include 'userLoggedInHeader.php';
 </div>
 
 <div class="Manager-equip-Table">
-  <!-- <label>
-    <span>Search:</span>
-    <input placeholder="Enter search term" type="search" id="searchInput">
-  </label> -->
-
   <div class="manager-equip-table-wrap">
     <table>
       <thead>

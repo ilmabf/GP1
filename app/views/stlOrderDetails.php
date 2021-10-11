@@ -8,7 +8,6 @@ include 'userLoggedInHeader.php';
         <h1 class="stl-orders-h1">Order Details</h1>
 
         <div class="upcoming">
-            <!-- <div class="order-subBox"> -->
 
             <div class="boxx">
 
@@ -58,7 +57,6 @@ include 'userLoggedInHeader.php';
                     <div class="orderitem"><a href="">View Location</a></div>
                 </div>
             </div>
-            <!-- </div> -->
         </div>
 
         <div class="service-team">
