@@ -1,6 +1,6 @@
-<?php 
-    
-    include 'userLoggedInHeader.php';
+<?php
+
+include 'userLoggedInHeader.php';
 ?>
 
 <div style="min-height: 110px;"></div>
@@ -10,8 +10,8 @@
 </div>
 
 <div class="managerChartsR1">
-  <img src="/public/images/dashboardNoBooking.png" class="managerChart1">
-  <img src="/public/images/dashboardRevenue.png" class="managerChart2">
+    <img src="/public/images/dashboardNoBooking.png" class="managerChart1">
+    <img src="/public/images/dashboardRevenue.png" class="managerChart2">
 </div>
 
 <div class="managerChartsR2">

@@ -1,8 +1,8 @@
 var arrHead = new Array();	// array for header.
     arrHead = ['Name', 'Price', 'Date Acquired', ''];
 
-var arrHead2 = new Array();	// array for header.
-    arrHead2 = ['Equipment_ID', 'Team',''];
+var arrHeader = new Array();	// array for header.
+    arrHeader = ['Equipment ID', 'Team',''];
 
 var submitBtn = document.getElementById('submitButton');
 var saveBtn = document.getElementById('saveButton');
@@ -10,7 +10,6 @@ var saveBtn = document.getElementById('saveButton');
 var div1 = document.getElementById('container1');
 var div2 = document.getElementById('container2');
 
-//var equipInsertSuccess = document.getElementById('equipAddSuccess');
     // first create TABLE structure with the headers. 
 function createEquipTable() {
     var equipTable = document.createElement('table');
@@ -23,18 +22,17 @@ function createEquipTable() {
         tr.appendChild(th);
     }
 
-    
     div1.appendChild(equipTable);  // add the TABLE to the container.
 }
 
-function createEquipAssignTable() {
+function createAssignTable() {
     var equipAssignTable = document.createElement('table');
     equipAssignTable.setAttribute('id', 'equipAssignTable'); // table id.
 
     var tr1 = equipAssignTable.insertRow(-1);
-    for (var h1 = 0; h1 < arrHead2.length; h1++) {
+    for (var h1 = 0; h1 < arrHeader.length; h1++) {
         var th1 = document.createElement('th'); // create table headers
-        th1.innerHTML = arrHead2[h1];
+        th1.innerHTML = arrHeader[h1];
         tr1.appendChild(th1);
     }
 
@@ -42,8 +40,9 @@ function createEquipAssignTable() {
 }
 // now, add a new to the TABLE.
 function addNewRow() {
-
+    div1.style.display = "block";
     submitBtn.style.display = "block";
+
     saveBtn.style.display = "none";
     div2.style.display = "none";
 
@@ -114,6 +113,7 @@ function removeRow1(removeButton1) {
 }
 
 function assignEquipment() {
+    createAssignTable();
     div2.style.display="block";
     saveBtn.style.display = "block";
     
@@ -123,12 +123,12 @@ function assignEquipment() {
     var equipAssignTab = document.getElementById('equipAssignTable');
 
     var rowCnt1 = equipAssignTab.rows.length;   // table row count.
-    var tr1 = equipAssignTab.insertRow(rowCnt1); // the table row.
-    tr1 = equipAssignTab.insertRow(rowCnt1);
+    var tr2 = equipAssignTab.insertRow(rowCnt1); // the table row.
+    tr2 = equipAssignTab.insertRow(rowCnt1);
 
-    for (var c1 = 0; c1 < arrHead2.length; c1++) {
-        var td1 = document.createElement('td'); // table definition.
-        td1 = tr1.insertCell(c1);
+    for (var c1 = 0; c1 < arrHeader.length; c1++) {
+        var td2 = document.createElement('td'); // table definition.
+        td2 = tr2.insertCell(c1);
 
         if (c1 == 2) {      // the first column.
             // add a button in every new row in the first column.
@@ -145,20 +145,20 @@ function assignEquipment() {
             // add button's 'onclick' event.
             button1.setAttribute('onclick', 'closeARow(this)');
 
-            td1.appendChild(button1);
+            td2.appendChild(button1);
         }
         else {
             // 2nd, 3rd and 4th column, will have textbox.
             var ele1 = document.createElement('input');
          
             if(c1==0){
-                ele1.setAttribute('name', 'equipment_id');
+                ele1.setAttribute('name', 'equip_id');
                 ele1.setAttribute('type', 'text');
                 ele1.setAttribute('required', '');
             }
 
             else if(c1==1){
-                ele1.setAttribute('name', 'Team');
+                ele1.setAttribute('name', 'team');
                 ele1.setAttribute('type', 'number');
                 ele1.setAttribute('required', '');
             }
@@ -167,7 +167,7 @@ function assignEquipment() {
             ele1.setAttribute('value', '');
             ele1.setAttribute('id', 'tb1-input');
 
-            td1.appendChild(ele1);
+            td2.appendChild(ele1);
         }
     }
 }
@@ -177,3 +177,4 @@ function closeARow(closeButton) {
 
     saveBtn.style.display = "none";
 }
+

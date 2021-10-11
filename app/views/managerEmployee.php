@@ -1,41 +1,41 @@
-<?php 
-    
-    include 'userLoggedInHeader.php';
+<?php
+
+include 'userLoggedInHeader.php';
 ?>
 
 <div style="min-height: 110px;"></div>
 
 <div class="heading">
-    <h2>Employee Details</h2>
+  <h2>Employee Details</h2>
 </div>
 
 
 <div class="main-Mg-EmpSearch">
 
-    <div class="Mg-EmpSearch mgEmpSearch1 marginFix"  style = "margin-left: 214px;">
-        <input type="text" class="Mg-Emp-Search" id="managerSearchEmployee" onkeyup="myFunction()" placeholder="Search for Employee..." title="Type in a name">
-    </div>
+  <div class="Mg-EmpSearch mgEmpSearch1 marginFix" style="margin-left: 214px;">
+    <input type="text" class="Mg-Emp-Search" id="managerSearchEmployee" onkeyup="myFunction()" placeholder="Search for Employee..." title="Type in a name">
+  </div>
 
-    <div class="Mg-EmpSearch mgEmpSearch2" style="margin-right: 212px;">
-        <form action="" method="post">
-            <select name="serviceTeam" class="Mg-Emp-Search" id="serviceTeams-types">
-                <option value="select service team">Select Service Team</option>
-                <option value="Team A">Team 1</option>
-                <option value="Team B">Team 2</option>
-            </select>
-        </form>
+  <div class="Mg-EmpSearch mgEmpSearch2" style="margin-right: 212px;">
+    <form action="" method="post">
+      <select name="serviceTeam" class="Mg-Emp-Search" id="serviceTeams-types">
+        <option value="select service team">Select Service Team</option>
+        <option value="Team A">Team 1</option>
+        <option value="Team B">Team 2</option>
+      </select>
+    </form>
 
-    </div>
+  </div>
 
-    <div class="Mg-EmpSearch mgEmpSearch2">
-        <form action="" method="post">
-            <select name="serviceTeamLeader" class="Mg-Emp-Search" id="serviceTeamLeaders-types">
-                <option value="select service team leader">Select Service Team Leader</option>
-                <option value="Team A">Team 1 Leader</option>
-                <option value="Team B">Team 2 Leader</option>
-            </select>
-        </form>
-    </div>
+  <div class="Mg-EmpSearch mgEmpSearch2">
+    <form action="" method="post">
+      <select name="serviceTeamLeader" class="Mg-Emp-Search" id="serviceTeamLeaders-types">
+        <option value="select service team leader">Select Service Team Leader</option>
+        <option value="Team A">Team 1 Leader</option>
+        <option value="Team B">Team 2 Leader</option>
+      </select>
+    </form>
+  </div>
 
 </div>
 
@@ -45,7 +45,7 @@
     <span>Search:</span>
     <input placeholder="Enter search term" type="search" id="searchInput">
   </label> -->
-  
+
   <div class="table-wrapper">
     <table id="filterTable">
       <thead>
@@ -128,11 +128,11 @@
           <td>1</td>
           <td></td>
         </tr>
-        </tbody>
+      </tbody>
     </table>
   </div>
 </div>
 
 <div style="min-height: 110px;"></div>
 
-<script src="/public/js/managerEmployeeTable.js"></script> 
+<script src="/public/js/managerEmployeeTable.js"></script>

@@ -49,6 +49,9 @@ tr{
     border-radius: 5px;
     border-color: white;
 }
+#assignEquipment:hover, #bt:hover{
+    color: #70a2ce;
+}
 #submitButton{
     display: none;
     margin: 20px auto;
@@ -72,12 +75,16 @@ tr{
     border-radius: 5px;
     border-color: white;
 }
+#saveButton:hover{
+    color: #70a2ce;
+}
 #container1{
     display:block;
     overflow:auto;
     margin:0;
     padding-bottom:10px;
 }
+
 #container2{
     display:block;
     overflow:auto;
@@ -99,7 +106,26 @@ tr{
     background-color: rgb(187, 13, 13);
 }
 
+
+#closeButton{
+    background-color: rgb(145, 20, 20);
+    padding: 5px 5px;
+    color: white;
+    border-radius: 5px;
+    border-color: white;
+    cursor: pointer;
+}
+
+#closeButton:hover{
+    background-color: rgb(187, 13, 13);
+}
 #tb-input{
+    padding: 4px;
+    font-size: 12px;
+    border-color: grey;
+    max-width: 110px;
+}
+#tb1-input{
     padding: 4px;
     font-size: 12px;
     border-color: grey;
