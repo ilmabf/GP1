@@ -13,7 +13,7 @@ $details = $_SESSION['equipmentDetails'];
             <input type="button" id="addNewRow" value="Add Equipment" style="display:inline-block;text-align:center;" onclick="addNewRow(); this.onclick=null;"/>
             <input type="button" id="assignEquipment" value="Assign Equipment" style="display:inline-block;text-align:center;" onclick="assignEquipment(); this.onclick=null;" />
         </div>
-        <!--><body onload="createEquipTable()">-->
+        <body onload="createEquipTable()">
         <div>
             <form action="/service/addNewEquipment" name="Form" method="post">
                 <div id="container1">
