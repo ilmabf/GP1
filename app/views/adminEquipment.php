@@ -9,9 +9,9 @@
 
         <div style="min-height: 110px;"></div>
         <h2 class="manageEquipment-heading">Manage Equipment</h2> 
-        <div style="display:block;text-align:center">
-            <input type="button" id="addNewRow" value="Add Equipment" style="display:inline-block;text-align:center" onclick="addNewRow(); this.onclick=null;"/>
-            <input type="button" id="assignEquipment" value="Assign Equipment" style="display:inline-block;text-align:center" onclick="assignEquipment(); this.onclick=null;" />
+        <div style="display:block;text-align:center;">
+            <input type="button" id="addNewRow" value="Add Equipment" style="display:inline-block;text-align:center;" onclick="addNewRow(); this.onclick=null;"/>
+            <input type="button" id="assignEquipment" value="Assign Equipment" style="display:inline-block;text-align:center;" onclick="assignEquipment(); this.onclick=null;" />
         </div>
         <!--><body onload="createEquipTable()">-->
         <div>
@@ -24,7 +24,7 @@
       
         <!--<body onload="createEquipAssignTable()">-->
         <div>
-            <form action="/service/assignEquipment" name="Form" method="post">
+            <form action="/eqip/assignEquipment" name="Form" method="post">
                 <div id="container2">
                 </div>  <!-- the container to add the TABLE -->
                 <input type="submit" id="saveButton" value="Save Data"/> 
@@ -78,9 +78,9 @@
           $count = 0; 
           while ($count < $_SESSION['rowCount']){?>
              <tr>
-                <td><?php echo $details[$count]['Equipment_ID']?></td>
+                <td style="text-align:right;"><?php echo $details[$count]['Equipment_ID']?></td>
                <td><?php echo $details[$count]['Name']?></td>
-               <td><?php echo $details[$count]['Price']?>.00</td>
+               <td style="text-align:right;"><?php echo $details[$count]['Price']?>.00</td>
                <td><?php echo $details[$count]['Date_Acquired']?></td>     
                <td><?php echo $details[$count]['Team']?></td>
                <td><a href="#" class="edit_btn">Edit</a></td>

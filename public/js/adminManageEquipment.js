@@ -7,7 +7,10 @@ var arrHead2 = new Array();	// array for header.
 var submitBtn = document.getElementById('submitButton');
 var saveBtn = document.getElementById('saveButton');
 
-var equipInsertSuccess = document.getElementById('equipAddSuccess');
+var div1 = document.getElementById('container1');
+var div2 = document.getElementById('container2');
+
+//var equipInsertSuccess = document.getElementById('equipAddSuccess');
     // first create TABLE structure with the headers. 
 function createEquipTable() {
     var equipTable = document.createElement('table');
@@ -20,7 +23,7 @@ function createEquipTable() {
         tr.appendChild(th);
     }
 
-    var div1 = document.getElementById('container1');
+    
     div1.appendChild(equipTable);  // add the TABLE to the container.
 }
 
@@ -35,13 +38,14 @@ function createEquipAssignTable() {
         tr1.appendChild(th1);
     }
 
-    var div2 = document.getElementById('container2');
     div2.appendChild(equipAssignTable);  // add the TABLE to the container.
 }
 // now, add a new to the TABLE.
 function addNewRow() {
 
     submitBtn.style.display = "block";
+    saveBtn.style.display = "none";
+    div2.style.display = "none";
 
     var equipTab = document.getElementById('equipTable');
 
@@ -63,10 +67,10 @@ function addNewRow() {
             // set input attributes.
             button.setAttribute('type', 'button');
             button.setAttribute('value', 'Close');
-            button.setAttribute('id', 'removeButton');
+            button.setAttribute('id', 'removeButton1');
 
             // add button's 'onclick' event.
-            button.setAttribute('onclick', 'removeARow(this)');
+            button.setAttribute('onclick', 'removeRow1(this)');
 
             td.appendChild(button);
         }
@@ -101,16 +105,20 @@ function addNewRow() {
 }
 
 // delete TABLE row function.
-function removeARow(removeButton) {
+
+function removeRow1(removeButton1) {
     var equipTab = document.getElementById('equipTable');
-    equipTab.deleteRow(removeButton.parentNode.parentNode.rowIndex); // button -> td -> tr.
+    equipTab.deleteRow(removeButton1.parentNode.parentNode.rowIndex); // button -> td -> tr.
 
     submitBtn.style.display = "none";
 }
 
 function assignEquipment() {
-
+    div2.style.display="block";
     saveBtn.style.display = "block";
+    
+    submitBtn.style.display = "none";
+    div1.style.display = "none";
 
     var equipAssignTab = document.getElementById('equipAssignTable');
 
@@ -163,7 +171,7 @@ function assignEquipment() {
         }
     }
 }
-function closeARow(removeButton) {
+function closeARow(closeButton) {
     var equipAssignTab = document.getElementById('equipAssignTable');
     equipAssignTab.deleteRow(closeButton.parentNode.parentNode.rowIndex); // button -> td -> tr.
 
