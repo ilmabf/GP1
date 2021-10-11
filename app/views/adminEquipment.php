@@ -42,7 +42,7 @@ $details = $_SESSION['equipmentDetails'];
       <input type="search" class="ad-Equip-Search" id="adminSearchEquipment" onkeyup="myFunction()" placeholder="Search for Equipment..." title="Type in a name">
     </div>
 
-    <div class="Admin-EquipSearch adEquipSearch2">
+    <div class="Admin-EquipSearch adEquipSearch2" style = "margin-top: 10px;">
       <form action="" method="post">
         <select name="serviceTeam" class="ad-Equip-Search" id="AdminserviceTeamTypes">
           <option value="select service team">Select Service Team</option>

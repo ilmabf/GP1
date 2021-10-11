@@ -14,7 +14,7 @@ include 'userLoggedInHeader.php';
     <input type="search" class="manager-Equip-Search" id="managerSearchEquipment" onkeyup="myFunction()" placeholder="Search for Equipment..." title="Type in a name">
   </div>
 
-  <div class="manager-EquipSearch managerEquipSearch2">
+  <div class="manager-EquipSearch managerEquipSearch2" style = "margin-top: 7px;">
     <form action="" method="post">
       <select name="serviceTeam" class="manager-Equip-Search" id="Manager-AssignedEquip-TeamTypes">
         <option value="select service team">Select Service Team</option>
@@ -41,35 +41,35 @@ include 'userLoggedInHeader.php';
         <tr>
           <td>1</td>
           <td>Compressor</td>
-          <td>18500.00</td>
+          <td style="text-align:right">18500.00</td>
           <td>2021-06-05</td>
-          <td>1</td>
+          <td style="text-align:right">1</td>
         </tr>
         <tr>
           <td>2</td>
           <td>High pressure water gun</td>
-          <td>8500.00</td>
+          <td style="text-align:right">8500.00</td>
           <td>2021-06-05</td>
-          <td>2</td>
+          <td style="text-align:right">2</td>
         </tr>
         <tr>
           <td>3</td>
           <td>Vacuum cleaner</td>
-          <td>6000.00</td>
+          <td style="text-align:right">6000.00</td>
           <td>2021-06-18</td>
-          <td>1</td>
+          <td style="text-align:right">1</td>
         </tr>
         <tr>
           <td>4</td>
           <td>High pressure water gun</td>
-          <td>9900.00</td>
+          <td style="text-align:right">9900.00</td>
           <td>2021-07-10</td>
           <td></td>
         </tr>
         <tr>
           <td>5</td>
           <td>Microfiber cloth</td>
-          <td>500.00</td>
+          <td style="text-align:right">500.00</td>
           <td>2021-07-25</td>
           <td></td>
         </tr>
