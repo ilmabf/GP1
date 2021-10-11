@@ -37,7 +37,21 @@ tr{
     border-color: white;
     cursor: pointer;
 }
-
+#addNewRow:hover, #bt:hover{
+    color: #70a2ce;
+}
+#assignEquipment{
+    display: block;
+    margin: 35px auto;
+    padding: 8px 8px;
+    background-color: #085394;
+    color: white;
+    border-radius: 5px;
+    border-color: white;
+}
+#assignEquipment:hover, #bt:hover{
+    color: #70a2ce;
+}
 #submitButton{
     display: none;
     margin: 20px auto;
@@ -52,15 +66,32 @@ tr{
 #submitButton:hover{
     color: #70a2ce;
 }
-#container{
+#saveButton{
+    display: none;
+    margin: 20px auto;
+    padding: 8px 8px;
+    background-color: #085394;
+    color: white;
+    border-radius: 5px;
+    border-color: white;
+}
+#saveButton:hover{
+    color: #70a2ce;
+}
+#container1{
     display:block;
     overflow:auto;
     margin:0;
     padding-bottom:10px;
 }
-#addNewRow:hover, #bt:hover{
-    color: #70a2ce;
+
+#container2{
+    display:block;
+    overflow:auto;
+    margin:0;
+    padding-bottom:10px;
 }
+
 
 #removeButton1{
     background-color: rgb(145, 20, 20);
@@ -75,7 +106,26 @@ tr{
     background-color: rgb(187, 13, 13);
 }
 
+
+#closeButton{
+    background-color: rgb(145, 20, 20);
+    padding: 5px 5px;
+    color: white;
+    border-radius: 5px;
+    border-color: white;
+    cursor: pointer;
+}
+
+#closeButton:hover{
+    background-color: rgb(187, 13, 13);
+}
 #tb-input{
+    padding: 4px;
+    font-size: 12px;
+    border-color: grey;
+    max-width: 110px;
+}
+#tb1-input{
     padding: 4px;
     font-size: 12px;
     border-color: grey;
