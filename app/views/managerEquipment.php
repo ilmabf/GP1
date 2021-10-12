@@ -27,7 +27,7 @@ include 'userLoggedInHeader.php';
 
 <div class="Manager-equip-Table">
   <div class="manager-equip-table-wrap">
-    <table>
+    <table id="managerEquipTab">
       <thead>
         <tr>
           <th data-type="text">Equipment ID</th>
@@ -79,3 +79,4 @@ include 'userLoggedInHeader.php';
 </div>
 
 <div style="min-height: 110px;"></div>
+  <script src="/public/js/managerEquipmentTable.js"></script>
