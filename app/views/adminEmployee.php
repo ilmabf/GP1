@@ -7,8 +7,8 @@ include 'userLoggedInHeader.php';
   <div style="min-height: 110px;"></div>
   <h2 class="manageEmployee-heading">Manage Employee</h2>
   <div class="addBtnEmps">
-    <input type="button" id="addRow" value="Add Employee" class="addTableEmp" onclick="addRow(); this.onclick=null;" />
-    <input type="button" id="addStlRow" value="Add Service Team Leader" class="addTableEmp" onclick="addStlRow(); this.onclick=null;" />
+    <input type="button" id="addRow" value="Add Employee" class="addTableEmp" onclick="addRow(); " />
+    <input type="button" id="addStlRow" value="Add Service Team Leader" class="addTableEmp" onclick="addStlRow();" />
   </div>
   
   <div>

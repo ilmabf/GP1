@@ -10,8 +10,8 @@ $details = $_SESSION['equipmentDetails'];
         <h2 class="manageEquipment-heading">Manage Equipment</h2> 
 
         <div style="display:block;text-align:center;">
-            <input type="button" id="addNewRow" value="Add Equipment" style="display:inline-block;text-align:center;" onclick="addNewRow(); this.onclick=null;"/>
-            <input type="button" id="assignEquipment" value="Assign Equipment" style="display:inline-block;text-align:center;" onclick="assignEquipment(); this.onclick=null;" />
+            <input type="button" id="addNewRow" value="Add Equipment" style="display:inline-block;text-align:center;" onclick="addNewRow();"/>
+            <input type="button" id="assignEquipment" value="Assign Equipment" style="display:inline-block;text-align:center;" onclick="assignEquipment(); " />
         </div>
         <body onload="createEquipTable()">
         <div>
