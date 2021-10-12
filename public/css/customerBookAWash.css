@@ -176,9 +176,9 @@
 
 .next-button{
     background-color: #085394;
-    padding: 10px 30px;
+    padding: 7px 20px;
     color: white;
-    border-radius: 5px;
+    border-radius: 15px;
     font-size: 20px;
     cursor: pointer;
 }
