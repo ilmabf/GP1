@@ -110,7 +110,7 @@ include 'userLoggedInHeader.php';
 
   <div style="min-height: 110px;"></div>
 
-  <script src="/public/js/adminManageEmployee.js"></script>
-  <script src="/public/js/adminEmployeeTable.js"></script>
+  <script src="/public/js/AdminManageEmployee.js"></script>
+  <script src="/public/js/AdminEmployeeTable.js"></script>
 
 </main>

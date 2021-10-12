@@ -29,7 +29,7 @@
 
         </div>
 
-        <script src="/public/js/userChangePwd.js"></script>
+        <script src="/public/js/UserChangePwd.js"></script>
 
     </main>
 

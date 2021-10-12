@@ -117,4 +117,4 @@ include 'userLoggedInHeader.php';
 
     <div style="min-height: 110px;"></div>
 
-    <script src="/public/js/customerViewUpcomingOrder.js"></script>
+    <script src="/public/js/CustomerViewUpcomingOrder.js"></script>

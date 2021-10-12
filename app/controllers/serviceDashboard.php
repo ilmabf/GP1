@@ -10,6 +10,6 @@ class ServiceDashboard extends controller
 
     function index()
     {
-        $this->view->render('stlDashboard');
+        $this->view->render('StlDashboard');
     }
 }

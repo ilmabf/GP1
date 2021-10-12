@@ -9,22 +9,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="icon" href="/public/images/drop.png">
-    <link rel="stylesheet" href="/public/css/userHeader.css">
-    <link rel="stylesheet" href="/public/css/userHome.css">
-    <link rel="stylesheet" href="/public/css/customerHome.css">
-    <link rel="stylesheet" href="/public/css/customerMyOrders.css">
-    <link rel="stylesheet" href="/public/css/userLogin.css">
-    <link rel="stylesheet" href="/public/css/customerSignup.css">
-    <link rel="stylesheet" href="/public/css/managerHome.css">
-    <link rel="stylesheet" href="/public/css/stlHome.css">
-    <link rel="stylesheet" href="/public/css/adminHome.css">
-    <link rel="stylesheet" href="/public/css/userFooter.css">
-    <link rel="stylesheet" href="/public/css/adminManageEmployee.css">
-    <link rel="stylesheet" href="/public/css/customerBookAWash.css">
-    <link rel="stylesheet" href="/public/css/customerBookAWash2.css">
-    <link rel="stylesheet" href="/public/css/customerBookAWash3.css">
-    <link rel="stylesheet" href="/public/css/customerOrderSummary.css">
-    <link rel="stylesheet" href="/public/css/userReviews.css">
+    <link rel="stylesheet" href="/public/css/UserHeader.css">
+    <link rel="stylesheet" href="/public/css/UserHome.css">
+    <link rel="stylesheet" href="/public/css/CustomerHome.css">
+    <link rel="stylesheet" href="/public/css/CustomerMyOrders.css">
+    <link rel="stylesheet" href="/public/css/UserLogin.css">
+    <link rel="stylesheet" href="/public/css/CustomerSignup.css">
+    <link rel="stylesheet" href="/public/css/ManagerHome.css">
+    <link rel="stylesheet" href="/public/css/StlHome.css">
+    <link rel="stylesheet" href="/public/css/AdminHome.css">
+    <link rel="stylesheet" href="/public/css/UserFooter.css">
+    <link rel="stylesheet" href="/public/css/AdminManageEmployee.css">
+    <link rel="stylesheet" href="/public/css/CustomerBookAWash.css">
+    <link rel="stylesheet" href="/public/css/CustomerBookAWash2.css">
+    <link rel="stylesheet" href="/public/css/CustomerBookAWash3.css">
+    <link rel="stylesheet" href="/public/css/CustomerOrderSummary.css">
+    <link rel="stylesheet" href="/public/css/UserReviews.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>WandiWash</title>

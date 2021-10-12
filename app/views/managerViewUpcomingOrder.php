@@ -121,4 +121,4 @@ include 'userLoggedInHeader.php';
 
     <div style="min-height: 110px;"></div>
 
-    <script src="/public/js/managerViewUpcomingOrder.js"></script>
+    <script src="/public/js/ManagerViewUpcomingOrder.js"></script>

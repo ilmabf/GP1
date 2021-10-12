@@ -1,7 +1,7 @@
 <?php
 
 
-class Service_Model extends Model
+class ServiceModel extends Model
 {
     function __construct()
     {

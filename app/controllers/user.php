@@ -16,7 +16,7 @@ class User extends Controller
     function login()
     {
 
-        $this->view->render('userLogin');
+        $this->view->render('UserLogin');
     }
 
     function logout()
@@ -29,7 +29,7 @@ class User extends Controller
 
     function passwordReset()
     {
-        $this->view->render('userForgotPwd');
+        $this->view->render('UserForgotPwd');
     }
 
     function passwordChange()
@@ -79,14 +79,14 @@ class User extends Controller
 
                 if ($mail->mailto($subject, $email, $body)) {
                     $_SESSION['changePwdVerifyBox'] = 1;
-                    $this->view->render('userForgotPwd');
+                    $this->view->render('UserForgotPwd');
                 }
             } else {
                 echo "insertion error";
             }
         } else {
             $_SESSION['error'] = 'We couldn\'t find that email<br>within our records';
-            $this->view->render('userForgotPwd');
+            $this->view->render('UserForgotPwd');
         }
     }
 
@@ -102,7 +102,7 @@ class User extends Controller
             $date = $this->model->getPasswordResetExpDate($key, $email);
             if ($date[0]['expDate'] >= $curDate) {
                 $_SESSION['email'] = $email;
-                $this->view->render('userChangePwd');
+                $this->view->render('UserChangePwd');
             } else {
                 echo "Link expired";
             }
@@ -127,7 +127,7 @@ class User extends Controller
         $this->model->updateUserPassword($email, $hashedpwd);
         $this->model->deletePwdTempTable($email);
         
-        $this->view->render('userHome');
+        $this->view->render('UserHome');
     }
 
     function home()
@@ -140,16 +140,16 @@ class User extends Controller
         //if already logged in redirect according to user roles
         if (isset($_SESSION['login'])) {
             if ($_SESSION['role'] == "customer") {
-                $this->view->render('customerHome');
+                $this->view->render('CustomerHome');
                 exit;
             } else if ($_SESSION['role'] == "manager") {
-                $this->view->render('managerHome');
+                $this->view->render('ManagerHome');
                 exit;
             } else if ($_SESSION['role'] == "stl") {
-                $this->view->render('stlHome');
+                $this->view->render('StlHome');
                 exit;
             } else {
-                $this->view->render('adminHome');
+                $this->view->render('AdminHome');
                 exit;
             }
         }
@@ -182,23 +182,23 @@ class User extends Controller
                 $value = $this->model->checkVerified($uname);
                 if ($value[0]['Verified'] == "1") {
                     $_SESSION['Verified'] = "True";
-                    $this->view->render('customerHome');
+                    $this->view->render('CustomerHome');
                 } else {
                     $_SESSION['Verified'] = "False";
-                    $this->view->render('customerVerify');
+                    $this->view->render('CustomerVerify');
                 }
             } else if ($this->model->checkManager($uname)) {
                 //assign user role
                 $_SESSION['role'] = "manager";
-                $this->view->render('managerHome');
+                $this->view->render('ManagerHome');
             } else if ($this->model->checkSTL($uname)) {
                 //assign user role
                 $_SESSION['role'] = "stl";
-                $this->view->render('stlHome');
+                $this->view->render('StlHome');
             } else {
                 //assign user role
                 $_SESSION['role'] = "systemadmin";
-                $this->view->render('adminHome');
+                $this->view->render('AdminHome');
             }
         } else {
             $_SESSION['error'] = 'The email and password that you entered did not match our records.';
@@ -216,7 +216,7 @@ class User extends Controller
                 }
             }
 
-            $this->view->render('userLogin');
+            $this->view->render('UserLogin');
         }
     }
 }

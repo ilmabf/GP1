@@ -8,30 +8,31 @@ class Booking extends Controller
         parent::__construct();
     }
 
-    function bookAwash()
+    //get details for booking
+    function details()
     {
-        $this->view->render('customerBookAWash');
+        $this->view->render('CustomerBookAWash');
     }
 
     //get location for booking
-    function bookAWash2()
+    function location()
     {
-        $this->view->render('customerBookAWash2');
+        $this->view->render('CustomerBookAWash2');
     }
 
     function orderSummary()
     {
-        $this->view->render('customerOrderSummary');
+        $this->view->render('CustomerOrderSummary');
     }
 
     function customerHome()
     {
-        $this->view->render('customerHome');
+        $this->view->render('CustomerHome');
     }
 
     function reschedule()
     {
-        $this->view->render('customerReschedule');
+        $this->view->render('CustomerReschedule');
     }
 
     // upcoming reservations
@@ -39,10 +40,10 @@ class Booking extends Controller
     {
 
         if ($_SESSION['role'] == "customer") {
-            $this->view->render('customerUpcomingReservations');
+            $this->view->render('CustomerUpcomingReservations');
             exit;
         } else if ($_SESSION['role'] == "manager") {
-            $this->view->render('managerUpcomingReservations');
+            $this->view->render('ManagerUpcomingReservations');
         }
     }
 
@@ -51,10 +52,10 @@ class Booking extends Controller
     {
 
         if ($_SESSION['role'] == "customer") {
-            $this->view->render('customerViewUpcomingOrder');
+            $this->view->render('CustomerViewUpcomingOrder');
             exit;
         } else if ($_SESSION['role'] == "manager") {
-            $this->view->render('managerViewUpcomingOrder');
+            $this->view->render('ManagerViewUpcomingOrder');
         }
     }
 
@@ -63,10 +64,10 @@ class Booking extends Controller
     {
 
         if ($_SESSION['role'] == "customer") {
-            $this->view->render('customerCompletedReservations');
+            $this->view->render('CustomerCompletedReservations');
             exit;
         } else if ($_SESSION['role'] == "manager") {
-            $this->view->render('managerCompletedReservations');
+            $this->view->render('ManagerCompletedReservations');
         }
     }
 
@@ -75,10 +76,10 @@ class Booking extends Controller
     {
 
         if ($_SESSION['role'] == "customer") {
-            $this->view->render('customerViewCompletedOrder');
+            $this->view->render('CustomerViewCompletedOrder');
             exit;
         } else if ($_SESSION['role'] == "manager") {
-            $this->view->render('managerViewCompletedOrder');
+            $this->view->render('ManagerViewCompletedOrder');
         }
     }
 }

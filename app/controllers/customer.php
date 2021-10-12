@@ -17,7 +17,7 @@ class Customer extends Controller
 
     function signup()
     {
-        $this->view->render('customerSignup');
+        $this->view->render('CustomerSignup');
     }
 
     function register()
@@ -36,7 +36,7 @@ class Customer extends Controller
 
         //check for duplicate customer
         if ($this->model->checkDuplicate($array)) {
-            $this->view->render('customerSignup');
+            $this->view->render('CustomerSignup');
             exit;
         }
 
@@ -90,6 +90,6 @@ class Customer extends Controller
 
     function help()
     {
-        $this->view->render('customerHelp');
+        $this->view->render('CustomerHelp');
     }
 }

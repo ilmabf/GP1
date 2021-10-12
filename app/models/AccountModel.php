@@ -1,6 +1,6 @@
 <?php
 
-class Account_Model extends Model
+class AccountModel extends Model
 {
     function vehicleAdd($values)
     {

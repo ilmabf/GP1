@@ -100,4 +100,4 @@ include 'userLoggedInHeader.php';
 
     <div style="min-height: 110px;"></div>
 
-    <script src="/public/js/managerViewCompletedOrder.js"></script>
+    <script src="/public/js/ManagerViewCompletedOrder.js"></script>

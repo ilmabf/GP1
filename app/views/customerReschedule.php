@@ -89,6 +89,6 @@ include 'userLoggedInHeader.php';
     include 'userFooter.php';
     ?>
 
-    <script src="/public/js/customerBookAWash.js"></script>
+    <script src="/public/js/CustomerBookAWash.js"></script>
 
 </body>

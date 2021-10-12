@@ -131,4 +131,4 @@ include 'userLoggedInHeader.php';
 
 <div style="min-height: 110px;"></div>
 
-<script src="/public/js/managerEmployeeTable.js"></script>
+<script src="/public/js/ManagerEmployeeTable.js"></script>

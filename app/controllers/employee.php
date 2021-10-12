@@ -19,10 +19,10 @@ class Employee extends Controller
 
         //User Autherization
         if ($_SESSION['role'] == "systemadmin") {
-            $this->view->render('adminEmployee');
+            $this->view->render('AdminEmployee');
             exit;
         } else if ($_SESSION['role'] == "manager") {
-            $this->view->render('managerEmployee');
+            $this->view->render('ManagerEmployee');
         }
     }
 

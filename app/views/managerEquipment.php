@@ -79,4 +79,4 @@ include 'userLoggedInHeader.php';
 </div>
 
 <div style="min-height: 110px;"></div>
-  <script src="/public/js/managerEquipmentTable.js"></script>
+  <script src="/public/js/ManagerEquipmentTable.js"></script>

@@ -81,7 +81,7 @@
 
 
 
-        <script src="/public/js/customerSignup.js"></script>
+        <script src="/public/js/CustomerSignup.js"></script>
     </main>
 
     <div style="min-height: 110px;">

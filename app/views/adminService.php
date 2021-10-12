@@ -140,4 +140,4 @@ include 'userLoggedInHeader.php';
 </div>
 <div style="min-height: 110px;"></div>
 
-<script src="/public/js/adminManageService.js"></script>
+<script src="/public/js/AdminManageService.js"></script>

@@ -11,7 +11,7 @@ include 'userLoggedInHeader.php';
             <div class="bookAwash">
                 <h3>We wash your<br>vehicle at your Doorstep!</h3>
                 <div class="bookAwash-button">
-                    <button class="customer-home-main-section1-button"><a href="/booking/bookAWash">Book a wash</a></button>
+                    <button class="customer-home-main-section1-button"><a href="/booking/details">Book a wash</a></button>
                 </div>
             </div>
 
