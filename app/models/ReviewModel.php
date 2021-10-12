@@ -1,6 +1,6 @@
 <?php
 
-class Review_Model extends Model
+class ReviewModel extends Model
 {
     function __construct()
     {

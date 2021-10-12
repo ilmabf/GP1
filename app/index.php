@@ -1,9 +1,9 @@
 <?php 
-    require 'config/databaseConf.php';
-    require 'libs/app.php';
-    require 'libs/controller.php';
-    require 'libs/database.php';
-    require 'libs/model.php';
-    require 'libs/view.php';
+    require 'config/DatabaseConf.php';
+    require 'libs/App.php';
+    require 'libs/Controller.php';
+    require 'libs/Database.php';
+    require 'libs/Model.php';
+    require 'libs/View.php';
 
     $app = new App();

@@ -71,4 +71,4 @@ include 'userLoggedInHeader.php';
 </div>
 
 
-<script src="/public/js/managerServiceDetails.js"></script>
+<script src="/public/js/ManagerServiceDetails.js"></script>

@@ -50,4 +50,4 @@
  </div>
 
 
-<script src="/public/js/customerHelp.js"></script>
+<script src="/public/js/CustomerHelp.js"></script>

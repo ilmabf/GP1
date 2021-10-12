@@ -9,6 +9,6 @@ class Dashboard extends Controller
 
     function index()
     {
-        $this->view->render('managerDashboard');
+        $this->view->render('ManagerDashboard');
     }
 }

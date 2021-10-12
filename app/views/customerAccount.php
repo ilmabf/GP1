@@ -210,4 +210,4 @@
             </div>
         </div>
     </div>
-    <script src="/public/js/customerAccount.js"></script>
+    <script src="/public/js/CustomerAccount.js"></script>

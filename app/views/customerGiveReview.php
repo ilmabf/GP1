@@ -23,4 +23,4 @@ include 'userLoggedInHeader.php';
         </div>
     </div>
 
-    <script src="/public/js/customerGiveReview.js"></script>
+    <script src="/public/js/CustomerGiveReview.js"></script>

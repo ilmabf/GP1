@@ -81,7 +81,7 @@ include 'userLoggedInHeader.php';
     </div>
 
     <div class="next-pg">
-        <button class="next-button"><a href="/booking/bookAWash2" style="color: white;">Next</a></button>
+        <button class="next-button"><a href="/booking/location" style="color: white;">Next</a></button>
     </div>
 
 
@@ -89,6 +89,6 @@ include 'userLoggedInHeader.php';
     include 'userFooter.php';
     ?>
 
-    <script src="/public/js/customerBookAWash.js"></script>
+    <script src="/public/js/CustomerBookAWash.js"></script>
 
 </body>

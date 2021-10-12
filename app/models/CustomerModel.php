@@ -1,7 +1,7 @@
 <?php
 
 
-class Customer_Model extends Model
+class CustomerModel extends Model
 {
     function __construct()
     {

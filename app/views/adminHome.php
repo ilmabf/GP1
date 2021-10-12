@@ -17,7 +17,7 @@ include 'userLoggedInHeader.php';
 
                 <div class="adminHome-block2">
 
-                    <h3><a href="/service/equipment" style="color:#085394;">Manage Equipments</a></h3>
+                    <h3><a href="/service/equipment" style="color:#085394;">Manage Equipment</a></h3>
 
                 </div>
 

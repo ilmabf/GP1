@@ -10,10 +10,10 @@ class Controller
 
     public function loadModel($modelName)
     {
-        $path = 'models/' . $modelName . '_Model.php';
+        $path = 'models/' . $modelName . 'Model.php';
         if (file_exists($path)) {
             require $path;
-            $className = $modelName . '_Model';
+            $className = $modelName . 'Model';
             $this->model = new $className();
         }
     }
