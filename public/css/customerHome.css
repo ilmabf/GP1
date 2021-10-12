@@ -46,13 +46,14 @@
     width: fit-content;
     background-color: #085394;
     /* opacity: 0.7; */
-    border-radius: 5px;
+    border-radius: 15px;
     height: 40px;
+    border-color: #085394;
 }
 
 section .bookAwash .bookAwash-button a{
     color: white;
-    font-weight: 600;
+    font-weight: 1200;
     font-size: 15px;
 }
 
