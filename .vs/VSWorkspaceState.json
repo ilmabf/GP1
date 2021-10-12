@@ -2,9 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\app",
+    "\\app\\views",
     "\\public",
+    "\\public\\css",
     "\\public\\js"
   ],
-  "SelectedNode": "\\public\\js\\adminEquipmentTable.js",
+  "SelectedNode": "\\public\\css",
   "PreviewInSolutionExplorer": false
 }
