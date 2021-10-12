@@ -26,9 +26,10 @@ function createEquipTable() {
 }
 
 function createAssignTable() {
+
     var equipAssignTable = document.createElement('table');
     equipAssignTable.setAttribute('id', 'equipAssignTable'); // table id.
-
+    div2.innerHTML='';
     var tr1 = equipAssignTable.insertRow(-1);
     for (var h1 = 0; h1 < arrHeader.length; h1++) {
         var th1 = document.createElement('th'); // create table headers
@@ -114,6 +115,8 @@ function removeRow1(removeButton1) {
 
     submitBtn.style.display = "none";
 }
+//
+
 
 function assignEquipment() {
     createAssignTable();
