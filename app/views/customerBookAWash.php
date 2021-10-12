@@ -18,8 +18,6 @@ include 'userLoggedInHeader.php';
         <h3>Wash Date</h3>
 
         <div id="closeOnClick">
-            <!-- <button class="btncls" onclick="closeOnClickDemo()">Click to open date picker</button>
-            <input type="text" id="datedemo"> -->
             <div class="dateWash">2021 - 10 - 15</div>
         </div>
     </div>

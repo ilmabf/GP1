@@ -23,7 +23,6 @@ include 'userLoggedInHeader.php';
 
     <div id="upcoming">
         <div class="upcoming">
-            <!-- <div class="order-subBox"> -->
 
             <div class="boxx">
 
@@ -77,7 +76,6 @@ include 'userLoggedInHeader.php';
                     <div class="orderitem"><a href="">View Location</a></div>
                 </div>
             </div>
-            <!-- </div> -->
         </div>
 
         <form action="" method="post">

@@ -71,17 +71,6 @@ include 'userLoggedInHeader.php';
         </div>
     </div>
 </div>
-<!-- <div id="interiorClean" class="manageInteriorClean">
-    <div class="iClean">
-        <span class="closeInteriorClean">&times;</span>
-        <h3 class="interiorClean-content">Interior Cleaning</h3>
-        <p class="interiorClean-content"><?php echo "Description" ?></p>
-        <div class="deleteIClean">
-            <button type="button" class="btnDeleteInteriorCleaning">Delete Wash Service</button>
-        </div>
-    </div>
-</div> -->
-
 <div class="addVehicleform" id="viewserviceForm">
     <div class="forma">
 
@@ -100,40 +89,6 @@ include 'userLoggedInHeader.php';
     </div>
 </div>
 
-<!-- <div id="interior-exteriorClean" class="manageInteriorClean">
-    <div class="iClean">
-        <span class="closeIEClean">&times;</span>
-        <h3 class="interiorClean-content">Exterior washing & Interior Cleaning</h3>
-        <p class="interiorClean-content"><?php echo "Description" ?></p>
-        <div class="deleteIClean">
-            <button type="button" class="btnDeleteInteriorCleaning">Delete Wash Service</button>
-        </div>
-    </div>
-</div>
-
-<div id="sanitization" class="manageInteriorClean">
-    <div class="iClean">
-        <span class="closeSClean">&times;</span>
-        <h3 class="interiorClean-content">Sanitization</h3>
-        <p class="interiorClean-content"></p>
-        <div class="deleteIClean">
-            <button type="button" class="btnDeleteInteriorCleaning">Delete Wash Service</button>
-        </div>
-    </div>
-</div> -->
-
-<!-- <div id="vehiclesNames" class="manageVehicles">
-    <div class="vehicleManagment">
-        <span class="closeVehicle">&times;</span>
-        <h3 class="vehicles-content">H - Back</h3>
-        <p class="vehicles-content"><?php echo "Description" ?></p>
-        <div class="deleteVehicle">
-            <button type="button" class="btnDeleteVehicle">Delete Vechicle Type</button>
-        </div>
-    </div>
-</div> -->
-
-<!-- style = "background-color:rgb(145,20,20);style = " margin-left: 10px; -->
 <div class="addVehicleform" id="viewVehicleType">
     <div class="forma">
 
@@ -146,24 +101,6 @@ include 'userLoggedInHeader.php';
 
     </div>
 </div>
-
-<!-- <div id="newServiceNames" class="addNewServices">
-    <div class="addNewServicesBox">
-        <span class="closeAddService">&times;</span>
-        <h3 class="addNewService-content">Add Service</h3>
-        <div class="addNewService-content addNewServiceInput">
-            <form action="" method="POST" id="addServiceTypeForm">
-                <input type="text" name="newServiceName" id="newServiceTypeName" placeholder="Enter service name">
-                <input type="text" name="newServiceDescription" id="newServiceTypeDescription" placeholder="Enter service description">
-            </form>
-        </div>
-
-        <div class="cancelAddNewServices">
-            <button type="button" form="addServiceTypeForm" class="btnAddNewService" value="Done">Add Service</button>
-            <button type="button" class="btnCancelAddService">Cancel</button>
-        </div>
-    </div>
-</div> -->
 
 <div class="addVehicleform" id="serviceForm">
     <div class="forma">
@@ -184,24 +121,6 @@ include 'userLoggedInHeader.php';
         </form>
 
     </div>
-</div>
-
-<!-- <div id="newVehicleNames" class="addVehicleform">
-    <div class="addNewVehicleBox">
-        <span class="closeAddVehicle">&times;</span>
-        <h3 class="addNewVehicle-content">Add Vehicle Type</h3>
-        <div class="addNewVehicle-content addNewVehicleInput">
-            <form action="" method="POST" id="addVehicleTypeForm">
-                <input type="text" name="newVehicleName" id="newVehicleTypeName" placeholder="Enter vehicle type name">
-                <!-- <input type="text" name="newServiceDescription" id="newServiceTypeDescription" placeholder="Enter service description"> -->
-</form>
-</div>
-
-<!-- <div class="cancelAddNewVehicles">
-            <button type="button" form="addVehicleTypeForm" class="btnAddNewVehicle" value="Done">Add vehicle type</button>
-            <button type="button" class="btnCancelAddVehicle">Cancel</button>
-        </div> -->
-</div>
 </div>
 
 <div class="addVehicleform" id="vehicleAddForm">

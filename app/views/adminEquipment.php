@@ -10,15 +10,15 @@ $details = $_SESSION['equipmentDetails'];
         <h2 class="manageEquipment-heading">Manage Equipment</h2> 
 
         <div style="display:block;text-align:center;">
-            <input type="button" id="addNewRow" value="Add Equipment" style="display:inline-block;text-align:center;" onclick="addNewRow(); this.onclick=null;"/>
-            <input type="button" id="assignEquipment" value="Assign Equipment" style="display:inline-block;text-align:center;" onclick="assignEquipment(); this.onclick=null;" />
+            <input type="button" id="addNewRow" value="Add Equipment" style="display:inline-block;text-align:center;" onclick="addNewRow();"/>
+            <input type="button" id="assignEquipment" value="Assign Equipment" style="display:inline-block;text-align:center;" onclick="assignEquipment(); " />
         </div>
         <body onload="createEquipTable()">
         <div>
             <form action="/service/addNewEquipment" name="Form" method="post">
                 <div id="container1">
                   
-                </div>  <!-- the container to add the TABLE -->
+                </div> 
                 <input type="submit" id="submitButton" value="Submit Data"/> 
             </form>
         </div>
@@ -27,7 +27,7 @@ $details = $_SESSION['equipmentDetails'];
         <div>
             <form action="/service/assignEquipment" method="post">
                 <div id="container2">
-                </div>  <!-- the container to add the TABLE -->
+                </div>  
                 <input type="submit" id="saveButton" value="Save Data"/> 
             </form>
         </div>
@@ -42,7 +42,7 @@ $details = $_SESSION['equipmentDetails'];
       <input type="search" class="ad-Equip-Search" id="adminSearchEquipment" onkeyup="myFunction()" placeholder="Search for Equipment..." title="Type in a name">
     </div>
 
-    <div class="Admin-EquipSearch adEquipSearch2">
+    <div class="Admin-EquipSearch adEquipSearch2" style = "margin-top: 10px;">
       <form action="" method="post">
         <select name="serviceTeam" class="ad-Equip-Search" id="AdminserviceTeamTypes">
           <option value="select service team">Select Service Team</option>
@@ -54,13 +54,9 @@ $details = $_SESSION['equipmentDetails'];
   </div>
   </div>
   <div class="Search-Table">
-    <!-- <label>
-    <span>Search:</span>
-    <input placeholder="Enter search term" type="search" id="searchInput">
-  </label> -->
 
     <div class="table-wrap">
-      <table id="ViewAsTable">
+      <table id="viewAsTable">
         <thead>
           <tr>
             <th data-type="text">Equipment ID</th>

@@ -50,22 +50,6 @@ class App
         }
     }
 
-    // private function _loadController(){
-
-    //     $file = 'controllers/' . $this->_url[0] . '.php';
-    //     if(file_exists($file)){
-    //         require $file;
-    //         $this->_controller = new $this->_url[0]; 
-    //         $this->_controller->{$this->_url[1]}();
-    //         $this->_controller->loadModel($this->_url[0]);
-    //         return true;
-    //     }
-    //     else{
-    //         echo "Page Not found!";
-    //         return false;
-    //     }
-    // }
-
     private function _loadControllerMethod()
     {
 

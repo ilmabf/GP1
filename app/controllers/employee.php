@@ -17,6 +17,7 @@ class Employee extends Controller
         $result = $this->model->getEmployeeDetails();
         $_SESSION['employeeDetails'] = $result;
 
+        //User Autherization
         if ($_SESSION['role'] == "systemadmin") {
             $this->view->render('adminEmployee');
             exit;
@@ -25,16 +26,12 @@ class Employee extends Controller
         }
     }
 
-    // function adminManageEmployee(){
-    //     $result = $this->model->getEmployeeDetails();
-    //     $_SESSION['employeeDetails'] = $result;
-
-    //     $this->view->render('adminManageEmployee');
-    // }
-
     function add()
     {
+        //User Autherization
         if ($_SESSION['role'] == "systemadmin") {
+
+            //get POST data
             $firstName = $_POST['firstName'];
             $lastName = $_POST['lastName'];
             $contactNumber = $_POST['contactNumber'];
@@ -46,7 +43,7 @@ class Employee extends Controller
 
             if (isset($firstName) && isset($lastName) && isset($contactNumber) && isset($email) && isset($dateEnrolled) && isset($salary) && isset($nic) && isset($team)) {
 
-
+                //insert employee
                 if ($this->model->makeEmployee($firstName, $lastName, $contactNumber, $email, $dateEnrolled, $salary, $nic, $team)) {
                     $_SESSION['insertSuccess'] = 'Employee added successfully';
                     header("Location: /employee/");
@@ -54,8 +51,7 @@ class Employee extends Controller
             } else {
                 echo "Errrorr";
             }
-        }
-        else{
+        } else {
             "Auth Error";
         }
     }

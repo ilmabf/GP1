@@ -8,6 +8,7 @@ class User_Model extends Model
         parent::__construct();
     }
 
+    // -------------------- Authentication --------------------------------------- // 
     public function authenticate($uname, $pwd)
     {
         if ($this->db->select('count', "users", "WHERE Username = '$uname' OR Email = '$uname' ;") > 0) {
@@ -55,15 +56,6 @@ class User_Model extends Model
         return $result;
     }
 
-    // public function checkSystemAdmin($uname){
-    //     if($this->db->select('count', "users", "WHERE Username = '$uname' AND User_ID = '1';") > 0){
-    //         return true;
-    //     }
-    //     else{
-    //         return false;
-    //     }
-    // }
-
     // -------------------- Forgot Password --------------------------------------- // 
 
     public function passwordExists($email)
@@ -84,7 +76,6 @@ class User_Model extends Model
         if ($result == "Success") {
             return true;
         } else {
-            //print_r($result);
             return false;
         }
     }
@@ -110,7 +101,6 @@ class User_Model extends Model
         if ($result == "Success") {
             return true;
         } else print_r($result);
-        //echo $result;
     }
 
     public function deletePwdTempTable($email)
@@ -121,17 +111,16 @@ class User_Model extends Model
         } else print_r($result);
     }
 
+    // -------------------- Account details --------------------------------------- // 
     public function getCustDetails($uname)
     {
         $result = $this->db->select("*", "users", "INNER JOIN customer on users.User_ID = customer.User_ID WHERE (Username = '$uname' OR Email = '$uname');");
         return $result;
-        // print_r($result);
     }
 
     public function getVehicles($uid)
     {
         $result = $this->db->select("*", "customer_vehicle", "WHERE User_ID = '$uid';");
         return $result;
-        // print_r($result);
     }
 }

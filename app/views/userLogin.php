@@ -8,11 +8,6 @@ if (isset($_SESSION["locked"])) {
         unset($_SESSION["login_attempts"]);
     }
 }
-// if (isset($_SESSION["login_attempts"])){
-//     if($_SESSION["login_attempts"] > 2){
-//         $_SESSION["locked"] = time();
-//     }
-// }
 ?>
 <div class="bgImage" style="height:100%">
     <main>
@@ -33,10 +28,7 @@ if (isset($_SESSION["locked"])) {
                             <br>
                             <p class="errorDisplay" style="font-size: 11px; padding-bottom: 5px; color:red; max-width: 200px;"><?php echo ($_SESSION['error']); ?></p>
                             <?php
-                            // echo time(); echo $difference;
-                            // echo " " . $_SESSION["locked"];
                             if (isset($_SESSION["locked"])) { ?>
-                                <!-- echo $_SESSION["login_attempts"]; -->
                                 <p style='font-size:12px;'><?php echo "Please wait for 30 seconds"; ?></p>
                             <?php } else {
                                 echo "<button class='input-box loggin-signup-button' type='submit' name='login'>Login</button>";
@@ -58,20 +50,4 @@ if (isset($_SESSION["locked"])) {
     <?php
     include 'userFooter.php';
     ?>
-
-
-
     </html>
-
-
-    <!-- <br>
-    <div class="select-user">
-        <label class="user-label" for="users">Who you are?:</label>
-        <br>
-        <select class="input-box" name="users" id="users">
-        <option value="user">Customer</option>
-        <option value="admin">Admin</option>
-        <option value="manager">Manager</option>
-        <option value="service-team-leader">Service Team Leader</option>
-        </select>
-    </div> -->

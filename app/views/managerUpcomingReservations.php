@@ -19,7 +19,6 @@ include 'userLoggedInHeader.php';
 
         </div>
     </div>
-    <!-- <h2  style="text-align: center; color:#085394;">My Reservations</h3> -->
     <div class="upcomingOrders">
 
         <div class="sub-box1">

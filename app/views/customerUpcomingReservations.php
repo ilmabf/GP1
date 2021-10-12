@@ -1,13 +1,8 @@
 <?php
 include 'userLoggedInHeader.php';
 ?>
-
-
 <div class="bgImage">
     <div style="min-height: 110px;"></div>
-
-
-
     <div class="heading">
         <h2>Upcoming Reservations</h2>
     </div>
@@ -21,7 +16,6 @@ include 'userLoggedInHeader.php';
 
         </div>
     </div>
-    <!-- <h2  style="text-align: center; color:#085394;">My Reservations</h3> -->
     <div class="upcomingOrders">
 
         <div class="sub-box1">
@@ -80,8 +74,5 @@ include 'userLoggedInHeader.php';
         </div>
 
     </div>
-
-
-
     <div style="min-height: 110px;"></div>
 </div>

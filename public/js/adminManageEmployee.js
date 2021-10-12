@@ -43,6 +43,7 @@ function createStlAddTable() {
 
 // now, add a new to the TABLE.
 function addRow() {
+
     div1.style.display = "block";
     submitBtn.style.display = "block";
     submitBtnStl.style.display = "none";
@@ -51,6 +52,9 @@ function addRow() {
     var empTab = document.getElementById('empTable');
 
     var rowCnt1 = empTab.rows.length;   // table row count.
+    if(rowCnt1>1){
+        return;
+    }
     var tr11 = empTab.insertRow(rowCnt1); // the table row.
     tr11 = empTab.insertRow(rowCnt1);
 
@@ -150,6 +154,8 @@ function removeRow(oButton) {
 }
 
 function addStlRow() {
+
+
     div2.style.display = "block";
     div1.style.display = "none";
 
@@ -159,6 +165,9 @@ function addStlRow() {
     var stlTab = document.getElementById('stlTable');
 
     var rowCnt2 = stlTab.rows.length;   // table row count.
+    if(rowCnt2>1){
+        return;
+    }
     var tr22 = stlTab.insertRow(rowCnt2); // the table row.
     tr22 = stlTab.insertRow(rowCnt2);
 

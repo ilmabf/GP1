@@ -161,13 +161,15 @@ tr{
 }
 
 .adEquipSearch1{
-    margin-left: 20px;
+    /* margin-left: 20px; */
+    margin-left: 89px;
 }
 
 .adEquipSearch2{
     float: right;
     margin-left: 5px;
-    margin-right: 350px;
+    /* margin-right: 350px; */
+    margin-right: 405px;
 }
 
 #AdminserviceTeamTypes{

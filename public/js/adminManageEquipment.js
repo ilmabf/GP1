@@ -26,9 +26,10 @@ function createEquipTable() {
 }
 
 function createAssignTable() {
+
     var equipAssignTable = document.createElement('table');
     equipAssignTable.setAttribute('id', 'equipAssignTable'); // table id.
-
+    div2.innerHTML='';
     var tr1 = equipAssignTable.insertRow(-1);
     for (var h1 = 0; h1 < arrHeader.length; h1++) {
         var th1 = document.createElement('th'); // create table headers
@@ -49,6 +50,9 @@ function addNewRow() {
     var equipTab = document.getElementById('equipTable');
 
     var rowCnt = equipTab.rows.length;   // table row count.
+    if(rowCnt>1){
+        return;
+    }
     var tr = equipTab.insertRow(rowCnt); // the table row.
     tr = equipTab.insertRow(rowCnt);
 
@@ -111,6 +115,8 @@ function removeRow1(removeButton1) {
 
     submitBtn.style.display = "none";
 }
+//
+
 
 function assignEquipment() {
     createAssignTable();
@@ -123,6 +129,9 @@ function assignEquipment() {
     var equipAssignTab = document.getElementById('equipAssignTable');
 
     var rowCnt1 = equipAssignTab.rows.length;   // table row count.
+    if(rowCnt1>1){
+        return;
+    }
     var tr2 = equipAssignTab.insertRow(rowCnt1); // the table row.
     tr2 = equipAssignTab.insertRow(rowCnt1);
 

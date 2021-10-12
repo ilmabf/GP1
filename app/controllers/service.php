@@ -12,6 +12,8 @@ class Service extends Controller
     function equipment()
     {
         $_SESSION['equipmentDetails'] = $this->model->getEquipmentDetails();
+
+        //User Autherization
         if ($_SESSION['role'] == "systemadmin") {
             $this->view->render('adminEquipment');
             exit;
@@ -20,12 +22,9 @@ class Service extends Controller
         }
     }
 
-    // function employeeDetails(){
-    //     $this->view->render('managerEmployeeDetails');
-    // }
-
     function washPackage()
     {
+        //User Autherization
         if ($_SESSION['role'] == "systemadmin") {
             $this->view->render('adminService');
             exit;
@@ -36,13 +35,17 @@ class Service extends Controller
 
     function addNewEquipment()
     {
+        //User Autherization
         if ($_SESSION['role'] == "systemadmin") {
+
+            //get POST data
             $name = $_POST['name'];
             $price = $_POST['price'];
             $dateAcquired = $_POST['dateAcquired'];
 
             if (isset($name) && isset($price) &&  isset($dateAcquired)) {
 
+                //store equipment
                 if ($this->model->addEquipment($name, $price, $dateAcquired)) {
                     header("Location: /service/equipment");
                 }

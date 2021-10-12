@@ -1,18 +1,18 @@
-const searchInput = document.getElementById('adminSearchEquipment')
-const table = document.getElementById('viewAsTable')
+const searchInput = document.getElementById('managerSearchEquipment')
+const table = document.getElementById('managerEquipTab')
 const trArray = Array.prototype.slice.call(table.querySelectorAll('tbody tr'))
 
-const viewAsTable = event => {
+const managerEquipTab = event => {
   const searchTerm = event.target.value.toLowerCase()
   trArray.forEach(row => {
-    row.classList.add('hiddenRow')
+    row.classList.add('hiddenEquipRecord')
     const tdArray = Array.prototype.slice.call(row.getElementsByTagName('td'))
     tdArray.forEach(cell => {
       if (cell.innerText.toLowerCase().indexOf(searchTerm) > -1) {
-        row.classList.remove('hiddenRow')
+        row.classList.remove('hiddenEquipRecord')
       } 
     })
   })
 }
 
-searchInput.addEventListener('keyup', viewAsTable, false)
+searchInput.addEventListener('keyup', managerEquipTab, false)

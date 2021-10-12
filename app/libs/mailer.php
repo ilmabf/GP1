@@ -1,6 +1,5 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
-// echo getcwd();
 require 'vendor/autoload.php';
 
     class Mailer{
@@ -24,7 +23,6 @@ require 'vendor/autoload.php';
             if (!$mail->send()) {
                 echo 'Mailer Error: ' . $mail->ErrorInfo;
             } else {
-                // echo 'The email message was sent.';
                 return true;
             }
         }
