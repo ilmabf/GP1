@@ -1,5 +1,5 @@
 <?php
-include 'userHeader.php';
+include 'UserHeader.php';
 if (isset($_SESSION["locked"])) {
     $difference = time() - $_SESSION["locked"];
     echo $difference;
@@ -48,6 +48,6 @@ if (isset($_SESSION["locked"])) {
     </main>
 
     <?php
-    include 'userFooter.php';
+    include 'UserFooter.php';
     ?>
     </html>

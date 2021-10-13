@@ -1,6 +1,6 @@
 <?php
 
-include 'userLoggedInHeader.php';
+include 'UserLoggedInHeader.php';
 ?>
 
 <body onload="typeWriter()">
@@ -86,7 +86,7 @@ include 'userLoggedInHeader.php';
 
 
     <?php
-    include 'userFooter.php';
+    include 'UserFooter.php';
     ?>
 
     <script src="/public/js/CustomerBookAWash.js"></script>

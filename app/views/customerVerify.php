@@ -1,5 +1,5 @@
 <?php
-include 'userHeader.php';
+include 'UserHeader.php';
 ?>
 <main>
 
@@ -21,7 +21,7 @@ include 'userHeader.php';
 </main>
 
 <?php
-include 'userFooter.php';
+include 'UserFooter.php';
 ?>
 
 </html>
