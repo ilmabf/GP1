@@ -1,15 +1,6 @@
 /* section-1 */
 .bg-image {
-    /* The image used */
-    /* background-image: url("../images/garage-1837336.jpg"); */
-    
-    /* Add the blur effect */
-    /* filter: blur(8px);
-    -webkit-filter: blur(8px); */
-    
-    /* Full height */
-    height: 100%; 
-    /* Center and scale the image nicely */
+    height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -44,11 +35,11 @@
     display: block;
     margin: 20px auto;
     width: fit-content;
-    background-color: #085394;
+    background-color: #113CFC;
     /* opacity: 0.7; */
     border-radius: 15px;
     height: 40px;
-    border-color: #085394;
+    opacity: 0.8;
 }
 
 section .bookAwash .bookAwash-button a{
@@ -132,19 +123,18 @@ section .bookAwash .bookAwash-button a{
 
 .section2-block-heading button{
     background-color: white;
-    border-color: #085394;
+    border-color: #193498;
 }
 
 .customer-home-main-section1-button:hover{
     background-color: #1d3d58;
+    border-color: #1d3d58;
 }
 
 .help-icon-mob{ 
     position:fixed; 
     bottom:0; 
-    right: 10px; 
-    /* width:250px; 
-    height:150px; */
+    right: 10px;
 }
 
 .help-icon-desk{
@@ -155,7 +145,6 @@ section .bookAwash .bookAwash-button a{
 
     .customer-home-main-section1{
         width: 100%;
-        /* height: calc(100vh - 80px); */
         height: 600px;
         background-image: url('../images/car_desktop.jpg');
         background-repeat: no-repeat;
@@ -172,7 +161,6 @@ section .bookAwash .bookAwash-button a{
 
     .customer-home-main-section1-button{
         height: 60px;
-        /* opacity: 0.9; */
     }
     
     section .bookAwash .bookAwash-button a{
@@ -183,6 +171,7 @@ section .bookAwash .bookAwash-button a{
 
     .customer-home-main-section1-button:hover{
         background-color: #1d3d58;
+        border-color: #1d3d58;
     }
 
     .help-icon-mob{

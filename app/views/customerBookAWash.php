@@ -83,11 +83,7 @@ include 'UserLoggedInHeader.php';
     <div class="next-pg">
         <button class="next-button"><a href="/booking/location" style="color: white;">Next</a></button>
     </div>
-
-
-    <?php
-    include 'UserFooter.php';
-    ?>
+    
 
     <script src="/public/js/CustomerBookAWash.js"></script>
 

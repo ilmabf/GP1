@@ -13,7 +13,7 @@
     <div class="addVehicleform" id="vehicleForm">
         <div class="forma">
             <div class="loguser-icon"></div>
-            <h2 class="login-signupheader">Add a vehicle</h2>
+            <h2 class="login-signupheader"><b>Add a vehicle</b></h2>
 
             <form action="/account/addVehicle" method="post" id="customer-signup">
                 <label for="fname">Vehicle Identification No.</label>
@@ -105,7 +105,7 @@
     <div class="box">
         <div class="account-box1" id="mainbox">
             <div class="account-prof">
-                <div class="account-header">My Account</div>
+                <div class="account-header">Account Details</div>
                 <div class="account-box2">
                     <button class="btn" onclick="openDetailsVehicleForm()">Edit</button>
                     <div class="account-image"> </div>
@@ -126,7 +126,7 @@
                 </div>
             </div> <br>
             <div class="account-det1">
-                <div class="account-header2">My Vehicles</div>
+                <div class="account-header2"><b>My Vehicles</b></div>
                 <div class="account-box3">
                     <div class="vehicle-list">
                         <select name="Vehicles" id="Customer-Vehicles">
@@ -192,7 +192,7 @@
                 </div><br>
             </div>
             <div class="account-det2">
-                <div class="account-header2">My Locations</div>
+                <div class="account-header2"><b>My Locations</b></div>
                 <div class="account-box3">
                     <div class="vehicle-list">
                         <select name="Vehicles" id="Customer-Vehicles">

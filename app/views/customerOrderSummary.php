@@ -92,6 +92,3 @@
 <script src="/public/js/customerOrderSummary.js"></script> 
 <div style="min-height: 110px;"></div>
 
-<?php
-    include 'UserFooter.php';
-?>

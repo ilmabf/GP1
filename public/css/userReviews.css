@@ -13,7 +13,6 @@
     border-radius: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
-    /* width: 100%; */
     width: 96%;
 }
 
@@ -51,11 +50,12 @@
 
 .review-header{
     top: 25%;
-    color: #085394;
+    color: #193498;
     margin-top: 10px;
     margin-bottom: 15px;
     font-size: 20px;
     padding: 0px 0px 20px 0px;
+    font-weight: 800px;
 }
 
 .review-customer{
@@ -64,7 +64,7 @@
   height: 100px;
   padding: 5px 5px 5px 5px;
   color: #ffffff;
-  background-color: #085394;
+  background-color: #193498;
 }
 
 .review-content{
@@ -95,4 +95,4 @@
     .review-datetime{
         padding: 5px 5px 0px 2px;
     }
-  }
+}

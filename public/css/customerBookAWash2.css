@@ -1,5 +1,5 @@
 .heading-location{
-    color: #085394;
+    color: #193498;
     margin-bottom: 20px;
     text-align: center;
     font-size: larger;
@@ -28,7 +28,7 @@
     font-size: 15px;
     padding: 8px 8px;
     border-radius: 5px;
-    border-color: #085394;
+    border-color: #193498;
     font-weight: bold;
 }
 
@@ -38,16 +38,17 @@
 }
 
 .next-button{
-    background-color: #085394;
+    background-color: #193498;
     padding: 10px 30px;
     color: white;
-    border-radius: 5px;
+    border-radius: 15px;
     font-size: 20px;
     cursor: pointer;
+    border-color: #193498;
 }
 
 .next-button:hover{
-    background-color: #366c9b;
+    background-color: #001572;
 }
 
 @media only screen and (max-width: 770px) {

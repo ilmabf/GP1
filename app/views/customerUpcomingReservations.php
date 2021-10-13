@@ -8,7 +8,7 @@ include 'UserLoggedInHeader.php';
     </div>
 
     <div class="reservation-date">
-        <h3 style="text-align: center; color:#085394;">Pick a date</h3>
+        <h3 style="text-align: center; color:#193498;">Pick a date</h3>
 
         <div id="closeClick">
             <button class="btnclss" onclick="closeOnClickDemo()">Click to open date picker</button>

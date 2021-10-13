@@ -2,8 +2,6 @@
 include 'UserHeader.php';
 ?>
 
-
-
 <main>
     <div id="container">
 

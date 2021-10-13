@@ -1,5 +1,5 @@
 .stl-orders-h1{
-    color: #085394;
+    color: #193498;
     font-size: 30px;
     text-align: center;
     margin-bottom: 20px;
@@ -36,7 +36,7 @@ box-shadow: 0 3px 10px rgb(0 0 0 / 40%);
     display: inline;
     margin-right: 100px;
     font-weight: bold;
-    color: #085394;
+    color: #193498;
 }
 .order-description{
     float: right;
@@ -56,7 +56,7 @@ box-shadow: 0 3px 10px rgb(0 0 0 / 40%);
 }
 
 .view-location{
-    background-color: #085394;
+    background-color: #193498;
     padding: 10px 30px;
     font-size: 20px;
     color: white;
@@ -71,7 +71,7 @@ box-shadow: 0 3px 10px rgb(0 0 0 / 40%);
 }
 
 .completed-button{
-    background-color: green ;
+    background-color: #1597E5 ;
     padding: 5px 10px;
     color: white;
     border-radius: 3px;
@@ -80,7 +80,7 @@ box-shadow: 0 3px 10px rgb(0 0 0 / 40%);
 }
 
 .completed-button:hover{
-    background-color: rgb(12, 161, 12) ;
+    background-color: #024066 ;
 }
 
 .upload-box{
@@ -92,7 +92,7 @@ border-radius: 5px;
 box-shadow: 0 3px 10px rgb(0 0 0 / 40%);
 }
 .upload-box h3{
-    color: #085394;
+    color: #193498;
     padding-top: 15px;
     padding-bottom: 15px;
     font-size: 18px;
@@ -108,13 +108,21 @@ box-shadow: 0 3px 10px rgb(0 0 0 / 40%);
 
 
 .uploadImagesLink{
-    background-color: #085394;
+    background-color: #193498;
     padding: 5px 10px;
     color: white;
     margin-bottom: 17px;
     border-radius: 5px;
     font-size: 15px;
     cursor: pointer;
+}
+
+.agg{
+    background-color:#1597BB
+}
+
+.agg:hover{
+    background-color: #024066;
 }
 
 
