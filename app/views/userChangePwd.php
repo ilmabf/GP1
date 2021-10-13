@@ -35,7 +35,7 @@
 
 
     <?php
-    include 'userFooter.php';
+    include 'UserFooter.php';
     ?>
 
     </html>

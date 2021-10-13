@@ -97,5 +97,5 @@ include 'UserHeader.php';
 
 
 <?php
-include 'userFooter.php';
+include 'UserFooter.php';
 ?>

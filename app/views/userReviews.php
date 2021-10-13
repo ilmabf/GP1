@@ -3,7 +3,7 @@
     <?php
 
     if (isset($_SESSION['login'])) {
-        include 'userLoggedInHeader.php';
+        include 'UserLoggedInHeader.php';
     } else {
         include 'UserHeader.php';
     }
