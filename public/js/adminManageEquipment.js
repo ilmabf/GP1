@@ -85,6 +85,7 @@ function addNewRow() {
                 ele.setAttribute('name', 'name');
                 ele.setAttribute('type', 'text');
                 ele.setAttribute('required', '');
+                ele.setAttribute('maxlength', '50');
             }
 
             else if(c==1){
