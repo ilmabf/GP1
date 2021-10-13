@@ -109,15 +109,12 @@ function addNewRow() {
 }
 
 // delete TABLE row function.
-
 function removeRow1(removeButton1) {
     var equipTab = document.getElementById('equipTable');
     equipTab.deleteRow(removeButton1.parentNode.parentNode.rowIndex); // button -> td -> tr.
 
     submitBtn.style.display = "none";
 }
-//
-
 
 function assignEquipment() {
     createAssignTable();
@@ -170,6 +167,7 @@ function assignEquipment() {
             else if(c1==1){
                 ele1.setAttribute('name', 'team');
                 ele1.setAttribute('type', 'number');
+                ele1.setAttribute('placeholder','1 or 2 etc');
                 ele1.setAttribute('required', '');
             }
 
