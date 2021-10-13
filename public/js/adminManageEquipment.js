@@ -170,6 +170,7 @@ function assignEquipment() {
             else if(c1==1){
                 ele1.setAttribute('name', 'team');
                 ele1.setAttribute('type', 'number');
+                ele1.setAttribute('placeholder','1 or 2 etc');
                 ele1.setAttribute('required', '');
             }
 
