@@ -99,7 +99,7 @@ function addRow() {
 
             else if(c1==2){
                 ele1.setAttribute('name', 'contactNumber');
-                ele1.setAttribute('type', 'text');
+                ele1.setAttribute('type', 'number');
                 ele1.setAttribute('required', '');
                 ele1.setAttribute('maxlength', '10');
             }
