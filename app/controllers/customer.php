@@ -74,7 +74,7 @@ class Customer extends Controller
             if ($mail->mailto($subject, $email, $body)) {
                 //email has been sent
                 $_SESSION['verifyBox'] = 1;
-                $this->view->render('customerSignup');
+                $this->view->render('CustomerSignup');
             }
         }
     }

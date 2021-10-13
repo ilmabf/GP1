@@ -275,10 +275,19 @@
 }
 
 .upcoming{
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
     margin: 35px 166px;
     padding: 10px 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 40%); */
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 35px 164px;
+    padding: 10px 8px;
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 3px 10px rgb(0 0 0 / 40%);

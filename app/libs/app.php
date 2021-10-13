@@ -30,7 +30,7 @@ class App
 
     private function _loadDeafultController()
     {
-        require 'controllers/Index.php';
+        require 'controllers/index.php';
         $this->_controller = new Index();
         $this->_controller->index();
     }
