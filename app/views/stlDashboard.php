@@ -1,5 +1,5 @@
 <?php
-include 'userLoggedInHeader.php';
+include 'UserLoggedInHeader.php';
 ?>
 <div style="min-height: 110px;"></div>
 <div>

@@ -1,5 +1,5 @@
 <?php
-include 'userLoggedInHeader.php';
+include 'UserLoggedInHeader.php';
 ?>
 
 <div class="bgImage">
@@ -9,68 +9,68 @@ include 'userLoggedInHeader.php';
     <div class="heading">
         <h2>Order - <span style="color:black;">BBBB</span></h2>
     </div>
+    <div class="mainUp">
+        <div class="upcoming">
 
-    <div class="upcoming">
+            <div class="boxx">
 
-        <div class="boxx">
+                <div class="order">
+                    <div class="orderitem">Customer Name</div>
+                    <div class="orderitem1">Kamal Silva</div>
+                </div>
+                <div class="order">
+                    <div class="orderitem">Date</div>
+                    <div class="orderitem1">2021/10/03</div>
+                </div>
+                <div class="order">
+                    <div class="orderitem">Time</div>
+                    <div class="orderitem1">12 pm - 2 pm</div>
+                </div>
+                <div class="order">
+                    <div class="orderitem">Contact No</div>
+                    <div class="orderitem1">0769012345</div>
+                </div>
+            </div>
 
-            <div class="order">
-                <div class="orderitem">Customer Name</div>
-                <div class="orderitem1">Kamal Silva</div>
+            <div class="boxx">
+                <div class="order">
+                    <div class="orderitem">Vehicle No</div>
+                    <p class="orderitem1">CS - 1528</p>
+                </div>
+                <div class="order">
+                    <div class="orderitem">Model</div>
+                    <p class="orderitem1">Premio</p>
+                </div>
+                <div class="order">
+                    <div class="orderitem">Vehicle Type</div>
+                    <p class="orderitem1">Sedan</p>
+                </div>
+                <div class="order">
+                    <div class="orderitem">Color</div>
+                    <p class="orderitem1">Red</p>
+                </div>
             </div>
-            <div class="order">
-                <div class="orderitem">Date</div>
-                <div class="orderitem1">2021/10/03</div>
-            </div>
-            <div class="order">
-                <div class="orderitem">Time</div>
-                <div class="orderitem1">12 pm - 2 pm</div>
-            </div>
-            <div class="order">
-                <div class="orderitem">Contact No</div>
-                <div class="orderitem1">0769012345</div>
-            </div>
-        </div>
 
-        <div class="boxx">
-            <div class="order">
-                <div class="orderitem">Vehicle No</div>
-                <p class="orderitem1">CS - 1528</p>
-            </div>
-            <div class="order">
-                <div class="orderitem">Model</div>
-                <p class="orderitem1">Premio</p>
-            </div>
-            <div class="order">
-                <div class="orderitem">Vehicle Type</div>
-                <p class="orderitem1">Sedan</p>
-            </div>
-            <div class="order">
-                <div class="orderitem">Color</div>
-                <p class="orderitem1">Red</p>
-            </div>
-        </div>
-
-        <div class="boxx">
-            <div class="order">
-                <div class="orderitem">Service Type</div>
-                <p class="orderitem1">Sanitization</p>
-            </div>
-            <div class="order">
-                <div class="orderitem">Price</div>
-                <p class="orderitem1">500</p>
-            </div>
-            <div class="order">
-                <div class="orderitem">Done by</div>
-                <p class="orderitem1">Team A</p>
-                </p>
-            </div>
-            <div class="order">
-                <div class="orderitem"><a href="">View Location</a></div>
+            <div class="boxx">
+                <div class="order">
+                    <div class="orderitem">Service Type</div>
+                    <p class="orderitem1">Sanitization</p>
+                </div>
+                <div class="order">
+                    <div class="orderitem">Price</div>
+                    <p class="orderitem1">500</p>
+                </div>
+                <div class="order">
+                    <div class="orderitem">Done by</div>
+                    <p class="orderitem1">Team A</p>
+                    </p>
+                </div>
+                <div class="order">
+                    <div class="orderitem"><a href="">View Location</a></div>
+                </div>
             </div>
         </div>
     </div>
-
     <div class="service-team">
         <div class="rate1">
             <h3>Rating of the service</h3>

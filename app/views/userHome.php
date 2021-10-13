@@ -1,5 +1,5 @@
 <?php
-include 'userHeader.php';
+include 'UserHeader.php';
 ?>
 
 
@@ -99,5 +99,5 @@ include 'userHeader.php';
 
 
 <?php
-include 'userFooter.php';
+include 'UserFooter.php';
 ?>

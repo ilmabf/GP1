@@ -1,7 +1,7 @@
 <div class="bgImage">
 
     <?php
-    include 'userHeader.php';
+    include 'UserHeader.php';
     ?>
     <main>
 
@@ -89,7 +89,7 @@
 
 
         <?php
-        include 'userFooter.php';
+        include 'UserFooter.php';
         ?>
 
 
