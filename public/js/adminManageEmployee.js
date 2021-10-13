@@ -84,13 +84,17 @@ function addRow() {
             var ele1 = document.createElement('input');
 
             if(c1==0){
+                ele1.setAttribute('id', 'validFirstName');
                 ele1.setAttribute('name', 'firstName');
                 ele1.setAttribute('type', 'text');
                 ele1.setAttribute('required', '');
                 ele1.setAttribute('maxlength', '50');
+                // ele1.addEventListener("onkeyup", EmpFirstFunction);
+
             }
 
             else if(c1==1){
+                ele1.setAttribute('id', 'validLastName');
                 ele1.setAttribute('name', 'lastName');
                 ele1.setAttribute('type', 'text');
                 ele1.setAttribute('required', '');
@@ -236,4 +240,28 @@ function removeStlRow(oButton) {
 
 createTable();
 createStlAddTable();
+
+// document.getElementById("validFirstName").addEventListener("keyup", EmpFirstFunction);
+// document.getElementById("validLastName").addEventListener("keyup", EmpLastFunction);
+
+// function EmpFirstFunction() {
+//   var fEmpName = document.getElementById("validFirstName");
+//   var letters = /^[A-Za-z]+$/;
+
+//   if(!fEmpName.value.match(letters)){
+//     fEmpName.setCustomValidity("Please input alphabet characters only");
+//   }
+// }
+
+// function EmpLastFunction() {
+//     var lEmpName = document.getElementById("validLastName");
+//     var letters = /^[A-Za-z]+$/;
+  
+//     if(!lEmpName.value.match(letters)){
+//       lEmpName.setCustomValidity("Please input alphabet characters only");
+//     }
+// }
+
+
+
 
