@@ -1,7 +1,7 @@
 <div class="bgImage">
 
     <?php
-    include 'userHeader.php';
+    include 'UserHeader.php';
     ?>
     <main>
         <div id="container">

@@ -1,6 +1,6 @@
 <?php 
     
-    include 'userLoggedInHeader.php';
+    include 'UserLoggedInHeader.php';
 ?>
 
 <div style="min-height: 110px;"></div>
@@ -92,6 +92,3 @@
 <script src="/public/js/customerOrderSummary.js"></script> 
 <div style="min-height: 110px;"></div>
 
-<?php
-    include 'userFooter.php';
-?>

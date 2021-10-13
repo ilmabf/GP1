@@ -5,7 +5,7 @@
     if (isset($_SESSION['login'])) {
         include 'userLoggedInHeader.php';
     } else {
-        include 'userHeader.php';
+        include 'UserHeader.php';
     }
 
     ?>
@@ -47,7 +47,7 @@
 </main>
 
 <?php
-include 'userFooter.php';
+include 'UserFooter.php';
 ?>
 
 

@@ -1,6 +1,6 @@
 <?php
 
-include 'userLoggedInHeader.php';
+include 'UserLoggedInHeader.php';
 ?>
 
 <body onload="typeWriter()">
@@ -83,11 +83,7 @@ include 'userLoggedInHeader.php';
     <div class="next-pg">
         <button class="next-button"><a href="/booking/location" style="color: white;">Next</a></button>
     </div>
-
-
-    <?php
-    include 'userFooter.php';
-    ?>
+    
 
     <script src="/public/js/CustomerBookAWash.js"></script>
 

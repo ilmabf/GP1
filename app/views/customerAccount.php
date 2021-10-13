@@ -1,7 +1,7 @@
 <div class="bgImage1">
     <?php
 
-    include 'userLoggedInHeader.php';
+    include 'UserLoggedInHeader.php';
     $details = $_SESSION['userDetails'];
     $vehicles = $_SESSION['vehicles'];
 

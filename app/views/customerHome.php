@@ -1,6 +1,6 @@
 <?php
 
-include 'userLoggedInHeader.php';
+include 'UserLoggedInHeader.php';
 ?>
 
 <main>
@@ -75,7 +75,7 @@ include 'userLoggedInHeader.php';
 <!-- <div style="min-height: 60px;"></div> -->
 
 <?php
-include 'userFooter.php';
+include 'UserFooter.php';
 ?>
 
 </html>

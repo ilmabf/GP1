@@ -1,6 +1,6 @@
 <?php
 
-include 'userLoggedInHeader.php';
+include 'UserLoggedInHeader.php';
 $details = $_SESSION['equipmentDetails'];
 ?>
 

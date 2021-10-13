@@ -1,5 +1,5 @@
 <?php
-include 'userHeader.php';
+include 'UserHeader.php';
 ?>
 
 <main>

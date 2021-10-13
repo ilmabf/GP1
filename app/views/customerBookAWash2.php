@@ -1,6 +1,6 @@
 <?php
 
-include 'userLoggedInHeader.php';
+include 'UserLoggedInHeader.php';
 ?>
 
 <div style="min-height: 110px;"></div>
@@ -30,7 +30,4 @@ include 'userLoggedInHeader.php';
 <div class="next-pg">
     <button class="next-button"><a href="/booking/orderSummary" style="color: white;">Next</a></button>
 </div>
-
-<?php
-include 'userFooter.php';
-?>
+<div style="min-height: 20px;"></div>
