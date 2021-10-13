@@ -109,15 +109,12 @@ function addNewRow() {
 }
 
 // delete TABLE row function.
-
 function removeRow1(removeButton1) {
     var equipTab = document.getElementById('equipTable');
     equipTab.deleteRow(removeButton1.parentNode.parentNode.rowIndex); // button -> td -> tr.
 
     submitBtn.style.display = "none";
 }
-//
-
 
 function assignEquipment() {
     createAssignTable();
