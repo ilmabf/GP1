@@ -16,7 +16,7 @@ include 'userLoggedInHeader.php';
       <div id="cont" class="addTb1"></div> 
 
 
-      <input type="submit" id="bt" value="Submit Employee" />
+      <input type="submit" id="bts" value="Submit Employee" />
     </form>
 
   </div>

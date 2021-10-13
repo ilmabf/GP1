@@ -14,11 +14,11 @@ include 'userLoggedInHeader.php';
             <div class="stl-home-main-flex">
 
                 <div class="stlHome-block1">
-                    <h3><a href="/calendar/reservations" style="color:#085394;">Reservations Today</a></h3>
+                    <h3><a href="/calendar/reservations" style="color:#193498;">Reservations Today</a></h3>
                 </div>
 
                 <div class="stlHome-block2">
-                    <h3><a href="/serviceDashboard/" style="color:#085394;">Dashboard</a></h3>
+                    <h3><a href="/serviceDashboard/" style="color:#193498;">Dashboard</a></h3>
                 </div>
 
             </div>

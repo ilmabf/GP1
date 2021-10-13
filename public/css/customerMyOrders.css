@@ -5,19 +5,11 @@
 
 .my-orders-section2-block h1{
     text-align: center;
-    color:#085394;
+    color:#193498;
     margin-top: 25px;
 }
 
 @media only screen and (min-width: 770px) {
-
-    /* .section2-blocksup{
-        position: absolute;
-        top: 43%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 15px 20px 15px 20px;
-    } */
 
     .my-orders-main-section2-blocksup{
         display: flex;

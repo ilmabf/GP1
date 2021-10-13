@@ -1,5 +1,5 @@
 .heading-order{
-    color: #085394;
+    color: #193498;
     margin-bottom: 20px;
     text-align: center;
     font-size: larger;
@@ -7,9 +7,7 @@
 
 .blurOrder{
     filter: blur(3px);
-    /* position: absolute; */
     width: 100%;
-    /* /* height: 100%; */
 }
 .order-box{
     margin-top: 35px;
@@ -23,12 +21,6 @@
     text-align: center; 
 }
 
-/* .order-subBox{
-    /* display: inline-block; */
-    /* margin: 0 10px;
-    padding: 3px; */
-/* } */ 
-
 .orderID{
     margin-top: 20px;
     margin-bottom: 30px;
@@ -39,7 +31,7 @@
 }
 
 .orderDate button{
-    background-color:#085394;
+    background-color:#193498;
     padding: 7px 15px;
     border-radius: 5px;
     cursor: pointer;
@@ -59,7 +51,7 @@
 }
 
 .orderTime button{
-    background-color:#085394;
+    background-color:#193498;
     padding: 7px 15px;
     border-radius: 5px;
     cursor: pointer;
@@ -79,7 +71,7 @@
 }
 
 .orderVehicle button{
-    background-color:#085394;
+    background-color:#193498;
     padding: 7px 15px;
     border-radius: 5px;
     cursor: pointer;
@@ -99,7 +91,7 @@
 }
 
 .orderServiceType button{
-    background-color:#085394;
+    background-color:#193498;
     padding: 7px 15px;
     border-radius: 5px;
     cursor: pointer;
@@ -119,7 +111,7 @@
 }
 
 .orderLocation button{
-    background-color:#085394;
+    background-color:#193498;
     padding: 7px 15px;
     border-radius: 5px;
     cursor: pointer;
@@ -142,7 +134,6 @@
     width: 60%;
     display: flex;
     flex-wrap: wrap;
-    /* margin: 9px 166px; */
     padding: 10px 0px 0px 0px;
     background-color: white;
     border-radius: 5px;
@@ -179,7 +170,7 @@
 }
 .changebutton{
     margin-left: 0px;
-    background-color: #085394;
+    background-color: #193498;
     padding: 6px 9px;
     border-radius: 5px;
     cursor: pointer;
@@ -235,14 +226,16 @@
 .a8{
     float: left;
     margin-left: 150px;
-    background-color: rgb(145, 20, 20);
+    background-color: #7B113A;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    border-color: #7B113A;
 }
 
 .a8:hover{
-    background-color: rgb(187, 13, 13);
+    background-color: #4e0320;
+    border-color: #4e0320;
 }
 
 .order-buttons a{
@@ -253,14 +246,16 @@
 .a9{
     float: right;
     /* margin-right: 150px; */
-    background-color: green;
+    background-color: #1597E5;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    border-color: #1597E5;
 }
 
 .a9:hover{
-    background-color: rgb(12, 161, 12);
+    background-color: #024066;
+    border-color: #024066;
 }
 
 
@@ -293,7 +288,7 @@
   
   /* The Close Button */
   .closeCancel {
-    color: green;
+    color: #1597E5;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -301,7 +296,7 @@
   
   .closeCancel:hover,
   .closeCancel:focus {
-    color: rgb(12, 161, 12);
+    color: #024066;
     text-decoration: none;
     cursor: pointer;
   }
@@ -313,13 +308,13 @@
   }
 
   .btnCancel{
-      background-color: rgb(145, 20, 20);
+      background-color: #7B113A;
       padding: 8px 20px;
       border-radius: 5px;
   }
 
   .btnCancel:hover{
-      background-color: rgb(187, 13, 13);
+      background-color: #4b021e;
   }
 
   .yesCancel button a{
@@ -359,7 +354,7 @@
   
   /* The Close Button */
   .closeConfirm {
-    color: green;
+    color: #1597E5;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -367,7 +362,7 @@
   
   .closeConfirm:hover,
   .closeConfirm:focus {
-    color: rgb(12, 161, 12);
+    color: #024066;
     text-decoration: none;
     cursor: pointer;
   }
@@ -379,13 +374,13 @@
   }
 
   .btnConfirm{
-      background-color: #085394;
+      background-color: #193498;
       padding: 8px 20px;
       border-radius: 5px;
   }
 
   .btnConfirm:hover{
-      background-color: #033663;
+      background-color: #193498;
   }
 
   .yesConfirm button a{
@@ -460,22 +455,12 @@
         float: right;
         color: #000000;
         position: relative;
-        /* left: -34%; */
         transform: translate(95%, 4%);
     }
-
-    /* .order-buttons{
-        display: block;
-        margin-top: 30px;
-    } */
 
     .order-buttons a{
         font-size: 12px;
     }
-
-    /* .orderButtons{
-        padding: 3px 5px;
-    } */
 
     .changebutton{
         padding: 1px 3px;

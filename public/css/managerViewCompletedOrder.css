@@ -1,5 +1,5 @@
 .heading{
-    color: #085394;
+    color: #193498;
     margin-bottom: 40px;
     text-align: center;
     font-size: larger;
@@ -14,12 +14,6 @@
     text-align: left; 
 }
 
-/* .order-subBox{
-    display: inline-block;
-    margin: 0 auto;
-    padding: 3px;
-} */
-
 .orderID{
     margin-top: 20px;
     margin-bottom: 40px;
@@ -30,7 +24,7 @@
 }
 
 .orderDate button{
-    background-color:#085394;
+    background-color:#193498;
     padding: 7px 15px;
     border-radius: 5px;
     cursor: pointer;
@@ -46,7 +40,7 @@
 }
 
 .orderTime button{
-    background-color:#085394;
+    background-color:#193498;
     padding: 7px 15px;
     border-radius: 5px;
     cursor: pointer;
@@ -62,7 +56,7 @@
 }
 
 .orderVehicle button{
-    background-color:#085394;
+    background-color:#193498;
     padding: 7px 15px;
     border-radius: 5px;
     cursor: pointer;
@@ -78,7 +72,7 @@
 }
 
 .orderServiceType button{
-    background-color:#085394;
+    background-color:#193498;
     padding: 7px 15px;
     border-radius: 5px;
     cursor: pointer;
@@ -94,7 +88,7 @@
 }
 
 .orderLocation button{
-    background-color:#085394;
+    background-color:#193498;
     padding: 7px 15px;
     border-radius: 5px;
     cursor: pointer;
@@ -111,7 +105,7 @@
 
 .orderPrice h3 a{
    text-decoration: underline;
-   color: #085394;
+   color: #193498;
 }
 
 .a1{
@@ -150,11 +144,11 @@
 }
 
 .p1{
-    color: #085394;
+    color: #193498;
 }
 
 .service-feedback{
-    color: #085394;
+    color: #193498;
     margin: 35px 80px;
     padding: 10px 20px;
     background-color: white;
@@ -202,7 +196,6 @@
         margin-right: 10px;
         margin-bottom: 20px;
         text-align: left;
-        /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);  */
         padding: 20px 20px;
     }
 }

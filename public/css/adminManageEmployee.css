@@ -1,5 +1,5 @@
 .manageEmployee-heading{
-    color: #085394;
+    color: #193498;
     font-size: 30px;
     text-align: center;
     margin-bottom: 20px;
@@ -10,7 +10,7 @@ table {
 }
 
 table, th, td { 
-    border: solid 1px #085394;
+    border: solid 1px #193498;
     border-collapse: collapse; 
     text-align: center;
     margin: 0px auto;
@@ -22,7 +22,6 @@ th{
 }
 
 td{
-    /* max-width: 170px; */
     padding: 0.35em 0.35em;
 }
 
@@ -33,7 +32,7 @@ tr{
 #addRow{
     margin: 35px 20px;
     padding: 8px 8px;
-    background-color: #085394;
+    background-color: #193498;
     color: white;
     border-radius: 5px;
     border-color: white;
@@ -43,7 +42,7 @@ tr{
 #addStlRow{
     margin: 35px 20px;
     padding: 8px 8px;
-    background-color: #085394;
+    background-color: #193498;
     color: white;
     border-radius: 5px;
     border-color: white;
@@ -60,11 +59,11 @@ tr{
     text-align: center;
 }
 
-#bt{
+#bts{
     display: none;
     margin: 20px auto;
     padding: 8px 8px;
-    background-color: #085394;
+    background-color: #193498;
     color: white;
     border-radius: 5px;
     border-color: white;
@@ -75,19 +74,20 @@ tr{
     display: none;
     margin: 20px auto;
     padding: 8px 8px;
-    background-color: #085394;
+    background-color: #193498;
     color: white;
     border-radius: 5px;
     border-color: white;
     cursor: pointer;
 }
 
-#addRow:hover, #bt:hover, #addStlRow:hover, #btStl:hover{
-    color: #70a2ce;
+#addRow:hover, #addStlRow:hover{
+    background-color: #041553;
+    color: white;
 }
 
 #removeBtn, #removeStlBtn{
-    background-color: rgb(145, 20, 20);
+    background-color: #7B113A;
     padding: 5px 5px;
     color: white;
     border-radius: 5px;
@@ -96,7 +96,7 @@ tr{
 }
 
 #removeBtn:hover, #removeStlBtn:hover{
-    background-color: rgb(187, 13, 13);
+    background-color: #500421;
 }
 
 #tb-input, #tb-Stlinput{
@@ -106,13 +106,9 @@ tr{
     max-width: 115px;
 }
 
-/* .admin-EmpSearch-box{
-   
-} */
-
 #adminSearchEmployee{
     padding: 10px 10px;
-    border-color: #085394;
+    border-color: #193498;
     border-radius: 5px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -125,7 +121,7 @@ tr{
     display: block;
     margin: 30px auto;
     padding: 8px 8px;
-    background-color: #085394;
+    background-color: #193498;
     color: white;
     border-radius: 5px;
     border-color: white;
@@ -152,13 +148,13 @@ tr{
 #AdminserviceTeams-types{
     font-weight: 600;
     border-radius: 5px;
-    border: 2px outset #085394;
+    border: 2px outset #193498;
 }
 
 #AdminserviceTeamLeaders-types{
     font-weight: 600;
     border-radius: 5px;
-    border: 2px outset #085394;
+    border: 2px outset #193498;
 }
 
 .aaa{
@@ -167,7 +163,7 @@ tr{
 
 #adminSearchEmployee{
     font-size: 15px;
-    border: 2px outset #085394;
+    border: 2px outset #193498;
 }
 
 .Table-search {
@@ -187,14 +183,13 @@ tr {
 }
 
 th {
-    color: #085394;
-    /* white-space: nowrap; */
+    color: #193498;
     cursor: pointer;
-    border: solid 1px #085394;
+    border: solid 1px #193498;
 }
 
 th, td {
-    border: solid 1px #085394;
+    border: solid 1px #193498;
     text-align: left;
     padding: 2px 2px;
     max-width: fit-content;
@@ -236,11 +231,11 @@ input[type=search] {
     padding: 2px 5px;
     color: white;
     border-radius: 3px;
-    background: rgb(145, 20, 20);
+    background:#7B113A;
 }
 
 .del_btn:hover {
-    background: rgb(187, 13, 13);
+    background: #500421;
 }
 
 .addTb2{

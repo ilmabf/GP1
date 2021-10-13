@@ -4,7 +4,7 @@ var arrHead = new Array();	// array for header.
 var arrStlHead = new Array();    
     arrStlHead = ['Team', 'NIC', 'Photo', ''];
 
-var submitBtn = document.getElementById('bt');
+var submitBtn = document.getElementById('bts');
 
 var submitBtnStl = document.getElementById('btStl');
 

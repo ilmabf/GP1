@@ -1,13 +1,3 @@
-/* .login-signup-heading{
-    width: 100%;
-    position: absolute;
-    top: 25%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    color: #085394;
-} */
-
 .login-signupbox{
     background-color:white;
     border-radius: 5px;
@@ -22,7 +12,7 @@
 
 .login-signupheader{
     text-align: center;
-    color: #085394;
+    color: #193498;
     margin-top: 10px;
     margin-bottom: 15px;
     font-size: 20px;
@@ -37,7 +27,7 @@
 }
 
 input:invalid {
-    border-color: #085394;
+    border-color: #193498;
 }
     
 input:valid {
@@ -54,7 +44,7 @@ input:valid {
     width: 80px;
     color: white;
     border-radius: 15px;
-    background-color: #085394;
+    background-color: #193498;
     cursor: pointer;
 }
 
@@ -97,46 +87,3 @@ input:valid {
     }
 
 }
-
-
-
-/* .select-user{
-    margin-top: 14px;
-}
-
-.user-label{
-    font-size: 12px;
-} */
-
-/* #login-form-error-msg{
-    font-size: 12px;
-    text-align: center;
-    margin-bottom: 12px;
-    color: var(--color-error);
-} */
-
-/* .form-msg-success{
-    font-size: 12px;
-    text-align: center;
-    margin-bottom: 12px;
-    color: var(--color-success);
-} */
-
-/* #login-form-email-input-error-msg{
-    margin-bottom: 10px;
-    font-size: 12px;
-    text-align: left;
-    color: var(--color-error);
-} */
-
-/* .login-password-error{
-    border-color: var(--color-error);
-    color: var(--color-error);
-} */
-
-/* #login-form-password-input-error-msg{
-    margin-bottom: 10px;
-    font-size: 12px;
-    text-align: left;
-    color: var(--color-error);
-} */

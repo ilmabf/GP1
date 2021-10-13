@@ -1,5 +1,5 @@
 .heading{
-    color: #085394;
+    color: #193498;
     margin-bottom: 40px;
     text-align: center;
     font-size: larger;
@@ -49,7 +49,7 @@
     font-weight: bold;
     display: inline; */
     top: 25%;
-    color: #085394;
+    color: #193498;
     margin-top: 10px;
     margin-bottom: 12px;
     font-size: 18px;
@@ -75,7 +75,7 @@
 }
 
 .orderDate button{
-    background-color:#085394;
+    background-color:#193498;
     padding: 7px 15px;
     border-radius: 5px;
     cursor: pointer;
@@ -91,7 +91,7 @@
 }
 
 .orderTime button{
-    background-color:#085394;
+    background-color:#193498;
     padding: 7px 15px;
     border-radius: 5px;
     cursor: pointer;
@@ -107,7 +107,7 @@
 }
 
 .orderVehicle button{
-    background-color:#085394;
+    background-color:#193498;
     padding: 7px 15px;
     border-radius: 5px;
     cursor: pointer;
@@ -123,7 +123,7 @@
 }
 
 .orderServiceType button{
-    background-color:#085394;
+    background-color:#193498;
     padding: 7px 15px;
     border-radius: 5px;
     cursor: pointer;
@@ -139,7 +139,7 @@
 }
 
 .orderLocation button{
-    background-color:#085394;
+    background-color:#193498;
     padding: 7px 15px;
     border-radius: 5px;
     cursor: pointer;
@@ -156,7 +156,7 @@
 
 .orderPrice h3 a{
    text-decoration: underline;
-   color: #085394;
+   color: #193498;
 }
 
 .a1{
@@ -195,7 +195,7 @@
 }
 
 .p1{
-    color: #085394;
+    color: #193498;
 }
 
 .service-team{
@@ -208,7 +208,7 @@
 }
 
 .service-team h3{
-    color: #085394;
+    color: #193498;
     padding-top: 15px;
     padding-bottom: 15px;
     font-size: 18px;
@@ -228,7 +228,7 @@
     margin :  auto auto;
     padding: 8px 8px;
     border-radius: 5px;
-    border-color: #085394;
+    border-color: #193498;
     font-weight: bold;
 }
 
@@ -246,27 +246,27 @@
 .a12{
     float: left;
     margin-left: 0px;
-    background-color: #085394;
+    background-color: #193498;
     padding: 6px 9px;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .a12:hover{
-    background-color: #05325a;
+    background-color: #04185f;
 }
 
 .a8{
     float: left;
     margin-left: 0px;
-    background-color: rgb(145, 20, 20);
+    background-color: #7B113A;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .a8:hover{
-    background-color: rgb(187, 13, 13);
+    background-color: #4e0320;
 }
 
 .reservation-buttons a{
@@ -287,14 +287,14 @@
 .a10{
     float: right;
     margin-right: 161px;
-    background-color: rgb(145, 20, 20);
+    background-color: #7B113A;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .a10:hover{
-    background-color: rgb(187, 13, 13);
+    background-color: #4e0320;
 }
 
 .assignPopUpclass {
@@ -326,7 +326,7 @@
   
   /* The Close Button */
   .closeCancelAssign{
-    color: green;
+    color: #1597E5;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -334,7 +334,7 @@
   
   .closeCancelAssign:hover,
   .closeCancelAssign:focus {
-    color: rgb(12, 161, 12);
+    color: #024066;
     text-decoration: none;
     cursor: pointer;
   }
@@ -346,13 +346,13 @@
   }
 
   .btnCancelAssign{
-      background-color: rgb(145,20,20);
+      background-color: #7B113A;
       padding: 8px 20px;
       border-radius: 5px;
   }
 
   .btnCancelAssign:hover{
-      background-color: rgb(187, 13, 13);
+      background-color: #4e0320;
   }
 
   .yesCancelAssign button a{
@@ -395,7 +395,7 @@
   
   /* The Close Button */
   .closeCancelReservation{
-    color: green;
+    color: #1597E5;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -403,7 +403,7 @@
   
   .closeCancelReservation:hover,
   .closeCancelReservation:focus {
-    color: rgb(12, 161, 12);
+    color: #024066;
     text-decoration: none;
     cursor: pointer;
   }
@@ -415,13 +415,13 @@
   }
 
   .btnCancelReservation{
-      background-color: rgb(145,20,20);
+      background-color: #7B113A;
       padding: 8px 20px;
       border-radius: 5px;
   }
 
   .btnCancelReservation:hover{
-    background-color: rgb(187, 13, 13);
+    background-color: #4e0320;
   }
 
   .yesCancelReservation button a{

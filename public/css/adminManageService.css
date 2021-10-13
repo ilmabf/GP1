@@ -1,5 +1,5 @@
 .heading-adminManageService{
-    color: #085394;
+    color: #193498;
     margin-bottom: 20px;
     text-align: center;
     font-size: larger;
@@ -12,7 +12,7 @@
 }
 
 .serviceManageHeader{
-    color: #085394;
+    color: #193498;
 }
 
 .serviceManageBox{
@@ -52,7 +52,7 @@
 }
 
 .typeServices :hover{
-    color:#085394;
+    color:#193498;
 }
 
 .vehicleManage{
@@ -62,7 +62,7 @@
 }
 
 .vehicleManageHeader{
-    color: #085394;
+    color: #62707c;
 }
 
 .vehicleManageBox{
@@ -98,7 +98,7 @@
 }
 
 .typeVehicles a:hover{
-    color:#085394;
+    color:#193498;
 }
 
 .priceManage{
@@ -108,7 +108,7 @@
 }
 
 .priceManageHeader{
-    color: #085394;
+    color: #193498;
 }
 
 .priceManageBox{
@@ -135,14 +135,14 @@
 }
 
 #admin-wash-types{
-    border-color: #085394;
+    border-color: #193498;
     border-width: 2px;
     font-weight: 600;
     font-size: 14px;
 }
 
 #admin-vehicle-types{
-    border-color: #085394;
+    border-color: #193498;
     border-width: 2px;
     font-weight: 600;
     font-size: 14px;
@@ -156,7 +156,7 @@
 .editPriceBtn{
     padding: 5px 15px;
     color: white;
-    background-color: #085394;
+    background-color: #193498;
     cursor: pointer;
     border-radius: 5px;
 }
@@ -189,19 +189,19 @@
 }
 
 .iClean h3{
-    color: #085394;
+    color: #193498;
 }
 
 .vehicleManagment h3{
-    color: #085394;
+    color: #193498;
 }
 
 .addNewServicesBox h3{
-    color: #085394;
+    color: #193498;
 }
 
 .addNewVehicleBox h3{
-    color: #085394;
+    color: #193498;
 }
 
 .interiorClean-content, .vehicles-content, .addNewService-content, .addNewVehicle-content{
@@ -209,7 +209,7 @@
 }
 
 .closeInteriorClean, .closeVehicle, .closeAddService, .closeAddVehicle{
-    color: green;
+    color: #1597E5;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -217,7 +217,7 @@
 
 .closeInteriorClean:hover,
 .closeInteriorClean:focus {
-    color: rgb(12, 161, 12);
+    color: #023f64;
     text-decoration: none;
     cursor: pointer;
 }
@@ -231,19 +231,19 @@
 
 .btnDeleteInteriorCleaning{
     color: white;
-    background-color: rgb(145, 20, 20);
+    background-color: #7B113A;
     padding: 8px 20px;
     border-radius: 5px;
     cursor: pointer;
 }
 
 .btnDeleteInteriorCleaning:hover{
-    background-color: rgb(187, 13, 13);
+    background-color: #4d0420;
 }
 
 .closeVehicle:hover,
 .closeVehicle:focus {
-    color: rgb(12, 161, 12);
+    color: #023f64;
     text-decoration: none;
     cursor: pointer;
 }
@@ -256,7 +256,7 @@
 
 .btnDeleteVehicle{
     color: white;
-    background-color: rgb(145, 20, 20);
+    background-color: #7B113A;
     padding: 8px 20px;
     border-radius: 5px;
     cursor: pointer;
@@ -268,7 +268,7 @@
 
 .closeAddService:hover,
 .closeAddService:focus {
-    color: rgb(12, 161, 12);
+    color: #4d0420;
     text-decoration: none;
     cursor: pointer;
 }
@@ -280,7 +280,7 @@
 
 .btnAddNewService{
     color: white;
-    background-color: #085394;
+    background-color: #193498;
     padding: 8px 20px;
     border-radius: 5px;
     cursor: pointer;
@@ -289,7 +289,7 @@
 
 .btnCancelAddService{
     color: white;
-    background-color: rgb(145, 20, 20);
+    background-color: #7B113A;
     padding: 8px 20px;
     border-radius: 5px;
     cursor: pointer;
@@ -307,7 +307,7 @@
 
 .closeAddVehicle:hover,
 .closeAddVehicle:focus {
-    color: rgb(12, 161, 12);
+    color: #023f64;
     text-decoration: none;
     cursor: pointer;
 }
@@ -319,7 +319,7 @@
 
 .btnAddNewVehicle{
     color: white;
-    background-color: #085394;
+    background-color: #193498;
     padding: 8px 20px;
     border-radius: 5px;
     cursor: pointer;
@@ -328,7 +328,7 @@
 
 .btnCancelAddVehicle{
     color: white;
-    background-color: rgb(145, 20, 20);
+    background-color: #7B113A;
     padding: 8px 20px;
     border-radius: 5px;
     cursor: pointer;
@@ -342,37 +342,6 @@
 .addNewVehicleInput{
     width: 50%;
 }
-
-/* .closeIEClean{
-    color: green;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.closeIEClean:hover,
-.closeIEClean:focus {
-    color: darkgreen;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.closeSClean{
-    color: green;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.closeSClean:hover,
-.closeSClean:focus {
-    color: darkgreen;
-    text-decoration: none;
-    cursor: pointer;
-} */
-
-
-
 
 @media only screen and (max-width: 770px) {
     

@@ -1,6 +1,6 @@
 .admin-home-h1{
     text-align: center;
-    color: #085394;
+    color: #193498;
     font-size: 20px;
     margin-top: 20px;
 }
@@ -43,7 +43,7 @@ h3{
 }
 
 .admin-manage-services-heading{
-    color: #085394;
+    color: #193498;
 }
 
 .adminHome-sub-block3{
@@ -52,7 +52,7 @@ h3{
     margin: 10px auto;
     padding: 10px 10px;
     width: fit-content;
-    background-color: #085394;
+    background-color: #193498;
 }
 
 .adminHome-sub-block3 p a{
@@ -85,11 +85,6 @@ h3{
     .adminHome-block1:hover, .adminHome-block2:hover, .adminHome-block3:hover{
         background-color:#86bef0;
     }
-
-    /* .admin-home-main-flex{
-        display: flex;
-        flex-wrap: wrap;
-    } */
 
     .adminHome-sub-block3{
         display: inline-block;

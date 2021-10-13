@@ -1,5 +1,5 @@
 .heading{
-    color: #085394;
+    color: #193498;
     margin-bottom: 40px;
     text-align: center;
     font-size: larger;
@@ -28,7 +28,7 @@ input[type=text3]{
 }
 .reservation-date h3{
     text-align: left;
-    color: #085394;
+    color: #193498;
     padding-top: 15px;
     padding-bottom: 15px;
     
@@ -45,7 +45,7 @@ input[type=text3]{
     display: inline;
     margin-right: 100px;
     font-weight: bold;
-    color: #085394;
+    color: #193498;
 }
 .orderitem1{
     float: right;
@@ -55,14 +55,6 @@ input[type=text3]{
     transform: translate(95%, 4%);
 }
 .upcomingOrders{
-    /* display: flex;
-    flex-wrap: wrap;
-    margin: 35px 238px;
-    padding: 10px 20px;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);   */
-
     display: -webkit-inline-box;
     flex-wrap: wrap;
     margin: 35px 238px;
@@ -75,11 +67,7 @@ input[type=text3]{
 
 .upcomingOrders h3{
     text-align: left;
-    color: #085394;
-    /* padding-top: 15px;
-    padding-bottom: 15px;
-    margin-bottom: 30px;
-    padding-right: 41px; */
+    color: #193498;
     margin-right: 93px;
 }
 
@@ -111,24 +99,24 @@ input[type=text3]{
 .viewLink{
     margin-bottom: 10px;
     text-align: center;
-    color: #085394;
+    color: #193498;
 }
 
 .orderView .viewLink a{
-    color: #085394;
+    color: #193498;
     font-size: 18px;
     text-decoration: underline;
 }
 
 .orderView .viewLink a:hover{
-    color: #022d53;
+    color: #04185f;
 }
 
 .team{
     margin-top: 20px;
     float: initial;
     font-size: 13px;
-    color: rgb(145, 20, 20);
+    color: #7B113A;
 }
 
 .team2{

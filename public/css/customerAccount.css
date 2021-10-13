@@ -33,7 +33,7 @@ input[type=color]{
     display: inline-block;
     position: absolute;
     top: 8px;
-    border: 1px solid #085394;
+    border: 1px solid #193498;
 }
 
 .box{
@@ -61,7 +61,7 @@ input[type=color]{
     width: 80px;
     color: white;
     border-radius: 5px;
-    background-color: #085394;
+    background-color: #193498;
     cursor: pointer;
     padding: 5px 0px 5px 0px;
 }
@@ -161,7 +161,7 @@ input[type=text2]{
 
 .account-header{
     top: 25%;
-    color: #085394;
+    color: #193498;
     margin-top: 10px;
     margin-bottom: 15px;
     font-size: 25px;
@@ -171,7 +171,7 @@ input[type=text2]{
 
 .account-header2{
     top: 25%;
-    color: #085394;
+    color: #193498;
     margin-top: 10px;
     margin-bottom: 15px;
     font-size: 20px;
@@ -180,7 +180,7 @@ input[type=text2]{
 
 .vehicle{
     top: 25%;
-    color: #085394;
+    color: #193498;
     margin-top: 10px;
     margin-bottom: 12px;
     font-size: 18px;
@@ -202,7 +202,7 @@ input[type=text2]{
 }
 .account-box2{
     top: 25%;
-    color: #085394;
+    color: #193498;
     margin-top: 10px;
     margin-bottom: 15px;
     font-size: 25px;
@@ -215,7 +215,7 @@ input[type=text2]{
 
 .vehicle-box{
     top: 25%;
-    color: #085394;
+    color: #193498;
     margin-top: 10px;
     margin-bottom: 15px;
     padding: 20px 10px 20px 10px;
@@ -229,7 +229,7 @@ input[type=text2]{
 
 .account-box3{
     top: 25%;
-    color: #085394;
+    color: #193498;
     margin-top: 10px;
     margin-bottom: 15px;
     font-size: 25px;
@@ -289,7 +289,7 @@ input[type=text2]{
   }
   
   .button:hover {opacity: 1;
-    background-color: #085394;
+    background-color: #193498;
     color: #f5f5f5;
 }
 

@@ -1,5 +1,5 @@
 .heading{
-    color: #085394;
+    color: #193498;
     margin-bottom: 40px;
     text-align: center;
     font-size: larger;
@@ -16,7 +16,7 @@
 
 .reservation-date h3{
     text-align: left;
-    color: #085394;
+    color: #193498;
     padding-top: 15px;
     padding-bottom: 15px;
 }
@@ -40,7 +40,7 @@
 
 .completedOrders h3{
     text-align: left;
-    color: #085394;
+    color: #193498;
     padding-top: 15px;
     padding-bottom: 15px;
     margin-bottom: 30px;
@@ -75,24 +75,24 @@
 
 .viewLink{
     text-align: center;
-    color: #085394;
+    color: #193498;
 }
 
 .orderView .viewLink a{
-    color: #085394;
+    color: #193498;
     font-size: 18px;
     text-decoration: underline;
 }
 
 .orderView .viewLink a:hover{
-    color: #022d53;
+    color: #04185f;
 }
 
 .team{
     text-align: center;
     float: right;
     font-size: 15px;
-    color: rgb(145, 20, 20);
+    color: #7B113A;
 }
 
 @media only screen and (max-width: 770px){
