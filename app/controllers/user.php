@@ -1,5 +1,5 @@
 <?php
-require 'libs/mailer.php';
+require 'libs/Mailer.php';
 
 session_start();
 $_SESSION['error'] = '';

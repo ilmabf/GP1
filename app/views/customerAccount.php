@@ -26,7 +26,7 @@
                 <input type="color" name="color" required>
                 <br>
                 <label for="Vehicle Type" style="padding: 0px 87px 0px 0px;">Vehicle Type</label>
-                <select name="vehicleType" class="Mg-Emp-Search" id="serviceTeamLeaders-types" style="width:50%; margin-bottom: 5px;" required>
+                <select name="vehicleType" class="types" id="serviceTeamLeaders-types" required>
                     <option value="">Choose a type</option>
                     <option value="Sedan">Sedan</option>
                     <option value="SUV">SUV</option>
@@ -59,7 +59,7 @@
                 <input type="color" required>
                 <br>
                 <label for="Vehicle Type" style="padding: 0px 87px 0px 0px;">Vehicle Type</label>
-                <select name="serviceTeamLeader" class="Mg-Emp-Search" id="serviceTeamLeaders-types" style="width:50%; margin-bottom: 5px;">
+                <select name="serviceTeamLeader" class="types" id="serviceTeamLeaders-types" >
                     <option value="Sedan">Sedan</option>
                     <option value="SUV">SUV</option>
                     <option value="Luxury">Luxury</option>

@@ -15,11 +15,11 @@
 
                     <form action="/customer/register" method="post" id="customer-signup">
 
-                        <input class="input-box" id="signUpfirstname" type="text" name="firstname" autofocus placeholder="Firstname" required>
+                        <input class="input-box" id="signUpFirstName" type="text" maxlength="50" name="firstname" autofocus placeholder="First Name" onkeyup="myFunctionOne()" required>
                         <br>
-                        <input class="input-box" type="text" name="lastname" autofocus placeholder="Lastname" required>
+                        <input class="input-box" id = "signUpLastName"type="text" maxlength="50" name="lastname" autofocus placeholder="Last Name" onkeyup="myFunction()"  required>
                         <br>
-                        <input class="input-box" type="text" name="username" autofocus placeholder="Username" required>
+                        <input class="input-box" type="text" name="username" autofocus placeholder="Username" maxlength="50" required>
                         <br>
                         <p style="font-size: 11px; padding-bottom: 5px; color:red; max-width 200px;"><?php
                                                                                                         if ($_SESSION['flag'] == 1) {
@@ -28,7 +28,7 @@
                                                                                                         ?>
                         </p>
 
-                        <input class="input-box" type="email" name="email" autofocus placeholder="Email" required>
+                        <input class="input-box" type="email" name="email" autofocus placeholder="Email" maxlength="50" required>
                         <br>
                         <p style="font-size: 11px; padding-bottom: 5px; color:red; max-width 200px;"><?php
                                                                                                         if ($_SESSION['flag'] == 2) {
@@ -45,7 +45,7 @@
                                                                                                         }
                                                                                                         ?>
                         </p>
-                        <input class="input-box" id="signup-pwd" type="password" name="pwd" autofocus placeholder="Password" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                        <input class="input-box" id="signup-pwd" type="password" name="pwd" autofocus placeholder="Password" maxlength="255" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
                         <br>
                         <input class="input-box" id="signup-confirm-pwd" type="password" name="confirm_pwd" autofocus placeholder="Confirm Password" required>
 
@@ -60,7 +60,7 @@
                     <p id="length" class="invalid">Minimum <b>8 characters</b></p>
                 </div>
             </div>
-            <p id="link-to-go-login"><a href="/user/login">Already have an account? Login</a></p>
+            <p id="link-to-go-login"><a href="/user/login" style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Already have an account? Login</a></p>
 
             <?php
 

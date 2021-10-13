@@ -100,6 +100,19 @@ input[type=text2]{
 .space{
     min-height: 30px;
 }
+
+.types{
+    font-weight: 600;
+    border-radius: 5px;
+    border: 2px outset #085394;
+    /* width: 100%; */
+    padding: 12px;
+    /* border: 1px solid #ccc; */
+    /* border-radius: 4px; */
+    resize: vertical;
+    margin-bottom: 5px;
+    width: 50%;
+}
 .account-box1{
     display: block;
     background-color:white;
@@ -314,6 +327,9 @@ input[type=text2]{
         font-size: 20px;
     }
 
+    .types{
+        width: 100%;
+    }
     .box{
         overflow: visible;
     }

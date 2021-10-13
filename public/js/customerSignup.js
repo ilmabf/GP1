@@ -10,6 +10,9 @@ var signupVerify = document.getElementById("signupVerify");
 var mySignupButton = document.getElementById("mySignupButton");
 var span = document.getElementsByClassName("close-signupVerifyMessage")[0];
 
+var fName = document.getElementById("signUpFirstName");
+var lName = document.getElementById("signUpLastName");
+
 myInput.onfocus = function() {
   document.getElementById("pwd-validate-message").style.display = "block";
   document.getElementById("link-to-go-login").style.top = "97%";
@@ -73,6 +76,25 @@ function validatePassword(){
 myInput.onchange = validatePassword;
 confirm_pwd.onkeyup = validatePassword;
 
+
+function myFunctionOne(){
+  
+  var letters = /^[A-Za-z]+$/;
+  if(!fName.value.match(letters)){
+    fName.setCustomValidity("Please input alphabet characters only");
+  }
+}
+
+function myFunctionTwo(){
+  
+  var letters = /^[A-Za-z]+$/;
+  if(!lName.value.match(letters)){
+    lName.setCustomValidity("Please input alphabet characters only");
+  }
+}
+
+fName.onchange = myFunctionOne;
+lName.onchange = myFunctionTwo;
 // mySignupButton.onclick = function() {
 //   toVerifySingupBox.style.display = "block";
 // }
