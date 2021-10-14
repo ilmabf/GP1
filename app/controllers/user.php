@@ -127,7 +127,41 @@ class User extends Controller
         $this->model->updateUserPassword($email, $hashedpwd);
         $this->model->deletePwdTempTable($email);
         
-        $this->view->render('UserHome');
+        if ($this->model->checkCustomer($email)) {
+
+            //get customer details
+            $Details = $this->model->getCustDetails($email);
+            $_SESSION['userDetails'] = $Details;
+
+            //get customer vehicles
+            $vehicles = $this->model->getVehicles($_SESSION['userDetails'][0]['User_ID']);
+            $_SESSION['vehicles'] = $vehicles;
+
+            //assign user role
+            $_SESSION['role'] = "customer";
+
+            //check customer verification status
+            $value = $this->model->checkVerified($email);
+            if ($value[0]['Verified'] == "1") {
+                $_SESSION['Verified'] = "True";
+                $this->view->render('CustomerHome');
+            } else {
+                $_SESSION['Verified'] = "False";
+                $this->view->render('CustomerVerify');
+            }
+        } else if ($this->model->checkManager($email)) {
+            //assign user role
+            $_SESSION['role'] = "manager";
+            $this->view->render('ManagerHome');
+        } else if ($this->model->checkSTL($email)) {
+            //assign user role
+            $_SESSION['role'] = "stl";
+            $this->view->render('StlHome');
+        } else {
+            //assign user role
+            $_SESSION['role'] = "systemadmin";
+            $this->view->render('AdminHome');
+        }
     }
 
     function home()
