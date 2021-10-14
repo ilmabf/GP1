@@ -71,7 +71,7 @@
             <ul class="nav-nav nav-links">
                 <li><a href="/user/home">Home</a></li>
                 <li><a href="/review/">Reviews</a></li>
-                <li><button><a href="/user/logout" class="header-button-logout">Logout</a></button></li>
+                <li><button style="background-color: #7B113A; border-radius:10px;"><a href="/user/logout" class="header-button-logout">Logout</a></button></li>
             </ul>
         </nav>
     </header>

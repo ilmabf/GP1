@@ -52,6 +52,10 @@ header nav ul li a{
     display: none;
 }
 
+.logoutHeader-button{
+    background-color: #7B113A;
+}
+
 
 @media only screen and (min-width: 770px) {
 

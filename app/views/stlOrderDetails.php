@@ -76,7 +76,7 @@ include 'UserLoggedInHeader.php';
 
         <div class="reservation-buttons">
 
-            <button class="reservationButtons a10 agg" id="completeService"><a>Complete Service</a></button>
+            <button class="reservationButtons a10 agg" id="completeService"><a href=/booking/completedOrder">Complete Service</a></button>
         </div>
 
     </div>
