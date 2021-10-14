@@ -23,7 +23,7 @@ include 'UserLoggedInHeader.php';
 
     <div class="vehicleManage">
         <div class="vehicleManageHeader">
-            <h3>Vehicle Types</h3>
+            <h3 style = "color: #193498;">Vehicle Types</h3>
         </div>
         <div class="vehicleManageBox">
             <div class="typeVehicles" id="typeVehicles1" onclick="openViewVehicleType()">H - Back</div>
