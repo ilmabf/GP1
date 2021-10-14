@@ -14,7 +14,7 @@
                     <form action="/user/passwordChange" method="POST" autocomplete="off">
                         <input class="input-box" type="email" name="email_to_send_pwd" placeholder="Email" autocomplete="off">
                         <br>
-                        <p style="font-size: 15px; padding-bottom: 5px; color:red;"><?php echo ($_SESSION['error']); ?></p>
+                        <p class="errorDisplay" style="font-size: 11px; padding-bottom: 5px; color:red; max-width: 200px;"><?php echo ($_SESSION['error']); ?></p>
                         <button class="input-box loggin-signup-button" type="submit" name="send_pwd_email">Send</button>
                     </form>
 

@@ -50,7 +50,7 @@ class Service extends Controller
                     header("Location: /service/equipment");
                 }
             } else {
-                echo "Errorrrr";
+                echo "Error";
             }
         }
     }
