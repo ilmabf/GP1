@@ -86,7 +86,7 @@ include 'UserLoggedInHeader.php';
                 <div class="service-team-box">
 
                     <select name="serviceTeam" id="serviceTeam-types">
-                        <option value="Not Selected">Team A</option>
+                        <option value="Not Selected">Team 1</option>
                     </select>
                     <div class="reservation-buttons">
                         <button class="reservationButtons a8" id="cancelAssignBtn" type="button" onclick="openassign()"><a>Cancel Assign</a></button>

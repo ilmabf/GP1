@@ -55,13 +55,13 @@ class Customer extends Controller
             //send verification email to customer
             $mail = new Mailer();
 
-            $output = '<p>Dear User,</p>';
-            $output .= '<p>Welcome ';
+            $output = '<p>Hello ';
             $output .= $fname . ' ' . $lname;
-            $output .= ' to WandiWash!</p>';
+            $output = '</p>';
+            $output .= '<p>Welcome to WandiWash!</p>';
             $output .= '<p>We are glad you could join us!</p>';
             $output .= '<p>Now that you are registered, you can obtain our car wash services at your venue!</p>';
-            $output .= '<p>Check our our website to know more about service packages and available times.</p>';
+            $output .= '<p>Check our website to know more about service packages and available times.</p>';
             $output .= '<p>Click below to verify your account.</p>';
             $output .= '<p>------------------------------------------------------------</p>';
             $output .= '<p><a href="http://www.wandiwash.com/customer/verify/' . $uid[0]['User_ID'] . '/' . $token . '">Click Here!</a></p>';

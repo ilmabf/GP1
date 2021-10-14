@@ -37,7 +37,7 @@ include 'UserLoggedInHeader.php';
                 </div>
                 <div class="orderView">
                     <p class="viewLink"><a href="/booking/upcomingOrder">View order</a></p>
-                    <p class="team2">Assigned Service Team A</p>
+                    <p class="team2">Assigned - Service Team 1</p>
                 </div>
             </div>
 
@@ -56,7 +56,7 @@ include 'UserLoggedInHeader.php';
                 </div>
                 <div class="orderView">
                     <p class="viewLink"><a href="/booking/upcomingOrder">View order</a></p>
-                    <p class="team">Not Assigned</p>
+                    <p class="team">Team not assigned</p>
                 </div>
             </div>
 
@@ -75,7 +75,7 @@ include 'UserLoggedInHeader.php';
                 </div>
                 <div class="orderView">
                     <p class="viewLink"><a href="/booking/upcomingOrder">View order</a></p>
-                    <p class="team">Not Assigned</p>
+                    <p class="team">Team not assigned</p>
                 </div>
             </div>
 
