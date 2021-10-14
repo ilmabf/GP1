@@ -62,7 +62,7 @@ include 'UserLoggedInHeader.php';
                 </div>
                 <div class="order">
                     <div class="orderitem">Done by</div>
-                    <p class="orderitem1">Team A</p>
+                    <p class="orderitem1">Team 1</p>
                     </p>
                 </div>
                 <div class="order">

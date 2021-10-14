@@ -34,6 +34,10 @@ class User extends Controller
 
     function passwordChange()
     {
+        if(!isset($_POST["email_to_send_pwd"])){
+            header("Location: login");
+        }
+        
         //get email
         $email = $_POST["email_to_send_pwd"];
 
@@ -67,9 +71,9 @@ class User extends Controller
                 $output .= '<p>-------------------------------------------------------------</p>';
                 $output .= '<p><a href="http://www.wandiwash.com/user/goToEnterNewPassword/' . $key . '/' . $email . '">Click Here</a></p>';
                 $output .= '<p>-------------------------------------------------------------</p>';
-                $output .= '<p>Please be sure to copy the entire link into your browser.
-                The link will expire after 1 day for security reason.</p>';
-                $output .= '<p>If you did not request this forgotten password email, no action 
+                $output .= '<p>Make sure to copy the entire link into your browser.
+                The link will expire after 24 hours for security reasons.</p>';
+                $output .= '<p>If you did not request a password reset, no action 
                 is needed, your password will not be reset. However, you may want to log into 
                 your account and change your security password as someone may have guessed it.</p>';
                 $output .= '<p>Thanks,</p>';
@@ -85,7 +89,7 @@ class User extends Controller
                 echo "insertion error";
             }
         } else {
-            $_SESSION['error'] = 'We couldn\'t find that email<br>within our records';
+            $_SESSION['error'] = 'Sorry, we couldn\'t find that email<br>within our records';
             $this->view->render('UserForgotPwd');
         }
     }
@@ -127,7 +131,41 @@ class User extends Controller
         $this->model->updateUserPassword($email, $hashedpwd);
         $this->model->deletePwdTempTable($email);
         
-        $this->view->render('UserHome');
+        if ($this->model->checkCustomer($email)) {
+
+            //get customer details
+            $Details = $this->model->getCustDetails($email);
+            $_SESSION['userDetails'] = $Details;
+
+            //get customer vehicles
+            $vehicles = $this->model->getVehicles($_SESSION['userDetails'][0]['User_ID']);
+            $_SESSION['vehicles'] = $vehicles;
+
+            //assign user role
+            $_SESSION['role'] = "customer";
+
+            //check customer verification status
+            $value = $this->model->checkVerified($email);
+            if ($value[0]['Verified'] == "1") {
+                $_SESSION['Verified'] = "True";
+                $this->view->render('CustomerHome');
+            } else {
+                $_SESSION['Verified'] = "False";
+                $this->view->render('CustomerVerify');
+            }
+        } else if ($this->model->checkManager($email)) {
+            //assign user role
+            $_SESSION['role'] = "manager";
+            $this->view->render('ManagerHome');
+        } else if ($this->model->checkSTL($email)) {
+            //assign user role
+            $_SESSION['role'] = "stl";
+            $this->view->render('StlHome');
+        } else {
+            //assign user role
+            $_SESSION['role'] = "systemadmin";
+            $this->view->render('AdminHome');
+        }
     }
 
     function home()

@@ -81,7 +81,7 @@ include 'UserLoggedInHeader.php';
     </div>
 
     <div class="next-pg">
-        <button class="next-button"><a href="/booking/bookAWash2" style="color: white;">Next</a></button>
+        <button class="next-button"><a href="/booking/location" style="color: white;">Next</a></button>
     </div>
 
     <script src="/public/js/CustomerBookAWash.js"></script>
