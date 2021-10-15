@@ -5,6 +5,29 @@
     font-size: larger;
 }
 
+.bt{
+    display: inline;
+    margin-bottom: 30px;
+    float: left;
+    margin-left: 236px;
+    background-color: #7B113A;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.bt2{
+    display: inline;
+    margin-bottom: 30px;
+    float: right;
+    margin-right: 241px;
+    background-color: #1597E5;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    border-color: #1597E5;
+}
+
 .blurOrder{
     filter: blur(3px);
     width: 100%;
@@ -131,7 +154,7 @@
     margin-bottom: 11px;
 }
 .box3{
-    width: 60%;
+    /* width: 60%;
     display: flex;
     flex-wrap: wrap;
     padding: 10px 0px 0px 0px;
@@ -140,7 +163,19 @@
     box-shadow: 0 3px 10px rgb(0 0 0 / 40%);
     left: 20%;
     position: relative;
+    justify-content: center; */
+
+    width: 477px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0px 0px 0px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 40%);
+    left: 34%;
+    position: relative;
     justify-content: center;
+
 }
 .box2{
     margin: 21px 50px;
@@ -401,6 +436,7 @@
         text-align: left;
     }
 
+    
     .orderDetails{
         display: inline-block;
         margin-left: 40px;
@@ -427,6 +463,14 @@
         font-size: 15px;
     }
 
+    .bt{
+        margin-left: 0px;
+    }
+
+    .bt2{
+        margin-right: 0px;
+        padding: 4px 4px;
+    }
     .p1{
         font-size: 13px;
     }

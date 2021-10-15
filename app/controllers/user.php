@@ -206,8 +206,8 @@ class User extends Controller
             if ($this->model->checkCustomer($uname)) {
 
                 //get customer details
-                $Details = $this->model->getCustDetails($uname);
-                $_SESSION['userDetails'] = $Details;
+                $details = $this->model->getCustDetails($uname);
+                $_SESSION['userDetails'] = $details;
 
                 //get customer vehicles
                 $vehicles = $this->model->getVehicles($_SESSION['userDetails'][0]['User_ID']);

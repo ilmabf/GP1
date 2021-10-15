@@ -2,7 +2,7 @@ var arrHead = new Array();	// array for header.
     arrHead = ['First Name', 'Last Name', 'Contact Number', 'Email', 'Date Enrolled', 'Salary', 'NIC No', 'Team',''];
 
 var arrStlHead = new Array();    
-    arrStlHead = ['Team', 'NIC', 'Photo', ''];
+    arrStlHead = ['NIC', 'Team', 'Photo', ''];
 
 var submitBtn = document.getElementById('bts');
 
@@ -91,6 +91,11 @@ function addRow() {
                 ele1.setAttribute('maxlength', '50');
 
                 //empFirstLastName(ele1);
+
+                var letters = /^[A-Za-z]+$/;
+                if(!ele1.value.match(letters)){
+                    ele1.setCustomValidity("Please input alphabet characters only");
+                  }
 
             }
 
@@ -203,17 +208,17 @@ function addStlRow() {
             var ele2 = document.createElement('input');
 
             if(c2==0){
-                ele2.setAttribute('name', 'stlTeam');
-                ele2.setAttribute('type', 'number');
-                ele2.setAttribute('required', '');
-                ele2.setAttribute('placeholder','1 or 2 etc');
-            }
-
-            else if(c2==1){
                 ele2.setAttribute('name', 'NIC');
                 ele2.setAttribute('type', 'text');
                 ele2.setAttribute('required', '');
                 ele2.setAttribute('maxlength', '12');
+            }
+
+            else if(c2==1){
+                ele2.setAttribute('name', 'stlTeam');
+                ele2.setAttribute('type', 'number');
+                ele2.setAttribute('required', '');
+                ele2.setAttribute('placeholder','1 or 2 etc');
             }
 
             else if(c2==2){

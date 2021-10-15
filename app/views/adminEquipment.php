@@ -11,7 +11,7 @@ $details = $_SESSION['equipmentDetails'];
 
         <div style="display:block;text-align:center;">
             <input type="button" id="addNewRow" value="Add Equipment" style="display:inline-block;text-align:center;" onclick="addNewRow();"/>
-            <input type="button" id="assignEquipment" value="Assign Equipment" style="display:inline-block;text-align:center;" onclick="assignEquipment(); " />
+            <input type="button" id="assignEquipment" value="Assign To a Team" style="display:inline-block;text-align:center;" onclick="assignEquipment(); " />
         </div>
         <body onload="createEquipTable()">
         <div>
@@ -19,7 +19,7 @@ $details = $_SESSION['equipmentDetails'];
                 <div id="container1">
                   
                 </div> 
-                <input type="submit" id="submitButton" value="Submit Data"/> 
+                <input type="submit" id="submitButton" value="Insert Data"/> 
             </form>
         </div>
       
@@ -28,7 +28,7 @@ $details = $_SESSION['equipmentDetails'];
             <form action="/service/assignEquipment" method="post">
                 <div id="container2">
                 </div>  
-                <input type="submit" id="saveButton" value="Save Data"/> 
+                <input type="submit" id="saveButton" value="Insert Data"/> 
             </form>
         </div>
  

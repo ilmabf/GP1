@@ -12,7 +12,7 @@ include 'UserLoggedInHeader.php';
             <div class="admin-home-main-flex">
 
                 <div class="adminHome-block1">
-                    <h3><a href="/employee/" style="color:#085394;">Manage Employee</a></h3>
+                    <h3><a href="/employee/" style="color:#085394;">Manage Employees</a></h3>
                 </div>
 
                 <div class="adminHome-block2">
