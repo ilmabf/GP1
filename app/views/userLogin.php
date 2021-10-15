@@ -29,7 +29,7 @@ if (isset($_SESSION["locked"])) {
                             <p class="errorDisplay" style="font-size: 11px; padding-bottom: 5px; color:red; max-width: 200px;"><?php echo ($_SESSION['error']); ?></p>
                             <?php
                             if (isset($_SESSION["locked"])) { ?>
-                                <p style='font-size:12px;'><?php echo "Please wait for 30 seconds"; ?></p>
+                                <p style='font-size:12px;'><?php echo "Please wait for 40 seconds"; ?></p>
                             <?php } else {
                                 echo "<button class='input-box loggin-signup-button' type='submit' name='login'>Login</button>";
                             }
