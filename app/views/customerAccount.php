@@ -59,7 +59,7 @@
                 <input type="color" required>
                 <br>
                 <label for="Vehicle Type" style="padding: 0px 87px 0px 0px;">Vehicle Type</label>
-                <select name="serviceTeamLeader" class="types" id="serviceTeamLeaders-types" >
+                <select name="serviceTeamLeader" class="types" id="serviceTeamLeaders-types">
                     <option value="Sedan">Sedan</option>
                     <option value="SUV">SUV</option>
                     <option value="Luxury">Luxury</option>
@@ -68,7 +68,8 @@
                 </select>
                 <br>
                 <label for="Manufacturer" style="padding: 0px 80px 0px 0px;">Manufacturer</label>
-                <input class="input-box" type="text2" name="manufacturer" autofocus placeholder="XYZ" required>
+                <input class="input-box" type="text2" name="manufacturer" autofocus placeholder="XYZ" required><br><br>
+                <label for="Delete Vehicle" ><a href = "" style="font-size: small;float: right;color: red;">Delete Vehicle? Click Here</a></label>
                 <br>
                 <button id="EditVehicleFormSubmitButton" class="formSubmitButton" type="submit" name="signup">Submit</button>
                 <button id="EditVehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closeEditVehicleForm()">Cancel</button>

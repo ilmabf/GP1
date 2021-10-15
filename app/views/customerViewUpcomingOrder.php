@@ -76,7 +76,7 @@ include 'UserLoggedInHeader.php';
                     </div>
                     <div class="order">
                         <div class="orderitem">Color</div>
-                        <p class="orderitem1">Black</p>
+                        <div class="orderitem1 " style="background-color:blue; width: 26px;height: 24px;display: inline-block;border: 1px solid #193498;"></div>
                     </div>
                 </div>
                 <hr class="hr">
