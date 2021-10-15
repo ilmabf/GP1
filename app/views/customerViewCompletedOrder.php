@@ -47,7 +47,7 @@ include 'UserLoggedInHeader.php';
                         <div class="orderitem1">0775674896</div>
                     </div>
                 </div>
-
+                <hr class="hr">
                 <div class="boxx">
                     <div class="order">
                         <div class="orderitem">Vehicle No</div>
@@ -66,15 +66,15 @@ include 'UserLoggedInHeader.php';
                         <p class="orderitem1">Black</p>
                     </div>
                 </div>
-
+                <hr class="hr">
                 <div class="boxx">
                     <div class="order">
                         <div class="orderitem">Service Type</div>
                         <p class="orderitem1">Interior Cleaning</p>
                     </div>
                     <div class="order">
-                        <div class="orderitem">Price</div>
-                        <p class="orderitem1">1000</p>
+                        <div class="orderitem">Total Price Rs.</div>
+                        <p class="orderitem1">1000/-</p>
                     </div>
                     <div class="order">
                         <div class="orderitem"><a href="">View Location</a></div>
@@ -86,7 +86,10 @@ include 'UserLoggedInHeader.php';
                         </p>
                     </div>
                 </div>
+                <hr class="hr" style="width:100%;">
+                <hr class="hr" style="width:100%;">
             </div>
+
         </div>
         <div class="service-team">
 

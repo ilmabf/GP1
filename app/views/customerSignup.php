@@ -17,7 +17,7 @@
 
                         <input class="input-box" id="signUpFirstName" type="text" maxlength="50" name="firstname" autofocus placeholder="First Name" onkeyup="myFunctionOne()" required>
                         <br>
-                        <input class="input-box" id = "signUpLastName"type="text" maxlength="50" name="lastname" autofocus placeholder="Last Name" onkeyup="myFunction()"  required>
+                        <input class="input-box" id = "signUpLastName"type="text" maxlength="50" name="lastname" autofocus placeholder="Last Name" onkeyup="myFunctionTwo()"  required>
                         <br>
                         <input class="input-box" type="text" name="username" autofocus placeholder="Username" maxlength="50" required>
                         <br>

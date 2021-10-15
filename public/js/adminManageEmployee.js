@@ -91,6 +91,11 @@ function addRow() {
                 ele1.setAttribute('maxlength', '50');
                 // ele1.addEventListener("onkeyup", EmpFirstFunction);
 
+                var letters = /^[A-Za-z]+$/;
+                if(!ele1.value.match(letters)){
+                    ele1.setCustomValidity("Please input alphabet characters only");
+                  }
+
             }
 
             else if(c1==1){
