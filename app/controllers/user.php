@@ -131,6 +131,9 @@ class User extends Controller
         $this->model->updateUserPassword($email, $hashedpwd);
         $this->model->deletePwdTempTable($email);
         
+        $_SESSION['login'] = "loggedin";
+        $_SESSION['usernameemail'] = $email;
+
         if ($this->model->checkCustomer($email)) {
 
             //get customer details
@@ -148,24 +151,22 @@ class User extends Controller
             $value = $this->model->checkVerified($email);
             if ($value[0]['Verified'] == "1") {
                 $_SESSION['Verified'] = "True";
-                $this->view->render('CustomerHome');
             } else {
                 $_SESSION['Verified'] = "False";
                 $this->view->render('CustomerVerify');
+                exit;
             }
         } else if ($this->model->checkManager($email)) {
             //assign user role
             $_SESSION['role'] = "manager";
-            $this->view->render('ManagerHome');
         } else if ($this->model->checkSTL($email)) {
             //assign user role
             $_SESSION['role'] = "stl";
-            $this->view->render('StlHome');
         } else {
             //assign user role
             $_SESSION['role'] = "systemadmin";
-            $this->view->render('AdminHome');
         }
+        header("Location: /user/home");
     }
 
     function home()
