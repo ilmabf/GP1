@@ -80,6 +80,9 @@ class Booking extends Controller
             exit;
         } else if ($_SESSION['role'] == "manager") {
             $this->view->render('ManagerViewCompletedOrder');
+        } else if ($_SESSION['role'] == "stl") {
+            $this->view->render('StlAssignedOrders');
         }
     }
+
 }

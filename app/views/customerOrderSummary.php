@@ -106,5 +106,6 @@ include 'UserLoggedInHeader.php';
 
     </div>
 </div>
-<script src="/public/js/customerOrderSummary.js"></script>
+<script src="/public/js/CustomerOrderSummary.js"></script> 
 <div style="min-height: 110px;"></div>
+

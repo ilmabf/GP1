@@ -89,12 +89,13 @@ function addRow() {
                 ele1.setAttribute('type', 'text');
                 ele1.setAttribute('required', '');
                 ele1.setAttribute('maxlength', '50');
-                // ele1.addEventListener("onkeyup", EmpFirstFunction);
 
-                var letters = /^[A-Za-z]+$/;
-                if(!ele1.value.match(letters)){
-                    ele1.setCustomValidity("Please input alphabet characters only");
-                  }
+                //empFirstLastName(ele1);
+
+                // var letters = /^[A-Za-z]+$/;
+                // if(!ele1.value.match(letters)){
+                //     ele1.setCustomValidity("Please input alphabet characters only");
+                //   }
 
             }
 
@@ -104,6 +105,8 @@ function addRow() {
                 ele1.setAttribute('type', 'text');
                 ele1.setAttribute('required', '');
                 ele1.setAttribute('maxlength', '50');
+
+                //empFirstLastName(ele1);
             }
 
             else if(c1==2){
@@ -246,26 +249,19 @@ function removeStlRow(oButton) {
 createTable();
 createStlAddTable();
 
-// document.getElementById("validFirstName").addEventListener("keyup", EmpFirstFunction);
-// document.getElementById("validLastName").addEventListener("keyup", EmpLastFunction);
+// var fEmpName = document.getElementById("validFirstName");
 
-// function EmpFirstFunction() {
-//   var fEmpName = document.getElementById("validFirstName");
-//   var letters = /^[A-Za-z]+$/;
-
-//   if(!fEmpName.value.match(letters)){
-//     fEmpName.setCustomValidity("Please input alphabet characters only");
-//   }
-// }
-
-// function EmpLastFunction() {
-//     var lEmpName = document.getElementById("validLastName");
-//     var letters = /^[A-Za-z]+$/;
-  
-//     if(!lEmpName.value.match(letters)){
-//       lEmpName.setCustomValidity("Please input alphabet characters only");
+// function empFirstLastName(ele1){
+//     var letters = /[a-zA-Z]/g;
+//     if(!(ele1.value.match(letters))){
+//         ele1.setCustomValidity("Please input alphabet characters only");
 //     }
 // }
+
+
+
+
+
 
 
 

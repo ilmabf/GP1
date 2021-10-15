@@ -73,7 +73,7 @@ include 'UserLoggedInHeader.php';
 </div>
 <div class="addVehicleform" id="viewserviceForm">
     <div class="forma">
-
+        <span type="button" class="close_washType" style="float:right; cursor:pointer;" onclick="closeWashType()">&#10006</span>
         <h2 class="login-signupheader">Interior Cleaning</h2>
 
         <form action="" method="post" id="customer-signup">
