@@ -92,10 +92,10 @@ function addRow() {
 
                 //empFirstLastName(ele1);
 
-                var letters = /^[A-Za-z]+$/;
-                if(!ele1.value.match(letters)){
-                    ele1.setCustomValidity("Please input alphabet characters only");
-                  }
+                // var letters = /^[A-Za-z]+$/;
+                // if(!ele1.value.match(letters)){
+                //     ele1.setCustomValidity("Please input alphabet characters only");
+                //   }
 
             }
 
@@ -251,12 +251,12 @@ createStlAddTable();
 
 // var fEmpName = document.getElementById("validFirstName");
 
-function empFirstLastName(ele1){
-    var letters = /[a-zA-Z]/g;
-    if(!(ele1.value.match(letters))){
-        ele1.setCustomValidity("Please input alphabet characters only");
-    }
-}
+// function empFirstLastName(ele1){
+//     var letters = /[a-zA-Z]/g;
+//     if(!(ele1.value.match(letters))){
+//         ele1.setCustomValidity("Please input alphabet characters only");
+//     }
+// }
 
 
 

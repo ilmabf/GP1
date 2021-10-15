@@ -230,3 +230,10 @@ function closeVehicleAddForm(){
     
     }
 }
+
+function closeWashType(){
+    var close = document.getElementById("viewserviceForm");
+    var y = document.getElementById("service");
+    close.style.display = "none";
+    y.classList.remove("blur");
+}
