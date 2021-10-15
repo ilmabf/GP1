@@ -8,11 +8,12 @@ include 'UserLoggedInHeader.php';
     </div>
 
     <div class="reservation-date">
-        <h3 style="text-align: center; color:#193498;">Pick a date</h3>
+        <h3 style="text-align: center; color:#085394;">Pick a date</h3>
 
         <div id="closeClick">
-            <button class="btnclss" onclick="closeOnClickDemo()">Click to open date picker</button>
-            <input type="text3" id="date">
+            <button class="btnclss" onclick="closeOnClickDemo()">Click to open calendar</button><br>
+            <br>
+            <p style="color:white; text-shadow:1px 1px 4px #000000, 1px 1px 4px #0000fa;">Reservations on: <?php echo date("Y:m:d"); ?> </p>
 
         </div>
     </div>
