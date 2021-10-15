@@ -89,7 +89,8 @@ function addRow() {
                 ele1.setAttribute('type', 'text');
                 ele1.setAttribute('required', '');
                 ele1.setAttribute('maxlength', '50');
-                // ele1.addEventListener("onkeyup", EmpFirstFunction);
+
+                //empFirstLastName(ele1);
 
             }
 
@@ -99,6 +100,8 @@ function addRow() {
                 ele1.setAttribute('type', 'text');
                 ele1.setAttribute('required', '');
                 ele1.setAttribute('maxlength', '50');
+
+                //empFirstLastName(ele1);
             }
 
             else if(c1==2){
@@ -201,7 +204,7 @@ function addStlRow() {
 
             if(c2==0){
                 ele2.setAttribute('name', 'stlTeam');
-                ele2.setAttribute('type', 'text');
+                ele2.setAttribute('type', 'number');
                 ele2.setAttribute('required', '');
                 ele2.setAttribute('placeholder','1 or 2 etc');
             }
@@ -241,26 +244,19 @@ function removeStlRow(oButton) {
 createTable();
 createStlAddTable();
 
-// document.getElementById("validFirstName").addEventListener("keyup", EmpFirstFunction);
-// document.getElementById("validLastName").addEventListener("keyup", EmpLastFunction);
+// var fEmpName = document.getElementById("validFirstName");
 
-// function EmpFirstFunction() {
-//   var fEmpName = document.getElementById("validFirstName");
-//   var letters = /^[A-Za-z]+$/;
+function empFirstLastName(ele1){
+    var letters = /[a-zA-Z]/g;
+    if(!(ele1.value.match(letters))){
+        ele1.setCustomValidity("Please input alphabet characters only");
+    }
+}
 
-//   if(!fEmpName.value.match(letters)){
-//     fEmpName.setCustomValidity("Please input alphabet characters only");
-//   }
-// }
 
-// function EmpLastFunction() {
-//     var lEmpName = document.getElementById("validLastName");
-//     var letters = /^[A-Za-z]+$/;
-  
-//     if(!lEmpName.value.match(letters)){
-//       lEmpName.setCustomValidity("Please input alphabet characters only");
-//     }
-// }
+
+
+
 
 
 
