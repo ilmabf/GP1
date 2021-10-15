@@ -5,7 +5,7 @@ include 'UserLoggedInHeader.php';
 <main>
 
   <div style="min-height: 110px;"></div>
-  <h2 class="manageEmployee-heading">Manage Employee</h2>
+  <h2 class="manageEmployee-heading">Manage Employees</h2>
   <div class="addBtnEmps">
     <input type="button" id="addRow" value="Add Employee" class="addTableEmp" onclick="addRow(); " />
     <input type="button" id="addStlRow" value="Add Service Team Leader" class="addTableEmp" onclick="addStlRow();" />
@@ -16,7 +16,7 @@ include 'UserLoggedInHeader.php';
       <div id="cont" class="addTb1"></div> 
 
 
-      <input type="submit" id="bts" value="Submit Employee" />
+      <input type="submit" id="bts" value="Insert data" />
     </form>
 
   </div>
@@ -25,7 +25,7 @@ include 'UserLoggedInHeader.php';
     <form action="/stl/add" method="post">
       <div id="cont2" class="addTb2"></div>
 
-      <input type="submit" id="btStl" value="Submit Stl" />
+      <input type="submit" id="btStl" value="Insert data" />
     </form>
   </div>
 

@@ -23,6 +23,7 @@
     margin-bottom: 30px;
 }
 
+
 .orderDate button{
     background-color:#193498;
     padding: 7px 15px;
@@ -197,5 +198,9 @@
         margin-bottom: 20px;
         text-align: left;
         padding: 20px 20px;
+    }
+
+    .hr{
+        display: none;
     }
 }
