@@ -91,11 +91,8 @@ include 'UserLoggedInHeader.php';
                 <div class="reservation-buttons" style = "display: inline;">
                     <button class="reservationButtons a8" id="cancelAssignBtn" type="button" onclick="openassign()" style = "float: revert; margin-left: 10px; background-color:#1597E5; border-color: #1597E5;"><a>Assign Team</a></button>
                 </div>
-
-
+              
             </div>
-
-
 
             <button class="reservationButtons a10" id="cancelReservationBtn" style = "margin-top: 32px;" onclick="opencancel()"><a>Cancel Reservation</a></button>
 
