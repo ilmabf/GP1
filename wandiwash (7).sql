@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 06, 2021 at 12:44 PM
+-- Generation Time: Oct 16, 2021 at 11:54 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -37,14 +37,7 @@ CREATE TABLE IF NOT EXISTS `customer` (
   `Token` varchar(255) NOT NULL,
   `Verified` int(1) NOT NULL,
   PRIMARY KEY (`User_ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `customer`
---
-
-INSERT INTO `customer` (`User_ID`, `First_Name`, `Last_Name`, `Contact_Number`, `Date_Registered`, `Token`, `Verified`) VALUES
-(27, 'bf', 'ilma', '0713198819', '2021-09-06', 'b6fee6298904d33c2f41c6047e939ce5f3ea1ace4fc73a62999c84273d05217d04ba1e26d3ebf414e66ba6967d85c52c53ff', 0);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -58,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `customer_location` (
   `Latitude` float(10,10) NOT NULL,
   `Longitude` float(10,10) NOT NULL,
   PRIMARY KEY (`User_ID`,`Latitude`,`Longitude`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -73,8 +66,9 @@ CREATE TABLE IF NOT EXISTS `customer_vehicle` (
   `Model` varchar(50) NOT NULL,
   `Colour` varchar(50) NOT NULL,
   `Type` varchar(50) NOT NULL,
+  `Manufacturer` varchar(50) NOT NULL,
   PRIMARY KEY (`User_ID`,`VID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -84,19 +78,19 @@ CREATE TABLE IF NOT EXISTS `customer_vehicle` (
 
 DROP TABLE IF EXISTS `employee`;
 CREATE TABLE IF NOT EXISTS `employee` (
-  `Employee_ID` int(11) NOT NULL,
+  `Employee_ID` int(11) NOT NULL AUTO_INCREMENT,
   `First_Name` varchar(50) NOT NULL,
   `Last_Name` varchar(50) NOT NULL,
   `Contact_Number` varchar(50) NOT NULL,
   `Email` varchar(50) NOT NULL,
   `Date_Enrolled` date NOT NULL,
-  `Salary` float NOT NULL,
+  `Salary` int(11) NOT NULL,
   `NIC_No` varchar(50) NOT NULL,
   `Team` varchar(50) NOT NULL,
   `STL_ID` int(11) DEFAULT NULL,
   PRIMARY KEY (`Employee_ID`),
   KEY `STL_ID` (`STL_ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -106,12 +100,14 @@ CREATE TABLE IF NOT EXISTS `employee` (
 
 DROP TABLE IF EXISTS `equipment`;
 CREATE TABLE IF NOT EXISTS `equipment` (
-  `Equipment_ID` int(11) NOT NULL,
+  `Equipment_ID` int(11) NOT NULL AUTO_INCREMENT,
   `Name` varchar(50) NOT NULL,
   `Price` float NOT NULL,
   `Date_Acquired` date NOT NULL,
-  PRIMARY KEY (`Equipment_ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `Team` int(11) DEFAULT NULL,
+  PRIMARY KEY (`Equipment_ID`),
+  KEY `Team` (`Team`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -124,19 +120,7 @@ CREATE TABLE IF NOT EXISTS `password_reset_temp` (
   `email` varchar(250) NOT NULL,
   `keyno` varchar(250) NOT NULL,
   `expDate` datetime NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `password_reset_temp`
---
-
-INSERT INTO `password_reset_temp` (`email`, `keyno`, `expDate`) VALUES
-('leyakat.organa@gmail.com', '768e78024aa8fdb9b8fe87be86f647450c74b2fc46', '2021-09-06 09:20:34'),
-('leyakat.organa@gmail.com', '768e78024aa8fdb9b8fe87be86f64745e2701890e4', '2021-09-06 09:25:35'),
-('leyakat.organa@gmail.com', '768e78024aa8fdb9b8fe87be86f64745f34df9fa85', '2021-09-06 09:29:40'),
-('leyakat.organa@gmail.com', '768e78024aa8fdb9b8fe87be86f647452871aae6c1', '2021-09-06 10:05:30'),
-('leyakat.organa@gmail.com', '768e78024aa8fdb9b8fe87be86f64745eadd7de73d', '2021-09-06 11:14:54'),
-('leyakat.organa@gmail.com', '768e78024aa8fdb9b8fe87be86f6474567c873d488', '2021-09-06 12:23:51');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -151,17 +135,17 @@ CREATE TABLE IF NOT EXISTS `reservation` (
   `Latitude` float(10,10) NOT NULL,
   `Longitude` float(10,10) NOT NULL,
   `Price` float NOT NULL,
-  `Wash_Package_ID` int(11) NOT NULL,
+  `Wash_Package_ID` int(11) DEFAULT NULL,
   `Date` date NOT NULL,
   `Time` time NOT NULL,
   `Service_team_leader_ID` int(11) DEFAULT NULL,
-  `Customer_ID` int(11) NOT NULL,
+  `Customer_ID` int(11) DEFAULT NULL,
   `Rating` float DEFAULT NULL,
   PRIMARY KEY (`Reservation_ID`),
   KEY `Wash_Package_ID` (`Wash_Package_ID`),
   KEY `Service_team_leader_ID` (`Service_team_leader_ID`),
   KEY `Customer_ID` (`Customer_ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -175,7 +159,7 @@ CREATE TABLE IF NOT EXISTS `reservation_photos` (
   `Picture` varchar(255) NOT NULL,
   `Time_Uploaded` datetime NOT NULL,
   PRIMARY KEY (`Reservation_ID`,`Picture`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -192,7 +176,7 @@ CREATE TABLE IF NOT EXISTS `review` (
   `Customer_ID` int(11) NOT NULL,
   PRIMARY KEY (`Review_ID`),
   KEY `Customer_ID` (`Customer_ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -203,15 +187,9 @@ CREATE TABLE IF NOT EXISTS `review` (
 DROP TABLE IF EXISTS `service_team_leader`;
 CREATE TABLE IF NOT EXISTS `service_team_leader` (
   `STL_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `Photo` varchar(255) NOT NULL,
   PRIMARY KEY (`STL_ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `service_team_leader`
---
-
-INSERT INTO `service_team_leader` (`STL_ID`) VALUES
-(1);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -225,7 +203,7 @@ CREATE TABLE IF NOT EXISTS `service_team_leader_equipment` (
   `Equipment_ID` int(11) NOT NULL,
   PRIMARY KEY (`STL_ID`,`Equipment_ID`),
   KEY `Equipment_ID` (`Equipment_ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -242,14 +220,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `STL_ID` int(11) DEFAULT NULL,
   PRIMARY KEY (`User_ID`),
   KEY `STL_ID` (`STL_ID`)
-) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`User_ID`, `Username`, `PASSWORD`, `Email`, `STL_ID`) VALUES
-(27, 'customer', '$2y$12$7jfbOcPy9zekK9CFUn09mO5F96/boZzA46Eedmu05JAoBgIpWX5rO', 'leyakat.organa@gmail.com', NULL);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -263,7 +234,7 @@ CREATE TABLE IF NOT EXISTS `wash_package` (
   `Name` varchar(50) NOT NULL,
   `Description` varchar(255) NOT NULL,
   PRIMARY KEY (`Wash_Package_ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -277,7 +248,80 @@ CREATE TABLE IF NOT EXISTS `wash_package_vehicle_category` (
   `Vehicle_Type` varchar(50) NOT NULL,
   `Price` float NOT NULL,
   PRIMARY KEY (`Wash_Package_ID`,`Vehicle_Type`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `customer`
+--
+ALTER TABLE `customer`
+  ADD CONSTRAINT `customer_ibfk_1` FOREIGN KEY (`User_ID`) REFERENCES `users` (`User_ID`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `customer_location`
+--
+ALTER TABLE `customer_location`
+  ADD CONSTRAINT `customer_location_ibfk_1` FOREIGN KEY (`User_ID`) REFERENCES `customer` (`User_ID`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `customer_vehicle`
+--
+ALTER TABLE `customer_vehicle`
+  ADD CONSTRAINT `customer_vehicle_ibfk_1` FOREIGN KEY (`User_ID`) REFERENCES `customer` (`User_ID`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `employee`
+--
+ALTER TABLE `employee`
+  ADD CONSTRAINT `employee_ibfk_1` FOREIGN KEY (`STL_ID`) REFERENCES `service_team_leader` (`STL_ID`) ON DELETE SET NULL;
+
+--
+-- Constraints for table `equipment`
+--
+ALTER TABLE `equipment`
+  ADD CONSTRAINT `equipment_ibfk_1` FOREIGN KEY (`Team`) REFERENCES `service_team_leader` (`STL_ID`) ON DELETE SET NULL;
+
+--
+-- Constraints for table `reservation`
+--
+ALTER TABLE `reservation`
+  ADD CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`Wash_Package_ID`) REFERENCES `wash_package` (`Wash_Package_ID`) ON DELETE CASCADE,
+  ADD CONSTRAINT `reservation_ibfk_2` FOREIGN KEY (`Service_team_leader_ID`) REFERENCES `service_team_leader` (`STL_ID`) ON DELETE SET NULL,
+  ADD CONSTRAINT `reservation_ibfk_3` FOREIGN KEY (`Customer_ID`) REFERENCES `customer` (`User_ID`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `reservation_photos`
+--
+ALTER TABLE `reservation_photos`
+  ADD CONSTRAINT `reservation_photos_ibfk_1` FOREIGN KEY (`Reservation_ID`) REFERENCES `reservation` (`Reservation_ID`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `review`
+--
+ALTER TABLE `review`
+  ADD CONSTRAINT `review_ibfk_1` FOREIGN KEY (`Customer_ID`) REFERENCES `customer` (`User_ID`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `service_team_leader_equipment`
+--
+ALTER TABLE `service_team_leader_equipment`
+  ADD CONSTRAINT `service_team_leader_equipment_ibfk_1` FOREIGN KEY (`STL_ID`) REFERENCES `service_team_leader` (`STL_ID`) ON DELETE CASCADE,
+  ADD CONSTRAINT `service_team_leader_equipment_ibfk_2` FOREIGN KEY (`Equipment_ID`) REFERENCES `equipment` (`Equipment_ID`) ON DELETE CASCADE;
+
+--
+-- Constraints for table `users`
+--
+ALTER TABLE `users`
+  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`STL_ID`) REFERENCES `service_team_leader` (`STL_ID`) ON DELETE SET NULL;
+
+--
+-- Constraints for table `wash_package_vehicle_category`
+--
+ALTER TABLE `wash_package_vehicle_category`
+  ADD CONSTRAINT `wash_package_vehicle_category_ibfk_1` FOREIGN KEY (`Wash_Package_ID`) REFERENCES `wash_package` (`Wash_Package_ID`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
