@@ -23,7 +23,9 @@ class Customer extends Controller
     function register()
     {
 
-        
+        if (!isset($_POST['signup']) && !isset($_SESSION['login'])) {
+            header("Location: /user/login");
+        }
         //get POST data
         $fname = $_POST['firstname'];
         $lname = $_POST['lastname'];
