@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 16, 2021 at 11:54 AM
+-- Generation Time: Oct 16, 2021 at 01:05 PM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -38,6 +38,13 @@ CREATE TABLE IF NOT EXISTS `customer` (
   `Verified` int(1) NOT NULL,
   PRIMARY KEY (`User_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`User_ID`, `First_Name`, `Last_Name`, `Contact_Number`, `Date_Registered`, `Token`, `Verified`) VALUES
+(5, 'Bf', 'Ilma', '0713198819', '2021-10-16', '', 1);
 
 -- --------------------------------------------------------
 
@@ -189,7 +196,14 @@ CREATE TABLE IF NOT EXISTS `service_team_leader` (
   `STL_ID` int(11) NOT NULL AUTO_INCREMENT,
   `Photo` varchar(255) NOT NULL,
   PRIMARY KEY (`STL_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `service_team_leader`
+--
+
+INSERT INTO `service_team_leader` (`STL_ID`, `Photo`) VALUES
+(1, '');
 
 -- --------------------------------------------------------
 
@@ -220,7 +234,17 @@ CREATE TABLE IF NOT EXISTS `users` (
   `STL_ID` int(11) DEFAULT NULL,
   PRIMARY KEY (`User_ID`),
   KEY `STL_ID` (`STL_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`User_ID`, `Username`, `PASSWORD`, `Email`, `STL_ID`) VALUES
+(1, 'systemadmin', '$2y$12$oZSSQ7X0Xe6fQAi9CTbYDeUE.V19OJYf.tvan5gzvz6ADoBS84PvS', 'systemadmin@gmail.com', NULL),
+(2, 'manager', '$2y$12$oZSSQ7X0Xe6fQAi9CTbYDeUE.V19OJYf.tvan5gzvz6ADoBS84PvS', 'manager@gmail.com', NULL),
+(4, 'stl', '$2y$12$oZSSQ7X0Xe6fQAi9CTbYDeUE.V19OJYf.tvan5gzvz6ADoBS84PvS', 'stl@gmail.com', 1),
+(5, 'customer', '$2y$12$oZSSQ7X0Xe6fQAi9CTbYDeUE.V19OJYf.tvan5gzvz6ADoBS84PvS', 'leyakat.organa@gmail.com', NULL);
 
 -- --------------------------------------------------------
 
