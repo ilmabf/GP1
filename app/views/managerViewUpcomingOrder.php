@@ -82,14 +82,14 @@ include 'UserLoggedInHeader.php';
             </div>
         </div>
         <div class="reservation-buttons">
-            <div class="reschedule">
+            <div class="reschedule" style = "display: inline-block;">
                 <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff; margin-bottom:10px">Assign a service team</h3>
                 <select name="serviceTeam" id="serviceTeam-types" style = "width: 134px;">
                     <option value="Not Selected">Team 1</option>
                     <option value="Not Selected">Team 2</option>
                 </select>
-                <div class="reservation-buttons">
-                    <button class="reservationButtons a8" id="cancelAssignBtn" type="button" onclick="openassign()" style = "background-color:#1597E5; border-color: #1597E5;"><a>Assign Team</a></button>
+                <div class="reservation-buttons" style = "display: inline;">
+                    <button class="reservationButtons a8" id="cancelAssignBtn" type="button" onclick="openassign()" style = "float: revert; margin-left: 10px; background-color:#1597E5; border-color: #1597E5;"><a>Assign Team</a></button>
                 </div>
 
 
@@ -97,7 +97,7 @@ include 'UserLoggedInHeader.php';
 
 
 
-            <button class="reservationButtons a10" id="cancelReservationBtn" onclick="opencancel()"><a>Cancel Reservation</a></button>
+            <button class="reservationButtons a10" id="cancelReservationBtn" style = "margin-top: 32px;" onclick="opencancel()"><a>Cancel Reservation</a></button>
 
 
 

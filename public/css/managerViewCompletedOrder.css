@@ -14,6 +14,14 @@
     text-align: left; 
 }
 
+.servicceRating{
+    margin: 35px 164px;
+    padding: 10px 20px;
+    /* background-color: white; */
+    border-radius: 5px;
+    /* box-shadow: 0 3px 10px rgb(0 0 0 / 40%); */
+    text-align: center;
+}
 .orderID{
     margin-top: 20px;
     margin-bottom: 40px;
@@ -175,7 +183,8 @@
  
 .rating__star {
     cursor: pointer;
-    color: #f1ce07b2;
+    /* color: #f1ce07b2; */
+    color: yellow;
 }
 
 .viewPhotos{
