@@ -33,8 +33,8 @@ include 'UserLoggedInHeader.php';
                 <div class="orderitem2"><button class="changebutton"><a href="/booking/location" style="color:white;">Change</a></button></div>
 
             </div>
-            
-            <div style = "width:100%;float: left;position: absolute;top: 43%;">
+
+            <div style="width:100%;float: left;position: absolute;top: 43%;">
                 <p>---------------------------------------------------------------------------------</p>
             </div>
             <br>
@@ -51,8 +51,8 @@ include 'UserLoggedInHeader.php';
                 <div class="orderitem2"><button class="changebutton"><a href="/booking/details" style="color:white;">Change</a></button></div>
 
             </div>
-            
-            <div style = "width:100%;float: left;position: absolute;top: 73%;">
+
+            <div style="width:100%;float: left;position: absolute;top: 73%;">
                 <p>---------------------------------------------------------------------------------</p>
             </div>
             <br>
@@ -66,7 +66,7 @@ include 'UserLoggedInHeader.php';
                 <div class="orderitemx">1050/-</div>
 
             </div>
-            <div style = "width:100%;float: left;position: absolute;    top: 91%;">
+            <div style="width:100%;float: left;position: absolute;    top: 91%;">
                 <p>---------------------------------------------------------------------------------</p>
             </div>
         </div>
@@ -74,10 +74,11 @@ include 'UserLoggedInHeader.php';
 
     </div>
 
-
-    <div class="order-buttons">
-        <button class="bt" id="cancelBtn" onclick="openCancelOrder()"><a>Cancel Order</a></button>
-        <button class="bt2" id="confirmBtn" onclick="openConfirmOrder()"><a>Confirm Order</a></button>
+    <div class="box4">
+        <div class="order-buttons">
+            <button class="bt" id="cancelBtn" onclick="openCancelOrder()"><a>Cancel Order</a></button>
+            <button class="bt2" id="confirmBtn" onclick="openConfirmOrder()"><a>Confirm Order</a></button>
+        </div>
     </div>
 </div>
 <div class="addVehicleform" id="cancelPopUpId">
@@ -106,6 +107,5 @@ include 'UserLoggedInHeader.php';
 
     </div>
 </div>
-<script src="/public/js/CustomerOrderSummary.js"></script> 
+<script src="/public/js/CustomerOrderSummary.js"></script>
 <div style="min-height: 110px;"></div>
-
