@@ -61,16 +61,16 @@ include 'UserLoggedInHeader.php';
                 <hr class="hr" style="width:100%;">
             </div>
         </div>
-        <div class="service-team">
+        <div class="service-team" style = "background-color:transparent; box-shadow:none;">
 
             <form action="" method="post" enctype="multipart/form-data">
-                <div class="viewPhotos vp1">
-                    <h3>Before service</h3>
-                    <input type="file" class="imageFile" name="beforeService" id="beforeService">
+                <div class="viewPhotos vp1" style = "color:white;">
+                    <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Before service</h3>
+                    <input type="file" class="imageFile" name="beforeService" id="beforeService" style = "border: 2px solid white;">
                 </div>
-                <div class="viewPhotos vp2">
-                    <h3> &nbsp; After service</h3>
-                    <input type="file" class="imageFile" name="afterService" id="afterService">
+                <div class="viewPhotos vp2" style = "color:white;">
+                    <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;"> &nbsp; After service</h3>
+                    <input type="file" class="imageFile" name="afterService" id="afterService" style = "border: 2px solid white;">
                 </div>
                 <button class="uploadImagesLink" type="submit" value="Upload Images" name="submit">Upload Images</button>
             </form>

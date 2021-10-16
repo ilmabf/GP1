@@ -6,7 +6,7 @@ include 'UserLoggedInHeader.php';
     <div class="cancelAssignForm" id="assign" style="display:none;">
 
 
-        <h2 class="login-signupheader">Do you want to cancel the assignment?</h2>
+        <h2 class="login-signupheader">Do you want to assign Team 1 for this reservation?</h2>
 
 
         <button id="CloseCancelAssignButton" class="formCancelButton" type="button" name="signup" onclick="closeassign()">Close</button>
@@ -81,31 +81,26 @@ include 'UserLoggedInHeader.php';
                 <hr class="hr" style="width:100%;">
             </div>
         </div>
-        <form action="" method="post">
-            <div class="service-team">
-                <h3>Service Team</h3>
-
-                <div class="service-team-box">
-
-                    <select name="serviceTeam" id="serviceTeam-types">
-                        <option value="Not Selected">Team 1</option>
-                        <option value="Not Selected">Team 2</option>
-                    </select>
-                    <div class="reservation-buttons">
-                        <button class="reservationButtons a8" id="cancelAssignBtn" type="button" onclick="openassign()"><a>Cancel Assign</a></button>
-                    </div>
-
-
-                </div>
-
-
-            </div>
-        </form>
-
         <div class="reservation-buttons">
+            <div class="reschedule" style = "display: inline-block;">
+                <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff; margin-bottom:10px">Assign a service team</h3>
+                <select name="serviceTeam" id="serviceTeam-types" style = "width: 134px;">
+                    <option value="Not Selected">Team 1</option>
+                    <option value="Not Selected">Team 2</option>
+                </select>
+                <div class="reservation-buttons" style = "display: inline;">
+                    <button class="reservationButtons a8" id="cancelAssignBtn" type="button" onclick="openassign()" style = "float: revert; margin-left: 10px; background-color:#1597E5; border-color: #1597E5;"><a>Assign Team</a></button>
+                </div>
+              
+            </div>
 
-            <button class="reservationButtons a10" id="cancelReservationBtn" onclick="opencancel()"><a>Cancel Reservation</a></button>
+            <button class="reservationButtons a10" id="cancelReservationBtn" style = "margin-top: 32px;" onclick="opencancel()"><a>Cancel Reservation</a></button>
+
+
+
         </div>
+
+
 
     </div>
     <div class="addVehicleform" id="cancelForm" style="display:none;">

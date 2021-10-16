@@ -76,28 +76,40 @@ function validatePassword(){
 myInput.onchange = validatePassword;
 confirm_pwd.onkeyup = validatePassword;
 
+function allLetter(inputtxt)
+  {
+   var letters = /^[A-Za-z]+$/;
+   if(inputtxt.value.match(letters))
+     {
+      return true;
+     }
+   else
+     {
+      inputtxt.setCustomValidity("Please input alphabet characters only");
+     return false;
+     }
+  }
 
-// function myFunctionOne(){
-  
-//   var letters = /^[A-Za-z]+$/;
-//   if(!fName.value.match(letters)){
-//     fName.setCustomValidity("Please input alphabet characters only");
-//   }
-// }
 
-// function myFunctionTwo(){
-  
-//   var letters = /^[A-Za-z]+$/;
-//   if(!lName.value.match(letters)){
-//     lName.setCustomValidity("Please input alphabet characters only");
-//   }
-// }
+  function checkLetter(){
+    var letters = /^[A-Za-z]+$/;
+    var fname = document.getElementById("signUpFirstName");
+    if(!fName.value.match(letters)){
+      fName.setCustomValidity("Please input alphabet characters only");
+    }
+    else{
+      fName.setCustomValidity('');
+    }
 
-// fName.onchange = myFunctionOne;
-// lName.onchange = myFunctionTwo;
-// mySignupButton.onclick = function() {
-//   toVerifySingupBox.style.display = "block";
-// }
+    var lName = document.getElementById("signUpLastName");
+    if(!lName.value.match(letters)){
+      lName.setCustomValidity("Please input alphabet characters only");
+    }
+    else{
+      lName.setCustomValidity('');
+    }
+  }
+
 
 // if($_SESSION['verifyBox'] == 1){
 //   span.onclick = function() {

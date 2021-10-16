@@ -9,7 +9,7 @@
     /* display: inline; */
     margin-bottom: 30px;
     float: left;
-    margin-left: 269px;
+    /* margin-left: 236px; */
     background-color: #7B113A;
     padding: 10px 20px;
     border-radius: 5px;
@@ -20,7 +20,7 @@
     /* display: inline; */
     margin-bottom: 30px;
     float: right;
-    margin-right: 336px;
+    margin-left: 203px;
     background-color: #1597E5;
     padding: 10px 20px;
     border-radius: 5px;
@@ -177,6 +177,19 @@
     justify-content: center;
 
 }
+
+.box4{
+    width: 477px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0px 0px 0px;
+    /* background-color: white; */
+    border-radius: 5px;
+    /* box-shadow: 0 3px 10px rgb(0 0 0 / 40%); */
+    left: 34%;
+    position: relative;
+    /* /* justify-content: center; */
+}
 .box2{
     margin: 21px 50px;
     background-color: white;
@@ -249,8 +262,8 @@
 .order-buttons{
     display: block;
     margin-top: 20px;
-    margin-left: 240px;
-    margin-right: 180px;
+    /* margin-left: 240px;
+    margin-right: 180px; */
 }
 
 .orderButtons{
@@ -468,8 +481,9 @@
     }
 
     .bt2{
-        margin-right: 0px;
+        margin-left: 128px;
         padding: 4px 4px;
+        float: right;
     }
     .p1{
         font-size: 13px;
@@ -488,6 +502,19 @@
         font-size: smaller;
     }
 
+    .box4{
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+        /* margin: 9px 166px; */
+        padding: 10px 0px 0px 0px;
+        /* background-color: white; */
+        border-radius: 5px;
+        /* box-shadow: 0 3px 10px rgb(0 0 0 / 40%); */
+        left: 10%;
+        position: relative;
+        font-size: smaller;
+    }
     .orderitem2 {
         color: #000000;
         position: relative;
@@ -523,8 +550,9 @@
     .order-buttons{
         display: block;
         margin-top: 20px;
-        margin-left: 50px;
-        margin-right: 50px;
+        /* margin-left: 50px;
+        margin-right: 50px; */
+        width: 100%;
     }
     
     .orderButtons{

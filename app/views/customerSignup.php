@@ -13,11 +13,11 @@
                     <div class="loguser-icon"></div>
                     <h2 class="login-signupheader">Create Your Account</h2>
 
-                    <form action="/customer/register" method="post" id="customer-signup">
+                    <form action="/customer/register" method="post" id="customer-signup" name="form1">
 
                         <input class="input-box" id="signUpFirstName" type="text" maxlength="50" name="firstname" autofocus placeholder="First Name" required>
                         <br>
-                        <input class="input-box" id = "signUpLastName"type="text" maxlength="50" name="lastname" autofocus placeholder="Last Name" required>
+                        <input class="input-box" id="signUpLastName" type="text" maxlength="50" name="lastname" autofocus placeholder="Last Name" required>
                         <br>
                         <input class="input-box" type="text" name="username" autofocus placeholder="Username" maxlength="50" required>
                         <br>
@@ -49,7 +49,7 @@
                         <br>
                         <input class="input-box" id="signup-confirm-pwd" type="password" name="confirm_pwd" autofocus placeholder="Confirm Password" required>
 
-                        <button id="mySignupButton" class="input-box loggin-signup-button" type="submit" name="signup">Signup</button>
+                        <button id="mySignupButton" class="input-box loggin-signup-button" type="submit" name="signup" onclick = "checkLetter();">Signup</button>
                     </form>
 
                 </div>

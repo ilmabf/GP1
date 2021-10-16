@@ -91,12 +91,12 @@ include 'UserLoggedInHeader.php';
             </div>
 
         </div>
-        <div class="service-team">
+        <div class="service-team" style = "background-color:transparent; box-shadow:none;">
 
 
             <div class="rate1">
 
-                <h3>How was the service? Give us a rating!</h3>
+                <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">How was the service? Give us a rating!</h3>
             </div>
             <div class="rate1 stars1">
                 <i class="rating__star far fa-star"></i>

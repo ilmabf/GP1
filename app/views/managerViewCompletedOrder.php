@@ -73,9 +73,9 @@ include 'UserLoggedInHeader.php';
             <hr class="hr" style="width:100%;">
         </div>
     </div>
-    <div class="service-team">
+    <div class="service-team" style = "background-color:transparent; box-shadow:none;">
         <div class="rate1">
-            <h3>Rating of the service</h3>
+            <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Rating of the service</h3>
         </div>
         <div class="rate1 stars1">
             <i class="rating__star far fa-star"></i>
@@ -90,12 +90,12 @@ include 'UserLoggedInHeader.php';
         </div>
 
         <div class="viewPhotos vp1">
-            <h3>Before Service</h3>
-            <img src="/public/images/ImageIcon.png" style="width:20%;"></img>
+            <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Before Service</h3>
+            <img src="/public/images/ImageIcon.png" style="width:20%; border-radius: 8px;"></img>
         </div>
         <div class="viewPhotos vp2">
-            <h3>After Service</h3>
-            <img src="/public/images/ImageIcon.png" style="width:20%;"></img>
+            <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">After Service</h3>
+            <img src="/public/images/ImageIcon.png" style="width:20%; border-radius: 8px;"></img>
         </div>
 
     </div>
