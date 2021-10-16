@@ -29,7 +29,7 @@ input[type=text3]{
 .reservation-date h3{
     text-align: left;
     color: #193498;
-    padding-top: 15px;
+    padding-top: 5px;
     padding-bottom: 15px;
     
 }
@@ -37,7 +37,7 @@ input[type=text3]{
 #closeClick{
     display: inline-block;
     text-align: center;
-    margin: auto auto;
+    margin: -30px  auto 5px auto;
 }
 
 .orderitem{

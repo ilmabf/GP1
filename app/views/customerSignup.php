@@ -15,9 +15,9 @@
 
                     <form action="/customer/register" method="post" id="customer-signup">
 
-                        <input class="input-box" id="signUpFirstName" type="text" maxlength="50" name="firstname" autofocus placeholder="First Name" onkeyup="myFunctionOne()" required>
+                        <input class="input-box" id="signUpFirstName" type="text" maxlength="50" name="firstname" autofocus placeholder="First Name" required>
                         <br>
-                        <input class="input-box" id = "signUpLastName"type="text" maxlength="50" name="lastname" autofocus placeholder="Last Name" onkeyup="myFunctionTwo()"  required>
+                        <input class="input-box" id = "signUpLastName"type="text" maxlength="50" name="lastname" autofocus placeholder="Last Name" required>
                         <br>
                         <input class="input-box" type="text" name="username" autofocus placeholder="Username" maxlength="50" required>
                         <br>

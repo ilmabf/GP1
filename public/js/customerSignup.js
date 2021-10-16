@@ -77,24 +77,24 @@ myInput.onchange = validatePassword;
 confirm_pwd.onkeyup = validatePassword;
 
 
-function myFunctionOne(){
+// function myFunctionOne(){
   
-  var letters = /^[A-Za-z]+$/;
-  if(!fName.value.match(letters)){
-    fName.setCustomValidity("Please input alphabet characters only");
-  }
-}
+//   var letters = /^[A-Za-z]+$/;
+//   if(!fName.value.match(letters)){
+//     fName.setCustomValidity("Please input alphabet characters only");
+//   }
+// }
 
-function myFunctionTwo(){
+// function myFunctionTwo(){
   
-  var letters = /^[A-Za-z]+$/;
-  if(!lName.value.match(letters)){
-    lName.setCustomValidity("Please input alphabet characters only");
-  }
-}
+//   var letters = /^[A-Za-z]+$/;
+//   if(!lName.value.match(letters)){
+//     lName.setCustomValidity("Please input alphabet characters only");
+//   }
+// }
 
-fName.onchange = myFunctionOne;
-lName.onchange = myFunctionTwo;
+// fName.onchange = myFunctionOne;
+// lName.onchange = myFunctionTwo;
 // mySignupButton.onclick = function() {
 //   toVerifySingupBox.style.display = "block";
 // }

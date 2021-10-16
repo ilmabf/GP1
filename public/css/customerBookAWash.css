@@ -194,6 +194,13 @@
     margin-bottom: 15px;
 }
 
+.dateBooking{
+    padding: 10px 10px;
+    border-radius: 15px;
+    font-size: 15px;
+    border-color: #193498;
+}
+
 @media only screen and (max-width: 770px){
 
     .heading{
