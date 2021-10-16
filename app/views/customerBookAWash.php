@@ -18,7 +18,7 @@ include 'UserLoggedInHeader.php';
         <h3>Wash Date</h3>
 
         <div id="closeOnClick">
-            <div class="dateWash">2021 - 10 - 15</div>
+            <div class="dateWash"><input type="date" value="date" name="dateofBooking" class="dateBooking"></div>
         </div>
     </div>
 
