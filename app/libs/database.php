@@ -48,6 +48,81 @@ class Database extends PDO
         }
     }
 
+    function selectTwo($selection, $table, $condition, $param = null, $paramValue = null)
+    {
+        if ($selection == "*") {
+
+            if ($condition == "Null") {
+                $query = "SELECT * FROM " . $table;
+            } else {
+                $query = "SELECT * FROM " . $table . " " . $condition;
+            }
+            $stmt = $this->prepare($query);
+
+            if (gettype($param) == 'array') {
+                $k = 0;
+                foreach ($param as $bindVal) {
+                    $stmt->bindParam($bindVal, $paramValue[$k]);
+                    $k = $k + 1;
+                }
+            }
+
+            if (gettype($param) == 'string') {
+                $stmt->bindParam($param, $paramValue);
+            }
+
+            $stmt->execute();
+            $_SESSION['rowCount'] = $stmt->rowCount();
+            $result = $stmt->fetchAll();
+            return $result;
+        } else if ($selection == 'count') {
+            $query = "SELECT * FROM " . $table . " " . $condition;
+            $stmt = $this->prepare($query);
+            if (gettype($param) == 'array') {
+                $k = 0;
+                foreach ($param as $bindVal) {
+                    $stmt->bindParam($bindVal, $paramValue[$k]);
+                    $k = $k + 1;
+                }
+            }
+            if (gettype($param) == 'string') {
+                $stmt->bindParam($param, $paramValue);
+            }
+            $stmt->execute();
+            $count = $stmt->rowCount();
+            return $count;
+        } else {
+            if (gettype($selection) == 'array') {
+                $query = "SELECT";
+                foreach ($selection as $element) {
+                    if ($element == $selection[count($selection) - 1]) {
+                        $query = $query . " " . $element;
+                    } else {
+                        $query = $query . " " . $element . ",";
+                    }
+                }
+            } else if (gettype($selection) == 'string') {
+                $query = "SELECT " . $selection;
+            }
+            $query .= " FROM " . $table . " " . $condition;
+            $stmt = $this->prepare($query);
+            if (gettype($param) == 'array') {
+                $k = 0;
+                foreach ($param as $bindVal) {
+                    $stmt->bindParam($bindVal, $paramValue[$k]);
+                    $k = $k + 1;
+                }
+            }
+            if (gettype($param) == 'string') {
+                $stmt->bindParam($param, $paramValue);
+            }
+
+            $stmt->execute();
+            $result = $stmt->fetchAll();
+            return $result;
+        }
+    }
+
     function insert($table, $columns, $values)
     {
         $query = "INSERT INTO " . $table . "(";
@@ -88,9 +163,7 @@ class Database extends PDO
 
         if (gettype($columns) == 'string' && gettype($values) == 'string') {
             $query .=  "$columns = '$values'";
-        }
-
-        else if (gettype($columns) == 'array' && gettype($values) == 'array') {
+        } else if (gettype($columns) == 'array' && gettype($values) == 'array') {
             for ($i = 0; $i < count($columns) - 1; $i++) {
                 if ($i < count($columns) - 1) {
                     $query .= $columns[$i] . " " . $values[$i];
