@@ -51,7 +51,7 @@ class UserModel extends Model
     public function checkVerified($uname)
     {
 
-        $result = $this->db->selectTwo("customer.Verified", "customer", "INNER JOIN users ON customer.User_ID = users.User_ID WHERE users.Username = :uname OR users.Email = :email = '$uname';", array(':uname', ':email'), array($uname, $uname));
+        $result = $this->db->selectTwo("customer.Verified", "customer", "INNER JOIN users ON customer.User_ID = users.User_ID WHERE users.Username = :uname OR users.Email = :email;", array(':uname', ':email'), array($uname, $uname));
 
         return $result;
     }
