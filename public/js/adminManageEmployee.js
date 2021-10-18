@@ -249,6 +249,30 @@ function removeStlRow(oButton) {
 createTable();
 createStlAddTable();
 
+function checkEmpLetter(){
+    console.log("hello");
+    var letters = /^[A-Za-z]+$/;
+    var validityF = document.getElementById("validFirstName");
+    var fName = validityF.elements.namedItem("firstName").value;
+
+    if(!fName.match(letters)){
+        validityF.setCustomValidity("Please input alphabet characters only");
+    }
+    else{
+        validityF.setCustomValidity('');
+    }
+
+    var validityL = document.getElementById("validLastName");
+    var lName = validityF.elements.namedItem("lastName").value;
+
+    if(!lName.value.match(letters)){
+        validityL.setCustomValidity("Please input alphabet characters only");
+    }
+    else{
+        validityL.setCustomValidity('');
+    }
+}
+
 // var fEmpName = document.getElementById("validFirstName");
 
 // function empFirstLastName(ele1){
