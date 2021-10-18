@@ -4,7 +4,6 @@
     include 'UserLoggedInHeader.php';
     $details = $_SESSION['userDetails'];
     $vehicles = $_SESSION['vehicles'];
-
     ?>
 
     <div style="min-height: 110px;"></div>
@@ -53,13 +52,13 @@
             <form action="/account/editVehicle" method="post" id="customer-signup">
 
                 <label for="Model" style="padding: 0px 132px 0px 0px;">Model</label>
-                <input class="input-box" type="text2" name="model" autofocus placeholder="123456" required>
+                <input class="input-box" type="text2" name="model" autofocus placeholder="123456" id="editModel" required>
                 <br>
                 <label for="Color" style="padding: 0px 139px 0px 0px;">Color</label>
-                <input type="color" required>
+                <input type="color" id="editColor" required>
                 <br>
                 <label for="Vehicle Type" style="padding: 0px 87px 0px 0px;">Vehicle Type</label>
-                <select name="serviceTeamLeader" class="types" id="serviceTeamLeaders-types">
+                <select name="serviceTeamLeader" class="types" id="editType">
                     <option value="Sedan">Sedan</option>
                     <option value="SUV">SUV</option>
                     <option value="Luxury">Luxury</option>
@@ -68,8 +67,8 @@
                 </select>
                 <br>
                 <label for="Manufacturer" style="padding: 0px 80px 0px 0px;">Manufacturer</label>
-                <input class="input-box" type="text2" name="manufacturer" autofocus placeholder="XYZ" required><br><br>
-                <label for="Delete Vehicle" ><a href = "" style="font-size: small;float: right;color: red;">Delete Vehicle? Click Here</a></label>
+                <input class="input-box" type="text2" name="manufacturer" autofocus placeholder="XYZ" required id="editManufacturer"><br><br>
+                <label for="Delete Vehicle"><a href="" style="font-size: small;float: right;color: red;">Delete Vehicle? Click Here</a></label>
                 <br>
                 <button id="EditVehicleFormSubmitButton" class="formSubmitButton" type="submit" name="signup">Submit</button>
                 <button id="EditVehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closeEditVehicleForm()">Cancel</button>
@@ -130,7 +129,7 @@
                 <div class="account-header2"><b>My Vehicles</b></div>
                 <div class="account-box3">
                     <div class="vehicle-list">
-                        <select name="Vehicles" id="Customer-Vehicles">
+                        <select name="Vehicles" id="Customer-Vehicles" onchange="getVehicleDetails()">
                             <?php
                             $count  = 0;
                             while ($count < $_SESSION['rowCount']) {
@@ -148,48 +147,8 @@
                 </div>
 
                 <div class="vehicle-box">
-                    <button class="btn2" onclick="openEditVehicleForm()">Edit</button>
-
-                    <?php $countvehicle = 0;
-                    while ($countvehicle < $_SESSION['rowCount']) {
-
-                        echo "<div id='";
-                        echo $countvehicle + 1;
-                        echo "' style='display:none;'>";
-
-                        echo "<div class = 'item1'>";
-                        echo "<div class = 'vehicle'>Model</div>";
-                        echo "<div class = 'vehicle-specs'>";
-                        echo $vehicles[$countvehicle]['Model'];
-                        echo "</div>";
-                        echo "</div>";
-
-                        echo "<div class = 'item1'>";
-                        echo "<div class = 'vehicle'>Color</div>";
-                        echo "<div class = 'vehicle-specs'>";
-                        echo "<div class='color-box' style='background-color:";
-                        echo $vehicles[$countvehicle]['Colour'];
-                        echo ";'></div>";
-                        echo "</div>";
-                        echo "</div>";
-
-                        echo "<div class = 'item1'>";
-                        echo "<div class = 'vehicle'>Type</div>";
-                        echo "<div class = 'vehicle-specs'>";
-                        echo $vehicles[$countvehicle]['Type'];
-                        echo "</div>";
-                        echo "</div>";
-
-                        echo "<div class = 'item1'>";
-                        echo "<div class = 'vehicle'>Manufacturer</div>";
-                        echo "<div class = 'vehicle-specs'>";
-                        echo $vehicles[$countvehicle]['Manufacturer'];
-                        echo "</div>";
-                        echo "</div>";
-
-                        echo "</div>";
-                        $countvehicle = $countvehicle + 1;
-                    } ?>
+                    <button class="btn2" onclick="openEditVehicleForm()" id="editbtn">Edit</button>
+                    <div id="vehicleDetails"></div>
                 </div><br>
             </div>
             <div class="account-det2">
@@ -212,3 +171,22 @@
         </div>
     </div>
     <script src="/public/js/CustomerAccount.js"></script>
+    <script>
+        var pausecontent = <?php echo json_encode($vehicles); ?>;
+
+        function getVehicleDetails() {
+            var x = document.getElementById("Customer-Vehicles").value;
+            //set vehicle details on the vehicle box
+            document.getElementById("vehicleModel").innerHTML = pausecontent[x - 1]['Model'];
+            document.getElementById("vehicleColor").style.backgroundColor = pausecontent[x - 1]['Colour'];
+            document.getElementById("vehicleT").innerHTML = pausecontent[x - 1]['Type'];
+            document.getElementById("vehicleManufacturer").innerHTML = pausecontent[x - 1]['Manufacturer'];
+
+            //set vehicle details on the edit form
+            document.getElementById("editModel").placeholder = pausecontent[x - 1]['Model'];
+            document.getElementById("editColor").value = pausecontent[x - 1]['Colour'];
+            document.getElementById("editType").value = pausecontent[x - 1]['Type'];
+            document.getElementById("editManufacturer").placeholder = pausecontent[x - 1]['Manufacturer'];
+        }
+        getVehicleDetails();
+    </script>
