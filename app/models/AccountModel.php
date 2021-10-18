@@ -13,7 +13,7 @@ class AccountModel extends Model
 
     public function getVehicles($uid)
     {
-        $result = $this->db->selectTwo("*", "customer_vehicle", "WHERE User_ID = ':uid';", ':uid', $uid);
+        $result = $this->db->selectTwo("*", "customer_vehicle", "WHERE User_ID = :uid ;", ':uid', $uid);
         return $result;
     }
 }

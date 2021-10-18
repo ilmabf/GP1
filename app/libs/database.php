@@ -7,46 +7,46 @@ class Database extends PDO
         parent::__construct($DB_TYPE . ':host=' . $DB_HOST . ';dbname=' . $DB_NAME, $DB_USER, $DB_PASSWORD);
     }
 
-    function select($selection, $table, $condition)
-    {
-        if ($selection == "*") {
+    // function select($selection, $table, $condition)
+    // {
+    //     if ($selection == "*") {
 
-            if ($condition == "Null") {
-                $query = "SELECT * FROM " . $table;
-            } else {
-                $query = "SELECT * FROM " . $table . " " . $condition;
-            }
-            $stmt = $this->prepare($query);
-            $stmt->execute();
-            $_SESSION['rowCount'] = $stmt->rowCount();
-            $result = $stmt->fetchAll();
-            return $result;
-        } else if ($selection == 'count') {
-            $query = "SELECT * FROM " . $table . " " . $condition;
-            $stmt = $this->prepare($query);
-            $stmt->execute();
-            $count = $stmt->rowCount();
-            return $count;
-        } else {
-            if (gettype($selection) == 'array') {
-                $query = "SELECT";
-                foreach ($selection as $element) {
-                    if ($element == $selection[count($selection) - 1]) {
-                        $query = $query . " " . $element;
-                    } else {
-                        $query = $query . " " . $element . ",";
-                    }
-                }
-            } else if (gettype($selection) == 'string') {
-                $query = "SELECT " . $selection;
-            }
-            $query .= " FROM " . $table . " " . $condition;
-            $stmt = $this->prepare($query);
-            $stmt->execute();
-            $result = $stmt->fetchAll();
-            return $result;
-        }
-    }
+    //         if ($condition == "Null") {
+    //             $query = "SELECT * FROM " . $table;
+    //         } else {
+    //             $query = "SELECT * FROM " . $table . " " . $condition;
+    //         }
+    //         $stmt = $this->prepare($query);
+    //         $stmt->execute();
+    //         $_SESSION['rowCount'] = $stmt->rowCount();
+    //         $result = $stmt->fetchAll();
+    //         return $result;
+    //     } else if ($selection == 'count') {
+    //         $query = "SELECT * FROM " . $table . " " . $condition;
+    //         $stmt = $this->prepare($query);
+    //         $stmt->execute();
+    //         $count = $stmt->rowCount();
+    //         return $count;
+    //     } else {
+    //         if (gettype($selection) == 'array') {
+    //             $query = "SELECT";
+    //             foreach ($selection as $element) {
+    //                 if ($element == $selection[count($selection) - 1]) {
+    //                     $query = $query . " " . $element;
+    //                 } else {
+    //                     $query = $query . " " . $element . ",";
+    //                 }
+    //             }
+    //         } else if (gettype($selection) == 'string') {
+    //             $query = "SELECT " . $selection;
+    //         }
+    //         $query .= " FROM " . $table . " " . $condition;
+    //         $stmt = $this->prepare($query);
+    //         $stmt->execute();
+    //         $result = $stmt->fetchAll();
+    //         return $result;
+    //     }
+    // }
 
     function selectTwo($selection, $table, $condition, $param = null, $paramValue = null)
     {

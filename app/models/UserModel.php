@@ -60,7 +60,7 @@ class UserModel extends Model
 
     public function passwordExists($email)
     {
-        if ($this->db->selectTwo('count', "users", "WHERE Email = ':email';", ':email', $email) > 0) {
+        if ($this->db->selectTwo('count', "users", "WHERE Email = :email ;", ':email', $email) > 0) {
             return true;
         } else {
             return false;
@@ -126,7 +126,7 @@ class UserModel extends Model
 
     public function getVehicles($uid)
     {
-        $result = $this->db->selectTwo("*", "customer_vehicle", "WHERE User_ID = ':uid';", ':uid', $uid);
+        $result = $this->db->selectTwo("*", "customer_vehicle", "WHERE User_ID = :uid;", ':uid', $uid);
         return $result;
     }
 
