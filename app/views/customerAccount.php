@@ -172,28 +172,21 @@
     </div>
     <script src="/public/js/CustomerAccount.js"></script>
     <script>
-        var x = document.getElementById("Customer-Vehicles").value;
         var pausecontent = <?php echo json_encode($vehicles); ?>;
-        document.getElementById("vehicleModel").innerHTML = pausecontent[x - 1]['Model'];
-        document.getElementById("vehicleColor").style.backgroundColor = pausecontent[x - 1]['Colour'];
-        document.getElementById("vehicleT").innerHTML = pausecontent[x - 1]['Type'];
-        document.getElementById("vehicleManufacturer").innerHTML = pausecontent[x - 1]['Manufacturer'];
-
-        document.getElementById("editModel").placeholder = pausecontent[x - 1]['Model'];
-        document.getElementById("editColor").value = pausecontent[x - 1]['Colour'];
-        document.getElementById("editType").value = pausecontent[x - 1]['Type'];
-        document.getElementById("editManufacturer").placeholder = pausecontent[x - 1]['Manufacturer'];
 
         function getVehicleDetails() {
             var x = document.getElementById("Customer-Vehicles").value;
+            //set vehicle details on the vehicle box
             document.getElementById("vehicleModel").innerHTML = pausecontent[x - 1]['Model'];
             document.getElementById("vehicleColor").style.backgroundColor = pausecontent[x - 1]['Colour'];
             document.getElementById("vehicleT").innerHTML = pausecontent[x - 1]['Type'];
             document.getElementById("vehicleManufacturer").innerHTML = pausecontent[x - 1]['Manufacturer'];
 
+            //set vehicle details on the edit form
             document.getElementById("editModel").placeholder = pausecontent[x - 1]['Model'];
             document.getElementById("editColor").value = pausecontent[x - 1]['Colour'];
             document.getElementById("editType").value = pausecontent[x - 1]['Type'];
             document.getElementById("editManufacturer").placeholder = pausecontent[x - 1]['Manufacturer'];
         }
+        getVehicleDetails();
     </script>
