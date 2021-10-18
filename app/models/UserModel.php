@@ -11,8 +11,8 @@ class UserModel extends Model
     // -------------------- Authentication --------------------------------------- // 
     public function authenticate($uname, $pwd)
     {
-        if ($this->db->select('count', "users", "WHERE Username = '$uname' OR Email = '$uname' ;") > 0) {
-            $hashed = $this->db->select("PASSWORD", "users", "WHERE Username = '$uname' OR Email = '$uname' ;");
+        if ($this->db->selectTwo('count', "users", "WHERE Username = :uname OR Email = :email ;", array(':uname', ':email'), array($uname, $uname)) > 0) {
+            $hashed = $this->db->selectTwo("PASSWORD", "users", "WHERE Username = :uname OR Email = :email ;", array(':uname', ':email'), array($uname, $uname));
             if (password_verify($pwd, $hashed[0]['PASSWORD'])) {
                 return true;
             } else return false;
@@ -23,7 +23,7 @@ class UserModel extends Model
 
     public function checkCustomer($uname)
     {
-        if ($this->db->select('count', "customer", "INNER JOIN users ON customer.User_ID = users.User_ID WHERE (Username = '$uname' OR Email = '$uname');") > 0) {
+        if ($this->db->selectTwo('count', "customer", "INNER JOIN users ON customer.User_ID = users.User_ID WHERE Username = :uname OR Email = :email ;", array(':uname', ':email'), array($uname, $uname)) > 0) {
             return true;
         } else {
             return false;
@@ -32,7 +32,7 @@ class UserModel extends Model
 
     public function checkManager($uname)
     {
-        if ($this->db->select('count', "users", "WHERE (Username = '$uname' OR Email = '$uname') AND User_ID = '2';") > 0) {
+        if ($this->db->selectTwo('count', "users", "WHERE (Username = :uname OR Email = :email) AND User_ID = '2';", array(':uname', ':email'), array($uname, $uname)) > 0) {
             return true;
         } else {
             return false;
@@ -41,7 +41,7 @@ class UserModel extends Model
 
     public function checkSTL($uname)
     {
-        if ($this->db->select('count', "users", "WHERE (Username = '$uname' OR Email = '$uname') AND STL_ID IS NOT NULL;") > 0) {
+        if ($this->db->selectTwo('count', "users", "WHERE (Username = :uname OR Email = :email) AND STL_ID IS NOT NULL;", array(':uname', ':email'), array($uname, $uname)) > 0) {
             return true;
         } else {
             return false;
@@ -51,7 +51,7 @@ class UserModel extends Model
     public function checkVerified($uname)
     {
 
-        $result = $this->db->select("customer.Verified", "customer", "INNER JOIN users ON customer.User_ID = users.User_ID WHERE users.Username = '$uname' OR users.Email = '$uname';");
+        $result = $this->db->selectTwo("customer.Verified", "customer", "INNER JOIN users ON customer.User_ID = users.User_ID WHERE users.Username = :uname OR users.Email = :email;", array(':uname', ':email'), array($uname, $uname));
 
         return $result;
     }
@@ -60,7 +60,7 @@ class UserModel extends Model
 
     public function passwordExists($email)
     {
-        if ($this->db->select('count', "users", "WHERE Email = '$email';") > 0) {
+        if ($this->db->selectTwo('count', "users", "WHERE Email = :email ;", ':email', $email) > 0) {
             return true;
         } else {
             return false;
@@ -82,7 +82,7 @@ class UserModel extends Model
 
     public function checkPasswordResetKey($key, $email)
     {
-        if ($this->db->select('count', "password_reset_temp", "WHERE email = '$email' AND keyno = '$key';") > 0) {
+        if ($this->db->selectTwo('count', "password_reset_temp", "WHERE email = :email AND keyno = :key;", array(':email', ':key'), array($email, $key)) > 0) {
             return true;
         } else {
             return false;
@@ -91,7 +91,7 @@ class UserModel extends Model
 
     public function getPasswordResetExpDate($key, $email)
     {
-        $result = $this->db->select("expDate", "password_reset_temp", "WHERE email = '$email' AND keyno = '$key';");
+        $result = $this->db->selectTwo("expDate", "password_reset_temp", "WHERE email = :email AND keyno = :key;", array(':email', ':key'), array($email, $key));
         return $result;
     }
 
@@ -112,15 +112,30 @@ class UserModel extends Model
     }
 
     // -------------------- Account details --------------------------------------- // 
-    public function getCustDetails($uname)
-    {
-        $result = $this->db->select("*", "users", "INNER JOIN customer on users.User_ID = customer.User_ID WHERE (Username = '$uname' OR Email = '$uname');");
-        return $result;
-    }
+    // public function getCustDetails($uname)
+    // {
+    //     $result = $this->db->select("*", "users", "INNER JOIN customer on users.User_ID = customer.User_ID WHERE (Username = '$uname' OR Email = '$uname');");
+    //     return $result;
+    // }
+
+    // public function getVehicles($uid)
+    // {
+    //     $result = $this->db->select("*", "customer_vehicle", "WHERE User_ID = '$uid';");
+    //     return $result;
+    // }
 
     public function getVehicles($uid)
     {
-        $result = $this->db->select("*", "customer_vehicle", "WHERE User_ID = '$uid';");
+        $result = $this->db->selectTwo("*", "customer_vehicle", "WHERE User_ID = :uid;", ':uid', $uid);
         return $result;
     }
+
+    public function getCustDetails($uname)
+    {
+        $param = array(':uname', ':email');
+        $paramValue = array($uname, $uname);
+        $result = $this->db->selectTwo("*", "users", "INNER JOIN customer on users.User_ID = customer.User_ID WHERE (Username = :uname OR Email = :email);", $param, $paramValue);
+        return $result;
+    }
+
 }
