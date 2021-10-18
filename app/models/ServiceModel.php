@@ -20,7 +20,7 @@ class ServiceModel extends Model
 
     public function getEquipmentDetails()
     {
-        $result = $this->db->select("*", "equipment", "Null");
+        $result = $this->db->selectTwo("*", "equipment", "Null");
         return $result;
     }
 }
