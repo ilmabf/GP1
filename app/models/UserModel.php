@@ -70,8 +70,9 @@ class UserModel extends Model
     public function insertToPwdTemp($email, $key, $expDate)
     {
         $columns = array('email', 'keyno', 'expDate');
+        $param = array(':email', ':key', ':expdate');
         $values = array($email, $key, $expDate);
-        $result = $this->db->insert("password_reset_temp", $columns, $values);
+        $result = $this->db->insertTwo("password_reset_temp", $columns, $param, $values);
 
         if ($result == "Success") {
             return true;
@@ -97,7 +98,11 @@ class UserModel extends Model
 
     public function updateUserPassword($email, $newPassword)
     {
-        $result = $this->db->update("users", 'PASSWORD', $newPassword, "WHERE Email = '$email';");
+        // $result = $this->db->update("users", 'PASSWORD', $newPassword, "WHERE Email = '$email';");
+        $columnValue = $newPassword;
+        $conditionParam =  ':email';
+        $conditionValue = $email;
+        $result = $this->db->updateTwo("users", 'PASSWORD', ':password',$columnValue, $conditionParam,$conditionValue, "WHERE Email = :email;");
         if ($result == "Success") {
             return true;
         } else print_r($result);
@@ -105,7 +110,8 @@ class UserModel extends Model
 
     public function deletePwdTempTable($email)
     {
-        $result = $this->db->delete("password_reset_temp", "WHERE email = '$email';");
+        // $result = $this->db->delete("password_reset_temp", "WHERE email = '$email';");
+        $result = $this->db->delete("password_reset_temp", "WHERE email = :email;", ':email', $email);
         if ($result == "Success") {
             return true;
         } else print_r($result);

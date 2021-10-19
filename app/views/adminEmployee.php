@@ -16,7 +16,7 @@ include 'UserLoggedInHeader.php';
       <div id="cont" class="addTb1"></div> 
 
 
-      <input type="submit" id="bts" value="Insert data" />
+      <button type="submit" id="bts" value="Insert data" onclick = checkLetter();>Insert data</button>
     </form>
 
   </div>
@@ -79,11 +79,13 @@ include 'UserLoggedInHeader.php';
             <th data-type="number">NIC No</th>
             <th data-type="text">Team</th>
             <th data-type="text">Leader</th>
+            <th data-type="text">Photo</th>
             <th colspan="2" style="text-align: center;">Action</th>
           </tr>
         </thead>
         <tbody>
           <?php
+          
           $count = 0;
           $result = $_SESSION['employeeDetails'];
           while ($count < $_SESSION['rowCount']) { ?>
@@ -96,7 +98,8 @@ include 'UserLoggedInHeader.php';
               <td style="text-align:right"><?php echo $result[$count]['Salary'] ?>.00</td>
               <td style="text-align:right"><?php echo $result[$count]['NIC_No'] ?></td>
               <td style="text-align:right"><?php echo $result[$count]['Team'] ?></td>
-              <td><?php echo "" ?></td>
+              <td><?php echo $result[$count]['STL_ID'] ?></td>
+              <td><?php echo $result[$count]['Photo'] ?></td>
               <td><a href="#" class="edit_btn">Edit</a></td>
               <td><a href="#" class="del_btn">Delete</a></td>
             </tr>

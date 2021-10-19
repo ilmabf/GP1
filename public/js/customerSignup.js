@@ -93,7 +93,7 @@ function allLetter(inputtxt)
 
   function checkLetter(){
     var letters = /^[A-Za-z]+$/;
-    var fname = document.getElementById("signUpFirstName");
+    var fName = document.getElementById("signUpFirstName");
     if(!fName.value.match(letters)){
       fName.setCustomValidity("Please input alphabet characters only");
     }
