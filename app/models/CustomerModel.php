@@ -34,8 +34,9 @@ class CustomerModel extends Model
     {
         //Insert to user table
         $columns = array('Username', 'PASSWORD', 'Email');
+        $param = array(':uname', ':password', ':email');
         $values = array($uname, $hashedpwd, $email);
-        $result = $this->db->insert("users", $columns, $values);
+        $result = $this->db->insertTwo("users", $columns, $param, $values);
         if ($result != "Success") {
             print_r($result);
             return false;
@@ -44,8 +45,9 @@ class CustomerModel extends Model
         //insert to customer table
         $uid = $this->db->selectTwo("User_ID", "users", "WHERE Username = :uname;", ':uname', $uname);
         $columns = array('User_ID', 'First_Name', 'Last_Name', 'Contact_Number', 'Date_Registered', 'Token', 'Verified');
+        $param = array(':uid', ':fname', ':lname', ':phone', ':date', ':token', ':verified');
         $values = array($uid[0]['User_ID'], $fname, $lname, $mobile, date("Y-m-d"), $token, '0');
-        $result = $this->db->insert("customer", $columns, $values);
+        $result = $this->db->insertTwo("customer", $columns, $param, $values);
         if ($result != "Success") {
             print_r($result);
             return false;

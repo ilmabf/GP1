@@ -70,8 +70,9 @@ class UserModel extends Model
     public function insertToPwdTemp($email, $key, $expDate)
     {
         $columns = array('email', 'keyno', 'expDate');
+        $param = array(':email', ':key', ':expdate');
         $values = array($email, $key, $expDate);
-        $result = $this->db->insert("password_reset_temp", $columns, $values);
+        $result = $this->db->insertTwo("password_reset_temp", $columns, $param, $values);
 
         if ($result == "Success") {
             return true;

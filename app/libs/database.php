@@ -157,6 +157,50 @@ class Database extends PDO
         }
     }
 
+    function insertTwo($table, $columns, $param, $values)
+    {
+        $query = "INSERT INTO " . $table . "(";
+
+        if (gettype($columns) == 'string' && gettype($param) == 'string') {
+            $query .= "$columns) VALUES ($param);";
+        } else {
+            foreach ($columns as $element) {
+                if ($element == $columns[count($columns) - 1]) {
+                    $query .= $element;
+                } else {
+                    $query .= $element . ",";
+                }
+            }
+            $query .= ") VALUES(";
+            foreach ($param as $element) {
+                if ($element == $param[count($columns) - 1]) {
+                    $query .= $element ;
+                } else {
+                    $query .= $element . ",";
+                }
+            }
+            $query .= ");";
+        }
+        $stmt = $this->prepare($query);
+        if (gettype($param) == 'array') {
+            $k = 0;
+            foreach ($param as $bindVal) {
+                $stmt->bindParam($bindVal, $values[$k]);
+                $k = $k + 1;
+            }
+        }
+        if (gettype($param) == 'string') {
+            $stmt->bindParam($param, $values);
+        }
+        $result = $stmt->execute();
+
+        if (!$result) {
+            return $stmt->errorInfo();
+        } else {
+            return "Success";
+        }
+    }
+
     function update($table, $columns, $values, $condition)
     {
         $query = "UPDATE " . $table . " SET ";

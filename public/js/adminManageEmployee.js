@@ -90,14 +90,14 @@ function addRow() {
                 ele1.setAttribute('required', '');
                 ele1.setAttribute('maxlength', '50');
 
-                var letters = /^[A-Za-z]+$/;
-                if(!ele1.value.match(letters)){
-                    ele1.setCustomValidity("Please input alphabet characters only");
+                // var letters = /^[A-Za-z]+$/;
+                // if(!ele1.value.match(letters)){
+                //     ele1.setCustomValidity("Please input alphabet characters only");
                     
-                  }
-                else{
-                    ele1.setCustomValidity('');
-                }
+                //   }
+                // else{
+                //     ele1.setCustomValidity('');
+                // }
                 //empFirstLastName(ele1);
 
                 // var letters = /^[A-Za-z]+$/;
@@ -114,14 +114,14 @@ function addRow() {
                 ele1.setAttribute('required', '');
                 ele1.setAttribute('maxlength', '50');
 
-                var letters = /^[A-Za-z]+$/;
-                if(!ele1.value.match(letters)){
-                    ele1.setCustomValidity("Please input alphabet characters only");
+                // var letters = /^[A-Za-z]+$/;
+                // if(!ele1.value.match(letters)){
+                //     ele1.setCustomValidity("Please input alphabet characters only");
                     
-                  }
-                  else{
-                    ele1.setCustomValidity('');
-                }
+                //   }
+                //   else{
+                //     ele1.setCustomValidity('');
+                // }
                 //empFirstLastName(ele1);
             }
 

@@ -16,7 +16,8 @@ class ReviewModel extends Model
     public function storeReview($reviewData)
     {
         $columns = array('Date', 'Time', 'Content', 'Customer_ID');
-        $result = $this->db->insert("review", $columns, $reviewData);
+        $param = array(':date', ':time', ':content', ':customerid');
+        $result = $this->db->insertTwo("review", $columns, $param, $reviewData);
         if ($result == "Success") {
             return true;
         } else print_r($result);

@@ -11,8 +11,9 @@ class ServiceModel extends Model
     function addEquipment($name, $price,  $dateAcquired)
     {
         $columns = array('Name', 'Price', 'Date_Acquired');
+        $param = array(':name', ':price', ':date');
         $values = array($name, $price,  $dateAcquired);
-        $result = $this->db->insert("equipment", $columns, $values);
+        $result = $this->db->insertTwo("equipment", $columns, $param, $values);
         if ($result == "Success") {
             return true;
         } else print_r($result);
