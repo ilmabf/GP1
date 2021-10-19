@@ -5,7 +5,9 @@ class AccountModel extends Model
     function vehicleAdd($values)
     {
         $columns = array('User_ID', 'VID', 'Model', 'Colour', 'Type', 'Manufacturer');
-        $result = $this->db->insert("customer_vehicle", $columns, $values);
+        $param = array(':userid', ':vid', ':model', ':color', ':type', ':manufacturer');
+        // $result = $this->db->insert("customer_vehicle", $columns, $values);
+        $result = $this->db->insertTwo("customer_vehicle", $columns, $param, $values);
         if ($result == "Success") {
             return true;
         } else print_r($result);

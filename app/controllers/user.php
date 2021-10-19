@@ -1,6 +1,6 @@
 <?php
 require 'libs/Mailer.php';
-
+date_default_timezone_set("Asia/Colombo");
 session_start();
 $_SESSION['error'] = '';
 $_SESSION['changePwdVerifyBox'] = 0;

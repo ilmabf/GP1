@@ -123,12 +123,46 @@ class Database extends PDO
         }
     }
 
-    function insert($table, $columns, $values)
+    // function insert($table, $columns, $values)
+    // {
+    //     $query = "INSERT INTO " . $table . "(";
+
+    //     if (gettype($columns) == 'string' && gettype($values) == 'string') {
+    //         $query .= "$columns) VALUES ($values);";
+    //     } else {
+    //         foreach ($columns as $element) {
+    //             if ($element == $columns[count($columns) - 1]) {
+    //                 $query .= $element;
+    //             } else {
+    //                 $query .= $element . ",";
+    //             }
+    //         }
+    //         $query .= ") VALUES(";
+    //         foreach ($values as $element) {
+    //             if ($element == $values[count($columns) - 1]) {
+    //                 $query .= "\"" . "$element" . "\"";
+    //             } else {
+    //                 $query .= "\"" . "$element" . "\",";
+    //             }
+    //         }
+    //         $query .= ");";
+    //     }
+    //     $stmt = $this->prepare($query);
+    //     $result = $stmt->execute();
+
+    //     if (!$result) {
+    //         return $stmt->errorInfo();
+    //     } else {
+    //         return "Success";
+    //     }
+    // }
+
+    function insertTwo($table, $columns, $param, $values)
     {
         $query = "INSERT INTO " . $table . "(";
 
-        if (gettype($columns) == 'string' && gettype($values) == 'string') {
-            $query .= "$columns) VALUES ($values);";
+        if (gettype($columns) == 'string' && gettype($param) == 'string') {
+            $query .= "$columns) VALUES ($param);";
         } else {
             foreach ($columns as $element) {
                 if ($element == $columns[count($columns) - 1]) {
@@ -138,16 +172,26 @@ class Database extends PDO
                 }
             }
             $query .= ") VALUES(";
-            foreach ($values as $element) {
-                if ($element == $values[count($columns) - 1]) {
-                    $query .= "\"" . "$element" . "\"";
+            foreach ($param as $element) {
+                if ($element == $param[count($columns) - 1]) {
+                    $query .= $element ;
                 } else {
-                    $query .= "\"" . "$element" . "\",";
+                    $query .= $element . ",";
                 }
             }
             $query .= ");";
         }
         $stmt = $this->prepare($query);
+        if (gettype($param) == 'array') {
+            $k = 0;
+            foreach ($param as $bindVal) {
+                $stmt->bindParam($bindVal, $values[$k]);
+                $k = $k + 1;
+            }
+        }
+        if (gettype($param) == 'string') {
+            $stmt->bindParam($param, $values);
+        }
         $result = $stmt->execute();
 
         if (!$result) {
@@ -157,25 +201,76 @@ class Database extends PDO
         }
     }
 
-    function update($table, $columns, $values, $condition)
+    // function update($table, $columns, $values, $condition)
+    // {
+    //     $query = "UPDATE " . $table . " SET ";
+
+    //     if (gettype($columns) == 'string' && gettype($values) == 'string') {
+    //         $query .=  "$columns = '$values'";
+    //     } else if (gettype($columns) == 'array' && gettype($values) == 'array') {
+    //         for ($i = 0; $i < count($columns) - 1; $i++) {
+    //             if ($i < count($columns) - 1) {
+    //                 $query .= $columns[$i] . " " . $values[$i];
+    //             } else {
+    //                 $query .= $columns[$i] . " " . $values[$i] . ",";
+    //             }
+    //         }
+    //     }
+
+
+    //     $query .= " " . $condition;
+    //     $stmt = $this->prepare($query);
+    //     $result = $stmt->execute();
+
+    //     if (!$result) {
+    //         return $stmt->errorInfo();
+    //     } else {
+    //         return "Success";
+    //     }
+    // }
+
+    function updateTwo($table, $columns, $columnParam,$columnValue, $conditionParam, $conditionValue, $condition = null)
     {
         $query = "UPDATE " . $table . " SET ";
 
-        if (gettype($columns) == 'string' && gettype($values) == 'string') {
-            $query .=  "$columns = '$values'";
-        } else if (gettype($columns) == 'array' && gettype($values) == 'array') {
+        if (gettype($columns) == 'string' && gettype($columnParam) == 'string') {
+            $query .=  "$columns = $columnParam";
+            
+        } else if (gettype($columns) == 'array' && gettype($columnParam) == 'array') {
             for ($i = 0; $i < count($columns) - 1; $i++) {
                 if ($i < count($columns) - 1) {
-                    $query .= $columns[$i] . " " . $values[$i];
+                    $query .= $columns[$i] . "=" . $columnParam[$i];
                 } else {
-                    $query .= $columns[$i] . " " . $values[$i] . ",";
+                    $query .= $columns[$i] . "=" . $columnParam[$i] . ",";
                 }
             }
         }
 
-
         $query .= " " . $condition;
         $stmt = $this->prepare($query);
+       
+        if (gettype($columnParam) == 'array') {
+            $k = 0;
+            foreach ($columnParam as $bindVal) {
+                $stmt->bindParam($bindVal, $columnValue[$k]);
+                $k = $k + 1;
+            }
+        }
+        if (gettype($columnParam) == 'string') {
+            $stmt->bindParam($columnParam, $columnValue);
+        }
+
+        if (gettype($conditionParam) == 'array') {
+            $k = 0;
+            foreach ($conditionParam as $bindVal) {
+                $stmt->bindParam($bindVal, $conditionValue[$k]);
+                $k = $k + 1;
+            }
+        }
+        if (gettype($conditionParam) == 'string') {
+            $stmt->bindParam($conditionParam, $conditionValue);
+        }
+
         $result = $stmt->execute();
 
         if (!$result) {
@@ -185,10 +280,24 @@ class Database extends PDO
         }
     }
 
-    function delete($table, $condition)
+
+    function delete($table, $condition, $param , $paramValue)
     {
         $query = "DELETE FROM " . $table . " " . $condition;
         $stmt = $this->prepare($query);
+
+        if (gettype($param) == 'array') {
+            $k = 0;
+            foreach ($param as $bindVal) {
+                $stmt->bindParam($bindVal, $paramValue[$k]);
+                $k = $k + 1;
+            }
+        }
+
+        if (gettype($param) == 'string') {
+            $stmt->bindParam($param, $paramValue);
+        }
+
         $result = $stmt->execute();
 
         if (!$result) {

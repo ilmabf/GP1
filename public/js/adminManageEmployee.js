@@ -90,21 +90,6 @@ function addRow() {
                 ele1.setAttribute('required', '');
                 ele1.setAttribute('maxlength', '50');
 
-                var letters = /^[A-Za-z]+$/;
-                if(!ele1.value.match(letters)){
-                    ele1.setCustomValidity("Please input alphabet characters only");
-                    
-                  }
-                else{
-                    ele1.setCustomValidity('');
-                }
-                //empFirstLastName(ele1);
-
-                // var letters = /^[A-Za-z]+$/;
-                // if(!ele1.value.match(letters)){
-                //     ele1.setCustomValidity("Please input alphabet characters only");
-                //   }
-
             }
 
             else if(c1==1){
@@ -114,18 +99,10 @@ function addRow() {
                 ele1.setAttribute('required', '');
                 ele1.setAttribute('maxlength', '50');
 
-                var letters = /^[A-Za-z]+$/;
-                if(!ele1.value.match(letters)){
-                    ele1.setCustomValidity("Please input alphabet characters only");
-                    
-                  }
-                  else{
-                    ele1.setCustomValidity('');
-                }
-                //empFirstLastName(ele1);
             }
 
             else if(c1==2){
+                ele1.setAttribute('id', 'validcontactNumber');
                 ele1.setAttribute('name', 'contactNumber');
                 ele1.setAttribute('type', 'number');
                 ele1.setAttribute('required', '');
@@ -133,24 +110,28 @@ function addRow() {
             }
 
             else if(c1==3){
+                ele1.setAttribute('id', 'validemail');
                 ele1.setAttribute('name', 'email');
                 ele1.setAttribute('type', 'email');
                 ele1.setAttribute('required', '');
             }
 
             else if(c1==4){
+                ele1.setAttribute('id', 'validdateEnrolled');
                 ele1.setAttribute('name','dateEnrolled');
                 ele1.setAttribute('type', 'date');
                 ele1.setAttribute('required', '');
             }
 
             else if(c1==5){
+                ele1.setAttribute('id', 'validsalary');
                 ele1.setAttribute('name','salary');
                 ele1.setAttribute('type', 'number');
                 ele1.setAttribute('required', '');
             }
 
             else if(c1==6){
+                ele1.setAttribute('id', 'validnicNo');
                 ele1.setAttribute('name','nicNo');
                 ele1.setAttribute('type', 'text');
                 ele1.setAttribute('required', '');
@@ -158,6 +139,7 @@ function addRow() {
             }
 
             else if(c1==7){
+                ele1.setAttribute('id', 'validteam');
                 ele1.setAttribute('name','team');
                 ele1.setAttribute('type', 'number');
                 ele1.setAttribute('placeholder','1 or 2 etc');
@@ -165,14 +147,14 @@ function addRow() {
             }
 
             ele1.setAttribute('value', '');
-            ele1.setAttribute('id', 'tb-input');
+            // ele1.setAttribute('id', 'tb-input');
 
             td1.appendChild(ele1);
         }
     }
 }
 
-// delete TABLE row function.
+// delete TABLE row function. ele1.setAttribute('id', 'tb-input');
 function removeRow(oButton) {
     var empTab = document.getElementById('empTable');
     empTab.deleteRow(oButton.parentNode.parentNode.rowIndex); // button -> td -> tr.
@@ -331,7 +313,24 @@ function checkEmpLetter(){
 // }
 
 
+function checkLetter(){
+    var letters = /^[A-Za-z]+$/;
+    var fName = document.getElementById("validFirstName");
+    if(!fName.value.match(letters)){
+      fName.setCustomValidity("Please input alphabet characters only");
+    }
+    else{
+      fName.setCustomValidity('');
+    }
 
+    var lName = document.getElementById("validLastName");
+    if(!lName.value.match(letters)){
+      lName.setCustomValidity("Please input alphabet characters only");
+    }
+    else{
+      lName.setCustomValidity('');
+    }
+  }
 
 
 
