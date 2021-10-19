@@ -9,7 +9,7 @@ class ReviewModel extends Model
 
     public function getUserReviews()
     {
-        $result = $this->db->select("*", "review", "INNER JOIN customer ON customer.User_ID = review.Customer_ID ORDER BY Date DESC, Time DESC;");
+        $result = $this->db->selectTwo("*", "review", "INNER JOIN customer ON customer.User_ID = review.Customer_ID ORDER BY Date DESC, Time DESC;");
         return $result;
     }
     

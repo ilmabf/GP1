@@ -18,7 +18,7 @@ class EmployeeModel extends Model
 
     function getEmployeeDetails()
     {
-        $result = $this->db->select("*", "employee", "Null");
+        $result = $this->db->selectTwo("*", "employee", "Null");
         return $result;
     }
 
