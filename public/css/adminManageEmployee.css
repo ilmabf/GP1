@@ -106,6 +106,12 @@ tr{
     max-width: 115px;
 }
 
+#validFirstName, #validLastName, #validcontactNumber, #validemail, #validdateEnrolled, #validsalary, #validnicNo, #validteam{
+    padding: 2px;
+    font-size: 14px;
+    border-color: grey;
+    max-width: 115px;
+}
 #adminSearchEmployee{
     padding: 10px 10px;
     border-color: #193498;
