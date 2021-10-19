@@ -229,6 +229,58 @@ class Database extends PDO
         }
     }
 
+    function updateTwo($table, $columns, $columnParam,$columnValue, $conditionParam, $conditionValue, $condition = null)
+    {
+        $query = "UPDATE " . $table . " SET ";
+
+        if (gettype($columns) == 'string' && gettype($columnParam) == 'string') {
+            $query .=  "$columns = $columnParam";
+            
+        } else if (gettype($columns) == 'array' && gettype($columnParam) == 'array') {
+            for ($i = 0; $i < count($columns) - 1; $i++) {
+                if ($i < count($columns) - 1) {
+                    $query .= $columns[$i] . "=" . $columnParam[$i];
+                } else {
+                    $query .= $columns[$i] . "=" . $columnParam[$i] . ",";
+                }
+            }
+        }
+
+        $query .= " " . $condition;
+        $stmt = $this->prepare($query);
+       
+        if (gettype($columnParam) == 'array') {
+            $k = 0;
+            foreach ($columnParam as $bindVal) {
+                $stmt->bindParam($bindVal, $columnValue[$k]);
+                $k = $k + 1;
+            }
+        }
+        if (gettype($columnParam) == 'string') {
+            $stmt->bindParam($columnParam, $columnValue);
+        }
+
+        if (gettype($conditionParam) == 'array') {
+            $k = 0;
+            foreach ($conditionParam as $bindVal) {
+                $stmt->bindParam($bindVal, $conditionValue[$k]);
+                $k = $k + 1;
+            }
+        }
+        if (gettype($conditionParam) == 'string') {
+            $stmt->bindParam($conditionParam, $conditionValue);
+        }
+        
+        $result = $stmt->execute();
+
+        if (!$result) {
+            return $stmt->errorInfo();
+        } else {
+            return "Success";
+        }
+    }
+
+
     function delete($table, $condition)
     {
         $query = "DELETE FROM " . $table . " " . $condition;

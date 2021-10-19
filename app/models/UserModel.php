@@ -98,7 +98,11 @@ class UserModel extends Model
 
     public function updateUserPassword($email, $newPassword)
     {
-        $result = $this->db->update("users", 'PASSWORD', $newPassword, "WHERE Email = '$email';");
+        // $result = $this->db->update("users", 'PASSWORD', $newPassword, "WHERE Email = '$email';");
+        $columnValue = $newPassword;
+        $conditionParam =  ':email';
+        $conditionValue = $email;
+        $result = $this->db->updateTwo("users", 'PASSWORD', ':password',$columnValue, $conditionParam,$conditionValue, "WHERE Email = :email;");
         if ($result == "Success") {
             return true;
         } else print_r($result);
