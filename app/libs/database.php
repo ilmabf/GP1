@@ -201,33 +201,33 @@ class Database extends PDO
         }
     }
 
-    function update($table, $columns, $values, $condition)
-    {
-        $query = "UPDATE " . $table . " SET ";
+    // function update($table, $columns, $values, $condition)
+    // {
+    //     $query = "UPDATE " . $table . " SET ";
 
-        if (gettype($columns) == 'string' && gettype($values) == 'string') {
-            $query .=  "$columns = '$values'";
-        } else if (gettype($columns) == 'array' && gettype($values) == 'array') {
-            for ($i = 0; $i < count($columns) - 1; $i++) {
-                if ($i < count($columns) - 1) {
-                    $query .= $columns[$i] . " " . $values[$i];
-                } else {
-                    $query .= $columns[$i] . " " . $values[$i] . ",";
-                }
-            }
-        }
+    //     if (gettype($columns) == 'string' && gettype($values) == 'string') {
+    //         $query .=  "$columns = '$values'";
+    //     } else if (gettype($columns) == 'array' && gettype($values) == 'array') {
+    //         for ($i = 0; $i < count($columns) - 1; $i++) {
+    //             if ($i < count($columns) - 1) {
+    //                 $query .= $columns[$i] . " " . $values[$i];
+    //             } else {
+    //                 $query .= $columns[$i] . " " . $values[$i] . ",";
+    //             }
+    //         }
+    //     }
 
 
-        $query .= " " . $condition;
-        $stmt = $this->prepare($query);
-        $result = $stmt->execute();
+    //     $query .= " " . $condition;
+    //     $stmt = $this->prepare($query);
+    //     $result = $stmt->execute();
 
-        if (!$result) {
-            return $stmt->errorInfo();
-        } else {
-            return "Success";
-        }
-    }
+    //     if (!$result) {
+    //         return $stmt->errorInfo();
+    //     } else {
+    //         return "Success";
+    //     }
+    // }
 
     function updateTwo($table, $columns, $columnParam,$columnValue, $conditionParam, $conditionValue, $condition = null)
     {
@@ -297,7 +297,7 @@ class Database extends PDO
         if (gettype($param) == 'string') {
             $stmt->bindParam($param, $paramValue);
         }
-        
+
         $result = $stmt->execute();
 
         if (!$result) {
