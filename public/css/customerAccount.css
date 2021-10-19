@@ -47,7 +47,7 @@ input[type=color]{
     height: 100%;
 }
 
-.blurAccount   {
+.blurAccount{
     filter: blur(3px);
     position: absolute;
     width: 100%;

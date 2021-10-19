@@ -44,6 +44,7 @@
     <link rel="stylesheet" href="/public/css/CustomerViewUpcomingOrder.css">
     <link rel="stylesheet" href="/public/css/CustomerHelp.css">
     <link rel="stylesheet" href="/public/css/AdminManageEquipment.css">
+    <link rel="stylesheet" href="/public/css/AdminUpdateEmployee.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>WandiWash</title>

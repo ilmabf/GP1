@@ -2,7 +2,7 @@ var arrHead = new Array();	// array for header.
     arrHead = ['First Name', 'Last Name', 'Contact Number', 'Email', 'Date Enrolled', 'Salary', 'NIC No', 'Team',''];
 
 var arrStlHead = new Array();    
-    arrStlHead = ['NIC', 'Team', 'Photo', ''];
+    arrStlHead = ['NIC', 'Username', 'Email', 'Password', 'Confirm Password', 'Team', 'Photo', ''];
 
 var submitBtn = document.getElementById('bts');
 
@@ -187,7 +187,7 @@ function addStlRow() {
         var td2 = document.createElement('td'); // table definition.
         td2 = tr22.insertCell(c2);
 
-        if (c2 == 3) {      // the first column.
+        if (c2 == 7) {      // the first column.
             // add a button in every new row in the first column.
             var button1 = document.createElement('input');
 
@@ -215,13 +215,38 @@ function addStlRow() {
             }
 
             else if(c2==1){
+                ele2.setAttribute('name', 'stlUserName');
+                ele2.setAttribute('type', 'text');
+                ele2.setAttribute('required', '');
+                ele2.setAttribute('maxlength','10');
+            }
+
+            else if(c2==2){
+                ele2.setAttribute('name', 'stlEmail');
+                ele2.setAttribute('type', 'email');
+                ele2.setAttribute('required', '');
+            }
+
+            else if(c2==3){
+                ele2.setAttribute('name', 'stlPassword');
+                ele2.setAttribute('type', 'password');
+                ele2.setAttribute('required', '');
+            }
+
+            else if(c2==4){
+                ele2.setAttribute('name', 'stlConfirmPassword');
+                ele2.setAttribute('type', 'password');
+                ele2.setAttribute('required', '');
+            }
+
+            else if(c2==5){
                 ele2.setAttribute('name', 'stlTeam');
                 ele2.setAttribute('type', 'number');
                 ele2.setAttribute('required', '');
                 ele2.setAttribute('placeholder','1 or 2 etc');
             }
 
-            else if(c2==2){
+            else if(c2==6){
                 ele2.setAttribute('name', 'stlPhoto');
                 ele2.setAttribute('type', 'file');
                 ele2.setAttribute('required', '');
@@ -280,6 +305,13 @@ function checkEmpLetter(){
 //     if(!(ele1.value.match(letters))){
 //         ele1.setCustomValidity("Please input alphabet characters only");
 //     }
+// }
+
+// function empEditForm() {
+//     var hide = document.getElementById('adminManageEmployee1');
+//     hide.classList.add("blur");
+//     var displayForm = document.getElementById("editEmpForm");
+//     displayForm.style.display = "block";
 // }
 
 

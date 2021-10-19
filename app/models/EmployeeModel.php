@@ -21,4 +21,10 @@ class EmployeeModel extends Model
         $result = $this->db->select("*", "employee", "Null");
         return $result;
     }
+
+    function getRelevantEmployee($empID)
+    {
+        $result = $this->db->select("*", "employee", "WHERE Employee_ID = '$empID';");
+        return $result;
+    }
 }
