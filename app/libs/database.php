@@ -123,39 +123,39 @@ class Database extends PDO
         }
     }
 
-    function insert($table, $columns, $values)
-    {
-        $query = "INSERT INTO " . $table . "(";
+    // function insert($table, $columns, $values)
+    // {
+    //     $query = "INSERT INTO " . $table . "(";
 
-        if (gettype($columns) == 'string' && gettype($values) == 'string') {
-            $query .= "$columns) VALUES ($values);";
-        } else {
-            foreach ($columns as $element) {
-                if ($element == $columns[count($columns) - 1]) {
-                    $query .= $element;
-                } else {
-                    $query .= $element . ",";
-                }
-            }
-            $query .= ") VALUES(";
-            foreach ($values as $element) {
-                if ($element == $values[count($columns) - 1]) {
-                    $query .= "\"" . "$element" . "\"";
-                } else {
-                    $query .= "\"" . "$element" . "\",";
-                }
-            }
-            $query .= ");";
-        }
-        $stmt = $this->prepare($query);
-        $result = $stmt->execute();
+    //     if (gettype($columns) == 'string' && gettype($values) == 'string') {
+    //         $query .= "$columns) VALUES ($values);";
+    //     } else {
+    //         foreach ($columns as $element) {
+    //             if ($element == $columns[count($columns) - 1]) {
+    //                 $query .= $element;
+    //             } else {
+    //                 $query .= $element . ",";
+    //             }
+    //         }
+    //         $query .= ") VALUES(";
+    //         foreach ($values as $element) {
+    //             if ($element == $values[count($columns) - 1]) {
+    //                 $query .= "\"" . "$element" . "\"";
+    //             } else {
+    //                 $query .= "\"" . "$element" . "\",";
+    //             }
+    //         }
+    //         $query .= ");";
+    //     }
+    //     $stmt = $this->prepare($query);
+    //     $result = $stmt->execute();
 
-        if (!$result) {
-            return $stmt->errorInfo();
-        } else {
-            return "Success";
-        }
-    }
+    //     if (!$result) {
+    //         return $stmt->errorInfo();
+    //     } else {
+    //         return "Success";
+    //     }
+    // }
 
     function insertTwo($table, $columns, $param, $values)
     {
