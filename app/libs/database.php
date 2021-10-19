@@ -270,7 +270,7 @@ class Database extends PDO
         if (gettype($conditionParam) == 'string') {
             $stmt->bindParam($conditionParam, $conditionValue);
         }
-        
+
         $result = $stmt->execute();
 
         if (!$result) {
@@ -281,10 +281,23 @@ class Database extends PDO
     }
 
 
-    function delete($table, $condition)
+    function delete($table, $condition, $param , $paramValue)
     {
         $query = "DELETE FROM " . $table . " " . $condition;
         $stmt = $this->prepare($query);
+
+        if (gettype($param) == 'array') {
+            $k = 0;
+            foreach ($param as $bindVal) {
+                $stmt->bindParam($bindVal, $paramValue[$k]);
+                $k = $k + 1;
+            }
+        }
+
+        if (gettype($param) == 'string') {
+            $stmt->bindParam($param, $paramValue);
+        }
+        
         $result = $stmt->execute();
 
         if (!$result) {

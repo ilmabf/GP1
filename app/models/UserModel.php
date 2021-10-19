@@ -110,7 +110,8 @@ class UserModel extends Model
 
     public function deletePwdTempTable($email)
     {
-        $result = $this->db->delete("password_reset_temp", "WHERE email = '$email';");
+        // $result = $this->db->delete("password_reset_temp", "WHERE email = '$email';");
+        $result = $this->db->delete("password_reset_temp", "WHERE email = :email;", ':email', $email);
         if ($result == "Success") {
             return true;
         } else print_r($result);
