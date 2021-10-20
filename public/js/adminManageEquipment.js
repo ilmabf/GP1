@@ -185,4 +185,3 @@ function closeARow(closeButton) {
 
     saveBtn.style.display = "none";
 }
-
