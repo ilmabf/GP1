@@ -10,6 +10,8 @@ var submitBtnStl = document.getElementById('btStl');
 
 var empInsertSuccess = document.getElementById('empAddSuccess');
 
+var pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}";
+
 var div1 = document.getElementById('cont');
 var div2 = document.getElementById('cont2');
     // first create TABLE structure with the headers. 
@@ -213,6 +215,7 @@ function addStlRow() {
             var ele2 = document.createElement('input');
 
             if(c2==0){
+                ele2.setAttribute('id', 'nic');
                 ele2.setAttribute('name', 'NIC');
                 ele2.setAttribute('type', 'text');
                 ele2.setAttribute('required', '');
@@ -220,6 +223,7 @@ function addStlRow() {
             }
 
             else if(c2==1){
+                ele2.setAttribute('id', 'stlusername');
                 ele2.setAttribute('name', 'stlUserName');
                 ele2.setAttribute('type', 'text');
                 ele2.setAttribute('required', '');
@@ -227,24 +231,29 @@ function addStlRow() {
             }
 
             else if(c2==2){
+                ele2.setAttribute('id', 'stlemail');
                 ele2.setAttribute('name', 'stlEmail');
                 ele2.setAttribute('type', 'email');
                 ele2.setAttribute('required', '');
             }
 
             else if(c2==3){
+                ele2.setAttribute('id', 'pass');
                 ele2.setAttribute('name', 'stlPassword');
                 ele2.setAttribute('type', 'password');
                 ele2.setAttribute('required', '');
+                ele2.setAttribute('pattern', pattern);
             }
 
             else if(c2==4){
+                ele2.setAttribute('id', 'confirmPass');
                 ele2.setAttribute('name', 'stlConfirmPassword');
                 ele2.setAttribute('type', 'password');
                 ele2.setAttribute('required', '');
             }
 
             else if(c2==5){
+                ele2.setAttribute('id', 'stlteam');
                 ele2.setAttribute('name', 'stlTeam');
                 ele2.setAttribute('type', 'number');
                 ele2.setAttribute('required', '');
@@ -252,13 +261,14 @@ function addStlRow() {
             }
 
             else if(c2==6){
+                ele2.setAttribute('id', 'stlphoto');
                 ele2.setAttribute('name', 'stlPhoto');
                 ele2.setAttribute('type', 'file');
                 ele2.setAttribute('required', '');
             }
 
             ele2.setAttribute('value', '');
-            ele2.setAttribute('id', 'tb-Stlinput');
+            // ele2.setAttribute('id', 'tb-Stlinput');
 
             td2.appendChild(ele2);
 
@@ -306,7 +316,13 @@ function checkLetter(){
     }
   }
 
-
+function validate(){
+    var pass = document.getElementById('pass');
+    var confirmPass = document.getElementById('confirmPass');
+    if(pass.value != confirmPass.value){
+        confirmPass.setCustomValidity('Passwords do not match');
+    }
+}
 
 
 

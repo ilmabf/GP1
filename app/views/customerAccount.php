@@ -47,18 +47,18 @@
     <div class="addVehicleform" id="editvehicleForm">
         <div class="forma">
             <div class="loguser-icon"></div>
-            <h2 class="login-signupheader">Edit Vehicle - ABC 123</h2>
+            <h2 class="login-signupheader" id = "editVID"></h2>
 
-            <form action="/account/editVehicle" method="post" id="customer-signup">
+            <form action="" method="post" id="editVehicleForm">
 
                 <label for="Model" style="padding: 0px 132px 0px 0px;">Model</label>
                 <input class="input-box" type="text2" name="model" autofocus placeholder="123456" id="editModel" required>
                 <br>
                 <label for="Color" style="padding: 0px 139px 0px 0px;">Color</label>
-                <input type="color" id="editColor" required>
+                <input type="color" id="editColor" name = "color" required>
                 <br>
                 <label for="Vehicle Type" style="padding: 0px 87px 0px 0px;">Vehicle Type</label>
-                <select name="serviceTeamLeader" class="types" id="editType">
+                <select name="type" class="types" id="editType">
                     <option value="Sedan">Sedan</option>
                     <option value="SUV">SUV</option>
                     <option value="Luxury">Luxury</option>
@@ -68,7 +68,7 @@
                 <br>
                 <label for="Manufacturer" style="padding: 0px 80px 0px 0px;">Manufacturer</label>
                 <input class="input-box" type="text2" name="manufacturer" autofocus placeholder="XYZ" required id="editManufacturer"><br><br>
-                <label for="Delete Vehicle"><a href="" style="font-size: small;float: right;color: red;">Delete Vehicle? Click Here</a></label>
+                <label for="Delete Vehicle"><a id = "deleteVehicle" href="" style="font-size: small;float: right;color: red;" >Delete Vehicle? Click Here</a></label>
                 <br>
                 <button id="EditVehicleFormSubmitButton" class="formSubmitButton" type="submit" name="signup">Submit</button>
                 <button id="EditVehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closeEditVehicleForm()">Cancel</button>
@@ -180,6 +180,12 @@
             document.getElementById("vehicleManufacturer").innerHTML = pausecontent[x - 1]['Manufacturer'];
 
             //set vehicle details on the edit form
+            var vid = pausecontent[x - 1]['VID'];
+            vid = vid.replace(/ /g, "_");
+            console.log(vid);
+            document.getElementById("editVehicleForm").action = "/account/editVehicle/"+pausecontent[x - 1]['VID'];
+            document.getElementById("deleteVehicle").href = "/account/deleteVehicle/"+vid;
+            document.getElementById("editVID").innerHTML = "Edit Vehicle - " + pausecontent[x - 1]['VID'];
             document.getElementById("editModel").placeholder = pausecontent[x - 1]['Model'];
             document.getElementById("editColor").value = pausecontent[x - 1]['Colour'];
             document.getElementById("editType").value = pausecontent[x - 1]['Type'];

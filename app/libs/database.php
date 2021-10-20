@@ -237,11 +237,11 @@ class Database extends PDO
             $query .=  "$columns = $columnParam";
             
         } else if (gettype($columns) == 'array' && gettype($columnParam) == 'array') {
-            for ($i = 0; $i < count($columns) - 1; $i++) {
-                if ($i < count($columns) - 1) {
-                    $query .= $columns[$i] . "=" . $columnParam[$i];
+            for ($i = 0; $i <= count($columns) - 1; $i++) {
+                if ($i == count($columns) - 1) {
+                    $query .= $columns[$i] . " = " . $columnParam[$i];
                 } else {
-                    $query .= $columns[$i] . "=" . $columnParam[$i] . ",";
+                    $query .= $columns[$i] . " = " . $columnParam[$i] . ", ";
                 }
             }
         }
@@ -284,6 +284,7 @@ class Database extends PDO
     function delete($table, $condition, $param , $paramValue)
     {
         $query = "DELETE FROM " . $table . " " . $condition;
+        
         $stmt = $this->prepare($query);
 
         if (gettype($param) == 'array') {
