@@ -3,6 +3,7 @@
 include 'UserLoggedInHeader.php';
 ?>
 <main>
+
   <div id="adminManageEmployee1">
     <div style="min-height: 110px;"></div>
     <h2 class="manageEmployee-heading">Manage Employees</h2>
@@ -16,7 +17,7 @@ include 'UserLoggedInHeader.php';
         <div id="cont" class="addTb1"></div> 
 
 
-        <button type="submit" id="bts" name="empDatas" onclick="checkEmpLetter();">Insert Data</button>
+        <button type="submit" id="bts" name="empDatas" onclick="checkLetter();">Insert Data</button>
       </form>
 
     </div>
@@ -82,24 +83,26 @@ include 'UserLoggedInHeader.php';
               <th colspan="2" style="text-align: center;">Action</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody style="max-width:100%;">
             <?php
             $count = 0;
             $result = $_SESSION['employeeDetails'];
             while ($count < $_SESSION['rowCount']) { ?>
               <tr id="row<?php $count ?>">
-                <td id="<?php echo "firstName_row".$count ?>"><?php echo $result[$count]['First_Name'] ?></td>
-                <td id="<?php echo "lastName_row".$count ?>"><?php echo $result[$count]['Last_Name'] ?></td>
-                <td id="<?php echo "contactNumber_row".$count ?>"><?php echo $result[$count]['Contact_Number'] ?></td>
-                <td id="<?php echo "email_row".$count ?>"><?php echo $result[$count]['Email'] ?></td>
-                <td id="<?php echo "dateEnrolled_row".$count ?>"><?php echo $result[$count]['Date_Enrolled'] ?></td>
-                <td id="<?php echo "salary_row".$count ?>" style="text-align:right"><?php echo $result[$count]['Salary'] ?>.00</td>
-                <td id="<?php echo "nicNo_row".$count ?>" style="text-align:right"><?php echo $result[$count]['NIC_No'] ?></td>
-                <td id="<?php echo "team_row".$count ?>" style="text-align:right"><?php echo $result[$count]['Team'] ?></td>
-                <td id="<?php echo "stlId_row".$count ?>" style="text-align:right"><?php echo $result[$count]['STL_ID'] ?></td>
-                <td><input type="button" id= "<?php echo "edit_emp_btn".$count ?>" class="edit_btn" value="Edit" onclick="empEditForm('<?php echo $count ?>')">
-                <input type="button" id="<?php echo "save_emp_btn".$count ?>" class="save_btn" value="Save" onclick="empSaveForm('<?php echo $count ?>')"></td>
-                <td><input type="button" class="del_btn" value="Delete" onclick="empDeleteForm('<?php echo $count ?>')"></td>
+                <td id="<?php echo "firstName_row".$count ?>" class="td-t1"><?php echo $result[$count]['First_Name'] ?></td>
+                <td id="<?php echo "lastName_row".$count ?>" class="td-t1"><?php echo $result[$count]['Last_Name'] ?></td>
+                <td id="<?php echo "contactNumber_row".$count ?>" class="td-t1"><?php echo $result[$count]['Contact_Number'] ?></td>
+                <td id="<?php echo "email_row".$count ?>" class="td-t1" style="max-width:175px;"><?php echo $result[$count]['Email'] ?></td>
+                <td id="<?php echo "dateEnrolled_row".$count ?>" class="td-t1"><?php echo $result[$count]['Date_Enrolled'] ?></td>
+                <td id="<?php echo "salary_row".$count ?>" style="text-align:right" class="td-t1"><?php echo $result[$count]['Salary'] ?>.00</td>
+                <td id="<?php echo "nicNo_row".$count ?>" style="text-align:right" class="td-t1"><?php echo $result[$count]['NIC_No'] ?></td>
+                <td id="<?php echo "team_row".$count ?>" style="text-align:right max-width:60px;"><?php echo $result[$count]['Team'] ?></td>
+                <td id="<?php echo "stlId_row".$count ?>" style="text-align:right max-width:60px;"><?php echo $result[$count]['STL_ID'] ?></td>
+                <td>
+                  <input type="button" id= "<?php echo "edit_emp_btn".$count ?>" class="edit_btn td-t1" value="Edit" onclick="empEditForm('<?php echo $count ?>')">
+                  <input type="button" id="<?php echo "save_emp_btn".$count ?>" class="save_btn" value="Save" onclick="empSaveForm('<?php echo $count ?>')">
+                </td>
+                <td><input type="button" class="del_btn td-t1" value="Delete" onclick="empDeleteForm('<?php echo $count ?>')"></td>
               </tr>
             <?php $count = $count + 1;
             } ?>
@@ -111,9 +114,7 @@ include 'UserLoggedInHeader.php';
 
     <div style="min-height: 110px;"></div>
   </div>
-
-  <script src="/public/js/AdminManageEmployee.js"></script>
   <script src="/public/js/AdminEmployeeTable.js"></script>
+  <script src="/public/js/AdminManageEmployee.js"></script>
   
-
 </main>

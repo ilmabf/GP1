@@ -23,6 +23,7 @@ function empEditForm(no) {
     //console.log("firstName_row"+no);
     document.getElementById("edit_emp_btn"+no).style.display="none";
     document.getElementById("save_emp_btn"+no).style.display="block";
+    //console.log("firstName_row"+no);
 
     var firstName = document.getElementById("firstName_row"+no);
     var lastName = document.getElementById("lastName_row"+no);
@@ -46,15 +47,15 @@ function empEditForm(no) {
     var stlIdData = stlId.innerHTML;
 
 
-    firstName.innerHTML = "<input type='text' id='firstName_text"+no+"' value='"+firstNameData+"'>";
-    lastName.innerHTML = "<input type='text' id='lastName_text"+no+"' value='"+lastNameData+"'>";
-    contactNumber.innerHTML = "<input type='number' id='contactNumber_text"+no+"' value='"+contactNumberData+"'>";
-    email.innerHTML = "<input type='email' id='email_text"+no+"' value='"+emailData+"'>";
-    dateEnrolled.innerHTML = "<input type='date' id='dateEnrolled_text"+no+"' value='"+dateEnrolledData+"'>";
-    salary.innerHTML = "<input type='number' id='salary_text"+no+"' value='"+salaryData+"'>";
-    nicNo.innerHTML = "<input type='text' id='nicNo_text"+no+"' value='"+nicNoData+"'>";
-    team.innerHTML = "<input type='number' id='team_text"+no+"' value='"+teamData+"'>";
-    stlId.innerHTML = "<input type='number' id='stlId_text"+no+"' value='"+stlIdData+"'>";
+    firstName.innerHTML = "<input type='text' id='firstName_text"+no+"' class='td-t2' value='"+firstNameData+"'>";
+    lastName.innerHTML = "<input type='text' id='lastName_text"+no+"' class='td-t2' value='"+lastNameData+"'>";
+    contactNumber.innerHTML = "<input type='number' id='contactNumber_text"+no+"' class='td-t7' value='"+contactNumberData+"'>";
+    email.innerHTML = "<input type='email' id='email_text"+no+"' class='td-t3' value='"+emailData+"'>";
+    dateEnrolled.innerHTML = "<input type='date' id='dateEnrolled_text"+no+"' class='td-t4' value='"+dateEnrolledData+"'>";
+    salary.innerHTML = "<input type='number' id='salary_text"+no+"' class='td-t2' value='"+salaryData+"'>";
+    nicNo.innerHTML = "<input type='text' id='nicNo_text"+no+"' class='td-t6' value='"+nicNoData+"'>";
+    team.innerHTML = "<input type='number' id='team_text"+no+"' class='td-t5' value='"+teamData+"'>";
+    stlId.innerHTML = "<input type='number' id='stlId_text"+no+"' class='td-t5' value='"+stlIdData+"'>";
 
 }
 
