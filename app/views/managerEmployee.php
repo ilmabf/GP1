@@ -1,6 +1,7 @@
 <?php
 
 include 'UserLoggedInHeader.php';
+   $result = $_SESSION['employeeDetails'];
 ?>
 
 <div style="min-height: 110px;"></div>
@@ -9,7 +10,7 @@ include 'UserLoggedInHeader.php';
   <h2>Employee Details</h2>
 </div>
 
-
+<div style="height: 50px;"></div>
 <div class="main-Mg-EmpSearch">
 
   <div class="Manager-EquipSearch managerEquipSearch1" style="margin-left: 81px;">
@@ -55,75 +56,28 @@ include 'UserLoggedInHeader.php';
           <th data-type="number">NIC No</th>
           <th data-type="text">Team</th>
           <th data-type="text">Leader</th>
+          <th data-type="text">Photo</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Sahan</td>
-          <td>Dias</td>
-          <td>0769023432</td>
-          <td>sahandias@gmail.com</td>
-          <td>2021-03-20</td>
-          <td style="text-align:right">35000.00</td>
-          <td style="text-align:right">12324532V</td>
-          <td style="text-align:right">1</td>
-          <td style="text-align:right">1</td>
-        </tr>
-        <tr>
-          <td>Nirosh</td>
-          <td>Perera</td>
-          <td>0776787643</td>
-          <td>niroshperera@gmail.com</td>
-          <td>2021-04-10</td>
-          <td style="text-align:right">25000.00</td>
-          <td style="text-align:right">897645322V</td>
-          <td style="text-align:right">2</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Janith</td>
-          <td>Ryan</td>
-          <td>0776745654</td>
-          <td>janithryan@gmail.com</td>
-          <td>2020-12-10</td>
-          <td style="text-align:right">30000.00</td>
-          <td style="text-align:right">89787654V</td>
-          <td style="text-align:right">2</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Nimal</td>
-          <td>Lansa</td>
-          <td>0756765789</td>
-          <td>nimallansa@gmail.com</td>
-          <td>2021-01-10</td>
-          <td style="text-align:right">28000.00</td>
-          <td style="text-align:right">23456721V</td>
-          <td style="text-align:right">2</td>
-          <td style="text-align:right">2</td>
-        </tr>
-        <tr>
-          <td>Karun</td>
-          <td>Nair</td>
-          <td>0768987789</td>
-          <td>karunnair@gmail.com</td>
-          <td>2020-10-18</td>
-          <td style="text-align:right">32000.00</td>
-          <td style="text-align:right">123245634V</td>
-          <td style="text-align:right">1</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>Heshan</td>
-          <td>Silva</td>
-          <td>0778987657</td>
-          <td>heshansilva@gmail.com</td>
-          <td>2020-09-12</td>
-          <td style="text-align:right">26000.00</td>
-          <td style="text-align:right">23243323V</td>
-          <td style="text-align:right">1</td>
-          <td></td>
-        </tr>
+        <?php
+          
+          $count = 0;
+            while ($count < $_SESSION['rowCount']) { ?>
+            <tr>
+              <td><?php echo $result[$count]['First_Name'] ?></td>
+              <td><?php echo $result[$count]['Last_Name'] ?></td>
+              <td><?php echo $result[$count]['Contact_Number'] ?></td>
+              <td><?php echo $result[$count]['Email'] ?></td>
+              <td><?php echo $result[$count]['Date_Enrolled'] ?></td>
+              <td style="text-align:right"><?php echo $result[$count]['Salary'] ?>.00</td>
+              <td style="text-align:right"><?php echo $result[$count]['NIC_No'] ?></td>
+              <td style="text-align:right"><?php echo $result[$count]['Team'] ?></td>
+              <td><?php echo $result[$count]['STL_ID'] ?></td>
+              <td><?php echo $result[$count]['Photo'] ?></td>
+            </tr>
+          <?php $count = $count + 1;
+          } ?>
       </tbody>
     </table>
   </div>

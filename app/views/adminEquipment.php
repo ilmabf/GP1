@@ -53,9 +53,9 @@ $details = $_SESSION['equipmentDetails'];
     </div>
   </div>
   </div>
-  <div class="Search-Table">
 
-    <div class="table-wrap">
+  <div class="Table-search">
+    <div class="table-wrapper">
       <table id="viewAsTable">
         <thead>
           <tr>
@@ -93,7 +93,7 @@ $details = $_SESSION['equipmentDetails'];
   <div style="min-height: 110px;"></div>
 
 
-  <script src="/public/js/AdminManageEquipment.js"></script>
-  <script src="/public/js/AdminEquipmentTable.js"></script>
+  <script src="/public/js/adminManageEquipment.js"></script>
+  <script src="/public/js/adminEquipmentTable.js"></script>
 
 </main>

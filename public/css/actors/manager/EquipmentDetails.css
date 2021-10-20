@@ -15,20 +15,6 @@
     font-size: 15px;
 }
 
-.Manager-EquipSearch{
-    display: inline-block;
-}
-
-.managerEquipSearch1{
-    margin-left: 291px;
-}
-
-.managerEquipSearch2{
-    float: right;
-    margin-left: 20px;
-    margin-right: 426px;
-}
-
 #Manager-AssignedEquip-TeamTypes{
     font-size: 15px;
     font-weight: 600;
