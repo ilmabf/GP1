@@ -22,4 +22,10 @@ class EmployeeModel extends Model
         $result = $this->db->selectTwo("*", "employee", "LEFT JOIN service_team_leader ON employee.STL_ID = service_team_leader.STL_ID UNION (SELECT * FROM employee RIGHT JOIN service_team_leader ON employee.STL_ID = service_team_leader.STL_ID WHERE service_team_leader.STL_ID IS NULL);");
         return $result;
     }
+
+    function getRelevantEmployee($empID)
+    {
+        $result = $this->db->select("*", "employee", "WHERE Employee_ID = '$empID';");
+        return $result;
+    }
 }

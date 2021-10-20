@@ -1,0 +1,64 @@
+.empUpdateForm{
+    border-radius: 5px;
+    max-width:700px;
+    width:100%;
+    margin: 3% auto;
+    background-color: #FFFFFF;
+    overflow: hidden;
+}
+
+.contentform {
+    padding: 40px 30px;
+}
+
+.form-group {
+    overflow: hidden;
+    clear: both;
+}
+
+.form-group p{
+    margin: 0px;
+    font-weight: 500;
+    line-height: 2;
+    color:#333;
+}
+
+.form-group input{
+    border-radius: 0px 5px 5px 0px;
+    border: 1px solid #eee;
+    margin-bottom: 15px;
+    width: 75%;
+    height: 40px;
+    float: left;
+    padding: 0px 15px;
+}
+
+.bouton-contact{
+    background-color: #193498;
+    color: #FFF;
+    text-align: center;
+    width: 100%;
+    border:0;
+    padding: 17px 25px;
+    border-radius: 0px 0px 5px 5px;
+    cursor: pointer;
+    margin-top: 40px;
+    font-size: 18px;
+}
+
+.leftcontact {
+    width:49.5%; 
+    float:left;
+    border-right: 1px dotted #CCC;
+    box-sizing: border-box;
+    padding: 0px 15px 0px 0px;
+}
+
+.rightcontact {
+    width:49.5%;
+    float:right;
+    box-sizing: border-box;
+    padding: 0px 0px 0px 15px;
+}
+
+
