@@ -1,0 +1,52 @@
+.stl-assigned-orders-h1{
+    color: #193498;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.stl-reservation-date{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 20px 25px;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); 
+}
+
+.stl-reservation-date h3{
+    text-align: center;
+    color: #193498;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.stl-order-box{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 25px;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); 
+}
+.stl-order-sub-box{
+    margin: 20px 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    padding: 20px 20px;
+}
+.stl-order-box-main-flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+.a1{
+    display: inline;
+    margin-right: 15px;
+}
+
+.previous-pg{
+    float: left;
+    margin: 25px 50px;
+}

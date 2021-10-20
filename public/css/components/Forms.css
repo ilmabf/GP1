@@ -1,0 +1,116 @@
+.addVehicleform{
+    background-color:white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px 10px 20px;
+    display: none;
+    z-index: 9;
+    backdrop-filter: blur(10px);
+}
+
+.cancelAssignForm{
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 40%);
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px 10px 20px;
+    /* display: none; */
+    z-index: 9;
+    backdrop-filter: blur(10px);
+}
+
+.assignPopUpclass {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .assignPopUpContent-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+
+  .assignPopUpContent-content p{
+    font-weight: 500;
+}
+
+.cancelReservationPopUpclass{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+  /* Modal Content */
+  .cancelReservationPopUpContent-content{
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+
+  .cancelReservationPopUpContent-content p{
+      font-weight: 500;
+  }
+  
+  /* The Close Button */
+  .closeCancelReservation{
+    color: #1597E5;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .closeCancelReservation:hover,
+  .closeCancelReservation:focus {
+    color: #024066;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .yesCancelReservation{
+      display: block;
+      float: left;
+      margin: 25px 15px;
+  }
+
+
+  .login-signupbox{
+    background-color:white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px 10px 20px;
+
+}
+

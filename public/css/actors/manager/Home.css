@@ -1,0 +1,70 @@
+.manager-home-h1{
+    text-align: center;
+    color: #193498;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.manager-home-main{
+    width: calc(100%-40px);
+    margin-top: 50px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    text-align: center; 
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgb(255,255,255,0.1);
+}
+
+.manager-home-main-flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.managerHome-block1, .managerHome-block2, .managerHome-block3, .managerHome-block4, .managerHome-block5, .managerHome-block6{
+    flex: 40%;
+    text-align: center;
+    padding: 20px 0px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 8px;
+    margin-right: 8px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+}
+
+h3{
+    font-size: 12px;
+}
+
+@media only screen and (min-width: 770px){
+
+    .manager-home-h1{
+        font-size: 30px;
+    }
+
+    h3{
+        font-size: 18px;
+    }
+
+    .manager-home-main{
+        margin-left: 100px;
+        margin-right: 100px;
+        margin-top: 80px;
+    }
+
+    .managerHome-block1, .managerHome-block2, .managerHome-block3, .managerHome-block4, .managerHome-block5, .managerHome-block6{
+        flex: 40%;
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+
+    .managerHome-block1:hover, .managerHome-block2:hover, .managerHome-block3:hover, .managerHome-block4:hover, .managerHome-block5:hover, .managerHome-block6:hover{
+        background-color:#86bef0;
+    }
+} 

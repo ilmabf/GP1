@@ -9,42 +9,49 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="icon" href="/public/images/drop.png">
-    <link rel="stylesheet" href="/public/css/UserHeader.css">
-    <link rel="stylesheet" href="/public/css/UserHome.css">
-    <link rel="stylesheet" href="/public/css/CustomerHome.css">
-    <link rel="stylesheet" href="/public/css/CustomerMyOrders.css">
-    <link rel="stylesheet" href="/public/css/UserLogin.css">
-    <link rel="stylesheet" href="/public/css/CustomerSignup.css">
-    <link rel="stylesheet" href="/public/css/ManagerHome.css">
-    <link rel="stylesheet" href="/public/css/StlHome.css">
-    <link rel="stylesheet" href="/public/css/AdminHome.css">
-    <link rel="stylesheet" href="/public/css/UserFooter.css">
-    <link rel="stylesheet" href="/public/css/AdminManageEmployee.css">
-    <link rel="stylesheet" href="/public/css/CustomerBookAWash.css">
-    <link rel="stylesheet" href="/public/css/CustomerBookAWash2.css">
-    <link rel="stylesheet" href="/public/css/CustomerBookAWash3.css">
-    <link rel="stylesheet" href="/public/css/CustomerOrderSummary.css">
-    <link rel="stylesheet" href="/public/css/ManagerDashboard.css">
-    <link rel="stylesheet" href="/public/css/ManagerEquipmentDetails.css">
-    <link rel="stylesheet" href="/public/css/ManagerEmployeeDetails.css">
-    <link rel="stylesheet" href="/public/css/ManagerServiceDetails.css">
-    <link rel="stylesheet" href="/public/css/ManagerReservationCompleted.css">
-    <link rel="stylesheet" href="/public/css/ManagerReservationUpcoming.css">
-    <link rel="stylesheet" href="/public/css/ManagerViewCompletedOrder.css">
-    <link rel="stylesheet" href="/public/css/ManagerViewUpcomingOrder.css">
-    <link rel="stylesheet" href="/public/css/CustomerGiveReview.css">
-    <link rel="stylesheet" href="/public/css/UserReviews.css">
-    <link rel="stylesheet" href="/public/css/CustomerAccount.css">
 
-    <link rel="stylesheet" href="/public/css/StlViewAssignedOrders.css">
-    <link rel="stylesheet" href="/public/css/StlViewDashboard.css">
-    <link rel="stylesheet" href="/public/css/StlOrderDetails.css">
+    <link rel="stylesheet" href="/public/css/actors/admin/Home.css">
+    <link rel="stylesheet" href="/public/css/actors/admin/ManageEmployee.css">
+    <link rel="stylesheet" href="/public/css/actors/admin/ManageEquipment.css">
+    <link rel="stylesheet" href="/public/css/actors/admin/ManageService.css">
 
-    <link rel="stylesheet" href="/public/css/AdminManageService.css">
-    <link rel="stylesheet" href="/public/css/CustomerViewUpcomingOrder.css">
-    <link rel="stylesheet" href="/public/css/CustomerHelp.css">
-    <link rel="stylesheet" href="/public/css/AdminManageEquipment.css">
-    <link rel="stylesheet" href="/public/css/AdminUpdateEmployee.css">
+    <link rel="stylesheet" href="/public/css/actors/customer/Account.css">
+    <link rel="stylesheet" href="/public/css/actors/customer/BookAWash.css">
+    <link rel="stylesheet" href="/public/css/actors/customer/BookAWash2.css">
+    <link rel="stylesheet" href="/public/css/actors/customer/GiveReview.css">
+    <link rel="stylesheet" href="/public/css/actors/customer/Help.css">
+    <link rel="stylesheet" href="/public/css/actors/customer/Home.css">
+    <link rel="stylesheet" href="/public/css/actors/customer/MyOrders.css">
+    <link rel="stylesheet" href="/public/css/actors/customer/OrderSummary.css">
+    <link rel="stylesheet" href="/public/css/actors/customer/Signup.css">
+    <link rel="stylesheet" href="/public/css/actors/customer/UpcomingOrder.css">
+
+    <link rel="stylesheet" href="/public/css/actors/manager/CompletedOrder.css">
+    <link rel="stylesheet" href="/public/css/actors/manager/CompletedReservation.css">
+    <link rel="stylesheet" href="/public/css/actors/manager/Dashboard.css">
+    <link rel="stylesheet" href="/public/css/actors/manager/EmployeeDetails.css">
+    <link rel="stylesheet" href="/public/css/actors/manager/EquipmentDetails.css">
+    <link rel="stylesheet" href="/public/css/actors/manager/Home.css">
+    <link rel="stylesheet" href="/public/css/actors/manager/ServiceDetails.css">
+    <link rel="stylesheet" href="/public/css/actors/manager/UpcomingOrder.css">
+    <link rel="stylesheet" href="/public/css/actors/manager/UpcomingReservation.css">
+
+    <link rel="stylesheet" href="/public/css/actors/stl/AssignedOrders.css">
+    <link rel="stylesheet" href="/public/css/actors/stl/Dashboard.css">
+    <link rel="stylesheet" href="/public/css/actors/stl/Home.css">
+    <link rel="stylesheet" href="/public/css/actors/stl/OrderDetails.css">
+
+    <link rel="stylesheet" href="/public/css/actors/user/Footer.css">
+    <link rel="stylesheet" href="/public/css/actors/user/Header.css">
+    <link rel="stylesheet" href="/public/css/actors/user/Home.css">
+    <link rel="stylesheet" href="/public/css/actors/user/Login.css">
+    <link rel="stylesheet" href="/public/css/actors/user/Reviews.css">
+
+    <link rel="stylesheet" href="/public/css/components/Forms.css">
+    <link rel="stylesheet" href="/public/css/components/Buttons.css">
+
+    <link rel="stylesheet" href="/public/css/Utilities.css">
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>WandiWash</title>

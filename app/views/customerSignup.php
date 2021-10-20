@@ -45,7 +45,7 @@
                                                                                                         }
                                                                                                         ?>
                         </p>
-                        <input class="input-box" id="signup-pwd" type="password" name="pwd" autofocus placeholder="Password" maxlength="255" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                        <input class="input-box" id="signup-pwd" type="password" name="pwd" autofocus placeholder="Password" maxlength="255" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                         <br>
                         <input class="input-box" id="signup-confirm-pwd" type="password" name="confirm_pwd" autofocus placeholder="Confirm Password" required>
 

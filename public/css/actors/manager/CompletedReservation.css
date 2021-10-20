@@ -1,0 +1,134 @@
+.heading{
+    color: #193498;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: larger;
+}
+
+.reservation-date{
+    text-align: center;
+    margin: 35px 80px;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 5px;
+    /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);    */
+}
+
+.reservation-date h3{
+    text-align: left;
+    color: #193498;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#closeClick{
+    display: inline-block;
+    text-align: center;
+    margin: auto auto;
+}
+
+.completedOrders{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 35px 80px;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);   
+}
+
+.completedOrders h3{
+    text-align: left;
+    color: #193498;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+
+.sub-box{
+    display: block;
+    text-align: center;
+    margin: 50px 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    padding: 20px 40px; 
+}
+
+.orderID{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.vehicleNo{
+    margin-bottom: 20px;
+}
+
+.orderTime{
+    margin-bottom: 20px;
+}
+
+.orderView{
+    margin-bottom: 20px;
+}
+
+.viewLink{
+    text-align: center;
+    color: #193498;
+}
+
+.orderView .viewLink a{
+    color: #193498;
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+.orderView .viewLink a:hover{
+    color: #04185f;
+}
+
+.team{
+    text-align: center;
+    float: right;
+    font-size: 15px;
+    color: #7B113A;
+}
+
+@media only screen and (max-width: 770px){
+
+    .heading{
+        font-size: 15px;
+    }
+
+    .reservation-date h3{
+        font-size: 15px;
+    }
+
+    .wash-date{
+        margin: 35px 50px;
+    }
+
+    .completedOrders h3{
+        font-size: 15px;
+    }
+
+    .completedOrders{
+        margin: 25px 20px;
+    }
+
+    .sub-box{
+        margin: 50px 20px;
+        padding: 20px 40px; 
+    }
+
+    .orderView .viewLink a{
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+
+    .team{
+        margin-top: 20px;
+        font-size: 12px;
+    }
+}

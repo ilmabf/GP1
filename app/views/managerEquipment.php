@@ -1,6 +1,8 @@
 <?php
 
 include 'UserLoggedInHeader.php';
+$details = $_SESSION['equipmentDetails'];
+
 ?>
 
 <div style="min-height: 110px;"></div>
@@ -9,24 +11,25 @@ include 'UserLoggedInHeader.php';
   <h2>Equipment Details</h2>
 </div>
 <div style="height: 50px;"></div>
+
 <div style="display:block;">
-  <div class="Manager-EquipSearch managerEquipSearch1">
-    <input type="search" class="manager-Equip-Search" id="managerSearchEquipment" onkeyup="myFunction()" placeholder="Search for Equipment..." title="Type in a name">
+  <div class="Admin-EquipSearch adEquipSearch1"  style = "margin-left: 158px;">
+    <input type="search" class="ad-Equip-Search" id="adminSearchEquipment" onkeyup="myFunction()" placeholder="Search for Equipment..." title="Type in a name"    >
   </div>
 
-  <div class="manager-EquipSearch managerEquipSearch2" style = "margin-top: 7px;">
+  <div class="Admin-EquipSearch adEquipSearch2" style="margin-top: 10px;     margin-right: 476px;">
     <form action="" method="post">
-      <select name="serviceTeam" class="manager-Equip-Search" id="Manager-AssignedEquip-TeamTypes">
+      <select name="serviceTeam" class="ad-Equip-Search" id="AdminserviceTeamTypes">
         <option value="select service team">Select Service Team</option>
-        <option value="Team 1">Team 1</option>
-        <option value="Team 2">Team 2</option>
+        <option value="Team A">Team A</option>
+        <option value="Team B">Team B</option>
       </select>
     </form>
   </div>
 </div>
 
-<div class="Manager-equip-Table">
-  <div class="manager-equip-table-wrap">
+<div class="Table-search">
+  <div class="table-wrapper">
     <table id="managerEquipTab">
       <thead>
         <tr>
@@ -38,45 +41,22 @@ include 'UserLoggedInHeader.php';
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Compressor</td>
-          <td style="text-align:right">18500.00</td>
-          <td>2021-06-05</td>
-          <td style="text-align:right">1</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>High pressure water gun</td>
-          <td style="text-align:right">8500.00</td>
-          <td>2021-06-05</td>
-          <td style="text-align:right">2</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Vacuum cleaner</td>
-          <td style="text-align:right">6000.00</td>
-          <td>2021-06-18</td>
-          <td style="text-align:right">1</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>High pressure water gun</td>
-          <td style="text-align:right">9900.00</td>
-          <td>2021-07-10</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td>Microfiber cloth</td>
-          <td style="text-align:right">500.00</td>
-          <td>2021-07-25</td>
-          <td></td>
-        </tr>
+        <?php
+        $count = 0;
+        while ($count < $_SESSION['rowCount']) { ?>
+          <tr>
+            <td><?php echo $details[$count]['Equipment_ID'] ?></td>
+            <td><?php echo $details[$count]['Name'] ?></td>
+            <td style="text-align:right"><?php echo $details[$count]['Price'] ?>.00</td>
+            <td><?php echo $details[$count]['Date_Acquired'] ?></td>
+            <td style="text-align:right"><?php echo $details[$count]['Team'] ?></td>
+          </tr>
+        <?php $count = $count + 1;
+        } ?>
       </tbody>
     </table>
   </div>
 </div>
 
 <div style="min-height: 110px;"></div>
-  <script src="/public/js/ManagerEquipmentTable.js"></script>
+<script src="/public/js/managerEquipmentTable.js"></script>

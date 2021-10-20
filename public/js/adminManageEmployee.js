@@ -50,7 +50,7 @@ function addRow() {
     div2.style.display = "none";
 
     var empTab = document.getElementById('empTable');
-
+    console.log(empTab.rows.length);
     var rowCnt1 = empTab.rows.length;   // table row count.
     if(rowCnt1>1){
         return;
@@ -157,8 +157,15 @@ function addRow() {
 // delete TABLE row function. ele1.setAttribute('id', 'tb-input');
 function removeRow(oButton) {
     var empTab = document.getElementById('empTable');
-    empTab.deleteRow(oButton.parentNode.parentNode.rowIndex); // button -> td -> tr.
+     // button -> td -> tr.
+    if(empTab.rows.length>2){
+        empTab.deleteRow(2);
+    }
 
+    if(empTab.rows.length>1){
+        empTab.deleteRow(1);
+    }
+// console.log(empTab.rows.length);
     submitBtn.style.display = "none";
     
 }
@@ -262,7 +269,15 @@ function addStlRow() {
 
 function removeStlRow(oButton) {
     var stlTab = document.getElementById('stlTable');
-    stlTab.deleteRow(oButton.parentNode.parentNode.rowIndex); // button -> td -> tr.
+    // stlTab.deleteRow(oButton.parentNode.parentNode.rowIndex); // button -> td -> tr.
+
+    if(stlTab.rows.length>2){
+        stlTab.deleteRow(2);
+    }
+
+    if(stlTab.rows.length>1){
+        stlTab.deleteRow(1);
+    }
 
     submitBtnStl.style.display = "none";
     
@@ -271,47 +286,6 @@ function removeStlRow(oButton) {
 
 createTable();
 createStlAddTable();
-
-function checkEmpLetter(){
-    console.log("hello");
-    var letters = /^[A-Za-z]+$/;
-    var validityF = document.getElementById("validFirstName");
-    var fName = validityF.elements.namedItem("firstName").value;
-
-    if(!fName.match(letters)){
-        validityF.setCustomValidity("Please input alphabet characters only");
-    }
-    else{
-        validityF.setCustomValidity('');
-    }
-
-    var validityL = document.getElementById("validLastName");
-    var lName = validityF.elements.namedItem("lastName").value;
-
-    if(!lName.value.match(letters)){
-        validityL.setCustomValidity("Please input alphabet characters only");
-    }
-    else{
-        validityL.setCustomValidity('');
-    }
-}
-
-// var fEmpName = document.getElementById("validFirstName");
-
-// function empFirstLastName(ele1){
-//     var letters = /[a-zA-Z]/g;
-//     if(!(ele1.value.match(letters))){
-//         ele1.setCustomValidity("Please input alphabet characters only");
-//     }
-// }
-
-// function empEditForm() {
-//     var hide = document.getElementById('adminManageEmployee1');
-//     hide.classList.add("blur");
-//     var displayForm = document.getElementById("editEmpForm");
-//     displayForm.style.display = "block";
-// }
-
 
 function checkLetter(){
     var letters = /^[A-Za-z]+$/;

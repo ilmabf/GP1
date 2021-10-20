@@ -1,0 +1,78 @@
+.heading{
+    color: #193498;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: larger;
+}
+
+.vehicle-type{
+    text-align: center;
+    margin: 35px 75px;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);   
+}
+
+.vehicle-type h3{
+    color: #193498;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: left;
+}
+    
+.vehicle-select-radio{
+    text-align: center;
+    display: inline-block;
+    background-color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid #193498;
+    border-radius: 5px;
+    margin: auto 20px;
+}
+  
+.vehicle-select-radio input[type="radio"]:checked + label {
+    background-color:#193498;
+    color: white;
+    border-radius: 5px;
+    padding: 2px 2px;
+}
+  
+.vehicle-select-radio:hover {
+    background-color:#ddd;
+}
+
+@media only screen and (max-width: 770px){
+
+    .heading{
+        font-size: 15px;
+    }
+
+    .wash-type h3{
+        font-size: 15px;
+    }
+
+    .vehicle-type h3{
+        font-size: 15px;
+    }
+
+    .vehicle-type{
+        display: flex;
+        margin: 35px 50px;
+    }
+
+    .vehicle-select-radio{
+        flex: 90%;
+        margin-bottom: 20px;
+    }
+
+}
+
+@media only screen and (max-width: 385px){
+    .vehicle-type h3{
+        display: none;
+        padding: 2px 2px;
+    }
+}
+

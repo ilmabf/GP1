@@ -1,0 +1,210 @@
+@media  only screen and (min-width: 770px){
+    .account-prof{
+        display: block;
+    }
+    
+    .account-det1{
+        display: inline;
+        float: left;
+        width: 50%;
+    }
+    
+    .account-det2{
+        display: inline-block;
+        width: 50%;
+        left: 10%;
+        position: relative;
+    }
+    
+    .map-box{
+        height: 220px;
+    }
+    
+    
+}
+
+.vehicle-specs .color-box{
+    width: 26px;
+    height: 24px;
+    display: inline-block;
+    position: absolute;
+    top: 8px;
+    border: 1px solid #193498;
+}
+
+.box{
+    overflow: auto;
+    padding-bottom: 116px;
+}
+
+.account-box1{
+    display: block;
+    background-color:white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 28%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px 100px 20px 50px;
+    width: fit-content;
+    margin-top: 200px;
+}
+.map-box{
+    display: block;
+    
+}
+
+
+.account-header{
+    top: 25%;
+    color: #193498;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 25px;
+    padding: 0px 0px 20px 0px;
+    font-weight: bold;
+}
+
+.account-header2{
+    top: 25%;
+    color: #193498;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 20px;
+    /* padding: 0px 0px 20px 0px; */
+}
+
+.vehicle{
+    top: 25%;
+    color: #193498;
+    margin-top: 10px;
+    margin-bottom: 12px;
+    font-size: 18px;
+    padding: 0px 10px 0px 10px;
+    text-align: center;
+    display: inline;
+}
+.item1{
+    display: flex;
+}
+.vehicle-specs{
+    display:inline-block;
+    color: #000000;
+    padding: 12px 30px;
+    border-radius: 4px;
+    left: 30%;
+    position: absolute;
+    /* transform: translate(-40%, 0%); */
+}
+.account-box2{
+    top: 25%;
+    color: #193498;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 25px;
+    /* padding: 20px 10px 20px 10px; */
+    padding: 20px 10px 20px 45px;
+    border: 1px solid;
+    border-color: #a1a1a1;
+    width: 100%;
+}
+
+.vehicle-box{
+    top: 25%;
+    color: #193498;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding: 20px 10px 20px 10px;
+    border: 1px solid;
+    border-color: #a1a1a1;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    /* display: flex; justify-content: center; align-items: center */
+}
+
+.account-box3{
+    top: 25%;
+    color: #193498;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    font-size: 25px;
+    /* padding: 20px 10px 20px 10px; */
+    /* border: 1px solid;
+    border-color: #a1a1a1; */
+    width: 100%;
+}
+
+.account-image{
+    width: 80px;
+    height: 80px;
+    background-image: url('/public/images/userIcon.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    /* background-position: left; */
+    float: left;
+    display: inline;
+    margin-left: 26px;
+    
+}
+
+.account-details{
+   display:inline-block;
+   padding: 5px 10px 0px 10px;
+   color: #000000;
+   top: 25%;
+   /* transform: translate(61%, 0%); */
+}
+
+.account-email{
+    font-size: 50%;
+    padding: 2px 0px 0px 0px
+ }
+
+.vehicle-list{
+    width: 50%;
+    display: inline-block;
+}
+
+@media  only screen and (max-width: 770px) {
+    .account-header{
+        font-size: 20px;
+    }
+
+    .types{
+        width: 100%;
+    }
+    .box{
+        overflow: visible;
+    }
+    .account-box1{
+        padding: 30px 50px 20px 30px;
+    }
+
+    .account-image{
+        width: 56px;
+    }
+
+    .account-email{
+        font-size: 12px;
+     }
+    .account-details{
+        font-size: 18px;
+        padding: 0px 10px 0px 10px;
+        transform: translate(10%, 0%);
+     }
+     .vehicle-specs{
+         left: 50%;
+     }
+     .account-box1{
+        top: 55%;
+    }
+    .account-box2{
+        padding: 20px 10px 20px 10px;
+    }
+  }
+
+
+  

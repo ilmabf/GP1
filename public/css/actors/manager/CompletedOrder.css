@@ -1,0 +1,100 @@
+.heading{
+    color: #193498;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: larger;
+}
+
+.order-box3{
+    margin: 35px 30px;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); 
+    text-align: left; 
+}
+
+.servicceRating{
+    margin: 35px 164px;
+    padding: 10px 20px;
+    /* background-color: white; */
+    border-radius: 5px;
+    /* box-shadow: 0 3px 10px rgb(0 0 0 / 40%); */
+    text-align: center;
+}
+.orderID{
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.orderDate{
+    margin-bottom: 30px;
+}
+
+.orderTime {
+    margin-bottom: 30px;
+}
+
+.orderVehicle{
+    margin-bottom: 30px;
+}
+
+
+.orderServiceType{
+    margin-bottom: 30px;
+}
+
+.orderLocation{
+    margin-bottom: 30px;
+}
+
+.orderPrice{
+    margin-bottom: 30px;
+}
+
+.orderPrice h3 a{
+   text-decoration: underline;
+   color: #193498;
+}
+
+.p1{
+    color: #193498;
+}
+
+.service-feedback{
+    color: #193498;
+    margin: 35px 80px;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); 
+    text-align: center; 
+}
+
+
+.viewPhotos{
+    display: inline-block;
+    margin-bottom: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+@media only screen and (min-width: 770px){
+    .order-box3{
+        margin: 35px 80px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .viewCompleteOrder{
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 20px;
+        text-align: left;
+        padding: 20px 20px;
+    }
+
+    .hr{
+        display: none;
+    }
+}

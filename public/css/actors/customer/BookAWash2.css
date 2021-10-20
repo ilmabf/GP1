@@ -1,0 +1,53 @@
+.heading-location{
+    color: #193498;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: larger;
+}
+
+.select-location{
+    text-align: center;
+    margin: 35px 226px;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);   
+}
+
+.select-location-box{
+    display: inline-block;
+    text-align: center;
+    margin: auto auto;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+#location-types{
+    text-align: center;
+    margin: 0 auto;
+    font-size: 15px;
+    padding: 8px 8px;
+    border-radius: 5px;
+    border-color: #193498;
+    font-weight: bold;
+}
+
+.next-pg{
+    float: right;
+    margin: 25px 50px;
+}
+
+.next-button:hover{
+    background-color: #001572;
+}
+
+@media only screen and (max-width: 770px) {
+    
+    .heading-location{
+        font-size: 15px;
+    }
+
+    .select-location{
+        margin: 35px 60px;
+    }
+}
