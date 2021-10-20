@@ -55,4 +55,13 @@ class Employee extends Controller
             "Auth Error";
         }
     }
+
+    function getUpdate($count)
+    {
+        if($_SESSION['role'] == "systemadmin") {
+            $update = true;
+            $_SESSION['id'] = $count;
+            $this->view->render('AdminUpdateEmployee');                     
+        }
+    }
 }
