@@ -87,18 +87,19 @@ include 'UserLoggedInHeader.php';
             $count = 0;
             $result = $_SESSION['employeeDetails'];
             while ($count < $_SESSION['rowCount']) { ?>
-              <tr>
-                <td><?php echo $result[$count]['First_Name'] ?></td>
-                <td><?php echo $result[$count]['Last_Name'] ?></td>
-                <td><?php echo $result[$count]['Contact_Number'] ?></td>
-                <td><?php echo $result[$count]['Email'] ?></td>
-                <td><?php echo $result[$count]['Date_Enrolled'] ?></td>
-                <td style="text-align:right"><?php echo $result[$count]['Salary'] ?>.00</td>
-                <td style="text-align:right"><?php echo $result[$count]['NIC_No'] ?></td>
-                <td style="text-align:right"><?php echo $result[$count]['Team'] ?></td>
-                <td><?php echo "" ?></td>
-                <td><a href="/employee/getUpdate/<?php echo $count ?>" class="edit_btn" onclick="empEditForm()">Edit</a></td>
-                <td><a href="/employee/getDelete/" class="del_btn">Delete</a></td>
+              <tr id="row<?php $count ?>">
+                <td id="firstName_row<?php $count ?>"><?php echo $result[$count]['First_Name'] ?></td>
+                <td id="lastName_row<?php $count ?>"><?php echo $result[$count]['Last_Name'] ?></td>
+                <td id="contactNumber_row<?php $count ?>"><?php echo $result[$count]['Contact_Number'] ?></td>
+                <td id="email_row<?php $count ?>"><?php echo $result[$count]['Email'] ?></td>
+                <td id="dateEnrolled_row<?php $count ?>"><?php echo $result[$count]['Date_Enrolled'] ?></td>
+                <td id="salary_row<?php $count ?>" style="text-align:right"><?php echo $result[$count]['Salary'] ?>.00</td>
+                <td id="nicNo_row<?php $count ?>" style="text-align:right"><?php echo $result[$count]['NIC_No'] ?></td>
+                <td id="team_row<?php $count ?>" style="text-align:right"><?php echo $result[$count]['Team'] ?></td>
+                <td id="stlId_row<?php $count ?>" style="text-align:right"><?php echo $result[$count]['STL_ID'] ?></td>
+                <td><input type="button" id="edit_emp_btn<?php echo $count ?>" class="edit_btn" value="Edit" onclick="empEditForm('<?php echo $count ?>')"></td>
+                <td><input type="button" id="save_emp_btn<?php echo $count ?>" class="save_btn" value="Save" onclick="empSaveForm('<?php echo $count ?>')"></td>
+                <td><input type="button" class="del_btn" value="Delete" onclick="empDeleteForm('<?php echo $count ?>')"></td>
               </tr>
             <?php $count = $count + 1;
             } ?>
@@ -113,5 +114,6 @@ include 'UserLoggedInHeader.php';
 
   <script src="/public/js/AdminManageEmployee.js"></script>
   <script src="/public/js/AdminEmployeeTable.js"></script>
+  
 
 </main>
