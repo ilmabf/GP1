@@ -255,7 +255,7 @@ input[type=text2]{
 .account-image{
     width: 80px;
     height: 80px;
-    background-image: url('../images/userIcon.jpg');
+    background-image: url('/public/images/userIcon.jpg');
     background-size: 100%;
     background-repeat: no-repeat;
     margin: 0 auto;
@@ -311,7 +311,7 @@ input[type=text2]{
 }
 
 .bgImage1 { 
-    background: url(/public/images/carblur_desktop.png) no-repeat center center fixed; 
+    background: url('/public/images/carblur_desktop.png') no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

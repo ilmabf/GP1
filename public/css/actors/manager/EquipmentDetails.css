@@ -4,7 +4,7 @@
     text-align: center;
     font-size: larger;
 }
-#managerSearchEquipment{
+#managerSearchEquipment, #managerSearchEmployee{
     padding: 10px 10px;
     border-color: #193498;
     border-radius: 5px;
@@ -59,7 +59,7 @@ table {
 table, th, td { 
     border: solid 1px #193498;
     border-collapse: collapse; 
-    padding: 2px 2px; 
+    /* padding: 2px 2px;  */
     text-align: center;
     margin: 0px auto;
 }
@@ -69,7 +69,7 @@ th{
 }
 
 td{
-    max-width: 150px;
+    /* max-width: 150px; */
 }
 
 tr{

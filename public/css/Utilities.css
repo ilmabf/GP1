@@ -1,0 +1,9 @@
+input[type=search] {
+    border: 1px solid;
+    font-size: initial;
+    margin-bottom: 1em;
+    padding: 0.25em;
+}
+.hidden {
+    display: none;
+}

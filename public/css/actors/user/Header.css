@@ -13,7 +13,7 @@
 .header-logo-2{
     width: 200px;
     height: 40px;
-    background-image: url('../images/logoWandi.png');
+    background-image: url('/public/images/logoWandi.png');
     background-size: 100%;
     background-repeat: no-repeat;
     margin: 15px auto 15px auto;
@@ -78,7 +78,7 @@ header nav ul li a{
         left: 20px;
         width: 230px;
         height: 70px;
-        background-image: url('../images/logoWandi.png');
+        background-image: url('/public/images/logoWandi.png');
         background-size: 100%;
         background-repeat: no-repeat;
         float: left;

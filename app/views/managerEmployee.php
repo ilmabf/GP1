@@ -12,8 +12,8 @@ include 'UserLoggedInHeader.php';
 
 <div class="main-Mg-EmpSearch">
 
-  <div class="Mg-EmpSearch mgEmpSearch1 marginFix" style="margin-left: 214px;">
-    <input type="text" class="Mg-Emp-Search" id="managerSearchEmployee" onkeyup="myFunction()" placeholder="Search for Employee..." title="Type in a name">
+  <div class="Manager-EquipSearch managerEquipSearch1" style="margin-left: 81px;">
+    <input type="text" class="manager-Equip-Search" id="managerSearchEmployee" onkeyup="myFunction()" placeholder="Search for Employee..." title="Type in a name">
   </div>
 
   <div class="Mg-EmpSearch mgEmpSearch2" style="margin-right: 212px;">

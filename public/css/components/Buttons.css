@@ -1,0 +1,66 @@
+.addBtnEmps{
+    text-align: center;
+}
+
+#bts{
+    display: none;
+    margin: 20px auto;
+    padding: 8px 8px;
+    background-color: #193498;
+    color: white;
+    border-radius: 5px;
+    border-color: white;
+    cursor: pointer;
+}
+
+#btStl{
+    display: none;
+    margin: 20px auto;
+    padding: 8px 8px;
+    background-color: #193498;
+    color: white;
+    border-radius: 5px;
+    border-color: white;
+    cursor: pointer;
+}
+
+#addRow:hover, #addStlRow:hover{
+    background-color: #041553;
+    color: white;
+}
+
+#removeBtn, #removeStlBtn{
+    background-color: #7B113A;
+    padding: 5px 5px;
+    color: white;
+    border-radius: 5px;
+    border-color: white;
+    cursor: pointer;
+}
+
+#removeBtn:hover, #removeStlBtn:hover{
+    background-color: #500421;
+}
+.edit_btn {
+    text-decoration: none;
+    padding: 2px 5px;
+    background: green;
+    color: white;
+    border-radius: 3px;
+}
+
+.edit_btn:hover {
+    background: rgb(12, 161, 12);
+}
+
+.del_btn {
+    text-decoration: none;
+    padding: 2px 5px;
+    color: white;
+    border-radius: 3px;
+    background:#7B113A;
+}
+
+.del_btn:hover {
+    background: #500421;
+}

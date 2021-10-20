@@ -62,7 +62,7 @@
     top: 100px;
     width: 250px;
     height: 150px;
-    background-image: url('../images/dr-wash-png-transparent-png.png');
+    background-image: url('/public/images/dr-wash-png-transparent-png.png');
     background-size: 100%;
     background-repeat: no-repeat;
     margin: 0 auto;
