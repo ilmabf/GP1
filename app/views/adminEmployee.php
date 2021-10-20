@@ -25,7 +25,7 @@ include 'UserLoggedInHeader.php';
       <form action="/stl/add" method="post">
         <div id="cont2" class="addTb2"></div>
 
-        <input type="submit" id="btStl" value="Insert data" />
+        <button type="submit" id="btStl" value="Insert data" onclick="validate();">Insert Data</button>
       </form>
     </div>
 

@@ -64,7 +64,7 @@ tr{
     max-width: 115px;
 }
 
-#validFirstName, #validLastName, #validcontactNumber, #validemail, #validdateEnrolled, #validsalary, #validnicNo, #validteam{
+#validFirstName, #validLastName, #validcontactNumber, #validemail, #validdateEnrolled, #validsalary, #validnicNo, #validteam, #stlphoto, #stlteam, #confirmPass, #pass, #stlemail, #stlusername, #nic{
     padding: 2px;
     font-size: 14px;
     border-color: grey;
