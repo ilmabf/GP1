@@ -29,7 +29,7 @@ $details = $_SESSION['equipmentDetails'];
       <form action="/service/assignEquipment" method="post">
         <div id="container2">
         </div>
-        <input type="submit" id="saveButton" value="Insert Data" />
+        <input type="submit" id="saveButton" value="Assign Equipment" />
       </form>
     </div>
 

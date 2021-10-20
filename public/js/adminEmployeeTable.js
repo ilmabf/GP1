@@ -23,8 +23,10 @@ function empEditForm(no) {
     //console.log("firstName_row"+no);
     document.getElementById("edit_emp_btn"+no).style.display="none";
     document.getElementById("save_emp_btn"+no).style.display="block";
+    //console.log("firstName_row"+no);
 
     var firstName = document.getElementById("firstName_row"+no);
+    console.log(firstName);
     var lastName = document.getElementById("lastName_row"+no);
     var contactNumber = document.getElementById("contactNumber_row"+no);
     var email = document.getElementById("email_row"+no);

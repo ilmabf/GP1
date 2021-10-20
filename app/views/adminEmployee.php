@@ -3,6 +3,7 @@
 include 'UserLoggedInHeader.php';
 ?>
 <main>
+
   <div id="adminManageEmployee1">
     <div style="min-height: 110px;"></div>
     <h2 class="manageEmployee-heading">Manage Employees</h2>
@@ -16,7 +17,7 @@ include 'UserLoggedInHeader.php';
         <div id="cont" class="addTb1"></div> 
 
 
-        <button type="submit" id="bts" name="empDatas" onclick="checkEmpLetter();">Insert Data</button>
+        <button type="submit" id="bts" name="empDatas" onclick="checkLetter();">Insert Data</button>
       </form>
 
     </div>
@@ -97,7 +98,7 @@ include 'UserLoggedInHeader.php';
                 <td id="nicNo_row<?php $count ?>" style="text-align:right"><?php echo $result[$count]['NIC_No'] ?></td>
                 <td id="team_row<?php $count ?>" style="text-align:right"><?php echo $result[$count]['Team'] ?></td>
                 <td id="stlId_row<?php $count ?>" style="text-align:right"><?php echo $result[$count]['STL_ID'] ?></td>
-                <td><input type="button" id="edit_emp_btn<?php echo $count ?>" class="edit_btn" value="Edit" onclick="empEditForm('<?php echo $count ?>')"></td>
+                <td><input type="button" id="<?php echo $count ?>" class="edit_btn" value="Edit" onclick="empEditForm('<?php echo $count ?>')"></td>
                 <td><input type="button" id="save_emp_btn<?php echo $count ?>" class="save_btn" value="Save" onclick="empSaveForm('<?php echo $count ?>')"></td>
                 <td><input type="button" class="del_btn" value="Delete" onclick="empDeleteForm('<?php echo $count ?>')"></td>
               </tr>
@@ -111,9 +112,7 @@ include 'UserLoggedInHeader.php';
 
     <div style="min-height: 110px;"></div>
   </div>
-
-  <script src="/public/js/AdminManageEmployee.js"></script>
   <script src="/public/js/AdminEmployeeTable.js"></script>
+  <script src="/public/js/AdminManageEmployee.js"></script>
   
-
 </main>

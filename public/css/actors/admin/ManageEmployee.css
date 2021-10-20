@@ -55,13 +55,11 @@ tr{
     margin: auto;
 }
 
-
-
 #tb-input, #tb-Stlinput{
     padding: 2px;
     font-size: 14px;
     border-color: grey;
-    max-width: 115px;
+    max-width: 130px;
 }
 
 #validFirstName, #validLastName, #validcontactNumber, #validemail, #validdateEnrolled, #validsalary, #validnicNo, #validteam{
