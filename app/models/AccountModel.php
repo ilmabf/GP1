@@ -32,4 +32,10 @@ class AccountModel extends Model
         } else print_r($result);
     }
 
+    function vehicleDelete($uid, $vid){
+        $result = $this->db->delete("customer_vehicle", "WHERE ( User_ID = :uid AND VID = :vid );", array(':uid', ':vid'), array($uid, $vid));
+        if ($result == "Success") {
+            return true;
+        } else print_r($result);
+    }
 }

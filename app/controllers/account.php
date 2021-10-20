@@ -44,4 +44,12 @@ class Account extends Controller
             header("Location: /account/");
         }
     }
+
+    function deleteVehicle($vid){
+        $vid = str_replace('_', ' ', $vid);
+        $id = $_SESSION['userDetails'][0]['User_ID'];
+        if ($this->model->vehicleDelete($id, $vid)) {
+            header("Location: /account/");
+        }
+    }
 }

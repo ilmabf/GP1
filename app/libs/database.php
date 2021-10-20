@@ -284,6 +284,7 @@ class Database extends PDO
     function delete($table, $condition, $param , $paramValue)
     {
         $query = "DELETE FROM " . $table . " " . $condition;
+        
         $stmt = $this->prepare($query);
 
         if (gettype($param) == 'array') {

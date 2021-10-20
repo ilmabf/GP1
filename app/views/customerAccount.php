@@ -68,7 +68,7 @@
                 <br>
                 <label for="Manufacturer" style="padding: 0px 80px 0px 0px;">Manufacturer</label>
                 <input class="input-box" type="text2" name="manufacturer" autofocus placeholder="XYZ" required id="editManufacturer"><br><br>
-                <label for="Delete Vehicle"><a href="" style="font-size: small;float: right;color: red;">Delete Vehicle? Click Here</a></label>
+                <label for="Delete Vehicle"><a id = "deleteVehicle" href="" style="font-size: small;float: right;color: red;" >Delete Vehicle? Click Here</a></label>
                 <br>
                 <button id="EditVehicleFormSubmitButton" class="formSubmitButton" type="submit" name="signup">Submit</button>
                 <button id="EditVehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closeEditVehicleForm()">Cancel</button>
@@ -180,7 +180,11 @@
             document.getElementById("vehicleManufacturer").innerHTML = pausecontent[x - 1]['Manufacturer'];
 
             //set vehicle details on the edit form
+            var vid = pausecontent[x - 1]['VID'];
+            vid = vid.replace(/ /g, "_");
+            console.log(vid);
             document.getElementById("editVehicleForm").action = "/account/editVehicle/"+pausecontent[x - 1]['VID'];
+            document.getElementById("deleteVehicle").href = "/account/deleteVehicle/"+vid;
             document.getElementById("editVID").innerHTML = "Edit Vehicle - " + pausecontent[x - 1]['VID'];
             document.getElementById("editModel").placeholder = pausecontent[x - 1]['Model'];
             document.getElementById("editColor").value = pausecontent[x - 1]['Colour'];
