@@ -65,7 +65,7 @@ $details = $_SESSION['equipmentDetails'];
               <th data-type="text">Price</th>
               <th data-type="text">Date Acquired</th>
               <th data-type="text">Team</th>
-
+              <th colspan="2" style="text-align: center;">Action</th>
             </tr>
           </thead>
           <tbody>

@@ -111,8 +111,14 @@ function addNewRow() {
 // delete TABLE row function.
 function removeRow1(removeButton1) {
     var equipTab = document.getElementById('equipTable');
-    equipTab.deleteRow(removeButton1.parentNode.parentNode.rowIndex); // button -> td -> tr.
+    // equipTab.deleteRow(removeButton1.parentNode.parentNode.rowIndex); // button -> td -> tr.
+    if(equipTab.rows.length>2){
+        equipTab.deleteRow(2);
+    }
 
+    if(equipTab.rows.length>1){
+        equipTab.deleteRow(1);
+    }
     submitBtn.style.display = "none";
 }
 
@@ -181,7 +187,14 @@ function assignEquipment() {
 }
 function closeARow(closeButton) {
     var equipAssignTab = document.getElementById('equipAssignTable');
-    equipAssignTab.deleteRow(closeButton.parentNode.parentNode.rowIndex); // button -> td -> tr.
+    // equipAssignTab.deleteRow(closeButton.parentNode.parentNode.rowIndex); // button -> td -> tr.
 
+    if(equipAssignTab.rows.length>2){
+        equipAssignTab.deleteRow(2);
+    }
+
+    if(equipAssignTab.rows.length>1){
+        equipAssignTab.deleteRow(1);
+    }
     saveBtn.style.display = "none";
 }

@@ -89,9 +89,6 @@
                 <label for="fname" style="padding: 0px 73px 0px 0px;">Last Name</label>
                 <input class="input-box" type="text2" name="ln" autofocus placeholder="<?php echo $details[0]['Last_Name'] ?>" required>
                 <br>
-                <label for="fname" style="padding: 0px 111px 0px 0px;">Email</label>
-                <input class="input-box" type="text2" name="email" autofocus placeholder="<?php echo $details[0]['Email'] ?>" required>
-                <br>
                 <label for="fname" style="padding: 0px 40px 0px 0px;">Mobile Number</label>
                 <input class="input-box" type="text2" name="mobile" autofocus placeholder="<?php echo $details[0]['Contact_Number'] ?>" required>
                 <br>
