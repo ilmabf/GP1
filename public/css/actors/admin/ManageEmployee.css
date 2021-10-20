@@ -62,7 +62,7 @@ tr{
     max-width: 130px;
 }
 
-#validFirstName, #validLastName, #validcontactNumber, #validemail, #validdateEnrolled, #validsalary, #validnicNo, #validteam{
+#validFirstName, #validLastName, #validcontactNumber, #validemail, #validdateEnrolled, #validsalary, #validnicNo, #validteam, #stlphoto, #stlteam, #confirmPass, #pass, #stlemail, #stlusername, #nic{
     padding: 2px;
     font-size: 14px;
     border-color: grey;
@@ -128,6 +128,40 @@ tr{
     border: 2px outset #193498;
 }
 
+/* .filterTable{
+    max-width: 100px;
+    overflow: scroll;
+} */
+
+.td-t1{
+    max-width: 100px;
+}
+
+.td-t2{
+    max-width: 70px;
+}
+
+.td-t3{
+    max-width: 150px;
+}
+
+.td-t4{
+    max-width: 100px;
+}
+
+.td-t5{
+    max-width: 40px;
+}
+
+.td-t6{
+    max-width: 90px;
+}
+
+.td-t7{
+    max-width: 95px;
+}
+
+
 .Table-search {
     display: flex;
     flex-direction: column;
@@ -154,7 +188,7 @@ th, td {
     border: solid 1px #193498;
     text-align: left;
     padding: 2px 2px;
-    max-width: fit-content;
+    max-width: 200px;
 }
 
 input[type=search] {

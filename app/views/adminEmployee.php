@@ -26,7 +26,7 @@ include 'UserLoggedInHeader.php';
       <form action="/stl/add" method="post">
         <div id="cont2" class="addTb2"></div>
 
-        <input type="submit" id="btStl" value="Insert data" />
+        <button type="submit" id="btStl" value="Insert data" onclick="validate();">Insert Data</button>
       </form>
     </div>
 
@@ -83,24 +83,26 @@ include 'UserLoggedInHeader.php';
               <th colspan="2" style="text-align: center;">Action</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody style="max-width:100%;">
             <?php
             $count = 0;
             $result = $_SESSION['employeeDetails'];
             while ($count < $_SESSION['rowCount']) { ?>
               <tr id="row<?php $count ?>">
-                <td id="firstName_row<?php $count ?>"><?php echo $result[$count]['First_Name'] ?></td>
-                <td id="lastName_row<?php $count ?>"><?php echo $result[$count]['Last_Name'] ?></td>
-                <td id="contactNumber_row<?php $count ?>"><?php echo $result[$count]['Contact_Number'] ?></td>
-                <td id="email_row<?php $count ?>"><?php echo $result[$count]['Email'] ?></td>
-                <td id="dateEnrolled_row<?php $count ?>"><?php echo $result[$count]['Date_Enrolled'] ?></td>
-                <td id="salary_row<?php $count ?>" style="text-align:right"><?php echo $result[$count]['Salary'] ?>.00</td>
-                <td id="nicNo_row<?php $count ?>" style="text-align:right"><?php echo $result[$count]['NIC_No'] ?></td>
-                <td id="team_row<?php $count ?>" style="text-align:right"><?php echo $result[$count]['Team'] ?></td>
-                <td id="stlId_row<?php $count ?>" style="text-align:right"><?php echo $result[$count]['STL_ID'] ?></td>
-                <td><input type="button" id="<?php echo $count ?>" class="edit_btn" value="Edit" onclick="empEditForm('<?php echo $count ?>')"></td>
-                <td><input type="button" id="save_emp_btn<?php echo $count ?>" class="save_btn" value="Save" onclick="empSaveForm('<?php echo $count ?>')"></td>
-                <td><input type="button" class="del_btn" value="Delete" onclick="empDeleteForm('<?php echo $count ?>')"></td>
+                <td id="<?php echo "firstName_row".$count ?>" class="td-t1"><?php echo $result[$count]['First_Name'] ?></td>
+                <td id="<?php echo "lastName_row".$count ?>" class="td-t1"><?php echo $result[$count]['Last_Name'] ?></td>
+                <td id="<?php echo "contactNumber_row".$count ?>" class="td-t1"><?php echo $result[$count]['Contact_Number'] ?></td>
+                <td id="<?php echo "email_row".$count ?>" class="td-t1" style="max-width:175px;"><?php echo $result[$count]['Email'] ?></td>
+                <td id="<?php echo "dateEnrolled_row".$count ?>" class="td-t1"><?php echo $result[$count]['Date_Enrolled'] ?></td>
+                <td id="<?php echo "salary_row".$count ?>" style="text-align:right" class="td-t1"><?php echo $result[$count]['Salary'] ?>.00</td>
+                <td id="<?php echo "nicNo_row".$count ?>" style="text-align:right" class="td-t1"><?php echo $result[$count]['NIC_No'] ?></td>
+                <td id="<?php echo "team_row".$count ?>" style="text-align:right max-width:60px;"><?php echo $result[$count]['Team'] ?></td>
+                <td id="<?php echo "stlId_row".$count ?>" style="text-align:right max-width:60px;"><?php echo $result[$count]['STL_ID'] ?></td>
+                <td>
+                  <input type="button" id= "<?php echo "edit_emp_btn".$count ?>" class="edit_btn td-t1" value="Edit" onclick="empEditForm('<?php echo $count ?>')">
+                  <input type="button" id="<?php echo "save_emp_btn".$count ?>" class="save_btn" value="Save" onclick="empSaveForm('<?php echo $count ?>')">
+                </td>
+                <td><input type="button" class="del_btn td-t1" value="Delete" onclick="empDeleteForm('<?php echo $count ?>')"></td>
               </tr>
             <?php $count = $count + 1;
             } ?>

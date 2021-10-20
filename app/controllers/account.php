@@ -29,4 +29,27 @@ class Account extends Controller
             header("Location: /account/");
         }
     }
+
+    function editVehicle($vid){
+
+        $model = $_POST['model'];
+        $color = $_POST['color'];
+        $vehicleType = $_POST['type'];
+        $manufacturer = $_POST['manufacturer'];
+
+        $id = $_SESSION['userDetails'][0]['User_ID'];
+        $values = array($model, $color, $vehicleType, $manufacturer);
+
+        if ($this->model->vehicleEdit($id, $vid, $values)) {
+            header("Location: /account/");
+        }
+    }
+
+    function deleteVehicle($vid){
+        $vid = str_replace('_', ' ', $vid);
+        $id = $_SESSION['userDetails'][0]['User_ID'];
+        if ($this->model->vehicleDelete($id, $vid)) {
+            header("Location: /account/");
+        }
+    }
 }
