@@ -8,10 +8,7 @@
     border-color: white;
     cursor: pointer;
 }
-#addNewRow:hover, #bt:hover{
-    background-color: #041553;
-    color: white;
-}
+
 #assignEquipment{
     display: block;
     margin: 35px auto;
@@ -23,31 +20,8 @@
     cursor: pointer;
 }
 
-#assignEquipment:hover, #bt:hover{
-    background-color: #041553;
-}
 
-#submitButton{
-    display: none;
-    margin: 20px auto;
-    padding: 8px 8px;
-    background-color: #193498;
-    color: white;
-    border-radius: 5px;
-    border-color: white;
-    cursor: pointer;
-}
 
-#saveButton{
-    display: none;
-    margin: 20px auto;
-    padding: 8px 8px;
-    background-color: #193498;
-    color: white;
-    border-radius: 5px;
-    border-color: white;
-    cursor: pointer;
-}
 
 #container1{
     display:block;
@@ -64,32 +38,7 @@
 }
 
 
-#removeButton1{
-    background-color: #7B113A;
-    padding: 5px 5px;
-    color: white;
-    border-radius: 5px;
-    border-color: white;
-    cursor: pointer;
-}
 
-#removeButton1:hover{
-    background-color: #550222;
-}
-
-
-#closeButton{
-    background-color: #7B113A;
-    padding: 5px 5px;
-    color: white;
-    border-radius: 5px;
-    border-color: white;
-    cursor: pointer;
-}
-
-#closeButton:hover{
-    background-color: #550222;
-}
 #tb-input{
     padding: 4px;
     font-size: 12px;
@@ -123,9 +72,6 @@
     border-color: white;
 }
 
-#adminViewEquip:hover{
-    background-color: #061757;
-}
 
 .Admin-EquipSearch{
     display: inline-block;

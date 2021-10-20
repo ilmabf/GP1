@@ -153,13 +153,7 @@
     text-align:center;
 }
 
-.editPriceBtn{
-    padding: 5px 15px;
-    color: white;
-    background-color: #193498;
-    cursor: pointer;
-    border-radius: 5px;
-}
+
 
 .displayPrice{
     margin-right: 20px;
@@ -208,93 +202,6 @@
     margin-bottom: 15px;
 }
 
-.closeInteriorClean, .closeVehicle, .closeAddService, .closeAddVehicle{
-    color: #1597E5;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.closeInteriorClean:hover,
-.closeInteriorClean:focus {
-    color: #023f64;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.deleteIClean{
-    display: block;
-    float: left;
-    margin: 25px 15px;
-}
-
-
-.btnDeleteInteriorCleaning{
-    color: white;
-    background-color: #7B113A;
-    padding: 8px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.btnDeleteInteriorCleaning:hover{
-    background-color: #4d0420;
-}
-
-.closeVehicle:hover,
-.closeVehicle:focus {
-    color: #023f64;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.deleteVehicle{
-    display: block;
-    float: left;
-    margin: 25px 15px;
-}
-
-.btnDeleteVehicle{
-    color: white;
-    background-color: #7B113A;
-    padding: 8px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.btnDeleteVehicle:hover{
-    background-color: rgb(187, 13, 13);
-}
-
-.closeAddService:hover,
-.closeAddService:focus {
-    color: #4d0420;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.cancelAddNewServices{
-    display: block;
-    margin: 35px 15px;
-}
-
-.btnAddNewService{
-    color: white;
-    background-color: #193498;
-    padding: 8px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    float: right;
-}
-
-.btnCancelAddService{
-    color: white;
-    background-color: #7B113A;
-    padding: 8px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    float: left;
-}
 
 .addNewServiceInput{
     width: 50%;
@@ -305,35 +212,6 @@
 }
 
 
-.closeAddVehicle:hover,
-.closeAddVehicle:focus {
-    color: #023f64;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.cancelAddNewVehicles{
-    display: block;
-    margin: 35px 15px;
-}
-
-.btnAddNewVehicle{
-    color: white;
-    background-color: #193498;
-    padding: 8px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    float: right;
-}
-
-.btnCancelAddVehicle{
-    color: white;
-    background-color: #7B113A;
-    padding: 8px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    float: left;
-}
 
 .addNewServiceInput{
     width: 50%;

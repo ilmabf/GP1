@@ -6,14 +6,6 @@
     width: 100%;
 }
 
-input[type=text3], select, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: vertical;
-  }
-
 .review-box1{
     display: block;
     background-color:white;
@@ -55,32 +47,4 @@ input[type=text3], select, textarea {
     display: inline-block;
 }
 
-.review-box-button{
-    display: block;
-    margin: 10px auto 10px auto;
-    width: 100px;
-    height: 40px;
-    color: white;
-    border-radius: 15px;
-    background-color: #193498;
-    cursor: pointer;
-    float: right;
-}
-
-.bgImage2{
-    background: url(/public/images/carblur_desktop.png) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    min-height: 100%;
-}
-
-
-
-@media  only screen and (max-width: 770px) {
-    .bgImage2{
-        min-height: 110%;
-    }    
-}
 

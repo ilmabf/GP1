@@ -5,13 +5,7 @@
     font-size: larger;
 }
 
-input[type=text3]{
-    width: 100%;
-    padding: 0px 0px 12px 0px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: vertical;
-}
+
 .reservation-date{
     text-align: center;
     margin: 35px 236px;

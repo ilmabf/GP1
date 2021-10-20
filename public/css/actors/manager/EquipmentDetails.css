@@ -52,32 +52,6 @@
     overflow: auto;
     max-width: 100%;
 }
-table { 
-    max-width: 100%; 
-}
-
-table, th, td { 
-    border: solid 1px #193498;
-    border-collapse: collapse; 
-    /* padding: 2px 2px;  */
-    text-align: center;
-    margin: 0px auto;
-}
-
-th{
-    max-width: 130px;
-}
-
-td{
-    /* max-width: 150px; */
-}
-
-tr{
-    max-width: 100%;
-}
-.hiddenEquipRecord{
-    display: none;
-}
 
 @media only screen and (max-width: 770px){
 
