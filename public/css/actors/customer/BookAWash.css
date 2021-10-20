@@ -174,20 +174,6 @@
     margin: 25px 50px;
 }
 
-.next-button{
-    background-color: #193498;
-    padding: 7px 20px;
-    color: white;
-    border-radius: 15px;
-    font-size: 20px;
-    cursor: pointer;
-    border-radius: 15px;
-    margin-bottom: 20px;
-}
-
-.next-button:hover{
-    background-color: #193498;
-}
 
 .dateWash{
     font-weight: 600;
@@ -238,15 +224,6 @@
     }
 
     .price h3{
-        font-size: 15px;
-    }
-
-    .next-button{
-        padding: 5px 8px;
-        font-size: 15px;
-    }
-
-    .next-button a{
         font-size: 15px;
     }
 

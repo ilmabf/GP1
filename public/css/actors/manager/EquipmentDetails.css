@@ -1,4 +1,10 @@
-#managerSearchEquipment{
+.heading{
+    color: #193498;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: larger;
+}
+#managerSearchEquipment, #managerSearchEmployee{
     padding: 10px 10px;
     border-color: #193498;
     border-radius: 5px;
@@ -19,6 +25,18 @@
 #managerSearchEquipment{
     font-size: 15px;
     border: 2px outset #193498;
+}
+
+.Manager-equip-Table{
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    align-items: center;
+}
+
+.manager-equip-table-wrap {
+    overflow: auto;
+    max-width: 100%;
 }
 
 @media only screen and (max-width: 770px){

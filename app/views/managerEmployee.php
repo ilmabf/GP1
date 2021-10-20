@@ -13,22 +13,22 @@ include 'UserLoggedInHeader.php';
 <div style="height: 50px;"></div>
 <div class="main-Mg-EmpSearch">
 
-  <div class="Mg-EmpSearch mgEmpSearch1 marginFix" style="margin-left: 214px;">
-    <input type="text" class="Mg-Emp-Search" id="managerSearchEmployee" onkeyup="myFunction()" placeholder="Search for Employee..." title="Type in a name">
+<div class="Admin-EmpSearch adEmpSearch1">
+      <input type="search" class="ad-Emp-Search" id="adminSearchEmployee" onkeyup="myFunction()" placeholder="Search for Employee..." title="Type in a name">
+    </div>
+
+    <div class="Admin-EmpSearch adEmpSearch2">
+      <form action="" method="post">
+        <select name="serviceTeam" class="ad-Emp-Search" id="AdminserviceTeams-types">
+          <option value="select service team">Select Service Team</option>
+          <option value="Team 1">Team 1</option>
+          <option value="Team 2">Team 2</option>
+        </select>
+      </form>
+
   </div>
 
-  <div class="Mg-EmpSearch mgEmpSearch2" style="margin-right: 212px;">
-    <form action="" method="post">
-      <select name="serviceTeam" class="Mg-Emp-Search" id="serviceTeams-types">
-        <option value="select service team">Select Service Team</option>
-        <option value="Team A">Team 1</option>
-        <option value="Team B">Team 2</option>
-      </select>
-    </form>
-
-  </div>
-
-  <div class="Mg-EmpSearch mgEmpSearch2">
+  <div class="Mg-EmpSearch mgEmpSearch2" style = "    margin-right: 5px;">
     <form action="" method="post">
       <select name="serviceTeamLeader" class="Mg-Emp-Search" id="serviceTeamLeaders-types">
         <option value="select service team leader">Select Service Team Leader</option>
@@ -85,4 +85,6 @@ include 'UserLoggedInHeader.php';
 
 <div style="min-height: 110px;"></div>
 
-<script src="/public/js/ManagerEmployeeTable.js"></script>
+<!-- <script src="/public/js/ManagerEmployeeTable.js"></script> -->
+<script src="/public/js/AdminManageEmployee.js"></script>
+  <script src="/public/js/AdminEmployeeTable.js"></script>

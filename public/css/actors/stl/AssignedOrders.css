@@ -50,14 +50,3 @@
     float: left;
     margin: 25px 50px;
 }
-.back-button {
-    background-color: #7B113A;
-    padding: 10px 30px;
-    color: white;
-    border-radius: 5px;
-    font-size: 20px;
-    cursor: pointer;
-}
-.back-button:hover{
-    background-color: #7B113A;
-}

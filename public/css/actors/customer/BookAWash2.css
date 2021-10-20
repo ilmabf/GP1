@@ -37,16 +37,6 @@
     margin: 25px 50px;
 }
 
-.next-button{
-    background-color: #193498;
-    padding: 10px 30px;
-    color: white;
-    border-radius: 15px;
-    font-size: 20px;
-    cursor: pointer;
-    border-color: #193498;
-}
-
 .next-button:hover{
     background-color: #001572;
 }
