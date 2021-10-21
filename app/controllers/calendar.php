@@ -11,10 +11,10 @@ class Calendar extends Controller
     //Get reservations for today
     function reservations()
     {
-        $this->view->render('StlAssignedOrders');
+        $this->view->render('stl/AssignedOrders');
     }
     function orderDetails()
     {
-        $this->view->render('StlOrderDetails');
+        $this->view->render('stl/OrderDetails');
     }
 }
