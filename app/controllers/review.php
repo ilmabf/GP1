@@ -14,12 +14,12 @@ class Review extends Controller
         //Fetch reviews
         $result = $this->model->getUserReviews();
         $_SESSION['reviews'] = $result;
-        $this->view->render('UserReviews');
+        $this->view->render('user/Reviews');
     }
 
     function write()
     {
-        $this->view->render('CustomerGiveReview');
+        $this->view->render('customer/GiveReview');
     }
 
     function store()

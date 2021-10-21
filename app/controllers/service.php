@@ -15,10 +15,10 @@ class Service extends Controller
 
         //User Autherization
         if ($_SESSION['role'] == "systemadmin") {
-            $this->view->render('AdminEquipment');
+            $this->view->render('admin/Equipment');
             exit;
         } else if ($_SESSION['role'] == "manager") {
-            $this->view->render('ManagerEquipment');
+            $this->view->render('manager/Equipment');
         }
     }
 
@@ -26,10 +26,10 @@ class Service extends Controller
     {
         //User Autherization
         if ($_SESSION['role'] == "systemadmin") {
-            $this->view->render('AdminService');
+            $this->view->render('admin/Service');
             exit;
         } else if ($_SESSION['role'] == "manager") {
-            $this->view->render('ManagerService');
+            $this->view->render('manager/Service');
         }
     }
 

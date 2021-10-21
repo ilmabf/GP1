@@ -17,7 +17,7 @@ class Customer extends Controller
 
     function signup()
     {
-        $this->view->render('CustomerSignup');
+        $this->view->render('customer/Signup');
     }
 
     function register()
@@ -38,7 +38,7 @@ class Customer extends Controller
 
         //check for duplicate customer
         if ($this->model->checkDuplicate($array)) {
-            $this->view->render('CustomerSignup');
+            $this->view->render('customer/Signup');
             exit;
         }
 
@@ -76,7 +76,7 @@ class Customer extends Controller
             if ($mail->mailto($subject, $email, $body)) {
                 //email has been sent
                 $_SESSION['verifyBox'] = 1;
-                $this->view->render('CustomerSignup');
+                $this->view->render('customer/Signup');
             }
         }
     }
@@ -92,6 +92,6 @@ class Customer extends Controller
 
     function help()
     {
-        $this->view->render('CustomerHelp');
+        $this->view->render('customer/Help');
     }
 }
