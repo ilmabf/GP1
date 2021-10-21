@@ -80,7 +80,7 @@ $details = $_SESSION['equipmentDetails'];
                 <td id="<?php echo "dateAcquired_row".$count ?>" class="td-t1"><?php echo $details[$count]['Date_Acquired'] ?></td>
                 <td id="<?php echo "assignedTeam_row".$count ?>" class="td-t1" style="text-align:right"><?php echo $details[$count]['Team'] ?></td>
                 <td>
-                  <input type="button" id= "<?php echo "edit_quip_btn".$count ?>" class="edit_btn td-t1" value="Edit" onclick="editEquipment('<?php echo $count ?>')">
+                  <input type="button" id= "<?php echo "edit_equip_btn".$count ?>" class="edit_btn td-t1" value="Edit" onclick="editEquipment('<?php echo $count ?>')">
                   <input type="button" id="<?php echo "save_equip_btn".$count ?>" class="save_btn" value="Save" onclick="saveEquipment('<?php echo $count ?>')">
                 </td>
                 <td><input type="button" class="del_btn td-t1" value="Delete" onclick="deleteEquipment('<?php echo $count ?>')"></td>
