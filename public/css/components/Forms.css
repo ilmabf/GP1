@@ -114,3 +114,12 @@
 
 }
 
+@media  only screen and (max-width: 770px){
+  .cancelAssignForm{
+    width: 50%;
+  }
+
+  #cancelForm{
+    width: 50%;
+  }
+}

@@ -89,7 +89,7 @@ include 'views/user/LoggedInHeader.php';
                     <option value="Not Selected">Team 2</option>
                 </select>
                 <div class="reservation-buttons" style = "display: inline;">
-                    <button class="reservationButtons a8" id="cancelAssignBtn" type="button" onclick="openassign()" style = "float: revert; margin-left: 10px; background-color:#1597E5; border-color: #1597E5;"><a>Assign Team</a></button>
+                    <button class="reservationButtons a8" id="cancelAssignBtn" type="button" onclick="openassign()" style = "float: revert; margin-left: 10px; background-color:#1597E5; border-color: #1597E5; padding: 8px 15px;"><a>Assign Team</a></button>
                 </div>
               
             </div>

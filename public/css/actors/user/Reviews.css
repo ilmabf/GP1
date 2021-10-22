@@ -78,14 +78,19 @@
 
 @media  only screen and (max-width: 770px) {
     .review-box1{
-        width: 59%;
+        /* width: 59%;
         top: 69%;
+        font-size: smaller; */
+        width: 59%;
+        top: 56%;
         font-size: smaller;
+        overflow: scroll;
+        height: 400px;
     }
 
     .custGiveReview{
         width: 59%;
-        top: 69%;
+        top: 59%;
         font-size: smaller;
     }
     .Givereview-box{
