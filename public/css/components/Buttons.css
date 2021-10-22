@@ -34,7 +34,7 @@
     }
 
     .bt2{
-        margin-left: 128px;
+        /* margin-left: 128px; */
         padding: 4px 4px;
         float: right;
     }
@@ -74,6 +74,27 @@
     }
 
 
+}
+
+@media  only screen and (min-width: 770px){
+    .btn3{
+        top: 117px;
+        right: 9px;
+    }
+    
+    .btn2{
+        right: 364px; 
+        top: 370px; 
+    }
+    .bt2{
+        margin-left: 203px;
+        padding: 10px 20px;
+    }
+
+    .a10{
+        margin-right: 161px;
+    }
+    
 }
 
 @media  only screen and (max-width: 327px){
@@ -383,8 +404,6 @@
     position: absolute;
     opacity: 0.4;
 
-    right: 364px; 
-    top: 370px; 
   }
 
   .vehicle-box:hover > .btn3 {
@@ -397,8 +416,7 @@
     /* top: 727px; */
     
     opacity: 0.7;
-    top: 117px;
-    right: 9px;
+
   }
 
 
@@ -488,9 +506,8 @@
     /* display: inline; */
     margin-bottom: 30px;
     float: right;
-    margin-left: 203px;
+    
     background-color: #1597E5;
-    padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     border-color: #1597E5;
@@ -819,7 +836,7 @@
 
 .a10{
     float: right;
-    margin-right: 161px;
+    /* margin-right: 161px; */
     background-color: #7B113A;
     padding: 10px 20px;
     border-radius: 5px;
