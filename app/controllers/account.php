@@ -31,7 +31,7 @@ class Account extends Controller
     }
 
     function editVehicle($vid){
-
+        $vid = str_replace('_', ' ', $vid);
         $model = $_POST['model'];
         $color = $_POST['color'];
         $vehicleType = $_POST['type'];

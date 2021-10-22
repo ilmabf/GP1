@@ -63,7 +63,7 @@
                     <option value="SUV">SUV</option>
                     <option value="Luxury">Luxury</option>
                     <option value="Van">Van</option>
-                    <option value="H-Black">H-Black</option>
+                    <option value="H-Black">H-Back</option>
                 </select>
                 <br>
                 <label for="Manufacturer" style="padding: 0px 80px 0px 0px;">Manufacturer</label>
@@ -183,7 +183,7 @@
             var vid = pausecontent[x - 1]['VID'];
             vid = vid.replace(/ /g, "_");
             console.log(vid);
-            document.getElementById("editVehicleForm").action = "/account/editVehicle/"+pausecontent[x - 1]['VID'];
+            document.getElementById("editVehicleForm").action = "/account/editVehicle/"+vid;
             document.getElementById("deleteVehicle").href = "/account/deleteVehicle/"+vid;
             document.getElementById("editVID").innerHTML = "Edit Vehicle - " + pausecontent[x - 1]['VID'];
             document.getElementById("editModel").placeholder = pausecontent[x - 1]['Model'];

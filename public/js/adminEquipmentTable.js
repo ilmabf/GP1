@@ -1,4 +1,4 @@
-const searchInput = document.getElementById('adminSearchEquipment')
+const searchInput = document.getElementById('managerSearchEquipment')
 const table = document.getElementById('viewAsTable')
 const trArray = Array.prototype.slice.call(table.querySelectorAll('tbody tr'))
 
