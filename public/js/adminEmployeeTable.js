@@ -19,11 +19,13 @@ searchInput.addEventListener('keyup', filterTable, false)
 
 
 function empEditForm(no) {
-    //console.log(no);
-    //console.log("firstName_row"+no);
+  // Get the ids of edit and save buttons.
+  // Hide edit btn and display the save btn. 
+  // Get the ids of all the table data. 
+  // Change the inner html to inputs. 
+  // Assign values of the inputs to current table data value. 
     document.getElementById("edit_emp_btn"+no).style.display="none";
     document.getElementById("save_emp_btn"+no).style.display="block";
-    //console.log("firstName_row"+no);
 
     var firstName = document.getElementById("firstName_row"+no);
     var lastName = document.getElementById("lastName_row"+no);
