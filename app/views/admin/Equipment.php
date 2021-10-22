@@ -73,14 +73,17 @@ $details = $_SESSION['equipmentDetails'];
             <?php
             $count = 0;
             while ($count < $_SESSION['rowCount']) { ?>
-              <tr>
+              <tr id="rowNo<?php $count ?>">
                 <td><?php echo $details[$count]['Equipment_ID'] ?></td>
-                <td><?php echo $details[$count]['Name'] ?></td>
-                <td style="text-align:right"><?php echo $details[$count]['Price'] ?>.00</td>
-                <td><?php echo $details[$count]['Date_Acquired'] ?></td>
-                <td style="text-align:right"><?php echo $details[$count]['Team'] ?></td>
-                <td><a href="#" class="edit_btn">Edit</a></td>
-                <td><a href="#" class="del_btn">Delete</a></td>
+                <td id="<?php echo "name_row".$count ?>" class="td-t1"><?php echo $details[$count]['Name'] ?></td>
+                <td id="<?php echo "price_row".$count ?>" class="td-t1" style="text-align:right"><?php echo $details[$count]['Price'] ?>.00</td>
+                <td id="<?php echo "dateAcquired_row".$count ?>" class="td-t1"><?php echo $details[$count]['Date_Acquired'] ?></td>
+                <td id="<?php echo "assignedTeam_row".$count ?>" class="td-t1" style="text-align:right"><?php echo $details[$count]['Team'] ?></td>
+                <td>
+                  <input type="button" id= "<?php echo "edit_equip_btn".$count ?>" class="edit_btn td-t1" value="Edit" onclick="editEquipment('<?php echo $count ?>')">
+                  <input type="button" id="<?php echo "save_equip_btn".$count ?>" class="save_btn" value="Save" onclick="saveEquipment('<?php echo $count ?>')">
+                </td>
+                <td><input type="button" class="del_btn td-t1" value="Delete" onclick="deleteEquipment('<?php echo $count ?>')"></td>
               </tr>
             <?php $count = $count + 1;
             } ?>

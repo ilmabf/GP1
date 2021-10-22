@@ -13,7 +13,7 @@ $details = $_SESSION['equipmentDetails'];
 <div style="height: 50px;"></div>
 
 <div style="display:block;">
-  <div class="Admin-EquipSearch adEquipSearch1"  style = "margin-left: 230px;">
+  <div class="Admin-EquipSearch adEquipSearch1"  style = "margin-left: 158px;">
     <input type="search" class="ad-Equip-Search" id="managerSearchEquipment" onkeyup="myFunction()" placeholder="Search for Equipment..." title="Type in a name"    >
   </div>
 
