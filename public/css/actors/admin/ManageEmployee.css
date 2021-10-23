@@ -74,7 +74,7 @@ tr{
     border-radius: 5px;
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-left: 135px;
+    margin-left: 60px;
     display: block;
     font-size: 15px;
 }
@@ -104,7 +104,7 @@ tr{
 .adEmpSearch2{
     float: right;
     margin-left: 20px;
-    margin-right: 150px;
+    margin-right: 90px;
 }
 
 #AdminserviceTeams-types{
@@ -138,7 +138,7 @@ tr{
 }
 
 .td-t2{
-    max-width: 70px;
+    max-width: 50px;
 }
 
 .td-t3{
