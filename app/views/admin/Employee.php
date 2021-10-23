@@ -79,6 +79,7 @@ include 'views/user/LoggedInHeader.php';
               <th data-type="number">NIC No</th>
               <th data-type="text">Team</th>
               <th data-type="text">Leader</th>
+              <th data-type="text">Photo Link</th>
               <th colspan="2" style="text-align: center;">Action</th>
             </tr>
           </thead>
@@ -97,6 +98,7 @@ include 'views/user/LoggedInHeader.php';
                 <td id="<?php echo "nicNo_row".$count ?>" style="text-align:right" class="td-t1"><?php echo $result[$count]['NIC_No'] ?></td>
                 <td id="<?php echo "team_row".$count ?>" style="text-align:right max-width:60px;"><?php echo $result[$count]['Team'] ?></td>
                 <td id="<?php echo "stlId_row".$count ?>" style="text-align:right max-width:60px;"><?php echo $result[$count]['STL_ID'] ?></td>
+                <td id="<?php echo "stlPhoto_row".$count ?>" style="text-align:right max-width:40px;"></td>
                 <td>
                   <input type="button" id= "<?php echo "edit_emp_btn".$count ?>" class="edit_btn td-t1" value="Edit" onclick="empEditForm('<?php echo $count ?>')">
                   <input type="button" id="<?php echo "save_emp_btn".$count ?>" class="save_btn" value="Save" onclick="empSaveForm('<?php echo $count ?>')">
