@@ -29,7 +29,7 @@
     display: inline-block;
     position: absolute;
     top: 8px;
-    border: 1px solid #193498;
+    /* border: 1px solid #193498; */
 }
 
 .box{
@@ -173,9 +173,7 @@
         font-size: 20px;
     }
 
-    .types{
-        width: 100%;
-    }
+    
     .box{
         overflow: visible;
     }

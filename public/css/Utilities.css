@@ -16,8 +16,16 @@
     .bgImage{
         min-height: 1000px;
     }
+    .types{
+        width: 100%;
+    }
 }
 
+@media  only screen and (min-width: 770px){
+    .types{
+        width: 50%;
+    }
+}
 @media  only screen and (max-width: 327px){
     .bgImage1{
         height: 1000px;
@@ -65,7 +73,7 @@ input[type=text2]{
     /* border-radius: 4px; */
     resize: vertical;
     margin-bottom: 5px;
-    width: 50%;
+    
 }
 
 .inv {
@@ -87,7 +95,8 @@ input[type=text2]{
 
 input[type=text4], select, textarea {
     width: 100%;
-    padding: 12px;
+    /* padding: 12px; */
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: vertical;
