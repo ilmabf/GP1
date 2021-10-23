@@ -12,24 +12,25 @@ $details = $_SESSION['equipmentDetails'];
 </div>
 <div style="height: 50px;"></div>
 
-<div style="display:block;">
-  <div class="Admin-EquipSearch adEquipSearch1"  style = "margin-left: 338px;">
-    <input type="search" class="ad-Equip-Search" id="managerSearchEquipment" onkeyup="myFunction()" placeholder="Search for Equipment..." title="Type in a name"    >
-  </div>
 
-  <div class="Admin-EquipSearch adEquipSearch2" style="margin-top: 10px;     margin-right: 400px;">
-    <form action="" method="post">
-      <select name="serviceTeam" class="ad-Equip-Search" id="Manager-AssignedEquip-TeamTypes">
-        <option value="select service team">Select Service Team</option>
-        <option value="Team A">Team A</option>
-        <option value="Team B">Team B</option>
-      </select>
-    </form>
-  </div>
-</div>
 
 <div class="Table-search">
   <div class="table-wrapper">
+    <div style="display:inline-block; width: 100%;">
+      <div style="float: left;">
+        <input type="search" class="ad-Equip-Search" id="managerSearchEquipment" onkeyup="myFunction()" placeholder="Search for Equipment..." title="Type in a name">
+      </div>
+
+      <div style="float: right;">
+        <form action="" method="post">
+          <select name="serviceTeam" class="ad-Equip-Search" id="Manager-AssignedEquip-TeamTypes">
+            <option value="select service team">Select Service Team</option>
+            <option value="Team A">Team A</option>
+            <option value="Team B">Team B</option>
+          </select>
+        </form>
+      </div>
+    </div>
     <table id="managerEquipTab">
       <thead>
         <tr>
