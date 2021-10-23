@@ -5,17 +5,6 @@
     margin-bottom: 20px;
 }
 
-table { 
-    max-width: 100%; 
-}
-
-table, th, td { 
-    border: solid 1px #193498;
-    border-collapse: collapse; 
-    text-align: center;
-    margin: 0px auto;
-}
-
 th{
     max-width: 130px;
     padding: 0.35em 0.35em; 
@@ -72,9 +61,7 @@ tr{
     padding: 10px 10px;
     border-color: #193498;
     border-radius: 5px;
-    margin-top: 10px;
     margin-bottom: 10px;
-    margin-left: 60px;
     display: block;
     font-size: 15px;
 }
@@ -97,14 +84,9 @@ tr{
     display: inline-block;
 }
 
-.adEmpSearch1{
-    margin-left: 20px;
-}
-
 .adEmpSearch2{
     float: right;
     margin-left: 20px;
-    margin-right: 90px;
 }
 
 #AdminserviceTeams-types{
@@ -159,19 +141,6 @@ tr{
 
 .td-t7{
     max-width: 95px;
-}
-
-
-.Table-search {
-    display: flex;
-    flex-direction: column;
-    padding: 1em;
-    align-items: center;
-}
-
-.table-wrapper {
-    overflow: auto;
-    max-width: 100%;
 }
 
 tr {
