@@ -13,11 +13,11 @@ $details = $_SESSION['equipmentDetails'];
 <div style="height: 50px;"></div>
 
 <div style="display:block;">
-  <div class="Admin-EquipSearch adEquipSearch1"  style = "margin-left: 158px;">
+  <div class="Admin-EquipSearch adEquipSearch1"  style = "margin-left: 338px;">
     <input type="search" class="ad-Equip-Search" id="managerSearchEquipment" onkeyup="myFunction()" placeholder="Search for Equipment..." title="Type in a name"    >
   </div>
 
-  <div class="Admin-EquipSearch adEquipSearch2" style="margin-top: 10px;     margin-right: 476px;">
+  <div class="Admin-EquipSearch adEquipSearch2" style="margin-top: 10px;     margin-right: 400px;">
     <form action="" method="post">
       <select name="serviceTeam" class="ad-Equip-Search" id="Manager-AssignedEquip-TeamTypes">
         <option value="select service team">Select Service Team</option>
@@ -59,4 +59,4 @@ $details = $_SESSION['equipmentDetails'];
 </div>
 
 <div style="min-height: 110px;"></div>
-<script src="/public/js/managerEquipmentTable.js"></script>
+<script src="/public/js/ManagerEquipmentTable.js"></script>

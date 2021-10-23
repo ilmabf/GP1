@@ -97,7 +97,7 @@ $details = $_SESSION['equipmentDetails'];
     <div style="min-height: 110px;"></div>
 
 
-    <script src="/public/js/adminManageEquipment.js"></script>
-    <script src="/public/js/adminEquipmentTable.js"></script>
+    <script src="/public/js/AdminManageEquipment.js"></script>
+    <script src="/public/js/AdminEquipmentTable.js"></script>
 
 </main>

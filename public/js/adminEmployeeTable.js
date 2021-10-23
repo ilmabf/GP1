@@ -36,6 +36,7 @@ function empEditForm(no) {
     var nicNo = document.getElementById("nicNo_row"+no);
     var team = document.getElementById("team_row"+no);
     var stlId = document.getElementById("stlId_row"+no);
+    var stlPhoto = document.getElementById("stlPhoto_row"+no);
 
 
     var firstNameData = firstName.innerHTML;
@@ -47,6 +48,7 @@ function empEditForm(no) {
     var nicNoData = nicNo.innerHTML;
     var teamData = team.innerHTML;
     var stlIdData = stlId.innerHTML;
+    var stlPhotoData = stlPhoto.innerHTML;
 
 
     firstName.innerHTML = "<input type='text' id='firstName_text"+no+"' class='td-t2' value='"+firstNameData+"'>";
@@ -58,6 +60,7 @@ function empEditForm(no) {
     nicNo.innerHTML = "<input type='text' id='nicNo_text"+no+"' class='td-t6' value='"+nicNoData+"'>";
     team.innerHTML = "<input type='number' id='team_text"+no+"' class='td-t5' value='"+teamData+"'>";
     stlId.innerHTML = "<input type='number' id='stlId_text"+no+"' class='td-t5' value='"+stlIdData+"'>";
+    stlPhoto.innerHTML = "<input type='text' id='stlPhoto_text"+no+"' class='td-t5' value='"+stlPhotoData+"'>";
 
 }
 
@@ -72,6 +75,7 @@ function empSaveForm(no) {
     var nicNoVal = document.getElementById("nicNo_text"+no).value;
     var teamVal = document.getElementById("team_text"+no).value;
     var stlIdVal = document.getElementById("stlId_text"+no).value;
+    var stlPhotoVal = document.getElementById("stlPhoto_text"+no).value;
 
     document.getElementById("firstName_row"+no).innerHTML = firstNameVal;
     document.getElementById("lastName_row"+no).innerHTML = lastNameVal;
@@ -82,6 +86,7 @@ function empSaveForm(no) {
     document.getElementById("nicNo_row"+no).innerHTML = nicNoVal;
     document.getElementById("team_row"+no).innerHTML = teamVal;
     document.getElementById("stlId_row"+no).innerHTML = stlIdVal;
+    document.getElementById("stlPhoto_row"+no).innerHTML = stlPhotoVal;
 
     document.getElementById("edit_emp_btn"+no).style.display="block";
     document.getElementById("save_emp_btn"+no).style.display="none";
