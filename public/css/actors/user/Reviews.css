@@ -85,6 +85,7 @@
         font-size: smaller;
         overflow: scroll;
         height: 400px;
+        overflow-y: hidden;
     }
 
     .custGiveReview{

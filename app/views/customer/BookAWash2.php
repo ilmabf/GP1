@@ -28,6 +28,7 @@ include 'views/user/LoggedInHeader.php';
 </div>
 
 <div class="next-pg" style = "margin-right: 15%;">
+<span class="priceBox2">Rs 1000</span>
     <button class="next-button"><a href="/booking/orderSummary" style="color: white; ">Next</a></button>
 </div>
 <div style="min-height: 20px;"></div>

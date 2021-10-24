@@ -11,8 +11,7 @@
 
     .btn2{
        top: 347px;
-       
-   right: 40px;
+       right: 40px;
     }
 
     .btn3{
@@ -34,7 +33,6 @@
     }
 
     .bt2{
-        /* margin-left: 128px; */
         padding: 4px 4px;
         float: right;
     }
@@ -50,8 +48,6 @@
     .order-buttons{
         display: block;
         margin-top: 20px;
-        /* margin-left: 50px;
-        margin-right: 50px; */
         width: 100%;
     }
     
@@ -113,7 +109,7 @@
     text-align: center;
 }
 
-#bts{
+#bts, #btStl{
     display: none;
     margin: 20px auto;
     padding: 8px 8px;
@@ -124,16 +120,6 @@
     cursor: pointer;
 }
 
-#btStl{
-    display: none;
-    margin: 20px auto;
-    padding: 8px 8px;
-    background-color: #193498;
-    color: white;
-    border-radius: 5px;
-    border-color: white;
-    cursor: pointer;
-}
 
 #addRow:hover, #addStlRow:hover{
     background-color: #041553;
@@ -188,18 +174,7 @@
 #assignEquipment:hover, #bt:hover{
     background-color: #041553;
 }
-#submitButton{
-    display: none;
-    margin: 20px auto;
-    padding: 8px 8px;
-    background-color: #193498;
-    color: white;
-    border-radius: 5px;
-    border-color: white;
-    cursor: pointer;
-}
-
-#saveButton{
+#submitButton , #saveButton{
     display: none;
     margin: 20px auto;
     padding: 8px 8px;
@@ -398,6 +373,8 @@
 .vehicle-box:hover > .btn2 {
     display: block;
     opacity: 1;
+    background-color: #193498;
+    color: white;
   }
   
   .btn2 {
@@ -406,9 +383,12 @@
 
   }
 
-  .vehicle-box:hover > .btn3 {
+  
+  .map-box:hover > .btn3 {
     display: block;
     opacity: 1;
+    background-color: #193498;
+    color: white;
   }
   
   .btn3 {
@@ -431,6 +411,8 @@
   .account-box2:hover > .btn {
     display: block;
     opacity: 1;
+    background-color: #193498;
+    color: white;
   }
 
   .button {
@@ -465,6 +447,7 @@
     cursor: pointer;
     border-radius: 15px;
     margin-bottom: 20px;
+    width: 150px;
 }
 
 .next-button:hover{
