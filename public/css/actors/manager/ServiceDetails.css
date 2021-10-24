@@ -9,9 +9,9 @@
     text-align: center;
     margin: 35px 75px;
     padding: 10px 20px;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);   
+    background-color: whitesmoke;
+    border-radius: 27px;
+    /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);    */
 }
 
 .vehicle-type h3{

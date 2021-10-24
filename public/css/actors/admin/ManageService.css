@@ -15,15 +15,18 @@
     color: #193498;
 }
 
+.addBtnService:hover, .addBtnVehicles:hover{
+    color: #193498;
+}
 .serviceManageBox{
     display: flex;
     flex-wrap: wrap;
     text-align: center;
     margin: 35px 80px;
     padding: 10px 20px;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); 
+    background-color: whitesmoke;
+    border-radius: 27px;
+    /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);  */
     padding-top: 40px;
     padding-bottom: 40px;
 }
@@ -33,8 +36,8 @@
     margin: auto auto;
     padding: 20px 40px;
     background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    border-radius: 27px;
+    /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); */
     font-weight: 500;
     cursor: pointer;
 }
@@ -71,9 +74,9 @@
     text-align: center;
     margin: 35px 80px;
     padding: 10px 20px;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); 
+    background-color: whitesmoke;
+    border-radius: 27px;
+    /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);  */
     padding-top: 40px;
     padding-bottom: 40px;
 }
@@ -83,8 +86,8 @@
     margin: auto auto;
     padding: 20px 40px;
     background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    border-radius: 27px;
+    /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); */
     font-weight: 500;
     cursor: pointer;
 }
@@ -117,9 +120,9 @@
     text-align: center;
     margin: 35px 80px;
     padding: 10px 20px;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); 
+    background-color: whitesmoke;
+    border-radius: 27px;
+    /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);  */
     padding-top: 40px;
     padding-bottom: 40px;
 }
@@ -129,26 +132,26 @@
     margin: auto auto;
     padding: 20px 40px;
     background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    border-radius: 27px;
+    /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); */
     font-weight: 500;
 }
 
 #admin-wash-types{
     border-color: #193498;
-    border-width: 2px;
+    /* border-width: 2px; */
     font-weight: 600;
     font-size: 14px;
 }
 
 #admin-vehicle-types{
     border-color: #193498;
-    border-width: 2px;
+    /* border-width: 2px; */
     font-weight: 600;
     font-size: 14px;
 }
 
-.priceBox{
+.AdminpriceBox{
     display: inline;
     text-align:center;
 }

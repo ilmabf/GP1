@@ -5,6 +5,37 @@
     font-size: larger;
 }
 
+.priceBox{
+    position: absolute;
+    top: 43.rem;
+    right: 2.75rem;
+    border-radius: 0.2rem;
+    background-color: white;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    padding-bottom: .25rem;
+    padding-top: .25rem;
+    font-weight: 700;
+    font-size: x-small;
+    box-shadow: 2px 2px steelblue;
+}
+
+.priceBox2{
+    margin-right: 15%;
+    position: absolute;
+    top: 43.rem;
+    right: -0.5rem;
+    border-radius: 0.2rem;
+    background-color: white;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    padding-bottom: .25rem;
+    padding-top: .25rem;
+    font-weight: 700;
+    font-size: x-small;
+    box-shadow: 2px 2px steelblue;
+}
+
 .sub-heading{
     text-align: center;
     font-weight: bold;
@@ -20,9 +51,9 @@
     text-align: center;
     margin: 35px 80px;
     padding: 10px 20px;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);   
+    background-color: whitesmoke;
+    border-radius: 27px;
+    /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);    */
 }
 
 .wash-date h3{
@@ -41,9 +72,9 @@
 .select-time{
     margin: 35px 80px;
     padding: 10px 20px;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    background-color: whitesmoke;
+    border-radius: 27px;
+    /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); */
     text-align: center;
 }
 
@@ -75,9 +106,9 @@
 .select-vehicle{
     margin: 35px 80px;
     padding: 10px 20px;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    background-color: whitesmoke;
+    border-radius: 27px;
+    /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); */
     text-align: center; 
 }
 
@@ -110,9 +141,9 @@
     text-align: center;
     margin: 35px 77px;
     padding: 10px 20px;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);   
+    background-color: whitesmoke;
+    border-radius: 27px;
+    /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);    */
 }
 
 .wash-type h3{
@@ -123,12 +154,12 @@
 }
     
 .wash-select-radio{
-    text-align: center;
-    display: inline-block;
-    background-color: white;
+    /* text-align: center; */
+    /* display: inline-block; */
+    /* background-color: white; */
     padding: 10px 20px;
     font-size: 16px;
-    border: 2px solid #193498;
+    /* border: 2px solid #193498; */
     border-radius: 5px;
     margin: auto 20px;
 }
@@ -147,9 +178,9 @@
 .price{
     margin: 35px 80px;
     padding: 10px 20px;
-    background-color: white;
-    border-radius: 5px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); 
+    background-color: whitesmoke;
+    border-radius: 27px;
+    /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);  */
 }
 
 .price h3{
@@ -162,7 +193,7 @@
     border-radius: 5px;
     padding: 12px 12px;
     margin-right: 15px;
-    background-color:white;
+    /* background-color:white; */
     border-color: #193498;
     font-weight: bold;
     margin-bottom: 15px;
@@ -187,6 +218,26 @@
     border-color: #193498;
 }
 
+@media only screen and (min-width: 770px){
+    .wash-date{
+        flex: 50%;
+    }
+    .select-time{
+        flex: 50%;
+    }
+    .dateTime{
+        display: flex;
+    }
+    .vehicleWash{
+        display: flex;
+    }
+    .select-vehicle{
+        flex: 50%;
+    }
+    .wash-type{
+        flex: 50%;
+    }
+}
 @media only screen and (max-width: 770px){
 
     .heading{

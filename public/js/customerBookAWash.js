@@ -1,5 +1,5 @@
 var i = 0;
-var txt = 'Pick the time & give your location. We WandiWash ready to wash your vehicle. We are Eco Friendly.';
+var txt = 'Pick a date, time & location. WandiWash is ready to wash your vehicle! We are Eco Friendly!';
 var speed = 50;
 
 function typeWriter() {

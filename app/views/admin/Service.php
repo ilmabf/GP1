@@ -15,7 +15,7 @@ include 'views/user/LoggedInHeader.php';
         </div>
         <div class="serviceManageBox">
             <div class="typeServices" id="typeServices1" onclick="openViewServiceForm()">Interior Cleaning</div>
-            <div class="typeServices" id="typeServices2" onclick="openViewServiceForm()">Exterior washing & Interior Cleaning</div>
+            <div class="typeServices" id="typeServices2" onclick="openViewServiceForm()">Exterior Washing & Interior Cleaning</div>
             <div class="typeServices" id="typeServices3" onclick="openViewServiceForm()">Sanitization</div>
             <div class="typeServices addBtnService" id="addServiceTypes" onclick="openServiceForm()">+ Add</div>
         </div>
@@ -45,7 +45,7 @@ include 'views/user/LoggedInHeader.php';
                     <select name="washType" id="admin-wash-types">
                         <option value="Choose a service type">Choose a service type</option>
                         <option value="Interior Cleaning">Interior Cleaning</option>
-                        <option value="Exterior washing & Interior Cleaning">Exterior washing & Interior Cleaning</option>
+                        <option value="Exterior washing & Interior Cleaning">Exterior Washing & Interior Cleaning</option>
                         <option value="Sanitization">Sanitization</option>
                     </select>
                 </form>
@@ -64,8 +64,8 @@ include 'views/user/LoggedInHeader.php';
             </div>
 
             <div class="typesBox">
-                <div class="priceBox displayPrice">Rs. <?php echo "990" ?></div>
-                <div class="priceBox"><button type="button" class="editPriceBtn">Edit</button></div>
+                <div class="AdminpriceBox displayPrice">Rs. <?php echo "990" ?></div>
+                <div class="AdminpriceBox"><button type="button" class="editPriceBtn">Edit</button></div>
             </div>
 
         </div>
