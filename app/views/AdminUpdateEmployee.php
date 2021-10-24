@@ -1,6 +1,6 @@
 <?php
 
-include 'UserLoggedInHeader.php';
+include 'views/user/LoggedInHeader.php';
 ?>
 
 <div class="bgImage" style="height: 100%;">

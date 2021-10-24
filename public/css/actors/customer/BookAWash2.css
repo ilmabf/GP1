@@ -11,7 +11,7 @@
     padding: 10px 20px;
     background-color: white;
     border-radius: 5px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);   
+    /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);    */
 }
 
 .select-location-box{
@@ -32,10 +32,6 @@
     font-weight: bold;
 }
 
-.next-pg{
-    float: right;
-    margin: 25px 50px;
-}
 
 .next-button:hover{
     background-color: #001572;
