@@ -51,17 +51,6 @@
     border-color: grey;
     max-width: 110px;
 }
-#adminSearchEquipment{
-    padding: 10px 10px;
-    border-color: #193498;
-    border-radius: 5px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 320px;
-    display: block;
-    font-size: 15px;
-}
-
 #adminViewEquip{
     display: block;
     margin: 30px auto;
@@ -87,10 +76,13 @@
     margin-right: 405px;
 }
 
-#AdminserviceTeamTypes{
-    font-weight: 600;
+#adminSearchEquipment{
+    padding: 10px 10px;
+    border-color: #193498;
     border-radius: 5px;
-    border: 2px outset #193498;
+    margin-bottom: 10px;
+    display: block;
+    font-size: 15px;
 }
 
 #adminSearchEquipment{

@@ -41,12 +41,12 @@ $details = $_SESSION['equipmentDetails'];
       <div class="table-wrapper">
         <div style="display:inline-block; width: 100%;">
           <div style="float: left;">
-            <input type="search" class="ad-Equip-Search" id="managerSearchEquipment" onkeyup="myFunction()" placeholder="Search for Equipment..." title="Type in a name">
+            <input type="search" class="ad-Equip-Search" id="adminSearchEquipment" onkeyup="myFunction()" placeholder="Search for Equipment..." title="Type in a name">
           </div>
 
           <div style="float: right;">
             <form action="" method="post">
-              <select name="serviceTeam" class="ad-Equip-Search" id="Manager-AssignedEquip-TeamTypes">
+              <select name="serviceTeam" class="ad-Equip-Search" id="AdminserviceTeamLeaders-types">
                 <option value="select service team">Select Service Team</option>
                 <option value="Team A">Team A</option>
                 <option value="Team B">Team B</option>
