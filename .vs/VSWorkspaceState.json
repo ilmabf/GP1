@@ -2,14 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\config",
     "\\app\\views",
+    "\\app\\views\\admin",
     "\\app\\views\\manager",
     "\\public",
     "\\public\\css",
     "\\public\\css\\actors",
-    "\\public\\css\\actors\\admin"
+    "\\public\\css\\actors\\admin",
+    "\\public\\css\\actors\\manager"
   ],
-  "SelectedNode": "\\app\\views\\manager\\Equipment.php",
+  "SelectedNode": "\\app\\views\\admin\\Equipment.php",
   "PreviewInSolutionExplorer": false
 }

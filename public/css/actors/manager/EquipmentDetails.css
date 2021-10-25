@@ -25,17 +25,6 @@
     border: 2px outset #193498;
 }
 
-.Manager-equip-Table{
-    display: flex;
-    flex-direction: column;
-    padding: 1em;
-    align-items: center;
-}
-
-.manager-equip-table-wrap {
-    overflow: auto;
-    max-width: 100%;
-}
 
 @media only screen and (max-width: 770px){
 
