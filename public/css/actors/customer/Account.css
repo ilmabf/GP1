@@ -159,6 +159,22 @@
     display: inline;
     margin-right: 7px;
 }
+
+.carIcon{
+    content: url('/public/images/carIcon.png');
+    width: 33px;
+    display: inline;
+    margin-left: 10px;
+}
+
+.locationIcon{
+    content: url(/public/images/location.png);
+    width: 19px;
+    display: inline;
+    margin-left: 10px;
+    height: 18px;
+}
+
 .account-image{
     width: 80px;
     height: 80px;
