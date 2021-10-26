@@ -54,6 +54,6 @@ function saveEquipment(no){
 
 
 }
- function deleteEquipment(no){
-      document.getElementById("rowNo"+no+"").outerHTML="";
- }
+ //function deleteEquipment(no){
+  //   document.getElementById("rowNo"+no+"").innerHTML="";
+ //}

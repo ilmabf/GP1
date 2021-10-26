@@ -54,4 +54,42 @@ class Service extends Controller
             }
         }
     }
+    function editEquipment($eid)
+    {
+     //   echo '<pre>';
+      //  var_dump ($eid);
+      //  echo'</pre>';
+     //User Autherization
+        if ($_SESSION['role'] == "systemadmin") {
+             $eid = str_replace('_', ' ', $eid);
+            $name = $_POST['name'];
+            $price = $_POST['price'];
+            $dateAcquired = $_POST['dateAcquired'];
+            $team = $_POST['team'];
+
+            $values =array($name,$price,$dateAcquired,$team);
+
+           // if ($this->model->equipmentEdit($eid,$values)) {
+          //  header("Location: /service/equipment");
+
+       // }
+        }else {
+                echo "Error";
+        }
+   }
+    function deleteEquipment($eid)
+    {
+        //User Autherization
+        if ($_SESSION['role'] == "systemadmin") {
+     
+        $eid = str_replace('_', ' ', $eid);
+       
+        if ($this->model->equipmentDelete($eid)) {
+            header("Location: /service/equipment");
+
+        }
+        }else {
+                echo "Error";
+       }
+   }
 }
