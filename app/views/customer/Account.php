@@ -123,7 +123,7 @@
                 </div>
             </div> <br>
             <div class="account-det1">
-                <div class="account-header2"><b>My Vehicles</b></div>
+                <div class="account-header2"><b>My Vehicles</b><div class="carIcon"></div></div>
                 <div class="account-box3">
                     <div class="vehicle-list">
                         <select name="Vehicles" id="Customer-Vehicles" onchange="getVehicleDetails()">
@@ -149,7 +149,7 @@
                 </div><br>
             </div>
             <div class="account-det2">
-                <div class="account-header2"><b>My Locations</b></div>
+                <div class="account-header2"><b>My Locations</b><div class="locationIcon"></div></div>
                 <div class="account-box3">
                     <div class="vehicle-list">
                         <select name="Vehicles" id="Customer-Vehicles">
