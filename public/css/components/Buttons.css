@@ -69,7 +69,9 @@
         margin-right: 20px;
     }
 
-
+    .a13{
+        width: 120px;
+    }
 }
 
 @media  only screen and (min-width: 770px){
@@ -821,7 +823,7 @@
     float: right;
     /* margin-right: 161px; */
     background-color: #7B113A;
-    padding: 10px 20px;
+    padding: 6px 9px;
     border-radius: 5px;
     cursor: pointer;
 }

@@ -20,7 +20,7 @@ include 'views/user/LoggedInHeader.php';
     </div>
     <div style="min-height: 110px;"></div>
 
-    <div id="box3">
+    <div id="upcoming">
 
         <div class="box3">
             <div class="invoiceBorder">Invoice - 1257</div>
