@@ -56,7 +56,7 @@ function empEditForm(no) {
     contactNumber.innerHTML = "<input type='number' id='contactNumber_text"+no+"' class='td-t7' value='"+contactNumberData+"'>";
     email.innerHTML = "<input type='email' id='email_text"+no+"' class='td-t3' value='"+emailData+"'>";
     dateEnrolled.innerHTML = "<input type='date' id='dateEnrolled_text"+no+"' class='td-t4' value='"+dateEnrolledData+"'>";
-    salary.innerHTML = "<input type='number' id='salary_text"+no+"' class='td-t2' value='"+salaryData+"'>";
+    salary.innerHTML = "<input type='number' id='salary_text"+no+"' class='td-t8' value='"+salaryData+"'>";
     nicNo.innerHTML = "<input type='text' id='nicNo_text"+no+"' class='td-t6' value='"+nicNoData+"'>";
     team.innerHTML = "<input type='number' id='team_text"+no+"' class='td-t5' value='"+teamData+"'>";
     stlId.innerHTML = "<input type='number' id='stlId_text"+no+"' class='td-t5' value='"+stlIdData+"'>";

@@ -4,11 +4,11 @@
     include 'views/user/Header.php';
     ?>
     <main>
-        
+
         <div id="container">
 
 
-            <div class="login-signupbox">
+            <div class="login-signupbox" id="signup-resizing">
                 <div class="login-signupform">
                     <div class="loguser-icon"></div>
                     <h2 class="login-signupheader">Create Your Account</h2>
@@ -19,7 +19,7 @@
                         <br>
                         <input class="input-box" id="signUpLastName" type="text" maxlength="50" name="lastname" autofocus placeholder="Last Name" required>
                         <br>
-                        <input class="input-box" type="text" name="username" autofocus placeholder="Username" maxlength="50" required>
+                        <input class="input-box" id="signUpUserName" type="text" name="username" autofocus placeholder="Username" maxlength="50" required>
                         <br>
                         <p style="font-size: 11px; padding-bottom: 5px; color:red; max-width 200px;"><?php
                                                                                                         if ($_SESSION['flag'] == 1) {
@@ -28,7 +28,7 @@
                                                                                                         ?>
                         </p>
 
-                        <input class="input-box" type="email" name="email" autofocus placeholder="Email" maxlength="50" required>
+                        <input class="input-box" id="signUpEmailAdd" type="email" name="email" autofocus placeholder="Email" maxlength="50" required>
                         <br>
                         <p style="font-size: 11px; padding-bottom: 5px; color:red; max-width 200px;"><?php
                                                                                                         if ($_SESSION['flag'] == 2) {
@@ -37,7 +37,7 @@
 
                                                                                                         ?>
                         </p>
-                        <input class="input-box" type="tel" name="mobilenumber" autofocus placeholder="Mobile No" pattern="[0-9]{10}" required>
+                        <input class="input-box" id="signUpMobile" type="tel" name="mobilenumber" autofocus placeholder="Mobile No" pattern="[0-9]{10}" required>
                         <p class="form-input-error-msg" style="font-size: 10px; padding-bottom: 5px;"><b>Format: 07****</b></p>
                         <p style="font-size: 11px; padding-bottom: 5px; color:red; max-width 200px;"><?php
                                                                                                         if ($_SESSION['flag'] == 3) {
@@ -49,7 +49,7 @@
                         <br>
                         <input class="input-box" id="signup-confirm-pwd" type="password" name="confirm_pwd" autofocus placeholder="Confirm Password" required>
 
-                        <button id="mySignupButton" class="input-box loggin-signup-button" type="submit" name="signup" onclick = "checkLetter();">Signup</button>
+                        <button id="mySignupButton" class="input-box loggin-signup-button" type="submit" name="signup" onclick="checkLetter();">Signup</button>
                     </form>
 
                 </div>
@@ -71,10 +71,6 @@
                     </div>
                 </div>
             <?php } ?>
-
-
-
-
 
         </div>
 

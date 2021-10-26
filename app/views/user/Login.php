@@ -15,16 +15,16 @@ if (isset($_SESSION["locked"])) {
         <div id="container">
             <div>
 
-                <div class="login-signupbox">
+                <div class="login-signupbox" id="login-resizing">
                     <div class="login-signupform">
 
                         <h2 class="login-signupheader">Login</h2>
 
                         <form action="/user/home" method="post" id="user-login" name="loginForm">
 
-                            <input class="input-box" type="text" name="usernameemail" autofocus placeholder="Username/Email" required>
+                            <input id="input-resize" class="input-box" type="text" name="usernameemail" autofocus placeholder="Username/Email" required>
                             <br>
-                            <input class="input-box" type="password" name="pwd" autofocus placeholder="Password" required>
+                            <input class="input-box input-resize" type="password" name="pwd" autofocus placeholder="Password" required>
                             <br>
                             <p class="errorDisplay" style="font-size: 11px; padding-bottom: 5px; color:red; max-width: 200px;"><?php echo ($_SESSION['error']); ?></p>
                             <?php
@@ -46,8 +46,10 @@ if (isset($_SESSION["locked"])) {
         </div>
 
     </main>
-
+    <script src="/public/js/UserLogin.js"></script>
     <?php
     include 'views/user/Footer.php';
     ?>
+
+
     </html>
