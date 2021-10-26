@@ -16,88 +16,94 @@ include 'views/user/LoggedInHeader.php';
 
     <div style="min-height: 110px;"></div>
 
-    <div class="heading">
-        <h2>Upcoming Order - <span style="color:black;">AAAA</span></h2>
-    </div>
-
-
     <div id="upcoming">
-        <div class="mainUp">
-            <div class="upcoming">
+        <div class="box3">
+            <div class="invoiceBorder">Order - 1257</div>
 
-                <div class="boxx">
+            <div class="box2">
 
-                    <div class="order">
-                        <div class="orderitem">Customer Name</div>
-                        <div class="orderitem1">Gihan Anthony</div>
-                    </div>
-                    <div class="order">
-                        <div class="orderitem">Date</div>
-                        <div class="orderitem1">2021/10/18</div>
-                    </div>
-                    <div class="order">
-                        <div class="orderitem">Time</div>
-                        <div class="orderitem1">8 am - 10 am</div>
-                    </div>
-                    <div class="order">
-                        <div class="orderitem">Contact No</div>
-                        <div class="orderitem1">0775674896</div>
-                    </div>
+                <hr><br>
+                <div class="res">
+                    <div class="orderitem">Name</div>
+                    <div class="orderitemx">Gihan Anthony</div>
+
                 </div>
-                <hr class="hr">
-                <div class="boxx">
-                    <div class="order">
-                        <div class="orderitem">Vehicle No</div>
-                        <p class="orderitem1">AD - 2315</p>
-                    </div>
-                    <div class="order">
-                        <div class="orderitem">Model</div>
-                        <p class="orderitem1">Axio</p>
-                    </div>
-                    <div class="order">
-                        <div class="orderitem">Vehicle Type</div>
-                        <p class="orderitem1">Sedan</p>
-                    </div>
-                    <div class="order">
-                        <div class="orderitem">Color</div>
-                        <div class="orderitem1 " style="background-color:blue; width: 26px;height: 24px;display: inline-block;border: 1px solid #193498;"></div>
-                    </div>
+                <div class="res">
+                    <div class="orderitem">Date</div>
+                    <div class="orderitemx">2021 / 10 / 20</div>
+
                 </div>
-                <hr class="hr">
-                <div class="boxx">
-                    <div class="order">
-                        <div class="orderitem">Service Type</div>
-                        <p class="orderitem1">Interior Cleaning</p>
-                    </div>
-                    <div class="order">
-                        <div class="orderitem">Total Price Rs.</div>
-                        <p class="orderitem1">1000/-</p>
-                    </div>
-                    <div class="order">
-                        <div class="orderitem"><a href="">View Location</a></div>
-                    </div>
+                <div class="res">
+                    <div class="orderitem">Time</div>
+                    <div class="orderitemx">8 am - 10 am</div>
+
                 </div>
-                <hr class="hr" style="width:100%;">
-                <hr class="hr" style="width:100%;">
+
+                <div class="res">
+                    <div class="orderitem">Contact No</div>
+                    <div class="orderitemx">0775674896</div>
+
+
+                </div><br>
+                <hr><br>
+                <div class="res">
+                    <div class="orderitem">Vehicle Identification No.</div>
+                    <div class="orderitemx">AD - 2315</div>
+                </div>
+                <div class="res">
+                    <div class="orderitem">Model</div>
+                    <div class="orderitemx">Axio</div>
+                </div>
+                <div class="res">
+                    <div class="orderitem">Type</div>
+                    <div class="orderitemx">Sedan</div>
+                </div>
+                <div class="res">
+                    <div class="orderitem">Color</div>
+                    <div class="orderitemx" style="background-color:blue; width: 26px;height: 24px;display: inline-block;border: 1px solid #193498;"></div>
+                </div><br>
+                <hr><br>
+                <div class="res">
+                    <div class="orderitem">Location</div>
+                    <div class="orderitemx"><button class="reservationButtons a12" id="cancelAssignBtn" style="color:white; padding: 1px 3px; margin-bottom:0px" onclick=""><a>View Location</a></button></div>
+                </div>
+                <div class="res">
+                    <div class="orderitem">Wash Package</div>
+                    <div class="orderitemx">Interior Cleaning</div>
+
+                </div>
+                <hr>
+                <hr>
+                <div class="res">
+                    <div class="orderitem">Total Price Rs.</div>
+                    <div class="orderitemx">1050/-</div>
+
+                </div>
+                <hr>
+                <hr>
             </div>
+
+
         </div>
-        <div class="reservation-buttons">
-            <div class="reschedule" style = "display: inline-block;">
-                <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff; margin-bottom:10px">Assign a service team</h3>
-                <select name="serviceTeam" id="serviceTeam-types" style = "width: 134px;">
-                    <option value="Not Selected">Team 1</option>
-                    <option value="Not Selected">Team 2</option>
-                </select>
-                <div class="reservation-buttons" style = "display: inline;">
-                    <button class="reservationButtons a8" id="cancelAssignBtn" type="button" onclick="openassign()" style = "float: revert; margin-left: 10px; background-color:#1597E5; border-color: #1597E5; padding: 8px 15px;"><a>Assign Team</a></button>
+        <div class="box4">
+            <div class="reservation-buttons">
+                <div class="reschedule" style="display: inline-block;">
+                    <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff; margin-bottom:10px">Assign a service team</h3>
+                    <select name="serviceTeam" id="serviceTeam-types" style="width: 134px;">
+                        <option value="Not Selected">Team 1</option>
+                        <option value="Not Selected">Team 2</option>
+                    </select>
+                    <div class="reservation-buttons" style="display: inline;">
+                        <button class="reservationButtons a8" id="cancelAssignBtn" type="button" onclick="openassign()" style="float: revert; margin-left: 10px; background-color:#1597E5; border-color: #1597E5; padding: 8px 15px;"><a>Assign Team</a></button>
+                    </div>
+
                 </div>
-              
+
+                <button class="reservationButtons a10" id="cancelReservationBtn" style="margin-top: 32px; padding: 8px 9px;" onclick="opencancel()"><a>Cancel Reservation</a></button>
+
+
+
             </div>
-
-            <button class="reservationButtons a10" id="cancelReservationBtn" style = "margin-top: 32px;" onclick="opencancel()"><a>Cancel Reservation</a></button>
-
-
-
         </div>
 
 

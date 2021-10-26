@@ -13,7 +13,7 @@ include 'views/user/LoggedInHeader.php';
     <p style="color: red; font-size: 12px; text-align:center">* Once you confirm your order you can only cancel/reschedule up until 24 hours before the reservation time</p><br>
     <div class="box3">
 
-        <div class="box2">
+        <div class="boxOrderSum">
             <div class="res">
                 <div class="orderitem">Date</div>
                 <div class="orderitemx">2021 / 10 / 20</div>
