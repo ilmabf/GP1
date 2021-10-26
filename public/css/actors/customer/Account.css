@@ -105,9 +105,11 @@
     font-size: 25px;
     /* padding: 20px 10px 20px 10px; */
     padding: 20px 10px 20px 45px;
-    border: 1px solid;
-    border-color: #a1a1a1;
+    /* border: 1px solid; */
+    /* border-color: #a1a1a1; */
     width: 100%;
+    background-color: whitesmoke;
+    border-radius: 27px;
 }
 
 .vehicle-box{
@@ -116,12 +118,14 @@
     margin-top: 10px;
     margin-bottom: 15px;
     padding: 20px 10px 20px 10px;
-    border: 1px solid;
-    border-color: #a1a1a1;
+    /* border: 1px solid;
+    border-color: #a1a1a1; */
     width: 100%;
     justify-content: center;
     align-items: center;
     /* display: flex; justify-content: center; align-items: center */
+    background-color: whitesmoke;
+    border-radius: 27px;
 }
 
 .account-box3{
@@ -136,6 +140,41 @@
     width: 100%;
 }
 
+.nameIcon{
+    content: url('/public/images/Name.png');
+    width: 20px;
+    display: inline;
+}
+
+.emailIcon{
+    content: url('/public/images/email.jpg');
+    width: 15px;
+    display: inline;
+    margin-right: 7px;
+}
+
+.phoneIcon{
+    content: url('/public/images/phone.png');
+    width: 15px;
+    display: inline;
+    margin-right: 7px;
+}
+
+.carIcon{
+    content: url('/public/images/carIcon.png');
+    width: 33px;
+    display: inline;
+    margin-left: 10px;
+}
+
+.locationIcon{
+    content: url(/public/images/location.png);
+    width: 19px;
+    display: inline;
+    margin-left: 10px;
+    height: 18px;
+}
+
 .account-image{
     width: 80px;
     height: 80px;
@@ -147,7 +186,7 @@
     float: left;
     display: inline;
     margin-left: 26px;
-    
+    border-radius: 27px;
 }
 
 .account-details{

@@ -7,7 +7,7 @@
 
 .priceBox {
   position: absolute;
-  /* top: 43rem; */
+  /* top: 43.rem; */
   right: 2.75rem;
   border-radius: 0.2rem;
   background-color: white;
@@ -15,15 +15,15 @@
   padding-right: 0.5rem;
   padding-bottom: 0.25rem;
   padding-top: 0.25rem;
-  font-weight: 600;
-  font-size: small;
+  font-weight: 700;
+  font-size: x-small;
   box-shadow: 2px 2px steelblue;
 }
 
 .priceBox2 {
   margin-right: 15%;
   position: absolute;
-  /* top: 43rem; */
+  /* top: 43.rem; */
   right: -0.5rem;
   border-radius: 0.2rem;
   background-color: white;
@@ -31,8 +31,8 @@
   padding-right: 0.5rem;
   padding-bottom: 0.25rem;
   padding-top: 0.25rem;
-  font-weight: 600;
-  font-size: small;
+  font-weight: 700;
+  font-size: x-small;
   box-shadow: 2px 2px steelblue;
 }
 

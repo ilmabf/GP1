@@ -10,8 +10,8 @@
     }
 
     .btn2{
-       top: 347px;
-       right: 40px;
+        top: 352px;
+        right: 57px;
     }
 
     .btn3{
@@ -69,7 +69,9 @@
         margin-right: 20px;
     }
 
-
+    .a13{
+        width: 120px;
+    }
 }
 
 @media  only screen and (min-width: 770px){
@@ -79,16 +81,12 @@
     }
     
     .btn2{
-        right: 364px; 
-        top: 370px; 
+        right: 358px;
+        top: 373px;
     }
     .bt2{
         margin-left: 203px;
         padding: 10px 20px;
-    }
-
-    .a10{
-        margin-right: 161px;
     }
     
 }
@@ -404,7 +402,7 @@
     opacity: 0.4;
     position: absolute;
     top: 115px;
-    right: 55px;
+    right: 62px;
     /* right: 92px; */
   }
 
@@ -821,7 +819,7 @@
     float: right;
     /* margin-right: 161px; */
     background-color: #7B113A;
-    padding: 10px 20px;
+    padding: 6px 9px;
     border-radius: 5px;
     cursor: pointer;
 }

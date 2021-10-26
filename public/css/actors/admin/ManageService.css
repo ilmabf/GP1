@@ -83,7 +83,7 @@
 
 .typeVehicles{
     text-align: center;
-    margin: auto auto;
+    margin: auto;
     padding: 20px 40px;
     background-color: white;
     border-radius: 27px;
@@ -156,7 +156,33 @@
     text-align:center;
 }
 
+.sedan{
+    content: url("/public/images/Sedan.png");
+    width: 135px;
+    /* height: 50%; */
+    border-radius: 27px;
+}
 
+.hblack{
+    content: url("/public/images/H-Back.png");
+    width: 135px;
+    /* height: 50%; */
+    border-radius: 27px;
+}
+
+.suv{
+    content: url("/public/images/Suv.png");
+    width: 135px;
+    /* height: 50%; */
+    border-radius: 27px;
+}
+
+.luxury{
+    content: url("/public/images/Luxury.png");
+    width: 135px;
+    /* height: 50%; */
+    border-radius: 27px;
+}
 
 .displayPrice{
     margin-right: 20px;

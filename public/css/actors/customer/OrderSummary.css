@@ -77,20 +77,27 @@
     display: flex;
     flex-wrap: wrap;
     padding: 10px 0px 0px 0px;
-    /* background-color: white; */
     border-radius: 5px;
-    /* box-shadow: 0 3px 10px rgb(0 0 0 / 40%); */
     left: 34%;
     position: relative;
-    /* /* justify-content: center; */
 }
 .box2{
+    border-radius: 5px;
+    text-align: left;
+
+    border-radius: 5px;
+    padding: 20px 20px;
+    text-align: left;
+    width: 100%;
+}
+
+.boxOrderSum{
     margin: 21px 50px;
-    /* background-color: white; */
     border-radius: 5px;
     padding: 20px 20px;
     text-align: left;
     margin-left: -38px;
+
 }
 .orderPrice{
     margin-bottom: 30px;
@@ -341,7 +348,7 @@
 
     
     .box2{
-        margin: 20px 100px;
+        /* margin: 20px 100px; */
         /* background-color: white; */
         border-radius: 5px;
         padding: 20px 20px;
@@ -350,4 +357,14 @@
         text-align: left;
     }
     
+    .boxOrderSum{
+        margin: 20px 100px;
+        /* background-color: white; */
+        border-radius: 5px;
+        padding: 20px 20px;
+        margin-left: 3px;
+        font-size: smaller;
+        text-align: left;
+    }
+
 }
