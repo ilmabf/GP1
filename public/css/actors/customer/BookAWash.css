@@ -7,7 +7,7 @@
 
 .priceBox{
     position: absolute;
-    top: 43.rem;
+    /* top: 43.rem; */
     right: 2.75rem;
     border-radius: 0.2rem;
     background-color: white;
@@ -23,7 +23,7 @@
 .priceBox2{
     margin-right: 15%;
     position: absolute;
-    top: 43.rem;
+    /* top: 43.rem; */
     right: -0.5rem;
     border-radius: 0.2rem;
     background-color: white;
