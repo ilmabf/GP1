@@ -6,7 +6,7 @@ include 'views/user/LoggedInHeader.php';
 <div style="min-height: 110px;"></div>
 
 <div class="heading-adminManageService">
-    <h2>Manage Service</h2>
+    <h2>Manage Services</h2>
 </div>
 <div id="service">
     <div class="serviceManage">
@@ -26,11 +26,12 @@ include 'views/user/LoggedInHeader.php';
             <h3 style="color: #193498;">Vehicle Types</h3>
         </div>
         <div class="vehicleManageBox">
-            <div class="typeVehicles" id="typeVehicles1" onclick="openViewVehicleType()">H - Back</div>
+            <div class="typeVehicles" id="typeVehicles1" onclick="openViewVehicleType()">H-black</div>
             <div class="typeVehicles" id="typeVehicles2" onclick="openViewVehicleType()">Sedan</div>
-            <div class="typeVehicles" id="typeVehicles3" onclick="openViewVehicleType()">Suv</div>
-            <div class="typeVehicles" id="typeVehicles4" onclick="openViewVehicleType()">Van</div>
-            <div class="typeVehicles addBtnVehicles" id="addNewVehicleTypess" onclick="openVehicleAddForm()">+ Add</div>
+            <div class="typeVehicles" id="typeVehicles3" onclick="openViewVehicleType()">SUV</div>
+            <div class="typeVehicles" id="typeVehicles4" onclick="openViewVehicleType()">Luxury</div>
+            <div class="typeVehicles" id="typeVehicles5" onclick="openViewVehicleType()">Van</div>
+            <div class="typeVehicles addBtnVehicles" id="addNewVehicleTypess" onclick="openVehicleAddForm()" style = "background-color: white; padding:20px 40px;">+ Add</div>
         </div>
     </div>
 
@@ -59,6 +60,7 @@ include 'views/user/LoggedInHeader.php';
                         <option value="Sedan">Sedan</option>
                         <option value="Suv">Suv</option>
                         <option value="Van">Van</option>
+                        <option value="Luxury">Luxury</option>
                     </select>
                 </form>
             </div>
