@@ -7,7 +7,7 @@ include 'views/user/LoggedInHeader.php';
         <h1 class="stl-dashboard-h1">Today's Reservations</br></h1>
 
         <h3 style="text-align:center; margin-bottom:10px; font-size:18px"><?php echo date("Y-m-d"); ?> </h3>
-
+        <div style="min-height: 110px;"></div>
         <div class="mainUpcoming">
             <div class="upcomingOrders">
 

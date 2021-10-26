@@ -5,72 +5,78 @@ include 'views/user/LoggedInHeader.php';
 <div class="bgImage">
 
     <div style="min-height: 110px;"></div>
-
-    <div class="heading">
-        <h2>Order - <span style="color:black;">BBBB</span></h2>
-    </div>
     <div class="mainUp">
-        <div class="upcoming">
+    <div class="box3">
+            <div class="invoiceBorder">Order - 1257</div>
 
-            <div class="boxx">
+            <div class="box2">
 
-                <div class="order">
-                    <div class="orderitem">Customer Name</div>
-                    <div class="orderitem1">Kamal Silva</div>
+                <hr><br>
+                <div class="res">
+                    <div class="orderitem">Name</div>
+                    <div class="orderitemx">Gihan Anthony</div>
+
                 </div>
-                <div class="order">
+                <div class="res">
                     <div class="orderitem">Date</div>
-                    <div class="orderitem1">2021/10/03</div>
+                    <div class="orderitemx">2021 / 10 / 20</div>
+
                 </div>
-                <div class="order">
+                <div class="res">
                     <div class="orderitem">Time</div>
-                    <div class="orderitem1">12 pm - 2 pm</div>
+                    <div class="orderitemx">8 am - 10 am</div>
+
                 </div>
-                <div class="order">
+
+                <div class="res">
                     <div class="orderitem">Contact No</div>
-                    <div class="orderitem1">0769012345</div>
+                    <div class="orderitemx">0775674896</div>
+
+
+                </div><br>
+                <hr><br>
+                <div class="res">
+                    <div class="orderitem">Vehicle Identification No.</div>
+                    <div class="orderitemx">AD - 2315</div>
                 </div>
-            </div>
-            <hr class="hr">
-            <div class="boxx">
-                <div class="order">
-                    <div class="orderitem">Vehicle No</div>
-                    <p class="orderitem1">CS - 1528</p>
-                </div>
-                <div class="order">
+                <div class="res">
                     <div class="orderitem">Model</div>
-                    <p class="orderitem1">Premio</p>
+                    <div class="orderitemx">Axio</div>
                 </div>
-                <div class="order">
-                    <div class="orderitem">Vehicle Type</div>
-                    <p class="orderitem1">Sedan</p>
+                <div class="res">
+                    <div class="orderitem">Type</div>
+                    <div class="orderitemx">Sedan</div>
                 </div>
-                <div class="order">
+                <div class="res">
                     <div class="orderitem">Color</div>
-                    <div class="orderitem1 " style="background-color:blue; width: 26px;height: 24px;display: inline-block;border: 1px solid #193498;"></div>
+                    <div class="orderitemx" style="background-color:blue; width: 26px;height: 24px;display: inline-block;border: 1px solid #193498;"></div>
+                </div><br>
+                <hr><br>
+                <div class="res">
+                    <div class="orderitem">Location</div>
+                    <div class="orderitemx"><button class="reservationButtons a12" id="cancelAssignBtn" style="color:white; padding: 1px 3px; margin-bottom:0px" onclick=""><a>View Location</a></button></div>
                 </div>
-            </div>
-            <hr class="hr">
-            <div class="boxx">
-                <div class="order">
-                    <div class="orderitem">Service Type</div>
-                    <p class="orderitem1">Sanitization</p>
+                <div class="res">
+                    <div class="orderitem">Completed by</div>
+                    <div class="orderitemx">Service Team 1</div>
                 </div>
-                <div class="order">
+                <div class="res">
+                    <div class="orderitem">Wash Package</div>
+                    <div class="orderitemx">Interior Cleaning</div>
+
+                </div>
+                <hr>
+                <hr>
+                <div class="res">
                     <div class="orderitem">Total Price Rs.</div>
-                    <p class="orderitem1">500/-</p>
+                    <div class="orderitemx">1050/-</div>
+
                 </div>
-                <div class="order">
-                    <div class="orderitem">Done by</div>
-                    <p class="orderitem1">Team 1</p>
-                    </p>
-                </div>
-                <div class="order">
-                    <div class="orderitem"><a href="">View Location</a></div>
-                </div>
+                <hr>
+                <hr>
             </div>
-            <hr class="hr" style="width:100%;">
-            <hr class="hr" style="width:100%;">
+
+
         </div>
     </div>
     <div class="service-team" style = "background-color:transparent; box-shadow:none;">
