@@ -67,7 +67,7 @@
             if ($_SESSION['verifyBox'] == 1) { ?>
                 <div id="signupVerify" class="toVerifySingupBox">
                     <div class="toVerifySignupBoxContent">
-                        <h3>Thank you for signing up!<br>Please verify your email address to complete setting up your account.</h2>
+                        <h3 style="color:#193498">Thank you for signing up!<br><br><span style="font-size:smaller"> Please verify your email address to complete setting up your account.</span></h2>
                     </div>
                 </div>
             <?php } ?>
