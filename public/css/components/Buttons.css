@@ -81,8 +81,8 @@
     }
     
     .btn2{
-        right: 373px;
-        top: 373px;
+        right: 368px;
+        top: 368px;
     }
     .bt2{
         margin-left: 203px;
@@ -371,8 +371,7 @@
 .vehicle-box:hover > .btn2 {
     display: block;
     opacity: 1;
-    background-color: #193498;
-    color: white;
+    cursor: pointer;
   }
   
   .btn2 {
@@ -380,21 +379,16 @@
     opacity: 0.4;
 
   }
-
-  
   .map-box:hover > .btn3 {
     display: block;
     opacity: 1;
-    background-color: #193498;
-    color: white;
+    cursor: pointer;
   }
   
   .btn3 {
     position: absolute;
-    /* top: 727px; */
-    
     opacity: 0.7;
-
+    color: #193498;
   }
 
 
@@ -403,14 +397,12 @@
     position: absolute;
     top: 115px;
     right: 62px;
-    /* right: 92px; */
   }
 
   .account-box2:hover > .btn {
     display: block;
     opacity: 1;
-    background-color: #193498;
-    color: white;
+    cursor: pointer;
   }
 
   .button {
