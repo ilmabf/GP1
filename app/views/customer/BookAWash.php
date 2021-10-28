@@ -16,7 +16,7 @@ include 'views/user/LoggedInHeader.php';
     </div>
     <div class="dateTime">
         <div class="wash-date">
-            <h3>Select a date</h3>
+            <h3>Select a convenient date to generate available time slots</h3>
 
             <div id="closeOnClick">
                 <div class="dateWash"><input type="date" value="date" name="dateofBooking" class="dateBooking"></div>
