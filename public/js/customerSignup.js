@@ -94,5 +94,3 @@ function checkLetter() {
     lName.setCustomValidity('');
   }
 }
-
-
