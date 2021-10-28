@@ -1,4 +1,4 @@
-.login-signupbox {
+/* .login-signupbox {
   background-color: white;
   border-radius: 5px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
@@ -7,7 +7,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 10px 20px 10px 20px;
-}
+} */
 
 .login-signupheader {
   text-align: center;
@@ -82,5 +82,10 @@ input:valid {
 
   .link-to-go-signup:hover {
     text-decoration: underline;
+  }
+
+  .login-signupbox {
+    transform: translate(-50%, -50%);
+    padding: 10px 20px 10px 20px;
   }
 }
