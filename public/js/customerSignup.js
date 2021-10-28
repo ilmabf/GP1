@@ -95,32 +95,40 @@ function checkLetter() {
   }
 }
 
-function myFunction(x) {
-  if (x.matches) { // If media query matches
-    document.getElementById("signUpFirstName").addEventListener("click", mySignupInputResizeFunction);
-    document.getElementById("signUpLastName").addEventListener("click", mySignupInputResizeFunction);
-    document.getElementById("signUpUserName").addEventListener("click", mySignupInputResizeFunction);
-    document.getElementById("signUpEmailAdd").addEventListener("click", mySignupInputResizeFunction);
-    document.getElementById("signUpMobile").addEventListener("click", mySignupInputResizeFunction);
-    document.getElementById("signup-pwd").addEventListener("click", mySignupInputResizeFunction);
-    document.getElementById("signup-confirm-pwd").addEventListener("click", mySignupInputResizeFunction);
-  }
-}
+$("#signUpFirstName").focus(function() {
 
-function mySignupInputResizeFunction() {
-    document.getElementById("signup-resizing").style.zIndex = "3";
-}
+  var height = $("body").css('height');
 
-var x = window.matchMedia("(max-width: 770px)")
-myFunction(x) // Call listener function at run time
+  $("body").css('height', height);
 
-var ignoreClickOnMeElement = document.getElementById('signup-resizing');
-
-document.addEventListener('click', function(event) {
-    var isClickInsideElement = ignoreClickOnMeElement.contains(event.target);
-    if (!isClickInsideElement) {
-        document.getElementById("signup-resizing").style.zIndex = "0";
-    }
 });
+
+// function myFunction(x) {
+//   if (x.matches) { // If media query matches
+//     document.getElementById("signUpFirstName").addEventListener("click", mySignupInputResizeFunction);
+//     document.getElementById("signUpLastName").addEventListener("click", mySignupInputResizeFunction);
+//     document.getElementById("signUpUserName").addEventListener("click", mySignupInputResizeFunction);
+//     document.getElementById("signUpEmailAdd").addEventListener("click", mySignupInputResizeFunction);
+//     document.getElementById("signUpMobile").addEventListener("click", mySignupInputResizeFunction);
+//     document.getElementById("signup-pwd").addEventListener("click", mySignupInputResizeFunction);
+//     document.getElementById("signup-confirm-pwd").addEventListener("click", mySignupInputResizeFunction);
+//   }
+// }
+
+// function mySignupInputResizeFunction() {
+//     document.getElementById("signup-resizing").style.zIndex = "3";
+// }
+
+// var x = window.matchMedia("(max-width: 770px)")
+// myFunction(x) // Call listener function at run time
+
+// var ignoreClickOnMeElement = document.getElementById('signup-resizing');
+
+// document.addEventListener('click', function(event) {
+//     var isClickInsideElement = ignoreClickOnMeElement.contains(event.target);
+//     if (!isClickInsideElement) {
+//         document.getElementById("signup-resizing").style.zIndex = "0";
+//     }
+// });
 
 

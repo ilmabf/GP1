@@ -8,7 +8,7 @@
         <div id="container">
             <div style="min-height: 110px;">
 
-                <div class="login-signupbox" style="top: 64%;">
+                <div class="login-signupbox">
                     <div class="login-signupform">
                         <div class="loguser-icon"></div>
                         <h2 class="login-signupheader">Create Your Account</h2>
