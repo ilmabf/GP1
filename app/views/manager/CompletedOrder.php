@@ -48,6 +48,10 @@ include 'views/user/LoggedInHeader.php';
                     <div class="orderitemx">Sedan</div>
                 </div>
                 <div class="res">
+                    <div class="orderitem">Manufacturer</div>
+                    <div class="orderitemx">BMW</div>
+                </div>
+                <div class="res">
                     <div class="orderitem">Color</div>
                     <div class="orderitemx" style="background-color:blue; width: 26px;height: 24px;display: inline-block;border: 1px solid #193498;"></div>
                 </div><br>

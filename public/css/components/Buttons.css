@@ -3,12 +3,6 @@
         width: 40%;
         padding: 12px 0px;
     }
-
-    .btn{
-       right: 40px;
-       top: 107px;
-    }
-
     .btn2{
         top: 352px;
         right: 57px;
@@ -395,12 +389,13 @@
   .btn {
     opacity: 0.4;
     position: absolute;
-    top: 115px;
-    right: 62px;
+    display: inline;
+    color: #193498;
+    margin-left: 10px;
+    margin-top: 5px;
   }
 
-  .account-box2:hover > .btn {
-    display: block;
+  .account-email:hover > .btn {
     opacity: 1;
     cursor: pointer;
   }

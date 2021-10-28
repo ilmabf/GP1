@@ -80,13 +80,12 @@
     <div class="addVehicleform" id="editdetailsForm">
         <div class="forma">
             <div class="loguser-icon"></div>
-            <h2 class="login-signupheader">Edit</h2>
-
+            <h2 class="login-signupheader">Update your mobile</h2>
             <form action="/account/editDetails" method="post" id="customer-signup">
                 <label for="fname" style="padding: 0px 40px 0px 0px;">Mobile number</label>
                 <input class="input-box" type="text2" name="mobile" autofocus placeholder="<?php echo $details[0]['Contact_Number'] ?>" required>
                 <br>
-                <button id="EditDetailsFormSubmitButton" class="formSubmitButton" type="submit" name="signup">Save</button>
+                <button id="EditDetailsFormSubmitButton" class="formSubmitButton" type="submit" name="signup">Update</button>
                 <button id="EditDetailsFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closeDetailsVehicleForm()">Cancel</button>
             </form>
 
@@ -98,7 +97,6 @@
             <div class="account-prof">
                 <div class="account-header">Account Details</div>
                 <div class="account-box2">
-                    <div class="btn" onclick="openDetailsVehicleForm()"><i class="fas fa-pencil-alt"></i></div>
                     <div class="account-image"> </div>
                     <div class="account-details">
                         <div class="account-name"><div class="nameIcon"></div>
@@ -109,7 +107,9 @@
                             $_SESSION['rowCount']; ?></div>
 
                         <div class="account-email"><div class="phoneIcon"></div>
-                            <?php echo $details[0]['Contact_Number']; ?></div>
+                            <?php echo $details[0]['Contact_Number']; ?>
+                            <div class = "btn" onclick="openDetailsVehicleForm()"><i class="fas fa-pencil-alt"></i></div>
+                        </div>
 
                     </div>
 
