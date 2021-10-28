@@ -3,12 +3,12 @@
     <?php
     include 'views/user/Header.php';
     ?>
-    <main>
+    <main style="min-height: 126%;">
         
         <div id="container">
+        <div style="min-height: 110px;">
 
-
-            <div class="login-signupbox">
+            <div class="login-signupbox" style="top: 64%;">
                 <div class="login-signupform">
                     <div class="loguser-icon"></div>
                     <h2 class="login-signupheader">Create Your Account</h2>
@@ -60,14 +60,14 @@
                     <p id="length" class="invalid">Minimum <b>8 characters</b></p>
                 </div>
             </div>
-            <p id="link-to-go-login"><a href="/user/login" style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Already have an account? Login</a></p>
+            <div id="link-to-go-login" ><a href="/user/login" style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Already have an account? Login</a></div>
 
             <?php
 
             if ($_SESSION['verifyBox'] == 1) { ?>
                 <div id="signupVerify" class="toVerifySingupBox">
                     <div class="toVerifySignupBoxContent">
-                        <h3>Thank you for signing up!<br>Please verify your email address to complete setting up your account.</h2>
+                        <h3 style="color:#193498">Thank you for signing up!<br><br><span style="font-size:smaller"> Please verify your email address to complete setting up your account.</span></h2>
                     </div>
                 </div>
             <?php } ?>

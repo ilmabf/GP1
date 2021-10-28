@@ -46,12 +46,21 @@
     color: black;
 }
 
+.addBtnService:hover{
+    color: white;
+    background-color: #193498;
+}
 .addBtnService{
     color: lightgrey;
 }
 
 .addBtnVehicles{
     color: lightgrey;
+}
+
+.addBtnVehicles:hover{
+    color: white;
+    background-color: #193498;
 }
 
 .typeServices :hover{

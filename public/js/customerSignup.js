@@ -15,13 +15,13 @@ var lName = document.getElementById("signUpLastName");
 
 myInput.onfocus = function () {
   document.getElementById("pwd-validate-message").style.display = "block";
-  document.getElementById("link-to-go-login").style.top = "97%";
+  document.getElementById("link-to-go-login").style.top = "115%";
 }
 
 
 myInput.onblur = function () {
   document.getElementById("pwd-validate-message").style.display = "none";
-  document.getElementById("link-to-go-login").style.top = "91%";
+  document.getElementById("link-to-go-login").style.top = "109%";
 }
 
 

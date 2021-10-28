@@ -31,7 +31,7 @@ include 'views/user/LoggedInHeader.php';
             <div class="typeVehicles" id="typeVehicles3" onclick="openViewVehicleType()">SUV</div>
             <div class="typeVehicles" id="typeVehicles4" onclick="openViewVehicleType()">Luxury</div>
             <div class="typeVehicles" id="typeVehicles5" onclick="openViewVehicleType()">Van</div>
-            <div class="typeVehicles addBtnVehicles" id="addNewVehicleTypess" onclick="openVehicleAddForm()" style = "background-color: white; padding:20px 40px;">+ Add</div>
+            <div class="typeVehicles addBtnVehicles" id="addNewVehicleTypess" onclick="openVehicleAddForm()" >+ Add</div>
         </div>
     </div>
 
