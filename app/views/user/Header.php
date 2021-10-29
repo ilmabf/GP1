@@ -66,8 +66,8 @@
     <header class="header-desk">
         <div class="header-logo-1"></div>
         <div class="buttons-header-desk">
-            <button class="loginColor"><a href="/user/login" class="header-button-login">Login</a></button>
-            <button class="signupColor"><a href="/customer/signup" class="header-button-signup">Signup</a></button>
+            <button class="loginColor"><a href="/login" class="header-button-login">Login</a></button>
+            <button class="signupColor"><a href="/signup" class="header-button-signup">Signup</a></button>
         </div>
         <nav>
             <ul>
@@ -88,7 +88,7 @@
                 <li><a href="#footer">Contact</a></li>
                 <li><a href="/review/">Reviews</a></li>
             </ul>
-            <a href="/user/login" class="header-button-login">Login</a>
-            <a href="/customer/signup" class="header-button-signup">Signup</a>
+            <a href="/login" class="header-button-login">Login</a>
+            <a href="/signup" class="header-button-signup">Signup</a>
         </nav>
     </header>

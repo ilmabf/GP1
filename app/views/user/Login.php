@@ -26,9 +26,13 @@ if (isset($_SESSION["locked"])) {
                             <br>
                             <input class="input-box" type="password" name="pwd" autofocus placeholder="Password" required>
                             <br>
-                            <p class="errorDisplay" style="font-size: 11px; padding-bottom: 5px; color:red; max-width: 182px;"><?php echo ($_SESSION['error']); ?></p>
+                            <?php if (isset($_SESSION['error'])) {  ?>
+                                <p class="errorDisplay" style="font-size: 11px; padding-bottom: 5px; color:red; max-width: 182px;"><?php echo ($_SESSION['error']); ?></p>
+                            <?php $_SESSION['error'] = '';
+                            } ?>
+
                             <?php
-                            if (isset($_SESSION["locked"])) { ?>
+                            if (isset($_SESSION['locked'])) { ?>
                                 <p style='font-size:12px;'><?php echo "Please wait for 40 seconds"; ?></p>
                             <?php } else {
                                 echo "<button class='input-box loggin-signup-button' type='submit' name='login'>Login</button>";
@@ -50,4 +54,5 @@ if (isset($_SESSION["locked"])) {
     <?php
     include 'views/user/Footer.php';
     ?>
+
     </html>

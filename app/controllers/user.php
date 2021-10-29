@@ -13,17 +13,14 @@ class User extends Controller
         parent::__construct();
     }
 
-    function login()
-    {
-
-        $this->view->render('user/Login');
-    }
-
     function logout()
     {
         //destroy session variables
         session_unset();
         session_destroy();
+        session_write_close();
+        setcookie(session_name(),'',0,'/');
+        session_regenerate_id(true);
         header("Location: /");
     }
 
@@ -35,7 +32,7 @@ class User extends Controller
     function passwordChange()
     {
         if(!isset($_POST["email_to_send_pwd"])){
-            header("Location: login");
+            header("Location: /login");
         }
         
         //get email
@@ -69,7 +66,7 @@ class User extends Controller
                 $output = '<p>Dear user,</p>';
                 $output .= '<p>Please click on the following link to reset your password.</p>';
                 $output .= '<p>-------------------------------------------------------------</p>';
-                $output .= '<p><a href="http://www.wandiwash.com/user/goToEnterNewPassword/' . $key . '/' . $email . '">Click Here</a></p>';
+                $output .= '<p><a href="http://www.wandiwash.com/user/EnterNewPassword/' . $key . '/' . $email . '">Click Here</a></p>';
                 $output .= '<p>-------------------------------------------------------------</p>';
                 $output .= '<p>Make sure to copy the entire link into your browser.
                 The link will expire after 24 hours for security reasons.</p>';
@@ -94,7 +91,7 @@ class User extends Controller
         }
     }
 
-    function goToEnterNewPassword($key, $email)
+    function EnterNewPassword($key, $email)
     {
 
         $curDate = date("Y-m-d H:i:s");
@@ -116,7 +113,7 @@ class User extends Controller
     function updatePassword()
     {
         if (!isset($_POST['confirm_new_pwd'])) {
-            header("Location: login");
+            header("Location: /login");
         }
 
         //get email and new password
@@ -173,7 +170,7 @@ class User extends Controller
     {
         //redirect to login if not logged in or login button in not clicked
         if (!isset($_POST['login']) && !isset($_SESSION['login'])) {
-            header("Location: login");
+            header("Location: /login");
         }
 
         //if already logged in redirect according to user roles
@@ -255,7 +252,7 @@ class User extends Controller
                 }
             }
 
-            $this->view->render('user/Login');
+            header("Location: /login");
         }
     }
 }

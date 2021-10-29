@@ -15,16 +15,11 @@ class Customer extends Controller
         parent::__construct();
     }
 
-    function signup()
-    {
-        $this->view->render('customer/Signup');
-    }
-
     function register()
     {
 
         if (!isset($_POST['signup']) && !isset($_SESSION['login'])) {
-            header("Location: /user/login");
+            header("Location: /login");
         }
         //get POST data
         $fname = $_POST['firstname'];
@@ -38,7 +33,7 @@ class Customer extends Controller
 
         //check for duplicate customer
         if ($this->model->checkDuplicate($array)) {
-            $this->view->render('customer/Signup');
+            header("Location: /signup");
             exit;
         }
 
