@@ -2,7 +2,9 @@ const searchInput = document.getElementById('adminSearchEquipment')
 const table = document.getElementById('viewAsTable')
 const trArray = Array.prototype.slice.call(table.querySelectorAll('tbody tr'))
 
+
 const viewAsTable = event => {
+
   const searchTerm = event.target.value.toLowerCase()
   trArray.forEach(row => {
     row.classList.add('hidden')
@@ -21,6 +23,8 @@ function editEquipment(no){
     document.getElementById("edit_equip_btn"+no).style.display="none";
     document.getElementById("save_equip_btn"+no).style.display="block";
 
+
+
     
     var name = document.getElementById("name_row"+no);
     var price = document.getElementById("price_row"+no);
@@ -31,13 +35,22 @@ function editEquipment(no){
     var priceData = price.innerHTML;
     var dateAcquiredData = dateAcquired.innerHTML;
     var teamData = team.innerHTML;
+   
+    name.innerHTML = "<input type='text' id='name_text"+no+"' class='td-t2' value='"+nameData+"' name='name_text'>";
+    price.innerHTML = "<input type='number' id='price_text"+no+"' class='td-t2' value='"+priceData+"' name='price_text'>";
+    dateAcquired.innerHTML = "<input type='date' id='dateAcquired_text"+no+"' class='td-t4' value='"+dateAcquiredData+"' name='dateAcquired_text'>";
+    team.innerHTML = "<input type='number' id='assignedTeam_text"+no+"' class='td-t5' value='"+teamData+"' name='assignedTeam_text'>";
+    
+    var nameVal = document.getElementById("name_text"+no).value;
+    var priceVal = document.getElementById("price_text"+no).value;
+    var dateAcquiredVal=document.getElementById("dateAcquired_text"+no).value;
+    var teamVal=document.getElementById("assignedTeam_text"+no).value;
 
-    name.innerHTML = "<input type='text' id='name_text"+no+"' class='td-t2' value='"+nameData+"'>";
-    price.innerHTML = "<input type='number' id='price_text"+no+"' class='td-t2' value='"+priceData+"'>";
-    dateAcquired.innerHTML = "<input type='date' id='dateAcquired_text"+no+"' class='td-t4' value='"+dateAcquiredData+"'>";
-    team.innerHTML = "<input type='number' id='assignedTeam_text"+no+"' class='td-t5' value='"+teamData+"'>";
-
+   
 }
+
+
+
 function saveEquipment(no){
     var nameVal = document.getElementById("name_text"+no).value;
     var priceVal = document.getElementById("price_text"+no).value;
@@ -48,6 +61,8 @@ function saveEquipment(no){
     document.getElementById("price_row"+no).innerHTML=priceVal;
     document.getElementById("dateAcquired_row"+no).innerHTML=dateAcquiredVal;
     document.getElementById("assignedTeam_row"+no).innerHTML=teamVal;
+
+  
 
     document.getElementById("edit_equip_btn"+no).style.display="block";
     document.getElementById("save_equip_btn"+no).style.display="none";

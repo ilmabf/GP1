@@ -56,9 +56,6 @@ class Service extends Controller
     }
     function editEquipment($eid)
     {
-     //   echo '<pre>';
-      //  var_dump ($eid);
-      //  echo'</pre>';
      //User Autherization
         if ($_SESSION['role'] == "systemadmin") {
              $eid = str_replace('_', ' ', $eid);
@@ -69,10 +66,10 @@ class Service extends Controller
 
             $values =array($name,$price,$dateAcquired,$team);
 
-           // if ($this->model->equipmentEdit($eid,$values)) {
-          //  header("Location: /service/equipment");
+            if ($this->model->equipmentEdit($eid,$values)) {
+              header("Location: /service/equipment");
 
-       // }
+             }
         }else {
                 echo "Error";
         }
@@ -84,10 +81,10 @@ class Service extends Controller
      
         $eid = str_replace('_', ' ', $eid);
        
-        if ($this->model->equipmentDelete($eid)) {
-            header("Location: /service/equipment");
+       // if ($this->model->equipmentDelete($eid)) {
+        //    header("Location: /service/equipment");
 
-        }
+     //   }
         }else {
                 echo "Error";
        }
