@@ -26,13 +26,14 @@ class AccountModel extends Model
 
         $conditionParam = array(':uid', ':vid');
         $conditionValue = array($uid, $vid);
-        $result = $this->db->updateTwo("customer_vehicle", $columns, $param, $columnValue, $conditionParam, $conditionValue,"WHERE (User_ID = :uid AND VID = :vid);");
+        $result = $this->db->updateTwo("customer_vehicle", $columns, $param, $columnValue, $conditionParam, $conditionValue, "WHERE (User_ID = :uid AND VID = :vid);");
         if ($result == "Success") {
             return true;
         } else print_r($result);
     }
 
-    function vehicleDelete($uid, $vid){
+    function vehicleDelete($uid, $vid)
+    {
         $result = $this->db->delete("customer_vehicle", "WHERE ( User_ID = :uid AND VID = :vid );", array(':uid', ':vid'), array($uid, $vid));
         if ($result == "Success") {
             return true;

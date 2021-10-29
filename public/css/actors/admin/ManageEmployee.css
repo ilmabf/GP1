@@ -247,7 +247,7 @@ input[type="search"] {
   margin-left: 0px;
 }
 
-@media only screen and (max-width: 770px) {
+/* @media only screen and (max-width: 770px) {
   .heading {
     font-size: 12px;
     text-align: center;
@@ -270,4 +270,4 @@ input[type="search"] {
     margin-left: 50px;
     margin-right: 50px;
   }
-}
+} */
