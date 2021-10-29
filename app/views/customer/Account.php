@@ -31,7 +31,7 @@
                     <option value="SUV">SUV</option>
                     <option value="Luxury">Luxury</option>
                     <option value="Van">Van</option>
-                    <option value="H-Black">H-Black</option>
+                    <option value="H-Back">H-Back</option>
                 </select>
                 <br>
                 <label for="Manufacturer" style="padding: 0px 80px 0px 0px;">Manufacturer</label>
@@ -63,7 +63,7 @@
                     <option value="SUV">SUV</option>
                     <option value="Luxury">Luxury</option>
                     <option value="Van">Van</option>
-                    <option value="H-Black">H-Back</option>
+                    <option value="H-Back">H-Back</option>
                 </select>
                 <br>
                 <label for="Manufacturer" style="padding: 0px 80px 0px 0px;">Manufacturer</label>
@@ -140,7 +140,11 @@
                 <div class="vehicle-box">
                     <div class="btn2" onclick="openEditVehicleForm()" id="editbtn"><i class="fas fa-pencil-alt"></i></div>
                     <div id="vehicleDetails"></div>
+                    <?php if(count($vehicles) > 0) { ?>
+                        <span style="font-size: small;text-align: center;"><p><a href="/booking/details">Click here to make a booking!</a></p></span>
+                    <?php } ?>
                 </div><br>
+               
             </div>
             <div class="account-det2">
                 <div class="account-header2"><b>My Locations</b><div class="locationIcon"></div></div>
