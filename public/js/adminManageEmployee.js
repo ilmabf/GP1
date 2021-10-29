@@ -314,6 +314,14 @@ function checkLetter(){
     else{
       lName.setCustomValidity('');
     }
+
+    var team = document.getElementById("validteam");
+    if(team.value > 5){
+        team.setCustomValidity("Team cannot have more than 5 members");
+    }
+    else{
+        team.setCustomValidity('');
+    }
   }
 
 function validate(){

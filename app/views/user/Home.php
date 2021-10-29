@@ -9,8 +9,8 @@ include 'views/user/Header.php';
             <div class="home-main-section1-content">
                 <h3>We wash your<br>vehicle at your doorstep!</h3>
                 <div class="home-main-section1-button">
-                    <button class="home-login-signup"><a href="/user/login">Login</a></button>
-                    <button class="home-login-signup"><a href="/customer/signup">SignUp</a></button>
+                    <button class="home-login-signup"><a href="/login">Login</a></button>
+                    <button class="home-login-signup"><a href="/signup">SignUp</a></button>
                 </div>
             </div>
         </section>

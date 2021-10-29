@@ -60,7 +60,7 @@ input:valid {
   .link-to-go-signup {
     width: 100%;
     position: absolute;
-    top: 78%;
+    top: 80%;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -71,10 +71,5 @@ input:valid {
 
   .link-to-go-signup:hover {
     text-decoration: underline;
-  }
-
-  .login-signupbox {
-    transform: translate(-50%, -50%);
-    padding: 10px 20px 10px 20px;
   }
 }
