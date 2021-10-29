@@ -1,113 +1,128 @@
-.manageEmployee-heading{
-    color: #193498;
-    font-size: 30px;
-    text-align: center;
-    margin-bottom: 20px;
+.manageEmployee-heading {
+  color: #193498;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-th{
-    max-width: 130px;
-    padding: 0.35em 0.35em; 
+th {
+  max-width: 130px;
+  padding: 0.35em 0.35em;
 }
 
-td{
-    padding: 0.35em 0.35em;
+td {
+  padding: 0.35em 0.35em;
 }
 
-tr{
-    max-width: 100%;
+tr {
+  max-width: 100%;
 }
 
-#addRow{
-    margin: 35px 20px;
-    padding: 8px 8px;
-    background-color: #193498;
-    color: white;
-    border-radius: 5px;
-    border-color: white;
-    cursor: pointer;
+#addRow {
+  margin: 35px 20px;
+  padding: 8px 8px;
+  background-color: #193498;
+  color: white;
+  border-radius: 5px;
+  border-color: white;
+  cursor: pointer;
 }
 
-#addStlRow{
-    margin: 35px 20px;
-    padding: 8px 8px;
-    background-color: #193498;
-    color: white;
-    border-radius: 5px;
-    border-color: white;
-    cursor: pointer;
+#addStlRow {
+  margin: 35px 20px;
+  padding: 8px 8px;
+  background-color: #193498;
+  color: white;
+  border-radius: 5px;
+  border-color: white;
+  cursor: pointer;
 }
 
-.addTableEmp{
-    display: inline-block;
-    text-align: center;
-    margin: auto;
+.addTableEmp {
+  display: inline-block;
+  text-align: center;
+  margin: auto;
 }
 
-#tb-input, #tb-Stlinput{
-    padding: 2px;
-    font-size: 14px;
-    border-color: grey;
-    max-width: 130px;
+#tb-input,
+#tb-Stlinput {
+  padding: 2px;
+  font-size: 14px;
+  border-color: grey;
+  max-width: 130px;
 }
 
-#validFirstName, #validLastName, #validcontactNumber, #validemail, #validdateEnrolled, #validsalary, #validnicNo, #validteam, #stlphoto, #stlteam, #confirmPass, #pass, #stlemail, #stlusername, #nic{
-    padding: 2px;
-    font-size: 14px;
-    border-color: grey;
-    max-width: 115px;
+#validFirstName,
+#validLastName,
+#validcontactNumber,
+#validemail,
+#validdateEnrolled,
+#validsalary,
+#validnicNo,
+#validteam,
+#stlphoto,
+#stlteam,
+#confirmPass,
+#pass,
+#stlemail,
+#stlusername,
+#nic {
+  padding: 2px;
+  font-size: 14px;
+  border-color: grey;
+  max-width: 115px;
 }
-#adminSearchEmployee{
-    padding: 10px 10px;
-    border-color: #193498;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    display: block;
-    font-size: 15px;
-}
-
-#adminViewEmp{
-    display: block;
-    margin: 30px auto;
-    padding: 8px 8px;
-    background-color: #193498;
-    color: white;
-    border-radius: 5px;
-    border-color: white;
-}
-
-#adminViewEmp:hover{
-    color: #70a2ce;;
-}
-
-.Admin-EmpSearch{
-    display: inline-block;
+#adminSearchEmployee {
+  padding: 10px 10px;
+  border-color: #193498;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: block;
+  font-size: 15px;
 }
 
-.adEmpSearch2{
-    float: right;
-    margin-left: 20px;
+#adminViewEmp {
+  display: block;
+  margin: 30px auto;
+  padding: 8px 8px;
+  background-color: #193498;
+  color: white;
+  border-radius: 5px;
+  border-color: white;
 }
 
-#AdminserviceTeams-types{
-    font-weight: 600;
-    border-radius: 5px;
-    border: 2px outset #193498;
+#adminViewEmp:hover {
+  color: #70a2ce;
 }
 
-#AdminserviceTeamLeaders-types{
-    font-weight: 600;
-    border-radius: 5px;
-    border: 2px outset #193498;
+.Admin-EmpSearch {
+  display: inline-block;
 }
 
-.aaa{
-    margin-right: 15px;
+.adEmpSearch2 {
+  float: right;
+  margin-left: 20px;
 }
 
-#adminSearchEmployee{
-    font-size: 15px;
-    border: 2px outset #193498;
+#AdminserviceTeams-types {
+  font-weight: 600;
+  border-radius: 5px;
+  border: 2px outset #193498;
+}
+
+#AdminserviceTeamLeaders-types {
+  font-weight: 600;
+  border-radius: 5px;
+  border: 2px outset #193498;
+}
+
+.aaa {
+  margin-right: 15px;
+}
+
+#adminSearchEmployee {
+  font-size: 15px;
+  border: 2px outset #193498;
 }
 
 /* .filterTable{
@@ -115,142 +130,144 @@ tr{
     overflow: scroll;
 } */
 
-.td-t1{
-    max-width: 100px;
+.td-t1 {
+  max-width: 100px;
 }
 
-.td-t2{
-    max-width: 50px;
+.td-t2 {
+  max-width: 60px;
 }
 
-.td-t3{
-    max-width: 150px;
+.td-t3 {
+  max-width: 150px;
 }
 
-.td-t4{
-    max-width: 100px;
+.td-t4 {
+  max-width: 100px;
 }
 
-.td-t5{
-    max-width: 40px;
+.td-t5 {
+  max-width: 40px;
 }
 
-.td-t6{
-    max-width: 90px;
+.td-t6 {
+  max-width: 90px;
 }
 
-.td-t7{
-    max-width: 95px;
+.td-t7 {
+  max-width: 95px;
+}
+
+.td-t8 {
+  max-width: 75px;
 }
 
 tr {
-    border-bottom: 1px solid;
+  border-bottom: 1px solid;
 }
 
 th {
-    color: #193498;
-    cursor: pointer;
-    border: solid 1px #193498;
+  color: #193498;
+  cursor: pointer;
+  border: solid 1px #193498;
 }
 
-th, td {
-    border: solid 1px #193498;
-    text-align: left;
-    padding: 2px 2px;
-    max-width: 200px;
+th,
+td {
+  border: solid 1px #193498;
+  text-align: left;
+  padding: 2px 2px;
+  max-width: 200px;
 }
 
-input[type=search] {
-    border: 1px solid;
-    font-size: initial;
-    margin-bottom: 1em;
-    padding: 0.25em;
+input[type="search"] {
+  border: 1px solid;
+  font-size: initial;
+  margin-bottom: 1em;
+  padding: 0.25em;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
-.empAddSuccess{
-    display: block;
-    text-align: center;
-    margin: auto auto;
-    color: green;
-    font-weight: 800;
+.empAddSuccess {
+  display: block;
+  text-align: center;
+  margin: auto auto;
+  color: green;
+  font-weight: 800;
 }
 
 .edit_btn {
-    text-decoration: none;
-    padding: 2px 5px;
-    background: green;
-    color: white;
-    border-radius: 3px;
-    cursor: pointer;
+  text-decoration: none;
+  padding: 2px 5px;
+  background: green;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
 }
 
 .edit_btn:hover {
-    background: rgb(12, 161, 12);
+  background: rgb(12, 161, 12);
 }
 
 .save_btn {
-    display: none;
-    text-decoration: none;
-    padding: 2px 5px;
-    background: green;
-    color: white;
-    border-radius: 3px;
-    cursor: pointer;
+  display: none;
+  text-decoration: none;
+  padding: 2px 5px;
+  background: green;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
 }
 
 .save_btn:hover {
-    background: rgb(12, 161, 12);
+  background: rgb(12, 161, 12);
 }
 
 .del_btn {
-    text-decoration: none;
-    padding: 2px 5px;
-    color: white;
-    border-radius: 3px;
-    background:#7B113A;
-    cursor: pointer;
+  text-decoration: none;
+  padding: 2px 5px;
+  color: white;
+  border-radius: 3px;
+  background: #7b113a;
+  cursor: pointer;
 }
 
 .del_btn:hover {
-    background: #500421;
+  background: #500421;
 }
 
-.addTb2{
-    display: none;
+.addTb2 {
+  display: none;
 }
 
-::-webkit-calendar-picker-indicator{
-    margin-left: 0px;
+::-webkit-calendar-picker-indicator {
+  margin-left: 0px;
 }
 
+/* @media only screen and (max-width: 770px) {
+  .heading {
+    font-size: 12px;
+    text-align: center;
+  }
 
-@media only screen and (max-width: 770px){
+  .ad-EmpSearch {
+    display: block;
+    text-align: center;
+    margin: 10px auto;
+  }
 
-    .heading{
-        font-size: 12px;
-        text-align: center;
-    }
+  #adminSearchEmployee {
+    font-size: 12px;
+    margin-right: 50px;
+    margin-left: 50px;
+  }
 
-    .ad-EmpSearch{
-        display: block;
-        text-align: center;
-        margin: 10px auto;
-    }
-
-    #adminSearchEmployee{
-        font-size: 12px;
-        margin-right: 50px;
-        margin-left: 50px;
-    }
-
-    .adEmpSearch2{
-        float: left;
-        margin-left: 50px;
-        margin-right: 50px;
-    }
-
-}
+  .adEmpSearch2 {
+    float: left;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+} */

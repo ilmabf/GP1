@@ -26,12 +26,12 @@ include 'views/user/LoggedInHeader.php';
             <h3 style="color: #193498;">Vehicle Types</h3>
         </div>
         <div class="vehicleManageBox">
-            <div class="typeVehicles" id="typeVehicles1" onclick="openViewVehicleType()">H-black</div>
+            <div class="typeVehicles" id="typeVehicles1" onclick="openViewVehicleType()">H-back</div>
             <div class="typeVehicles" id="typeVehicles2" onclick="openViewVehicleType()">Sedan</div>
             <div class="typeVehicles" id="typeVehicles3" onclick="openViewVehicleType()">SUV</div>
             <div class="typeVehicles" id="typeVehicles4" onclick="openViewVehicleType()">Luxury</div>
             <div class="typeVehicles" id="typeVehicles5" onclick="openViewVehicleType()">Van</div>
-            <div class="typeVehicles addBtnVehicles" id="addNewVehicleTypess" onclick="openVehicleAddForm()" >+ Add</div>
+            <div class="typeVehicles addBtnVehicles" id="addNewVehicleTypess" onclick="openVehicleAddForm()">+ Add</div>
         </div>
     </div>
 
@@ -94,7 +94,7 @@ include 'views/user/LoggedInHeader.php';
 <div class="addVehicleform" id="viewVehicleType">
     <div class="forma">
 
-        <h2 class="login-signupheader">Do you want to remove H - Black?</h2>
+        <h2 class="login-signupheader">Do you want to remove H - Back?</h2>
 
         <form action="" method="post" id="customer-signup">
             <button id="VehicleFormSubmitButton" class="formSubmitButton" type="button" name="signup">Yes</button>

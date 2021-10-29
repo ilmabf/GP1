@@ -32,8 +32,8 @@ function editEquipment(no){
     var dateAcquiredData = dateAcquired.innerHTML;
     var teamData = team.innerHTML;
 
-    name.innerHTML = "<input type='text' id='name_text"+no+"' class='td-t2' value='"+nameData+"'>";
-    price.innerHTML = "<input type='number' id='price_text"+no+"' class='td-t2' value='"+priceData+"'>";
+    name.innerHTML = "<input type='text' id='name_text"+no+"' class='td-t222' value='"+nameData+"'>";
+    price.innerHTML = "<input type='number' id='price_text"+no+"' class='td-t22' value='"+priceData+"'>";
     dateAcquired.innerHTML = "<input type='date' id='dateAcquired_text"+no+"' class='td-t4' value='"+dateAcquiredData+"'>";
     team.innerHTML = "<input type='number' id='assignedTeam_text"+no+"' class='td-t5' value='"+teamData+"'>";
 

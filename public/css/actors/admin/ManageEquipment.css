@@ -1,118 +1,118 @@
-#addNewRow{
-    display: block;
-    margin: 35px auto;
-    padding: 8px 8px;
-    background-color: #193498;
-    color: white;
-    border-radius: 5px;
-    border-color: white;
-    cursor: pointer;
+#addNewRow {
+  display: block;
+  margin: 35px auto;
+  padding: 8px 8px;
+  background-color: #193498;
+  color: white;
+  border-radius: 5px;
+  border-color: white;
+  cursor: pointer;
 }
 
-#assignEquipment{
-    display: block;
-    margin: 35px auto;
-    padding: 8px 8px;
-    background-color: #193498;
-    color: white;
-    border-radius: 5px;
-    border-color: white;
-    cursor: pointer;
+#assignEquipment {
+  display: block;
+  margin: 35px auto;
+  padding: 8px 8px;
+  background-color: #193498;
+  color: white;
+  border-radius: 5px;
+  border-color: white;
+  cursor: pointer;
 }
 
-
-
-
-#container1{
-    display:block;
-    overflow:auto;
-    margin:0;
-    padding-bottom:10px;
+#container1 {
+  display: block;
+  overflow: auto;
+  margin: 0;
+  padding-bottom: 10px;
 }
 
-#container2{
-    display:block;
-    overflow:auto;
-    margin:0;
-    padding-bottom:10px;
+#container2 {
+  display: block;
+  overflow: auto;
+  margin: 0;
+  padding-bottom: 10px;
 }
 
+#tb-input {
+  padding: 4px;
+  font-size: 12px;
+  border-color: grey;
+  max-width: 110px;
+}
+#tb1-input {
+  padding: 4px;
+  font-size: 12px;
+  border-color: grey;
+  max-width: 110px;
+}
+#adminViewEquip {
+  display: block;
+  margin: 30px auto;
+  padding: 8px 8px;
+  background-color: #193498;
+  color: white;
+  border-radius: 5px;
+  border-color: white;
+}
 
+.Admin-EquipSearch {
+  display: inline-block;
+}
 
-#tb-input{
-    padding: 4px;
+.adEquipSearch1 {
+  margin-left: 89px;
+}
+
+.adEquipSearch2 {
+  float: right;
+  margin-left: 5px;
+  margin-right: 405px;
+}
+
+#adminSearchEquipment {
+  padding: 10px 10px;
+  border-color: #193498;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: block;
+  font-size: 15px;
+}
+
+#adminSearchEquipment {
+  font-size: 15px;
+  border: 2px outset #193498;
+}
+
+.td-t222 {
+  max-width: 100px;
+}
+
+.td-t22 {
+  max-width: 70px;
+}
+
+/* @media only screen and (max-width: 770px) {
+  .heading {
     font-size: 12px;
-    border-color: grey;
-    max-width: 110px;
-}
-#tb1-input{
-    padding: 4px;
+    text-align: center;
+  }
+
+  .ad-EquipSearch {
+    display: block;
+    text-align: center;
+    margin: 10px auto;
+  }
+
+  #adminSearchEquipment {
     font-size: 12px;
-    border-color: grey;
-    max-width: 110px;
-}
-#adminViewEquip{
-    display: block;
-    margin: 30px auto;
-    padding: 8px 8px;
-    background-color: #193498;
-    color: white;
-    border-radius: 5px;
-    border-color: white;
-}
+    margin-right: 50px;
+    margin-left: 50px;
+  }
 
-
-.Admin-EquipSearch{
-    display: inline-block;
-}
-
-.adEquipSearch1{
-    margin-left: 89px;
-}
-
-.adEquipSearch2{
-    float: right;
-    margin-left: 5px;
-    margin-right: 405px;
-}
-
-#adminSearchEquipment{
-    padding: 10px 10px;
-    border-color: #193498;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    display: block;
-    font-size: 15px;
-}
-
-#adminSearchEquipment{
-    font-size: 15px;
-    border: 2px outset #193498;
-}
-
-@media only screen and (max-width: 770px){
-
-    .heading{
-        font-size: 12px;
-        text-align: center;
-    }
-
-    .ad-EquipSearch{
-        display: block;
-        text-align: center;
-        margin: 10px auto;
-    }
-
-    #adminSearchEquipment{
-        font-size: 12px;
-        margin-right: 50px;
-        margin-left: 50px;
-    }
-
-    .adEquipSearch2{
-        float: left;
-        margin-left: 50px;
-        margin-right: 50px;
-    }
-
-}
+  .adEquipSearch2 {
+    float: left;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+} */

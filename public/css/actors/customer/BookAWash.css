@@ -1,302 +1,300 @@
-.heading{
-    color: #193498;
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: larger;
+.heading {
+  color: #193498;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: larger;
 }
 
-.priceBox{
-    position: absolute;
-    /* top: 43.rem; */
-    right: 2.75rem;
-    border-radius: 0.2rem;
-    background-color: white;
-    padding-left: .5rem;
-    padding-right: .5rem;
-    padding-bottom: .25rem;
-    padding-top: .25rem;
-    font-weight: 700;
-    font-size: x-small;
-    box-shadow: 2px 2px steelblue;
+.priceBox {
+  position: absolute;
+  /* top: 43.rem; */
+  right: 2.75rem;
+  border-radius: 0.2rem;
+  background-color: white;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0.25rem;
+  padding-top: 0.25rem;
+  font-weight: 700;
+  font-size: x-small;
+  box-shadow: 2px 2px steelblue;
 }
 
-.priceBox2{
-    margin-right: 15%;
-    position: absolute;
-    /* top: 43.rem; */
-    right: -0.5rem;
-    border-radius: 0.2rem;
-    background-color: white;
-    padding-left: .5rem;
-    padding-right: .5rem;
-    padding-bottom: .25rem;
-    padding-top: .25rem;
-    font-weight: 700;
-    font-size: x-small;
-    box-shadow: 2px 2px steelblue;
+.priceBox2 {
+  margin-right: 15%;
+  position: absolute;
+  /* top: 43.rem; */
+  right: -0.5rem;
+  border-radius: 0.2rem;
+  background-color: white;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0.25rem;
+  padding-top: 0.25rem;
+  font-weight: 700;
+  font-size: x-small;
+  box-shadow: 2px 2px steelblue;
 }
 
-.sub-heading{
-    text-align: center;
-    font-weight: bold;
-    font-size: 18px;
+.sub-heading {
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
 }
 
-#sub-heading-p{
-    text-align: center;
-    font-weight: 400;
+#sub-heading-p {
+  text-align: center;
+  font-weight: 400;
 }
 
-.wash-date{
-    text-align: center;
-    margin: 35px 80px;
-    padding: 10px 20px;
-    background-color: whitesmoke;
-    border-radius: 27px;
-    /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);    */
+.wash-date {
+  text-align: center;
+  margin: 35px 80px;
+  padding: 10px 20px;
+  background-color: whitesmoke;
+  border-radius: 27px;
+  /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);    */
 }
 
-.wash-date h3{
-    text-align: left;
-    color: #193498;
-    padding-top: 15px;
-    padding-bottom: 15px;
+.wash-date h3 {
+  text-align: left;
+  color: #193498;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
-#closeOnClick{
-    display: inline-block;
-    text-align: center;
-    margin: auto auto;
+#closeOnClick {
+  display: inline-block;
+  text-align: center;
+  margin: auto auto;
 }
 
-.select-time{
-    margin: 35px 80px;
-    padding: 10px 20px;
-    background-color: whitesmoke;
-    border-radius: 27px;
-    /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); */
-    text-align: center;
+.select-time {
+  margin: 35px 80px;
+  padding: 10px 20px;
+  background-color: whitesmoke;
+  border-radius: 27px;
+  /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); */
+  text-align: center;
 }
 
-.select-time h3{
-    text-align: left;
-    color: #193498;
-    padding-top: 15px;
-    padding-bottom: 15px;
+.select-time h3 {
+  text-align: left;
+  color: #193498;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
-.select-time-box{
-    display: inline-block;
-    text-align: center;
-    margin: auto auto;
-    margin-bottom: 10px;
-    margin-top: 20px;
+.select-time-box {
+  display: inline-block;
+  text-align: center;
+  margin: auto auto;
+  margin-bottom: 10px;
+  margin-top: 20px;
 }
 
-#time-types{
-    font-size: 15px;
-    text-align: center;
-    margin: auto auto;
-    padding: 8px 8px;
-    border-radius: 5px;
-    border-color: #193498;
-    font-weight: bold;
+#time-types {
+  font-size: 15px;
+  text-align: center;
+  margin: auto auto;
+  padding: 8px 8px;
+  border-radius: 5px;
+  border-color: #193498;
+  font-weight: bold;
 }
 
-.select-vehicle{
-    margin: 35px 80px;
-    padding: 10px 20px;
-    background-color: whitesmoke;
-    border-radius: 27px;
-    /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); */
-    text-align: center; 
+.select-vehicle {
+  margin: 35px 80px;
+  padding: 10px 20px;
+  background-color: whitesmoke;
+  border-radius: 27px;
+  /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); */
+  text-align: center;
 }
 
-.select-vehicle h3{
-    text-align: left;
-    color: #193498;
-    padding-top: 15px;
-    padding-bottom: 15px;
+.select-vehicle h3 {
+  text-align: left;
+  color: #193498;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
-.select-vehcile-box{
-    display: inline-block;
-    margin: 0 auto;
-    margin-bottom: 10px;
-    margin-top: 20px;
-    text-align: center;
+.select-vehcile-box {
+  display: inline-block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  text-align: center;
 }
 
-#vehicle-types{
-    font-size: 15px;
-    text-align: center;
-    margin :  auto auto;
-    padding: 8px 8px;
-    border-radius: 5px;
-    border-color: #193498;
-    font-weight: bold;
+#vehicle-types {
+  font-size: 15px;
+  text-align: center;
+  margin: auto auto;
+  padding: 8px 8px;
+  border-radius: 5px;
+  border-color: #193498;
+  font-weight: bold;
 }
 
-.wash-type{
-    text-align: center;
-    margin: 35px 77px;
-    padding: 10px 20px;
-    background-color: whitesmoke;
-    border-radius: 27px;
-    /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);    */
+.wash-type {
+  text-align: center;
+  margin: 35px 77px;
+  padding: 10px 20px;
+  background-color: whitesmoke;
+  border-radius: 27px;
+  /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);    */
 }
 
-.wash-type h3{
-    color: #193498;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    text-align: left;
+.wash-type h3 {
+  color: #193498;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: left;
 }
-    
-.wash-select-radio{
-    /* text-align: center; */
-    /* display: inline-block; */
-    /* background-color: white; */
-    padding: 10px 20px;
-    font-size: 16px;
-    /* border: 2px solid #193498; */
-    border-radius: 5px;
-    margin: auto 20px;
+
+.wash-select-radio {
+  /* text-align: center; */
+  /* display: inline-block; */
+  /* background-color: white; */
+  padding: 10px 20px;
+  font-size: 16px;
+  /* border: 2px solid #193498; */
+  border-radius: 5px;
+  margin: auto 20px;
 }
-  
+
 .wash-select-radio input[type="radio"]:checked + label {
-    background-color:#193498;
-    color: white;
-    border-radius: 5px;
-    padding: 2px 2px;
+  background-color: #193498;
+  color: white;
+  border-radius: 5px;
+  padding: 2px 2px;
 }
-  
+
 .wash-select-radio:hover {
-    background-color:#ddd;
+  background-color: #ddd;
 }
 
-.price{
-    margin: 35px 80px;
-    padding: 10px 20px;
-    background-color: whitesmoke;
-    border-radius: 27px;
-    /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);  */
+.price {
+  margin: 35px 80px;
+  padding: 10px 20px;
+  background-color: whitesmoke;
+  border-radius: 27px;
+  /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);  */
 }
 
-.price h3{
-    color: #193498;
-    padding-top: 15px;
-    padding-bottom: 15px;
+.price h3 {
+  color: #193498;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
-.price-display{
-    border-radius: 5px;
-    padding: 12px 12px;
-    margin-right: 15px;
-    /* background-color:white; */
-    border-color: #193498;
-    font-weight: bold;
-    margin-bottom: 15px;
-    text-align: center;
+.price-display {
+  border-radius: 5px;
+  padding: 12px 12px;
+  margin-right: 15px;
+  /* background-color:white; */
+  border-color: #193498;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
-.next-pg{
-    float: right;
-    margin: 25px 50px;
+.next-pg {
+  float: right;
+  margin: 25px 50px;
 }
 
-
-.dateWash{
-    font-weight: 600;
-    margin-bottom: 15px;
+.dateWash {
+  font-weight: 600;
+  margin-bottom: 15px;
 }
 
-.dateBooking{
-    padding: 10px 10px;
-    border-radius: 15px;
+.dateBooking {
+  padding: 10px 10px;
+  border-radius: 15px;
+  font-size: 15px;
+  border-color: #193498;
+}
+
+@media only screen and (min-width: 770px) {
+  .wash-date {
+    flex: 50%;
+  }
+  .select-time {
+    flex: 50%;
+  }
+  .dateTime {
+    display: flex;
+  }
+  .vehicleWash {
+    display: flex;
+  }
+  .select-vehicle {
+    flex: 50%;
+  }
+  .wash-type {
+    flex: 50%;
+  }
+}
+@media only screen and (max-width: 770px) {
+  .heading {
     font-size: 15px;
-    border-color: #193498;
+  }
+
+  .sub-heading {
+    font-size: 12px;
+  }
+
+  .wash-date h3 {
+    font-size: 15px;
+  }
+
+  .select-time h3 {
+    font-size: 15px;
+  }
+
+  .select-vehicle h3 {
+    font-size: 15px;
+  }
+
+  .wash-type h3 {
+    font-size: 15px;
+  }
+
+  .wash-type {
+    display: flex;
+    margin: 35px 50px;
+  }
+
+  .wash-select-radio {
+    flex: 90%;
+    margin-bottom: 20px;
+  }
+
+  .price h3 {
+    font-size: 15px;
+  }
+
+  .wash-date {
+    margin: 35px 50px;
+  }
+
+  .select-vehicle {
+    margin: 35px 50px;
+  }
+
+  .price {
+    margin: 35px 50px;
+  }
+  .select-time {
+    margin: 35px 50px;
+  }
 }
 
-@media only screen and (min-width: 770px){
-    .wash-date{
-        flex: 50%;
-    }
-    .select-time{
-        flex: 50%;
-    }
-    .dateTime{
-        display: flex;
-    }
-    .vehicleWash{
-        display: flex;
-    }
-    .select-vehicle{
-        flex: 50%;
-    }
-    .wash-type{
-        flex: 50%;
-    }
-}
-@media only screen and (max-width: 770px){
-
-    .heading{
-        font-size: 15px;
-    }
-
-    .sub-heading{
-        font-size: 12px;
-    }
-
-    .wash-date h3{
-        font-size: 15px;
-    }
-
-    .select-time h3{
-        font-size: 15px;
-    }
-
-    .select-vehicle h3{
-        font-size: 15px;
-    }
-
-    .wash-type h3{
-        font-size: 15px;
-    }
-
-    .wash-type{
-        display: flex;
-        margin: 35px 50px;
-    }
-
-    .wash-select-radio{
-        flex: 90%;
-        margin-bottom: 20px;
-    }
-
-    .price h3{
-        font-size: 15px;
-    }
-
-    .wash-date{
-        margin: 35px 50px;
-    }
-
-    .select-vehicle{
-        margin: 35px 50px;
-    }
-
-    .price{
-        margin: 35px 50px;
-    }
-    .select-time{
-        margin: 35px 50px;
-    }
-}
-
-@media only screen and (max-width: 385px){
-    .wash-type h3{
-        display: none;
-        padding: 2px 2px;
-    }
+@media only screen and (max-width: 385px) {
+  .wash-type h3 {
+    display: none;
+    padding: 2px 2px;
+  }
 }

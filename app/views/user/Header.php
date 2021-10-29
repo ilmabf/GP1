@@ -84,7 +84,6 @@
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
-                <li><a href="#about-tag">About</a></li>
                 <li><a href="#footer">Contact</a></li>
                 <li><a href="/review/">Reviews</a></li>
             </ul>
