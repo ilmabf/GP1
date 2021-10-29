@@ -51,16 +51,16 @@ function empEditForm(no) {
     var stlPhotoData = stlPhoto.innerHTML;
 
 
-    firstName.innerHTML = "<input type='text' id='firstName_text"+no+"' class='td-t2' value='"+firstNameData+"'>";
-    lastName.innerHTML = "<input type='text' id='lastName_text"+no+"' class='td-t2' value='"+lastNameData+"'>";
-    contactNumber.innerHTML = "<input type='number' id='contactNumber_text"+no+"' class='td-t7' value='"+contactNumberData+"'>";
-    email.innerHTML = "<input type='email' id='email_text"+no+"' class='td-t3' value='"+emailData+"'>";
-    dateEnrolled.innerHTML = "<input type='date' id='dateEnrolled_text"+no+"' class='td-t4' value='"+dateEnrolledData+"'>";
-    salary.innerHTML = "<input type='number' id='salary_text"+no+"' class='td-t2' value='"+salaryData+"'>";
-    nicNo.innerHTML = "<input type='text' id='nicNo_text"+no+"' class='td-t6' value='"+nicNoData+"'>";
-    team.innerHTML = "<input type='number' id='team_text"+no+"' class='td-t5' value='"+teamData+"'>";
-    stlId.innerHTML = "<input type='number' id='stlId_text"+no+"' class='td-t5' value='"+stlIdData+"'>";
-    stlPhoto.innerHTML = "<input type='text' id='stlPhoto_text"+no+"' class='td-t5' value='"+stlPhotoData+"'>";
+    firstName.innerHTML = "<input type='text' id='firstName_text"+no+"' class='td-t2' name='firstNameData' value='"+firstNameData+"'>";
+    lastName.innerHTML = "<input type='text' id='lastName_text"+no+"' class='td-t2' name='lastNameData' value='"+lastNameData+"'>";
+    contactNumber.innerHTML = "<input type='number' id='contactNumber_text"+no+"' class='td-t7' name='contactNumberData' value='"+contactNumberData+"'>";
+    email.innerHTML = "<input type='email' id='email_text"+no+"' class='td-t3' name='emailData' value='"+emailData+"'>";
+    dateEnrolled.innerHTML = "<input type='date' id='dateEnrolled_text"+no+"' class='td-t4' name='dateEnrolledData' value='"+dateEnrolledData+"'>";
+    salary.innerHTML = "<input type='number' id='salary_text"+no+"' class='td-t8' name='salaryData' value='"+salaryData+"'>";
+    nicNo.innerHTML = "<input type='text' id='nicNo_text"+no+"' class='td-t6' name='nicNoData' value='"+nicNoData+"'>";
+    team.innerHTML = "<input type='number' id='team_text"+no+"' class='td-t5' name='teamData' value='"+teamData+"'>";
+    stlId.innerHTML = "<input type='number' id='stlId_text"+no+"' class='td-t5' name='stlIdData' value='"+stlIdData+"'>";
+    stlPhoto.innerHTML = "<input type='text' id='stlPhoto_text"+no+"' class='td-t5' name='stlPhotoData' value='"+stlPhotoData+"'>";
 
 }
 

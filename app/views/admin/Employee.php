@@ -98,9 +98,9 @@ include 'views/user/LoggedInHeader.php';
                 <td id="<?php echo "stlPhoto_row" . $count ?>" style="text-align:right max-width:40px;"></td>
                 <td>
                   <input type="button" id="<?php echo "edit_emp_btn" . $count ?>" class="edit_btn td-t1" value="Edit" onclick="empEditForm('<?php echo $count ?>')">
-                  <input type="button" id="<?php echo "save_emp_btn" . $count ?>" class="save_btn" value="Save" onclick="empSaveForm('<?php echo $count ?>')">
+                  <a href="/employee/saveEditEmployee/<?php echo $result[$count]['Employee_ID'] ?>"><input type="button" id="<?php echo "save_emp_btn" . $count ?>" class="save_btn" value="Save" onclick="empSaveForm('<?php echo $count ?>')"></a>
                 </td>
-                <td><input type="button" class="del_btn td-t1" value="Delete" onclick="empDeleteForm('<?php echo $count ?>')"></td>
+                <td><a href="/employee/deleteEmployee/<?php echo $result[$count]['Employee_ID'] ?>"><input type="button" class="del_btn td-t1" value="Delete"></a></td>
               </tr>
             <?php $count = $count + 1;
             } ?>
