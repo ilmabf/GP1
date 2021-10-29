@@ -31,7 +31,7 @@
                     <option value="SUV">SUV</option>
                     <option value="Luxury">Luxury</option>
                     <option value="Van">Van</option>
-                    <option value="H-Black">H-Black</option>
+                    <option value="H-Black">H-Back</option>
                 </select>
                 <br>
                 <label for="Manufacturer" style="padding: 0px 80px 0px 0px;">Manufacturer</label>
@@ -47,7 +47,7 @@
     <div class="addVehicleform" id="editvehicleForm">
         <div class="forma">
             <div class="loguser-icon"></div>
-            <h2 class="login-signupheader" id = "editVID"></h2>
+            <h2 class="login-signupheader" id="editVID"></h2>
 
             <form action="" method="post" id="editVehicleForm">
 
@@ -55,7 +55,7 @@
                 <input class="input-box" type="text2" name="model" autofocus placeholder="123456" id="editModel" pattern="[^'?()/><\][\\\x22,;|]+" required>
                 <br>
                 <label for="Color" style="padding: 0px 139px 0px 0px;">Color</label>
-                <input type="color" id="editColor" name = "color" required>
+                <input type="color" id="editColor" name="color" required>
                 <br>
                 <label for="Vehicle Type" style="padding: 0px 87px 0px 0px;">Vehicle Type</label>
                 <select name="type" class="types" id="editType">
@@ -68,7 +68,7 @@
                 <br>
                 <label for="Manufacturer" style="padding: 0px 80px 0px 0px;">Manufacturer</label>
                 <input class="input-box" type="text2" name="manufacturer" autofocus placeholder="XYZ" required pattern="[^'?()/><\][\\\x22,;|]+" id="editManufacturer"><br><br>
-                <label for="Delete Vehicle"><a id = "deleteVehicle" href="" style="font-size: small;float: right;color: red;" >Delete Vehicle? Click Here</a></label>
+                <label for="Delete Vehicle"><a id="deleteVehicle" href="" style="font-size: small;float: right;color: red;">Delete Vehicle? Click Here</a></label>
                 <br>
                 <button id="EditVehicleFormSubmitButton" class="formSubmitButton" type="submit" name="signup">Submit</button>
                 <button id="EditVehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closeEditVehicleForm()">Cancel</button>
@@ -101,15 +101,21 @@
                     <div class="btn" onclick="openDetailsVehicleForm()"><i class="fas fa-pencil-alt"></i></div>
                     <div class="account-image"> </div>
                     <div class="account-details">
-                        <div class="account-name"><div class="nameIcon"></div>
-                            <?php echo $details[0]['First_Name'] . " " . $details[0]['Last_Name']; ?></div>
+                        <div class="account-name">
+                            <div class="nameIcon"></div>
+                            <?php echo $details[0]['First_Name'] . " " . $details[0]['Last_Name']; ?>
+                        </div>
 
-                        <div class="account-email"><div class="emailIcon"></div>
+                        <div class="account-email">
+                            <div class="emailIcon"></div>
                             <?php echo $details[0]['Email'];
-                            $_SESSION['rowCount']; ?></div>
+                            $_SESSION['rowCount']; ?>
+                        </div>
 
-                        <div class="account-email"><div class="phoneIcon"></div>
-                            <?php echo $details[0]['Contact_Number']; ?></div>
+                        <div class="account-email">
+                            <div class="phoneIcon"></div>
+                            <?php echo $details[0]['Contact_Number']; ?>
+                        </div>
 
                     </div>
 
@@ -117,7 +123,9 @@
                 </div>
             </div> <br>
             <div class="account-det1">
-                <div class="account-header2"><b>My Vehicles</b><div class="carIcon"></div></div>
+                <div class="account-header2"><b>My Vehicles</b>
+                    <div class="carIcon"></div>
+                </div>
                 <div class="account-box3">
                     <div class="vehicle-list">
                         <select name="Vehicles" id="Customer-Vehicles" onchange="getVehicleDetails()">
@@ -143,7 +151,9 @@
                 </div><br>
             </div>
             <div class="account-det2">
-                <div class="account-header2"><b>My Locations</b><div class="locationIcon"></div></div>
+                <div class="account-header2"><b>My Locations</b>
+                    <div class="locationIcon"></div>
+                </div>
                 <div class="account-box3">
                     <div class="vehicle-list">
                         <select name="Vehicles" id="Customer-Vehicles">
@@ -177,8 +187,8 @@
             var vid = pausecontent[x - 1]['VID'];
             vid = vid.replace(/ /g, "_");
             console.log(vid);
-            document.getElementById("editVehicleForm").action = "/account/editVehicle/"+vid;
-            document.getElementById("deleteVehicle").href = "/account/deleteVehicle/"+vid;
+            document.getElementById("editVehicleForm").action = "/account/editVehicle/" + vid;
+            document.getElementById("deleteVehicle").href = "/account/deleteVehicle/" + vid;
             document.getElementById("editVID").innerHTML = "Edit Vehicle - " + pausecontent[x - 1]['VID'];
             document.getElementById("editModel").placeholder = pausecontent[x - 1]['Model'];
             document.getElementById("editColor").value = pausecontent[x - 1]['Colour'];
