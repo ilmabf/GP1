@@ -121,7 +121,7 @@ include 'views/user/LoggedInHeader.php';
   document.getElementById("bts").onclick = function () {
     var team = document.getElementById("validteam");
     var i = 0;
-    while (team.value != pausecontent[i]['Team'] && i < pausecontent.length) {
+    while (i < pausecontent.length && team.value != pausecontent[i]['Team']) {
       i = i + 1;
     }
     if (i < pausecontent.length) {
@@ -132,6 +132,9 @@ include 'views/user/LoggedInHeader.php';
       } else {
         team.setCustomValidity('');
       }
+    }
+    else{
+      team.setCustomValidity('');
     }
   }
 </script>
