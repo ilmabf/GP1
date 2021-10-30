@@ -12,7 +12,7 @@ include 'views/user/LoggedInHeader.php';
     </div>
 
     <div>
-      <form action="/employee/add" name="Form" method="post" >
+      <form action="/employee/add" name="Form" method="post">
         <div id="cont" class="addTb1"></div>
 
 
@@ -81,25 +81,26 @@ include 'views/user/LoggedInHeader.php';
             </tr>
           </thead>
           <tbody style="max-width:100%;">
+
             <?php
             $count = 0;
             $result = $_SESSION['employeeDetails'];
             while ($count < $_SESSION['rowCount']) { ?>
               <tr id="row<?php $count ?>">
-                <td id="<?php echo "firstName_row" . $count ?>" class="td-t1"><?php echo $result[$count]['First_Name'] ?></td>
-                <td id="<?php echo "lastName_row" . $count ?>" class="td-t1"><?php echo $result[$count]['Last_Name'] ?></td>
-                <td id="<?php echo "contactNumber_row" . $count ?>" class="td-t1"><?php echo $result[$count]['Contact_Number'] ?></td>
-                <td id="<?php echo "email_row" . $count ?>" class="td-t1" style="max-width:200px;"><?php echo $result[$count]['Email'] ?></td>
-                <td id="<?php echo "dateEnrolled_row" . $count ?>" class="td-t1"><?php echo $result[$count]['Date_Enrolled'] ?></td>
-                <td id="<?php echo "salary_row" . $count ?>" style="text-align:right" class="td-t1"><?php echo $result[$count]['Salary'] ?>.00</td>
-                <td id="<?php echo "nicNo_row" . $count ?>" style="text-align:right" class="td-t1"><?php echo $result[$count]['NIC_No'] ?></td>
-
-                <td>
-                  <input type="button" id="<?php echo "edit_emp_btn" . $count ?>" class="edit_btn td-t1" value="Edit" onclick="empEditForm('<?php echo $count ?>')">
-                  <a href="/employee/saveEditEmployee/<?php echo $result[$count]['Employee_ID'] ?>"><input type="button" id="<?php echo "save_emp_btn" . $count ?>" class="save_btn" value="Save" onclick="empSaveForm('<?php echo $count ?>')"></a>
-                </td>
-                <td><a href="/employee/deleteEmployee/<?php echo $result[$count]['Employee_ID'] ?>"><input type="button" class="del_btn td-t1" value="Delete"></a></td>
+                  <td id="<?php echo "firstName_row" . $count ?>" class="td-t1"><?php echo $result[$count]['First_Name'] ?></td>
+                  <td id="<?php echo "lastName_row" . $count ?>" class="td-t1"><?php echo $result[$count]['Last_Name'] ?></td>
+                  <td id="<?php echo "contactNumber_row" . $count ?>" class="td-t1"><?php echo $result[$count]['Contact_Number'] ?></td>
+                  <td id="<?php echo "email_row" . $count ?>" class="td-t1" style="max-width:200px;"><?php echo $result[$count]['Email'] ?></td>
+                  <td id="<?php echo "dateEnrolled_row" . $count ?>" class="td-t1"><?php echo $result[$count]['Date_Enrolled'] ?></td>
+                  <td id="<?php echo "salary_row" . $count ?>" style="text-align:right" class="td-t1"><?php echo $result[$count]['Salary'] ?>.00</td>
+                  <td id="<?php echo "nicNo_row" . $count ?>" style="text-align:right" class="td-t1"><?php echo $result[$count]['NIC_No'] ?></td>
+                  <td>
+                    <input type="button" id="<?php echo "edit_emp_btn" . $count ?>" class="edit_btn td-t1" value="Edit" onclick="empEditForm('<?php echo $count ?>')">
+                    <a href="" id = "<?php echo "editHREF" . $count ?>"><input type="submit" id="<?php echo "save_emp_btn" . $count ?>" class="save_btn" value="Save" onclick="empSaveForm('<?php echo $result[$count]['Employee_ID'] ?>', '<?php echo $count ?>')"></a>
+                  </td>
+                  <td><a href="/employee/deleteEmployee/<?php echo $result[$count]['Employee_ID'] ?>"><input type="button" class="del_btn td-t1" value="Delete"></a></td>
               </tr>
+
             <?php $count = $count + 1;
             } ?>
 
@@ -118,20 +119,22 @@ include 'views/user/LoggedInHeader.php';
 <script>
   var pausecontent = <?php echo json_encode($_SESSION['teamCount']); ?>;
 
-  document.getElementById("bts").onclick = function () {
+  document.getElementById("bts").onclick = function() {
     var team = document.getElementById("validteam");
     var i = 0;
-    while (team.value != pausecontent[i]['Team'] && i < pausecontent.length) {
+    while (i < pausecontent.length && team.value != pausecontent[i]['Team']) {
       i = i + 1;
     }
     if (i < pausecontent.length) {
       var x = parseInt(pausecontent[i]['count(Team)'])
-      if ( (x + 1) > 3) {
-        
+      if ((x + 1) > 3) {
+
         team.setCustomValidity("Team cannot have more than 3 members");
       } else {
         team.setCustomValidity('');
       }
+    } else {
+      team.setCustomValidity('');
     }
   }
 </script>
