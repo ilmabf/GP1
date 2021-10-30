@@ -59,21 +59,20 @@ class Employee extends Controller
     function saveEditEmployee($empId)
     {
         if ($_SESSION['role'] == "systemadmin") {
-            if ($_POST['stlIdData'] == NULL) {
-                $firtNameData = $_POST['firstNameData'];
-                $lastNameData = $_POST['lastNameData'];
-                $contactNumberData = $_POST['contactNumberData'];
-                $emailData = $_POST['emailData'];
-                $dateEnrolledData = $_POST['dateEnrolledData'];
-                $salaryData = $_POST['salaryData'];
-                $nicNoData = $_POST['nicNoData'];
-                $teamData = $_POST['teamData'];
 
-                $values = array($firtNameData, $lastNameData, $contactNumberData, $emailData, $dateEnrolledData, $salaryData, $nicNoData, $teamData);
+            // $firtNameData = $_POST['firstNameData'];
+            // $lastNameData = $_POST['lastNameData'];
+            $contactNumberData = $_POST['contactNumberData'];
+            $emailData = $_POST['emailData'];
+            // $dateEnrolledData = $_POST['dateEnrolledData'];
+            $salaryData = $_POST['salaryData'];
+            // $nicNoData = $_POST['nicNoData'];
+            // $teamData = $_POST['teamData'];
 
-                if ($this->model->employeeSaveEdit($empId, $values)) {
-                    header("Location: /employee/");
-                }
+            $values = array($contactNumberData, $emailData, $salaryData);
+
+            if ($this->model->employeeSaveEdit($empId, $values)) {
+                header("Location: /employee/");
             }
         }
     }
@@ -83,7 +82,7 @@ class Employee extends Controller
         if ($_SESSION['role'] == "systemadmin") {
             if ($_POST['stlIdData'] == NULL) {
                 if ($this->model->employeeDelete($empId)) {
-                    header("Location: /account/");
+                    header("Location: /employee/");
                 }
             }
         }
