@@ -4,13 +4,13 @@
     "\\app",
     "\\app\\views",
     "\\app\\views\\admin",
-    "\\app\\views\\manager",
+    "\\app\\views\\user",
     "\\public",
     "\\public\\css",
     "\\public\\css\\actors",
-    "\\public\\css\\actors\\admin",
-    "\\public\\css\\actors\\manager"
+    "\\public\\css\\actors\\user",
+    "\\public\\js"
   ],
-  "SelectedNode": "\\app\\views\\admin\\Equipment.php",
+  "SelectedNode": "\\app\\views\\admin\\Employee.php",
   "PreviewInSolutionExplorer": false
 }

@@ -21,16 +21,16 @@ class ServiceModel extends Model
 
     public function getEquipmentDetails()
     {
-        $result = $this->db->selectTwo("*", "equipment", "Null");
+        $result = $this->db->selectTwo("*", "equipment", "WHERE (Availability =1);");
         return $result;
     }
-
-    function equipmentEdit($eid,$values)
+  
+    function equipmentEdit($eid,$value)
     {
-    $column=array('Name','Price','Date_Acquired','Team');
-    $param=array(':name',':price',':date',':team');
-
-    $result = $this->db->updateTwo("equipment", $column, $param, $values, ':eid', $eid,"WHERE (Equipment_ID = :eid);");
+        $column='Team';
+        $param=':team';
+   
+       $result = $this->db->updateTwo("equipment", $column, $param, $value, ':eid', $eid,"WHERE (Equipment_ID = :eid);");
         if ($result == "Success") {
             return true;
         } else print_r($result);
@@ -38,7 +38,8 @@ class ServiceModel extends Model
     }
     function equipmentDelete($eid)
     {
-        $result = $this->db->delete("equipment", "WHERE ( Equipment_ID = :eid );",':eid',  $eid);
+       
+        $result = $this->db->updateTwo("equipment","Availability", ':availability', 0, ':eid', $eid,"WHERE (Equipment_ID = :eid);");
         if ($result == "Success") {
             return true;
         } else print_r($result);
