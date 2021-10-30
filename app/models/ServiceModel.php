@@ -25,12 +25,12 @@ class ServiceModel extends Model
         return $result;
     }
 
-    function equipmentEdit($eid,$values)
+    function equipmentEdit($eid,$value)
     {
-    $column=array('Name','Price','Date_Acquired','Team');
-    $param=array(':name',':price',':date',':team');
+        $column='Team';
+        $param=':team';
 
-    $result = $this->db->updateTwo("equipment", $column, $param, $values, ':eid', $eid,"WHERE (Equipment_ID = :eid);");
+        $result = $this->db->updateTwo("equipment", $column, $param, $value, ':eid', $eid,"WHERE (Equipment_ID = :eid);");
         if ($result == "Success") {
             return true;
         } else print_r($result);

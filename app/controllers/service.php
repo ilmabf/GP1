@@ -59,14 +59,9 @@ class Service extends Controller
      //User Autherization
         if ($_SESSION['role'] == "systemadmin") {
              $eid = str_replace('_', ' ', $eid);
-            $name = $_POST['name'];
-            $price = $_POST['price'];
-            $dateAcquired = $_POST['dateAcquired'];
             $team = $_POST['team'];
 
-            $values =array($name,$price,$dateAcquired,$team);
-
-            if ($this->model->equipmentEdit($eid,$values)) {
+            if ($this->model->equipmentEdit($eid,$team)) {
               header("Location: /service/equipment");
 
              }
@@ -81,10 +76,10 @@ class Service extends Controller
      
         $eid = str_replace('_', ' ', $eid);
        
-       // if ($this->model->equipmentDelete($eid)) {
-        //    header("Location: /service/equipment");
+        if ($this->model->equipmentDelete($eid)) {
+            header("Location: /service/equipment");
 
-     //   }
+        }
         }else {
                 echo "Error";
        }

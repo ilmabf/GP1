@@ -142,5 +142,29 @@ myInput.onchange = validatePassword;
 confirm_pwd.onkeyup = validatePassword;
 
 
+function myFunction(x) {
+    if (x.matches) { // If media query matches
+      document.getElementById("new-pwd").addEventListener("click", mySignupInputResizeFunction);
+    }
+  }
+  
+function mySignupInputResizeFunction() {
+    document.getElementById("pwdInput-resize").style.zIndex = "3";
+    document.getElementById("pwdInput-resize").style.overflow = "visible";
+
+}
+  
+var x = window.matchMedia("(max-width: 770px)")
+myFunction(x) // Call listener function at run time
+
+var ignoreClickOnMeElement = document.getElementById('pwdInput-resize');
+
+document.addEventListener('click', function(event) {
+    var isClickInsideElement = ignoreClickOnMeElement.contains(event.target);
+    if (!isClickInsideElement) {
+        document.getElementById("pwdInput-resize").style.zIndex = "0";
+    }
+});
+
 
 

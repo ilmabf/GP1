@@ -73,20 +73,15 @@ $details = $_SESSION['equipmentDetails'];
               <tr id="rowNo<?php $count ?>">
                
                 <td><?php echo $details[$count]['Equipment_ID'] ?></td>    
-                <td id="<?php echo "name_row" . $count ?>" class="td-t1"><?php echo $details[$count]['Name'] ?></td>
-                <td id="<?php echo "price_row" . $count ?>" class="td-t1" style="text-align:right"><?php echo $details[$count]['Price'] ?>.00</td>
-                <td id="<?php echo "dateAcquired_row" . $count ?>" class="td-t1"><?php echo $details[$count]['Date_Acquired'] ?></td>
+                <td class="td-t1"><?php echo $details[$count]['Name'] ?></td>
+                <td class="td-t1" style="text-align:right"><?php echo $details[$count]['Price'] ?>.00</td>
+                <td class="td-t1"><?php echo $details[$count]['Date_Acquired'] ?></td>
                 <td id="<?php echo "assignedTeam_row" . $count ?>" class="td-t1" style="text-align:right"><?php echo $details[$count]['Team'] ?></td>
                 <td> 
-                    
-                 
-                    
-              
-                  
                     <input type="button" id="<?php echo "edit_equip_btn" . $count ?>" class="edit_btn td-t1" value="Edit" onclick="editEquipment('<?php echo $count ?>')">
-                     <input type="submit" id="<?php echo "save_equip_btn" . $count ?>" class="save_btn" value="Save">
-                    </td>
-               <td><a href="/service/deleteEquipment/<?php echo $details[$count]['Equipment_ID'] ?>"><input type="button" class="del_btn td-t1" value="Delete"></a></td>
+                    <a href="/service/editEquipment/<?php echo $details[$count]['Equipment_ID'] ?>"><input type="button" id="<?php echo "save_equip_btn" . $count ?>" class="save_btn" value="Save" onclick="saveEquipment('<?php echo $count ?>')" ></a>              
+                </td>
+                <td><a href="/service/deleteEquipment/<?php echo $details[$count]['Equipment_ID'] ?>"><input type="button" class="del_btn td-t1" value="Delete"></a></td>
              <!-- <td><a href="/service/deleteEquipment/<?php echo $details[$count]['Equipment_ID'] ?>"> <input type="button" class="del_btn td-t1" value="Delete" onclick="deleteEquipment('<?php echo $count ?>')"></a></td> -->
              </tr>
             <?php $count = $count + 1;
