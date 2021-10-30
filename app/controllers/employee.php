@@ -59,20 +59,17 @@ class Employee extends Controller
         }
     }
 
-    function saveEditEmployee($empId)
+    function saveEditEmployee($empId, $contactNumberVal, $emailData, $salaryData)
     {
+
+        // echo $empId;
+        // echo $contactNumberVal;
+        // echo $emailData;
+        // echo $salaryData;
+
         if ($_SESSION['role'] == "systemadmin") {
 
-            // $firtNameData = $_POST['firstNameData'];
-            // $lastNameData = $_POST['lastNameData'];
-            $contactNumberData = $_POST['contactNumberData'];
-            $emailData = $_POST['emailData'];
-            // $dateEnrolledData = $_POST['dateEnrolledData'];
-            $salaryData = $_POST['salaryData'];
-            // $nicNoData = $_POST['nicNoData'];
-            // $teamData = $_POST['teamData'];
-
-            $values = array($contactNumberData, $emailData, $salaryData);
+            $values = array($contactNumberVal, $emailData, $salaryData);
 
             if ($this->model->employeeSaveEdit($empId, $values)) {
                 header("Location: /employee/");
