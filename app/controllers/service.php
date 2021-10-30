@@ -54,15 +54,14 @@ class Service extends Controller
             }
         }
     }
-    function editEquipment($eid)
+    function editEquipment($eid,$team)
     {
      //User Autherization
         if ($_SESSION['role'] == "systemadmin") {
              $eid = str_replace('_', ' ', $eid);
-            $team = $_POST['team'];
 
             if ($this->model->equipmentEdit($eid,$team)) {
-              header("Location: /service/equipment");
+                header("Location: /service/equipment");
 
              }
         }else {
@@ -74,12 +73,12 @@ class Service extends Controller
         //User Autherization
         if ($_SESSION['role'] == "systemadmin") {
      
-        $eid = str_replace('_', ' ', $eid);
+            $eid = str_replace('_', ' ', $eid);
        
-        if ($this->model->equipmentDelete($eid)) {
-            header("Location: /service/equipment");
+            if ($this->model->equipmentDelete($eid)) {
+                header("Location: /service/equipment");
 
-        }
+            }
         }else {
                 echo "Error";
        }
