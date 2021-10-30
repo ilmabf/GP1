@@ -27,26 +27,16 @@ function empEditForm(no) {
     document.getElementById("edit_emp_btn"+no).style.display="none";
     document.getElementById("save_emp_btn"+no).style.display="block";
 
-    // var firstName = document.getElementById("firstName_row"+no);
-    // var lastName = document.getElementById("lastName_row"+no);
     var contactNumber = document.getElementById("contactNumber_row"+no);
     var email = document.getElementById("email_row"+no);
-    // var dateEnrolled = document.getElementById("dateEnrolled_row"+no);
     var salary = document.getElementById("salary_row"+no);
-    // var nicNo = document.getElementById("nicNo_row"+no);
 
-
-    // var firstNameData = firstName.innerHTML;
-    // var lastNameData = lastName.innerHTML;
     var contactNumberData = contactNumber.innerHTML;
     var emailData = email.innerHTML;
-    // var dateEnrolledData = dateEnrolled.innerHTML;
     var salaryData = salary.innerHTML;
-    // var nicNoData = nicNo.innerHTML;
-
 
     contactNumber.innerHTML = "<input type='number' id='contactNumber_text"+no+"' class='td-t7' name='contactNumberData' value='"+contactNumberData+"'>";
-    email.innerHTML = "<input type='email' id='email_text"+no+"' class='td-t3' name='emailData' value='"+emailData+"'>";
+    email.innerHTML = "<input type='email' id='email_text"+no+"' class='td-t3' name='emailData' value='"+emailData+"' />";
     salary.innerHTML = "<input type='number' id='salary_text"+no+"' class='td-t8' name='salaryData' value='"+salaryData+"'>";
 
 }
@@ -55,6 +45,7 @@ function empEditForm(no) {
 function empSaveForm(id, no) {
 
   var contactNumberVal = document.getElementById("contactNumber_text"+no).value;
+  document.getElementById("email_text"+no).setAttribute('type', 'email');
   var emailVal = document.getElementById("email_text"+no).value;
   var salaryVal = document.getElementById("salary_text"+no).value;
 

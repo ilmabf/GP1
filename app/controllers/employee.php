@@ -47,7 +47,8 @@ class Employee extends Controller
             if (isset($firstName) && isset($lastName) && isset($contactNumber) && isset($email) && isset($dateEnrolled) && isset($salary) && isset($nic) && isset($team)) {
 
                 //insert employee
-                if ($this->model->makeEmployee($firstName, $lastName, $contactNumber, $email, $dateEnrolled, $salary, $nic, $team)) {
+                $flag = 1;
+                if ($this->model->makeEmployee($firstName, $lastName, $contactNumber, $email, $dateEnrolled, $salary, $nic, $team, $flag)) {
                     $_SESSION['insertSuccess'] = 'Employee added successfully';
                     header("Location: /employee/");
                 }
@@ -61,12 +62,6 @@ class Employee extends Controller
 
     function saveEditEmployee($empId, $contactNumberVal, $emailData, $salaryData)
     {
-
-        // echo $empId;
-        // echo $contactNumberVal;
-        // echo $emailData;
-        // echo $salaryData;
-
         if ($_SESSION['role'] == "systemadmin") {
 
             $values = array($contactNumberVal, $emailData, $salaryData);
@@ -80,10 +75,10 @@ class Employee extends Controller
     function deleteEmployee($empId)
     {
         if ($_SESSION['role'] == "systemadmin") {
-            if ($_POST['stlIdData'] == NULL) {
-                if ($this->model->employeeDelete($empId)) {
-                    header("Location: /employee/");
-                }
+
+            $values = '0';
+            if ($this->model->employeeUpdate($empId, $values)) {
+                header("Location: /employee/");
             }
         }
     }
