@@ -22,10 +22,11 @@ class EmployeeModel extends Model
         $result = $this->db->selectTwo("*", "employee", "LEFT JOIN service_team_leader ON employee.STL_ID = service_team_leader.STL_ID UNION (SELECT * FROM employee RIGHT JOIN service_team_leader ON employee.STL_ID = service_team_leader.STL_ID WHERE service_team_leader.STL_ID IS NULL);");
         return $result;
     }
-
-    function getRelevantEmployee($empID)
+    
+    function getTeamCount()
     {
-        $result = $this->db->select("*", "employee", "WHERE Employee_ID = '$empID';");
+        $selection = array("Team", "count(Team)");
+        $result = $this->db->selectTwo($selection, "employee", "GROUP BY Team;");
         return $result;
     }
 

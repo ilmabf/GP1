@@ -17,6 +17,9 @@ class Employee extends Controller
         $result = $this->model->getEmployeeDetails();
         $_SESSION['employeeDetails'] = $result;
 
+        $result = $this->model->getTeamCount();
+        $_SESSION['teamCount'] = $result;
+
         //User Autherization
         if ($_SESSION['role'] == "systemadmin") {
             $this->view->render('admin/Employee');
