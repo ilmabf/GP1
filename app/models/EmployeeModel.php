@@ -21,6 +21,8 @@ class EmployeeModel extends Model
     {
         $result = $this->db->selectTwo("*", "employee", "LEFT JOIN service_team_leader ON employee.STL_ID = service_team_leader.STL_ID UNION (SELECT * FROM employee RIGHT JOIN service_team_leader ON employee.STL_ID = service_team_leader.STL_ID WHERE service_team_leader.STL_ID IS NULL);");
         return $result;
+
+        //LEFT JOIN service_team_leader ON employee.STL_ID = service_team_leader.STL_ID WHERE Flag = 1 UNION (SELECT * FROM employee RIGHT JOIN service_team_leader ON employee.STL_ID = service_team_leader.STL_ID WHERE (service_team_leader.STL_ID IS NULL AND Flag = 1));
     }
     
     function getTeamCount()
@@ -50,5 +52,8 @@ class EmployeeModel extends Model
         if ($result == "Success") {
             return true;
         } else print_r($result);
+
+
+        //update employee set Flag = 0 WHERE Employee_ID = :empId;
     }
 }
