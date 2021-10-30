@@ -29,4 +29,26 @@ class EmployeeModel extends Model
         $result = $this->db->selectTwo($selection, "employee", "GROUP BY Team;");
         return $result;
     }
+
+    function employeeSaveEdit($empId, $columnValue)
+    {
+        $columns = array('First_Name', 'Last_Name', 'Contact_Number', 'Email', 'Date_Enrolled', 'Salary', 'NIC_No', 'Team');
+        $param = array(':firstName', ':lastName', ':contactNumber', ':email', ':dateEnrolled', ':salary', ':nicNo', ':team');
+
+        $conditionParam = ':empId';
+        $conditionValue = $empId;
+
+        $result = $this->db->updateTwo("employee", $columns, $param, $columnValue, $conditionParam, $conditionValue, "WHERE Employee_ID = :empId;");
+        if ($result == "Success") {
+            return true;
+        } else print_r($result);
+    }
+
+    function employeeDelete($empId)
+    {
+        $result = $this->db->delete("employee", "WHERE Employee_ID = :empId;", ':empId', $empId);
+        if ($result == "Success") {
+            return true;
+        } else print_r($result);
+    }
 }

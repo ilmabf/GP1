@@ -59,12 +59,34 @@ class Employee extends Controller
         }
     }
 
-    function getUpdate($count)
+    function saveEditEmployee($empId)
     {
         if ($_SESSION['role'] == "systemadmin") {
-            $update = true;
-            $_SESSION['id'] = $count;
-            $this->view->render('AdminUpdateEmployee');
+                $firtNameData = $_POST['firstNameData'];
+                $lastNameData = $_POST['lastNameData'];
+                $contactNumberData = $_POST['contactNumberData'];
+                $emailData = $_POST['emailData'];
+                $dateEnrolledData = $_POST['dateEnrolledData'];
+                $salaryData = $_POST['salaryData'];
+                $nicNoData = $_POST['nicNoData'];
+                $teamData = $_POST['teamData'];
+
+                $values = array($firtNameData, $lastNameData, $contactNumberData, $emailData, $dateEnrolledData, $salaryData, $nicNoData, $teamData);
+
+                if ($this->model->employeeSaveEdit($empId, $values)) {
+                    header("Location: /employee/");
+                }
+        }
+    }
+
+    function deleteEmployee($empId)
+    {
+        if ($_SESSION['role'] == "systemadmin") {
+            if ($_POST['stlIdData'] == NULL) {
+                if ($this->model->employeeDelete($empId)) {
+                    header("Location: /account/");
+                }
+            }
         }
     }
 }
