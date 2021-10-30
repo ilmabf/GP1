@@ -8,23 +8,24 @@ class EmployeeModel extends Model
         parent::__construct();
     }
 
-    function makeEmployee($firstName, $lastName, $contactNumber, $email, $dateEnrolled, $salary, $nic, $team)
+    function makeEmployee($firstName, $lastName, $contactNumber, $email, $dateEnrolled, $salary, $nic, $team, $flag)
     {
-        $columns = array('First_Name', 'Last_Name', 'Contact_Number', 'Email', 'Date_Enrolled', 'Salary', 'NIC_No', 'Team');
-        $param = array(':fname', ':lname', ':phone', ':email', ':date', ':salaary', ':nic', ':team');
-        $values = array($firstName, $lastName, $contactNumber, $email, $dateEnrolled, $salary, $nic, $team);
+        $columns = array('First_Name', 'Last_Name', 'Contact_Number', 'Email', 'Date_Enrolled', 'Salary', 'NIC_No', 'Team', 'Flag');
+        $param = array(':fname', ':lname', ':phone', ':email', ':date', ':salaary', ':nic', ':team', ':flag');
+        $values = array($firstName, $lastName, $contactNumber, $email, $dateEnrolled, $salary, $nic, $team, $flag);
         $result = $this->db->insertTwo("employee", $columns, $param, $values);
         return $result;
     }
 
     function getEmployeeDetails()
     {
-        $result = $this->db->selectTwo("*", "employee", "LEFT JOIN service_team_leader ON employee.STL_ID = service_team_leader.STL_ID UNION (SELECT * FROM employee RIGHT JOIN service_team_leader ON employee.STL_ID = service_team_leader.STL_ID WHERE service_team_leader.STL_ID IS NULL);");
+        $result = $this->db->selectTwo("*", "employee", "LEFT JOIN service_team_leader ON employee.STL_ID = service_team_leader.STL_ID WHERE Flag = 1 UNION (SELECT * FROM employee RIGHT JOIN service_team_leader ON employee.STL_ID = service_team_leader.STL_ID WHERE (service_team_leader.STL_ID IS NULL AND Flag = 1));");
         return $result;
 
         //LEFT JOIN service_team_leader ON employee.STL_ID = service_team_leader.STL_ID WHERE Flag = 1 UNION (SELECT * FROM employee RIGHT JOIN service_team_leader ON employee.STL_ID = service_team_leader.STL_ID WHERE (service_team_leader.STL_ID IS NULL AND Flag = 1));
+        //LEFT JOIN service_team_leader ON employee.STL_ID = service_team_leader.STL_ID UNION (SELECT * FROM employee RIGHT JOIN service_team_leader ON employee.STL_ID = service_team_leader.STL_ID WHERE service_team_leader.STL_ID IS NULL);
     }
-    
+
     function getTeamCount()
     {
         $selection = array("Team", "count(Team)");
@@ -46,14 +47,19 @@ class EmployeeModel extends Model
         } else print_r($result);
     }
 
-    function employeeDelete($empId)
+    function employeeUpdate($empId, $columnValue)
     {
-        $result = $this->db->delete("employee", "WHERE Employee_ID = :empId;", ':empId', $empId);
+        $columns = 'Flag';
+        $param = ':flag';
+        $conditionParam = ':empId';
+        $conditionValue = $empId;
+
+        $result = $this->db->updateTwo("employee", $columns, $param, $columnValue, $conditionParam, $conditionValue, "WHERE Employee_ID = :empId;");
         if ($result == "Success") {
             return true;
         } else print_r($result);
-
-
-        //update employee set Flag = 0 WHERE Employee_ID = :empId;
     }
+
+    //update employee set Flag = 0 WHERE Employee_ID = :empId;
+    //updateTwo("employee", "WHERE Employee_ID = :empId;", ':empId', $empId);
 }

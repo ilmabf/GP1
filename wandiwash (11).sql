@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Oct 16, 2021 at 01:05 PM
--- Server version: 5.7.31
--- PHP Version: 7.3.21
+-- Host: 127.0.0.1
+-- Generation Time: Oct 30, 2021 at 04:21 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -27,16 +27,14 @@ SET time_zone = "+00:00";
 -- Table structure for table `customer`
 --
 
-DROP TABLE IF EXISTS `customer`;
-CREATE TABLE IF NOT EXISTS `customer` (
+CREATE TABLE `customer` (
   `User_ID` int(11) NOT NULL,
   `First_Name` varchar(50) NOT NULL,
   `Last_Name` varchar(50) NOT NULL,
   `Contact_Number` varchar(50) NOT NULL,
   `Date_Registered` date NOT NULL,
   `Token` varchar(255) NOT NULL,
-  `Verified` int(1) NOT NULL,
-  PRIMARY KEY (`User_ID`)
+  `Verified` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -44,7 +42,8 @@ CREATE TABLE IF NOT EXISTS `customer` (
 --
 
 INSERT INTO `customer` (`User_ID`, `First_Name`, `Last_Name`, `Contact_Number`, `Date_Registered`, `Token`, `Verified`) VALUES
-(5, 'Bf', 'Ilma', '0713198819', '2021-10-16', '', 1);
+(5, 'Bf', 'Ilma', '0713198819', '2021-10-16', '', 1),
+(6, 'Abdulla', 'Nalim', '0769099126', '2021-10-16', '', 1);
 
 -- --------------------------------------------------------
 
@@ -52,12 +51,10 @@ INSERT INTO `customer` (`User_ID`, `First_Name`, `Last_Name`, `Contact_Number`, 
 -- Table structure for table `customer_location`
 --
 
-DROP TABLE IF EXISTS `customer_location`;
-CREATE TABLE IF NOT EXISTS `customer_location` (
+CREATE TABLE `customer_location` (
   `User_ID` int(11) NOT NULL,
   `Latitude` float(10,10) NOT NULL,
-  `Longitude` float(10,10) NOT NULL,
-  PRIMARY KEY (`User_ID`,`Latitude`,`Longitude`)
+  `Longitude` float(10,10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -66,16 +63,23 @@ CREATE TABLE IF NOT EXISTS `customer_location` (
 -- Table structure for table `customer_vehicle`
 --
 
-DROP TABLE IF EXISTS `customer_vehicle`;
-CREATE TABLE IF NOT EXISTS `customer_vehicle` (
+CREATE TABLE `customer_vehicle` (
   `User_ID` int(11) NOT NULL,
   `VID` varchar(50) NOT NULL,
   `Model` varchar(50) NOT NULL,
   `Colour` varchar(50) NOT NULL,
   `Type` varchar(50) NOT NULL,
-  `Manufacturer` varchar(50) NOT NULL,
-  PRIMARY KEY (`User_ID`,`VID`)
+  `Manufacturer` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `customer_vehicle`
+--
+
+INSERT INTO `customer_vehicle` (`User_ID`, `VID`, `Model`, `Colour`, `Type`, `Manufacturer`) VALUES
+(6, 'AG 3245', 'Premio', '#ee1111', 'SUV', 'Toyota'),
+(6, 'FG 4536', 'Aqua', '#193ae1', 'SUV', 'Toyota'),
+(6, 'SD 2345', 'I9', '#e81111', 'SUV', 'BMW');
 
 -- --------------------------------------------------------
 
@@ -83,9 +87,8 @@ CREATE TABLE IF NOT EXISTS `customer_vehicle` (
 -- Table structure for table `employee`
 --
 
-DROP TABLE IF EXISTS `employee`;
-CREATE TABLE IF NOT EXISTS `employee` (
-  `Employee_ID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `employee` (
+  `Employee_ID` int(11) NOT NULL,
   `First_Name` varchar(50) NOT NULL,
   `Last_Name` varchar(50) NOT NULL,
   `Contact_Number` varchar(50) NOT NULL,
@@ -95,9 +98,18 @@ CREATE TABLE IF NOT EXISTS `employee` (
   `NIC_No` varchar(50) NOT NULL,
   `Team` varchar(50) NOT NULL,
   `STL_ID` int(11) DEFAULT NULL,
-  PRIMARY KEY (`Employee_ID`),
-  KEY `STL_ID` (`STL_ID`)
+  `Flag` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `employee`
+--
+
+INSERT INTO `employee` (`Employee_ID`, `First_Name`, `Last_Name`, `Contact_Number`, `Email`, `Date_Enrolled`, `Salary`, `NIC_No`, `Team`, `STL_ID`, `Flag`) VALUES
+(23, 'Nimal', 'Tharusha', '0768934234', 'nimal@gmail.com', '2021-10-26', 30000, '64537823V', '1', NULL, 0),
+(24, 'Ryan', 'Nihal', '0712367543', 'ryan05@gmail.com', '2021-10-18', 25000, '57435672V', '2', NULL, 1),
+(25, 'Ramesh', 'Perera', '0712435464', 'rameshper@gmail.com', '2021-10-05', 20000, '32543424V', '2', NULL, 1),
+(26, 'Gayan', 'Kurera', '0768934564', 'gayan08@gmail.com', '2021-10-19', 30000, '32563756V', '1', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -105,16 +117,22 @@ CREATE TABLE IF NOT EXISTS `employee` (
 -- Table structure for table `equipment`
 --
 
-DROP TABLE IF EXISTS `equipment`;
-CREATE TABLE IF NOT EXISTS `equipment` (
-  `Equipment_ID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `equipment` (
+  `Equipment_ID` int(11) NOT NULL,
   `Name` varchar(50) NOT NULL,
   `Price` float NOT NULL,
   `Date_Acquired` date NOT NULL,
   `Team` int(11) DEFAULT NULL,
-  PRIMARY KEY (`Equipment_ID`),
-  KEY `Team` (`Team`)
+  `Availability` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `equipment`
+--
+
+INSERT INTO `equipment` (`Equipment_ID`, `Name`, `Price`, `Date_Acquired`, `Team`, `Availability`) VALUES
+(1, 'Compressor', 12000, '2021-10-05', NULL, 0),
+(2, 'Vaccum Cleaner', 12000, '2021-10-05', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -122,8 +140,7 @@ CREATE TABLE IF NOT EXISTS `equipment` (
 -- Table structure for table `password_reset_temp`
 --
 
-DROP TABLE IF EXISTS `password_reset_temp`;
-CREATE TABLE IF NOT EXISTS `password_reset_temp` (
+CREATE TABLE `password_reset_temp` (
   `email` varchar(250) NOT NULL,
   `keyno` varchar(250) NOT NULL,
   `expDate` datetime NOT NULL
@@ -135,9 +152,8 @@ CREATE TABLE IF NOT EXISTS `password_reset_temp` (
 -- Table structure for table `reservation`
 --
 
-DROP TABLE IF EXISTS `reservation`;
-CREATE TABLE IF NOT EXISTS `reservation` (
-  `Reservation_ID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `reservation` (
+  `Reservation_ID` int(11) NOT NULL,
   `Vehicle_ID` varchar(50) NOT NULL,
   `Latitude` float(10,10) NOT NULL,
   `Longitude` float(10,10) NOT NULL,
@@ -147,11 +163,7 @@ CREATE TABLE IF NOT EXISTS `reservation` (
   `Time` time NOT NULL,
   `Service_team_leader_ID` int(11) DEFAULT NULL,
   `Customer_ID` int(11) DEFAULT NULL,
-  `Rating` float DEFAULT NULL,
-  PRIMARY KEY (`Reservation_ID`),
-  KEY `Wash_Package_ID` (`Wash_Package_ID`),
-  KEY `Service_team_leader_ID` (`Service_team_leader_ID`),
-  KEY `Customer_ID` (`Customer_ID`)
+  `Rating` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -160,12 +172,10 @@ CREATE TABLE IF NOT EXISTS `reservation` (
 -- Table structure for table `reservation_photos`
 --
 
-DROP TABLE IF EXISTS `reservation_photos`;
-CREATE TABLE IF NOT EXISTS `reservation_photos` (
+CREATE TABLE `reservation_photos` (
   `Reservation_ID` int(11) NOT NULL,
   `Picture` varchar(255) NOT NULL,
-  `Time_Uploaded` datetime NOT NULL,
-  PRIMARY KEY (`Reservation_ID`,`Picture`)
+  `Time_Uploaded` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -174,16 +184,20 @@ CREATE TABLE IF NOT EXISTS `reservation_photos` (
 -- Table structure for table `review`
 --
 
-DROP TABLE IF EXISTS `review`;
-CREATE TABLE IF NOT EXISTS `review` (
+CREATE TABLE `review` (
   `Review_ID` int(11) NOT NULL,
   `Date` date NOT NULL,
   `Time` time NOT NULL,
   `Content` varchar(255) NOT NULL,
-  `Customer_ID` int(11) NOT NULL,
-  PRIMARY KEY (`Review_ID`),
-  KEY `Customer_ID` (`Customer_ID`)
+  `Customer_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `review`
+--
+
+INSERT INTO `review` (`Review_ID`, `Date`, `Time`, `Content`, `Customer_ID`) VALUES
+(1, '2021-10-21', '21:21:00', 'Good Service', 6);
 
 -- --------------------------------------------------------
 
@@ -191,12 +205,10 @@ CREATE TABLE IF NOT EXISTS `review` (
 -- Table structure for table `service_team_leader`
 --
 
-DROP TABLE IF EXISTS `service_team_leader`;
-CREATE TABLE IF NOT EXISTS `service_team_leader` (
-  `STL_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `Photo` varchar(255) NOT NULL,
-  PRIMARY KEY (`STL_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+CREATE TABLE `service_team_leader` (
+  `STL_ID` int(11) NOT NULL,
+  `Photo` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `service_team_leader`
@@ -211,12 +223,9 @@ INSERT INTO `service_team_leader` (`STL_ID`, `Photo`) VALUES
 -- Table structure for table `service_team_leader_equipment`
 --
 
-DROP TABLE IF EXISTS `service_team_leader_equipment`;
-CREATE TABLE IF NOT EXISTS `service_team_leader_equipment` (
+CREATE TABLE `service_team_leader_equipment` (
   `STL_ID` int(11) NOT NULL,
-  `Equipment_ID` int(11) NOT NULL,
-  PRIMARY KEY (`STL_ID`,`Equipment_ID`),
-  KEY `Equipment_ID` (`Equipment_ID`)
+  `Equipment_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -225,26 +234,24 @@ CREATE TABLE IF NOT EXISTS `service_team_leader_equipment` (
 -- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE IF NOT EXISTS `users` (
-  `User_ID` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `users` (
+  `User_ID` int(11) NOT NULL,
   `Username` varchar(50) NOT NULL,
   `PASSWORD` varchar(255) NOT NULL,
   `Email` varchar(50) NOT NULL,
-  `STL_ID` int(11) DEFAULT NULL,
-  PRIMARY KEY (`User_ID`),
-  KEY `STL_ID` (`STL_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+  `STL_ID` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`User_ID`, `Username`, `PASSWORD`, `Email`, `STL_ID`) VALUES
-(1, 'systemadmin', '$2y$12$oZSSQ7X0Xe6fQAi9CTbYDeUE.V19OJYf.tvan5gzvz6ADoBS84PvS', 'systemadmin@gmail.com', NULL),
-(2, 'manager', '$2y$12$oZSSQ7X0Xe6fQAi9CTbYDeUE.V19OJYf.tvan5gzvz6ADoBS84PvS', 'manager@gmail.com', NULL),
-(4, 'stl', '$2y$12$oZSSQ7X0Xe6fQAi9CTbYDeUE.V19OJYf.tvan5gzvz6ADoBS84PvS', 'stl@gmail.com', 1),
-(5, 'customer', '$2y$12$oZSSQ7X0Xe6fQAi9CTbYDeUE.V19OJYf.tvan5gzvz6ADoBS84PvS', 'leyakat.organa@gmail.com', NULL);
+(1, 'piyal99', '$2a$12$7T/MHMqtTXL.MLtgSrEWYOfb1dwGgpqHdi16E7GnCsxKUdbLqzX82', 'systemadmin@gmail.com', NULL),
+(2, 'jagath99', '$2a$12$gyoPbOwaXfgZfXzZzSyDNOVIbZI7zokiTuspgB8e09CG/bHKlJq6S', 'abdullanalimm@gmail.com', NULL),
+(4, 'harith99', '$2a$12$f0lM7qyyJwGupmqpG8JD0.ZAwdRRP38aERPvzAVU71Je.QZltwrE2', 'stl@gmail.com', 1),
+(5, 'customer', '$2y$12$oZSSQ7X0Xe6fQAi9CTbYDeUE.V19OJYf.tvan5gzvz6ADoBS84PvS', 'leyakat.organa@gmail.com', NULL),
+(6, 'abdulla1999', '$2y$12$lO5wNMgo8FkVwtcvB5mzl.N40EIDbDMMq2rURpLl7wxQgxr2GCQWu', 'abdullanalim1999@gmail.com', NULL);
 
 -- --------------------------------------------------------
 
@@ -252,12 +259,10 @@ INSERT INTO `users` (`User_ID`, `Username`, `PASSWORD`, `Email`, `STL_ID`) VALUE
 -- Table structure for table `wash_package`
 --
 
-DROP TABLE IF EXISTS `wash_package`;
-CREATE TABLE IF NOT EXISTS `wash_package` (
+CREATE TABLE `wash_package` (
   `Wash_Package_ID` int(11) NOT NULL,
   `Name` varchar(50) NOT NULL,
-  `Description` varchar(255) NOT NULL,
-  PRIMARY KEY (`Wash_Package_ID`)
+  `Description` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -266,13 +271,141 @@ CREATE TABLE IF NOT EXISTS `wash_package` (
 -- Table structure for table `wash_package_vehicle_category`
 --
 
-DROP TABLE IF EXISTS `wash_package_vehicle_category`;
-CREATE TABLE IF NOT EXISTS `wash_package_vehicle_category` (
+CREATE TABLE `wash_package_vehicle_category` (
   `Wash_Package_ID` int(11) NOT NULL,
   `Vehicle_Type` varchar(50) NOT NULL,
-  `Price` float NOT NULL,
-  PRIMARY KEY (`Wash_Package_ID`,`Vehicle_Type`)
+  `Price` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `customer`
+--
+ALTER TABLE `customer`
+  ADD PRIMARY KEY (`User_ID`);
+
+--
+-- Indexes for table `customer_location`
+--
+ALTER TABLE `customer_location`
+  ADD PRIMARY KEY (`User_ID`,`Latitude`,`Longitude`);
+
+--
+-- Indexes for table `customer_vehicle`
+--
+ALTER TABLE `customer_vehicle`
+  ADD PRIMARY KEY (`User_ID`,`VID`);
+
+--
+-- Indexes for table `employee`
+--
+ALTER TABLE `employee`
+  ADD PRIMARY KEY (`Employee_ID`),
+  ADD KEY `STL_ID` (`STL_ID`);
+
+--
+-- Indexes for table `equipment`
+--
+ALTER TABLE `equipment`
+  ADD PRIMARY KEY (`Equipment_ID`),
+  ADD KEY `Team` (`Team`);
+
+--
+-- Indexes for table `reservation`
+--
+ALTER TABLE `reservation`
+  ADD PRIMARY KEY (`Reservation_ID`),
+  ADD KEY `Wash_Package_ID` (`Wash_Package_ID`),
+  ADD KEY `Service_team_leader_ID` (`Service_team_leader_ID`),
+  ADD KEY `Customer_ID` (`Customer_ID`);
+
+--
+-- Indexes for table `reservation_photos`
+--
+ALTER TABLE `reservation_photos`
+  ADD PRIMARY KEY (`Reservation_ID`,`Picture`);
+
+--
+-- Indexes for table `review`
+--
+ALTER TABLE `review`
+  ADD PRIMARY KEY (`Review_ID`),
+  ADD KEY `Customer_ID` (`Customer_ID`);
+
+--
+-- Indexes for table `service_team_leader`
+--
+ALTER TABLE `service_team_leader`
+  ADD PRIMARY KEY (`STL_ID`);
+
+--
+-- Indexes for table `service_team_leader_equipment`
+--
+ALTER TABLE `service_team_leader_equipment`
+  ADD PRIMARY KEY (`STL_ID`,`Equipment_ID`),
+  ADD KEY `Equipment_ID` (`Equipment_ID`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`User_ID`),
+  ADD KEY `STL_ID` (`STL_ID`);
+
+--
+-- Indexes for table `wash_package`
+--
+ALTER TABLE `wash_package`
+  ADD PRIMARY KEY (`Wash_Package_ID`);
+
+--
+-- Indexes for table `wash_package_vehicle_category`
+--
+ALTER TABLE `wash_package_vehicle_category`
+  ADD PRIMARY KEY (`Wash_Package_ID`,`Vehicle_Type`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `employee`
+--
+ALTER TABLE `employee`
+  MODIFY `Employee_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+
+--
+-- AUTO_INCREMENT for table `equipment`
+--
+ALTER TABLE `equipment`
+  MODIFY `Equipment_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `reservation`
+--
+ALTER TABLE `reservation`
+  MODIFY `Reservation_ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `review`
+--
+ALTER TABLE `review`
+  MODIFY `Review_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `service_team_leader`
+--
+ALTER TABLE `service_team_leader`
+  MODIFY `STL_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `User_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
