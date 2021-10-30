@@ -31,8 +31,8 @@ class EmployeeModel extends Model
 
     function employeeSaveEdit($empId, $columnValue)
     {
-        $columns = array('First_Name', 'Last_Name', 'Contact_Number', 'Email', 'Date_Enrolled', 'Salary', 'NIC_No', 'Team');
-        $param = array(':firstName', ':lastName', ':contactNumber', ':email', ':dateEnrolled', ':salary', ':nicNo', ':team');
+        $columns = array('Contact_Number', 'Email', 'Salary');
+        $param = array(':contactNumber', ':email', ':salary');
 
         $conditionParam = ':empId';
         $conditionValue = $empId;
