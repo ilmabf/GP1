@@ -22,17 +22,18 @@ class EmployeeModel extends Model
         $result = $this->db->selectTwo("*", "employee", "LEFT JOIN service_team_leader ON employee.STL_ID = service_team_leader.STL_ID UNION (SELECT * FROM employee RIGHT JOIN service_team_leader ON employee.STL_ID = service_team_leader.STL_ID WHERE service_team_leader.STL_ID IS NULL);");
         return $result;
     }
-
-    function getRelevantEmployee($empID)
+    
+    function getTeamCount()
     {
-        $result = $this->db->select("*", "employee", "WHERE Employee_ID = '$empID';");
+        $selection = array("Team", "count(Team)");
+        $result = $this->db->selectTwo($selection, "employee", "GROUP BY Team;");
         return $result;
     }
 
     function employeeSaveEdit($empId, $columnValue)
     {
-        $columns = array('First_Name', 'Last_Name', 'Contact_Number', 'Email', 'Date_Enrolled', 'Salary', 'NIC_No', 'Team');
-        $param = array(':firstName', ':lastName', ':contactNumber', ':email', ':dateEnrolled', ':salary', ':nicNo', ':team');
+        $columns = array('Contact_Number', 'Email', 'Salary');
+        $param = array(':contactNumber', ':email', ':salary');
 
         $conditionParam = ':empId';
         $conditionValue = $empId;

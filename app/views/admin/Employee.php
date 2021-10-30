@@ -12,7 +12,7 @@ include 'views/user/LoggedInHeader.php';
     </div>
 
     <div>
-      <form action="/employee/add" name="Form" method="post">
+      <form action="/employee/add" name="Form" method="post" >
         <div id="cont" class="addTb1"></div>
 
 
@@ -74,9 +74,9 @@ include 'views/user/LoggedInHeader.php';
               <th data-type="text">Date Enrolled</th>
               <th data-type="text">Salary</th>
               <th data-type="number">NIC No</th>
-              <th data-type="text">Team</th>
+              <!-- <th data-type="text">Team</th>
               <th data-type="text">Leader</th>
-              <th data-type="text">Photo Link</th>
+              <th data-type="text">Photo Link</th> -->
               <th colspan="2" style="text-align: center;">Action</th>
             </tr>
           </thead>
@@ -93,9 +93,7 @@ include 'views/user/LoggedInHeader.php';
                 <td id="<?php echo "dateEnrolled_row" . $count ?>" class="td-t1"><?php echo $result[$count]['Date_Enrolled'] ?></td>
                 <td id="<?php echo "salary_row" . $count ?>" style="text-align:right" class="td-t1"><?php echo $result[$count]['Salary'] ?>.00</td>
                 <td id="<?php echo "nicNo_row" . $count ?>" style="text-align:right" class="td-t1"><?php echo $result[$count]['NIC_No'] ?></td>
-                <td id="<?php echo "team_row" . $count ?>" style="text-align:right max-width:60px;"><?php echo $result[$count]['Team'] ?></td>
-                <td id="<?php echo "stlId_row" . $count ?>" style="text-align:right max-width:60px;"><?php echo $result[$count]['STL_ID'] ?></td>
-                <td id="<?php echo "stlPhoto_row" . $count ?>" style="text-align:right max-width:40px;"></td>
+
                 <td>
                   <input type="button" id="<?php echo "edit_emp_btn" . $count ?>" class="edit_btn td-t1" value="Edit" onclick="empEditForm('<?php echo $count ?>')">
                   <a href="/employee/saveEditEmployee/<?php echo $result[$count]['Employee_ID'] ?>"><input type="button" id="<?php echo "save_emp_btn" . $count ?>" class="save_btn" value="Save" onclick="empSaveForm('<?php echo $count ?>')"></a>
@@ -116,3 +114,24 @@ include 'views/user/LoggedInHeader.php';
   <script src="/public/js/AdminManageEmployee.js"></script>
 
 </main>
+
+<script>
+  var pausecontent = <?php echo json_encode($_SESSION['teamCount']); ?>;
+
+  document.getElementById("bts").onclick = function () {
+    var team = document.getElementById("validteam");
+    var i = 0;
+    while (team.value != pausecontent[i]['Team'] && i < pausecontent.length) {
+      i = i + 1;
+    }
+    if (i < pausecontent.length) {
+      var x = parseInt(pausecontent[i]['count(Team)'])
+      if ( (x + 1) > 3) {
+        
+        team.setCustomValidity("Team cannot have more than 3 members");
+      } else {
+        team.setCustomValidity('');
+      }
+    }
+  }
+</script>
