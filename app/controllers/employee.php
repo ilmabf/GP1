@@ -17,6 +17,9 @@ class Employee extends Controller
         $result = $this->model->getEmployeeDetails();
         $_SESSION['employeeDetails'] = $result;
 
+        $result = $this->model->getTeamCount();
+        $_SESSION['teamCount'] = $result;
+
         //User Autherization
         if ($_SESSION['role'] == "systemadmin") {
             $this->view->render('admin/Employee');
@@ -58,10 +61,10 @@ class Employee extends Controller
 
     function getUpdate($count)
     {
-        if($_SESSION['role'] == "systemadmin") {
+        if ($_SESSION['role'] == "systemadmin") {
             $update = true;
             $_SESSION['id'] = $count;
-            $this->view->render('AdminUpdateEmployee');                     
+            $this->view->render('AdminUpdateEmployee');
         }
     }
 }

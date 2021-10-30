@@ -256,7 +256,7 @@ function addStlRow() {
                 ele2.setAttribute('id', 'stlteam');
                 ele2.setAttribute('name', 'stlTeam');
                 ele2.setAttribute('type', 'number');
-                ele2.setAttribute('required', '');
+                ele2.setAttribute('required', ''); 
                 ele2.setAttribute('placeholder','1 or 2 etc');
             }
 
@@ -315,13 +315,6 @@ function checkLetter(){
       lName.setCustomValidity('');
     }
 
-    var team = document.getElementById("validteam");
-    if(team.value > 5){
-        team.setCustomValidity("Team cannot have more than 5 members");
-    }
-    else{
-        team.setCustomValidity('');
-    }
   }
 
 function validate(){
