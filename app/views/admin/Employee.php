@@ -12,7 +12,7 @@ include 'views/user/LoggedInHeader.php';
     </div>
 
     <div>
-      <form action="/employee/add" name="Form" method="post">
+      <form action="/employee/add" name="Form" method="post" >
         <div id="cont" class="addTb1"></div>
 
 
@@ -114,3 +114,24 @@ include 'views/user/LoggedInHeader.php';
   <script src="/public/js/AdminManageEmployee.js"></script>
 
 </main>
+
+<script>
+  var pausecontent = <?php echo json_encode($_SESSION['teamCount']); ?>;
+
+  document.getElementById("bts").onclick = function () {
+    var team = document.getElementById("validteam");
+    var i = 0;
+    while (team.value != pausecontent[i]['Team'] && i < pausecontent.length) {
+      i = i + 1;
+    }
+    if (i < pausecontent.length) {
+      var x = parseInt(pausecontent[i]['count(Team)'])
+      if ( (x + 1) > 3) {
+        
+        team.setCustomValidity("Team cannot have more than 3 members");
+      } else {
+        team.setCustomValidity('');
+      }
+    }
+  }
+</script>
