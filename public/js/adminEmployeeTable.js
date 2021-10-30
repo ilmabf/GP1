@@ -45,35 +45,21 @@ function empEditForm(no) {
     // var nicNoData = nicNo.innerHTML;
 
 
-    // firstName.innerHTML = "<input type='text' id='firstName_text"+no+"' class='td-t2' name='firstNameData' value='"+firstNameData+"'>";
-    // lastName.innerHTML = "<input type='text' id='lastName_text"+no+"' class='td-t2' name='lastNameData' value='"+lastNameData+"'>";
     contactNumber.innerHTML = "<input type='number' id='contactNumber_text"+no+"' class='td-t7' name='contactNumberData' value='"+contactNumberData+"'>";
     email.innerHTML = "<input type='email' id='email_text"+no+"' class='td-t3' name='emailData' value='"+emailData+"'>";
-    // dateEnrolled.innerHTML = "<input type='date' id='dateEnrolled_text"+no+"' class='td-t4' name='dateEnrolledData' value='"+dateEnrolledData+"'>";
     salary.innerHTML = "<input type='number' id='salary_text"+no+"' class='td-t8' name='salaryData' value='"+salaryData+"'>";
-    // nicNo.innerHTML = "<input type='text' id='nicNo_text"+no+"' class='td-t6' name='nicNoData' value='"+nicNoData+"'>";
 
 }
 
 
-function empSaveForm(no) {
-    // var firstNameVal = document.getElementById("firstName_text"+no).value;
-    // var lastNameVal = document.getElementById("lastName_text"+no).value;
-    var contactNumberVal = document.getElementById("contactNumber_text"+no).value;
-    var emailVal = document.getElementById("email_text"+no).value;
-    // var dateEnrolledVal = document.getElementById("dateEnrolled_text"+no).value;
-    var salaryVal = document.getElementById("salary_text"+no).value;
-    // var nicNoVal = document.getElementById("nicNo_text"+no).value;
+function empSaveForm(id, no) {
 
-    // document.getElementById("firstName_row"+no).innerHTML = firstNameVal;
-    // document.getElementById("lastName_row"+no).innerHTML = lastNameVal;
-    document.getElementById("contactNumber_row"+no).innerHTML = contactNumberVal;
-    document.getElementById("email_row"+no).innerHTML = emailVal;
-    // document.getElementById("dateEnrolled_row"+no).innerHTML = dateEnrolledVal;
-    document.getElementById("salary_row"+no).innerHTML = salaryVal;
-    // document.getElementById("nicNo_row"+no).innerHTML = nicNoVal;
+  var contactNumberVal = document.getElementById("contactNumber_text"+no).value;
+  var emailVal = document.getElementById("email_text"+no).value;
+  var salaryVal = document.getElementById("salary_text"+no).value;
 
-    document.getElementById("edit_emp_btn"+no).style.display="block";
-    document.getElementById("save_emp_btn"+no).style.display="none";
+  var edit = document.getElementById("editHREF"+no);
+  edit.href = "/employee/saveEditEmployee/"+ id + "/" + contactNumberVal + "/"+ emailVal + "/"+salaryVal;
+
 
 }
