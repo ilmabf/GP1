@@ -88,10 +88,10 @@ include 'views/user/LoggedInHeader.php';
             while ($count < $_SESSION['rowCount']) { ?>
 
               <tr id="row<?php $count ?>">
-                <td id="<?php echo "firstName_row" . $count ?>" class="td-t1"><?php echo $result[$count]['First_Name'] ?></td>
-                <td id="<?php echo "lastName_row" . $count ?>" class="td-t1"><?php echo $result[$count]['Last_Name'] ?></td>
+                <td id="<?php echo "firstName_row" . $count ?>" style="text-align:left"class="td-t1"><?php echo $result[$count]['First_Name'] ?></td>
+                <td id="<?php echo "lastName_row" . $count ?>" style="text-align:left" class="td-t1"><?php echo $result[$count]['Last_Name'] ?></td>
                 <td id="<?php echo "contactNumber_row" . $count ?>" class="td-t1"><?php echo $result[$count]['Contact_Number'] ?></td>
-                <td id="<?php echo "email_row" . $count ?>" class="td-t1" style="max-width:200px;"><?php echo $result[$count]['Email'] ?></td>
+                <td id="<?php echo "email_row" . $count ?>" style="text-align:left" class="td-t1" style="max-width:200px;"><?php echo $result[$count]['Email'] ?></td>
                 <td id="<?php echo "dateEnrolled_row" . $count ?>" class="td-t1"><?php echo $result[$count]['Date_Enrolled'] ?></td>
                 <td id="<?php echo "salary_row" . $count ?>" style="text-align:right" class="td-t1"><?php echo $result[$count]['Salary'] ?>.00</td>
                 <td id="<?php echo "nicNo_row" . $count ?>" style="text-align:right" class="td-t1"><?php echo $result[$count]['NIC_No'] ?></td>

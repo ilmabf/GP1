@@ -83,10 +83,10 @@
             <h2 class="login-signupheader">Update your mobile</h2>
             <form action="/account/editDetails" method="post" id="customer-signup">
                 <label for="fname" style="padding: 0px 40px 0px 0px;">Mobile number</label>
-                <input class="input-box" type="text2" name="mobile" autofocus placeholder="<?php echo $details[0]['Contact_Number'] ?>" required>
+                <input class="input-box" type="text2" pattern="[0-9]{10}" name="mobile" autofocus placeholder="<?php echo $details[0]['Contact_Number'] ?>" required>
                 <br>
                 <button id="EditDetailsFormSubmitButton" class="formSubmitButton" type="submit" name="signup">Update</button>
-                <button id="EditDetailsFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closeDetailsVehicleForm()">Cancel</button>
+                <button id="EditDetailsFormCloseButton" class="formCancelButton" type="button" name="signup" onclick="closeDetailsVehicleForm()">Cancel</button>
             </form>
 
         </div>

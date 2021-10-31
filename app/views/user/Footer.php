@@ -7,6 +7,7 @@
                 <h3><b>Contact - </b>011 987 5321</h3>
                 <address><b>Email - </b><a href="mailto:wandiwash@gmail.com">wandiwash@gmail.com</a></address>
                 <h3><b>Address - </b>Malwathugoda Auto Service, Kaudella, Galagedara.</h3>
+                <h3><b>Areas in which WandiWash is available - </b>Kandy</h3>
             </div>
         </div>
         <div class="footer-map">

@@ -64,11 +64,11 @@ $result = $_SESSION['employeeDetails'];
           $count = 0;
           while ($count < $_SESSION['rowCount']) { ?>
             <tr>
-              <td><?php echo $result[$count]['First_Name'] ?></td>
-              <td><?php echo $result[$count]['Last_Name'] ?></td>
+              <td style="text-align:left"><?php echo $result[$count]['First_Name'] ?></td>
+              <td style="text-align:left"><?php echo $result[$count]['Last_Name'] ?></td>
               <td><?php echo $result[$count]['Contact_Number'] ?></td>
-              <td><?php echo $result[$count]['Email'] ?></td>
-              <td><?php echo $result[$count]['Date_Enrolled'] ?></td>
+              <td style="text-align:left"><?php echo $result[$count]['Email'] ?></td>
+              <td ><?php echo $result[$count]['Date_Enrolled'] ?></td>
               <td style="text-align:right"><?php echo $result[$count]['Salary'] ?>.00</td>
               <td style="text-align:right"><?php echo $result[$count]['NIC_No'] ?></td>
             </tr>
