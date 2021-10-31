@@ -34,7 +34,9 @@ include 'views/user/LoggedInHeader.php';
     <div style="min-height: 110px;"></div>
 
     <div id="upcoming">
+    <p style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff; text-align:center">You can only cancel/reschedule up until 24 hours before the reservation time</p><br>
         <div class="box3">
+            
             <div class="invoiceBorder">Order - 1257</div>
 
             <div class="box2">
