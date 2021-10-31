@@ -49,8 +49,8 @@ class EmployeeModel extends Model
 
     function employeeUpdate($empId, $columnValue)
     {
-        $columns = 'Flag';
-        $param = ':flag';
+        $columns = array('Flag', 'Team');
+        $param = array(':flag', ':team');
         $conditionParam = ':empId';
         $conditionValue = $empId;
 
