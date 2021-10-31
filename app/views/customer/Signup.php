@@ -69,22 +69,22 @@
                     </div>
                 </div>
                 <div id="link-to-go-login"><a href="/user/login" style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Already have an account? Login</a></div>
-                <<<<<<< HEAD=======<?php
-                                    if (isset($_SESSION['verifyBox'])) {
-                                        if ($_SESSION['verifyBox'] == 1) {
-                                            $_SESSION['verifyBox'] = 0; ?> <div id="signupVerify" class="toVerifySingupBox">
-                    <div class="toVerifySignupBoxContent">
-                        <h3 style="color:#193498">Thank you for signing up!<br><br><span style="font-size:smaller"> Please verify your email address to complete setting up your account.</span></h2>
-                    </div>
+                <?php
+                if (isset($_SESSION['verifyBox'])) {
+                    if ($_SESSION['verifyBox'] == 1) {
+                        $_SESSION['verifyBox'] = 0; ?> <div id="signupVerify" class="toVerifySingupBox">
+                            <div class="toVerifySignupBoxContent">
+                                <h3 style="color:#193498">Thank you for signing up!<br><br><span style="font-size:smaller"> Please verify your email address to complete setting up your account.</span></h2>
+                            </div>
+                        </div>
+                <?php }
+                } ?>
             </div>
-    <?php }
-                                    } ?>
-        </div>
 
 
 
 
-        <script src="/public/js/CustomerSignup.js"></script>
+            <script src="/public/js/CustomerSignup.js"></script>
     </main>
 
     <div style="min-height: 110px;">

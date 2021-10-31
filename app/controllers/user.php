@@ -19,7 +19,7 @@ class User extends Controller
         session_unset();
         session_destroy();
         session_write_close();
-        setcookie(session_name(),'',0,'/');
+        setcookie(session_name(), '', 0, '/');
         session_regenerate_id(true);
         header("Location: /");
     }
@@ -31,10 +31,10 @@ class User extends Controller
 
     function passwordChange()
     {
-        if(!isset($_POST["email_to_send_pwd"])){
+        if (!isset($_POST["email_to_send_pwd"])) {
             header("Location: /login");
         }
-        
+
         //get email
         $email = $_POST["email_to_send_pwd"];
 
@@ -127,7 +127,7 @@ class User extends Controller
         //update password
         $this->model->updateUserPassword($email, $hashedpwd);
         $this->model->deletePwdTempTable($email);
-        
+
         $_SESSION['login'] = "loggedin";
         $_SESSION['usernameemail'] = $email;
 
