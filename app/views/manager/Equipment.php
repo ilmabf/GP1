@@ -25,8 +25,8 @@ $details = $_SESSION['equipmentDetails'];
         <form action="" method="post">
           <select name="serviceTeam" class="ad-Equip-Search" id="Manager-AssignedEquip-TeamTypes">
             <option value="select service team">Select Service Team</option>
-            <option value="Team A">Team A</option>
-            <option value="Team B">Team B</option>
+            <option value="Team A">Team 1</option>
+            <option value="Team B">Team 2</option>
           </select>
         </form>
       </div>

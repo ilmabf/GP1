@@ -81,7 +81,7 @@ class Customer extends Controller
         if ($this->model->checkToken($uid, $token)) {
 
             //customer verified. Redirect to login page
-            header("Location: /user/home");
+            header("Location: /login");
         }
     }
 
