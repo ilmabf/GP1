@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 30, 2021 at 04:21 PM
+-- Generation Time: Oct 30, 2021 at 04:24 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -247,9 +247,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`User_ID`, `Username`, `PASSWORD`, `Email`, `STL_ID`) VALUES
-(1, 'piyal99', '$2a$12$7T/MHMqtTXL.MLtgSrEWYOfb1dwGgpqHdi16E7GnCsxKUdbLqzX82', 'systemadmin@gmail.com', NULL),
-(2, 'jagath99', '$2a$12$gyoPbOwaXfgZfXzZzSyDNOVIbZI7zokiTuspgB8e09CG/bHKlJq6S', 'abdullanalimm@gmail.com', NULL),
-(4, 'harith99', '$2a$12$f0lM7qyyJwGupmqpG8JD0.ZAwdRRP38aERPvzAVU71Je.QZltwrE2', 'stl@gmail.com', 1),
+(1, 'piyal99', '$2a$12$I4MIN6YtnQ1938v0xRCIhOOvhEe6.aAsRbjGITxOKDUSDvbztpAbS', 'systemadmin@gmail.com', NULL),
+(2, 'jagath99', '$2a$12$m84ivglPH0dyG8CqFW0Vmel/fx6zJGeA2hLStzxM6hv/Xy.5vDcb6', 'abdullanalimm@gmail.com', NULL),
+(4, 'harith99', '$2a$12$zL9kPAeTnMf31uu8gkl87efPRkSVWQ2/k/zIFIUATEEZqrnc0TkaO', 'stl@gmail.com', 1),
 (5, 'customer', '$2y$12$oZSSQ7X0Xe6fQAi9CTbYDeUE.V19OJYf.tvan5gzvz6ADoBS84PvS', 'leyakat.organa@gmail.com', NULL),
 (6, 'abdulla1999', '$2y$12$lO5wNMgo8FkVwtcvB5mzl.N40EIDbDMMq2rURpLl7wxQgxr2GCQWu', 'abdullanalim1999@gmail.com', NULL);
 

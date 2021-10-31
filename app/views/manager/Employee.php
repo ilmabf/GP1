@@ -56,9 +56,6 @@ $result = $_SESSION['employeeDetails'];
             <th data-type="text">Date Enrolled</th>
             <th data-type="text">Salary</th>
             <th data-type="number">NIC No</th>
-            <th data-type="text">Team</th>
-            <th data-type="text">Leader</th>
-            <th data-type="text">Photo</th>
           </tr>
         </thead>
         <tbody>
@@ -74,9 +71,6 @@ $result = $_SESSION['employeeDetails'];
               <td><?php echo $result[$count]['Date_Enrolled'] ?></td>
               <td style="text-align:right"><?php echo $result[$count]['Salary'] ?>.00</td>
               <td style="text-align:right"><?php echo $result[$count]['NIC_No'] ?></td>
-              <td style="text-align:right"><?php echo $result[$count]['Team'] ?></td>
-              <td><?php echo $result[$count]['STL_ID'] ?></td>
-              <td><?php echo $result[$count]['Photo'] ?></td>
             </tr>
           <?php $count = $count + 1;
           } ?>
