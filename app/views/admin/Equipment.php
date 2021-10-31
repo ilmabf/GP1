@@ -70,13 +70,13 @@ $details = $_SESSION['equipmentDetails'];
               <tr id="rowNo<?php $count ?>">
             
                 <td><?php echo $details[$count]['Equipment_ID'] ?></td>    
-                <td class="td-t1"><?php echo $details[$count]['Name'] ?></td>
+                <td style="text-align:left" class="td-t1"><?php echo $details[$count]['Name'] ?></td>
                 <td class="td-t1" style="text-align:right"><?php echo $details[$count]['Price'] ?>.00</td>
                 <td class="td-t1"><?php echo $details[$count]['Date_Acquired'] ?></td>
                 <td id="<?php echo "assignedTeam_row" . $count ?>" class="td-t1" style="text-align:right"><?php echo $details[$count]['Team'] ?></td>
-                <td  align="center">     
+                <td>     
                   <input type="button" id="<?php echo "edit_equip_btn" . $count ?>" class="edit_btn td-t1" value="Assign a Team" onclick="editEquipment('<?php echo $count ?>')">
-                  <a href="" id = "<?php echo "editLink" . $count ?>"><input type="submit" id="<?php echo "save_equip_btn" . $count ?>" class="save_btn" value="Save" onclick="saveEquipment('<?php echo $details[$count]['Equipment_ID'] ?>','<?php echo $count ?>')" ></a>
+                  <a href="" id = "<?php echo "editLink" . $count ?>"><input style = "margin: auto;" type="submit" id="<?php echo "save_equip_btn" . $count ?>" class="save_btn" value="Save" onclick="saveEquipment('<?php echo $details[$count]['Equipment_ID'] ?>','<?php echo $count ?>')" ></a>
                  </td>
                  <td><a href="/service/deleteEquipment/<?php echo $details[$count]['Equipment_ID'] ?>"> <input type="button" class="del_btn td-t1" value="Delete" onclick="deleteEquipment('<?php echo $count ?>')"></a></td> 
               </tr>

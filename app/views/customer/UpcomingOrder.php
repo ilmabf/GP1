@@ -5,7 +5,7 @@ include 'views/user/LoggedInHeader.php';
     <div class="addVehicleform" id="stldetails">
         <div class="forma">
             <div class="loguser-icon"></div>
-            <h2 class="login-signupheader">Details of the team Leader</h2>
+            <h2 class="login-signupheader">Details of the team leader</h2>
 
             <form action="" method="post" id="customer-signup">
                 <ul>
@@ -34,7 +34,7 @@ include 'views/user/LoggedInHeader.php';
     <div style="min-height: 110px;"></div>
 
     <div id="upcoming">
-    <p style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff; text-align:center">You can only cancel/reschedule up until 24 hours before the reservation time</p><br>
+    <p style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff; text-align:center">You can only cancel/reschedule up until 24 hours before the reserved time</p><br>
         <div class="box3">
             
             <div class="invoiceBorder">Order - 1257</div>

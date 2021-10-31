@@ -67,6 +67,42 @@ include 'views/user/LoggedInHeader.php';
 
             </div>
 
+            <h2>Check out our wash packages below!</h2>
+            <p class="section2-para1">Sit back, relax and enjoy while our team of professionals provide you services just the way you like it!</p>
+
+            <div class="section2-blocksdown">
+                <div class="section2-blocks4">
+                    <div class="section2-block-img4"></div>
+                    <div class="section2-block-heading">
+                        <h3>EXTERIOR WASH</h3>
+                    </div>
+                    <div class="section2-block-para">
+                        <p>Pre-cleaning, handwashing, drying, cleaning the tyres, rims and windows from the outside.</p>
+                    </div>
+                </div>
+
+                <div class="section2-blocks5">
+                    <div class="section2-block-img5"></div>
+                    <div class="section2-block-heading">
+                        <h3>INTERIOR CLEANING</h3>
+                    </div>
+                    <div class="section2-block-para">
+                        <p>Vacuuming, disposing garbage, cleaning the floor mats and windows from the inside.</p>
+                    </div>
+                </div>
+
+                <div class="section2-blocks6">
+                    <div class="section2-block-img6"></div>
+                    <div class="section2-block-heading">
+                        <h3>SANITIZATION</h3>
+                    </div>
+                    <div class="section2-block-para">
+                        <p>Disinfecting your vehicle to protect you from germs.</p>
+                    </div>
+                </div>
+
+            </div>
+
         </section>
     </div>
 
