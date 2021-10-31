@@ -76,7 +76,7 @@ class Employee extends Controller
     {
         if ($_SESSION['role'] == "systemadmin") {
 
-            $values = '0';
+            $values = array(0, 0);
             if ($this->model->employeeUpdate($empId, $values)) {
                 header("Location: /employee/");
             }
