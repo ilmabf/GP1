@@ -54,6 +54,7 @@ class Service extends Controller
             }
         }
     }
+
     function editEquipment($eid, $team = null)
     {
         //User Autherization
@@ -67,6 +68,7 @@ class Service extends Controller
             echo "Error";
         }
     }
+
     function deleteEquipment($eid)
     {
         //User Autherization
