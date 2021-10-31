@@ -32,7 +32,7 @@ include 'views/user/LoggedInHeader.php';
                 <div class="sub-box1">
                     <div class="order">
                         <div class="orderitem">Service</div>
-                        <p class="orderitem1">Exterior</p>
+                        <p class="orderitem1">Interior</p>
                     </div>
                     <div class="order">
                         <div class="orderitem">Vecicle No</div>

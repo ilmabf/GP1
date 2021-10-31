@@ -81,7 +81,7 @@ include 'views/user/LoggedInHeader.php';
         <form action="" method="post" id="customer-signup">
             <label for="Model" style="padding: 0px 29px 0px 0px;">Description</label>
             <div class="input-box" style="display: inline-grid;">
-                <textarea name="review" placeholder="The service description..." required style="height: 112px;    width: 90%;"></textarea>
+                <textarea name="review" placeholder="Vacuuming, disposing garbage, cleaning the floor mats and windows from the inside." required style="height: 112px;    width: 90%;"></textarea>
             </div>
             <br>
             <button id="VehicleFormSubmitButton" class="formSubmitButton" type="button" name="signup" onclick="closeViewServiceForm()">Save</button>

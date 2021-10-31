@@ -47,7 +47,7 @@ $details = $_SESSION['equipmentDetails'];
         while ($count < $_SESSION['rowCount']) { ?>
           <tr>
             <td><?php echo $details[$count]['Equipment_ID'] ?></td>
-            <td><?php echo $details[$count]['Name'] ?></td>
+            <td style="text-align:left"><?php echo $details[$count]['Name'] ?></td>
             <td style="text-align:right"><?php echo $details[$count]['Price'] ?>.00</td>
             <td><?php echo $details[$count]['Date_Acquired'] ?></td>
             <td style="text-align:right"><?php echo $details[$count]['Team'] ?></td>

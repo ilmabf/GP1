@@ -6,7 +6,7 @@ include 'views/user/LoggedInHeader.php';
     <div class="addVehicleform" id="stldetails">
         <div class="forma">
             <div class="loguser-icon"></div>
-            <h2 class="login-signupheader">Details of the team Leader</h2>
+            <h2 class="login-signupheader">Details of the team leader</h2>
 
             <form action="" method="post" id="customer-signup">
                 <ul>
@@ -110,4 +110,4 @@ include 'views/user/LoggedInHeader.php';
         <div style="min-height: 110px;"></div>
 
         <script src="/public/js/CustomerViewUpcomingOrder.js"></script>
-        <script src="/public/js/ManagerViewCompletedOrder.js"></script>
+        <script src="/public/js/CustomerViewCompletedOrder.js"></script>

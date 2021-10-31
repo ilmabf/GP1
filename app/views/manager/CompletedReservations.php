@@ -26,7 +26,7 @@ include 'views/user/LoggedInHeader.php';
             <div class="sub-box1">
                 <div class="order">
                     <div class="orderitem">Order ID</div>
-                    <div class="orderitem1">AAAA</div>
+                    <div class="orderitem1">1257</div>
                 </div>
                 <div class="order">
                     <div class="orderitem">Vecicle No</div>
@@ -45,7 +45,7 @@ include 'views/user/LoggedInHeader.php';
             <div class="sub-box1">
                 <div class="order">
                     <div class="orderitem">Order ID</div>
-                    <div class="orderitem1">BBBB</div>
+                    <div class="orderitem1">1258</div>
                 </div>
                 <div class="order">
                     <div class="orderitem">Vecicle No</div>
@@ -64,7 +64,7 @@ include 'views/user/LoggedInHeader.php';
             <div class="sub-box1">
                 <div class="order">
                     <div class="orderitem">Order ID</div>
-                    <p class="orderitem1">AAAA</p>
+                    <p class="orderitem1">1259</p>
                 </div>
                 <div class="order">
                     <div class="orderitem">Vecicle No</div>

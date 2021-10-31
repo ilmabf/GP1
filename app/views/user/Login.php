@@ -44,7 +44,7 @@ if (isset($_SESSION["locked"])) {
                     </div>
                 </div>
                 <p class="forget_pwd"><a href="/user/passwordReset" style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Forgotten password?</a></p>
-                <p class="link-to-go-signup"><a href="/customer/signup" style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Create an account? SignUp!</a></p>
+                <p class="link-to-go-signup"><a href="/signup" style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Create an account? SignUp!</a></p>
 
             </div>
 
