@@ -68,7 +68,7 @@
                         <p id="length" class="invalid">Minimum <b>8 characters</b></p>
                     </div>
                 </div>
-                <div id="link-to-go-login"><a href="/user/login" style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Already have an account? Login</a></div>
+                <div id="link-to-go-login"><a href="/login" style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Already have an account? Login</a></div>
                 <?php
                 if (isset($_SESSION['verifyBox'])) {
                     if ($_SESSION['verifyBox'] == 1) {
