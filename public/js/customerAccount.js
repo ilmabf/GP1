@@ -104,4 +104,15 @@ function display() {
 display();
 
 
-
+function openMap() {
+  var x = document.getElementById("googleMapbox");
+  var z = document.getElementById("mapControl");
+  var y = document.getElementById("mainbox");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    z.style.display = "block";
+    y.classList.add("blurAccount");
+  } else {
+    x.style.display = "none";
+  }
+}

@@ -9,7 +9,7 @@
   }
 
   .btn3 {
-    top: 705px;
+    top: 716px;
     right: 59px;
   }
 
@@ -395,8 +395,9 @@
 
 .btn3 {
   position: absolute;
-  opacity: 0.7;
+  opacity: 1.7;
   color: #193498;
+  z-index: 9;
 }
 
 .btn {
