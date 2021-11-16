@@ -62,7 +62,7 @@
   background: #500421;
 }
 /* ------------------------- Admin-Manage Employee ----------------------------------- */
-#bts, #btStl {
+#bts,#btStl {
   display: none;
   margin: 20px auto;
   padding: 8px 8px;
@@ -73,16 +73,16 @@
   cursor: pointer;
 }
 
-#addRow:hover, #addStlRow:hover {
+#addRow:hover,#addStlRow:hover {
   background-color: #041553;
   color: white;
 }
 
-#bts:hover, #btStl:hover {
+#bts:hover,#btStl:hover {
   background-color: #041553;
 }
 
-#removeBtn, #removeStlBtn {
+#removeBtn,#removeStlBtn {
   background-color: #7b113a;
   padding: 5px 5px;
   color: white;
@@ -91,7 +91,7 @@
   cursor: pointer;
 }
 
-#removeBtn:hover, #removeStlBtn:hover {
+#removeBtn:hover,#removeStlBtn:hover {
   background-color: #500421;
 }
 
@@ -150,6 +150,7 @@
   background-color: #061757;
 }
 
+
 /* ------------------------- Admin-Manage Service ----------------------------------- */
 .editPriceBtn {
   padding: 5px 15px;
@@ -158,6 +159,7 @@
   cursor: pointer;
   border-radius: 5px;
 }
+
 /* ------------------------- forms submit and cancel buttons ----------------------------------- */
 
 .formSubmitButton {
@@ -386,6 +388,7 @@
 .a8:hover {
   background-color: #4e0320;
 }
+
 
 .a10 {
   float: right;
