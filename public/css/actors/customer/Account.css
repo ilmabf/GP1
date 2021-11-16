@@ -15,12 +15,6 @@
         left: 10%;
         position: relative;
     }
-    
-    .map-box{
-        height: 220px;
-    }
-    
-    
 }
 
 .vehicle-specs .color-box{
@@ -34,7 +28,7 @@
 
 .box{
     overflow: auto;
-    padding-bottom: 116px;
+    /* padding-bottom: 116px; */
 }
 
 .account-box1{
@@ -50,11 +44,54 @@
     width: fit-content;
     margin-top: 200px;
 }
-.map-box{
-    display: block;
-    
+
+.addressBox{
+    width: 100%;
+    margin-bottom: 10px;
 }
 
+.map-box{
+    display: block;
+    height: 220px;
+}
+
+#mapControl{
+    display: none;
+}
+
+.map{
+    
+    background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 28%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 5px 50px 120px 50px;
+  height: 70%;
+  width: 35%;
+  margin-top: 200px;
+  display: none;
+  z-index: 9;
+}
+#map{
+    height: 91%;
+    /* display: none; */
+    z-index: 9;
+    /* width: 700px;
+    height: 400px;
+    transform: translate(56%, 8%); */
+/* 
+    position: absolute;
+    top: 28%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px 100px 20px 50px;
+    height: 70%;
+    width: 35%;
+    margin-top: 200px; */
+}
 
 .account-header{
     top: 25%;

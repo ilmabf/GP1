@@ -52,4 +52,12 @@ class Account extends Controller
             header("Location: /account/");
         }
     }
+
+    function saveAddress($address, $latitude, $longitude){
+        $address = str_replace('_', ' ', $address);
+        $id = $_SESSION['userDetails'][0]['User_ID'];
+        if ($this->model->addressAdd($id, $address, $latitude, $longitude)) {
+            header("Location: /account/");
+        }
+    }
 }
