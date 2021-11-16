@@ -54,7 +54,7 @@ class Service extends Controller
             }
         }
     }
-    function editEquipment($eid,$team=null)
+    function editEquipment($eid, $team = null)
     {
         //User Autherization
         if ($_SESSION['role'] == "systemadmin") {

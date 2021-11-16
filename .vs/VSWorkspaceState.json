@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\views",
+    "\\app\\views\\stl",
+    "\\public",
+    "\\public\\css",
+    "\\public\\css\\actors",
+    "\\public\\css\\actors\\manager",
+    "\\public\\css\\actors\\stl",
+    "\\public\\css\\components"
+  ],
+  "SelectedNode": "\\public\\css\\actors\\manager\\UpcomingReservation.css",
+  "PreviewInSolutionExplorer": false
+}
