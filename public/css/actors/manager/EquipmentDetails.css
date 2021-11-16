@@ -1,9 +1,3 @@
-.heading{
-    color: #193498;
-    margin-bottom: 40px;
-    text-align: center;
-    font-size: larger;
-}
 #managerSearchEquipment, #managerSearchEmployee{
     padding: 10px 10px;
     border-color: #193498;

@@ -84,35 +84,3 @@
   border: 2px outset #193498;
 }
 
-.td-t222 {
-  max-width: 100px;
-}
-
-.td-t22 {
-  max-width: 70px;
-}
-
-/* @media only screen and (max-width: 770px) {
-  .heading {
-    font-size: 12px;
-    text-align: center;
-  }
-
-  .ad-EquipSearch {
-    display: block;
-    text-align: center;
-    margin: 10px auto;
-  }
-
-  #adminSearchEquipment {
-    font-size: 12px;
-    margin-right: 50px;
-    margin-left: 50px;
-  }
-
-  .adEquipSearch2 {
-    float: left;
-    margin-left: 50px;
-    margin-right: 50px;
-  }
-} */

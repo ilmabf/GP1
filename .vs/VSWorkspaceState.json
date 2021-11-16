@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\controllers",
-    "\\app\\libs",
     "\\app\\views",
-    "\\app\\views\\admin",
-    "\\app\\views\\manager",
+    "\\app\\views\\stl",
     "\\public",
+    "\\public\\css",
     "\\public\\css\\actors",
-    "\\public\\js"
+    "\\public\\css\\actors\\manager",
+    "\\public\\css\\actors\\stl",
+    "\\public\\css\\components"
   ],
-  "SelectedNode": "\\public\\js\\adminManageEquipment.js",
+  "SelectedNode": "\\public\\css\\actors\\manager\\UpcomingReservation.css",
   "PreviewInSolutionExplorer": false
 }

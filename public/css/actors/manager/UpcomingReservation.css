@@ -5,7 +5,6 @@
     font-size: larger;
 }
 
-
 .reservation-date{
     text-align: center;
     margin: 35px 236px;
@@ -78,14 +77,6 @@
     margin-bottom: 10px;
 }
 
-.vehicleNo{
-    margin-bottom: 20px;
-}
-
-.orderTime{
-    margin-bottom: 20px;
-}
-
 .orderView{
     margin-bottom: 10px;
 }
@@ -107,6 +98,7 @@
 }
 
 .team{
+    text-align: center;
     margin-top: 20px;
     float: initial;
     font-size: 13px;

@@ -22,38 +22,6 @@
     text-align: center; 
 }
 
-.orderID{
-    margin-top: 20px;
-    margin-bottom: 30px;
-}
-
-.orderDate{
-    margin-bottom: 30px;
-}
-
-
-.orderTime {
-    margin-bottom: 30px;
-}
-
-
-
-.orderVehicle{
-    margin-bottom: 30px;
-}
-
-
-.orderServiceType{
-    margin-bottom: 30px;
-}
-
-
-.orderLocation{
-    margin-bottom: 30px;
-}
-
-
-
 .res{
     margin-top: 8px;
     margin-bottom: 11px;
@@ -118,42 +86,10 @@
     transform: translate(-14%, -81%);
 }
 
-.a1{
+.a1,.a2,.a3,.a4,.a5,.a6,.a7{
     display: inline;
     margin-right: 15px;
 }
-
-.a2{
-    display: inline;
-    margin-right: 15px;
-}
-
-.a3{
-    display: inline;
-    margin-right: 15px;
-}
-
-.a4{
-    display: inline;
-    margin-right: 15px;
-}
-
-.a5{
-    display: inline;
-    margin-right: 15px;
-}
-
-.a6{
-    display: inline;
-    margin-right: 15px;
-}
-
-.a7{
-    display: inline;
-    margin-right: 15px;
-}
-
-
 
 .cancelPopUpclass {
     display: none; /* Hidden by default */
@@ -203,10 +139,7 @@
       margin: 25px 15px;
   }
 
-  
-
-
-
+ 
   .confirmPopUpclass {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */

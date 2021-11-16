@@ -13,7 +13,7 @@ class ServiceModel extends Model
         $columns = array('Name', 'Price', 'Date_Acquired');
         $param = array(':name', ':price', ':date');
         $values = array($name, $price,  $dateAcquired);
-        $result = $this->db->insertTwo("equipment", $columns, $param, $values);
+        $result = $this->db->insert("equipment", $columns, $param, $values);
         if ($result == "Success") {
             return true;
         } else print_r($result);
@@ -21,7 +21,7 @@ class ServiceModel extends Model
 
     public function getEquipmentDetails()
     {
-        $result = $this->db->selectTwo("*", "equipment", "WHERE (Availability =1);");
+        $result = $this->db->select("*", "equipment", "WHERE (Availability =1);");
         return $result;
     }
   
@@ -30,7 +30,7 @@ class ServiceModel extends Model
         $column='Team';
         $param=':team';
    
-       $result = $this->db->updateTwo("equipment", $column, $param, $value, ':eid', $eid,"WHERE (Equipment_ID = :eid);");
+       $result = $this->db->update("equipment", $column, $param, $value, ':eid', $eid,"WHERE (Equipment_ID = :eid);");
         if ($result == "Success") {
             return true;
         } else print_r($result);
@@ -39,7 +39,7 @@ class ServiceModel extends Model
     function equipmentDelete($eid)
     {
        
-        $result = $this->db->updateTwo("equipment","Availability", ':availability', 0, ':eid', $eid,"WHERE (Equipment_ID = :eid);");
+        $result = $this->db->update("equipment","Availability", ':availability', 0, ':eid', $eid,"WHERE (Equipment_ID = :eid);");
         if ($result == "Success") {
             return true;
         } else print_r($result);
