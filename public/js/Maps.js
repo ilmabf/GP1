@@ -15,18 +15,33 @@ function searchLocation() {
     addr = addr + ", Sri Lanka";
 }
 
+function saveLocation(){
+    var address = customerAddress;
+    if(document.getElementById('typedAddress') != ""){
+        address = document.getElementById('typedAddress').value;
+        address = address.replace(/ /g, "_");
+    }
+    Lattitude = latlng[0]['geometry']['location'].lat();
+    Longitude = latlng[0]['geometry']['location'].lng();
+    window.location = "/account/saveAddress/" + address + "/" + Lattitude + "/" + Longitude;
+}
+
 let map;
 let marker;
 let geocoder;
 let responseDiv;
 let response;
+var customerAddress = "";
+var Lattitude;
+var Longitude;
+var latlng;
 
 function initMap() {
     map = new google.maps.Map(document.getElementById("map"), {
         zoom: 8,
         center: {
-            lat: -34.397,
-            lng: 150.644
+            lat: 7.2905715,
+            lng: 80.6337262
         },
         mapTypeControl: false,
     });
@@ -34,13 +49,14 @@ function initMap() {
 
     const inputText = document.createElement("input");
 
+    inputText.id = "typedAddress";
     inputText.type = "text";
     inputText.placeholder = "Enter a location";
 
     const submitButton = document.createElement("input");
 
     submitButton.type = "button";
-    submitButton.value = "Geocode";
+    submitButton.value = "Search";
     submitButton.classList.add("button", "button-primary");
 
     const clearButton = document.createElement("input");
@@ -55,15 +71,10 @@ function initMap() {
     responseDiv.id = "response-container";
     responseDiv.appendChild(response);
 
-    const instructionsElement = document.createElement("p");
-
-    instructionsElement.id = "instructions";
-    instructionsElement.innerHTML =
-        "<strong>Instructions</strong>: Enter an address in the textbox to geocode or click on the map to reverse geocode.";
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(inputText);
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(submitButton);
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(clearButton);
-    map.controls[google.maps.ControlPosition.LEFT_TOP].push(instructionsElement);
+    // map.controls[google.maps.ControlPosition.LEFT_TOP].push(instructionsElement);
     map.controls[google.maps.ControlPosition.LEFT_TOP].push(responseDiv);
     marker = new google.maps.Marker({
         map,
@@ -103,6 +114,16 @@ function geocode(request) {
             marker.setMap(map);
             responseDiv.style.display = "block";
             response.innerText = JSON.stringify(result, null, 2);
+            console.log(results);
+            for(var i=1;i<results[0]['address_components'].length; i++){
+                customerAddress += results[0]['address_components'][i]['long_name'] ;
+                if(i!=results[0]['address_components'].length-1){
+                    customerAddress += ",";
+                }
+            }
+            customerAddress = customerAddress.replace(/ /g, "_");
+            console.log(results[0]['geometry']['location']['lat'].value);
+            latlng = results;
             return results;
         })
         .catch((e) => {

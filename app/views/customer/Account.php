@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="/public/css/actors/customer/Map.css">
+
 <div class="bgImage1">
     <?php
 
@@ -11,7 +13,7 @@
         <h2 class="login-signupheader"><b>Add a location</b></h2>
         <div id="map"></div>
         <div id="mapControl">
-            <button id="AddLocationButton" class="formSubmitButton" type="submit" name="signup">Add</button>
+            <button id="AddLocationButton" class="formSubmitButton" type="submit" name="signup" onclick="saveLocation()">Add</button>
             <button id="CloseMapButton" class="formCancelButton" type="submit" name="signup" onclick="closeMap()">Cancel</button>
         </div>
     </div>
