@@ -252,7 +252,7 @@
         });
         latlng = new google.maps.LatLng(lat,lng);
         marker.setPosition(latlng);
-        marker.setMap(map);
+        // marker.setMap(map);
     }
 </script>
 <script src="/public/js/Maps.js"></script>
