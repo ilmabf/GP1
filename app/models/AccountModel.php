@@ -52,7 +52,7 @@ class AccountModel extends Model
     }
 
     function getAddress($uid){
-        $result = $this->db->select("Address", "customer_location", "WHERE User_ID = :uid ;", ':uid', $uid);
+        $result = $this->db->select("*", "customer_location", "WHERE User_ID = :uid ;", ':uid', $uid);
         return $result;
     }
 }

@@ -131,3 +131,29 @@ function closeMap() {
   }
 }
 
+function openDeleteAddress() {
+
+  var x = document.getElementById("deleteAddressForm");
+  var y = document.getElementById("mainbox");
+  var val = document.getElementById("Customer-Vehicles");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    y.classList.add("blurAccount");
+  } else {
+    x.style.display = "none";
+
+  }
+
+}
+
+function closeDeleteAddress() {
+  var x = document.getElementById("deleteAddressForm");
+  var y = document.getElementById("mainbox");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+    y.classList.remove("blurAccount");
+  } else {
+    x.style.display = "block";
+
+  }
+}
