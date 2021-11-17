@@ -17,7 +17,7 @@ function searchLocation() {
 
 function saveLocation() {
     var address = customerAddress;
-    if (document.getElementById('typedAddress') != "") {
+    if (document.getElementById('typedAddress').value != "") {
         address = document.getElementById('typedAddress').value;
         address = address.replace(/ /g, "_");
         address = address.replace(/\//g, "|");
@@ -126,6 +126,7 @@ function geocode(request) {
                 }
             }
             customerAddress = customerAddress.replace(/ /g, "_");
+            console.log(customerAddress);
             console.log(results[0]['geometry']['location']['lat'].value);
             latlng = results;
             return results;

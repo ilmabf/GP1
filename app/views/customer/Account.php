@@ -171,9 +171,18 @@
             </div>
             <div class="account-box3">
                 <div class="vehicle-list">
-                    <select name="Vehicles" id="Customer-Vehicles">
-                        <option value="select service team">No 5, 1st Road, City 05</option>
-                        <option value="Team A">No 12/A, 2nd Lane, City 01</option>
+                    <select name="Address" id="Customer-Address">
+                        <?php
+                        $i = 0;
+                        while ($i < sizeof($_SESSION['address'])) {
+                            echo "<option value='";
+                            echo $i + 1;
+                            echo "'>";
+                            echo $_SESSION['address'][$i]['Address'];
+                            echo "</option>";
+                            $i = $i + 1;
+                        }
+                        ?>
                     </select>
                 </div>
                 <button class="button" onclick="openMap()"> + Add </button>
