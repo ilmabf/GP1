@@ -54,7 +54,12 @@ class Account extends Controller
     }
 
     function saveAddress($address, $latitude, $longitude){
+        
         $address = str_replace('_', ' ', $address);
+        $address = str_replace('|', '/', $address);
+        // echo $address;
+        // echo $latitude;
+        // echo $longitude;
         $id = $_SESSION['userDetails'][0]['User_ID'];
         if ($this->model->addressAdd($id, $address, $latitude, $longitude)) {
             header("Location: /account/");

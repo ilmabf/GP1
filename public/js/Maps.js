@@ -15,14 +15,18 @@ function searchLocation() {
     addr = addr + ", Sri Lanka";
 }
 
-function saveLocation(){
+function saveLocation() {
     var address = customerAddress;
-    if(document.getElementById('typedAddress') != ""){
+    if (document.getElementById('typedAddress') != "") {
         address = document.getElementById('typedAddress').value;
         address = address.replace(/ /g, "_");
+        address = address.replace(/\//g, "|");
     }
     Lattitude = latlng[0]['geometry']['location'].lat();
     Longitude = latlng[0]['geometry']['location'].lng();
+    console.log(Lattitude);
+    console.log(Longitude);
+    console.log(address);
     window.location = "/account/saveAddress/" + address + "/" + Lattitude + "/" + Longitude;
 }
 
@@ -115,9 +119,9 @@ function geocode(request) {
             responseDiv.style.display = "block";
             response.innerText = JSON.stringify(result, null, 2);
             console.log(results);
-            for(var i=1;i<results[0]['address_components'].length; i++){
-                customerAddress += results[0]['address_components'][i]['long_name'] ;
-                if(i!=results[0]['address_components'].length-1){
+            for (var i = 1; i < results[0]['address_components'].length; i++) {
+                customerAddress += results[0]['address_components'][i]['long_name'];
+                if (i != results[0]['address_components'].length - 1) {
                     customerAddress += ",";
                 }
             }
