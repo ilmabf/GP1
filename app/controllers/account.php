@@ -13,6 +13,7 @@ class Account extends Controller
     {
         // get customer vehicles
         $_SESSION['vehicles'] = $this->model->getVehicles($_SESSION['userDetails'][0]['User_ID']);
+        $_SESSION['address'] = $this->model->getAddress($_SESSION['userDetails'][0]['User_ID']);
         $this->view->render('customer/Account');
     }
 
