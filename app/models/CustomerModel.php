@@ -12,17 +12,17 @@ class CustomerModel extends Model
     {
 
         //check duplicate emails , usernames or contact numbers
-        if ($this->db->selectTwo('count', "users", "WHERE Username = :uname;", ':uname', $value[0]) > 0) {
+        if ($this->db->select('count', "users", "WHERE Username = :uname;", ':uname', $value[0]) > 0) {
             $_SESSION['error'] = 'Username already exists';
             $_SESSION['flag'] = 1;
             return true;
         }
-        if ($this->db->selectTwo('count', "users", "WHERE Email = :email;", ':email', $value[1]) > 0) {
+        if ($this->db->select('count', "users", "WHERE Email = :email;", ':email', $value[1]) > 0) {
             $_SESSION['error'] = 'Email already exists';
             $_SESSION['flag'] = 2;
             return true;
         }
-        if ($this->db->selectTwo('count', "customer", "WHERE Contact_Number = :phone;", ':phone', $value[2]) > 0) {
+        if ($this->db->select('count', "customer", "WHERE Contact_Number = :phone;", ':phone', $value[2]) > 0) {
             $_SESSION['error'] = 'Mobile number already exists';
             $_SESSION['flag'] = 3;
             return true;
@@ -36,18 +36,18 @@ class CustomerModel extends Model
         $columns = array('Username', 'PASSWORD', 'Email');
         $param = array(':uname', ':password', ':email');
         $values = array($uname, $hashedpwd, $email);
-        $result = $this->db->insertTwo("users", $columns, $param, $values);
+        $result = $this->db->insert("users", $columns, $param, $values);
         if ($result != "Success") {
             print_r($result);
             return false;
         }
 
         //insert to customer table
-        $uid = $this->db->selectTwo("User_ID", "users", "WHERE Username = :uname;", ':uname', $uname);
+        $uid = $this->db->select("User_ID", "users", "WHERE Username = :uname;", ':uname', $uname);
         $columns = array('User_ID', 'First_Name', 'Last_Name', 'Contact_Number', 'Date_Registered', 'Token', 'Verified');
         $param = array(':uid', ':fname', ':lname', ':phone', ':date', ':token', ':verified');
         $values = array($uid[0]['User_ID'], $fname, $lname, $mobile, date("Y-m-d"), $token, '0');
-        $result = $this->db->insertTwo("customer", $columns, $param, $values);
+        $result = $this->db->insert("customer", $columns, $param, $values);
         if ($result != "Success") {
             print_r($result);
             return false;
@@ -56,17 +56,17 @@ class CustomerModel extends Model
     }
     function getCustID($uname)
     {
-        $result = $this->db->selectTwo("users.User_ID", "users", "INNER JOIN customer ON customer.User_ID = users.User_ID WHERE users.Username = :uname;", ':uname', $uname);
+        $result = $this->db->select("users.User_ID", "users", "INNER JOIN customer ON customer.User_ID = users.User_ID WHERE users.Username = :uname;", ':uname', $uname);
         return $result;
     }
 
     function checkToken($uid, $token)
     {
-        $key = $this->db->selectTwo("Token", "customer", "WHERE User_ID = :uid;", ':uid', $uid);
+        $key = $this->db->select("Token", "customer", "WHERE User_ID = :uid;", ':uid', $uid);
         if ($key[0]['Token'] == $token) {
             //update verified status to 1
             // $result = $this->db->update("customer", "Verified", "1", "WHERE User_ID = '$uid';");
-            $result = $this->db->updateTwo("customer", "Verified", ':verified', "1", ':uid', $uid, "WHERE User_ID = :uid;");
+            $result = $this->db->update("customer", "Verified", ':verified', "1", ':uid', $uid, "WHERE User_ID = :uid;");
             if ($result == "Success") {
                 return true;
             } else {
