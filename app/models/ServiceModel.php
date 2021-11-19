@@ -8,6 +8,8 @@ class ServiceModel extends Model
         parent::__construct();
     }
 
+    // <------------------------------------- Equipment ------------------------------->
+
     function addEquipment($name, $price,  $dateAcquired)
     {
         $columns = array('Name', 'Price', 'Date_Acquired');
@@ -40,6 +42,19 @@ class ServiceModel extends Model
     {
        
         $result = $this->db->update("equipment","Availability", ':availability', 0, ':eid', $eid,"WHERE (Equipment_ID = :eid);");
+        if ($result == "Success") {
+            return true;
+        } else print_r($result);
+    }
+
+    // <------------------------------------- Service ------------------------------->
+
+    function addService($name, $description)
+    {
+        $columns = array('Name', 'Description');
+        $param = array(':name', ':desc');
+        $values = array($name, $description);
+        $result = $this->db->insert("wash_package", $columns, $param, $values);
         if ($result == "Success") {
             return true;
         } else print_r($result);

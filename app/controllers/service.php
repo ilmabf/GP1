@@ -9,6 +9,7 @@ class Service extends Controller
         parent::__construct();
     }
 
+    // <------------------------------------- Equipment ------------------------------->
     function equipment()
     {
         $_SESSION['equipmentDetails'] = $this->model->getEquipmentDetails();
@@ -19,17 +20,6 @@ class Service extends Controller
             exit;
         } else if ($_SESSION['role'] == "manager") {
             $this->view->render('manager/Equipment');
-        }
-    }
-
-    function washPackage()
-    {
-        //User Autherization
-        if ($_SESSION['role'] == "systemadmin") {
-            $this->view->render('admin/Service');
-            exit;
-        } else if ($_SESSION['role'] == "manager") {
-            $this->view->render('manager/Service');
         }
     }
 
@@ -80,6 +70,30 @@ class Service extends Controller
             }
         } else {
             echo "Error";
+        }
+    }
+
+
+    // <------------------------------------- Service ------------------------------->
+    function washPackage()
+    {
+        //User Autherization
+        if ($_SESSION['role'] == "systemadmin") {
+            $this->view->render('admin/Service');
+            exit;
+        } else if ($_SESSION['role'] == "manager") {
+            $this->view->render('manager/Service');
+        }
+    }
+
+    function addWashpackage(){
+        $name = $_POST['washpackagename'];
+        $description = $_POST['description'];
+
+        if ($_SESSION['role'] == "systemadmin") {
+            if ($this->model->addService($name, $description)) {
+                header("Location: /service/washPackage");
+            }
         }
     }
 }

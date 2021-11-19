@@ -105,7 +105,7 @@
 <div class="addVehicleform" id="deleteAddressForm" style="min-width: 300px;">
     <div class="forma">
         <h2 class="login-signupheader">Delete Location?</h2>
-        <form action="/account/deleteAddress" method="post" id="customer-signup"><br>
+        <form action="" method="post" id="delete-Address-Form"><br>
             <button id="EditDetailsFormSubmitButton" class="formSubmitButton" type="submit" name="signup">Delete</button>
             <button id="EditDetailsFormCloseButton" class="formCancelButton" type="button" name="signup" onclick="closeDeleteAddress()">Cancel</button>
         </form>
@@ -150,7 +150,7 @@
                     <select name="Vehicles" id="Customer-Vehicles" onchange="getVehicleDetails()">
                         <?php
                         $count  = 0;
-                        while ($count < $_SESSION['rowCount']) {
+                        while ($count < sizeof($_SESSION['vehicles'])) {
                             echo "<option value='";
                             echo $count + 1;
                             echo "'>";
