@@ -66,4 +66,15 @@ class Account extends Controller
             header("Location: /account/");
         }
     }
+
+    function deleteAddress($latitude, $longitude){
+        // $address = str_replace('_', ' ', $address);
+        // $address = str_replace('|', '/', $address);
+        // echo $address;
+        $id = $_SESSION['userDetails'][0]['User_ID'];
+        if ($this->model->addressDelete($id, $latitude, $longitude)) {
+            header("Location: /account/");
+        }
+    }
 }
+

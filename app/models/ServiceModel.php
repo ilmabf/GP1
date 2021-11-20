@@ -55,4 +55,22 @@ class ServiceModel extends Model
             return true;
         } else print_r($result);
     }
+
+    // <------------------------------------- Service ------------------------------->
+
+    function addService($name, $description)
+    {
+        $columns = array('Name', 'Description');
+        $param = array(':name', ':desc');
+        $values = array($name, $description);
+        $result = $this->db->insert("wash_package", $columns, $param, $values);
+        if ($result == "Success") {
+            return true;
+        } else print_r($result);
+    }
+
+    function getWashPackage(){
+        $result = $this->db->select("*", "wash_package", "Null");
+        return $result;
+    }
 }

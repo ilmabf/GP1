@@ -56,4 +56,16 @@ class AccountModel extends Model
             return true;
         } else print_r($result);
     }
+
+    function getAddress($uid){
+        $result = $this->db->select("*", "customer_location", "WHERE User_ID = :uid ;", ':uid', $uid);
+        return $result;
+    }
+
+    function addressDelete($id, $latitude, $longitude){
+        $result = $this->db->delete("customer_location", "WHERE ( User_ID = :uid AND Latitude = :lat AND Longitude = :lng);", array(':uid', ':lat', ':lng'), array($id, $latitude, $longitude));
+        if ($result == "Success") {
+            return true;
+        } else print_r($result);
+    }
 }
