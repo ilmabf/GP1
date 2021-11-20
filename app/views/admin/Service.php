@@ -14,9 +14,20 @@ include 'views/user/LoggedInHeader.php';
             <h3>Service Types</h3>
         </div>
         <div class="serviceManageBox">
-            <div class="typeServices" id="typeServices1" onclick="openViewServiceForm()">Interior Cleaning</div>
+            <?php 
+                $i = 0;
+                while ($i < sizeof($_SESSION['washpackages'])){
+                    echo "<div class='typeServices' id='typeServices";
+                    echo $i;
+                    echo "'>";
+                    echo $_SESSION['washpackages'][$i]['Name'];
+                    echo "</div>";
+                    $i = $i + 1;
+                }
+            ?>
+            <!-- <div class="typeServices" id="typeServices1" onclick="openViewServiceForm()">Interior Cleaning</div>
             <div class="typeServices" id="typeServices2" onclick="openViewServiceForm()">Exterior Washing & Interior Cleaning</div>
-            <div class="typeServices" id="typeServices3" onclick="openViewServiceForm()">Sanitization</div>
+            <div class="typeServices" id="typeServices3" onclick="openViewServiceForm()">Sanitization</div> -->
             <div class="typeServices addBtnService" id="addServiceTypes" onclick="openServiceForm()">+ Add</div>
         </div>
     </div>
@@ -105,31 +116,23 @@ include 'views/user/LoggedInHeader.php';
 </div>
 
 <div class="addVehicleform" id="serviceForm">
-    <div class="forma">
-
         <h2 class="login-signupheader">Add a service</h2>
-
-        <form action="" method="post" id="customer-signup">
+        <form action="/service/addWashpackage" method="post" id="customer-signup">
             <label for="fname" style="padding: 0px 19px 0px 0px;">Service Name</label>
-            <input class="input-box" id="vin" type="text2" name="vin" required>
+            <input class="input-box" id="vin" type="text2" name="washpackagename" style="padding:8px;" required>
             <br>
             <label for="Model" style="padding: 0px 29px 0px 0px;">Description</label>
             <div class="input-box" style="display: inline-grid;">
-                <textarea name="review" placeholder="type here.." required style="height: 112px;    width: 90%;"></textarea>
+                <textarea name="description" placeholder="type here.." required style="height: 112px;    width: 90%;"></textarea>
             </div>
             <br>
-            <button id="VehicleFormSubmitButton" class="formSubmitButton" type="button" name="signup">Submit</button>
-            <button id="VehicleFormCloseButton" class="formCancelButton" type="button" name="signup" onclick="closeServiceForm()">Cancel</button>
+            <button id="AddServiceSubmitButton" class="formSubmitButton" type="submit" name="signup">Submit</button>
+            <button id="AddServiceCloseButton" class="formCancelButton" type="button" name="signup" onclick="closeServiceForm()">Cancel</button>
         </form>
-
-    </div>
 </div>
 
-<div class="addVehicleform" id="vehicleAddForm">
-    <div class="forma">
-
+<div class="addVehicleform" id="serviceAddForm">
         <h2 class="login-signupheader">Add a vehicle type</h2>
-
         <form action="" method="post" id="customer-signup">
             <label for="fname" style="padding: 0px 19px 0px 0px;">Name</label>
             <input class="input-box" id="vin" type="text2" name="vin" required>
@@ -137,9 +140,8 @@ include 'views/user/LoggedInHeader.php';
             <button id="VehicleFormSubmitButton" class="formSubmitButton" type="button" name="signup">Submit</button>
             <button id="VehicleFormCloseButton" class="formCancelButton" type="button" name="signup" onclick="closeVehicleAddForm()">Cancel</button>
         </form>
-
-    </div>
 </div>
+
 <div style="min-height: 110px;"></div>
 
 <script src="/public/js/AdminManageService.js"></script>

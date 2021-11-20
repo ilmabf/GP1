@@ -135,7 +135,14 @@ function openDeleteAddress() {
 
   var x = document.getElementById("deleteAddressForm");
   var y = document.getElementById("mainbox");
-  var val = document.getElementById("Customer-Vehicles");
+  var val = document.getElementById("delete-Address-Form");
+  var selection = document.getElementById("Customer-Address").value;
+  // var address = addresses[selection - 1]['Address'];
+  // address = address.replace(/ /g, "_");
+  // address = address.replace(/\//g, "|");
+  // console.log(address);
+  // val.action = "/account/deleteAddress/" + address;
+  val.action = "/account/deleteAddress/" + addresses[selection - 1]['Latitude'] + "/" + addresses[selection - 1]['Longitude'];
   if (x.style.display === "none") {
     x.style.display = "block";
     y.classList.add("blurAccount");
