@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\app",
+    "\\app\\config",
+    "\\app\\models",
     "\\app\\views",
-    "\\app\\views\\stl",
+    "\\app\\views\\admin",
     "\\public",
     "\\public\\css",
     "\\public\\css\\actors",
-    "\\public\\css\\actors\\manager",
-    "\\public\\css\\actors\\stl",
-    "\\public\\css\\components"
+    "\\public\\js"
   ],
-  "SelectedNode": "\\public\\css\\actors\\manager\\UpcomingReservation.css",
+  "SelectedNode": "\\app\\models\\UserModel.php",
   "PreviewInSolutionExplorer": false
 }
