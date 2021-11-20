@@ -59,4 +59,9 @@ class ServiceModel extends Model
             return true;
         } else print_r($result);
     }
+
+    function getWashPackage(){
+        $result = $this->db->select("*", "wash_package", "Null");
+        return $result;
+    }
 }

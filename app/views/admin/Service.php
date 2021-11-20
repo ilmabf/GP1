@@ -14,9 +14,20 @@ include 'views/user/LoggedInHeader.php';
             <h3>Service Types</h3>
         </div>
         <div class="serviceManageBox">
-            <div class="typeServices" id="typeServices1" onclick="openViewServiceForm()">Interior Cleaning</div>
+            <?php 
+                $i = 0;
+                while ($i < sizeof($_SESSION['washpackages'])){
+                    echo "<div class='typeServices' id='typeServices";
+                    echo $i;
+                    echo "'>";
+                    echo $_SESSION['washpackages'][$i]['Name'];
+                    echo "</div>";
+                    $i = $i + 1;
+                }
+            ?>
+            <!-- <div class="typeServices" id="typeServices1" onclick="openViewServiceForm()">Interior Cleaning</div>
             <div class="typeServices" id="typeServices2" onclick="openViewServiceForm()">Exterior Washing & Interior Cleaning</div>
-            <div class="typeServices" id="typeServices3" onclick="openViewServiceForm()">Sanitization</div>
+            <div class="typeServices" id="typeServices3" onclick="openViewServiceForm()">Sanitization</div> -->
             <div class="typeServices addBtnService" id="addServiceTypes" onclick="openServiceForm()">+ Add</div>
         </div>
     </div>

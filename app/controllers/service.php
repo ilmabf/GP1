@@ -77,6 +77,7 @@ class Service extends Controller
     // <------------------------------------- Service ------------------------------->
     function washPackage()
     {
+        $_SESSION['washpackages'] = $this->model->getWashPackage();
         //User Autherization
         if ($_SESSION['role'] == "systemadmin") {
             $this->view->render('admin/Service');
