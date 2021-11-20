@@ -12,6 +12,8 @@ class Service extends Controller
     function equipment()
     {
         $_SESSION['equipmentDetails'] = $this->model->getEquipmentDetails();
+        $_SESSION['itemDetails'] = $this->model->getEquipmentItemDetails();
+        //$_SESSION['freeEquipmentDetails'] = $this->model->getFreeEquipmentDetails();
 
         //User Autherization
         if ($_SESSION['role'] == "systemadmin") {
