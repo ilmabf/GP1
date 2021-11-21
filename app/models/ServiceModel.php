@@ -14,10 +14,14 @@ class ServiceModel extends Model
         if ( $this->db->select ('count', "item", "WHERE Item_Id = :item_id;",':item_id',$item_id) >0 ){
             
             print_r("exist");
-            $total=$this->db->select("Total", "item", "WHERE Item_Id = ':item_id';",':item_id',$item_id);
-            $free=$this->db->select("Free", "item", "WHERE (Item_Id=':item_id');");
+            $result=$this->db->select("Total, Free", "item", "WHERE Item_Id = :item_id;",':item_id',$item_id);
+            print_r($result);
+            // $free=$this->db->select("Free", "item", "WHERE Item_Id=:item_id;", ':item_id',$item_id);
+            $total  = $result[0]['Total'];
+            $free  = $result[0]['Free'];
             echo $total;
             echo $free;
+            // print_r($free);
 
            /* $totalInt=(int)$total;
             $freeInt=(int)$free;
