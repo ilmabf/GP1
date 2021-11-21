@@ -111,12 +111,32 @@ class Service extends Controller
         }
     }
 
-    function addWashpackage(){
+    function addWashPackage(){
         $name = $_POST['washpackagename'];
         $description = $_POST['description'];
 
         if ($_SESSION['role'] == "systemadmin") {
             if ($this->model->addService($name, $description)) {
+                header("Location: /service/washPackage");
+            }
+        }
+    }
+
+    function editWashPackage($washPackgeID){
+        
+        $description = $_POST['description'];
+
+        if ($_SESSION['role'] == "systemadmin") {
+            if ($this->model->editService($washPackgeID, $description)) {
+                header("Location: /service/washPackage");
+            }
+        }
+    }
+
+    function deleteWashPackage($washPackgeID){
+        
+        if ($_SESSION['role'] == "systemadmin") {
+            if ($this->model->deleteService($washPackgeID)) {
                 header("Location: /service/washPackage");
             }
         }
