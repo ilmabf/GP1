@@ -16,8 +16,8 @@ class ServiceModel extends Model
             print_r("exist");
             $total=$this->db->select("Total", "item", "WHERE Item_Id = ':item_id';",':item_id',$item_id);
             $free=$this->db->select("Free", "item", "WHERE (Item_Id=':item_id');");
-            echo $total;
-            echo $free;
+            print_r($total);
+            print_r($free);
 
            /* $totalInt=(int)$total;
             $freeInt=(int)$free;
@@ -68,11 +68,11 @@ class ServiceModel extends Model
         $result = $this->db->select("*" , "equipment", "WHERE Availability =1 AND Item_Id=':item_id';");
         return $result;
     }
-    /*public function getFreeEquipmentDetails($item_id)
+    public function getFreeEquipmentDetails($item_id)
     {
         $result = $this->db->select("*" , "equipment", "WHERE (Availability =1) AND Item_Id=':item_id' AND (Team = NULL);");
         return $result;
-    }*/
+    }
     function equipmentEdit($eid,$value)
     {
         $column='Team';
