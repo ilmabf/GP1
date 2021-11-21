@@ -12,7 +12,9 @@ class Service extends Controller
     // <------------------------------------- Equipment ------------------------------->
     function equipment()
     {
-        $_SESSION['equipmentDetails'] = $this->model->getEquipmentDetails();
+        
+        $_SESSION['itemDetails'] = $this->model->getEquipmentItemDetails();
+        //$_SESSION['freeEquipmentDetails'] = $this->model->getFreeEquipmentDetails();
 
         //User Autherization
         if ($_SESSION['role'] == "systemadmin") {
@@ -22,7 +24,28 @@ class Service extends Controller
             $this->view->render('manager/Equipment');
         }
     }
+    function viewAllEquipments($item_id){
+    $_SESSION['equipmentDetails'] = $this->model->getEquipmentDetails($item_id);
+    //User Autherization
+        if ($_SESSION['role'] == "systemadmin") {
+            $this->view->render('admin/Equipment');
+            exit;
+        } else if ($_SESSION['role'] == "manager") {
+            $this->view->render('manager/Equipment');
+        }
 
+    }
+    /*function viewFreeEquipments($item_id){
+    $_SESSION['equipmentDetails'] = $this->model->getFreeEquipmentDetails($item_id);
+    //User Autherization
+        if ($_SESSION['role'] == "systemadmin") {
+            $this->view->render('admin/Equipment');
+            exit;
+        } else if ($_SESSION['role'] == "manager") {
+            $this->view->render('manager/Equipment');
+        }
+
+    }*/
     function addNewEquipment()
     {
         //User Autherization

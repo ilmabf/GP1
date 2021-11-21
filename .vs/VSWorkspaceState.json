@@ -3,14 +3,12 @@
     "",
     "\\app",
     "\\app\\config",
-    "\\app\\models",
-    "\\app\\views",
     "\\app\\views\\admin",
     "\\public",
     "\\public\\css",
-    "\\public\\css\\actors",
-    "\\public\\js"
+    "\\public\\css\\actors\\admin",
+    "\\public\\css\\components"
   ],
-  "SelectedNode": "\\app\\models\\UserModel.php",
+  "SelectedNode": "\\public\\css\\components\\Buttons.css",
   "PreviewInSolutionExplorer": false
 }

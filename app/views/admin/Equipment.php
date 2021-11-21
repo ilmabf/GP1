@@ -1,7 +1,7 @@
 <?php
 
 include 'views/user/LoggedInHeader.php';
-$details = $_SESSION['equipmentDetails'];
+
 ?>
 
 <main>
@@ -32,9 +32,61 @@ $details = $_SESSION['equipmentDetails'];
       </form>
     </div>-->
 
-    <div style="height: 50px;"></div>
+<!-- stock-->
 
-    <div class="Table-search">
+    <div style="height: 50px;"></div>
+    <div class="Table-search" id="viewAllitems">
+      <div class="table-wrapper">
+        <div style="display:inline-block; width: 100%;">
+          <div style="float: left;">
+            <input type="search" class="ad-Equip-Search"onkeyup="myFunction()" placeholder="Search for Equipment..." title="Type in a name">
+          </div>
+        <div style="float: right;">
+            <form action="" method="post">
+              <select name="serviceTeam" class="ad-Equip-Search">
+                <option value="select service team">Select Service Team</option>
+                <option value="Team 1">Team 1</option>
+                <option value="Team 2">Team 2</option>
+              </select>
+            </form>
+          </div>
+        </div>
+        <table id="ItemTable">
+            <thead>
+            <tr>
+            <th data-type="text">Item ID</th>
+            <th data-type="text">Name</th>
+            <th data-type="text">Total</th>
+            <th data-type="text">Free</th>
+            <th colspan="2" style="text-align: center;">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+          <?php
+            $count = 0;
+            $items = $_SESSION['itemDetails'];
+            while ($count < $_SESSION['rowCount']) { ?>
+              <tr>            
+                <td><?php echo $items [$count]['Item_Id'] ?></td>    
+                <td>Default</td>
+                <td class="td-t1" style="text-align:right"><?php echo $items [$count]['Total'] ?></td>
+                <td class="td-t1"><?php echo $items [$count]['Free'] ?></td>
+                 <td>     
+                  <a href="/service/viewAllEquipments/<?php echo $items [$count]['Item_Id'] ?>"><input type="button" class="edit_btn td-t1" value="View All Items" onclick="viewAllEquipment()"></a>
+                  <a href="/service/viewFreeEquipments/<?php echo $items [$count]['Item_Id'] ?>"> <input type="button" class="edit_btn td-t1" value="View Free Items" onclick="viewFreeEquipment()"></a>
+                  </td> 
+              </tr>
+            <?php $count = $count + 1;
+            } ?>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+     <div style="height: 50px;"></div>
+
+     <!--View table-->
+    <div id="viewAllequip" class="Table-search-selected-equip" >
       <div class="table-wrapper">
         <div style="display:inline-block; width: 100%;">
           <div style="float: left;">
@@ -66,6 +118,7 @@ $details = $_SESSION['equipmentDetails'];
 
             <?php
             $count = 0;
+            $details = $_SESSION['equipmentDetails'];
             while ($count < $_SESSION['rowCount']) { ?>
               <tr id="rowNo<?php $count ?>">
             
@@ -88,6 +141,7 @@ $details = $_SESSION['equipmentDetails'];
       </div>
     </div>
 
+    
     <div style="min-height: 110px;"></div>
 
 
