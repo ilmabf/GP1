@@ -16,8 +16,8 @@ class ServiceModel extends Model
             print_r("exist");
             $total=$this->db->select("Total", "item", "WHERE Item_Id = ':item_id';",':item_id',$item_id);
             $free=$this->db->select("Free", "item", "WHERE (Item_Id=':item_id');");
-            print_r($total);
-            print_r($free);
+            echo $total;
+            echo $free;
 
            /* $totalInt=(int)$total;
             $freeInt=(int)$free;
@@ -62,15 +62,15 @@ class ServiceModel extends Model
         $result = $this->db->select("*" , "item","WHERE 1");
         return $result;
     }
-    public function getEquipmentDetails()
+    public function getEquipmentDetails($item_id)
     {
         //$result = $this->db->select("Equipment_ID, Name, Date_Acquired, Price, Team" , "equipment", "WHERE Availability =1;");
-        $result = $this->db->select("*" , "equipment", "WHERE Availability =1;");
+        $result = $this->db->select("*" , "equipment", "WHERE Availability =1 AND Item_Id=':item_id';");
         return $result;
     }
-  /* public function getFreeEquipmentDetails()
+    /*public function getFreeEquipmentDetails($item_id)
     {
-        $result = $this->db->select("*" , "equipment", "WHERE (Availability =1) AND (Team = NULL);");
+        $result = $this->db->select("*" , "equipment", "WHERE (Availability =1) AND Item_Id=':item_id' AND (Team = NULL);");
         return $result;
     }*/
     function equipmentEdit($eid,$value)

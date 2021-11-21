@@ -1,3 +1,24 @@
+/*Newly added*/
+.Table-search-selected-equip {
+
+    display:flex;
+    flex-direction: column;
+    padding: 1em;
+    align-items: center;
+    
+}
+
+.Table-search-free-equip {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    align-items: center;
+    
+}
+#viewAllEquip{
+    display:none;
+}
+/*----------------------------*/
 #addNewRow {
   display: block;
   margin: 35px auto;
