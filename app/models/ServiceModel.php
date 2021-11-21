@@ -73,4 +73,23 @@ class ServiceModel extends Model
         $result = $this->db->select("*", "wash_package", "Null");
         return $result;
     }
+
+    function editService($washPackgeID, $description)
+    {
+        $column = "Description";
+        $param = ":desc";
+        $value = $description;
+        $result = $this->db->update("wash_package", $column, $param, $value, ':washpackageid', $washPackgeID,"WHERE (Wash_Package_ID = :washpackageid);");
+        if ($result == "Success") {
+            return true;
+        } else print_r($result);
+    }
+
+    function deleteService($washPackgeID)
+    {
+        $result = $this->db->delete("wash_package", "WHERE ( Wash_Package_ID = :washpackageid);", ':washpackageid',$washPackgeID);
+        if ($result == "Success") {
+            return true;
+        } else print_r($result);
+    }
 }
