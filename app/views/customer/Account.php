@@ -102,6 +102,16 @@
     </div>
 </div>
 
+<div class="addVehicleform" id="deleteAddressForm" style="min-width: 300px;">
+    <div class="forma">
+        <h2 class="login-signupheader">Delete Location?</h2>
+        <form action="" method="post" id="delete-Address-Form"><br>
+            <button id="EditDetailsFormSubmitButton" class="formSubmitButton" type="submit" name="signup">Delete</button>
+            <button id="EditDetailsFormCloseButton" class="formCancelButton" type="button" name="signup" onclick="closeDeleteAddress()">Cancel</button>
+        </form>
+    </div>
+</div>
+
 <div class="box">
     <div class="account-box1" id="mainbox">
         <div class="account-prof">
@@ -140,7 +150,7 @@
                     <select name="Vehicles" id="Customer-Vehicles" onchange="getVehicleDetails()">
                         <?php
                         $count  = 0;
-                        while ($count < $_SESSION['rowCount']) {
+                        while ($count < sizeof($_SESSION['vehicles'])) {
                             echo "<option value='";
                             echo $count + 1;
                             echo "'>";
@@ -171,16 +181,25 @@
             </div>
             <div class="account-box3">
                 <div class="vehicle-list">
-                    <select name="Vehicles" id="Customer-Vehicles">
-                        <option value="select service team">No 5, 1st Road, City 05</option>
-                        <option value="Team A">No 12/A, 2nd Lane, City 01</option>
+                    <select name="Address" id="Customer-Address" onchange="myMap()">
+                        <?php
+                        $i = 0;
+                        while ($i < sizeof($_SESSION['address'])) {
+                            echo "<option value='";
+                            echo $i + 1;
+                            echo "'>";
+                            echo $_SESSION['address'][$i]['Address'];
+                            echo "</option>";
+                            $i = $i + 1;
+                        }
+                        ?>
                     </select>
                 </div>
                 <button class="button" onclick="openMap()"> + Add </button>
             </div>
 
             <div class="map-box">
-                <div class="btn3"><i class="fas fa-pencil-alt"></i></div>
+                <div class="btn3" onclick="openDeleteAddress()" style="z-index:10;"><i class="fas fa-pencil-alt"></i></div>
                 <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.8229579296126!2d80.50619191725059!3d7.373730722101816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae341aee58e2aad%3A0xc15b721347b882fb!2sMalwathugoda%20Auto%20Service%20Station!5e0!3m2!1sen!2slk!4v1629713877312!5m2!1sen!2slk" width="100%" height="100%" style="border:0; border-radius: 27px;" allowfullscreen="" loading="lazy"></iframe> -->
                 <div id="googleMap" style="border:0; border-radius: 27px; width:100%;height:100%;"></div>
             </div><br>
@@ -211,6 +230,30 @@
         document.getElementById("editManufacturer").placeholder = pausecontent[x - 1]['Manufacturer'];
     }
     getVehicleDetails();
+
+    var addresses = <?php echo json_encode($_SESSION['address']); ?>;
+
+    function myMap() {
+        var lat = 7.2905715;
+        var lng = 80.6337262;
+        if (addresses.length > 0) {
+            var x = document.getElementById("Customer-Address").value;
+            lat = addresses[x - 1]['Latitude'];
+            lng = addresses[x - 1]['Longitude'];
+        }
+        var mapProp = {
+            center: new google.maps.LatLng(lat, lng),
+            zoom: 10,
+        };
+        
+        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        marker = new google.maps.Marker({
+            map,
+        });
+        latlng = new google.maps.LatLng(lat,lng);
+        marker.setPosition(latlng);
+        // marker.setMap(map);
+    }
 </script>
 <script src="/public/js/Maps.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxvVN9pPMljGjWLvUGWGisQwGUUMSOHco&callback=myMap&v=weekly"></script>

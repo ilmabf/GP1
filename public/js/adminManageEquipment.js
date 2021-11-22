@@ -1,5 +1,5 @@
 var arrHead = new Array();	// array for header.
-    arrHead = ['Name', 'Price', 'Date Acquired', ''];
+    arrHead = ['Item_Id','Name', 'Price', 'Date Acquired', ''];
 
 var submitBtn = document.getElementById('submitButton');
 var div1 = document.getElementById('container1');
@@ -45,7 +45,7 @@ function addNewRow() {
         var td = document.createElement('td'); // table definition.
         td = tr.insertCell(c);
 
-        if (c == 3) {      // the first column.
+        if (c == 4) {      // the first column.
             // add a button in every new row in the first column.
             var button = document.createElement('input');
 
@@ -65,21 +65,27 @@ function addNewRow() {
         else {
             // 2nd, 3rd and 4th column, will have textbox.
             var ele = document.createElement('input');
-         
             if(c==0){
+                ele.setAttribute('name', 'item_id');
+                ele.setAttribute('type', 'text');
+                ele.setAttribute('required', '');
+                //ele.setAttribute('maxlength', '50');
+            }
+         
+            else if(c==1){
                 ele.setAttribute('name', 'name');
                 ele.setAttribute('type', 'text');
                 ele.setAttribute('required', '');
                 ele.setAttribute('maxlength', '50');
             }
 
-            else if(c==1){
+            else if(c==2){
                 ele.setAttribute('name', 'price');
                 ele.setAttribute('type', 'number');
                 ele.setAttribute('required', '');
             }
 
-            else if(c==2){
+            else if(c==3){
                 ele.setAttribute('name','dateAcquired');
                 ele.setAttribute('type', 'date');
                 ele.setAttribute('required', '');

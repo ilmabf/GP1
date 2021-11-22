@@ -1,3 +1,423 @@
+/* ------------------------- Customer-Book a wash ----------------------------------- */
+.next-button {
+  background-color: #193498;
+  padding: 7px 20px;
+  color: white;
+  border-radius: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  width: 150px;
+}
+
+.next-button:hover {
+  background-color: #193498;
+}
+
+.next-button {
+  padding: 10px 30px;
+  border-color: #193498;
+}
+
+/* ------------------------- Customer-Give Review ----------------------------------- */
+
+.review-box-button {
+  display: block;
+  margin: 10px auto 10px auto;
+  width: 100px;
+  height: 40px;
+  color: white;
+  border-radius: 15px;
+  background-color: #193498;
+  cursor: pointer;
+  float: right;
+}
+
+/* ------------------------- Admin-Manage Employee,Equipment ----------------------------------- */
+.addBtnEmps {
+  text-align: center;
+}
+
+.edit_btn {
+  text-decoration: none;
+  padding: 2px 5px;
+  background: green;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.save_btn{
+display: none;
+  text-decoration: none;
+  padding: 2px 5px;
+  background: green;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.edit_btn:hover,.save_btn:hover  {
+  background: rgb(12, 161, 12);
+}
+
+.del_btn:hover {
+  background: #500421;
+}
+
+.del_btn {
+  text-decoration: none;
+  padding: 2px 5px;
+  color: white;
+  border-radius: 3px;
+  background: #7b113a;
+  cursor: pointer;
+}
+
+/* ------------------------- Admin-Manage Employee ----------------------------------- */
+#bts,#btStl {
+  display: none;
+  margin: 20px auto;
+  padding: 8px 8px;
+  background-color: #1597e5;
+  color: white;
+  border-radius: 15px;
+  border-color: white;
+  cursor: pointer;
+}
+
+#addRow:hover,#addStlRow:hover {
+  background-color: #041553;
+  color: white;
+}
+
+#bts:hover,#btStl:hover {
+  background-color: #041553;
+}
+
+#removeBtn,#removeStlBtn {
+  background-color: #7b113a;
+  padding: 5px 5px;
+  color: white;
+  border-radius: 5px;
+  border-color: white;
+  cursor: pointer;
+}
+
+#removeBtn:hover,#removeStlBtn:hover {
+  background-color: #500421;
+}
+
+/* -------------------------Admin- Manage Equipment ----------------------------------- */
+
+#addNewRow:hover, #bt:hover {
+  background-color: #041553;
+  color: white;
+}
+
+#assignEquipment:hover, #bt:hover {
+  background-color: #041553;
+}
+#submitButton, #saveButton {
+  display: none;
+  margin: 20px auto;
+  padding: 8px 8px;
+  background-color: #1597e5;
+  color: white;
+  border-radius: 15px;
+  border-color: white;
+  cursor: pointer;
+}
+
+#submitButton:hover, #saveButton:hover {
+  background-color: #041553;
+}
+
+#removeButton1 {
+  background-color: #7b113a;
+  padding: 5px 5px;
+  color: white;
+  border-radius: 5px;
+  border-color: white;
+  cursor: pointer;
+}
+
+#removeButton1:hover {
+  background-color: #550222;
+}
+
+#closeButton {
+  background-color: #7b113a;
+  padding: 5px 5px;
+  color: white;
+  border-radius: 5px;
+  border-color: white;
+  cursor: pointer;
+}
+
+#closeButton:hover {
+  background-color: #550222;
+}
+
+#adminViewEquip:hover {
+  background-color: #061757;
+}
+
+
+/* ------------------------- Admin-Manage Service ----------------------------------- */
+.editPriceBtn {
+  padding: 5px 15px;
+  color: white;
+  background-color: #193498;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* ------------------------- forms submit and cancel buttons ----------------------------------- */
+
+.formSubmitButton {
+  float: right;
+  display: block;
+  margin: 20px auto 10px auto;
+  width: 80px;
+  color: white;
+  border-radius: 5px;
+  background-color: #193498;
+  cursor: pointer;
+  padding: 5px 0px 5px 0px;
+}
+
+.formCancelButton {
+  float: left;
+  display: block;
+  margin: 20px auto 10px auto;
+  width: 80px;
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  background-color: #777b80;
+  cursor: pointer;
+  padding: 5px 0px 5px 0px;
+}
+/*------------Account----------*/
+.vehicle-box:hover > .btn2 {
+  display: block;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.btn2 {
+  position: absolute;
+  opacity: 0.4;
+}
+.map-box:hover > .btn3 {
+  display: block;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.btn3 {
+  position: absolute;
+  opacity: 0.7;
+  color: #193498;
+}
+
+.btn {
+  opacity: 0.4;
+  position: absolute;
+  display: inline;
+  color: #193498;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.account-email:hover > .btn {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.button {
+  background-color: #cecece;
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 12px 30px;
+  text-align: center;
+  font-size: 16px;
+  margin: 0px 10px;
+  opacity: 0.6;
+  transition: 0.3s;
+  /* display: inline-block; */
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 27px;
+  float: right;
+}
+
+.button:hover {
+  opacity: 1;
+  background-color: #193498;
+  color: #f5f5f5;
+}
+
+/* ------------------------- Reservation buttons-Order summary ----------------------------------- */
+
+.reservation-buttons {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.reservationButtons {
+  display: inline;
+  margin-bottom: 30px;
+}
+.reservation-buttons a {
+  font-size: 15px;
+  color: white;
+}
+/*-----------Customer Order summary------------*/
+.bt {
+  /* display: inline; */
+  margin-bottom: 30px;
+  float: left;
+  /* margin-left: 236px; */
+  background-color: #7b113a;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.bt2 {
+  /* display: inline; */
+  margin-bottom: 30px;
+  float: right;
+
+  background-color: #1597e5;
+  border-radius: 5px;
+  cursor: pointer;
+  border-color: #1597e5;
+}
+
+.order-buttons {
+  display: block;
+  margin-top: 20px;
+  /* margin-left: 240px;
+    margin-right: 180px; */
+}
+.orderButtons {
+  display: inline;
+  margin-bottom: 30px;
+}
+.order-buttons a {
+  font-size: 15px;
+  color: white;
+}
+
+.changebutton {
+  margin-left: 0px;
+  background-color: #193498;
+  padding: 6px 9px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+}
+
+.a8 {
+  float: left;
+  margin-left: 150px;
+  background-color: #7b113a;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  border-color: #7b113a;
+}
+
+.a8:hover {
+  background-color: #4e0320;
+  border-color: #4e0320;
+}
+
+.a9 {
+  float: right;
+  /* margin-right: 150px; */
+  background-color: #1597e5;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  border-color: #1597e5;
+}
+
+.a9:hover {
+  background-color: #024066;
+  border-color: #024066;
+}
+
+/* ------------------------- Upcoming Order ----------------------------------- */
+
+.a13 {
+  float: left;
+  margin-left: 0px;
+  background-color: #193498;
+  padding: 6px 9px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.a13:hover {
+  background-color: #031861;
+}
+
+/* ------------------------- Completed Order ----------------------------------- */
+
+.a1,.a2,.a3,.a4,.a5,.a6,.a7 {
+  display: inline;
+  margin-right: 15px;
+}
+
+/* ------------------------- Completed Order - Manager ----------------------------------- */
+
+.a12 {
+  float: left;
+  margin-left: 0px;
+  background-color: #193498;
+  padding: 6px 9px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.a12:hover {
+  background-color: #04185f;
+}
+
+.a8 {
+  float: left;
+  margin-left: 0px;
+  background-color: #7b113a;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.a8:hover {
+  background-color: #4e0320;
+}
+
+
+.a10 {
+  float: right;
+  /* margin-right: 161px; */
+  background-color: #7b113a;
+  padding: 6px 9px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.a10:hover {
+  background-color: #4e0320;
+}
+
+/*------------------------------*/
 @media only screen and (max-width: 770px) {
   .button {
     width: 40%;
@@ -9,7 +429,7 @@
   }
 
   .btn3 {
-    top: 716px;
+    top: 705px;
     right: 59px;
   }
 
@@ -94,813 +514,4 @@
     top: 785px;
     right: 59px;
   }
-}
-
-/* ------------------------- Manage Employee ----------------------------------- */
-.addBtnEmps {
-  text-align: center;
-}
-
-#bts,
-#btStl {
-  display: none;
-  margin: 20px auto;
-  padding: 8px 8px;
-  background-color: #1597e5;
-  color: white;
-  border-radius: 15px;
-  border-color: white;
-  cursor: pointer;
-}
-
-#addRow:hover,
-#addStlRow:hover {
-  background-color: #041553;
-  color: white;
-}
-
-#bts:hover,
-#btStl:hover {
-  background-color: #041553;
-}
-
-#removeBtn,
-#removeStlBtn {
-  background-color: #7b113a;
-  padding: 5px 5px;
-  color: white;
-  border-radius: 5px;
-  border-color: white;
-  cursor: pointer;
-}
-
-#removeBtn:hover,
-#removeStlBtn:hover {
-  background-color: #500421;
-}
-
-.edit_btn {
-  text-decoration: none;
-  padding: 2px 5px;
-  background: green;
-  color: white;
-  border-radius: 3px;
-}
-
-.edit_btn:hover {
-  background: rgb(12, 161, 12);
-}
-
-.del_btn {
-  text-decoration: none;
-  padding: 2px 5px;
-  color: white;
-  border-radius: 3px;
-  background: #7b113a;
-}
-
-.del_btn:hover {
-  background: #500421;
-}
-
-/* ------------------------- Manage Equipment ----------------------------------- */
-
-#addNewRow:hover,
-#bt:hover {
-  background-color: #041553;
-  color: white;
-}
-
-#assignEquipment:hover,
-#bt:hover {
-  background-color: #041553;
-}
-#submitButton,
-#saveButton {
-  display: none;
-  margin: 20px auto;
-  padding: 8px 8px;
-  background-color: #1597e5;
-  color: white;
-  border-radius: 15px;
-  border-color: white;
-  cursor: pointer;
-}
-
-#submitButton:hover,
-#saveButton:hover {
-  background-color: #041553;
-}
-
-#removeButton1 {
-  background-color: #7b113a;
-  padding: 5px 5px;
-  color: white;
-  border-radius: 5px;
-  border-color: white;
-  cursor: pointer;
-}
-
-#removeButton1:hover {
-  background-color: #550222;
-}
-
-#closeButton {
-  background-color: #7b113a;
-  padding: 5px 5px;
-  color: white;
-  border-radius: 5px;
-  border-color: white;
-  cursor: pointer;
-}
-
-#closeButton:hover {
-  background-color: #550222;
-}
-
-#adminViewEquip:hover {
-  background-color: #061757;
-}
-
-/* ------------------------- Manage Service ----------------------------------- */
-.editPriceBtn {
-  padding: 5px 15px;
-  color: white;
-  background-color: #193498;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.closeInteriorClean,
-.closeVehicle,
-.closeAddService,
-.closeAddVehicle {
-  color: #1597e5;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.closeInteriorClean:hover,
-.closeInteriorClean:focus {
-  color: #023f64;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.deleteIClean {
-  display: block;
-  float: left;
-  margin: 25px 15px;
-}
-
-.btnDeleteInteriorCleaning {
-  color: white;
-  background-color: #7b113a;
-  padding: 8px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.btnDeleteInteriorCleaning:hover {
-  background-color: #4d0420;
-}
-
-.closeVehicle:hover,
-.closeVehicle:focus {
-  color: #023f64;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.deleteVehicle {
-  display: block;
-  float: left;
-  margin: 25px 15px;
-}
-
-.btnDeleteVehicle {
-  color: white;
-  background-color: #7b113a;
-  padding: 8px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.btnDeleteVehicle:hover {
-  background-color: rgb(187, 13, 13);
-}
-
-.closeAddService:hover,
-.closeAddService:focus {
-  color: #4d0420;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.cancelAddNewServices {
-  display: block;
-  margin: 35px 15px;
-}
-
-.btnAddNewService {
-  color: white;
-  background-color: #193498;
-  padding: 8px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  float: right;
-}
-
-.btnCancelAddService {
-  color: white;
-  background-color: #7b113a;
-  padding: 8px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  float: left;
-}
-
-.closeAddVehicle:hover,
-.closeAddVehicle:focus {
-  color: #023f64;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.cancelAddNewVehicles {
-  display: block;
-  margin: 35px 15px;
-}
-
-.btnAddNewVehicle {
-  color: white;
-  background-color: #193498;
-  padding: 8px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  float: right;
-}
-
-.btnCancelAddVehicle {
-  color: white;
-  background-color: #7b113a;
-  padding: 8px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  float: left;
-}
-
-/* ------------------------- Account ----------------------------------- */
-
-.formSubmitButton {
-  float: right;
-  display: block;
-  margin: 20px auto 10px auto;
-  width: 80px;
-  color: white;
-  border-radius: 5px;
-  background-color: #193498;
-  cursor: pointer;
-  padding: 5px 0px 5px 0px;
-}
-
-.formCancelButton {
-  float: left;
-  display: block;
-  margin: 20px auto 10px auto;
-  width: 80px;
-  color: rgb(255, 255, 255);
-  border-radius: 5px;
-  background-color: #777b80;
-  cursor: pointer;
-  padding: 5px 0px 5px 0px;
-}
-
-.vehicle-box:hover > .btn2 {
-  display: block;
-  opacity: 1;
-  cursor: pointer;
-}
-
-.btn2 {
-  position: absolute;
-  opacity: 0.4;
-}
-.map-box:hover > .btn3 {
-  display: block;
-  opacity: 1;
-  cursor: pointer;
-}
-
-.btn3 {
-  position: absolute;
-  opacity: 1.7;
-  color: #193498;
-  z-index: 9;
-}
-
-.btn {
-  opacity: 0.4;
-  position: absolute;
-  display: inline;
-  color: #193498;
-  margin-left: 10px;
-  margin-top: 5px;
-}
-
-.account-email:hover > .btn {
-  opacity: 1;
-  cursor: pointer;
-}
-
-.button {
-  background-color: #cecece;
-  border: none;
-  color: rgb(0, 0, 0);
-  padding: 12px 30px;
-  text-align: center;
-  font-size: 16px;
-  margin: 0px 10px;
-  opacity: 0.6;
-  transition: 0.3s;
-  /* display: inline-block; */
-  text-decoration: none;
-  cursor: pointer;
-  border-radius: 27px;
-  float: right;
-}
-
-.button:hover {
-  opacity: 1;
-  background-color: #193498;
-  color: #f5f5f5;
-}
-
-/* ------------------------- Book a wash ----------------------------------- */
-.next-button {
-  background-color: #193498;
-  padding: 7px 20px;
-  color: white;
-  border-radius: 15px;
-  font-size: 20px;
-  cursor: pointer;
-  border-radius: 15px;
-  margin-bottom: 20px;
-  width: 150px;
-}
-
-.next-button:hover {
-  background-color: #193498;
-}
-
-.next-button {
-  padding: 10px 30px;
-  border-color: #193498;
-}
-
-/* ------------------------- Give Review ----------------------------------- */
-
-.review-box-button {
-  display: block;
-  margin: 10px auto 10px auto;
-  width: 100px;
-  height: 40px;
-  color: white;
-  border-radius: 15px;
-  background-color: #193498;
-  cursor: pointer;
-  float: right;
-}
-
-/* ------------------------- Order summary ----------------------------------- */
-.bt {
-  /* display: inline; */
-  margin-bottom: 30px;
-  float: left;
-  /* margin-left: 236px; */
-  background-color: #7b113a;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.bt2 {
-  /* display: inline; */
-  margin-bottom: 30px;
-  float: right;
-
-  background-color: #1597e5;
-  border-radius: 5px;
-  cursor: pointer;
-  border-color: #1597e5;
-}
-
-.orderDate button {
-  background-color: #193498;
-  padding: 7px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.orderDate button:hover {
-  background-color: rgb(247, 163, 9);
-}
-
-.orderDate button a {
-  color: white;
-  font-weight: 700;
-}
-
-.orderTime button {
-  background-color: #193498;
-  padding: 7px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.orderTime button:hover {
-  background-color: rgb(247, 163, 9);
-}
-
-.orderTime button a {
-  color: white;
-  font-weight: 700;
-}
-
-.orderVehicle button {
-  background-color: #193498;
-  padding: 7px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.orderVehicle button:hover {
-  background-color: rgb(247, 163, 9);
-}
-
-.orderVehicle button a {
-  color: white;
-  font-weight: 700;
-}
-
-.orderServiceType button {
-  background-color: #193498;
-  padding: 7px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.orderServiceType button:hover {
-  background-color: rgb(247, 163, 9);
-}
-
-.orderServiceType button a {
-  color: white;
-  font-weight: 700;
-}
-
-.orderLocation button {
-  background-color: #193498;
-  padding: 7px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.orderLocation button:hover {
-  background-color: rgb(247, 163, 9);
-}
-
-.orderLocation button a {
-  color: white;
-  font-weight: 700;
-}
-
-.changebutton {
-  margin-left: 0px;
-  background-color: #193498;
-  padding: 6px 9px;
-  border-radius: 5px;
-  cursor: pointer;
-  color: rgb(255, 255, 255);
-}
-
-.order-buttons {
-  display: block;
-  margin-top: 20px;
-  /* margin-left: 240px;
-    margin-right: 180px; */
-}
-
-.orderButtons {
-  display: inline;
-  margin-bottom: 30px;
-}
-
-.a8 {
-  float: left;
-  margin-left: 150px;
-  background-color: #7b113a;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  border-color: #7b113a;
-}
-
-.a8:hover {
-  background-color: #4e0320;
-  border-color: #4e0320;
-}
-
-.order-buttons a {
-  font-size: 15px;
-  color: white;
-}
-
-.a9 {
-  float: right;
-  /* margin-right: 150px; */
-  background-color: #1597e5;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  border-color: #1597e5;
-}
-
-.a9:hover {
-  background-color: #024066;
-  border-color: #024066;
-}
-
-.btnCancel {
-  background-color: #7b113a;
-  padding: 8px 20px;
-  border-radius: 5px;
-}
-
-.btnCancel:hover {
-  background-color: #4b021e;
-}
-
-.yesCancel button a {
-  color: white;
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.btnConfirm {
-  background-color: #193498;
-  padding: 8px 20px;
-  border-radius: 5px;
-}
-
-.btnConfirm:hover {
-  background-color: #193498;
-}
-
-/* ------------------------- Upcoming Order ----------------------------------- */
-
-.a13 {
-  float: left;
-  margin-left: 0px;
-  background-color: #193498;
-  padding: 6px 9px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-.a13:hover {
-  background-color: #031861;
-}
-
-/* ------------------------- Completed Order ----------------------------------- */
-
-.orderDate button {
-  background-color: #193498;
-  padding: 7px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.orderDate button a {
-  color: white;
-  font-weight: 700;
-}
-
-.orderTime button {
-  background-color: #193498;
-  padding: 7px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.orderTime button a {
-  color: white;
-  font-weight: 700;
-}
-
-.orderVehicle button {
-  background-color: #193498;
-  padding: 7px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.orderVehicle button a {
-  color: white;
-  font-weight: 700;
-}
-
-.orderServiceType button {
-  background-color: #193498;
-  padding: 7px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.orderServiceType button a {
-  color: white;
-  font-weight: 700;
-}
-
-.orderLocation button {
-  background-color: #193498;
-  padding: 7px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.orderLocation button a {
-  color: white;
-  font-weight: 700;
-}
-
-.a1 {
-  display: inline;
-  margin-right: 15px;
-}
-
-.a2 {
-  display: inline;
-  margin-right: 15px;
-}
-
-.a3 {
-  display: inline;
-  margin-right: 15px;
-}
-
-.a4 {
-  display: inline;
-  margin-right: 15px;
-}
-
-.a5 {
-  display: inline;
-  margin-right: 15px;
-}
-
-.a6 {
-  display: inline;
-  margin-right: 15px;
-}
-
-.a7 {
-  display: inline;
-  margin-right: 15px;
-}
-
-/* ------------------------- Completed Order - Manager ----------------------------------- */
-
-.reservation-buttons {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  width: 100%;
-}
-
-.reservationButtons {
-  display: inline;
-  margin-bottom: 30px;
-}
-
-.a12 {
-  float: left;
-  margin-left: 0px;
-  background-color: #193498;
-  padding: 6px 9px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.a12:hover {
-  background-color: #04185f;
-}
-
-.a8 {
-  float: left;
-  margin-left: 0px;
-  background-color: #7b113a;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.a8:hover {
-  background-color: #4e0320;
-}
-
-.reservation-buttons a {
-  font-size: 15px;
-  color: white;
-}
-
-.a10 {
-  float: right;
-  /* margin-right: 161px; */
-  background-color: #7b113a;
-  padding: 6px 9px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.a10:hover {
-  background-color: #4e0320;
-}
-
-/* The Close Button */
-.closeCancelAssign {
-  color: #1597e5;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.closeCancelAssign:hover,
-.closeCancelAssign:focus {
-  color: #024066;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.yesCancelAssign {
-  display: block;
-  float: left;
-  margin: 25px 15px;
-}
-
-.btnCancelAssign {
-  background-color: #7b113a;
-  padding: 8px 20px;
-  border-radius: 5px;
-}
-
-.btnCancelAssign:hover {
-  background-color: #4e0320;
-}
-
-.yesCancelAssign button a {
-  color: white;
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.btnCancelReservation {
-  background-color: #7b113a;
-  padding: 8px 20px;
-  border-radius: 5px;
-}
-
-.btnCancelReservation:hover {
-  background-color: #4e0320;
-}
-
-.yesCancelReservation button a {
-  color: white;
-  font-size: 15px;
-  font-weight: 600;
-}
-
-/* ------------------------- Assigned Orders ----------------------------------- */
-
-.back-button {
-  background-color: #7b113a;
-  padding: 10px 30px;
-  color: white;
-  border-radius: 5px;
-  font-size: 20px;
-  cursor: pointer;
-}
-.back-button:hover {
-  background-color: #7b113a;
-}
-
-/* ------------------------- Order Details ----------------------------------- */
-.completed-button {
-  background-color: #1597e5;
-  padding: 5px 10px;
-  color: white;
-  border-radius: 3px;
-  font-size: 15px;
-  cursor: pointer;
 }

@@ -1,11 +1,3 @@
-function myMap() {
-  var mapProp = {
-    center: new google.maps.LatLng(51.508742, -0.12085),
-    zoom: 5,
-  };
-  var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-}
-
 function searchLocation() {
   var addr = document.getElementById("address");
   addr = addr.replace(/ /g, "+");
@@ -22,6 +14,9 @@ function saveLocation() {
   Longitude = latlng[0]["geometry"]["location"].lng();
   window.location =
     "/account/saveAddress/" + address + "/" + Lattitude + "/" + Longitude;
+  console.log(address);
+  window.location =
+    "/account/saveAddress/" + address + "/" + Lattitude + "/" + Longitude;
 }
 
 let map;
@@ -31,7 +26,6 @@ let responseDiv;
 let response;
 var customerAddress = "";
 var Lattitude;
-var Longitude;
 var latlng;
 
 function initMap() {
@@ -118,6 +112,7 @@ function geocode(request) {
         }
       }
       customerAddress = customerAddress.replace(/ /g, "_");
+      console.log(customerAddress);
       console.log(results[0]["geometry"]["location"]["lat"].value);
       latlng = results;
       return results;

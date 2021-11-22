@@ -9,7 +9,7 @@ class ReviewModel extends Model
 
     public function getUserReviews()
     {
-        $result = $this->db->selectTwo("*", "review", "INNER JOIN customer ON customer.User_ID = review.Customer_ID ORDER BY Date DESC, Time DESC;");
+        $result = $this->db->select("*", "review", "INNER JOIN customer ON customer.User_ID = review.Customer_ID ORDER BY Date DESC, Time DESC;");
         return $result;
     }
     
@@ -17,7 +17,7 @@ class ReviewModel extends Model
     {
         $columns = array('Date', 'Time', 'Content', 'Customer_ID');
         $param = array(':date', ':time', ':content', ':customerid');
-        $result = $this->db->insertTwo("review", $columns, $param, $reviewData);
+        $result = $this->db->insert("review", $columns, $param, $reviewData);
         if ($result == "Success") {
             return true;
         } else print_r($result);
