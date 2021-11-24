@@ -37,7 +37,7 @@ include 'views/user/LoggedInHeader.php';
             <h3 style="color: #193498;">Vehicle Types</h3>
         </div>
         <div class="vehicleManageBox">
-        <?php
+            <?php
             $i = 0;
             while ($i < sizeof($_SESSION['vehicleTypes'])) {
                 echo "<div class='typeVehicles' id='typeVehicles";
@@ -51,11 +51,6 @@ include 'views/user/LoggedInHeader.php';
                 $i = $i + 1;
             }
             ?>
-            <!-- <div class="typeVehicles" id="typeVehicles1" onclick="openViewVehicleType()">H-back</div>
-            <div class="typeVehicles" id="typeVehicles2" onclick="openViewVehicleType()">Sedan</div>
-            <div class="typeVehicles" id="typeVehicles3" onclick="openViewVehicleType()">SUV</div>
-            <div class="typeVehicles" id="typeVehicles4" onclick="openViewVehicleType()">Luxury</div>
-            <div class="typeVehicles" id="typeVehicles5" onclick="openViewVehicleType()">Van</div> -->
             <div class="typeVehicles addBtnVehicles" id="addNewVehicleTypess" onclick="openVehicleAddForm()">+ Add</div>
         </div>
     </div>
@@ -70,9 +65,17 @@ include 'views/user/LoggedInHeader.php';
                 <form action="" method="post">
                     <select name="washType" id="admin-wash-types">
                         <option value="Choose a service type">Choose a service type</option>
-                        <option value="Interior Cleaning">Interior Cleaning</option>
-                        <option value="Exterior washing & Interior Cleaning">Exterior Washing & Interior Cleaning</option>
-                        <option value="Sanitization">Sanitization</option>
+                        <?php
+                        $i = 0;
+                        while ($i < sizeof($_SESSION['washpackages'])) {
+                            echo "<option value='";
+                            echo $_SESSION['washpackages'][$i]['Wash_Package_ID'];
+                            echo "'>";
+                            echo $_SESSION['washpackages'][$i]['Name'];
+                            echo "</option>";
+                            $i = $i + 1;
+                        }
+                        ?>
                     </select>
                 </form>
             </div>
@@ -81,11 +84,17 @@ include 'views/user/LoggedInHeader.php';
                 <form action="" method="post">
                     <select name="vehicleType" id="admin-vehicle-types">
                         <option value="Choose a vehicle">Choose a vehicle</option>
-                        <option value="H - Back">H - Back</option>
-                        <option value="Sedan">Sedan</option>
-                        <option value="Suv">Suv</option>
-                        <option value="Van">Van</option>
-                        <option value="Luxury">Luxury</option>
+                        <?php
+                        $i = 0;
+                        while ($i < sizeof($_SESSION['vehicleTypes'])) {
+                            echo "<option value='";
+                            echo $i;
+                            echo "'>";
+                            echo $_SESSION['vehicleTypes'][$i]['Vehicle_Type'];
+                            echo "</option>";
+                            $i = $i + 1;
+                        }
+                        ?>
                     </select>
                 </form>
             </div>
@@ -109,17 +118,17 @@ include 'views/user/LoggedInHeader.php';
         </div>
         <br>
         <button id="VehicleFormSubmitButton" class="formSubmitButton" type="submit" name="signup">Save</button>
-        <button id="VehicleFormCloseButton" class="formCancelButton" type="button" name="signup" style="background-color:rgb(145,20,20); width: 33%;"><a id = "deleteServiceButton" href = "" style = "color:white;">Delete Service</a></button>
+        <button id="VehicleFormCloseButton" class="formCancelButton" type="button" name="signup" style="background-color:rgb(145,20,20); width: 33%;"><a id="deleteServiceButton" href="" style="color:white;">Delete Service</a></button>
     </form>
 </div>
 
 <div class="addVehicleform" id="viewVehicleType">
-        <h2 class="login-signupheader" id="VehicleName"></h2>
+    <h2 class="login-signupheader" id="VehicleName"></h2>
 
-        <form action="" method="post" id="customer-signup">
-            <button id="VehicleFormSubmitButton" class="formSubmitButton" type="submit" name="signup"><a id = "deleteVehicle" href = "" style = "color:white;">Yes</a></button>
-            <button id="VehicleFormCloseButton" class="formCancelButton" type="button" name="signup" onclick="closeViewVehicleType()">No</button>
-        </form>
+    <form action="" method="post" id="customer-signup">
+        <button id="VehicleFormSubmitButton" class="formSubmitButton" type="submit" name="signup"><a id="deleteVehicle" href="" style="color:white;">Yes</a></button>
+        <button id="VehicleFormCloseButton" class="formCancelButton" type="button" name="signup" onclick="closeViewVehicleType()">No</button>
+    </form>
 </div>
 
 <div class="addVehicleform" id="serviceForm">
