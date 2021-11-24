@@ -37,11 +37,25 @@ include 'views/user/LoggedInHeader.php';
             <h3 style="color: #193498;">Vehicle Types</h3>
         </div>
         <div class="vehicleManageBox">
-            <div class="typeVehicles" id="typeVehicles1" onclick="openViewVehicleType()">H-back</div>
+        <?php
+            $i = 0;
+            while ($i < sizeof($_SESSION['vehicleTypes'])) {
+                echo "<div class='typeVehicles' id='typeVehicles";
+                echo $i;
+                echo "'";
+                echo " onclick='openViewVehicleType(";
+                echo $i;
+                echo ")' >";
+                echo $_SESSION['vehicleTypes'][$i]['Vehicle_Type'];
+                echo "</div>";
+                $i = $i + 1;
+            }
+            ?>
+            <!-- <div class="typeVehicles" id="typeVehicles1" onclick="openViewVehicleType()">H-back</div>
             <div class="typeVehicles" id="typeVehicles2" onclick="openViewVehicleType()">Sedan</div>
             <div class="typeVehicles" id="typeVehicles3" onclick="openViewVehicleType()">SUV</div>
             <div class="typeVehicles" id="typeVehicles4" onclick="openViewVehicleType()">Luxury</div>
-            <div class="typeVehicles" id="typeVehicles5" onclick="openViewVehicleType()">Van</div>
+            <div class="typeVehicles" id="typeVehicles5" onclick="openViewVehicleType()">Van</div> -->
             <div class="typeVehicles addBtnVehicles" id="addNewVehicleTypess" onclick="openVehicleAddForm()">+ Add</div>
         </div>
     </div>
@@ -100,16 +114,12 @@ include 'views/user/LoggedInHeader.php';
 </div>
 
 <div class="addVehicleform" id="viewVehicleType">
-    <div class="forma">
-
-        <h2 class="login-signupheader">Do you want to remove H - Back?</h2>
+        <h2 class="login-signupheader" id="VehicleName"></h2>
 
         <form action="" method="post" id="customer-signup">
-            <button id="VehicleFormSubmitButton" class="formSubmitButton" type="button" name="signup">Yes</button>
+            <button id="VehicleFormSubmitButton" class="formSubmitButton" type="submit" name="signup"><a id = "deleteVehicle" href = "" style = "color:white;">Yes</a></button>
             <button id="VehicleFormCloseButton" class="formCancelButton" type="button" name="signup" onclick="closeViewVehicleType()">No</button>
         </form>
-
-    </div>
 </div>
 
 <div class="addVehicleform" id="serviceForm">
@@ -128,13 +138,13 @@ include 'views/user/LoggedInHeader.php';
     </form>
 </div>
 
-<div class="addVehicleform" id="serviceAddForm">
+<div class="addVehicleform" id="vehicleAddForm">
     <h2 class="login-signupheader">Add a vehicle type</h2>
-    <form action="" method="post" id="customer-signup">
+    <form action="/service/addVehicleType" method="post" id="customer-signup">
         <label for="fname" style="padding: 0px 19px 0px 0px;">Name</label>
-        <input class="input-box" id="vin" type="text2" name="vin" required>
+        <input class="input-box" id="vin" type="text2" name="vehicleName" required>
         <br>
-        <button id="VehicleFormSubmitButton" class="formSubmitButton" type="button" name="signup">Submit</button>
+        <button id="VehicleFormSubmitButton" class="formSubmitButton" type="submit" name="signup">Submit</button>
         <button id="VehicleFormCloseButton" class="formCancelButton" type="button" name="signup" onclick="closeVehicleAddForm()">Cancel</button>
     </form>
 </div>
@@ -144,4 +154,5 @@ include 'views/user/LoggedInHeader.php';
 <script src="/public/js/AdminManageService.js"></script>
 <script>
     var pausecontent = <?php echo json_encode($_SESSION['washpackages']); ?>;
+    var vehicles = <?php echo json_encode($_SESSION['vehicleTypes']); ?>;
 </script>
