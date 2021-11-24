@@ -8,13 +8,13 @@ class ServiceModel extends Model
         parent::__construct();
     }
 
-    function addEquipment($item_id,$name, $price,  $dateAcquired)
+    function addEquipment($item_id, $name, $price,  $dateAcquired)
     {
-        
-        if ( $this->db->select ('count', "item", "WHERE Item_Id = :item_id;",':item_id',$item_id) >0 ){
-            
+
+        if ($this->db->select('count', "item", "WHERE Item_Id = :item_id;", ':item_id', $item_id) > 0) {
+
             print_r("exist");
-            $result=$this->db->select("Total, Free", "item", "WHERE Item_Id = :item_id;",':item_id',$item_id);
+            $result = $this->db->select("Total, Free", "item", "WHERE Item_Id = :item_id;", ':item_id', $item_id);
             print_r($result);
             // $free=$this->db->select("Free", "item", "WHERE Item_Id=:item_id;", ':item_id',$item_id);
             $total  = $result[0]['Total'];
@@ -23,7 +23,7 @@ class ServiceModel extends Model
             echo $free;
             // print_r($free);
 
-           /* $totalInt=(int)$total;
+            /* $totalInt=(int)$total;
             $freeInt=(int)$free;
             $totalInt++;
             $freeInt++;
@@ -41,8 +41,7 @@ class ServiceModel extends Model
               if ($result1 == "Success") {
                 return true;
             } else print_r($result1);*/
-        }
-        else{
+        } else {
             /*$column1=array('Item_Id','Total','Free');
             $param1=array(':item_id',':total',':free');
             $val1=array($item_id,1,1);
@@ -63,13 +62,13 @@ class ServiceModel extends Model
     }
     public function getEquipmentItemDetails()
     {
-        $result = $this->db->select("*" , "item","WHERE 1");
+        $result = $this->db->select("*", "item", "WHERE 1");
         return $result;
     }
     public function getEquipmentDetails($item_id)
     {
         //$result = $this->db->select("Equipment_ID, Name, Date_Acquired, Price, Team" , "equipment", "WHERE Availability =1;");
-        $result = $this->db->select("*" , "equipment", "WHERE Availability =1 AND Item_Id=':item_id';");
+        $result = $this->db->select("*", "equipment", "WHERE Availability =1 AND Item_Id=':item_id';");
         return $result;
     }
     /*public function getFreeEquipmentDetails($item_id)
@@ -77,21 +76,20 @@ class ServiceModel extends Model
         $result = $this->db->select("*" , "equipment", "WHERE (Availability =1) AND Item_Id=':item_id' AND (Team = NULL);");
         return $result;
     }*/
-    function equipmentEdit($eid,$value)
+    function equipmentEdit($eid, $value)
     {
-        $column='Team';
-        $param=':team';
-   
-       $result = $this->db->update("equipment", $column, $param, $value, ':eid', $eid,"WHERE (Equipment_ID = :eid);");
+        $column = 'Team';
+        $param = ':team';
+
+        $result = $this->db->update("equipment", $column, $param, $value, ':eid', $eid, "WHERE (Equipment_ID = :eid);");
         if ($result == "Success") {
             return true;
         } else print_r($result);
-
     }
     function equipmentDelete($eid)
     {
-       
-        $result = $this->db->update("equipment","Availability", ':availability', 0, ':eid', $eid,"WHERE (Equipment_ID = :eid);");
+
+        $result = $this->db->update("equipment", "Availability", ':availability', 0, ':eid', $eid, "WHERE (Equipment_ID = :eid);");
         if ($result == "Success") {
             return true;
         } else print_r($result);
@@ -110,7 +108,8 @@ class ServiceModel extends Model
         } else print_r($result);
     }
 
-    function getWashPackage(){
+    function getWashPackage()
+    {
         $result = $this->db->select("*", "wash_package", "Null");
         return $result;
     }
@@ -120,7 +119,7 @@ class ServiceModel extends Model
         $column = "Description";
         $param = ":desc";
         $value = $description;
-        $result = $this->db->update("wash_package", $column, $param, $value, ':washpackageid', $washPackgeID,"WHERE (Wash_Package_ID = :washpackageid);");
+        $result = $this->db->update("wash_package", $column, $param, $value, ':washpackageid', $washPackgeID, "WHERE (Wash_Package_ID = :washpackageid);");
         if ($result == "Success") {
             return true;
         } else print_r($result);
@@ -128,7 +127,36 @@ class ServiceModel extends Model
 
     function deleteService($washPackgeID)
     {
-        $result = $this->db->delete("wash_package", "WHERE ( Wash_Package_ID = :washpackageid);", ':washpackageid',$washPackgeID);
+        $result = $this->db->delete("wash_package", "WHERE ( Wash_Package_ID = :washpackageid);", ':washpackageid', $washPackgeID);
+        if ($result == "Success") {
+            return true;
+        } else print_r($result);
+    }
+
+    function addVehicle($name, $array)
+    {
+        $columns = array('Wash_Package_ID', 'Vehicle_Type');
+        $param = array(':packageid', ':vehicleType');
+        $i = 0; 
+        for ($i = 0; $i < sizeof($array); $i++) {
+            $washpackages[$i] = $array[$i]['Wash_Package_ID'];
+            $result = $this->db->insert("wash_package_vehicle_category", $columns, $param, array($washpackages[$i], $name));
+            if ($result != "Success") {
+                print_r($result);
+            }
+        }
+        return true;
+    }
+
+    function getVehicle()
+    {
+        $result = $this->db->select("DISTINCT Vehicle_Type", "wash_package_vehicle_category", "Null");
+        return $result;
+    }
+
+    function deleteVehicle($vehicleName)
+    {
+        $result = $this->db->delete("wash_package_vehicle_category", "WHERE ( Vehicle_Type = :vehicleType);", ':vehicleType', $vehicleName);
         if ($result == "Success") {
             return true;
         } else print_r($result);

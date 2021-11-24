@@ -47,8 +47,13 @@ function closeViewServiceForm() {
 }
 
 
-function openViewVehicleType() {
+function openViewVehicleType(i) {
     var x = document.getElementById("viewVehicleType");
+    document.getElementById("VehicleName").innerHTML = "Do you want to remove " + vehicles[i]['Vehicle_Type'] + "?";
+    var str = vehicles[i]['Vehicle_Type'];
+    str = str.replace(/ /g, "_");
+    str = str.replace(/-/g, "|");
+    document.getElementById("deleteVehicle").href = "/service/deleteVehicleType/" + str;
     var y = document.getElementById("service");
     if (x.style.display === "none") {
         x.style.display = "block";
