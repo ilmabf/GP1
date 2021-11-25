@@ -161,4 +161,9 @@ class ServiceModel extends Model
             return true;
         } else print_r($result);
     }
+
+    function getServicePrice(){
+        $result = $this->db->select("*", "wash_package_vehicle_category", "Null");
+        return $result;
+    }
 }
