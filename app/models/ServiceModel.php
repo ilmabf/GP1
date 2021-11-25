@@ -166,4 +166,14 @@ class ServiceModel extends Model
         $result = $this->db->select("*", "wash_package_vehicle_category", "Null");
         return $result;
     }
+
+    function insertPrice($washPackageID, $vehicleName, $price){
+        $column = "Price";
+        $param = ":price";
+        $value = $price;
+        $result = $this->db->update("wash_package_vehicle_category", $column, $param, $value, array(':washPackage', ':vehicleType'), array($washPackageID, $vehicleName), "WHERE (Wash_Package_ID = :washPackage AND Vehicle_Type = :vehicleType);");
+        if ($result == "Success") {
+            return true;
+        } else print_r($result);
+    }
 }

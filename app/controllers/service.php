@@ -167,4 +167,12 @@ class Service extends Controller
             }
         }
     }
+
+    function addPrice($washPackageID, $vehicleName, $price){
+        if ($_SESSION['role'] == "systemadmin") {
+            if ($this->model->insertPrice($washPackageID, $vehicleName, $price)) {
+                header("Location: /service/washPackage");
+            }
+        }
+    }
 }

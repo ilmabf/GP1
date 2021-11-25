@@ -100,13 +100,12 @@ include 'views/user/LoggedInHeader.php';
             </div>
 
             <div class="typesBox">
-                <!-- <?php print_r($_SESSION['servicePrice']); ?> -->
-                <div class="AdminpriceBox displayPrice" id = "PriceValue"></div>
-                <div class="AdminpriceBox" id = "add" style = "display:none;"><button type="button" class="editPriceBtn" onclick = "HideAdd();">Add Price</button></div>
-                <div class="AdminpriceBox" id = "edit" style = "display:none;"><button type="button" class="editPriceBtn" onclick = "HideEdit();">Edit Price</button></div>
-                <input class="AdminpriceBox" style = "display:none; " id="inputAddPrice" ></input>
-                <div class="AdminpriceBox" style = "display:none;" id="addPriceButton" ><button type="button" class="editPriceBtn"><a id="priceButton" style="color:white;" href=""></a>Submit</button></div>
-                <div class="AdminpriceBox" style = "display:none;" id="editPriceButton"><button type="button" class="editPriceBtn"><a  id="priceButton2" style="color:white; " href=""></a>Submit</button></div>
+                <div class="" id="PriceValue" style="display: inline-block; margin-right: 20px;"></div>
+                <div class="AdminpriceBox" id="add" style="display:none;"><button type="button" class="editPriceBtn" onclick="HideAdd();">Add Price</button></div>
+                <div class="AdminpriceBox" id="edit" style="display:none;"><button type="button" class="editPriceBtn" onclick="HideEdit();">Edit Price</button></div>
+                <input class="AdminpriceBox" style="display:none; " id="inputAddPrice"></input>
+                <div class="AdminpriceBox" style="display:none;" id="addPriceButton"><button type="button" class="editPriceBtn" onclick="addFunction();">Submit</button></div>
+                <div class="AdminpriceBox" style="display:none;" id="editPriceButton"><button type="button" class="editPriceBtn" onclick="addFunction();">Submit</button></div>
             </div>
 
         </div>
@@ -172,34 +171,31 @@ include 'views/user/LoggedInHeader.php';
     var servicePrices = <?php echo json_encode($_SESSION['servicePrice']); ?>;
 
     function Price() {
+        document.getElementById("inputAddPrice").style = "display:none;";
+        document.getElementById("addPriceButton").style = "display:none;";
+        document.getElementById("editPriceButton").style = "display:none;";
+
         var x = document.getElementById("admin-wash-types").value;
         var y = document.getElementById("admin-vehicle-types").value;
-
         var i = 0;
         var price = 0;
         for (i = 0; i < servicePrices.length; i++) {
             if (servicePrices[i]['Wash_Package_ID'] == x && servicePrices[i]['Vehicle_Type'] == y) {
-                if(servicePrices[i]['Price'] != null){
+                if (servicePrices[i]['Price'] != null) {
                     price = servicePrices[i]['Price'];
                 }
             }
         }
         if (price == 0) {
-            // document.getElementById("priceButton").innerHTML = "Add Price";
-            // document.getElementById("priceButton").onclick = HideAdd();
-            document.getElementById("add").style = "display:block;";
-            document.getElementById("priceButton").href = "/service/addPrice/" + x + "/" + y;
+            document.getElementById("add").style = "display:inline-block;";
+            document.getElementById("edit").style = "display:none;";
+            document.getElementById("PriceValue").innerHTML = "Rs. ";
         } else {
-            document.getElementById("edit").style = "display:block;";
-            document.getElementById("PriceValue").innerHTML = "Rs " + price;
-            document.getElementById("priceButton2").href = "/service/editPrice/" + x + "/" + y;
+            document.getElementById("add").style = "display:none;";
+            document.getElementById("edit").style = "display:inline-block;";
+            document.getElementById("PriceValue").innerHTML = "Rs. " + price;
         }
     }
 
-    function HideAdd(){
-        document.getElementById("add").style = "display:none;";
-        document.getElementById("addPriceButton").style = "display:inline-block;";
-        document.getElementById("inputAddPrice").style = "display:inline-block; border-radius: 5px; width:50%;";
-    }
     Price();
 </script>
