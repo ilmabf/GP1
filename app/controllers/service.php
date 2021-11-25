@@ -103,6 +103,7 @@ class Service extends Controller
     {
         $_SESSION['washpackages'] = $this->model->getWashPackage();
         $_SESSION['vehicleTypes'] = $this->model->getVehicle();
+        $_SESSION['servicePrice'] = $this->model->getServicePrice();
         //User Autherization
         if ($_SESSION['role'] == "systemadmin") {
             $this->view->render('admin/Service');
@@ -162,6 +163,14 @@ class Service extends Controller
         // echo $vehicleName;
         if ($_SESSION['role'] == "systemadmin") {
             if ($this->model->deleteVehicle($vehicleName)) {
+                header("Location: /service/washPackage");
+            }
+        }
+    }
+
+    function addPrice($washPackageID, $vehicleName, $price){
+        if ($_SESSION['role'] == "systemadmin") {
+            if ($this->model->insertPrice($washPackageID, $vehicleName, $price)) {
                 header("Location: /service/washPackage");
             }
         }

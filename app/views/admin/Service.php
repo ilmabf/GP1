@@ -63,8 +63,8 @@ include 'views/user/LoggedInHeader.php';
 
             <div class="typesBox">
                 <form action="" method="post">
-                    <select name="washType" id="admin-wash-types">
-                        <option value="Choose a service type">Choose a service type</option>
+                    <select name="washType" id="admin-wash-types" onchange="Price()">
+                        <!-- <option value="Choose a service type">Choose a service type</option> -->
                         <?php
                         $i = 0;
                         while ($i < sizeof($_SESSION['washpackages'])) {
@@ -82,13 +82,13 @@ include 'views/user/LoggedInHeader.php';
 
             <div class="typesBox">
                 <form action="" method="post">
-                    <select name="vehicleType" id="admin-vehicle-types">
-                        <option value="Choose a vehicle">Choose a vehicle</option>
+                    <select name="vehicleType" id="admin-vehicle-types" onchange="Price()">
+                        <!-- <option value="Choose a vehicle">Choose a vehicle</option> -->
                         <?php
                         $i = 0;
                         while ($i < sizeof($_SESSION['vehicleTypes'])) {
                             echo "<option value='";
-                            echo $i;
+                            echo $_SESSION['vehicleTypes'][$i]['Vehicle_Type'];
                             echo "'>";
                             echo $_SESSION['vehicleTypes'][$i]['Vehicle_Type'];
                             echo "</option>";
@@ -100,8 +100,12 @@ include 'views/user/LoggedInHeader.php';
             </div>
 
             <div class="typesBox">
-                <div class="AdminpriceBox displayPrice">Rs. <?php echo "990" ?></div>
-                <div class="AdminpriceBox"><button type="button" class="editPriceBtn">Edit</button></div>
+                <div class="" id="PriceValue" style="display: inline-block; margin-right: 20px;"></div>
+                <div class="AdminpriceBox" id="add" style="display:none;"><button type="button" class="editPriceBtn" onclick="HideAdd();">Add Price</button></div>
+                <div class="AdminpriceBox" id="edit" style="display:none;"><button type="button" class="editPriceBtn" onclick="HideEdit();">Edit Price</button></div>
+                <input class="AdminpriceBox" style="display:none; " id="inputAddPrice"></input>
+                <div class="AdminpriceBox" style="display:none;" id="addPriceButton"><button type="button" class="editPriceBtn" onclick="addFunction();">Submit</button></div>
+                <div class="AdminpriceBox" style="display:none;" id="editPriceButton"><button type="button" class="editPriceBtn" onclick="addFunction();">Submit</button></div>
             </div>
 
         </div>
@@ -164,4 +168,34 @@ include 'views/user/LoggedInHeader.php';
 <script>
     var pausecontent = <?php echo json_encode($_SESSION['washpackages']); ?>;
     var vehicles = <?php echo json_encode($_SESSION['vehicleTypes']); ?>;
+    var servicePrices = <?php echo json_encode($_SESSION['servicePrice']); ?>;
+
+    function Price() {
+        document.getElementById("inputAddPrice").style = "display:none;";
+        document.getElementById("addPriceButton").style = "display:none;";
+        document.getElementById("editPriceButton").style = "display:none;";
+
+        var x = document.getElementById("admin-wash-types").value;
+        var y = document.getElementById("admin-vehicle-types").value;
+        var i = 0;
+        var price = 0;
+        for (i = 0; i < servicePrices.length; i++) {
+            if (servicePrices[i]['Wash_Package_ID'] == x && servicePrices[i]['Vehicle_Type'] == y) {
+                if (servicePrices[i]['Price'] != null) {
+                    price = servicePrices[i]['Price'];
+                }
+            }
+        }
+        if (price == 0) {
+            document.getElementById("add").style = "display:inline-block;";
+            document.getElementById("edit").style = "display:none;";
+            document.getElementById("PriceValue").innerHTML = "Rs. ";
+        } else {
+            document.getElementById("add").style = "display:none;";
+            document.getElementById("edit").style = "display:inline-block;";
+            document.getElementById("PriceValue").innerHTML = "Rs. " + price;
+        }
+    }
+
+    Price();
 </script>
