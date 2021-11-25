@@ -46,13 +46,13 @@ function saveEquipment(id,no){
  //--------------------------------------------------------
  function viewAllEquipment(){
    var x = document.getElementById("viewAllequip");
-   var y = document.getElementById("viewAllitems");
+   
     if (x.style.display == "none") {
     x.style.display = "flex";
-    y.style.visibility = "hidden";
+   
     } else {
     x.style.display = "none";
-    y.style.display = "flex";
+    
     }
 
  }

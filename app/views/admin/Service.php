@@ -14,21 +14,21 @@ include 'views/user/LoggedInHeader.php';
             <h3>Service Types</h3>
         </div>
         <div class="serviceManageBox">
-            <?php 
-                $i = 0;
-                while ($i < sizeof($_SESSION['washpackages'])){
-                    echo "<div class='typeServices' id='typeServices";
-                    echo $i;
-                    echo "'>";
-                    echo $_SESSION['washpackages'][$i]['Name'];
-                    echo "</div>";
-                    $i = $i + 1;
-                }
+            <?php
+            $i = 0;
+            while ($i < sizeof($_SESSION['washpackages'])) {
+                echo "<div class='typeServices' id='typeServices";
+                echo $i;
+                echo "'";
+                echo " onclick='openViewServiceForm(";
+                echo $i;
+                echo ")' >";
+                echo $_SESSION['washpackages'][$i]['Name'];
+                echo "</div>";
+                $i = $i + 1;
+            }
             ?>
-            <!-- <div class="typeServices" id="typeServices1" onclick="openViewServiceForm()">Interior Cleaning</div>
-            <div class="typeServices" id="typeServices2" onclick="openViewServiceForm()">Exterior Washing & Interior Cleaning</div>
-            <div class="typeServices" id="typeServices3" onclick="openViewServiceForm()">Sanitization</div> -->
-            <div class="typeServices addBtnService" id="addServiceTypes" onclick="openServiceForm()">+ Add</div>
+            <div class="typeServices addBtnService" id="addServiceTypes" onclick="openAddServiceForm()">+ Add</div>
         </div>
     </div>
 
@@ -85,21 +85,18 @@ include 'views/user/LoggedInHeader.php';
     </div>
 </div>
 <div class="addVehicleform" id="viewserviceForm">
-    <div class="forma">
-        <span type="button" class="close_washType" style="float:right; cursor:pointer;" onclick="closeWashType()">&#10006</span>
-        <h2 class="login-signupheader">Interior Cleaning</h2>
+    <span type="button" class="close_washType" style="float:right; cursor:pointer;" onclick="closeViewServiceForm()">&#10006</span>
+    <h2 class="login-signupheader" id="ServiceName"></h2>
 
-        <form action="" method="post" id="customer-signup">
-            <label for="Model" style="padding: 0px 29px 0px 0px;">Description</label>
-            <div class="input-box" style="display: inline-grid;">
-                <textarea name="review" placeholder="Vacuuming, disposing garbage, cleaning the floor mats and windows from the inside." required style="height: 112px;    width: 90%;"></textarea>
-            </div>
-            <br>
-            <button id="VehicleFormSubmitButton" class="formSubmitButton" type="button" name="signup" onclick="closeViewServiceForm()">Save</button>
-            <button id="VehicleFormCloseButton" class="formCancelButton" type="button" name="signup" style="background-color:rgb(145,20,20); width: 33%;">Delete Service</button>
-        </form>
-
-    </div>
+    <form action="" method="post" id="editWashPackage">
+        <label for="Model" style="padding: 0px 29px 0px 0px;">Description</label>
+        <div class="input-box" style="display: inline-grid;">
+            <textarea name="description" placeholder="" id="serviceDesc" required style="height: 112px;    width: 90%;"></textarea>
+        </div>
+        <br>
+        <button id="VehicleFormSubmitButton" class="formSubmitButton" type="submit" name="signup">Save</button>
+        <button id="VehicleFormCloseButton" class="formCancelButton" type="button" name="signup" style="background-color:rgb(145,20,20); width: 33%;"><a id = "deleteServiceButton" href = "" style = "color:white;">Delete Service</a></button>
+    </form>
 </div>
 
 <div class="addVehicleform" id="viewVehicleType">
@@ -116,32 +113,35 @@ include 'views/user/LoggedInHeader.php';
 </div>
 
 <div class="addVehicleform" id="serviceForm">
-        <h2 class="login-signupheader">Add a service</h2>
-        <form action="/service/addWashpackage" method="post" id="customer-signup">
-            <label for="fname" style="padding: 0px 19px 0px 0px;">Service Name</label>
-            <input class="input-box" id="vin" type="text2" name="washpackagename" style="padding:8px;" required>
-            <br>
-            <label for="Model" style="padding: 0px 29px 0px 0px;">Description</label>
-            <div class="input-box" style="display: inline-grid;">
-                <textarea name="description" placeholder="type here.." required style="height: 112px;    width: 90%;"></textarea>
-            </div>
-            <br>
-            <button id="AddServiceSubmitButton" class="formSubmitButton" type="submit" name="signup">Submit</button>
-            <button id="AddServiceCloseButton" class="formCancelButton" type="button" name="signup" onclick="closeServiceForm()">Cancel</button>
-        </form>
+    <h2 class="login-signupheader">Add a service</h2>
+    <form action="/service/addWashPackage" method="post" id="customer-signup">
+        <label for="fname" style="padding: 0px 19px 0px 0px;">Service Name</label>
+        <input class="input-box" id="vin" type="text2" name="washpackagename" style="padding:8px;" required>
+        <br>
+        <label for="Model" style="padding: 0px 29px 0px 0px;">Description</label>
+        <div class="input-box" style="display: inline-grid;">
+            <textarea name="description" placeholder="type here.." required style="height: 112px;    width: 90%;"></textarea>
+        </div>
+        <br>
+        <button id="AddServiceSubmitButton" class="formSubmitButton" type="submit" name="signup">Submit</button>
+        <button id="AddServiceCloseButton" class="formCancelButton" type="button" name="signup" onclick="closeAddServiceForm()">Cancel</button>
+    </form>
 </div>
 
 <div class="addVehicleform" id="serviceAddForm">
-        <h2 class="login-signupheader">Add a vehicle type</h2>
-        <form action="" method="post" id="customer-signup">
-            <label for="fname" style="padding: 0px 19px 0px 0px;">Name</label>
-            <input class="input-box" id="vin" type="text2" name="vin" required>
-            <br>
-            <button id="VehicleFormSubmitButton" class="formSubmitButton" type="button" name="signup">Submit</button>
-            <button id="VehicleFormCloseButton" class="formCancelButton" type="button" name="signup" onclick="closeVehicleAddForm()">Cancel</button>
-        </form>
+    <h2 class="login-signupheader">Add a vehicle type</h2>
+    <form action="" method="post" id="customer-signup">
+        <label for="fname" style="padding: 0px 19px 0px 0px;">Name</label>
+        <input class="input-box" id="vin" type="text2" name="vin" required>
+        <br>
+        <button id="VehicleFormSubmitButton" class="formSubmitButton" type="button" name="signup">Submit</button>
+        <button id="VehicleFormCloseButton" class="formCancelButton" type="button" name="signup" onclick="closeVehicleAddForm()">Cancel</button>
+    </form>
 </div>
 
 <div style="min-height: 110px;"></div>
 
 <script src="/public/js/AdminManageService.js"></script>
+<script>
+    var pausecontent = <?php echo json_encode($_SESSION['washpackages']); ?>;
+</script>

@@ -1,7 +1,7 @@
 /*Newly added*/
 .Table-search-selected-equip {
 
-    display:flex;
+    display:none;
     flex-direction: column;
     padding: 1em;
     align-items: center;
@@ -16,7 +16,10 @@
     
 }
 #viewAllEquip{
-    display:none;
+    display:flex;
+}
+#viewAllitems{
+   
 }
 /*----------------------------*/
 #addNewRow {

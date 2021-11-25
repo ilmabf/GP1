@@ -1,7 +1,8 @@
 <?php
 
 include 'views/user/LoggedInHeader.php';
-
+ $items = $_SESSION['itemDetails'];
+           
 ?>
 
 <main>
@@ -64,7 +65,7 @@ include 'views/user/LoggedInHeader.php';
           <tbody>
           <?php
             $count = 0;
-            $items = $_SESSION['itemDetails'];
+           
             while ($count < $_SESSION['rowCount']) { ?>
               <tr>            
                 <td><?php echo $items [$count]['Item_Id'] ?></td>    
@@ -72,8 +73,8 @@ include 'views/user/LoggedInHeader.php';
                 <td class="td-t1" style="text-align:right"><?php echo $items [$count]['Total'] ?></td>
                 <td class="td-t1"><?php echo $items [$count]['Free'] ?></td>
                  <td>     
-                  <a href="/service/viewAllEquipments/<?php echo $items [$count]['Item_Id'] ?>"><input type="button" class="edit_btn td-t1" value="View All Items" onclick="viewAllEquipment()"></a>
-                  <a href="/service/viewFreeEquipments/<?php echo $items [$count]['Item_Id'] ?>"> <input type="button" class="edit_btn td-t1" value="View Free Items" onclick="viewFreeEquipment()"></a>
+                  <a href="/service/viewAllEquipment/<?php echo $items [$count]['Item_Id'] ?>"><input type="button" class="edit_btn td-t1" value="View All Items" onclick="viewAllEquipment()"></a>
+                  <a href="/service/viewFreeEquipment/<?php echo $items [$count]['Item_Id'] ?>"> <input type="button" class="edit_btn td-t1" value="View Free Items" onclick="viewFreeEquipment()"></a>
                   </td> 
               </tr>
             <?php $count = $count + 1;
@@ -85,7 +86,7 @@ include 'views/user/LoggedInHeader.php';
     
      <div style="height: 50px;"></div>
 
-     <!--View table-->
+     <!--View table-
     <div id="viewAllequip" class="Table-search-selected-equip" >
       <div class="table-wrapper">
         <div style="display:inline-block; width: 100%;">
@@ -118,7 +119,7 @@ include 'views/user/LoggedInHeader.php';
 
             <?php
             $count = 0;
-            $details = $_SESSION['equipmentDetails'];
+             $details = $_SESSION['equipmentDetails'];
             while ($count < $_SESSION['rowCount']) { ?>
               <tr id="rowNo<?php $count ?>">
             
@@ -139,7 +140,7 @@ include 'views/user/LoggedInHeader.php';
           </tbody>
         </table>
       </div>
-    </div>
+    </div>-->
 
     
     <div style="min-height: 110px;"></div>
