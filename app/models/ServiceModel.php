@@ -45,15 +45,15 @@ class ServiceModel extends Model
             } else print_r($result);
         }          
     }
-    public function getEquipmentItemDetails()
+    public function getItemDetails()
     {
-        $result = $this->db->select("*", "item", "WHERE 1");
+        $result = $this->db->select("*", "item", "Null");
         return $result;
     }
-    public function getAllEquipmentDetails($item_id)
+    public function getEquipmentDetails()
     {
 
-        $result = $this->db->select("*" , "equipment", "WHERE Availability =1 AND Item_Id= :item_id ;",':item_id',$item_id);
+        $result = $this->db->select("*" , "equipment", "WHERE Availability = 1 ;");
         return $result;
     }
     public function getFreeEquipmentDetails($item_id)
