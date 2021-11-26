@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\config",
+    "\\app\\views",
+    "\\app\\views\\admin",
+    "\\public",
+    "\\public\\css",
+    "\\public\\css\\components"
+  ],
+  "SelectedNode": "\\app\\models",
+  "PreviewInSolutionExplorer": false
+}

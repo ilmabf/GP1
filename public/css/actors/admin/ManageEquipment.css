@@ -17,6 +17,12 @@
 }
 #viewAllEquip{
     display:none;
+    flex-direction: column;
+    padding: 1em;
+    align-items: center;
+}
+#viewAllitems{
+   
 }
 /*----------------------------*/
 #addNewRow {
@@ -92,6 +98,14 @@
 }
 
 #adminSearchEquipment {
+  padding: 10px 10px;
+  border-color: #193498;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: block;
+  font-size: 15px;
+}
+#adminSearchItem {
   padding: 10px 10px;
   border-color: #193498;
   border-radius: 5px;
