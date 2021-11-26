@@ -212,7 +212,7 @@ $details = $_SESSION['equipmentDetails'];
     console.log(EquipmentToDisplay);
     var x = document.getElementById("Equipment");
     for (j = 0; j < EquipmentToDisplay.length; j++) {
-      x.outerHTML += "<tr id='rowNo<?php $count ?>'>" +
+      x.outerHTML += "<tr id='rowNo" + j + "'>" +
 
         "<td>" + EquipmentToDisplay[j]['Equipment_ID'] + "</td>" +
         "<td style='text-align:left' class='td-t1'> " + EquipmentToDisplay[j]['Name'] +" </td>"+
