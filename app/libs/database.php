@@ -35,7 +35,11 @@ class Database extends PDO
             $result = $stmt->fetchAll();
             return $result;
         } else if ($selection == 'count') {
-            $query = "SELECT * FROM " . $table . " " . $condition;
+            if ($condition == "Null") {
+                $query = "SELECT * FROM " . $table;
+            } else {
+                $query = "SELECT * FROM " . $table . " " . $condition;
+            }
             $stmt = $this->prepare($query);
             if (gettype($param) == 'array') {
                 $k = 0;
@@ -63,7 +67,11 @@ class Database extends PDO
             } else if (gettype($selection) == 'string') {
                 $query = "SELECT " . $selection;
             }
-            $query .= " FROM " . $table . " " . $condition;
+            if ($condition == "Null") {
+                $query .= " FROM " . $table;
+            } else {
+                $query .= " FROM " . $table . " " . $condition;
+            }
             $stmt = $this->prepare($query);
             if (gettype($param) == 'array') {
                 $k = 0;

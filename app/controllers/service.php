@@ -35,7 +35,7 @@ class Service extends Controller
 
     }
     function viewFreeEquipment($item_id){
-    $_SESSION['equipmentDetails'] = $this->model->getFreeEquipmentDetails($item_id);
+    $_SESSION['freeEquipmentDetails'] = $this->model->getFreeEquipmentDetails($item_id);
     //User Autherization
         if ($_SESSION['role'] == "systemadmin") {
             $this->view->render('admin/Equipment');
@@ -101,6 +101,8 @@ class Service extends Controller
     function washPackage()
     {
         $_SESSION['washpackages'] = $this->model->getWashPackage();
+        $_SESSION['vehicleTypes'] = $this->model->getVehicle();
+        $_SESSION['servicePrice'] = $this->model->getServicePrice();
         //User Autherization
         if ($_SESSION['role'] == "systemadmin") {
             $this->view->render('admin/Service');
@@ -136,6 +138,38 @@ class Service extends Controller
         
         if ($_SESSION['role'] == "systemadmin") {
             if ($this->model->deleteService($washPackgeID)) {
+                header("Location: /service/washPackage");
+            }
+        }
+    }
+
+    function addVehicleType(){
+
+        $name = $_POST['vehicleName'];
+
+        if ($_SESSION['role'] == "systemadmin") {
+            if ($this->model->addVehicle($name, $_SESSION['washpackages'])) {
+                header("Location: /service/washPackage");
+            }
+        }
+    }
+
+    function deleteVehicleType($vehicleName){
+        
+        $vehicleName = str_replace('_', ' ', $vehicleName);
+        $vehicleName = str_replace('|', '-', $vehicleName);
+
+        // echo $vehicleName;
+        if ($_SESSION['role'] == "systemadmin") {
+            if ($this->model->deleteVehicle($vehicleName)) {
+                header("Location: /service/washPackage");
+            }
+        }
+    }
+
+    function addPrice($washPackageID, $vehicleName, $price){
+        if ($_SESSION['role'] == "systemadmin") {
+            if ($this->model->insertPrice($washPackageID, $vehicleName, $price)) {
                 header("Location: /service/washPackage");
             }
         }

@@ -1,3 +1,4 @@
+//--------searching------------------
 const searchInput = document.getElementById('adminSearchEquipment')
 const table = document.getElementById('viewAsTable')
 const trArray = Array.prototype.slice.call(table.querySelectorAll('tbody tr'))
@@ -48,7 +49,7 @@ function saveEquipment(id,no){
    var x = document.getElementById("viewAllequip");
    
     if (x.style.display == "none") {
-    x.style.display = "flex";
+    x.style.display = "block";
    
     } else {
     x.style.display = "none";
@@ -56,3 +57,16 @@ function saveEquipment(id,no){
     }
 
  }
+  function viewFreeEquipment(){
+   var x = document.getElementById("viewFreeEquip");
+   
+    if (x.style.display == "none") {
+    x.style.display = "block";
+   
+    } else {
+    x.style.display = "none";
+    
+    }
+
+ }
+ 

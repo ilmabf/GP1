@@ -47,8 +47,13 @@ function closeViewServiceForm() {
 }
 
 
-function openViewVehicleType() {
+function openViewVehicleType(i) {
     var x = document.getElementById("viewVehicleType");
+    document.getElementById("VehicleName").innerHTML = "Do you want to remove " + vehicles[i]['Vehicle_Type'] + "?";
+    var str = vehicles[i]['Vehicle_Type'];
+    str = str.replace(/ /g, "_");
+    str = str.replace(/-/g, "|");
+    document.getElementById("deleteVehicle").href = "/service/deleteVehicleType/" + str;
     var y = document.getElementById("service");
     if (x.style.display === "none") {
         x.style.display = "block";
@@ -92,3 +97,31 @@ function closeVehicleAddForm() {
 
     }
 }
+
+
+
+
+function HideAdd(){
+    document.getElementById("add").style = "display:none;";
+    document.getElementById("addPriceButton").style = "display:inline-block;";
+    document.getElementById("inputAddPrice").style = "display:inline-block; border-radius: 5px; width:50%;";
+    document.getElementById("inputAddPrice").placeholder = "";
+}
+
+function HideEdit(){
+    document.getElementById("edit").style = "display:none;";
+    document.getElementById("editPriceButton").style = "display:inline-block;";
+    var price = document.getElementById("PriceValue").innerHTML;
+    price = price.replace("Rs. ", "");
+    document.getElementById("PriceValue").innerHTML = "Rs. ";
+    document.getElementById("inputAddPrice").style = "display:inline-block; border-radius: 5px; width:50%;";
+    document.getElementById("inputAddPrice").placeholder = price;
+}
+
+function addFunction(){
+    var x = document.getElementById("admin-wash-types").value;
+    var y = document.getElementById("admin-vehicle-types").value;
+    var z = document.getElementById("inputAddPrice").value;
+    window.location = "/service/addPrice/" + x + "/" + y + "/" + z;
+}
+
