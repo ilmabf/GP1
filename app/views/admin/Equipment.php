@@ -143,6 +143,7 @@ include 'views/user/LoggedInHeader.php';
         </table>
       </div>
     </div>
+       <div style="height: 50px;"></div>
     <!--View free equipment table-->
     <div id="viewFreeEquip" class="Table-search-selected-equip" >
       <div class="table-wrapper">
