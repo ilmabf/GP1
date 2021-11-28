@@ -45,18 +45,7 @@ function saveEquipment(id,no){
      document.getElementById("rowNo"+no+"").innerHTML="";
  }
  //--------------------------------------------------------
- function viewAllEquipment(){
-   var x = document.getElementById("viewAllequip");
-   
-    if (x.style.display == "none") {
-    x.style.display = "block";
-   
-    } else {
-    x.style.display = "none";
-    
-    }
 
- }
   function viewFreeEquipment(){
    var x = document.getElementById("viewFreeEquip");
    
