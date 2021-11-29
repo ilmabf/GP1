@@ -9,6 +9,11 @@ class Booking extends Controller
     }
 
     //get details for booking
+    function calendar()
+    {
+        $this->view->render('customer/BookAWashCalendar');
+    }
+
     function details()
     {
         $this->view->render('customer/BookAWash');
@@ -76,7 +81,5 @@ class Booking extends Controller
         } else if ($_SESSION['role'] == "manager") {
             $this->view->render('manager/CompletedOrder');
         }
-        
     }
-
 }
