@@ -46,16 +46,5 @@ function saveEquipment(id,no){
  }
  //--------------------------------------------------------
 
-  function viewFreeEquipment(){
-   var x = document.getElementById("viewFreeEquip");
-   
-    if (x.style.display == "none") {
-    x.style.display = "block";
-   
-    } else {
-    x.style.display = "none";
-    
-    }
-
- }
+  
  
