@@ -16,12 +16,14 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url("/public/images/carblur_desktop.png");
 }
 
 .calendar {
   width: 120rem;
   height: 100vh;
   background-color: #222227;
+  opacity: 0.8;
   box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
 }
 
@@ -94,7 +96,7 @@ html {
 }
 
 .days div:hover:not(.today) {
-  background-color: #262626;
+  background-color: #141414;
   border: 0.2rem solid #777;
 }
 
@@ -108,7 +110,7 @@ html {
 }
 
 .time {
-  background-color: red;
+  background-color: green;
   border-radius: 5px;
   margin: 4rem 0.4rem 4rem 0.4rem;
   padding: 0rem 0.2rem 0rem 0.2rem;

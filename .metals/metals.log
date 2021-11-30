@@ -52,3 +52,23 @@ INFO: Unsupported notification method: $/setTrace
 [0m2021.11.29 14:51:45 WARN  no build tool detected in workspace 'C:\xampp\htdocs\wandiwash'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
 Nov 29, 2021 2:52:32 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 INFO: Unsupported notification method: $/setTrace
+Nov 29, 2021 3:12:24 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Nov 29, 2021 3:26:42 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Nov 29, 2021 3:34:29 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Nov 29, 2021 4:08:09 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+[0m2021.11.29 17:18:01 INFO  Started: Metals version 0.10.9 in workspace 'C:\xampp\htdocs\wandiwash' for client Visual Studio Code 1.62.3.[0m
+[0m2021.11.29 17:18:03 INFO  time: initialize in 2.05s[0m
+[0m2021.11.29 17:18:08 WARN  Build server is not auto-connectable.[0m
+[0m2021.11.29 17:18:08 WARN  no build tool detected in workspace 'C:\xampp\htdocs\wandiwash'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+Nov 29, 2021 5:27:08 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+[0m2021.11.29 17:50:54 INFO  shutting down Metals[0m
+[0m2021.11.30 22:32:51 INFO  Started: Metals version 0.10.9 in workspace 'C:\xampp\htdocs\wandiwash' for client Visual Studio Code 1.62.3.[0m
+[0m2021.11.30 22:32:54 INFO  time: initialize in 3.24s[0m
+[0m2021.11.30 22:32:55 WARN  Build server is not auto-connectable.[0m
+[0m2021.11.30 22:32:55 WARN  no build tool detected in workspace 'C:\xampp\htdocs\wandiwash'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.11.30 23:48:00 INFO  shutting down Metals[0m
