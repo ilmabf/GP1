@@ -76,11 +76,7 @@ $teams = $_SESSION['teamDetails'];
                 <td class="td-t1"><?php echo $items[$count]['Free'] ?></td>
                 <td>
                   <input type="button" class="edit_btn td-t1" value="View All Items" onclick="viewAllEquipment(<?php echo $items[$count]['Item_Id'] ?>)">
-<<<<<<< HEAD
                   <input type="button" class="edit_btn td-t1" value="View Free Items" onclick="viewFreeEquipment(<?php echo $items[$count]['Item_Id'] ?>)">
-=======
-                  <input type="button" class="edit_btn td-t1" value="View Free Items" onclick="viewFreeEquipment(<?php echo $items[$count]['Item_Id'] ?>)"></a>
->>>>>>> 97b6d742b3adabebf310921d262bb02fbd4f9a3e
                 </td>
               </tr>
             <?php $count = $count + 1;
@@ -159,8 +155,7 @@ $teams = $_SESSION['teamDetails'];
               <th colspan="2" style="text-align: center;">Action</th>
             </tr>
           </thead>
-<<<<<<< HEAD
-          <tbody id="freeEquipment">
+          <tbody id="FreeEquipment">
           </tbody>
         </table>
       </div>
@@ -172,29 +167,6 @@ $teams = $_SESSION['teamDetails'];
           <div style="float: left;">
             <input type="button" class="edit_btn td-t1" value="<< Items" onclick="backToItems()">
           </div>
-=======
-          <tbody id="FreeEquipment">
-
-            <!-- <?php
-                  $count = 0;
-
-                  while ($count < sizeof($_SESSION['freeEquipmentDetails'])) { ?>
-              <tr id="rowNo<?php $count ?>">
-
-                <td><?php echo $freeDetails[$count]['Equipment_ID'] ?></td>
-                <td style="text-align:left" class="td-t1"><?php echo $freeDetails[$count]['Name'] ?></td>
-                <td class="td-t1" style="text-align:right"><?php echo $freeDetails[$count]['Price'] ?>.00</td>
-                <td class="td-t1"><?php echo $freeDetails[$count]['Date_Acquired'] ?></td>
-                <td id="<?php echo "assignedTeam_row" . $count ?>" class="td-t1" style="text-align:right"><?php echo $freeDetails[$count]['Team'] ?></td>
-                <td>
-                  <input type="button" id="<?php echo "assign_equip_btn" . $count ?>" class="edit_btn td-t1" value="Assign a Team" onclick="editEquipment('<?php echo $count ?>')">
-                  <a href="" id="<?php echo "editAssignLink" . $count ?>"><input style="margin: auto;" type="submit" id="<?php echo "save_equip_btn" . $count ?>" class="save_btn" value="Save" onclick="saveEquipment('<?php echo $freeDetails[$count]['Equipment_ID'] ?>','<?php echo $count ?>')"></a>
-                </td>
-                <td><a href="/service/deleteEquipment/<?php echo $freeDetails[$count]['Equipment_ID'] ?>"> <input type="button" class="del_btn td-t1" value="Delete" onclick="deleteEquipment('<?php echo $count ?>')"></a></td>
-              </tr>
-            <?php $count = $count + 1;
-                  } ?> -->
->>>>>>> 97b6d742b3adabebf310921d262bb02fbd4f9a3e
 
           <div style="float: right;">
           </div>
@@ -265,17 +237,6 @@ $teams = $_SESSION['teamDetails'];
     y.style.display = "none";
     document.getElementById("viewAllequip").style = "display:flex;";
   }
-<<<<<<< HEAD
-  //View free equipment function
-   function viewFreeEquipment(n) {
-    var k = 0;
-    var i = 0;
-    var EquipmentToDisplay = [];
-    var TempEq = [];
-    for (i = 0; i < equipment.length; i++) {
-      console.log(equipment[i]);
-      if (equipment[i]['Item_Id'] == n && equipment[i]['Team'] == null) {
-=======
 
   function viewFreeEquipment(n) {
 
@@ -285,22 +246,18 @@ $teams = $_SESSION['teamDetails'];
     for (i = 0; i < equipment.length; i++) {
       if (equipment[i]['Item_Id'] == n && equipment[i]['Team'] == null) {
         var TempEq = [];
->>>>>>> 97b6d742b3adabebf310921d262bb02fbd4f9a3e
         TempEq['Equipment_ID'] = equipment[i]['Equipment_ID'];
         TempEq['Name'] = equipment[i]['Name'];
         TempEq['Price'] = equipment[i]['Price'];
         TempEq['Date_Acquired'] = equipment[i]['Date_Acquired'];
         TempEq['Team'] = equipment[i]['Team'];
-<<<<<<< HEAD
-        EquipmentToDisplay[k] = TempEq;
-        k++;
+        EquipmentToDisplay.push(TempEq);
       }
     }
 
-    console.log(EquipmentToDisplay);
-    var x = document.getElementById("freeEquipment");
+    var x = document.getElementById("FreeEquipment");
     for (j = 0; j < EquipmentToDisplay.length; j++) {
-      x.outerHTML += "<tr id='rowNo" + j + "'>" +
+      x.innerHTML += "<tr id='rowNo" + j + "'>" +
 
         "<td>" + EquipmentToDisplay[j]['Equipment_ID'] + "</td>" +
         "<td style='text-align:left' class='td-t1'> " + EquipmentToDisplay[j]['Name'] +" </td>"+
@@ -372,30 +329,4 @@ function backToItems(){
     
 }
  
-=======
-        EquipmentToDisplay.push(TempEq);
-      }
-    }
-
-    var x = document.getElementById("FreeEquipment");
-    for (j = 0; j < EquipmentToDisplay.length; j++) {
-      x.innerHTML += "<tr id='rowNo" + j + "'>" +
-
-        "<td>" + EquipmentToDisplay[j]['Equipment_ID'] + "</td>" +
-        "<td style='text-align:left' class='td-t1'> " + EquipmentToDisplay[j]['Name'] + " </td>" +
-        "<td class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Price'] + ".00</td>" +
-        "<td class='td-t1'>" + EquipmentToDisplay[j]['Date_Acquired'] + "</td>" +
-        "<td id='assignedTeam_row" + j + "' class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Team'] + "</td>" +
-        "<td> <input type='button' id='edit_equip_btn" + j + "' class='edit_btn td-t1' value='Assign a Team' onclick='editEquipment('" + j + "')'>" +
-        "<a href='' id='editLink" + j + "'><input style='margin: auto;' type='submit' id='save_equip_btn" + j + "' class='save_btn' value='Save' onclick='saveEquipment('" + EquipmentToDisplay[j]['Equipment_ID'] + "','" + j + "')'></a>" +
-        "</td> <td><a href='/service/deleteEquipment/" + EquipmentToDisplay[j]['Equipment_ID'] + "'> <input type='button' class='del_btn td-t1' value='Delete' onclick='deleteEquipment('" + j + "')'></a></td>" +
-        "</tr>" +
-        "</tbody>";
-    }
-    var x = document.getElementById("viewAllitems");
-    x.style.display = "none";
-    document.getElementById("viewFreeEquip").style = "display:flex;";
-
-  }
->>>>>>> 97b6d742b3adabebf310921d262bb02fbd4f9a3e
 </script>
