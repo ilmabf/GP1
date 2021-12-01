@@ -271,7 +271,7 @@ $teams = $_SESSION['teamDetails'];
       "</tbody>";
     }
     var x = document.getElementById("viewAllitems");
-    x.style.display = "none";viewFreeEquip
+    x.style.display = "none";
     document.getElementById("viewFreeEquip").style = "display:flex;";
   }
 
