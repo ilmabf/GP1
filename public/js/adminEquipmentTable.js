@@ -43,11 +43,5 @@ function saveEquipment(id,no){
  function deleteEquipment(no){
      document.getElementById("rowNo"+no+"").innerHTML="";
  }
-<<<<<<< HEAD
- 
-=======
- //--------------------------------------------------------
 
-  
->>>>>>> 97b6d742b3adabebf310921d262bb02fbd4f9a3e
  
