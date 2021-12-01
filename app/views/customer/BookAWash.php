@@ -16,26 +16,13 @@ include 'views/user/LoggedInHeader.php';
     </div>
     <div class="dateTime">
         <div class="wash-date">
-            <h3>Select a convenient date to generate available time slots</h3>
+            <h3>Select a convenient date & available time slot from the calendar</h3>
 
             <div id="closeOnClick">
-                <div class="dateWash"><input type="date" value="date" name="dateofBooking" class="dateBooking"></div>
+                <div class="dateWash"><button id="wandiwashCalendar"><i class="far fa-calendar" sizes="64x64"> View</i></button></div>
             </div>
         </div>
 
-        <div class="select-time">
-            <h3>Select a time slot</h3>
-
-            <div class="select-time-box">
-                <form action="" method="post">
-                    <select name="time" id="time-types">
-                        <option value="8 am - 10 am">8 am - 10 am</option>
-                        <option value="12 pm - 2 pm">12 pm - 2 pm</option>
-                        <option value="4 pm - 6 pm">4 pm - 6 pm</option>
-                    </select>
-                </form>
-            </div>
-        </div>
     </div>
 
     <div class="vehicleWash">
@@ -78,20 +65,15 @@ include 'views/user/LoggedInHeader.php';
 
         </div>
     </div>
-    <!-- <div style="display: flex; flex-wrap: wrap; justify-content: center;">
-            <div class="price">
-                <h3>Your Wash Price - Rs. <font color</h3>
-                <div class="price-display">Rs 1200/-</div>
-            </div>
-        </div> -->
+
     <div class="next-pg">
         <span class="priceBox">Rs 1000</span>
-            <button class="next-button">
+        <button class="next-button">
 
-                <a href="/booking/location" style="color: white;">Next</a></button>
+            <a href="/booking/location" style="color: white;">Next</a></button>
     </div>
 
-
+    <script src="/public/js/CustomerCalendar.js"></script>
     <script src="/public/js/CustomerBookAWash.js"></script>
 
 </body>
