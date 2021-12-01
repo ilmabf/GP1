@@ -34,9 +34,9 @@ class ServiceModel extends Model
         } else print_r($result);
         }
         else{
-            $column1=array('Item_Id','Total','Free');
-            $param1=array(':item_id',':total',':free');
-            $val1=array($item_id,1,1);
+            $column1=array('Item_Id','Name','Total','Free');
+            $param1=array(':item_id',':name',':total',':free');
+            $val1=array($item_id,$name,1,1);
 
             $result1=$this->db->insert("item",$column1,$param1,$val1);
             $result = $this->db->insert("equipment", $columns, $param, $values);
@@ -56,12 +56,13 @@ class ServiceModel extends Model
         $result = $this->db->select("*" , "equipment", "WHERE Availability = 1 ;");
         return $result;
     }
-    public function getFreeEquipmentDetails($item_id)
+    public function getTeamDetails()
     {
-        $result = $this->db->select("*" , "equipment", "WHERE (Availability =1) AND (Item_Id= :item_id ) AND (Team IS NULL);",':item_id',$item_id);
-        return $result;
 
+        $result = $this->db->select("STL_ID" , "service_team_leader", "WHERE 1;");
+        return $result;
     }
+
     function equipmentEdit($eid,$value)
     {
         $column='Team';
@@ -69,14 +70,22 @@ class ServiceModel extends Model
 
         $item_id_result = $this->db->select("Item_Id", "equipment", "WHERE Equipment_ID = :eid;",':eid',$eid);
         $item_id = $item_id_result[0]['Item_Id'];
+        $current_team_result = $this->db->select("Team", "equipment", "WHERE Equipment_ID = :eid;",':eid',$eid);
+        $current_team = $item_id_result[0]['Team'];
 
-        if($value == NULL){
+        if($current_team != NULL && $value == NULL){
+            $result = $this->db->select("Free", "item", "WHERE Item_Id = :item_id;",':item_id',$item_id);
+            $free  = $result[0]['Free'];
+            $free++;
+            $result1 = $this->db->update("item", 'Free', ':free', $free, ':item_id', $item_id,"WHERE (Item_Id = :item_id);");
+
             $result = $this->db->update("equipment", $column, $param, $value, ':eid', $eid,"WHERE (Equipment_ID = :eid);");
 
             if ($result == "Success") {
                 return true;
             } else print_r($result);
-        }else{
+
+        }else if($current_team == NULL && $value != NULL){
             $result = $this->db->select("Free", "item", "WHERE Item_Id = :item_id;",':item_id',$item_id);
             $free  = $result[0]['Free'];
             $free--;
@@ -105,12 +114,11 @@ class ServiceModel extends Model
         $param1 = array(':total',':free');
         $val1 =array($total,$free);
 
-        $result1 = $this->db->update("item", $column1, $param1, $val1, ':item_id', $item_id,"WHERE (Item_Id = :item_id);");          
+        $result1 = $this->db->update("item", $column1, $param1, $val1, ':item_id', $item_id,"WHERE (Item_Id = :item_id);");   
+        $result = $this->db->update("equipment","Availability", ':availability', 0, ':eid', $eid,"WHERE (Equipment_ID = :eid);");
         if ($result1 == "Success") {
             return true;
         } else print_r($result1);
-
-        $result = $this->db->update("equipment","Availability", ':availability', 0, ':eid', $eid,"WHERE (Equipment_ID = :eid);");
 
         if ($result == "Success") {
             return true;
