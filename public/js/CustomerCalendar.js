@@ -114,6 +114,15 @@ function getTimeAndDate(date, month, year, t) {
   else if(t==5){ time = "4-6";}
   // alert("Time: " + time + "\nDate: " + date +  "\nMonth: " + month +  "\nYear: " + year);
   // window.location("")
+  document.getElementById("day").innerHTML = date;
+  document.getElementById("month").innerHTML = month;
+  document.getElementById("year").innerHTML = year;
+  document.getElementById("timeSlot").innerHTML = time;
+  // $.post("/booking/details", {Day:date, Time:time, Month:month, Year:year});
+
+  document.getElementById("cal1").style = "display:none;";
+  var z = document.getElementById("bookingContent");
+  z.classList.remove("blurAccount");
 }
 
 renderCalendar();

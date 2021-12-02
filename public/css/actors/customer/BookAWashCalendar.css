@@ -20,7 +20,7 @@ html {
 
 .calendar {
   width: 120rem;
-  height: 100vh;
+  /* height: 100vh; */
   background-color: #222227;
   box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
 }
@@ -121,4 +121,20 @@ html {
   position: absolute;
   bottom: 0;
   right: 0;
+}
+
+#cal1{
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 39%;
+  left: 28%;
+  transform: translate(-50%, -50%);
+  /* padding: 5px 50px 120px 50px; */
+  height: 50%;
+  width: 35%;
+  /* margin-top: 200px; */
+  display: none;
+  z-index: 9;
 }
