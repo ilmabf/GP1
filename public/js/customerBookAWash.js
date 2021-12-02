@@ -1,5 +1,5 @@
 var i = 0;
-var txt = 'Pick the time & give your location. We WandiWash ready to wash your vehicle. We are Eco Friendly.';
+var txt = 'Pick a date, time & location. WandiWash is ready to wash your vehicle! We are Eco Friendly!';
 var speed = 50;
 
 function typeWriter() {
@@ -10,18 +10,25 @@ function typeWriter() {
   }
 } 
 
-const btnsTip = document.querySelectorAll(".button");
-let activeBtn = null;
+// const btnsTip = document.querySelectorAll(".input");
+// let activeBtn = null;
 
-btnsTip.forEach((btnTip) => {
-  btnTip.addEventListener("click", (e) => {
-    e.currentTarget.classList.add("active");
+// btnsTip.forEach((btnTip) => {
+//   btnTip.addEventListener("click", (e) => {
+//     e.currentTarget.classList.add("active");
 
-    if ((activeBtn != null && activeBtn != e.currentTarget)) {
-      activeBtn.classList.remove("active");
-    }
+//     if ((activeBtn != null && activeBtn != e.currentTarget)) {
+//       activeBtn.classList.remove("active");
+//     }
 
-    activeBtn = e.currentTarget;
-  });
-});
+//     activeBtn = e.currentTarget;
+//   });
+// });
+
+
+function viewCalendar(){
+  document.getElementById("cal1").style = "display:block;";
+  var z = document.getElementById("bookingContent");
+  z.classList.add("blurAccount");
+}
 

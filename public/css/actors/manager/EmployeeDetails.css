@@ -1,0 +1,57 @@
+.Mg-EmpSearch{
+    display: inline-block;
+}
+
+.mgEmpSearch1{
+    margin-left: 160px;
+}
+
+.mgEmpSearch2{
+    float: right;
+    margin-left: -100px;
+    margin-right: 160px;
+}
+
+#serviceTeams-types{
+    font-weight: 600;
+    border-radius: 5px;
+    border: 2px outset #193498;
+}
+
+#serviceTeamLeaders-types{
+    font-weight: 600;
+    border-radius: 5px;
+    border: 2px outset #193498;
+}
+
+#managerSearchEmployee{
+    font-size: 15px;
+    border: 2px outset #193498;
+}
+
+@media only screen and (max-width: 770px){
+
+    .heading{
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .Mg-EmpSearch{
+        display: block;
+        text-align: center;
+        margin: 10px auto;
+    }
+
+    #managerSearchEmployee{
+        font-size: 12px;
+        margin-right: 50px;
+        margin-left: 50px;
+    }
+
+    .mgEmpSearch2{
+        float: left;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+}

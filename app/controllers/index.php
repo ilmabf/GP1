@@ -1,18 +1,16 @@
 <?php
-    class Index extends Controller{
+session_start();
 
-        function __construct(){
-            parent::__construct();
-        }
+class Index extends Controller
+{
 
-        function index(){
-            $this->view->render('userHome');
-        }
-
-        function logout(){
-            session_destroy();
-            header("Location: /");
-        }
-
+    function __construct()
+    {
+        parent::__construct();
     }
-?>
+
+    function index()
+    {
+        $this->view->render('user/Home');
+    }
+}

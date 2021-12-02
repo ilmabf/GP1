@@ -1,12 +1,14 @@
 <?php
 
-class App {
+class App
+{
 
     private $_url = null;
     private $_controller = null;
-                
-    function __construct() {     
-        $this->_getURL();        
+
+    function __construct()
+    {
+        $this->_getURL();
 
         if (empty($this->_url[0])) {
             $this->_loadDeafultController();
@@ -18,25 +20,28 @@ class App {
         };
     }
 
-    private function _getURL() {
+    private function _getURL()
+    {
         $url = isset($_GET['url']) ? $_GET['url'] : null;
         $url = rtrim($url, '/');
         $url = filter_var($url, FILTER_SANITIZE_URL);
         $this->_url = explode('/', $url);
     }
 
-    private function _loadDeafultController() {
+    private function _loadDeafultController()
+    {
         require 'controllers/index.php';
         $this->_controller = new Index();
         $this->_controller->index();
     }
 
-    private function _loadController() {
+    private function _loadController()
+    {
         $file = 'controllers/' . $this->_url[0] . '.php';
-        
+
         if (file_exists($file)) {
             require $file;
-            $this->_controller = new $this->_url[0]; 
+            $this->_controller = new $this->_url[0];
             $this->_controller->loadModel($this->_url[0]);
             return true;
         } else {
@@ -45,25 +50,10 @@ class App {
         }
     }
 
-    // private function _loadController(){
-            
-    //     $file = 'controllers/' . $this->_url[0] . '.php';
-    //     if(file_exists($file)){
-    //         require $file;
-    //         $this->_controller = new $this->_url[0]; 
-    //         $this->_controller->{$this->_url[1]}();
-    //         $this->_controller->loadModel($this->_url[0]);
-    //         return true;
-    //     }
-    //     else{
-    //         echo "Page Not found!";
-    //         return false;
-    //     }
-    // }
+    private function _loadControllerMethod()
+    {
 
-    private function _loadControllerMethod() {
-
-        $urlLength = count($this->_url); 
+        $urlLength = count($this->_url);
         if ($urlLength > 1) {
             if (!method_exists($this->_controller, $this->_url[1])) {
                 echo "Requested method not found!";
