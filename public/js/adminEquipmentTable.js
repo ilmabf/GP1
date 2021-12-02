@@ -1,9 +1,8 @@
-//--------searching------------------
-const searchInput = document.getElementById('adminSearchEquipment')
-const table = document.getElementById('viewAsTable')
+const searchInput = document.getElementById('adminSearchItem')
+const table = document.getElementById('ItemTable')
 const trArray = Array.prototype.slice.call(table.querySelectorAll('tbody tr'))
 
-const viewAsTable = event => {
+const ItemTable = event => {
 
   const searchTerm = event.target.value.toLowerCase()
   trArray.forEach(row => {
@@ -17,7 +16,7 @@ const viewAsTable = event => {
   })
 }
 
-searchInput.addEventListener('keyup', viewAsTable, false)
+searchInput.addEventListener('keyup', ItemTable, false)
 
 function editEquipment(no){
     document.getElementById("edit_equip_btn"+no).style.display="none";
@@ -44,7 +43,11 @@ function saveEquipment(id,no){
  function deleteEquipment(no){
      document.getElementById("rowNo"+no+"").innerHTML="";
  }
+<<<<<<< HEAD
+ 
+=======
  //--------------------------------------------------------
 
   
+>>>>>>> 97b6d742b3adabebf310921d262bb02fbd4f9a3e
  
