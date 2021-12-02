@@ -71,37 +71,30 @@ const renderCalendar = () => {
                 <br>
                 <span class="time" id = "slot1" onclick="getTimeAndDate(` +
         i +
-        `, 1, ` +
-        months[date.getMonth()] +
-        `, ` +
+        `, 1,
+        months[date.getMonth()], ` +
         date.getFullYear() +
         `)">8-10</span>
                 <span class="time" id = "slot2" onclick="getTimeAndDate(` +
         i +
-        `, 2, ` +
-        months[date.getMonth()] +
-        `, ` +
+        `, 2,
+        months[date.getMonth()], ` +
         date.getFullYear() +
         `)">10-12</span>
                 <span class="time" id = "slot3" onclick="getTimeAndDate(` +
         i +
-        `, 3, ` +
-        months[date.getMonth()] +
-        `, ` +
+        `, 3,
+        months[date.getMonth()], ` +
         date.getFullYear() +
         `)">12-2</span>
                 <span class="time" id = "slot4" onclick="getTimeAndDate(` +
         i +
-        `, 4, ` +
-        months[date.getMonth()] +
-        `, ` +
+        `, 4, months[date.getMonth()], ` +
         date.getFullYear() +
         `)">2-4</span>
                 <span class="time" id = "slot5" onclick="getTimeAndDate(` +
         i +
-        `, 5, ` +
-        months[date.getMonth()] +
-        `, ` +
+        `, 5, months[date.getMonth()], ` +
         date.getFullYear() +
         `)">4-6</span>
         </span>
@@ -114,37 +107,33 @@ const renderCalendar = () => {
                   <br>
                   <span class="time" id = "slot1" onclick="getTimeAndDate(` +
         i +
-        `,1, ` +
-        months[date.getMonth()] +
-        `, ` +
+        `,1, 
+        months[date.getMonth()] 
+        , ` +
         date.getFullYear() +
         `)">8-10</span>
                   <span class="time" id = "slot2" onclick="getTimeAndDate(` +
         i +
-        `,2, ` +
-        months[date.getMonth()] +
-        `, ` +
+        `,2,
+        months[date.getMonth()], ` +
         date.getFullYear() +
         `)">10-12</span>
                   <span class="time" id = "slot3" onclick="getTimeAndDate(` +
         i +
-        `,3, ` +
-        months[date.getMonth()] +
-        `, ` +
+        `,3,
+        months[date.getMonth()], ` +
         date.getFullYear() +
         `)">12-2</span>
                   <span class="time" id = "slot4" onclick="getTimeAndDate(` +
         i +
-        `,4, ` +
-        months[date.getMonth()] +
-        `, ` +
+        `,4,
+        months[date.getMonth()], ` +
         date.getFullYear() +
         `)">2-4</span>
                   <span class="time" id = "slot5" onclick="getTimeAndDate(` +
         i +
-        `,5, ` +
-        months[date.getMonth()] +
-        `, ` +
+        `,5,
+        months[date.getMonth()], ` +
         date.getFullYear() +
         `)">4-6</span>  
         </span>
@@ -171,8 +160,11 @@ document.querySelector(".next").addEventListener("click", () => {
   renderCalendar();
 });
 
+renderCalendar();
+
 // get time and date
 function getTimeAndDate(date, t, month, year) {
+  console.log(year);
   var time;
   if (t == 1) {
     time = "8-10";
@@ -189,5 +181,3 @@ function getTimeAndDate(date, t, month, year) {
   window.location =
     "/calendar/calendarDetails/" + date + "/" + time + "/" + month + "/" + year;
 }
-
-renderCalendar();
