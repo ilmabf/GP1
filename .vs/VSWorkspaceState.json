@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\views",
+    "\\app\\views\\admin",
+    "\\app\\views\\customer",
+    "\\public",
+    "\\public\\css",
+    "\\public\\css\\actors",
+    "\\public\\css\\actors\\admin",
+    "\\public\\js"
+  ],
+  "SelectedNode": "\\public\\js\\adminManageEquipment.js",
+  "PreviewInSolutionExplorer": false
+}
