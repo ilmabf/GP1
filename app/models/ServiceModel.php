@@ -72,6 +72,7 @@ class ServiceModel extends Model
         $item_id = $item_id_result[0]['Item_Id'];
         $current_team_result = $this->db->select("Team", "equipment", "WHERE Equipment_ID = :eid;",':eid',$eid);
         $current_team = $item_id_result[0]['Team'];
+        
 
         if($current_team != NULL && $value == NULL){
             $result = $this->db->select("Free", "item", "WHERE Item_Id = :item_id;",':item_id',$item_id);

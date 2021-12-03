@@ -19,6 +19,7 @@ const ItemTable = event => {
 searchInput.addEventListener('keyup', ItemTable, false)
 
 function editEquipment(no){
+    
     document.getElementById("edit_equip_btn"+no).style.display="none";
     document.getElementById("save_equip_btn"+no).style.display="block";
 
@@ -34,7 +35,7 @@ function saveEquipment(id,no){
    
     var edit = document.getElementById("editLink"+no);
     edit.href = "/service/editEquipment/"+ id + "/" + teamVal;
-
+  
     document.getElementById("edit_equip_btn"+no).style.display="block";
     document.getElementById("save_equip_btn"+no).style.display="none";
 

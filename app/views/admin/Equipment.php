@@ -93,7 +93,7 @@ $teams = $_SESSION['teamDetails'];
       <div class="table-wrapper">
         <div style="display:inline-block; width: 100%;">
           <div style="float: left;">
-          <input type="button" class="edit_btn td-t1" value="<< Items" onclick="backToItems()">
+          <input type="button" class="edit_btn td-t1" value="<< Items" onclick="backToItem()">
           </div>
 
           <div style="float: right;">
@@ -138,7 +138,7 @@ $teams = $_SESSION['teamDetails'];
       <div class="table-wrapper">
         <div style="display:inline-block; width: 100%;">
           <div style="float: left;">
-            <input type="button" class="edit_btn td-t1" value="<< Items" onclick="backToItems()">
+            <input type="button" class="edit_btn td-t1" value="<< Items" onclick="backToItem()">
           </div>
 
           <div style="float: right;">
@@ -257,9 +257,9 @@ $teams = $_SESSION['teamDetails'];
         "<td class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Price'] + ".00</td>" +
         "<td class='td-t1'>" + EquipmentToDisplay[j]['Date_Acquired'] + "</td>" +
         "<td id='assignedTeam_row" + j + "' class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Team'] + "</td>" +
-        "<td> <input type='button' id='edit_equip_btn" + j + "' class='edit_btn td-t1' value='Assign a Team' onclick='editEquipment('" + j + "')'>" +
-        "<a href='' id='editLink" + j + "'><input style='margin: auto;' type='submit' id='save_equip_btn" + j + "' class='save_btn' value='Save' onclick='saveEquipment('" + EquipmentToDisplay[j]['Equipment_ID'] + "','" + j + "')'></a>" +
-        "</td> <td><a href='/service/deleteEquipment/" + EquipmentToDisplay[j]['Equipment_ID'] + "'> <input type='button' class='del_btn td-t1' value='Delete' onclick='deleteEquipment('" + j + "')'></a></td>" +
+        "<td> <input type='button' id='edit_equip_btn" + j + "' class='edit_btn td-t1' value='Assign a Team' onclick='editEquipment("+ j +")'>" +
+        "<a href='' id='editLink" + j + "'><input style='margin: auto;' type='submit' id='save_equip_btn" + j + "' class='save_btn' value='Save' onclick='saveEquipment(" + EquipmentToDisplay[j]['Equipment_ID'] + "," + j + ")'></a>"+
+        "</td> <td><a href='/service/deleteEquipment/" + EquipmentToDisplay[j]['Equipment_ID'] + "'> <input type='button' class='del_btn td-t1' value='Delete' onclick='deleteEquipment(" + j + ")'></a></td>" +
         "</tr>" +
         "</tbody>";
     }
@@ -295,10 +295,10 @@ $teams = $_SESSION['teamDetails'];
       "<td class='td-t1' style='text-align:right'>"+ EquipmentToDisplay[j]['Price'] +".00</td>" +
       "<td class='td-t1'>"+EquipmentToDisplay[j]['Date_Acquired'] + "</td>" +
       "<td id='assignedTeam_row" + j + "' class='td-t1' style='text-align:right'>"+ EquipmentToDisplay[j]['Team'] + "</td>" +
-      "<td> <input type='button' id='edit_equip_btn" + j + "' class='edit_btn td-t1' value='Assign a Team' onclick='editEquipment('" + j + "')'>" +
-      "<a href='' id='editLink" + j + "'><input style='margin: auto;' type='submit' id='save_equip_btn" + j +  "' class='save_btn' value='Save' onclick='saveEquipment('" + EquipmentToDisplay[j]['Equipment_ID'] + "','"+ j + "')'></a>" +
-      "</td> <td><a href='/service/deleteEquipment/" + EquipmentToDisplay[j]['Equipment_ID'] + "'> <input type='button' class='del_btn td-t1' value='Delete' onclick='deleteEquipment('" + j + "')'></a></td>" +
-      "</tr>" +
+      "<td> <input type='button' id='edit_equip_btn" + j + "' class='edit_btn td-t1' value='Assign a Team' onclick='editEquipment("+ j +")'>" +
+        "<a href='' id='editLink" + j + "'><input style='margin: auto;' type='submit' id='save_equip_btn" + j + "' class='save_btn' value='Save' onclick='saveEquipment(" + EquipmentToDisplay[j]['Equipment_ID'] + "," + j + ")'></a>"+
+        "</td> <td><a href='/service/deleteEquipment/" + EquipmentToDisplay[j]['Equipment_ID'] + "'> <input type='button' class='del_btn td-t1' value='Delete' onclick='deleteEquipment(" + j + ")'></a></td>" +
+        "</tr>" +
       "</tbody>";
     }
     var x = document.getElementById("viewAllitems");
@@ -308,22 +308,16 @@ $teams = $_SESSION['teamDetails'];
   }
 
 //back to item table
-function backToItems(){
-   
+function backToItem(){
     document.getElementById("viewAllitems").style = "display:flex;";
     document.getElementById("viewAllequip").style = "display:none;";
     document.getElementById("viewFreeEquip").style = "display:none;";
     document.getElementById("viewAssignedEquip").style = "display:none;";
+    document.getElementById("Equipment").innerHTML = '';
+    document.getElementById("freeEquipment").innerHTML = '';
+    document.getElementById("teamAssignedEquipment").innerHTML = '';
     
-    /*var y1 = document.getElementById("Equipment");
-    y1.style.display ="none";
-   
-    var z1 = document.getElementById("freeEquipment");
-    z1.style.display ="none";
- 
-    var q1 = document.getElementById("teamAssignedEquipment");   
-    q1.style.display ="none";*/
-   
+       
 }
 //filter team vise (from item table)
   function getTeamvise1(){
@@ -352,10 +346,10 @@ function backToItems(){
       "<td class='td-t1' style='text-align:right'>"+ EquipmentToDisplay[j]['Price'] +".00</td>" +
       "<td class='td-t1'>"+EquipmentToDisplay[j]['Date_Acquired'] + "</td>" +
       "<td id='assignedTeam_row" + j + "' class='td-t1' style='text-align:right'>"+ EquipmentToDisplay[j]['Team'] + "</td>" +
-      "<td> <input type='button' id='edit_equip_btn" + j + "' class='edit_btn td-t1' value='Assign a Team' onclick='editEquipment('" + j + "')'>" +
-      "<a href='' id='editLink" + j + "'><input style='margin: auto;' type='submit' id='save_equip_btn" + j +  "' class='save_btn' value='Save' onclick='saveEquipment('" + EquipmentToDisplay[j]['Equipment_ID'] + "','"+ j + "')'></a>" +
-      "</td> <td><a href='/service/deleteEquipment/" + EquipmentToDisplay[j]['Equipment_ID'] + "'> <input type='button' class='del_btn td-t1' value='Delete' onclick='deleteEquipment('" + j + "')'></a></td>" +
-      "</tr>" +
+      "<td> <input type='button' id='edit_equip_btn" + j + "' class='edit_btn td-t1' value='Assign a Team' onclick='editEquipment("+ j +")'>" +
+        "<a href='' id='editLink" + j + "'><input style='margin: auto;' type='submit' id='save_equip_btn" + j + "' class='save_btn' value='Save' onclick='saveEquipment(" + EquipmentToDisplay[j]['Equipment_ID'] + "," + j + ")'></a>"+
+        "</td> <td><a href='/service/deleteEquipment/" + EquipmentToDisplay[j]['Equipment_ID'] + "'> <input type='button' class='del_btn td-t1' value='Delete' onclick='deleteEquipment(" + j + ")'></a></td>" +
+        "</tr>" +
       "</tbody>";
     }
     var x = document.getElementById("viewAllitems");
@@ -390,10 +384,10 @@ function backToItems(){
       "<td class='td-t1' style='text-align:right'>"+ EquipmentToDisplay[j]['Price'] +".00</td>" +
       "<td class='td-t1'>"+EquipmentToDisplay[j]['Date_Acquired'] + "</td>" +
       "<td id='assignedTeam_row" + j + "' class='td-t1' style='text-align:right'>"+ EquipmentToDisplay[j]['Team'] + "</td>" +
-      "<td> <input type='button' id='edit_equip_btn" + j + "' class='edit_btn td-t1' value='Assign a Team' onclick='editEquipment('" + j + "')'>" +
-      "<a href='' id='editLink" + j + "'><input style='margin: auto;' type='submit' id='save_equip_btn" + j +  "' class='save_btn' value='Save' onclick='saveEquipment('" + EquipmentToDisplay[j]['Equipment_ID'] + "','"+ j + "')'></a>" +
-      "</td> <td><a href='/service/deleteEquipment/" + EquipmentToDisplay[j]['Equipment_ID'] + "'> <input type='button' class='del_btn td-t1' value='Delete' onclick='deleteEquipment('" + j + "')'></a></td>" +
-      "</tr>" +
+      "<td> <input type='button' id='edit_equip_btn" + j + "' class='edit_btn td-t1' value='Assign a Team' onclick='editEquipment("+ j +")'>" +
+        "<a href='' id='editLink" + j + "'><input style='margin: auto;' type='submit' id='save_equip_btn" + j + "' class='save_btn' value='Save' onclick='saveEquipment(" + EquipmentToDisplay[j]['Equipment_ID'] + "," + j + ")'></a>"+
+        "</td> <td><a href='/service/deleteEquipment/" + EquipmentToDisplay[j]['Equipment_ID'] + "'> <input type='button' class='del_btn td-t1' value='Delete' onclick='deleteEquipment(" + j + ")'></a></td>" +
+        "</tr>" +
       "</tbody>";
     }
    var y = document.getElementById("viewAllequip");
@@ -405,7 +399,7 @@ function backToItems(){
 function backToEquipment(){   
     document.getElementById("viewAllequip").style = "display:flex;";    
     document.getElementById("viewAssignedItems").style = "display:none;";  
-   document.getElementById("teamAssignedItem").style = "display:none;";     
+   document.getElementById("teamAssignedItem").innerHTML = '';     
 }
 </script>
 
