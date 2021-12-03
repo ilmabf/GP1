@@ -68,12 +68,10 @@ class ServiceModel extends Model
         $column='Team';
         $param=':team';
 
-        $item_id_result = $this->db->select("Item_Id", "equipment", "WHERE Equipment_ID = :eid;",':eid',$eid);
+        $item_id_result = $this->db->select("Item_Id,Team", "equipment", "WHERE Equipment_ID = :eid;",':eid',$eid);
         $item_id = $item_id_result[0]['Item_Id'];
-        $current_team_result = $this->db->select("Team", "equipment", "WHERE Equipment_ID = :eid;",':eid',$eid);
         $current_team = $item_id_result[0]['Team'];
         
-
         if($current_team != NULL && $value == NULL){
             $result = $this->db->select("Free", "item", "WHERE Item_Id = :item_id;",':item_id',$item_id);
             $free  = $result[0]['Free'];
@@ -97,33 +95,55 @@ class ServiceModel extends Model
             if ($result == "Success") {
                 return true;
             } else print_r($result);
+
+        }else if($current_team != NULL && $value != NULL || $current_team == NULL && $value == NULL){
+            $result = $this->db->update("equipment", $column, $param, $value, ':eid', $eid,"WHERE (Equipment_ID = :eid);");
+
+            if ($result == "Success") {
+                return true;
+            } else print_r($result);
+
         }
-        
     }
     function equipmentDelete($eid)
 
     {   
-        $item_id_result = $this->db->select("Item_Id", "equipment", "WHERE Equipment_ID = :eid;",':eid',$eid);
+        $item_id_result = $this->db->select("Item_Id,Team", "equipment", "WHERE Equipment_ID = :eid;",':eid',$eid);
         $item_id = $item_id_result[0]['Item_Id'];
-        $result = $this->db->select("Total, Free", "item", "WHERE Item_Id = :item_id;",':item_id',$item_id);
-        $total  = $result[0]['Total'];
-        $free  = $result[0]['Free'];
-        $total--;
-        $free--;
+        $current_team = $item_id_result[0]['Team'];
 
-        $column1 = array('Total','Free');
-        $param1 = array(':total',':free');
-        $val1 =array($total,$free);
+        if($current_team != NULL){
+            $result = $this->db->select("Total", "item", "WHERE Item_Id = :item_id;",':item_id',$item_id);
+            $total  = $result[0]['Total'];
+      
+            $total--;
 
-        $result1 = $this->db->update("item", $column1, $param1, $val1, ':item_id', $item_id,"WHERE (Item_Id = :item_id);");   
-        $result = $this->db->update("equipment","Availability", ':availability', 0, ':eid', $eid,"WHERE (Equipment_ID = :eid);");
-        if ($result1 == "Success") {
-            return true;
-        } else print_r($result1);
+            $result1 = $this->db->update("item", "Total", ':total', $total, ':item_id', $item_id,"WHERE (Item_Id = :item_id);");   
+            $result = $this->db->update("equipment","Availability", ':availability', 0, ':eid', $eid,"WHERE (Equipment_ID = :eid);");
+        
+            if ($result == "Success") {
+                return true;
+            } else print_r($result);
 
-        if ($result == "Success") {
-            return true;
-        } else print_r($result);
+        }else if($current_team == NULL){
+            $result = $this->db->select("Total, Free", "item", "WHERE Item_Id = :item_id;",':item_id',$item_id);
+            $total  = $result[0]['Total'];
+            $free  = $result[0]['Free'];
+        
+            $total--;
+            $free--;
+
+            $column1 = array('Total','Free');
+            $param1 = array(':total',':free');
+            $val1 =array($total,$free);
+    
+            $result1 = $this->db->update("item", $column1, $param1, $val1, ':item_id', $item_id,"WHERE (Item_Id = :item_id);");   
+            $result = $this->db->update("equipment","Availability", ':availability', 0, ':eid', $eid,"WHERE (Equipment_ID = :eid);");
+      
+            if ($result == "Success") {
+                return true;
+            } else print_r($result);
+        }       
     }
 
     // <------------------------------------- Service ------------------------------->
