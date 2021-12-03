@@ -184,17 +184,33 @@ function getTimeAndDate(date, month, year, t) {
   } else if (t == 5) {
     time = "4-6";
   }
-  // alert("Time: " + time + "\nDate: " + date +  "\nMonth: " + month +  "\nYear: " + year);
-  // window.location("")
-  document.getElementById("day").innerHTML = date;
-  document.getElementById("month").innerHTML = month;
-  document.getElementById("year").innerHTML = year;
-  document.getElementById("timeSlot").innerHTML = time;
-  // $.post("/booking/details", {Day:date, Time:time, Month:month, Year:year});
 
-  document.getElementById("cal1").style = "display:none;";
-  var z = document.getElementById("bookingContent");
-  z.classList.remove("blurAccount");
+  if (
+    date == new Date().getDate() &&
+    month == new Date().getMonth() &&
+    year == new Date().getFullYear
+  ) {
+    if (parseInt(time.charAt(0)) > new Date().getHours()) {
+      document.getElementById("day").innerHTML = date;
+      document.getElementById("month").innerHTML = month;
+      document.getElementById("year").innerHTML = year;
+      document.getElementById("timeSlot").innerHTML = time;
+
+      document.cookie = "date = " + date;
+      document.getElementById("cal1").style = "display:none;";
+      var z = document.getElementById("bookingContent");
+      z.classList.remove("blurAccount");
+    }
+  } else if (date > new Date().getDate()) {
+    document.getElementById("day").innerHTML = date;
+    document.getElementById("month").innerHTML = month;
+    document.getElementById("year").innerHTML = year;
+    document.getElementById("timeSlot").innerHTML = time;
+
+    document.getElementById("cal1").style = "display:none;";
+    var z = document.getElementById("bookingContent");
+    z.classList.remove("blurAccount");
+  }
 }
 
 window.location =
