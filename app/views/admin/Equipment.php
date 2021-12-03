@@ -314,7 +314,7 @@ function backToItem(){
     document.getElementById("viewFreeEquip").style = "display:none;";
     document.getElementById("viewAssignedEquip").style = "display:none;";
     document.getElementById("Equipment").innerHTML = '';
-    document.getElementById("freeEquipment").innerHTML = '';
+    document.getElementById("FreeEquipment").innerHTML = '';
     document.getElementById("teamAssignedEquipment").innerHTML = '';
     
        
