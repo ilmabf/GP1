@@ -10,10 +10,10 @@ include 'views/user/LoggedInHeader.php';
     <div id="bookingContent">
         <div>
             <div class="heading">
-                <h2>Start Your Booking!</h2>
+                <h2 style="font-size: 30px;">Start Your Booking!</h2>
             </div>
 
-            <p id="sub-heading-p"></p>
+            <p id="sub-heading-p" style="font-size: 15px;"></p>
         </div>
         <div class="dateTime">
             <div class="wash-date">
@@ -23,9 +23,11 @@ include 'views/user/LoggedInHeader.php';
                     <div class="dateWash"><button id="wandiwashCalendar" onclick="viewCalendar();"><i class="far fa-calendar" sizes="64x64"> View</i></button></div>
                 </div>
                 <div id="selected">
-                    <div id="day"></div>
-                    <div id="month"></div>
-                    <div id="year"></div>
+                    <span id="day"></span>
+                    <span> / </span>
+                    <span id="month"></span>
+                    <span> / </span>
+                    <span id="year"></span>
                     <div id="timeSlot"></div>
                 </div>
 

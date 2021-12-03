@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Quicksand", sans-serif;
 }
 
 html {
@@ -125,7 +124,7 @@ html {
   right: 0;
 }
 
-#cal1{
+#cal1 {
   background-color: white;
   border-radius: 5px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);

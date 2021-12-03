@@ -57,7 +57,7 @@ const renderCalendar = () => {
     // days += timeSlotsHTML;
   }
 
-  var month = date.getMonth()+1;
+  var month = date.getMonth() + 1;
   for (i = 1; i <= lastDay; i++) {
     if (
       i === new Date().getDate() &&
@@ -68,11 +68,41 @@ const renderCalendar = () => {
         <span>
                 <span class="today-1">${i}</span>
                 <br>
-                <span class="time" id = "slot1" onclick="getTimeAndDate(`+ i +`,`+ month +`,`+ date.getFullYear() +`, 1)">8-10</span>
-                <span class="time" id = "slot2" onclick="getTimeAndDate(`+ i +`,`+ month +`,`+ date.getFullYear() +`, 2)">10-12</span>
-                <span class="time" id = "slot3" onclick="getTimeAndDate(`+ i +`,`+ month +`,`+ date.getFullYear() +`, 3)">12-2</span>
-                <span class="time" id = "slot4" onclick="getTimeAndDate(`+ i +`,`+ month +`,`+ date.getFullYear() +`, 4)">2-4</span>
-                <span class="time" id = "slot5" onclick="getTimeAndDate(`+ i +`,`+ month +`,`+ date.getFullYear() +`, 5)">4-6</span>
+                <span class="time" id = "slot1" onclick="getTimeAndDate(` +
+        i +
+        `,` +
+        month +
+        `,` +
+        date.getFullYear() +
+        `, 1)">8-10</span>
+                <span class="time" id = "slot2" onclick="getTimeAndDate(` +
+        i +
+        `,` +
+        month +
+        `,` +
+        date.getFullYear() +
+        `, 2)">10-12</span>
+                <span class="time" id = "slot3" onclick="getTimeAndDate(` +
+        i +
+        `,` +
+        month +
+        `,` +
+        date.getFullYear() +
+        `, 3)">12-2</span>
+                <span class="time" id = "slot4" onclick="getTimeAndDate(` +
+        i +
+        `,` +
+        month +
+        `,` +
+        date.getFullYear() +
+        `, 4)">2-4</span>
+                <span class="time" id = "slot5" onclick="getTimeAndDate(` +
+        i +
+        `,` +
+        month +
+        `,` +
+        date.getFullYear() +
+        `, 5)">4-6</span>
               </div>`;
     } else {
       days +=
@@ -80,11 +110,41 @@ const renderCalendar = () => {
         <span>
                   <span class="today-t1">${i}</span>
                   <br>
-                  <span class="time" id = "slot1" onclick="getTimeAndDate(`+ i +`,`+ month +`,`+ date.getFullYear() +`,1)">8-10</span>
-                  <span class="time" id = "slot2" onclick="getTimeAndDate(`+ i +`,`+ month +`,`+ date.getFullYear() +`,2)">10-12</span>
-                  <span class="time" id = "slot3" onclick="getTimeAndDate(`+ i +`,`+ month +`,`+ date.getFullYear() +`,3)">12-2</span>
-                  <span class="time" id = "slot4" onclick="getTimeAndDate(`+ i +`,`+ month +`,`+ date.getFullYear() +`,4)">2-4</span>
-                  <span class="time" id = "slot5" onclick="getTimeAndDate(`+ i +`,`+ month +`,`+ date.getFullYear() +`,5)">4-6</span>  
+                  <span class="time" id = "slot1" onclick="getTimeAndDate(` +
+        i +
+        `,` +
+        month +
+        `,` +
+        date.getFullYear() +
+        `,1)">8-10</span>
+                  <span class="time" id = "slot2" onclick="getTimeAndDate(` +
+        i +
+        `,` +
+        month +
+        `,` +
+        date.getFullYear() +
+        `,2)">10-12</span>
+                  <span class="time" id = "slot3" onclick="getTimeAndDate(` +
+        i +
+        `,` +
+        month +
+        `,` +
+        date.getFullYear() +
+        `,3)">12-2</span>
+                  <span class="time" id = "slot4" onclick="getTimeAndDate(` +
+        i +
+        `,` +
+        month +
+        `,` +
+        date.getFullYear() +
+        `,4)">2-4</span>
+                  <span class="time" id = "slot5" onclick="getTimeAndDate(` +
+        i +
+        `,` +
+        month +
+        `,` +
+        date.getFullYear() +
+        `,5)">4-6</span>  
               </div>`;
     }
   }
@@ -113,11 +173,17 @@ renderCalendar();
 // get time and date
 function getTimeAndDate(date, month, year, t) {
   var time;
-  if(t==1 ){time = "8-10";}
-  else if(t==2){ time = "10-12";}
-  else if(t==3){ time = "12-2";}
-  else if(t==4){ time = "2-4";}
-  else if(t==5){ time = "4-6";}
+  if (t == 1) {
+    time = "8-10";
+  } else if (t == 2) {
+    time = "10-12";
+  } else if (t == 3) {
+    time = "12-2";
+  } else if (t == 4) {
+    time = "2-4";
+  } else if (t == 5) {
+    time = "4-6";
+  }
   // alert("Time: " + time + "\nDate: " + date +  "\nMonth: " + month +  "\nYear: " + year);
   // window.location("")
   document.getElementById("day").innerHTML = date;
@@ -131,6 +197,5 @@ function getTimeAndDate(date, month, year, t) {
   z.classList.remove("blurAccount");
 }
 
-  window.location =
-    "/calendar/calendarDetails/" + date + "/" + time + "/" + month + "/" + year;
-}
+window.location =
+  "/calendar/calendarDetails/" + date + "/" + time + "/" + month + "/" + year;
