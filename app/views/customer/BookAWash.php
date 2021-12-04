@@ -3,7 +3,7 @@
 include 'views/user/LoggedInHeader.php';
 $vehicles = $_SESSION['vehicles'];
 ?>
-<!-- <div class="bgImage2"> -->
+
 <link rel="stylesheet" href="/public/css/actors/customer/BookAWashCalendar.css" />
 
 <body onload="typeWriter()">
@@ -40,12 +40,12 @@ $vehicles = $_SESSION['vehicles'];
 
                 <div class="select-vehcile-box">
                     <form action="" method="post">
-                        <select name="vehicle" id="vehicle-types">
+                        <select name="vehicle" id="vehicles" onchange="getVehicle();">
                             <?php
                             $count  = 0;
                             while ($count < sizeof($_SESSION['vehicles'])) {
                                 echo "<option value='";
-                                echo $count + 1;
+                                echo $vehicles[$count]['VID'];
                                 echo "'>";
                                 echo $vehicles[$count]['VID'];
                                 echo "</option>";
@@ -62,7 +62,24 @@ $vehicles = $_SESSION['vehicles'];
                 <h3>Select your wash package</h3>
 
                 <form action="" method="post">
-                    <div class="wash-select-radio">
+                    <?php
+                    $i = 0;
+                    while ($i < sizeof($_SESSION['washpackages'])) {
+                        echo "<div class='wash-select-radio'>";
+                        echo "<input type = 'radio' name='washType' class='washType1' value='Interior Cleaning' id='";
+                        echo $i;
+                        echo "'";
+                        echo " onclick='getWashPackage(";
+                        echo $i;
+                        echo ")' >";
+                        echo "<label for = 'washType'> ";
+                        echo $_SESSION['washpackages'][$i]['Name'];
+                        echo "</label>";
+                        echo "</div>";
+                        $i = $i + 1;
+                    }
+                    ?>
+                    <!-- <div class="wash-select-radio">
                         <input type="radio" name="washType" id="interiorCleaning" class="washType1" value="Interior Cleaning" checked>
                         <label for="washType">Interior Cleaning</label>
                     </div>
@@ -75,7 +92,7 @@ $vehicles = $_SESSION['vehicles'];
                     <div class="wash-select-radio">
                         <input type="radio" name="washType" id="interior&ExteriorCleaning" class="washType1" value="Sanitization">
                         <label for="washType">Sanitization</label>
-                    </div>
+                    </div> -->
 
                 </form>
 
@@ -123,6 +140,13 @@ $vehicles = $_SESSION['vehicles'];
 
     <script src="/public/js/CustomerCalendar.js"></script>
     <script src="/public/js/CustomerBookAWash.js"></script>
+    <script>
+        var pausecontent = <?php echo json_encode($_SESSION['washpackages']); ?>;
 
+        function getWashPackage(n){
+            document.cookie = "washPackage = " + pausecontent[n]['Wash_Package_ID'] + ";  path=/";
+        }
+    </script>
 </body>
+
 <!-- </div> -->

@@ -121,7 +121,11 @@ function getTimeAndDate(date, month, year, t) {
       document.getElementById("year").innerHTML = year;
       document.getElementById("timeSlot").innerHTML = time;
 
-      document.cookie = "date = " + date;
+      document.cookie = "date = " + date + "; path=/";
+      document.cookie = "month = " + month + "; path=/";
+      document.cookie = "year =" + year + "; path=/";
+      document.cookie = "time =" + time + "; path=/";
+      
       document.getElementById("cal1").style = "display:none;";
       var z = document.getElementById("bookingContent");
       z.classList.remove("blurAccount");
@@ -133,6 +137,11 @@ function getTimeAndDate(date, month, year, t) {
     document.getElementById("month").innerHTML = month;
     document.getElementById("year").innerHTML = year;
     document.getElementById("timeSlot").innerHTML = time;
+
+    document.cookie = "date = " + date + "; path=/";
+    document.cookie = "month = " + month + "; path=/";
+    document.cookie = "year =" + year + "; path=/";
+    document.cookie = "time =" + time + "; path=/";
 
     document.getElementById("cal1").style = "display:none;";
     var z = document.getElementById("bookingContent");
