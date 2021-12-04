@@ -6,6 +6,10 @@
     display: block;
     font-size: 15px;
 }
+#adminSearchItem-manager{
+    font-size: 15px;
+    border: 2px outset #193498;
+}
 
 #Admin-equipment-teamvise1-manager,#Admin-equipment-teamvise2-manager{
     font-size: 15px;
@@ -13,12 +17,6 @@
     border-radius: 5px;
     border: 2px outset #193498;
 }
-
-#adminSearchItem-manager{
-    font-size: 15px;
-    border: 2px outset #193498;
-}
-
 
 @media only screen and (max-width: 770px){
 
