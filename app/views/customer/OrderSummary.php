@@ -80,6 +80,8 @@ include 'views/user/LoggedInHeader.php';
             <button class="bt2" id="confirmBtn" onclick="openConfirmOrder()"><a>Confirm Order</a></button>
         </div>
     </div>
+
+    <div id="test"></div>
 </div>
 <div class="addVehicleform" id="cancelPopUpId">
     <div class="forma">
@@ -109,3 +111,7 @@ include 'views/user/LoggedInHeader.php';
 </div>
 <script src="/public/js/CustomerOrderSummary.js"></script>
 <div style="min-height: 110px;"></div>
+<script>
+    let x = document.cookie
+    document.getElementById("test").innerHTML = x;
+</script>
