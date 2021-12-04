@@ -7,23 +7,21 @@
     align-items: center;
     
 }
+.backToItem-button {
+  text-decoration: none;
+  background-color: #193498;
+  padding: 7px 20px;
+  color: white;
+ /* border-radius: 15px;*/
+  font-size: 15px;
+  cursor: pointer;  
+  margin-bottom: 20px;
+}
 
-.Table-search-free-equip {
-    display: flex;
-    flex-direction: column;
-    padding: 1em;
-    align-items: center;
-    
+.backToItem-button:hover {
+  background-color: #193498;
 }
-#viewAllEquip{
-    display:none;
-    flex-direction: column;
-    padding: 1em;
-    align-items: center;
-}
-#viewAllitems{
-   
-}
+
 /*----------------------------*/
 #addNewRow {
   display: block;
@@ -122,3 +120,12 @@
   font-size: 15px;
   border: 2px outset #193498;
 }
+
+#Admin-equipment-teamvise1,#Admin-equipment-teamvise2{
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    border: 2px outset #193498;
+}
+
+
