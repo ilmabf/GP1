@@ -93,7 +93,7 @@ $teams = $_SESSION['teamDetails'];
       <div class="table-wrapper">
         <div style="display:inline-block; width: 100%;">
           <div style="float: left;">
-          <input type="button" class="edit_btn td-t1" value="<< Items" onclick="backToItem()">
+          <input type="button" class="backToItem-button" value="<< Items" onclick="backToItem()">
           </div>
 
           <div style="float: right;">
@@ -138,7 +138,7 @@ $teams = $_SESSION['teamDetails'];
       <div class="table-wrapper">
         <div style="display:inline-block; width: 100%;">
           <div style="float: left;">
-            <input type="button" class="edit_btn td-t1" value="<< Items" onclick="backToItem()">
+            <input type="button" class="backToItem-button" value="<< Items" onclick="backToItem()">
           </div>
 
           <div style="float: right;">
@@ -167,7 +167,7 @@ $teams = $_SESSION['teamDetails'];
       <div class="table-wrapper">
         <div style="display:inline-block; width: 100%;">
           <div style="float: left;">
-            <input type="button" class="edit_btn td-t1" value="<< Items" onclick="backToItem()">
+            <input type="button" class="backToItem-button" value="<< Items" onclick="backToItem()">
           </div>
 
           <div style="float: right;">
@@ -195,7 +195,7 @@ $teams = $_SESSION['teamDetails'];
       <div class="table-wrapper">
         <div style="display:inline-block; width: 100%;">
           <div style="float: left;">
-            <input type="button" class="edit_btn td-t1" value="<< Equipment" onclick="backToEquipment()">
+            <input type="button" class="backToItem-button" value="<< Equipment" onclick="backToEquipment()">
           </div>
 
           <div style="float: right;">
@@ -228,11 +228,11 @@ $teams = $_SESSION['teamDetails'];
 <script>
   var items = <?php echo json_encode($_SESSION['itemDetails']); ?>;
   var equipment = <?php echo json_encode($_SESSION['equipmentDetails']); ?>;
-
+  var itemID ;//for filter team vise from equipment table
   function viewAllEquipment(n) {
     var i = 0;
     var EquipmentToDisplay = [];
-    
+    itemID = n;//for filter team vise from equipment table(team vise 2)
     for (i = 0; i < equipment.length; i++) {
       // console.log(equipment[i]);
       if (equipment[i]['Item_Id'] == n) {
@@ -292,14 +292,14 @@ $teams = $_SESSION['teamDetails'];
 
         "<td>" + EquipmentToDisplay[j]['Equipment_ID'] + "</td>" +
         "<td style='text-align:left' class='td-t1'> " + EquipmentToDisplay[j]['Name'] +" </td>"+
-      "<td class='td-t1' style='text-align:right'>"+ EquipmentToDisplay[j]['Price'] +".00</td>" +
-      "<td class='td-t1'>"+EquipmentToDisplay[j]['Date_Acquired'] + "</td>" +
-      "<td id='assignedTeam_row" + j + "' class='td-t1' style='text-align:right'>"+ EquipmentToDisplay[j]['Team'] + "</td>" +
-      "<td> <input type='button' id='edit_equip_btn" + j + "' class='edit_btn td-t1' value='Assign a Team' onclick='editEquipment("+ j +")'>" +
+        "<td class='td-t1' style='text-align:right'>"+ EquipmentToDisplay[j]['Price'] +".00</td>" +
+        "<td class='td-t1'>"+EquipmentToDisplay[j]['Date_Acquired'] + "</td>" +
+        "<td id='assignedTeam_row" + j + "' class='td-t1' style='text-align:right'>"+ EquipmentToDisplay[j]['Team'] + "</td>" +
+        "<td> <input type='button' id='edit_equip_btn" + j + "' class='edit_btn td-t1' value='Assign a Team' onclick='editEquipment("+ j +")'>" +
         "<a href='' id='editLink" + j + "'><input style='margin: auto;' type='submit' id='save_equip_btn" + j + "' class='save_btn' value='Save' onclick='saveEquipment(" + EquipmentToDisplay[j]['Equipment_ID'] + "," + j + ")'></a>"+
         "</td> <td><a href='/service/deleteEquipment/" + EquipmentToDisplay[j]['Equipment_ID'] + "'> <input type='button' class='del_btn td-t1' value='Delete' onclick='deleteEquipment(" + j + ")'></a></td>" +
         "</tr>" +
-      "</tbody>";
+        "</tbody>";
     }
     var x = document.getElementById("viewAllitems");
     x.style.display = "none";
@@ -314,10 +314,9 @@ function backToItem(){
     document.getElementById("viewFreeEquip").style = "display:none;";
     document.getElementById("viewAssignedEquip").style = "display:none;";
     document.getElementById("Equipment").innerHTML = '';
-    document.getElementById("freeEquipment").innerHTML = '';
+    document.getElementById("FreeEquipment").innerHTML = '';
     document.getElementById("teamAssignedEquipment").innerHTML = '';
-    
-       
+           
 }
 //filter team vise (from item table)
   function getTeamvise1(){
@@ -343,14 +342,14 @@ function backToItem(){
 
         "<td>" + EquipmentToDisplay[j]['Equipment_ID'] + "</td>" +
         "<td style='text-align:left' class='td-t1'> " + EquipmentToDisplay[j]['Name'] +" </td>"+
-      "<td class='td-t1' style='text-align:right'>"+ EquipmentToDisplay[j]['Price'] +".00</td>" +
-      "<td class='td-t1'>"+EquipmentToDisplay[j]['Date_Acquired'] + "</td>" +
-      "<td id='assignedTeam_row" + j + "' class='td-t1' style='text-align:right'>"+ EquipmentToDisplay[j]['Team'] + "</td>" +
-      "<td> <input type='button' id='edit_equip_btn" + j + "' class='edit_btn td-t1' value='Assign a Team' onclick='editEquipment("+ j +")'>" +
+        "<td class='td-t1' style='text-align:right'>"+ EquipmentToDisplay[j]['Price'] +".00</td>" +
+        "<td class='td-t1'>"+EquipmentToDisplay[j]['Date_Acquired'] + "</td>" +
+        "<td id='assignedTeam_row" + j + "' class='td-t1' style='text-align:right'>"+ EquipmentToDisplay[j]['Team'] + "</td>" +
+        "<td> <input type='button' id='edit_equip_btn" + j + "' class='edit_btn td-t1' value='Assign a Team' onclick='editEquipment("+ j +")'>" +
         "<a href='' id='editLink" + j + "'><input style='margin: auto;' type='submit' id='save_equip_btn" + j + "' class='save_btn' value='Save' onclick='saveEquipment(" + EquipmentToDisplay[j]['Equipment_ID'] + "," + j + ")'></a>"+
         "</td> <td><a href='/service/deleteEquipment/" + EquipmentToDisplay[j]['Equipment_ID'] + "'> <input type='button' class='del_btn td-t1' value='Delete' onclick='deleteEquipment(" + j + ")'></a></td>" +
         "</tr>" +
-      "</tbody>";
+        "</tbody>";
     }
     var x = document.getElementById("viewAllitems");
     x.style.display = "none";
@@ -364,7 +363,7 @@ function backToItem(){
     var EquipmentToDisplay = [];
     
     for (i = 0; i < equipment.length; i++) {
-      if (equipment[i]['Team'] == x ) {
+      if (equipment[i]['Team'] == x && equipment[i]['Item_Id'] == itemID) {
         var TempEq = [];
         TempEq['Equipment_ID'] = equipment[i]['Equipment_ID'];
         TempEq['Name'] = equipment[i]['Name'];
@@ -381,24 +380,24 @@ function backToItem(){
 
         "<td>" + EquipmentToDisplay[j]['Equipment_ID'] + "</td>" +
         "<td style='text-align:left' class='td-t1'> " + EquipmentToDisplay[j]['Name'] +" </td>"+
-      "<td class='td-t1' style='text-align:right'>"+ EquipmentToDisplay[j]['Price'] +".00</td>" +
-      "<td class='td-t1'>"+EquipmentToDisplay[j]['Date_Acquired'] + "</td>" +
-      "<td id='assignedTeam_row" + j + "' class='td-t1' style='text-align:right'>"+ EquipmentToDisplay[j]['Team'] + "</td>" +
-      "<td> <input type='button' id='edit_equip_btn" + j + "' class='edit_btn td-t1' value='Assign a Team' onclick='editEquipment("+ j +")'>" +
+        "<td class='td-t1' style='text-align:right'>"+ EquipmentToDisplay[j]['Price'] +".00</td>" +
+        "<td class='td-t1'>"+EquipmentToDisplay[j]['Date_Acquired'] + "</td>" +
+        "<td id='assignedTeam_row" + j + "' class='td-t1' style='text-align:right'>"+ EquipmentToDisplay[j]['Team'] + "</td>" +
+        "<td> <input type='button' id='edit_equip_btn" + j + "' class='edit_btn td-t1' value='Assign a Team' onclick='editEquipment("+ j +")'>" +
         "<a href='' id='editLink" + j + "'><input style='margin: auto;' type='submit' id='save_equip_btn" + j + "' class='save_btn' value='Save' onclick='saveEquipment(" + EquipmentToDisplay[j]['Equipment_ID'] + "," + j + ")'></a>"+
         "</td> <td><a href='/service/deleteEquipment/" + EquipmentToDisplay[j]['Equipment_ID'] + "'> <input type='button' class='del_btn td-t1' value='Delete' onclick='deleteEquipment(" + j + ")'></a></td>" +
         "</tr>" +
-      "</tbody>";
+        "</tbody>";
     }
-   var y = document.getElementById("viewAllequip");
+    var y = document.getElementById("viewAllequip");
     y.style.display = "none";
     document.getElementById("viewAssignedItems").style = "display:flex;";
     
 }
 //back to equipment table
 function backToEquipment(){   
-    document.getElementById("viewAllequip").style = "display:flex;";    
-    document.getElementById("viewAssignedItems").style = "display:none;";  
+   document.getElementById("viewAllequip").style = "display:flex;";    
+   document.getElementById("viewAssignedItems").style = "display:none;";  
    document.getElementById("teamAssignedItem").innerHTML = '';     
 }
 </script>

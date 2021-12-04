@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\app",
+    "\\app\\models",
     "\\app\\views",
-    "\\app\\views\\admin",
-    "\\app\\views\\customer",
+    "\\app\\views\\manager",
     "\\public",
     "\\public\\css",
     "\\public\\css\\actors",
-    "\\public\\css\\actors\\admin",
-    "\\public\\js"
+    "\\public\\css\\actors\\manager",
+    "\\public\\css\\components"
   ],
-  "SelectedNode": "\\public\\js\\adminManageEquipment.js",
+  "SelectedNode": "\\public\\css\\actors\\manager\\EquipmentDetails.css",
   "PreviewInSolutionExplorer": false
 }

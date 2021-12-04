@@ -1,4 +1,4 @@
-#managerSearchEquipment, #managerSearchEmployee{
+#adminSearchItem-manager, #managerSearchEmployee{
     padding: 10px 10px;
     border-color: #193498;
     border-radius: 5px;
@@ -7,14 +7,14 @@
     font-size: 15px;
 }
 
-#Manager-AssignedEquip-TeamTypes{
+#Admin-equipment-teamvise1-manager,#Admin-equipment-teamvise2-manager{
     font-size: 15px;
     font-weight: 600;
     border-radius: 5px;
     border: 2px outset #193498;
 }
 
-#managerSearchEquipment{
+#adminSearchItem-manager{
     font-size: 15px;
     border: 2px outset #193498;
 }
