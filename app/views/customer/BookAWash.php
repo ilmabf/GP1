@@ -1,6 +1,7 @@
 <?php
 
 include 'views/user/LoggedInHeader.php';
+$vehicles = $_SESSION['vehicles'];
 ?>
 <!-- <div class="bgImage2"> -->
 <link rel="stylesheet" href="/public/css/actors/customer/BookAWashCalendar.css" />
@@ -40,10 +41,17 @@ include 'views/user/LoggedInHeader.php';
                 <div class="select-vehcile-box">
                     <form action="" method="post">
                         <select name="vehicle" id="vehicle-types">
-                            <option value="JQ - 4323">JQ - 4323</option>
-                            <option value="AS - 4256">AS - 4256</option>
-                            <option value="BH - 8975">BH - 8975</option>
-                            <option value="AZ - 4623">AZ - 4623</option>
+                            <?php
+                            $count  = 0;
+                            while ($count < sizeof($_SESSION['vehicles'])) {
+                                echo "<option value='";
+                                echo $count + 1;
+                                echo "'>";
+                                echo $vehicles[$count]['VID'];
+                                echo "</option>";
+                                $count = $count + 1;
+                            }
+                            ?>
                         </select>
                     </form>
                 </div>
