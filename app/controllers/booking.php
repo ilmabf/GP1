@@ -17,6 +17,7 @@ class Booking extends Controller
     function details()
     {
         $_SESSION['washpackages'] = $this->model->getWashPackage();
+        $_SESSION['servicePrice'] = $this->model->getServicePrice();
         // $_SESSION['booked'] = $this->model->getBookedDates();
         $this->view->render('customer/BookAWash');
     }

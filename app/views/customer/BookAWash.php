@@ -100,7 +100,7 @@ $vehicles = $_SESSION['vehicles'];
         </div>
         <div id="dd"></div>
         <div class="next-pg">
-            <span class="priceBox">Rs 1000</span>
+            <span class="priceBox" id = "priceValue"></span>
             <button class="next-button">
 
                 <a href="/booking/location" style="color: white;">Next</a></button>
@@ -142,10 +142,38 @@ $vehicles = $_SESSION['vehicles'];
     <script src="/public/js/CustomerBookAWash.js"></script>
     <script>
         var pausecontent = <?php echo json_encode($_SESSION['washpackages']); ?>;
+        var vehicles = <?php echo json_encode($_SESSION['vehicles']); ?>;
+        var prices = <?php echo json_encode($_SESSION['servicePrice']); ?>;
+
+        function getType(x){
+            var i = 0;
+            var type = "";
+            for(i=0;i<vehicles.length; i++){
+                if(vehicles[i]['VID'] == x){
+                    type = vehicles[i]['Type'];
+                }
+            }
+            return type;
+        }
 
         function getWashPackage(n){
             document.cookie = "washPackage = " + pausecontent[n]['Wash_Package_ID'] + ";  path=/";
+            var x = document.getElementById("vehicles").value;
+            var vehicleType = getType(x);
+            var washPackage = pausecontent[n]['Wash_Package_ID'];
+            var price = getPrice(vehicleType, washPackage);
+            document.getElementById("priceValue").innerHTML = "Rs. " + price;
         }
+
+        function getPrice(type, package){
+            var i = 0; 
+            for(i=0;i<prices.length;i++){
+                if(prices[i][0] == package && prices[i][1] == type){
+                    return prices[i][2];
+                }
+            }
+        }
+
     </script>
 </body>
 

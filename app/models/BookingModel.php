@@ -13,4 +13,9 @@ class BookingModel extends Model
         $result = $this->db->select("*", "wash_package", "Null");
         return $result;
     }
+
+    function getServicePrice(){
+        $result = $this->db->select("*", "wash_package_vehicle_category", "Null");
+        return $result;
+    }
 }

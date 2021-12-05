@@ -6,7 +6,7 @@ function searchLocation() {
 
 function saveLocation() {
   var address = customerAddress;
-  if (document.getElementById("typedAddress") != "") {
+  if (document.getElementById("typedAddress").value != "") {
     address = document.getElementById("typedAddress").value;
     address = address.replace(/ /g, "_");
   }
