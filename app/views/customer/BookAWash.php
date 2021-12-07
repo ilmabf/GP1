@@ -2,6 +2,7 @@
 
 include 'views/user/LoggedInHeader.php';
 $vehicles = $_SESSION['vehicles'];
+$booked = $_SESSION['booked'];
 ?>
 <!-- <div class="bgImage2"> -->
 <link rel="stylesheet" href="/public/css/actors/customer/BookAWashCalendar.css" />
@@ -115,16 +116,243 @@ $vehicles = $_SESSION['vehicles'];
             </div>
             <div class="days"></div>
         </div>
-        <!-- <div class="button-calendar">
-            <button class="bt2">
 
-                <a href="/booking/details" style="color: white; text-decoration: none;">Next</a></button>
-
-        </div> -->
     </div>
 
     <script src="/public/js/CustomerCalendar.js"></script>
     <script src="/public/js/CustomerBookAWash.js"></script>
+    <script type="text/javascript">
+        const date = new Date();
+        var h, i, j, z, a, flag1, flag2;
+
+        flag1 = 0;
+        flag2 = 0;
+
+        var months = [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December",
+        ];
+
+        const renderCalendar = () => {
+            date.setDate(1);
+
+            const monthDays = document.querySelector(".days");
+
+            const lastDay = new Date(
+                date.getFullYear(),
+                date.getMonth() + 1,
+                0
+            ).getDate();
+
+            const prevLastDay = new Date(
+                date.getFullYear(),
+                date.getMonth(),
+                0
+            ).getDate();
+
+            const firstDayIndex = date.getDay();
+
+            const lastDayIndex = new Date(
+                date.getFullYear(),
+                date.getMonth() + 1,
+                0
+            ).getDay();
+
+            const nextDays = 7 - lastDayIndex - 1;
+
+            document.querySelector(".date h1").innerHTML = months[date.getMonth()];
+
+            document.querySelector(".date p").innerHTML = new Date().toDateString();
+
+            var days = "";
+
+            for (var x = firstDayIndex; x > 0; x--) {
+                h = prevLastDay - x + 1;
+                days += `<div class="prev-date">
+                
+              </div>`;
+
+            }
+
+            var month = date.getMonth() + 1;
+            var monthStr = month.toString();
+
+            var booked = <?php echo json_encode($booked); ?>;
+
+            var timeSlotsArr = ["8-10", "10-12", "12-2", "2-4", "4-6"];
+
+            for (i = 1; i <= lastDay; i++) {
+                if (
+                    i === new Date().getDate() &&
+                    date.getMonth() === new Date().getMonth()
+                ) {
+                    days += `<div class="today">`;
+                    for (a = 1; a <= 5; a++) {
+                        for (var key in booked) {
+                            // split the key by '-'
+                            var keyArr = key.split("-");
+                            // turn the keyArr values to string
+
+                            if (keyArr[0] === date.getFullYear().toString() && keyArr[1] === monthStr && keyArr[2] === i.toString() && timeSlotsArr[a - 1] === booked[key]) {
+                                days +=
+                                    `
+                                            <span class="today-1">${i}</span>
+                                            <br>
+                                            <span class="time-red" id = "slot1" onclick="getTimeAndDate(` +
+                                    i +
+                                    `,` +
+                                    month +
+                                    `,` +
+                                    date.getFullYear() +
+                                    `, 1)">${booked[key]}</span> 
+                                        </div>`;
+                                flag1 = 1;
+
+                            }
+                        }
+
+                        if (flag1 == 0) {
+                            days +=
+                                `
+                                            <span class="today-1">${i}</span>
+                                            <br>
+                                            <span class="time-green" id = "slot1" onclick="getTimeAndDate(` +
+                                i +
+                                `,` +
+                                month +
+                                `,` +
+                                date.getFullYear() +
+                                `, 1)">${timeSlotsArr[a - 1]}</span> 
+                                        </div>`;
+
+                        }
+                    }
+
+                } else {
+                    for (a = 1; a <= 5; a++) {
+                        days += '<div>';
+                        for (var key in booked) {
+                            // split the key by '-'
+                            var keyArr = key.split("-");
+                            // turn the keyArr values to string
+
+                            if (keyArr[0] === date.getFullYear().toString() && keyArr[1] === monthStr && keyArr[2] === i.toString() && timeSlotsArr[a - 1] === booked[key]) {
+                                days +=
+                                    `
+                                            <span class="today-2">${i}</span>
+                                            <br>
+                                            <span class="time-red" id = "slot1" onclick="getTimeAndDate(` +
+                                    i +
+                                    `,` +
+                                    month +
+                                    `,` +
+                                    date.getFullYear() +
+                                    `, 1)">${booked[key]}</span> 
+                                        </div>`;
+
+                                flag2 = 1;
+                            }
+                        }
+
+                        if (flag2 == 0) {
+                            days +=
+                                `
+
+                                            <span class="today-2">${i}</span>
+                                            <br>
+                                            <span class="time-green" id = "slot1" onclick="getTimeAndDate(` +
+                                i +
+                                `,` +
+                                month +
+                                `,` +
+                                date.getFullYear() +
+                                `, 1)">${timeSlotsArr[a - 1]}</span> 
+                                        </div>`;
+                        }
+                    }
+                }
+            }
+
+            for (j = 1; j <= nextDays; j++) {
+                days += `<div class="next-date">
+                
+            </div>`;
+                // days += timeSlotsHTML;
+                monthDays.innerHTML = days;
+            }
+        };
+
+        document.querySelector(".prev").addEventListener("click", () => {
+            date.setMonth(date.getMonth() - 1);
+            renderCalendar();
+        });
+
+        document.querySelector(".next").addEventListener("click", () => {
+            date.setMonth(date.getMonth() + 1);
+            renderCalendar();
+        });
+
+        renderCalendar();
+
+        // get time and date
+        function getTimeAndDate(date, month, year, t) {
+            var time;
+            if (t == 1) {
+                time = "8-10";
+            } else if (t == 2) {
+                time = "10-12";
+            } else if (t == 3) {
+                time = "12-2";
+            } else if (t == 4) {
+                time = "2-4";
+            } else if (t == 5) {
+                time = "4-6";
+            }
+
+            if (
+                date == new Date().getDate() &&
+                month == new Date().getMonth() &&
+                year == new Date().getFullYear
+            ) {
+                if (parseInt(time.charAt(0)) > new Date().getHours()) {
+                    document.getElementById("day").innerHTML = date;
+                    document.getElementById("month").innerHTML = month;
+                    document.getElementById("year").innerHTML = year;
+                    document.getElementById("timeSlot").innerHTML = time;
+
+                    document.cookie = "date = " + date;
+                    document.getElementById("cal1").style = "display:none;";
+                    var z = document.getElementById("bookingContent");
+                    z.classList.remove("blurAccount");
+                }
+            } else if (date > new Date().getDate()) {
+                document.getElementById("day").innerHTML = date;
+                document.getElementById("month").innerHTML = month;
+                document.getElementById("year").innerHTML = year;
+                document.getElementById("timeSlot").innerHTML = time;
+
+                document.getElementById("cal1").style = "display:none;";
+                var z = document.getElementById("bookingContent");
+                z.classList.remove("blurAccount");
+            }
+        }
+
+
+        // console.log("Hello");
+
+        window.location =
+            "/calendar/calendarDetails/" + date + "/" + time + "/" + month + "/" + year;
+    </script>
 
 </body>
 <!-- </div> -->

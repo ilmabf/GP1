@@ -1,5 +1,6 @@
 var i = 0;
-var txt = 'Pick a date, time & location. WandiWash is ready to wash your vehicle! We are Eco Friendly!';
+var txt =
+  "Pick a date, time & location. WandiWash is ready to wash your vehicle! We are Eco Friendly!";
 var speed = 50;
 
 function typeWriter() {
@@ -8,7 +9,7 @@ function typeWriter() {
     i++;
     setTimeout(typeWriter, speed);
   }
-} 
+}
 
 // const btnsTip = document.querySelectorAll(".input");
 // let activeBtn = null;
@@ -25,10 +26,8 @@ function typeWriter() {
 //   });
 // });
 
-
-function viewCalendar(){
+function viewCalendar() {
   document.getElementById("cal1").style = "display:block;";
   var z = document.getElementById("bookingContent");
   z.classList.add("blurAccount");
 }
-

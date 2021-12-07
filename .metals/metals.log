@@ -95,3 +95,91 @@ INFO: Unsupported notification method: $/setTrace
 [0m2021.12.03 20:07:36 INFO  time: initialize in 2.58s[0m
 [0m2021.12.03 20:07:38 WARN  Build server is not auto-connectable.[0m
 [0m2021.12.03 20:07:38 WARN  no build tool detected in workspace 'C:\xampp\htdocs\wandiwash'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.12.03 21:37:19 INFO  Started: Metals version 0.10.9 in workspace 'C:\xampp\htdocs\wandiwash' for client Visual Studio Code 1.62.3.[0m
+[0m2021.12.03 21:37:24 INFO  time: initialize in 5.45s[0m
+[0m2021.12.03 21:37:30 WARN  Build server is not auto-connectable.[0m
+[0m2021.12.03 21:37:30 WARN  no build tool detected in workspace 'C:\xampp\htdocs\wandiwash'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+Dec 03, 2021 10:08:18 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Dec 03, 2021 10:52:41 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Dec 03, 2021 10:54:20 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+[0m2021.12.03 23:58:56 INFO  shutting down Metals[0m
+[0m2021.12.04 09:57:05 INFO  Started: Metals version 0.10.9 in workspace 'C:\xampp\htdocs\wandiwash' for client Visual Studio Code 1.62.3.[0m
+[0m2021.12.04 09:57:10 INFO  time: initialize in 4.91s[0m
+[0m2021.12.04 09:57:11 WARN  Build server is not auto-connectable.[0m
+[0m2021.12.04 09:57:11 WARN  no build tool detected in workspace 'C:\xampp\htdocs\wandiwash'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.12.04 11:38:36 INFO  Started: Metals version 0.10.9 in workspace 'C:\xampp\htdocs\wandiwash' for client Visual Studio Code 1.62.3.[0m
+[0m2021.12.04 11:38:38 INFO  time: initialize in 2.35s[0m
+[0m2021.12.04 11:38:44 WARN  Build server is not auto-connectable.[0m
+[0m2021.12.04 11:38:44 WARN  no build tool detected in workspace 'C:\xampp\htdocs\wandiwash'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+Dec 04, 2021 12:35:42 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Dec 04, 2021 12:35:45 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Dec 04, 2021 12:37:15 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Dec 04, 2021 12:37:16 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Dec 04, 2021 5:05:21 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+[0m2021.12.05 00:10:27 INFO  Started: Metals version 0.10.9 in workspace 'C:\xampp\htdocs\wandiwash' for client Visual Studio Code 1.62.3.[0m
+[0m2021.12.05 00:10:30 INFO  time: initialize in 2.65s[0m
+[0m2021.12.05 00:10:35 WARN  Build server is not auto-connectable.[0m
+[0m2021.12.05 00:10:35 WARN  no build tool detected in workspace 'C:\xampp\htdocs\wandiwash'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.12.05 00:36:00 INFO  shutting down Metals[0m
+[0m2021.12.05 11:08:04 INFO  Started: Metals version 0.10.9 in workspace 'C:\xampp\htdocs\wandiwash' for client Visual Studio Code 1.62.3.[0m
+[0m2021.12.05 11:08:06 INFO  time: initialize in 2.28s[0m
+[0m2021.12.05 11:08:07 WARN  Build server is not auto-connectable.[0m
+[0m2021.12.05 11:08:07 WARN  no build tool detected in workspace 'C:\xampp\htdocs\wandiwash'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.12.05 16:25:53 INFO  Started: Metals version 0.10.9 in workspace 'C:\xampp\htdocs\wandiwash' for client Visual Studio Code 1.62.3.[0m
+[0m2021.12.05 16:25:58 INFO  time: initialize in 4.65s[0m
+[0m2021.12.05 16:26:03 WARN  Build server is not auto-connectable.[0m
+[0m2021.12.05 16:26:03 WARN  no build tool detected in workspace 'C:\xampp\htdocs\wandiwash'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.12.05 18:15:03 INFO  Started: Metals version 0.10.9 in workspace 'C:\xampp\htdocs\wandiwash' for client Visual Studio Code 1.62.3.[0m
+[0m2021.12.05 18:15:06 INFO  time: initialize in 3.15s[0m
+[0m2021.12.05 18:15:11 WARN  Build server is not auto-connectable.[0m
+[0m2021.12.05 18:15:11 WARN  no build tool detected in workspace 'C:\xampp\htdocs\wandiwash'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.12.05 21:12:45 INFO  Started: Metals version 0.10.9 in workspace 'C:\xampp\htdocs\wandiwash' for client Visual Studio Code 1.62.3.[0m
+[0m2021.12.05 21:12:48 INFO  time: initialize in 2.32s[0m
+[0m2021.12.05 21:12:53 WARN  Build server is not auto-connectable.[0m
+[0m2021.12.05 21:12:53 WARN  no build tool detected in workspace 'C:\xampp\htdocs\wandiwash'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.12.05 22:33:28 INFO  shutting down Metals[0m
+[0m2021.12.06 10:49:42 INFO  Started: Metals version 0.10.9 in workspace 'C:\xampp\htdocs\wandiwash' for client Visual Studio Code 1.62.3.[0m
+[0m2021.12.06 10:49:44 INFO  time: initialize in 2.3s[0m
+[0m2021.12.06 10:49:45 WARN  Build server is not auto-connectable.[0m
+[0m2021.12.06 10:49:45 WARN  no build tool detected in workspace 'C:\xampp\htdocs\wandiwash'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.12.06 14:34:44 INFO  Started: Metals version 0.10.9 in workspace 'C:\xampp\htdocs\wandiwash' for client Visual Studio Code 1.62.3.[0m
+[0m2021.12.06 14:34:46 INFO  time: initialize in 1.81s[0m
+[0m2021.12.06 14:34:51 WARN  Build server is not auto-connectable.[0m
+[0m2021.12.06 14:34:51 WARN  no build tool detected in workspace 'C:\xampp\htdocs\wandiwash'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.12.07 12:57:46 INFO  Started: Metals version 0.10.9 in workspace 'C:\xampp\htdocs\wandiwash' for client Visual Studio Code 1.62.3.[0m
+[0m2021.12.07 12:57:49 INFO  time: initialize in 3s[0m
+[0m2021.12.07 12:57:55 WARN  Build server is not auto-connectable.[0m
+[0m2021.12.07 12:57:55 WARN  no build tool detected in workspace 'C:\xampp\htdocs\wandiwash'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.12.07 14:35:44 INFO  Started: Metals version 0.10.9 in workspace 'C:\xampp\htdocs\wandiwash' for client Visual Studio Code 1.62.3.[0m
+[0m2021.12.07 14:35:47 INFO  time: initialize in 2.89s[0m
+[0m2021.12.07 14:35:52 WARN  Build server is not auto-connectable.[0m
+[0m2021.12.07 14:35:52 WARN  no build tool detected in workspace 'C:\xampp\htdocs\wandiwash'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+Dec 07, 2021 5:47:17 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Dec 07, 2021 5:48:23 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Dec 07, 2021 6:45:37 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Dec 07, 2021 6:47:01 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Dec 07, 2021 6:48:49 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Dec 07, 2021 6:51:01 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Dec 07, 2021 7:02:51 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Dec 07, 2021 10:31:33 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+[0m2021.12.07 23:15:01 INFO  Started: Metals version 0.10.9 in workspace 'C:\xampp\htdocs\wandiwash' for client Visual Studio Code 1.62.3.[0m
+[0m2021.12.07 23:15:05 INFO  time: initialize in 3.52s[0m
+[0m2021.12.07 23:15:11 WARN  Build server is not auto-connectable.[0m
+[0m2021.12.07 23:15:11 WARN  no build tool detected in workspace 'C:\xampp\htdocs\wandiwash'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.12.07 23:41:20 INFO  shutting down Metals[0m

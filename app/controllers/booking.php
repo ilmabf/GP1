@@ -16,7 +16,20 @@ class Booking extends Controller
 
     function details()
     {
-        // $_SESSION['booked'] = $this->model->getBookedDates();
+        $_SESSION['booked'] = $this->model->getBookedDates();
+        // print_r($_SESSION['booked']);
+        // loop through booked array and print each key value pair
+        // foreach ($_SESSION['booked'] as $key => $value) {
+        //     echo $key . ": " . $value . "<br>";
+        // }
+
+        // foreach ($_SESSION['booked'] as $key => $value) {
+        //     echo $key . ": " . $value . "<br>";
+        // }
+
+
+
+
         $this->view->render('customer/BookAWash');
     }
 
@@ -84,3 +97,6 @@ class Booking extends Controller
         }
     }
 }
+
+// what is json_encode?
+// https://www.php.net/manual/en/function.json-encode.php

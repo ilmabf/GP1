@@ -95,7 +95,7 @@ html {
 }
 
 .days div:hover:not(.today) {
-  background-color: #141414;
+  background-color: #747272;
   border: 0.2rem solid #777;
 }
 
@@ -108,8 +108,17 @@ html {
   background-color: #120fc7;
 }
 
-.time {
+.time-green {
   background-color: green;
+  border-radius: 5px;
+  margin: 4rem 0.4rem 4rem 0.4rem;
+  padding: 0rem 0.2rem 0rem 0.2rem;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.time-red {
+  background-color: red;
   border-radius: 5px;
   margin: 4rem 0.4rem 4rem 0.4rem;
   padding: 0rem 0.2rem 0rem 0.2rem;
