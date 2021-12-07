@@ -96,7 +96,7 @@ class ServiceModel extends Model
                 return true;
             } else print_r($result);
 
-        }else if($current_team != NULL && $value != NULL || $current_team == NULL && $value == NULL){
+        }else if(($current_team != NULL && $value != NULL) || ($current_team == NULL && $value == NULL)){
             $result = $this->db->update("equipment", $column, $param, $value, ':eid', $eid,"WHERE (Equipment_ID = :eid);");
 
             if ($result == "Success") {
