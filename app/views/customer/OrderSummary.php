@@ -16,20 +16,20 @@ include 'views/user/LoggedInHeader.php';
         <div class="boxOrderSum">
             <div class="res">
                 <div class="orderitem">Date</div>
-                <div class="orderitemx">2021 / 10 / 20</div>
+                <div class="orderitemx" id = "date">2021 / 10 / 20</div>
                 <div class="orderitem2"><button class="changebutton"><a href="/booking/details" style="color:white;">Change</a></button></div>
 
             </div>
             <div class="res">
-                <div class="orderitem">Time</div>
-                <div class="orderitemx">8 am - 10 am</div>
+                <div class="orderitem" style="margin-right: 0px;">Time</div>
+                <div class="orderitemx" id = "time">8 am - 10 am</div>
                 <div class="orderitem2"><button class="changebutton"><a href="/booking/details" style="color:white;">Change</a></button></div>
 
             </div>
 
             <div class="res">
-                <div class="orderitem">Location</div>
-                <div class="orderitemx">ABC Road Kandy</div>
+                <div class="orderitem" style="margin-right: 0px;">Location</div>
+                <div class="orderitemx" id = "address" style="font-size: small;">ABC Road Kandy</div>
                 <div class="orderitem2"><button class="changebutton"><a href="/booking/location" style="color:white;">Change</a></button></div>
 
             </div>
@@ -41,13 +41,13 @@ include 'views/user/LoggedInHeader.php';
             <div class="res">
 
                 <div class="orderitem">Vehicle</div>
-                <div class="orderitemx">AD - 2315</div>
+                <div class="orderitemx" id = "vehicle">AD - 2315</div>
                 <div class="orderitem2"><button class="changebutton"><a href="/booking/details" style="color:white;">Change</a></button></div>
             </div>
 
             <div class="res">
                 <div class="orderitem">Wash Type</div>
-                <div class="orderitemx">Interior Cleaning</div>
+                <div class="orderitemx" id = "washPackage">Interior Cleaning</div>
                 <div class="orderitem2"><button class="changebutton"><a href="/booking/details" style="color:white;">Change</a></button></div>
 
             </div>
@@ -58,7 +58,7 @@ include 'views/user/LoggedInHeader.php';
             <br>
             <div class="res">
                 <div class="orderitem">Wash Price Rs.</div>
-                <div class="orderitemx">1000/-</div>
+                <div class="orderitemx" id = "price">1000/-</div>
 
             </div>
             <div class="res">
@@ -114,4 +114,41 @@ include 'views/user/LoggedInHeader.php';
 <script>
     let x = document.cookie
     document.getElementById("test").innerHTML = x;
+
+    var cookieArray = document.cookie.split(";");
+    var i =0; 
+    for( i =0;i<cookieArray.length; i++){
+        cookieArray[i] = cookieArray[i].trim();
+        if(cookieArray[i].substring(0,4) === "date"){
+            var date = cookieArray[i].substring(5);
+        }
+        if(cookieArray[i].substring(0,5) === "month"){
+            var month = cookieArray[i].substring(6);
+        }
+        if(cookieArray[i].substring(0,4) === "year"){
+            var year = cookieArray[i].substring(5);
+        }
+        if(cookieArray[i].substring(0,4) === "time"){
+            var time = cookieArray[i].substring(5);
+        }
+        if(cookieArray[i].substring(0,7) === "address"){
+            var address = cookieArray[i].substring(8);
+        }
+        if(cookieArray[i].substring(0,7) === "vehicle"){
+            var vehicle = cookieArray[i].substring(8);
+        }
+        if(cookieArray[i].substring(0,15) === "washPackageName"){
+            var washPackage = cookieArray[i].substring(16);
+        }
+        if(cookieArray[i].substring(0,5) === "price"){
+            var price = cookieArray[i].substring(6);
+        }
+    }
+    let p = price.substring(6);
+    document.getElementById("date").innerHTML = year + " / " + month + "/ " + date; 
+    document.getElementById("time").innerHTML = time + " a.m."; 
+    document.getElementById("address").innerHTML = address; 
+    document.getElementById("vehicle").innerHTML = vehicle; 
+    document.getElementById("washPackage").innerHTML = washPackage; 
+    document.getElementById("price").innerHTML = "Rs. " + price + ".00";
 </script>

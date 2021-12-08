@@ -36,7 +36,7 @@ include 'views/user/LoggedInHeader.php';
 </div>
 
 <div class="next-pg" style="margin-right: 15%;">
-    <span class="priceBox2">Rs 1000</span>
+    <span class="priceBox2" id = "priceValue"></span>
     <button class="next-button"><a href="/booking/orderSummary" style="color: white; ">Next</a></button>
 </div>
 <div style="min-height: 20px;"></div>
@@ -74,6 +74,16 @@ include 'views/user/LoggedInHeader.php';
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxvVN9pPMljGjWLvUGWGisQwGUUMSOHco&callback=myMap&v=weekly"></script>
 <script async>
     initMap();
-
-
+</script>
+<script>
+    var cookieArray = document.cookie.split(";");
+    var i =0; 
+    for( i =0;i<cookieArray.length; i++){
+        cookieArray[i] = cookieArray[i].trim();
+        if(cookieArray[i].substring(0,5) === "price"){
+            var price = cookieArray[i];
+        }
+    }
+    let p = price.substring(6);
+    document.getElementById("priceValue").innerHTML = "Rs. " + p;
 </script>

@@ -158,11 +158,13 @@ $vehicles = $_SESSION['vehicles'];
 
         function getWashPackage(n){
             document.cookie = "washPackage = " + pausecontent[n]['Wash_Package_ID'] + ";  path=/";
+            document.cookie = "washPackageName = " + pausecontent[n]['Name'] + ";  path=/";
             var x = document.getElementById("vehicles").value;
             var vehicleType = getType(x);
             var washPackage = pausecontent[n]['Wash_Package_ID'];
             var price = getPrice(vehicleType, washPackage);
             document.getElementById("priceValue").innerHTML = "Rs. " + price;
+            document.cookie = "price = " + price + ";  path=/";
         }
 
         function getPrice(type, package){
