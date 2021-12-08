@@ -18,9 +18,9 @@
             <div class="month">
                 <i class="fas fa-angle-left prev"></i>
                 <div class="date">
-                    <h3>Select a date & an available time <b>( Green - available )</b></h3>
                     <h1></h1>
                     <p></p>
+                    <h3>Select an available time <b>( Green - available )</b></h3>
                 </div>
                 <i class="fas fa-angle-right next"></i>
             </div>
@@ -35,12 +35,12 @@
             </div>
             <div class="days"></div>
         </div>
-        <div class="button-calendar">
+        <!-- <div class="button-calendar">
             <button class="next-button">
 
-                <a href="/booking/details" style="color: white; text-decoration: none;">Next</a></button>
+                <a href="/booking/details" style="color: white; text-decoration: none; z-index:2;">Next</a></button>
 
-        </div>
+        </div> -->
     </div>
     <script src="/public/js/CustomerCalendar.js"></script>
 </body>

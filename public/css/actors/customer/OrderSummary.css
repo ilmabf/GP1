@@ -25,6 +25,7 @@
 .res{
     margin-top: 8px;
     margin-bottom: 11px;
+    /* padding: 14px; */
 }
 .box3{
     width: 477px;
@@ -78,11 +79,13 @@
     position: relative;
     left: -34%;
     transform: translate(95%, 4%);
+    max-width: 240px;
 }
 .orderitem2{
     color: #000000;
     position: relative;
-    left: 128%;
+    /* left: 128%; */
+    left: 163%;
     transform: translate(-14%, -81%);
 }
 
