@@ -209,30 +209,31 @@ $booked = $_SESSION['booked'];
             var timeSlotsArr = ["8-10", "10-12", "12-2", "2-4", "4-6"];
 
             for (i = 1; i <= lastDay; i++) {
+                flag1 = 0;
+                flag2 = 0;
                 if (
                     i === new Date().getDate() &&
                     date.getMonth() === new Date().getMonth()
                 ) {
-                    days += `<div class="today">`;
+                    days += `<div class="today"><span class="today-1">${i}</span><br>`;
+                    flag1 = 0;
+                    flag2 = 0;
                     for (a = 1; a <= 5; a++) {
+                        flag1 = 0;
                         for (var key in booked) {
                             // split the key by '-'
                             var keyArr = key.split("-");
                             // turn the keyArr values to string
-
                             if (keyArr[0] === date.getFullYear().toString() && keyArr[1] === monthStr && keyArr[2] === i.toString() && timeSlotsArr[a - 1] === booked[key]) {
                                 days +=
                                     `
-                                            <span class="today-1">${i}</span>
-                                            <br>
                                             <span class="time-red" id = "slot1" onclick="getTimeAndDate(` +
                                     i +
                                     `,` +
                                     month +
                                     `,` +
                                     date.getFullYear() +
-                                    `, 1)">${booked[key]}</span> 
-                                        </div>`;
+                                    `, 1)">${booked[key]}</span>`;
                                 flag1 = 1;
 
                             }
@@ -241,23 +242,23 @@ $booked = $_SESSION['booked'];
                         if (flag1 == 0) {
                             days +=
                                 `
-                                            <span class="today-1">${i}</span>
-                                            <br>
                                             <span class="time-green" id = "slot1" onclick="getTimeAndDate(` +
                                 i +
                                 `,` +
                                 month +
                                 `,` +
                                 date.getFullYear() +
-                                `, 1)">${timeSlotsArr[a - 1]}</span> 
-                                        </div>`;
+                                `, 1)">${timeSlotsArr[a - 1]}</span>`;
 
                         }
                     }
+                    days += `</div>`;
 
                 } else {
+                    days += `<div><span class="today-2">${i}</span><br>`;
                     for (a = 1; a <= 5; a++) {
-                        days += '<div>';
+                        flag2 = 0;
+                        // days += `<div>`;
                         for (var key in booked) {
                             // split the key by '-'
                             var keyArr = key.split("-");
@@ -266,16 +267,13 @@ $booked = $_SESSION['booked'];
                             if (keyArr[0] === date.getFullYear().toString() && keyArr[1] === monthStr && keyArr[2] === i.toString() && timeSlotsArr[a - 1] === booked[key]) {
                                 days +=
                                     `
-                                            <span class="today-2">${i}</span>
-                                            <br>
                                             <span class="time-red" id = "slot1" onclick="getTimeAndDate(` +
                                     i +
                                     `,` +
                                     month +
                                     `,` +
                                     date.getFullYear() +
-                                    `, 1)">${booked[key]}</span> 
-                                        </div>`;
+                                    `, 1)">${booked[key]}</span>`;
 
                                 flag2 = 1;
                             }
@@ -284,19 +282,16 @@ $booked = $_SESSION['booked'];
                         if (flag2 == 0) {
                             days +=
                                 `
-
-                                            <span class="today-2">${i}</span>
-                                            <br>
                                             <span class="time-green" id = "slot1" onclick="getTimeAndDate(` +
                                 i +
                                 `,` +
                                 month +
                                 `,` +
                                 date.getFullYear() +
-                                `, 1)">${timeSlotsArr[a - 1]}</span> 
-                                        </div>`;
+                                `, 1)">${timeSlotsArr[a - 1]}</span>`;
                         }
                     }
+                    days +=  `</div>`;
                 }
             }
 
