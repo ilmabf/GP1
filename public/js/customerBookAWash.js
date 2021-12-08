@@ -31,3 +31,10 @@ function viewCalendar() {
   var z = document.getElementById("bookingContent");
   z.classList.add("blurAccount");
 }
+
+function getVehicle() {
+  var x = document.getElementById("vehicles").value;
+  document.cookie = "vehicle =" + x + "; path=/";
+}
+
+getVehicle();

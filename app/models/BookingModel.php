@@ -30,4 +30,26 @@ class BookingModel extends Model
         }
         return $bookedDatesDict;
     }
+
+    function getWashPackage()
+    {
+        $result = $this->db->select("*", "wash_package", "Null");
+        return $result;
+    }
+
+    function getServicePrice(){
+        $result = $this->db->select("*", "wash_package_vehicle_category", "Null");
+        return $result;
+    }
+
+    public function getVehicles($uid)
+    {
+        $result = $this->db->select("*", "customer_vehicle", "WHERE User_ID = :uid ;", ':uid', $uid);
+        return $result;
+    }
+
+    function getAddress($uid){
+        $result = $this->db->select("*", "customer_location", "WHERE User_ID = :uid ;", ':uid', $uid);
+        return $result;
+    }
 }
