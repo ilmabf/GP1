@@ -48,8 +48,8 @@
   cursor: pointer;
 }
 
-.save_btn{
-display: none;
+.save_btn {
+  display: none;
   text-decoration: none;
   padding: 2px 5px;
   background: green;
@@ -58,7 +58,8 @@ display: none;
   cursor: pointer;
 }
 
-.edit_btn:hover,.save_btn:hover  {
+.edit_btn:hover,
+.save_btn:hover {
   background: rgb(12, 161, 12);
 }
 
@@ -76,7 +77,8 @@ display: none;
 }
 
 /* ------------------------- Admin-Manage Employee ----------------------------------- */
-#bts,#btStl {
+#bts,
+#btStl {
   display: none;
   margin: 20px auto;
   padding: 8px 8px;
@@ -87,16 +89,19 @@ display: none;
   cursor: pointer;
 }
 
-#addRow:hover,#addStlRow:hover {
+#addRow:hover,
+#addStlRow:hover {
   background-color: #041553;
   color: white;
 }
 
-#bts:hover,#btStl:hover {
+#bts:hover,
+#btStl:hover {
   background-color: #041553;
 }
 
-#removeBtn,#removeStlBtn {
+#removeBtn,
+#removeStlBtn {
   background-color: #7b113a;
   padding: 5px 5px;
   color: white;
@@ -105,21 +110,25 @@ display: none;
   cursor: pointer;
 }
 
-#removeBtn:hover,#removeStlBtn:hover {
+#removeBtn:hover,
+#removeStlBtn:hover {
   background-color: #500421;
 }
 
 /* -------------------------Admin- Manage Equipment ----------------------------------- */
 
-#addNewRow:hover, #bt:hover {
+#addNewRow:hover,
+#bt:hover {
   background-color: #041553;
   color: white;
 }
 
-#assignEquipment:hover, #bt:hover {
+#assignEquipment:hover,
+#bt:hover {
   background-color: #041553;
 }
-#submitButton, #saveButton {
+#submitButton,
+#saveButton {
   display: none;
   margin: 20px auto;
   padding: 8px 8px;
@@ -130,7 +139,8 @@ display: none;
   cursor: pointer;
 }
 
-#submitButton:hover, #saveButton:hover {
+#submitButton:hover,
+#saveButton:hover {
   background-color: #041553;
 }
 
@@ -163,7 +173,6 @@ display: none;
 #adminViewEquip:hover {
   background-color: #061757;
 }
-
 
 /* ------------------------- Admin-Manage Service ----------------------------------- */
 .editPriceBtn {
@@ -370,7 +379,13 @@ display: none;
 
 /* ------------------------- Completed Order ----------------------------------- */
 
-.a1,.a2,.a3,.a4,.a5,.a6,.a7 {
+.a1,
+.a2,
+.a3,
+.a4,
+.a5,
+.a6,
+.a7 {
   display: inline;
   margin-right: 15px;
 }
@@ -402,7 +417,6 @@ display: none;
 .a8:hover {
   background-color: #4e0320;
 }
-
 
 .a10 {
   float: right;

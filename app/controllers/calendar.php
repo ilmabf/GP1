@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 class Calendar extends Controller
 {
 
@@ -9,6 +9,17 @@ class Calendar extends Controller
     }
 
     //Get reservations for today
+
+    function calendarDetails($date, $time, $month, $year)
+    {
+        $_SESSION['bookingDate'] = $date;
+        $_SESSION['bookingTime'] = $time;
+        $_SESSION['bookingMonth'] = $month;
+        $_SESSION['bookingYear'] = $year;
+        echo $date . " " . $time . " " . $month . " " . $year;
+        header("Location: /booking/details");
+    }
+
     function reservations()
     {
         $this->view->render('stl/AssignedOrders');

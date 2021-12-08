@@ -221,6 +221,10 @@
   cursor: pointer;
 }
 
+#selected {
+  font-size: 15px;
+}
+
 @media only screen and (min-width: 770px) {
   .wash-date {
     flex: 50%;
@@ -239,6 +243,10 @@
   }
   .wash-type {
     flex: 50%;
+  }
+
+  #selected {
+    font-size: 15px;
   }
 }
 @media only screen and (max-width: 770px) {
@@ -294,11 +302,19 @@
   .select-time {
     margin: 35px 50px;
   }
+
+  #selected {
+    font-size: 15px;
+  }
 }
 
 @media only screen and (max-width: 385px) {
   .wash-type h3 {
     display: none;
     padding: 2px 2px;
+  }
+
+  #selected {
+    font-size: 15px;
   }
 }

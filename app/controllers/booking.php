@@ -88,3 +88,6 @@ class Booking extends Controller
         }
     }
 }
+
+// what is json_encode?
+// https://www.php.net/manual/en/function.json-encode.php

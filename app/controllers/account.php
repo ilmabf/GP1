@@ -31,7 +31,8 @@ class Account extends Controller
         }
     }
 
-    function editVehicle($vid){
+    function editVehicle($vid)
+    {
         $vid = str_replace('_', ' ', $vid);
         $model = $_POST['model'];
         $color = $_POST['color'];
@@ -46,7 +47,8 @@ class Account extends Controller
         }
     }
 
-    function deleteVehicle($vid){
+    function deleteVehicle($vid)
+    {
         $vid = str_replace('_', ' ', $vid);
         $id = $_SESSION['userDetails'][0]['User_ID'];
         if ($this->model->vehicleDelete($id, $vid)) {
@@ -54,8 +56,9 @@ class Account extends Controller
         }
     }
 
-    function saveAddress($address, $latitude, $longitude){
-        
+    function saveAddress($address, $latitude, $longitude)
+    {
+
         $address = str_replace('_', ' ', $address);
         $address = str_replace('|', '/', $address);
         // echo $address;
@@ -67,7 +70,8 @@ class Account extends Controller
         }
     }
 
-    function deleteAddress($latitude, $longitude){
+    function deleteAddress($latitude, $longitude)
+    {
         // $address = str_replace('_', ' ', $address);
         // $address = str_replace('|', '/', $address);
         // echo $address;
@@ -77,4 +81,3 @@ class Account extends Controller
         }
     }
 }
-
