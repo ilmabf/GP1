@@ -1,0 +1,124 @@
+/*Newly added*/
+.Table-search-selected-equip {
+
+    display:flex;
+    flex-direction: column;
+    padding: 1em;
+    align-items: center;
+    
+}
+
+.Table-search-free-equip {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    align-items: center;
+    
+}
+#viewAllEquip{
+    display:none;
+    flex-direction: column;
+    padding: 1em;
+    align-items: center;
+}
+#viewAllitems{
+   
+}
+/*----------------------------*/
+#addNewRow {
+  display: block;
+  margin: 35px auto;
+  padding: 8px 8px;
+  background-color: #193498;
+  color: white;
+  border-radius: 5px;
+  border-color: white;
+  cursor: pointer;
+}
+
+#assignEquipment {
+  display: block;
+  margin: 35px auto;
+  padding: 8px 8px;
+  background-color: #193498;
+  color: white;
+  border-radius: 5px;
+  border-color: white;
+  cursor: pointer;
+}
+
+#container1 {
+  display: block;
+  overflow: auto;
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+#container2 {
+  display: block;
+  overflow: auto;
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+#tb-input {
+  padding: 4px;
+  font-size: 12px;
+  border-color: grey;
+  max-width: 110px;
+}
+#tb1-input {
+  padding: 4px;
+  font-size: 12px;
+  border-color: grey;
+  max-width: 110px;
+}
+#adminViewEquip {
+  display: block;
+  margin: 30px auto;
+  padding: 8px 8px;
+  background-color: #193498;
+  color: white;
+  border-radius: 5px;
+  border-color: white;
+}
+
+.Admin-EquipSearch {
+  display: inline-block;
+}
+
+.adEquipSearch1 {
+  margin-left: 89px;
+}
+
+.adEquipSearch2 {
+  float: right;
+  margin-left: 5px;
+  margin-right: 405px;
+}
+
+#adminSearchEquipment {
+  padding: 10px 10px;
+  border-color: #193498;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: block;
+  font-size: 15px;
+}
+#adminSearchItem {
+  padding: 10px 10px;
+  border-color: #193498;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: block;
+  font-size: 15px;
+}
+
+#adminSearchEquipment {
+  font-size: 15px;
+  border: 2px outset #193498;
+}
+#adminSearchItem {
+  font-size: 15px;
+  border: 2px outset #193498;
+}

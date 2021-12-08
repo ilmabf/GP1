@@ -1,6 +1,5 @@
 <?php
 use PHPMailer\PHPMailer\PHPMailer;
-// echo getcwd();
 require 'vendor/autoload.php';
 
     class Mailer{
@@ -12,7 +11,7 @@ require 'vendor/autoload.php';
             $mail->Port = 587;
             $mail->SMTPAuth = true;
             $mail->Username = 'hello@wandiwash.com';
-            $mail->Password = 'wandiwashAbu@123.com';
+            $mail->Password = 'Abuwandiwash123@.com';
             $mail->setFrom('hello@wandiwash.com', 'wandiwash');
             $mail->addReplyTo('wandiwash@gmail.com', 'wandiwash');
             $mail->addAddress($to); 
@@ -24,12 +23,7 @@ require 'vendor/autoload.php';
             if (!$mail->send()) {
                 echo 'Mailer Error: ' . $mail->ErrorInfo;
             } else {
-                // echo 'The email message was sent.';
                 return true;
             }
         }
     }
-    
-    
-    
-?>

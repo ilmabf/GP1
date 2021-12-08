@@ -1,0 +1,217 @@
+.heading-adminManageService{
+    color: #193498;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: larger;
+}
+.serviceManage,.vehicleManage,.priceManage{
+    display: block;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.serviceManageHeader,.addBtnService:hover, .addBtnVehicles:hover,.priceManageHeader,.typeServices :hover,.typeVehicles a:hover,
+.iClean h3,.vehicleManagment h3,.addNewServicesBox h3,.addNewVehicleBox h3{
+    color: #193498;
+}
+
+.typeServices,.typeVehicles a{
+    color: black;
+}
+
+.addBtnService:hover,.addBtnVehicles:hover{
+    color: white;
+    background-color: #193498;
+}
+.addBtnService,.addBtnVehicles,.addBtnVehicles a{
+    color: lightgrey;
+}
+
+.vehicleManageHeader{
+    color: #62707c;
+}
+
+.serviceManageBox{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 35px 80px;
+    padding: 10px 20px;
+    background-color: whitesmoke;
+    border-radius: 27px;
+    /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);  */
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.typeServices{
+    text-align: center;
+    margin: auto auto;
+    padding: 20px 40px;
+    background-color: white;
+    border-radius: 27px;
+    /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); */
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.vehicleManageBox{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 35px 80px;
+    padding: 10px 20px;
+    background-color: whitesmoke;
+    border-radius: 27px;
+    /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);  */
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.typeVehicles{
+    text-align: center;
+    margin: auto;
+    padding: 20px 40px;
+    background-color: white;
+    border-radius: 27px;
+    /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); */
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.priceManageBox{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 35px 80px;
+    padding: 10px 20px;
+    background-color: whitesmoke;
+    border-radius: 27px;
+    /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);  */
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.typesBox{
+    text-align: center;
+    margin: auto auto;
+    padding: 20px 40px;
+    background-color: white;
+    border-radius: 27px;
+    /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); */
+    font-weight: 500;
+}
+
+#admin-wash-types,#admin-vehicle-types{
+    border-color: #193498;
+    /* border-width: 2px; */
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.AdminpriceBox{
+    display: inline;
+    text-align:center;
+}
+
+.displayPrice{
+    margin-right: 20px;
+}
+
+#newServiceTypeName{
+    margin-bottom: 20px;
+}
+
+#interiorClean, #interior-exteriorClean, #sanitization, #vehiclesNames, #newServiceNames, #newVehicleNames{
+    display: none;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.iClean, .vehicleManagment, .addNewServicesBox, .addNewVehicleBox{
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+}
+.interiorClean-content, .vehicles-content, .addNewService-content, .addNewVehicle-content{
+    margin-bottom: 15px;
+}
+.addNewServiceInput,.addNewServiceInput,.addNewVehicleInput{
+    width: 50%;
+}
+
+
+@media only screen and (max-width: 770px) {
+    
+    .heading-adminManageService{
+        font-size: 15px;
+    }
+
+    .serviceManageHeader h3{
+        font-size: 16px;
+    }
+
+    .vehicleManageHeader h3{
+        font-size: 16px;
+    }
+
+    .priceManageHeader h3{
+        font-size: 16px;
+    }
+
+    .serviceManageHeader h3{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .serviceManageBox{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .typeServices{
+        margin-bottom: 15px;
+    }
+
+    .vehicleManage{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .vehicleManageBox{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .typeVehicles{
+        margin-bottom: 15px;
+    }
+
+    .priceManage{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .priceManageBox{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .typesBox{
+        margin-bottom: 15px;
+    }
+
+    #admin-vehicle-types, #admin-wash-types{
+        font-size: 12px;
+    }
+
+}

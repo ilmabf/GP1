@@ -10,32 +10,35 @@ var signupVerify = document.getElementById("signupVerify");
 var mySignupButton = document.getElementById("mySignupButton");
 var span = document.getElementsByClassName("close-signupVerifyMessage")[0];
 
-myInput.onfocus = function() {
+var fName = document.getElementById("signUpFirstName");
+var lName = document.getElementById("signUpLastName");
+
+myInput.onfocus = function () {
   document.getElementById("pwd-validate-message").style.display = "block";
-  document.getElementById("link-to-go-login").style.top = "94%";
+  document.getElementById("link-to-go-login").style.top = "115%";
 }
 
 
-myInput.onblur = function() {
+myInput.onblur = function () {
   document.getElementById("pwd-validate-message").style.display = "none";
-  document.getElementById("link-to-go-login").style.top = "88%";
+  document.getElementById("link-to-go-login").style.top = "109%";
 }
 
 
-myInput.onkeyup = function() {
-  
+myInput.onkeyup = function () {
+
   var lowerCaseLetters = /[a-z]/g;
 
-  if(myInput.value.match(lowerCaseLetters)) {  
+  if (myInput.value.match(lowerCaseLetters)) {
     letter.classList.remove("invalid");
     letter.classList.add("valid");
-  }else{
+  } else {
     letter.classList.remove("valid");
     letter.classList.add("invalid");
   }
- 
+
   var upperCaseLetters = /[A-Z]/g;
-  if(myInput.value.match(upperCaseLetters)) {  
+  if (myInput.value.match(upperCaseLetters)) {
     capital.classList.remove("invalid");
     capital.classList.add("valid");
   } else {
@@ -43,9 +46,9 @@ myInput.onkeyup = function() {
     capital.classList.add("invalid");
   }
 
- 
+
   var numbers = /[0-9]/g;
-  if(myInput.value.match(numbers)) {  
+  if (myInput.value.match(numbers)) {
     number.classList.remove("invalid");
     number.classList.add("valid");
   } else {
@@ -53,7 +56,7 @@ myInput.onkeyup = function() {
     number.classList.add("invalid");
   }
 
-  if(myInput.value.length >= 8) {
+  if (myInput.value.length >= 8) {
     length.classList.remove("invalid");
     length.classList.add("valid");
   } else {
@@ -62,8 +65,8 @@ myInput.onkeyup = function() {
   }
 }
 
-function validatePassword(){
-  if(myInput.value != confirm_pwd.value) {
+function validatePassword() {
+  if (myInput.value != confirm_pwd.value) {
     confirm_pwd.setCustomValidity("Passwords Don't Match");
   } else {
     confirm_pwd.setCustomValidity('');
@@ -73,18 +76,21 @@ function validatePassword(){
 myInput.onchange = validatePassword;
 confirm_pwd.onkeyup = validatePassword;
 
-// mySignupButton.onclick = function() {
-//   toVerifySingupBox.style.display = "block";
-// }
+function checkLetter() {
+  var letters = /^[A-Za-z]+$/;
+  var fName = document.getElementById("signUpFirstName");
+  if (!fName.value.match(letters)) {
+    fName.setCustomValidity("Please input alphabet characters only");
+  }
+  else {
+    fName.setCustomValidity('');
+  }
 
-// if($_SESSION['verifyBox'] == 1){
-//   span.onclick = function() {
-//     toVerifySingupBox.style.display = "none";
-//   }
-
-//   window.onclick = function(event) {
-//     if (event.target == toVerifySingupBox) {
-//       toVerifySingupBox.style.display = "none";
-//     }
-//   }
-// }
+  var lName = document.getElementById("signUpLastName");
+  if (!lName.value.match(letters)) {
+    lName.setCustomValidity("Please input alphabet characters only");
+  }
+  else {
+    lName.setCustomValidity('');
+  }
+}

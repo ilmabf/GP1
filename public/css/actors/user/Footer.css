@@ -1,0 +1,118 @@
+#footer{
+    position: relative;
+    width: 100%;
+    background-color: #193498;
+    height: calc(100vh-500px);
+    margin-top: -25px;
+    clear: both;
+}
+
+.footer-image {
+    position: relative;
+    top: 100px;
+    width: 250px;
+    height: 150px;
+    background-image: url('/public/images/dr-wash-png-transparent-png.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    text-align: center;
+ }​
+
+ .footer-content1{
+    margin: 50px 20px 0px;
+    width: calc(100%-40px);
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    text-align: center;  
+ }
+ 
+.footer-content3{
+    height: 300px;
+    width: fit-content;
+    line-height: 150%;
+    padding: 110px 40px 0px 50px
+}
+
+.footer-content3 h3{
+    top: 60%;
+    font-size: 20px;
+    color:white;
+    font-weight: 100;
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+
+.footer-content3 address{
+    font-size: 18px;
+    font-weight: 100;
+    color: white;
+    text-align: center;
+    padding-bottom: 1em;
+}
+
+.footer-content3 address a{
+    font-size: 18px;
+    color: white;
+}
+
+.footer-copyright{
+    text-align: center;
+    width: fit-content;
+    color: white;
+    font-size: 15px;
+    font-weight: 100;
+    margin: auto auto;
+}
+
+.footer-map{
+    margin: 20px 35px 20px;
+    background-color: white;            
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    text-align: center;  
+    height: 450px;
+    overflow:hidden;
+    width: calc(100%-40px);
+}
+
+.footer-map iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+}
+
+@media only screen and (min-width: 770px) {
+
+    .footer-content3 h3{
+        font-size: 17px;
+    }
+
+    .footer-content3 address{
+        font-size: 17px;
+    }
+    
+    .footer-content3 address a{
+        font-size: 17px;
+    }
+    
+    .footer-copyright{
+        font-size: 10px;
+    }
+
+    .footer-content{
+        display: flex;
+    }
+    
+    .footer-content1{
+        flex: 35%;
+    }
+
+    .footer-map{
+        flex: 35%;
+    }
+}
+

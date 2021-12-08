@@ -1,0 +1,306 @@
+.heading-order{
+    color: #193498;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: larger;
+}
+
+
+.blurOrder{
+    filter: blur(3px);
+    width: 100%;
+}
+.order-box{
+    margin-top: 35px;
+    margin-bottom: 35px;
+    margin-left: 140px; 
+    margin-right: 140px;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); 
+    text-align: center; 
+}
+
+.res{
+    margin-top: 8px;
+    margin-bottom: 11px;
+    /* padding: 14px; */
+}
+.box3{
+    width: 477px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0px 0px 0px;
+    background-color: whitesmoke;
+    border-radius: 27px;
+    /* box-shadow: 0 3px 10px rgb(0 0 0 / 40%); */
+    left: 34%;
+    position: relative;
+    justify-content: center;
+
+}
+
+.box4{
+    width: 477px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0px 0px 0px;
+    border-radius: 5px;
+    left: 34%;
+    position: relative;
+}
+.box2{
+    border-radius: 5px;
+    text-align: left;
+
+    border-radius: 5px;
+    padding: 20px 20px;
+    text-align: left;
+    width: 100%;
+}
+
+.boxOrderSum{
+    margin: 21px 50px;
+    border-radius: 5px;
+    padding: 20px 20px;
+    text-align: left;
+    margin-left: -38px;
+
+}
+.orderPrice{
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.orderitemx{
+    float: right;
+    color: #000000;
+    position: relative;
+    left: -34%;
+    transform: translate(95%, 4%);
+    max-width: 240px;
+}
+.orderitem2{
+    color: #000000;
+    position: relative;
+    /* left: 128%; */
+    left: 163%;
+    transform: translate(-14%, -81%);
+}
+
+.a1,.a2,.a3,.a4,.a5,.a6,.a7{
+    display: inline;
+    margin-right: 15px;
+}
+
+.cancelPopUpclass {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .cancelPopUpContent-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+
+  .cancelPopUpContent-content p{
+      font-weight: 500;
+  }
+  
+  /* The Close Button */
+  .closeCancel {
+    color: #1597E5;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .closeCancel:hover,
+  .closeCancel:focus {
+    color: #024066;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .yesCancel{
+      display: block;
+      float: left;
+      margin: 25px 15px;
+  }
+
+ 
+  .confirmPopUpclass {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .confirmPopUpContent-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+
+  .confirmPopUpContent-content p{
+      font-weight: 500;
+  }
+  
+  /* The Close Button */
+  .closeConfirm {
+    color: #1597E5;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .closeConfirm:hover,
+  .closeConfirm:focus {
+    color: #024066;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .yesConfirm{
+      display: block;
+      float: left;
+      margin: 25px 15px;
+  }
+
+  
+  .yesConfirm button a{
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+  }
+
+  @media only screen and (min-width: 770px){
+    .order-box{
+        margin-top: 35px;
+        margin-bottom: 35px;
+        margin-left: 140px; 
+        margin-right: 140px;
+    }
+
+    .order-subBox{
+        text-align: left;
+    }
+
+    
+    .orderDetails{
+        display: inline-block;
+        margin-left: 40px;
+        margin-right: 40px;
+        margin-bottom: 30px;
+        border: 5px 5px #888;
+        padding: 20px 20px;
+    }
+  }
+
+
+@media only screen and (max-width: 770px) {
+
+    .order-box{
+        margin: 35px 10px;
+        padding: 10px 10px;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); 
+        text-align: center; 
+    }
+
+    .heading-order{
+        font-size: 15px;
+    }
+
+    
+    .p1{
+        font-size: 13px;
+    }
+    .box3 {
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+        /* margin: 9px 166px; */
+        padding: 10px 0px 0px 0px;
+        background-color: whitesmoke;
+        border-radius: 27px;
+        /* box-shadow: 0 3px 10px rgb(0 0 0 / 40%); */
+        left: 10%;
+        position: relative;
+        font-size: smaller;
+    }
+
+    .box4{
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+        /* margin: 9px 166px; */
+        padding: 10px 0px 0px 0px;
+        /* background-color: white; */
+        border-radius: 5px;
+        /* box-shadow: 0 3px 10px rgb(0 0 0 / 40%); */
+        left: 10%;
+        position: relative;
+        font-size: smaller;
+    }
+    .orderitem2 {
+        color: #000000;
+        position: relative;
+        left: 150%;
+        transform: translate(-14%, -81%);
+    }
+
+    .orderitemx {
+        float: right;
+        color: #000000;
+        position: relative;
+        transform: translate(95%, 4%);
+    }
+
+    
+    .box2{
+        /* margin: 20px 100px; */
+        /* background-color: white; */
+        border-radius: 5px;
+        padding: 20px 20px;
+        margin-left: 3px;
+        font-size: smaller;
+        text-align: left;
+    }
+    
+    .boxOrderSum{
+        margin: 20px 100px;
+        /* background-color: white; */
+        border-radius: 5px;
+        padding: 20px 20px;
+        margin-left: 3px;
+        font-size: smaller;
+        text-align: left;
+    }
+
+}

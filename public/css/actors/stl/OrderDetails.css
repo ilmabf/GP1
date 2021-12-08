@@ -1,0 +1,15 @@
+.imageFile{
+    padding: 4px;
+    border-radius: 5px;
+    width: 70%;
+}
+
+.uploadImagesLink{
+    background-color: #193498;
+    padding: 5px 10px;
+    color: white;
+    margin-bottom: 17px;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}
