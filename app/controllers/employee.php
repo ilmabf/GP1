@@ -42,13 +42,13 @@ class Employee extends Controller
             $dateEnrolled = $_POST['dateEnrolled'];
             $salary = $_POST['salary'];
             $nic = $_POST['nicNo'];
-            $team = $_POST['team'];
 
-            if (isset($firstName) && isset($lastName) && isset($contactNumber) && isset($email) && isset($dateEnrolled) && isset($salary) && isset($nic) && isset($team)) {
+            if (isset($firstName) && isset($lastName) && isset($contactNumber) && isset($email) && isset($dateEnrolled) && isset($salary) && isset($nic)) {
 
                 //insert employee
                 $flag = 1;
-                if ($this->model->makeEmployee($firstName, $lastName, $contactNumber, $email, $dateEnrolled, $salary, $nic, $team, $flag)) {
+                $onWork = 1;
+                if ($this->model->makeEmployee($firstName, $lastName, $contactNumber, $email, $dateEnrolled, $salary, $nic, $flag, $onWork)) {
                     $_SESSION['insertSuccess'] = 'Employee added successfully';
                     header("Location: /employee/");
                 }
@@ -60,11 +60,16 @@ class Employee extends Controller
         }
     }
 
-    function saveEditEmployee($empId, $contactNumberVal, $emailData, $salaryData)
+    function saveEditEmployee($empId, $contactNumberVal, $emailData, $salaryData, $onWorkData)
     {
+        echo $empId;
+        echo $contactNumberVal;
+        echo $emailData;
+        echo $onWorkData;
         if ($_SESSION['role'] == "systemadmin") {
 
-            $values = array($contactNumberVal, $emailData, $salaryData);
+            $values = array($contactNumberVal, $emailData, $salaryData, $onWorkData);
+            // print_r($values);
 
             if ($this->model->employeeSaveEdit($empId, $values)) {
                 header("Location: /employee/");
