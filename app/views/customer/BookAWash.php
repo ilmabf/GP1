@@ -233,7 +233,7 @@ $booked = $_SESSION['booked'];
                                     month +
                                     `,` +
                                     date.getFullYear() +
-                                    `, 1)">${booked[key]}</span>`;
+                                    `, booked)">${booked[key]}</span>`;
                                 flag1 = 1;
 
                             }
@@ -248,7 +248,7 @@ $booked = $_SESSION['booked'];
                                 month +
                                 `,` +
                                 date.getFullYear() +
-                                `, 1)">${timeSlotsArr[a - 1]}</span>`;
+                                `, ` + a + `)">${timeSlotsArr[a - 1]}</span>`;
 
                         }
                     }
@@ -273,13 +273,14 @@ $booked = $_SESSION['booked'];
                                     month +
                                     `,` +
                                     date.getFullYear() +
-                                    `, 1)">${booked[key]}</span>`;
+                                    `, booked)">${booked[key]}</span>`;
 
                                 flag2 = 1;
                             }
                         }
 
                         if (flag2 == 0) {
+                            // console.log(timeSlotsArr[a-1])
                             days +=
                                 `
                                             <span class="time-green" id = "slot1" onclick="getTimeAndDate(` +
@@ -288,10 +289,10 @@ $booked = $_SESSION['booked'];
                                 month +
                                 `,` +
                                 date.getFullYear() +
-                                `, 1)">${timeSlotsArr[a - 1]}</span>`;
+                                `, ` + a + `)">${timeSlotsArr[a - 1]}</span>`;
                         }
                     }
-                    days +=  `</div>`;
+                    days += `</div>`;
                 }
             }
 
@@ -330,13 +331,16 @@ $booked = $_SESSION['booked'];
             } else if (t == 5) {
                 time = "4-6";
             }
-
+            // Check if date is today. If so , check time. 
+            var today = new Date();
+            var selectedDate = year + "-" + month + "-" + date;
             if (
-                date == new Date().getDate() &&
-                month == new Date().getMonth() &&
-                year == new Date().getFullYear
+                date == today.getDate() &&
+                month == today.getMonth() &&
+                year == today.getFullYear()
             ) {
-                if (parseInt(time.charAt(0)) > new Date().getHours()) {
+                console.log(today.getHours());
+                if (parseInt(time.charAt(0)) > today.getHours() && t != "booked") {
                     document.getElementById("day").innerHTML = date;
                     document.getElementById("month").innerHTML = month;
                     document.getElementById("year").innerHTML = year;
@@ -347,23 +351,35 @@ $booked = $_SESSION['booked'];
                     var z = document.getElementById("bookingContent");
                     z.classList.remove("blurAccount");
                 }
-            } else if (date > new Date().getDate()) {
-                document.getElementById("day").innerHTML = date;
-                document.getElementById("month").innerHTML = month;
-                document.getElementById("year").innerHTML = year;
-                document.getElementById("timeSlot").innerHTML = time;
+            } else {
+                const monthNames = ["January", "February", "March", "April", "May", "June",
+                    "July", "August", "September", "October", "November", "December"
+                ];
+                const mm = monthNames[today.getMonth()];
+                const dd = String(today.getDate()).padStart(2, '0');
+                const yyyy = today.getFullYear();
+                var todayDate =  today.getFullYear() + "-" + parseInt(today.getMonth()+1) + "-" + today.getDate();
 
-                document.getElementById("cal1").style = "display:none;";
-                var z = document.getElementById("bookingContent");
-                z.classList.remove("blurAccount");
+                var d1 = Date.parse(todayDate);
+                var d2 = Date.parse(selectedDate);
+                if (d2 > d1 && t != "booked") {
+                    document.getElementById("day").innerHTML = date;
+                    document.getElementById("month").innerHTML = month;
+                    document.getElementById("year").innerHTML = year;
+                    document.getElementById("timeSlot").innerHTML = time;
+
+                    document.getElementById("cal1").style = "display:none;";
+                    var z = document.getElementById("bookingContent");
+                    z.classList.remove("blurAccount");
+                }
             }
+
         }
 
 
         // console.log("Hello");
 
-        window.location =
-            "/calendar/calendarDetails/" + date + "/" + time + "/" + month + "/" + year;
+        // window.location = "/calendar/calendarDetails/" + date + "/" + time + "/" + month + "/" + year;
     </script>
 
     <script>
