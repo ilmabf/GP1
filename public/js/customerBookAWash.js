@@ -3,11 +3,12 @@ var txt =
   "Pick a date, time & location. WandiWash is ready to wash your vehicle! We are Eco Friendly!";
 var speed = 50;
 
-function typeWriter() {
-  if (i < txt.length) {
-    document.getElementById("sub-heading-p").innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
+function typeWriter(n) {
+
+  if (n < txt.length) {
+    document.getElementById("sub-heading-p").innerHTML += txt.charAt(n);
+    n++;
+    setTimeout(typeWriter(n), speed);
   }
 }
 

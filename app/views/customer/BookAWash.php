@@ -7,7 +7,7 @@ $booked = $_SESSION['booked'];
 
 <link rel="stylesheet" href="/public/css/actors/customer/BookAWashCalendar.css" />
 
-<body onload="typeWriter()">
+<body onload="typeWriter(0)">
     <div style="min-height: 110px;"></div>
     <div id="bookingContent">
         <div>
