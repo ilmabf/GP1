@@ -87,6 +87,10 @@ class Booking extends Controller
             $this->view->render('manager/CompletedOrder');
         }
     }
+
+    function makeReservation($details){
+        echo $details;
+    }
 }
 
 // what is json_encode?

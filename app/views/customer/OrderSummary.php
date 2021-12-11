@@ -104,7 +104,7 @@ include 'views/user/LoggedInHeader.php';
 
         <form action="" method="post" id="customer-signup">
 
-            <button id="VehicleFormSubmitButton" class="formSubmitButton" type="button" name="signup" style="width: 115px;"><a href="/user/home" style="color:White; ">Return Home</a></button>
+            <button id="VehicleFormSubmitButton" onclick = "makeOrder();" class="formSubmitButton" type="button" name="signup" style="width: 115px;">Return Home</button>
         </form>
 
     </div>
@@ -146,9 +146,13 @@ include 'views/user/LoggedInHeader.php';
     }
     let p = price.substring(6);
     document.getElementById("date").innerHTML = year + " / " + month + "/ " + date; 
-    document.getElementById("time").innerHTML = time + " a.m."; 
+    document.getElementById("time").innerHTML = time; 
     document.getElementById("address").innerHTML = address; 
     document.getElementById("vehicle").innerHTML = vehicle; 
     document.getElementById("washPackage").innerHTML = washPackage; 
     document.getElementById("price").innerHTML = "Rs. " + price + ".00";
+
+    function makeOrder(){
+        window.location = "/booking/makeReservation/"+ document.cookie;
+    }
 </script>

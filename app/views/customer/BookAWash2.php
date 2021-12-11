@@ -67,7 +67,10 @@ include 'views/user/LoggedInHeader.php';
         marker.setPosition(latlng);
         // marker.setMap(map);
         var addr = document.getElementById("location-types").value;
+        var i = 0;
         document.cookie = "address = " + addresses[addr-1]['Address'] + ";  path=/";
+        document.cookie = "latitude = " + addresses[addr-1]['Latitude'] + ";  path=/";
+        document.cookie = "longitude = " + addresses[addr-1]['Longitude'] + ";  path=/";
     }
 </script>
 <script src="/public/js/Maps.js"></script>
