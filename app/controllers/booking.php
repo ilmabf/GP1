@@ -20,7 +20,7 @@ class Booking extends Controller
         $_SESSION['address'] = $this->model->getAddress($_SESSION['userDetails'][0]['User_ID']);
         $_SESSION['washpackages'] = $this->model->getWashPackage();
         $_SESSION['servicePrice'] = $this->model->getServicePrice();
-        // $_SESSION['booked'] = $this->model->getBookedDates();
+        $_SESSION['booked'] = $this->model->getBookedDates();
         $this->view->render('customer/BookAWash');
     }
 
