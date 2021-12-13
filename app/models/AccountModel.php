@@ -42,11 +42,11 @@ class AccountModel extends Model
 
     function addressAdd($id, $address, $latitude, $longitude)
     {
-        echo $id;echo "\n";
+        // echo $id;echo "\n";
         
-        echo $latitude;echo "\n";
-        echo $longitude;
-        echo $address;
+        // echo $latitude;echo "\n";
+        // echo $longitude;
+        // echo $address;
 
         $values = array($id, $address, $latitude, $longitude);
         $columns = array('User_ID','Address', 'Latitude', 'Longitude');

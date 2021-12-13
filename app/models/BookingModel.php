@@ -52,4 +52,14 @@ class BookingModel extends Model
         $result = $this->db->select("*", "customer_location", "WHERE User_ID = :uid ;", ':uid', $uid);
         return $result;
     }
+
+    function AddReserevation($reservationDetails)
+    {
+        $columns = array('Vehicle_ID','Address', 'Latitude', 'Longitude','Price', 'Wash_Package_ID', 'Date', 'Time', 'Customer_ID');
+        $param = array(':vehicleid',':addr', ':lat', ':lng', ':price', ':washPcakge', ':date', ':time', ':custID');
+        $result = $this->db->insert("reservation", $columns, $param, $reservationDetails);
+        if ($result == "Success") {
+            return true;
+        } else print_r($result);
+    }
 }

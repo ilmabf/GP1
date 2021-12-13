@@ -30,7 +30,7 @@ function typeWriter(n) {
 function viewCalendar() {
   document.getElementById("cal1").style = "display:block;";
   var z = document.getElementById("bookingContent");
-  z.classList.add("blurAccount");
+  z.classList.add("blurCalendar");
 }
 
 function getVehicle() {
