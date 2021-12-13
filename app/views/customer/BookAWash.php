@@ -319,58 +319,73 @@ $booked = $_SESSION['booked'];
 
         // get time and date
         function getTimeAndDate(date, month, year, t) {
-            var time;
-            if (t == 1) {
-                time = "8-10";
-            } else if (t == 2) {
-                time = "10-12";
-            } else if (t == 3) {
-                time = "12-2";
-            } else if (t == 4) {
-                time = "2-4";
-            } else if (t == 5) {
-                time = "4-6";
-            }
-            // Check if date is today. If so , check time. 
-            var today = new Date();
-            var selectedDate = year + "-" + month + "-" + date;
-            if (
-                date == today.getDate() &&
-                month == today.getMonth() &&
-                year == today.getFullYear()
-            ) {
-                console.log(today.getHours());
-                if (parseInt(time.charAt(0)) > today.getHours() && t != "booked") {
-                    document.getElementById("day").innerHTML = date;
-                    document.getElementById("month").innerHTML = month;
-                    document.getElementById("year").innerHTML = year;
-                    document.getElementById("timeSlot").innerHTML = time;
 
-                    document.cookie = "date = " + date;
-                    document.getElementById("cal1").style = "display:none;";
-                    var z = document.getElementById("bookingContent");
-                    z.classList.remove("blurAccount");
+            if (t != "booked") {
+                var time;
+                if (t == 1) {
+                    time = "8-10 A.M.";
+                } else if (t == 2) {
+                    time = "10-12 A.M.";
+                } else if (t == 3) {
+                    time = "12-14 P.M.";
+                } else if (t == 4) {
+                    time = "14-16 P.M.";
+                } else if (t == 5) {
+                    time = "16-18 P.M.";
                 }
-            } else {
-                const monthNames = ["January", "February", "March", "April", "May", "June",
-                    "July", "August", "September", "October", "November", "December"
-                ];
-                const mm = monthNames[today.getMonth()];
-                const dd = String(today.getDate()).padStart(2, '0');
-                const yyyy = today.getFullYear();
-                var todayDate =  today.getFullYear() + "-" + parseInt(today.getMonth()+1) + "-" + today.getDate();
+                // Check if date is today. If so , check time. 
+                var today = new Date();
+                var selectedDate = year + "-" + month + "-" + date;
+                if (
+                    date == today.getDate() &&
+                    month == today.getMonth() + 1 &&
+                    year == today.getFullYear()
+                ) {
+                    console.log(today.getTimezoneOffset());
+                    var localTime = today.toLocaleTimeString('en-GB');
+                    var localTimeArray = localTime.split(":");
+                    var selectedTimeArray = time.split("-");
+                    if (parseInt(selectedTimeArray[0]) > parseInt(localTimeArray[0])) {
+                        document.getElementById("day").innerHTML = date;
+                        document.getElementById("month").innerHTML = month;
+                        document.getElementById("year").innerHTML = year;
+                        document.getElementById("timeSlot").innerHTML = time;
 
-                var d1 = Date.parse(todayDate);
-                var d2 = Date.parse(selectedDate);
-                if (d2 > d1 && t != "booked") {
-                    document.getElementById("day").innerHTML = date;
-                    document.getElementById("month").innerHTML = month;
-                    document.getElementById("year").innerHTML = year;
-                    document.getElementById("timeSlot").innerHTML = time;
+                        document.cookie = "day = " + date + ";  path=/";
+                        document.cookie = "month = " + month + ";  path=/";
+                        document.cookie = "year = " + year + ";  path=/";
+                        document.cookie = "time = " + time + ";  path=/";
 
-                    document.getElementById("cal1").style = "display:none;";
-                    var z = document.getElementById("bookingContent");
-                    z.classList.remove("blurAccount");
+                        document.getElementById("cal1").style = "display:none;";
+                        var z = document.getElementById("bookingContent");
+                        z.classList.remove("blurCalendar");
+                    }
+                } else {
+                    const monthNames = ["January", "February", "March", "April", "May", "June",
+                        "July", "August", "September", "October", "November", "December"
+                    ];
+                    const mm = monthNames[today.getMonth()];
+                    const dd = String(today.getDate()).padStart(2, '0');
+                    const yyyy = today.getFullYear();
+                    var todayDate = today.getFullYear() + "-" + parseInt(today.getMonth() + 1) + "-" + today.getDate();
+
+                    var d1 = Date.parse(todayDate);
+                    var d2 = Date.parse(selectedDate);
+                    if (d2 > d1 && t != "booked") {
+                        document.getElementById("day").innerHTML = date;
+                        document.getElementById("month").innerHTML = month;
+                        document.getElementById("year").innerHTML = year;
+                        document.getElementById("timeSlot").innerHTML = time;
+
+                        document.cookie = "day = " + date + ";  path=/";
+                        document.cookie = "month = " + month + ";  path=/";
+                        document.cookie = "year = " + year + ";  path=/";
+                        document.cookie = "time = " + time + ";  path=/";
+                        
+                        document.getElementById("cal1").style = "display:none;";
+                        var z = document.getElementById("bookingContent");
+                        z.classList.remove("blurCalendar");
+                    }
                 }
             }
 
