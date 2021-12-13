@@ -89,7 +89,57 @@ class Booking extends Controller
     }
 
     function makeReservation($details){
-        echo $details;
+        $details = explode(';', $details);
+
+        for($i = 0; $i<sizeof($details); $i++){
+            if(strncmp($details[$i], "day", 3) == 0){
+                $day = substr($details[$i], 4);
+            }
+            else if(strncmp($details[$i], "month", 5) == 0){
+                $month = substr($details[$i], 6);
+            }
+            else if(strncmp($details[$i], "year", 4) == 0){
+                $year = substr($details[$i], 5);
+            }
+            else if(strncmp($details[$i], "time", 4) == 0){
+                $time = substr($details[$i],5);
+            }
+            else if(strncmp($details[$i], "vehicle", 7) == 0){
+                $vehicle = substr($details[$i], 8);
+            }
+            else if(strncmp($details[$i], "washPackageName", 15) == 0){
+                $washPackageName = substr($details[$i], 16);
+            }
+            else if(strncmp($details[$i], "washPackage", 11) == 0){
+                $washPackage = substr($details[$i], 12);
+            }
+            else if(strncmp($details[$i], "price", 5) == 0){
+                $price = substr($details[$i], 6);
+            }
+            else if(strncmp($details[$i], "address", 7) == 0){
+                $address = substr($details[$i], 8);
+            }
+            else if(strncmp($details[$i], "latitude", 8) == 0){
+                $latitude = substr($details[$i], 9);
+            }
+            else if(strncmp($details[$i], "longitude", 9) == 0){
+                $longitude = substr($details[$i],10);
+            }
+        }
+
+        // //type casting
+        // $latitude = (float) $latitude;
+        // $longitude = (float) $longitude;
+        // $price = (float) $price;
+
+        // echo $day;
+        //date format
+        $date = $year . "-" . $month . "-" . $day;
+
+        $reservationDetails = array($vehicle, $address, $latitude, $longitude, $price, $washPackage, $date, $time, $_SESSION['userDetails'][0]['User_ID']);
+        if ($this->model->AddReserevation($reservationDetails)) {
+            header("Location: /user/home");
+        }
     }
 }
 
