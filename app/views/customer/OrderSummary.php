@@ -144,7 +144,7 @@ include 'views/user/LoggedInHeader.php';
             var price = cookieArray[i].substring(6);
         }
     }
-    let p = price.substring(6);
+    //let p = price.substring(6);
     document.getElementById("date").innerHTML = year + " / " + month + "/ " + date; 
     document.getElementById("time").innerHTML = time; 
     document.getElementById("address").innerHTML = address; 
