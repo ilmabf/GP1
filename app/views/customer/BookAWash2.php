@@ -114,13 +114,35 @@ include 'views/user/LoggedInHeader.php';
                     } else {
                         var km = directionsData.distance.text;
                         var dur = directionsData.duration.text;
+                        var kmInt = parseInt(km);
+                        var additional = 0;
+                        if (kmInt < 2) {
+                            additional = 200;
+                        } else if (kmInt >= 2 && kmInt < 5) {
+                            additional = 400;
+                        } else {
+                            additional = 500;
+                        }
+
+                        var cookieArray = document.cookie.split(";");
+                        var i = 0;
+                        var price;
+                        for (i = 0; i < cookieArray.length; i++) {
+                            cookieArray[i] = cookieArray[i].trim();
+                            if (cookieArray[i].substring(0, 5) === "price") {
+                                price = cookieArray[i];
+                            }
+                        }
+                        let p = price.substring(6);
+
+                        var totalPrice = parseInt(p) + additional;
+                            document.cookie = "total = " + totalPrice + ";  path=/";
                         console.log(directionsData.distance.text);
-                        document.getElementById('msg').innerHTML += " Driving distance is " + directionsData.distance.text + " (" + directionsData.duration.text + ").";
+                        document.getElementById('msg').innerHTML += " Driving distance is " + kmInt + " (" + directionsData.duration.text + ").";
                     }
                 }
             });
     }
-
 </script>
 <script src="/public/js/Maps.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxvVN9pPMljGjWLvUGWGisQwGUUMSOHco&callback=myMap&v=weekly"></script>

@@ -66,7 +66,7 @@ include 'views/user/LoggedInHeader.php';
                 </div>
 
             </div>
-
+            <div id = 'test'></div>
             <h2>Check out our wash packages below!</h2>
             <p class="section2-para1">Sit back, relax and enjoy while our team of professionals provide you services just the way you like it!</p>
 
@@ -123,3 +123,7 @@ include 'views/user/Footer.php';
 <div class="help-icon-mob">
     <a href="/customer/help"><img src="https://img.icons8.com/fluency/48/000000/help.png" /></a>
 </div>
+
+<script>
+    document.getElementById('test').innerHTML = document.cookie;
+</script>

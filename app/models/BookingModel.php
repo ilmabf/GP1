@@ -55,8 +55,8 @@ class BookingModel extends Model
 
     function AddReserevation($reservationDetails)
     {
-        $columns = array('Vehicle_ID','Address', 'Latitude', 'Longitude','Price', 'Wash_Package_ID', 'Date', 'Time', 'Customer_ID');
-        $param = array(':vehicleid',':addr', ':lat', ':lng', ':price', ':washPcakge', ':date', ':time', ':custID');
+        $columns = array('Vehicle_ID','Address', 'Latitude', 'Longitude','Price', 'Total_price', 'Wash_Package_ID', 'Date', 'Time', 'Customer_ID');
+        $param = array(':vehicleid',':addr', ':lat', ':lng', ':price', ':total', ':washPcakge', ':date', ':time', ':custID');
         $result = $this->db->insert("reservation", $columns, $param, $reservationDetails);
         if ($result == "Success") {
             return true;
