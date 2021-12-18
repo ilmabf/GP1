@@ -1,6 +1,6 @@
 <?php
 include 'views/user/LoggedInHeader.php';
-$details = $_SESSION['completedReservations'];
+
 ?>
 
 <div class="bgImage">
@@ -47,9 +47,6 @@ $details = $_SESSION['completedReservations'];
     </div>
     <div style="min-height: 110px;"></div>
 
-    <!--<script src="/public/js/managerCompletedReservations.js">
-    </script>-->
-   
     <script>
 
     var orders = <?php echo json_encode($_SESSION['completedReservations']); ?>;
