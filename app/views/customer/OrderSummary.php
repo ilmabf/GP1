@@ -63,7 +63,7 @@ include 'views/user/LoggedInHeader.php';
             </div>
             <div class="res">
                 <div class="orderitem">Total Price Rs.</div>
-                <div class="orderitemx">1050/-</div>
+                <div class="orderitemx" id = "total">1050/-</div>
 
             </div>
             <div style="width:100%;float: left;position: absolute;    top: 91%;">
@@ -143,16 +143,37 @@ include 'views/user/LoggedInHeader.php';
         if(cookieArray[i].substring(0,5) === "price"){
             var price = cookieArray[i].substring(6);
         }
+        if(cookieArray[i].substring(0,5) === "total"){
+            var total = cookieArray[i].substring(6);
+        }
     }
-    let p = price.substring(6);
+    //let p = price.substring(6);
     document.getElementById("date").innerHTML = year + " / " + month + "/ " + date; 
     document.getElementById("time").innerHTML = time; 
     document.getElementById("address").innerHTML = address; 
     document.getElementById("vehicle").innerHTML = vehicle; 
     document.getElementById("washPackage").innerHTML = washPackage; 
     document.getElementById("price").innerHTML = "Rs. " + price + ".00";
+    document.getElementById("total").innerHTML = "Rs. " + total + ".00";
 
     function makeOrder(){
-        window.location = "/booking/makeReservation/"+ document.cookie;
+        var parameters = document.cookie;
+
+        //delete cookies
+        
+        document.cookie = "day=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "month=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "year=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "washPackage=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "washPackageName=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "price=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "total=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "address=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "latitude=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "longitude=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "time=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "vehicle=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+        window.location = "/booking/makeReservation/"+ parameters;
     }
 </script>
