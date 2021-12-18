@@ -39,3 +39,14 @@ function getVehicle() {
 }
 
 getVehicle();
+
+function checkDetails(){
+  var slash = document.getElementById("slash1").innerHTML;
+  var price = document.getElementById("priceValue").innerHTML;
+  if(slash != "/" || price == ""){
+    document.getElementById("completeMsg").innerHTML = "Please make sure the details are complete";
+  }
+  else{
+    window.location = "/booking/location";
+  }
+}

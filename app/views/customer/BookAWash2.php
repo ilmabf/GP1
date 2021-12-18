@@ -11,7 +11,28 @@ include 'views/user/LoggedInHeader.php';
 
 <div class="select-location">
 
-    <div class="select-location-box">
+    <?php
+    if (sizeof($_SESSION['address']) == 0) {
+        echo "Please add your location/s in your account page.";
+    } else {
+        echo "<div class='select-location-box'>";
+        echo "<form action='' method='post'>";
+        echo "<select name='location' id='location-types' onchange='myMap()'>";
+        $i = 0;
+        while ($i < sizeof($_SESSION['address'])) {
+            echo "<option value='";
+            echo $i + 1;
+            echo "'>";
+            echo $_SESSION['address'][$i]['Address'];
+            echo "</option>";
+            $i = $i + 1;
+        }
+        echo "</select>";
+        echo "</form>";
+        echo "</div>";
+    }
+    ?>
+    <!-- <div class="select-location-box">
         <form action="" method="post">
             <select name="location" id="location-types" onchange="myMap()">
                 <?php
@@ -27,7 +48,7 @@ include 'views/user/LoggedInHeader.php';
                 ?>
             </select>
         </form>
-    </div>
+    </div> -->
 </div>
 <div id="test"></div>
 <div id="msg"></div>
@@ -38,7 +59,7 @@ include 'views/user/LoggedInHeader.php';
 
 <div class="next-pg" style="margin-right: 15%;">
     <span class="priceBox2" id="priceValue"></span>
-    <button class="next-button"><a href="/booking/orderSummary" style="color: white; ">Next</a></button>
+    <button class="next-button" onclick = "checkLocation();">Next</button>
 </div>
 <div style="min-height: 20px;"></div>
 <script>
@@ -118,8 +139,8 @@ include 'views/user/LoggedInHeader.php';
                         var additional = 0;
                         if (kmInt < 1) {
                             additional = 50;
-                        } else{
-                            additional = (kmInt+1) * 50;
+                        } else {
+                            additional = (kmInt + 1) * 50;
                         }
 
                         var cookieArray = document.cookie.split(";");
@@ -134,7 +155,7 @@ include 'views/user/LoggedInHeader.php';
                         let p = price.substring(6);
 
                         var totalPrice = parseInt(p) + additional;
-                            document.cookie = "total = " + totalPrice + ";  path=/";
+                        document.cookie = "total = " + totalPrice + ";  path=/";
                         console.log(directionsData.distance.text);
                         document.getElementById('msg').innerHTML += " Driving distance is " + kmInt + " (" + directionsData.duration.text + ").";
                     }
@@ -159,4 +180,10 @@ include 'views/user/LoggedInHeader.php';
     }
     let p = price.substring(6);
     document.getElementById("priceValue").innerHTML = "Rs. " + p;
+
+    function checkLocation(){
+        if(addresses.length > 0){
+            window.location = "/booking/orderSummary";
+        }
+    }
 </script>

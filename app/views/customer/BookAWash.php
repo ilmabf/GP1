@@ -8,27 +8,29 @@ $booked = $_SESSION['booked'];
 <link rel="stylesheet" href="/public/css/actors/customer/BookAWashCalendar.css" />
 
 <body onload="typeWriter(0)">
+    
     <div style="min-height: 110px;"></div>
     <div id="bookingContent">
         <div>
             <div class="heading">
                 <h2 style="font-size: 30px;">Start Your Booking!</h2>
             </div>
-
+            
             <p id="sub-heading-p" style="font-size: 15px;"></p>
+            <div id = "completeMsg" style="text-align:center; color:red; margin-top:10px;"></div>
         </div>
         <div class="dateTime">
             <div class="wash-date">
                 <h3>Select a convenient date & available time slot from the calendar</h3>
 
                 <div id="closeOnClick">
-                    <div class="dateWash"><button id="wandiwashCalendar" onclick="viewCalendar();"><i class="far fa-calendar" sizes="64x64"> View</i></button></div>
+                    <div class="dateWash"><button id="wandiwashCalendar" onclick="viewCalendar();"><i class="far fa-calendar" sizes="64x64"> View Calendar</i></button></div>
                 </div>
                 <div id="selected">
                     <span id="day"></span>
-                    <span> / </span>
+                    <span id = "slash1">  </span>
                     <span id="month"></span>
-                    <span> / </span>
+                    <span id = "slash2">  </span>
                     <span id="year"></span>
                     <div id="timeSlot"></div>
                 </div>
@@ -103,10 +105,10 @@ $booked = $_SESSION['booked'];
         </div>
         <div id="dd"></div>
         <div class="next-pg">
-            <span class="priceBox" id="priceValue"></span>
-            <button class="next-button">
+            <span class="priceBox" style = "display:none;"id="priceValue"></span>
+            <button class="next-button" onclick="checkDetails();">Next</button>
 
-                <a href="/booking/location" style="color: white;">Next</a></button>
+                <!-- <a href="/booking/location" style="color: white;">Next</a></button> -->
         </div>
     </div>
 
@@ -372,10 +374,12 @@ $booked = $_SESSION['booked'];
                     var d1 = Date.parse(todayDate);
                     var d2 = Date.parse(selectedDate);
                     if (d2 > d1 && t != "booked") {
-                        document.getElementById("day").innerHTML = date;
+                        document.getElementById("day").innerHTML = "Date: " + date;
                         document.getElementById("month").innerHTML = month;
                         document.getElementById("year").innerHTML = year;
-                        document.getElementById("timeSlot").innerHTML = time;
+                        document.getElementById("timeSlot").innerHTML = "Time: " + time;
+                        document.getElementById("slash1").innerHTML = "/";
+                        document.getElementById("slash2").innerHTML = "/";
 
                         document.cookie = "day = " + date + ";  path=/";
                         document.cookie = "month = " + month + ";  path=/";
@@ -390,11 +394,6 @@ $booked = $_SESSION['booked'];
             }
 
         }
-
-
-        // console.log("Hello");
-
-        // window.location = "/calendar/calendarDetails/" + date + "/" + time + "/" + month + "/" + year;
     </script>
 
     <script>
@@ -421,6 +420,7 @@ $booked = $_SESSION['booked'];
             var washPackage = pausecontent[n]['Wash_Package_ID'];
             var price = getPrice(vehicleType, washPackage);
             document.getElementById("priceValue").innerHTML = "Rs. " + price;
+            document.getElementById("priceValue").style = "display:block;";
             document.cookie = "price = " + price + ";  path=/";
         }
 
