@@ -336,31 +336,31 @@ $booked = $_SESSION['booked'];
                 // Check if date is today. If so , check time. 
                 var today = new Date();
                 var selectedDate = year + "-" + month + "-" + date;
-                if (
-                    date == today.getDate() &&
-                    month == today.getMonth() + 1 &&
-                    year == today.getFullYear()
-                ) {
-                    console.log(today.getTimezoneOffset());
-                    var localTime = today.toLocaleTimeString('en-GB');
-                    var localTimeArray = localTime.split(":");
-                    var selectedTimeArray = time.split("-");
-                    if (parseInt(selectedTimeArray[0]) > parseInt(localTimeArray[0])) {
-                        document.getElementById("day").innerHTML = date;
-                        document.getElementById("month").innerHTML = month;
-                        document.getElementById("year").innerHTML = year;
-                        document.getElementById("timeSlot").innerHTML = time;
+                // if (
+                //     date == today.getDate() &&
+                //     month == today.getMonth() + 1 &&
+                //     year == today.getFullYear()
+                // ) {
+                //     console.log(today.getTimezoneOffset());
+                //     var localTime = today.toLocaleTimeString('en-GB');
+                //     var localTimeArray = localTime.split(":");
+                //     var selectedTimeArray = time.split("-");
+                //     if (parseInt(selectedTimeArray[0]) > parseInt(localTimeArray[0])) {
+                //         document.getElementById("day").innerHTML = date;
+                //         document.getElementById("month").innerHTML = month;
+                //         document.getElementById("year").innerHTML = year;
+                //         document.getElementById("timeSlot").innerHTML = time;
 
-                        document.cookie = "day = " + date + ";  path=/";
-                        document.cookie = "month = " + month + ";  path=/";
-                        document.cookie = "year = " + year + ";  path=/";
-                        document.cookie = "time = " + time + ";  path=/";
+                //         document.cookie = "day = " + date + ";  path=/";
+                //         document.cookie = "month = " + month + ";  path=/";
+                //         document.cookie = "year = " + year + ";  path=/";
+                //         document.cookie = "time = " + time + ";  path=/";
 
-                        document.getElementById("cal1").style = "display:none;";
-                        var z = document.getElementById("bookingContent");
-                        z.classList.remove("blurCalendar");
-                    }
-                } else {
+                //         document.getElementById("cal1").style = "display:none;";
+                //         var z = document.getElementById("bookingContent");
+                //         z.classList.remove("blurCalendar");
+                //     }
+                // } else {
                     const monthNames = ["January", "February", "March", "April", "May", "June",
                         "July", "August", "September", "October", "November", "December"
                     ];
@@ -386,7 +386,7 @@ $booked = $_SESSION['booked'];
                         var z = document.getElementById("bookingContent");
                         z.classList.remove("blurCalendar");
                     }
-                }
+                // }
             }
 
         }
