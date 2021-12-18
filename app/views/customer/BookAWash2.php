@@ -116,12 +116,10 @@ include 'views/user/LoggedInHeader.php';
                         var dur = directionsData.duration.text;
                         var kmInt = parseInt(km);
                         var additional = 0;
-                        if (kmInt < 2) {
-                            additional = 200;
-                        } else if (kmInt >= 2 && kmInt < 5) {
-                            additional = 400;
-                        } else {
-                            additional = 500;
+                        if (kmInt < 1) {
+                            additional = 50;
+                        } else{
+                            additional = (kmInt+1) * 50;
                         }
 
                         var cookieArray = document.cookie.split(";");
