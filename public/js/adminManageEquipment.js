@@ -1,5 +1,5 @@
 var arrHead = new Array();	// array for header.
-    arrHead = ['Item_Id','Name', 'Price', 'Date Acquired', ''];
+    arrHead = ['Category_Id','Name', 'Price', 'Date Acquired', ''];
 
 var submitBtn = document.getElementById('submitButton');
 var div1 = document.getElementById('container1');

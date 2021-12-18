@@ -67,7 +67,7 @@ class Booking extends Controller
     //completed reservations
     function completed()
     {
-
+        $_SESSION['completedReservations'] = $this->model->getCompletedReservationList();
         if ($_SESSION['role'] == "customer") {
             $this->view->render('customer/CompletedReservations');
             exit;
@@ -77,9 +77,11 @@ class Booking extends Controller
     }
 
     //completed reservation - x
-    function completedOrder()
+    function completedOrder($order_id)
     {
 
+        $_SESSION['completedOrder'] = $this->model->getCompletedReservationDetails($order_id);
+        
         if ($_SESSION['role'] == "customer") {
             $this->view->render('customer/CompletedOrder');
             exit;

@@ -1,5 +1,6 @@
 <?php
 include 'views/user/LoggedInHeader.php';
+$details = $_SESSION['completedOrder'];
 ?>
 
 <div class="bgImage">
@@ -7,7 +8,7 @@ include 'views/user/LoggedInHeader.php';
     <div style="min-height: 110px;"></div>
     <div class="mainUp">
     <div class="box3">
-            <div class="invoiceBorder">Order - 1257</div>
+            <div class="invoiceBorder">Order - <?php echo $details[0]['Reservation_ID'] ?></div>
 
             <div class="box2">
 
@@ -19,12 +20,12 @@ include 'views/user/LoggedInHeader.php';
                 </div>
                 <div class="res">
                     <div class="orderitem">Date</div>
-                    <div class="orderitemx">2021 / 10 / 20</div>
+                    <div class="orderitemx"><?php echo $details[0]['Date'] ?></div>
 
                 </div>
                 <div class="res">
                     <div class="orderitem">Time</div>
-                    <div class="orderitemx">8 am - 10 am</div>
+                    <div class="orderitemx"><?php echo $details[0]['Time'] ?></div>
 
                 </div>
 
@@ -37,7 +38,7 @@ include 'views/user/LoggedInHeader.php';
                 <hr><br>
                 <div class="res">
                     <div class="orderitem">Vehicle Identification No.</div>
-                    <div class="orderitemx">AD - 2315</div>
+                    <div class="orderitemx"><?php echo $details[0]['Vehicle_ID'] ?></div>
                 </div>
                 <div class="res">
                     <div class="orderitem">Model</div>
@@ -62,7 +63,7 @@ include 'views/user/LoggedInHeader.php';
                 </div>
                 <div class="res">
                     <div class="orderitem">Completed by</div>
-                    <div class="orderitemx">Service Team 1</div>
+                    <div class="orderitemx">Service Team <?php echo $details[0]['Service_team_leader_ID'] ?></div>
                 </div>
                 <div class="res">
                     <div class="orderitem">Wash Package</div>
