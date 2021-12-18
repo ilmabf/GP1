@@ -62,4 +62,17 @@ class BookingModel extends Model
             return true;
         } else print_r($result);
     }
+    function getCompletedReservationList(){
+        
+        $date = date('Y/m/d');
+        
+        $result = $this->db->select("*", "reservation", "WHERE Date < :date ;",':date',$date);
+        return $result;
+        
+    }
+    function getCompletedReservationDetails($order_id){
+        $result = $this->db->select("*", "reservation", "WHERE Reservation_ID = :order_id ;",':order_id',$order_id);
+        return $result;
+        
+    }
 }
