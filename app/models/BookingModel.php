@@ -66,6 +66,7 @@ class BookingModel extends Model
             return true;
         } else print_r($result);
     }
+    //For get Completed reservation list before current date
     function getCompletedReservationList(){
         
         $date = date('Y/m/d');
@@ -74,9 +75,27 @@ class BookingModel extends Model
         return $result;
         
     }
+    // For get details of selected completed reservation
     function getCompletedReservationDetails($order_id){
         $result = $this->db->select("*", "reservation", "WHERE Reservation_ID = :order_id ;",':order_id',$order_id);
         return $result;
         
+    }
+    //For get customer details for order summary,completed reservation
+    function getCustomer($custo_id){
+        $result = $this->db->select("*", "customer", "WHERE User_ID = :custo_id ;",':custo_id',$custo_id);
+        return $result;
+    }
+    //For get wash package name for choosen wash package id
+    function getSelectedWashPackage($washpackage_id)
+    {
+        $result = $this->db->select("Name", "wash_package", "WHERE Wash_Package_ID = :washpackage_id",':washpackage_id', $washpackage_id);
+        return $result;
+    }
+    //For get vehicle details for choosen vehicle id
+    function getSelectedVehicle($v_id)
+    {
+        $result = $this->db->select("*", "customer_vehicle", "WHERE VID = :v_id",':v_id', $v_id);
+        return $result;
     }
 }
