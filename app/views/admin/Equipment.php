@@ -57,7 +57,7 @@ $teams = $_SESSION['teamDetails'];
         <table id="ItemTable">
           <thead>
             <tr>
-              <th data-type="text">Item ID</th>
+              <th data-type="text">Category ID</th>
               <th data-type="text">Name</th>
               <th data-type="text">Total</th>
               <th data-type="text">Free</th>
