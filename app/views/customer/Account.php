@@ -32,16 +32,29 @@
             <input class="input-box" type="text2" name="model" maxlength="50" automatic placeholder="Eg:- Aqua" pattern="[^'?()/><\][\\\x22,;|]+" required>
             <br>
             <label for="Color" style="padding: 0px 139px 0px 0px;">Color</label>
-            <input type="color" name="color" required>
+            <!-- <input type="color" name="color" required> -->
+            <select name="color" class="myColorTypes" id="editMyColor" style="margin: 10px 0px;">
+                <option value="Silver">Silver</option>
+                <option value="White">White</option>
+                <option value="Blue">Blue</option>
+                <option value="Green">Green</option>
+                <option value="Beige">Beige</option>
+                <option value="Yellow">Yellow</option>
+                <option value="Orange">Orange</option>
+                <option value="Brown">Brown</option>
+                <option value="Pink">Pink</option>
+                <option value="Purple">Purple</option>
+                <option value="Red">Red</option>
+            </select>
             <br>
             <label for="Vehicle Type" style="padding: 0px 87px 0px 0px;">Vehicle Type</label>
             <select name="vehicleType" class="types" id="serviceTeamLeaders-types" required>
                 <option value="">Choose a type</option>
+                <option value="H-Back">H-Back</option>
                 <option value="Sedan">Sedan</option>
                 <option value="SUV">SUV</option>
                 <option value="Luxury">Luxury</option>
                 <option value="Van">Van</option>
-                <option value="H-Back">H-Back</option>
             </select>
             <br>
             <label for="Manufacturer" style="padding: 0px 80px 0px 0px;">Manufacturer</label>
@@ -65,15 +78,28 @@
             <input class="input-box" type="text2" name="model" autofocus placeholder="123456" id="editModel" pattern="[^'?()/><\][\\\x22,;|]+" required>
             <br>
             <label for="Color" style="padding: 0px 139px 0px 0px;">Color</label>
-            <input type="color" id="editColor" name="color" required>
+            <!-- <input type="color" id="editColor" name="color" required> -->
+            <select name="color" class="colorTypes" id="editColor" style="margin: 10px 0px;">
+                <option value="Silver">Silver</option>
+                <option value="White">White</option>
+                <option value="Blue">Blue</option>
+                <option value="Green">Green</option>
+                <option value="Beige">Beige</option>
+                <option value="Yellow">Yellow</option>
+                <option value="Orange">Orange</option>
+                <option value="Brown">Brown</option>
+                <option value="Pink">Pink</option>
+                <option value="Purple">Purple</option>
+                <option value="Red">Red</option>
+            </select>
             <br>
             <label for="Vehicle Type" style="padding: 0px 87px 0px 0px;">Vehicle Type</label>
             <select name="type" class="types" id="editType">
+                <option value="H-Back">H-Back</option>
                 <option value="Sedan">Sedan</option>
                 <option value="SUV">SUV</option>
                 <option value="Luxury">Luxury</option>
                 <option value="Van">Van</option>
-                <option value="H-Back">H-Back</option>
             </select>
             <br>
             <label for="Manufacturer" style="padding: 0px 80px 0px 0px;">Manufacturer</label>
@@ -245,12 +271,12 @@
             center: new google.maps.LatLng(lat, lng),
             zoom: 10,
         };
-        
+
         var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
         marker = new google.maps.Marker({
             map,
         });
-        latlng = new google.maps.LatLng(lat,lng);
+        latlng = new google.maps.LatLng(lat, lng);
         marker.setPosition(latlng);
         // marker.setMap(map);
     }

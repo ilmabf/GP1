@@ -1,217 +1,219 @@
+@media only screen and (max-width: 770px) {
+  .bgImage1 {
+    height: 1000px;
+  }
+  .bgImage1 {
+    min-height: 120%;
+  }
+  .space {
+    min-height: 400px;
+  }
 
-@media  only screen and (max-width: 770px){
-    .bgImage1{
-        height: 1000px;
-    }
-    .bgImage1{
-        min-height: 120%;
-    }
-    .space{
-        min-height: 400px;
-    }
-
-    .bgImage2{
-        min-height: 110%;
-    }   
-    .bgImage{
-        min-height: 1000px;
-    }
-    .types{
-        width: 100%;
-    }
-}
-
-@media  only screen and (min-width: 770px){
-    .types{
-        width: 50%;
-    }
-}
-@media  only screen and (max-width: 327px){
-    .bgImage1{
-        height: 1000px;
-    }
-}
-
-input[type=color]{
-    margin-bottom: 7px;
-    margin-top: 5px;
-}
-
-.blur   {
-    filter: blur(3px);
-    /* position: absolute; */
+  .bgImage2 {
+    min-height: 110%;
+  }
+  .bgImage {
+    min-height: 1000px;
+  }
+  .types {
     width: 100%;
-    height: 100%;
+  }
 }
 
-.blurAccount   {
-    filter: blur(3px);
-    position: absolute;
-    /* width: 100%; */
-    /* height: 100%; */
+@media only screen and (min-width: 770px) {
+  .types {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 327px) {
+  .bgImage1 {
+    height: 1000px;
+  }
 }
 
-
-input[type=text2]{
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: vertical;
+input[type="color"] {
+  margin-bottom: 7px;
+  margin-top: 5px;
 }
 
-.space{
-    min-height: 30px;
+.blur {
+  filter: blur(3px);
+  /* position: absolute; */
+  width: 100%;
+  height: 100%;
 }
 
-.types{
-    font-weight: 600;
-    border-radius: 5px;
-    border: 2px outset #085394;
-    /* width: 100%; */
-    padding: 12px;
-    /* border: 1px solid #ccc; */
-    /* border-radius: 4px; */
-    resize: vertical;
-    margin-bottom: 5px;
-    
+.blurAccount {
+  filter: blur(3px);
+  position: absolute;
+  /* width: 100%; */
+  /* height: 100%; */
+}
+
+input[type="text2"] {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.space {
+  min-height: 30px;
+}
+
+.types {
+  font-weight: 600;
+  border-radius: 5px;
+  border: 2px outset #085394;
+  /* width: 100%; */
+  padding: 12px;
+  /* border: 1px solid #ccc; */
+  /* border-radius: 4px; */
+  resize: vertical;
+  margin-bottom: 5px;
 }
 
 .inv {
-    display: none;
+  display: none;
 }
 
-.bgImage1 { 
-    background: url('/public/images/carblur_desktop.png') no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+.bgImage1 {
+  background: url("/public/images/carblur_desktop.png") no-repeat center center
+    fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-.bgImage1{
-    min-height: 105%;
+.bgImage1 {
+  min-height: 105%;
 }
 
+input[type="text4"],
+select,
+textarea {
+  width: 100%;
+  /* padding: 12px; */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
 
-input[type=text4], select, textarea {
-    width: 100%;
-    /* padding: 12px; */
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: vertical;
-  }
-
-  .bgImage2{
-    background: url(/public/images/carblur_desktop.png) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    min-height: 100%;
+.bgImage2 {
+  background: url(/public/images/carblur_desktop.png) no-repeat center center
+    fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100%;
 }
 
 .stars1 {
-    width: 133px;
+  width: 133px;
 }
 
-.rate1{
-    display: inline-block;
-    margin-top: 20px;
-    margin-bottom: 40px;
+.rate1 {
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
 
-.rate1 p{
-    font-size: 15px;
-    font-weight: 600;
+.rate1 p {
+  font-size: 15px;
+  font-weight: 600;
 }
- 
+
 .rating__star {
-    cursor: pointer;
-    /* color: #f1ce07b2; */
-    color: yellow;
+  cursor: pointer;
+  /* color: #f1ce07b2; */
+  color: yellow;
 }
 
 .Table-search {
-    display: flex;
-    flex-direction: column;
-    padding: 1em;
-    align-items: center;
-    
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  align-items: center;
 }
 
 .table-wrapper {
-    overflow: auto;
-    max-width: 100%;
-    background-color: whitesmoke;
-    box-shadow: 0px 0px 0px 20px whitesmoke;
+  overflow: auto;
+  max-width: 100%;
+  background-color: rgb(228, 227, 227);
+  box-shadow: 0px 0px 0px 20px rgb(233, 232, 232);
 }
 
 tr {
-    border-bottom: 1px solid;
+  border-bottom: 1px solid;
 }
 
 th {
-    color: #193498;
-    cursor: pointer;
-    border: solid 1px #193498;
+  color: #193498;
+  cursor: pointer;
+  border: solid 1px #193498;
 }
 
-th, td {
-    border: solid 1px #193498;
-    text-align: left;
-    padding: 0.5em 1em;
-    max-width: fit-content;
+th,
+td {
+  border: solid 1px #193498;
+  text-align: left;
+  padding: 0.5em 1em;
+  max-width: fit-content;
 }
 
-input[type=search] {
-    border: 1px solid;
-    font-size: initial;
-    margin-bottom: 1em;
-    padding: 0.25em;
+input[type="search"] {
+  border: 1px solid;
+  font-size: initial;
+  margin-bottom: 1em;
+  padding: 0.25em;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
-table { 
-    max-width: 100%; 
+table {
+  max-width: 100%;
 }
 
-table, th, td { 
-    border: solid 1px #193498;
-    border-collapse: collapse; 
-    /* padding: 2px 2px;  */
-    text-align: center;
-    margin: 0px auto;
+table,
+th,
+td {
+  border: solid 1px #193498;
+  border-collapse: collapse;
+  /* padding: 2px 2px;  */
+  text-align: center;
+  margin: 0px auto;
 }
 
-th{
-    max-width: 130px;
+th {
+  max-width: 130px;
 }
 
-tr{
-    max-width: 100%;
+tr {
+  max-width: 100%;
 }
-.hiddenEquipRecord{
-    display: none;
-}
-
-input[type=text3]{
-    width: 100%;
-    padding: 0px 0px 12px 0px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: vertical;
+.hiddenEquipRecord {
+  display: none;
 }
 
-.bgImage { 
-    background: url('/public/images/carblur_desktop.png') no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    min-height: 100%;
-    
+input[type="text3"] {
+  width: 100%;
+  padding: 0px 0px 12px 0px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.bgImage {
+  background: url("/public/images/carblur_desktop.png") no-repeat center center
+    fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100%;
 }
