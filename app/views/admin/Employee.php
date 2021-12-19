@@ -115,50 +115,52 @@ include 'views/user/LoggedInHeader.php';
           <span id="todayDate" style="float: right; background-color:blue; color:white;">
             <?php echo date("d-m-Y"); ?>
           </span>
+          <form action="/employee/insertAttendance/" id="empAttendanceForm" method="POST">
+            <table id="filterTable1">
+              <thead>
+                <tr>
+                  <th data-type="text">First Name</th>
+                  <th data-type="text">Last Name</th>
+                  <th data-type="text">Team</th>
+                  <th data-type="text">On Work</th>
+                  <th colspan="1" style="text-align: center;">
+                    <input type="button" id="editButton" class="edit_btn td-t1" value="Edit" onclick="empEditAttendanceForm('<?php echo sizeof($_SESSION['employeeAttendanceDetails']) ?>')">
+                  </th>
+                </tr>
+              </thead>
+              <tbody style="max-width:100%;">
 
-          <table id="filterTable1">
-            <thead>
-              <tr>
-                <th data-type="text">First Name</th>
-                <th data-type="text">Last Name</th>
-                <th data-type="text">Team</th>
-                <th data-type="text">On Work</th>
-                <th colspan="1" style="text-align: center;">Action</th>
-              </tr>
-            </thead>
-            <tbody style="max-width:100%;">
+                <?php
+                $count1 = 0;
+                $result1 = $_SESSION['employeeAttendanceDetails'];
 
-              <?php
-              $count1 = 0;
-              $result1 = $_SESSION['employeeAttendanceDetails'];
+                //echo $yesterday = date('Y-m-d', time() - 60 * 60 * 24);
+                //print_r($_SESSION['employeeAttendanceDetails']);
+                while ($count1 < sizeof($result1)) { ?>
 
-
-              // echo $_SESSION['rowCount'];
-              while ($count1 < sizeof($result1)) { ?>
-
-                <tr id="row<?php $count1 ?>">
-                  <td id="<?php echo "Att_FirstName_row" . $count1 ?>" style="text-align:left" class="td-t1"><?php echo $result1[$count1]['First_Name'] ?></td>
-                  <td id="<?php echo "Att_LastName_row" . $count1 ?>" style="text-align:left" class="td-t1"><?php echo $result1[$count1]['Last_Name'] ?></td>
-                  <td id="<?php echo "Att_Team_row" . $count1 ?>" class="td-t1"><?php echo $result1[$count1]['team'] ?></td>
-                  <td id="<?php echo "Att_OnWork_row" . $count1 ?>" style="text-align:left" class="td-t1" style="max-width:200px;"><?php echo $result1[$count1]['onWork'] ?></td>
-                  <td>
+                  <tr id="row<?php $count1 ?>">
+                    <td id="<?php echo "Att_FirstName_row" . $count1 ?>" style="text-align:left" class="td-t1"><?php echo $result1[$count1]['First_Name'] ?></td>
+                    <td id="<?php echo "Att_LastName_row" . $count1 ?>" style="text-align:left" class="td-t1"><?php echo $result1[$count1]['Last_Name'] ?></td>
+                    <td id="<?php echo "Att_Team_row" . $count1 ?>" class="td-t1"><?php echo $result1[$count1]['team'] ?></td>
+                    <td id="<?php echo "Att_OnWork_row" . $count1 ?>" style="text-align:left" class="td-t1" style="max-width:200px;"><?php echo $result1[$count1]['onWork'] ?></td>
+                    <!-- <td>
                     <input type="button" id="<?php echo "edit_att_emp_btn" . $count1 ?>" class="edit_btn td-t1" value="Edit" onclick="empEditAttendanceForm('<?php echo $count1 ?>')">
 
-                  </td>
+                  </td> -->
 
-                </tr>
+                  </tr>
 
-              <?php $count1 = $count1 + 1;
-              } ?>
+                <?php $count1 = $count1 + 1;
+                } ?>
 
-            </tbody>
-          </table>
+              </tbody>
+            </table>
 
-          <div id="emp-attendance-submit">
-            <input type="submit" id="empAttendance-submit-1" value="Submit">
+            <div id="emp-attendance-submit">
+              <input type="submit" id="empAttendance-submit-1" value="Submit">
 
-          </div>
-
+            </div>
+          </form>
         </div>
       </div>
 

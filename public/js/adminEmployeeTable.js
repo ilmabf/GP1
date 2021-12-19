@@ -97,27 +97,30 @@ function empSaveForm(id, no) {
     salaryVal;
 }
 
-function empEditAttendanceForm(no) {
-  document.getElementById("edit_att_emp_btn" + no).style.display = "none";
+function empEditAttendanceForm(size) {
 
-  var EmpAttTeam = document.getElementById("Att_Team_row" + no);
-  var EmpAttonWork = document.getElementById("Att_OnWork_row" + no);
+  document.getElementById("editButton").style.display = "none";
+  var i = 0;
+  for (i = 0; i < size; i++) {
+    var EmpAttTeam = document.getElementById("Att_Team_row" + i);
+    var EmpAttonWork = document.getElementById("Att_OnWork_row" + i);
 
-  var EmpAttTeamData = EmpAttTeam.innerHTML;
-  var EmpAttonWorkData = EmpAttonWork.innerHTML;
+    var EmpAttTeamData = EmpAttTeam.innerHTML;
+    var EmpAttonWorkData = EmpAttonWork.innerHTML;
 
-  EmpAttTeam.innerHTML =
-    "<input type='text' id='EmpAttTeam_text" +
-    no +
-    "' class='td-t7' name='EmpAttTeamData' value='" +
-    EmpAttTeamData +
-    "'/>";
-  EmpAttonWork.innerHTML =
-    "<input type='text' id='EmpAttonWork_text" +
-    no +
-    "' class='td-t3' name='EmpAttonWorkData' value='" +
-    EmpAttonWorkData +
-    "' />";
+    EmpAttTeam.innerHTML =
+      "<input type='text' id='EmpAttTeam_text" +
+      i +
+      "' class='td-t7' name='EmpAttTeamData[]' value='" +
+      EmpAttTeamData +
+      "'/>";
+    EmpAttonWork.innerHTML =
+      "<input type='text' id='EmpAttonWork_text" +
+      i +
+      "' class='td-t3' name='EmpAttonWorkData[]' value='" +
+      EmpAttonWorkData +
+      "' />";
+  }
 }
 
 function stlEditAttendanceForm(no) {

@@ -37,12 +37,15 @@ class EmployeeModel extends Model
 
     function getEmployeeAttendanceDetails()
     {
+        //$employees = $this->db->select("Employee_ID", "employee", "null");
         $selection = array("employee.First_Name", "employee.Last_Name", "employee_records.team", "employee_records.onWork");
 
-        $result = $this->db->select($selection, "employee", "INNER JOIN employee_records ON employee.Employee_ID = employee_records.EmpID WHERE employee_records.Stl_ID IS NULL AND employee.Flag != 0;");
+        $yesterday = date('Y-m-d', time() - 60 * 60 * 24);
+        $result = $this->db->select($selection, "employee", 
+        "LEFT JOIN employee_records ON (employee.Employee_ID = employee_records.EmpID AND employee_records.date = :day) WHERE (employee.STL_ID IS NULL AND employee.Flag = 1);" , ":day", $yesterday);
         return $result;
     }
-
+   // WHERE (employee.STL_ID IS NULL AND employee.Flag = 1 AND employee_records.date = :day), ":day", $yesterday
     function getStlAttendanceDetails()
     {
         $selection = array("employee.First_Name", "employee.Last_Name", "employee_records.team", "employee_records.onWork");
