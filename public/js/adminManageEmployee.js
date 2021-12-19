@@ -12,8 +12,6 @@ arrHead = [
 
 var arrStlHead = new Array();
 arrStlHead = [
-  "First Name",
-  "Last Name",
   "NIC",
   "Username",
   "Email",
@@ -186,7 +184,7 @@ function addStlRow() {
     var td2 = document.createElement("td"); // table definition.
     td2 = tr22.insertCell(c2);
 
-    if (c2 == 7) {
+    if (c2 == 6) {
       // the first column.
       // add a button in every new row in the first column.
       var button1 = document.createElement("input");
@@ -218,7 +216,7 @@ function addStlRow() {
         ele2.setAttribute("required", "");
         ele2.setAttribute("maxlength", "10");
       } else if (c2 == 2) {
-        ele2.setAttribute("id", "stlemail");
+        ele2.setAttribute("id", "stlEmail");
         ele2.setAttribute("name", "stlEmail");
         ele2.setAttribute("type", "email");
         ele2.setAttribute("required", "");
@@ -227,22 +225,17 @@ function addStlRow() {
         ele2.setAttribute("name", "stlPassword");
         ele2.setAttribute("type", "password");
         ele2.setAttribute("required", "");
-        ele2.setAttribute("pattern", pattern);
+        // ele2.setAttribute("pattern", pattern);
       } else if (c2 == 4) {
         ele2.setAttribute("id", "confirmPass");
         ele2.setAttribute("name", "stlConfirmPassword");
         ele2.setAttribute("type", "password");
         ele2.setAttribute("required", "");
       } else if (c2 == 5) {
-        ele2.setAttribute("id", "stlteam");
-        ele2.setAttribute("name", "stlTeam");
-        ele2.setAttribute("type", "number");
-        ele2.setAttribute("required", "");
-        ele2.setAttribute("placeholder", "1 or 2 etc");
-      } else if (c2 == 6) {
         ele2.setAttribute("id", "stlphoto");
         ele2.setAttribute("name", "stlPhoto");
         ele2.setAttribute("type", "file");
+        ele2.setAttribute("accept", ".png,.gif,.jpg,.webp");
         ele2.setAttribute("required", "");
       }
 

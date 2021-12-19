@@ -18,7 +18,8 @@ tr {
   max-width: 100%;
 }
 
-#addRow,#addStlRow  {
+#addRow,
+#addStlRow {
   margin: 35px 20px;
   padding: 8px 8px;
   background-color: #193498;
@@ -42,14 +43,38 @@ tr {
   max-width: 130px;
 }
 
-#validFirstName, #validLastName, #validcontactNumber, #validemail, #validdateEnrolled, #validsalary,
-#validnicNo,#validteam,#stlphoto,#stlteam,#confirmPass,#pass,#stlemail,#stlusername,#nic {
+#validFirstName,
+#validLastName,
+#validcontactNumber,
+#validemail,
+#validdateEnrolled,
+#validsalary,
+#validnicNo,
+#validteam,
+#stlphoto,
+#stlteam,
+#confirmPass,
+#pass,
+#stlemail,
+#stlusername,
+#nic {
   padding: 2px;
   font-size: 14px;
   border-color: grey;
   max-width: 115px;
 }
-#adminSearchEmployee {
+
+#adminSearchEmployee,
+#adminSearchStl {
+  padding: 10px 10px;
+  border-color: #193498;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: block;
+  font-size: 15px;
+}
+
+#adminSearchEmployee1 {
   padding: 10px 10px;
   border-color: #193498;
   border-radius: 5px;
@@ -98,6 +123,11 @@ tr {
 }
 
 #adminSearchEmployee {
+  font-size: 15px;
+  border: 2px outset #193498;
+}
+
+#adminSearchStl {
   font-size: 15px;
   border: 2px outset #193498;
 }
@@ -171,7 +201,6 @@ input[type="search"] {
   font-weight: 800;
 }
 
-
 .addTb2 {
   display: none;
 }
@@ -180,3 +209,73 @@ input[type="search"] {
   margin-left: 0px;
 }
 
+#next-EmpAttendance,
+#next-StlAttendance {
+  display: block;
+  margin: auto;
+  padding: 10px 10px;
+  background-color: #193498;
+  color: white;
+  border-radius: 5px;
+  border-color: white;
+  cursor: pointer;
+}
+
+#next-EmpDetails,
+#next-StlDetails {
+  display: block;
+  margin: auto;
+  padding: 10px 10px;
+  background-color: #193498;
+  color: white;
+  border-radius: 5px;
+  border-color: white;
+  cursor: pointer;
+}
+
+#EmpAttendance-nav,
+#StlAttendance-nav {
+  display: block;
+  margin: 20px auto;
+  color: white;
+  border-radius: 5px;
+  border-color: white;
+}
+
+#EmpDetails-nav,
+#StlDetails-nav {
+  display: none;
+  margin: 20px auto;
+  color: white;
+  border-radius: 5px;
+  border-color: white;
+}
+
+#empAttendanceTable,
+#stlAttendanceTable {
+  display: none;
+}
+
+#emp-attendance-submit,
+#stl-attendance-submit {
+  margin: 20px auto;
+}
+
+#empAttendance-submit-1,
+#stlAttendance-submit-1 {
+  padding: 7px 7px;
+  background-color: #7b113a;
+  border-radius: 5px;
+  color: white;
+  display: block;
+  font-size: 13px;
+  cursor: pointer;
+  float: right;
+  font-weight: 500;
+  border: none;
+}
+
+#empAttendance-submit-1:hover,
+#stlAttendance-submit-1:hover {
+  background-color: #500421;
+}
