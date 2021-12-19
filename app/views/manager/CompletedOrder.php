@@ -58,9 +58,14 @@ include 'views/user/LoggedInHeader.php';
                 </div>
                 <div class="res">
                     <div class="orderitem">Color</div>
-                    <div class="orderitemx" style=" width: 26px;height: 24px;display: inline-block;border: 1px solid #193498;background-color:<?php echo $vehicleDetails[0]['Colour']; ?>"></div>
+                    <div class="orderitemx" style=" width: 26px;height: 24px;display: inline-block;border: 1px solid <?php echo $vehicleDetails[0]['Colour']; ?>;background-color:<?php echo $vehicleDetails[0]['Colour']; ?>"></div>
                 </div><br>
-                <hr><br>
+                <hr><br>                
+                <div class="res">
+                    <div class="orderitem" >Address</div>
+                    <div class="orderitemx" style="font-size:12px;"><?php echo $orderDetails[0]['Address'] ?></div>
+
+                </div>
                 <div class="res">
                     <div class="orderitem">Location</div>
                     <div class="orderitemx"><button class="reservationButtons a12" id="cancelAssignBtn" style="color:white; padding: 1px 3px; margin-bottom:0px" onclick=""><a>View Location</a></button></div>
@@ -78,7 +83,7 @@ include 'views/user/LoggedInHeader.php';
                 <hr>
                 <div class="res">
                     <div class="orderitem">Total Price Rs.</div>
-                    <div class="orderitemx"><?php echo $orderDetails[0]['Price'] ?>/-</div>
+                    <div class="orderitemx"><?php echo $orderDetails[0]['Total_price'] ?>/-</div>
 
                 </div>
                 <hr>
