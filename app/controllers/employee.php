@@ -14,11 +14,20 @@ class Employee extends Controller
     function index()
     {
 
-        $result = $this->model->getEmployeeDetails();
-        $_SESSION['employeeDetails'] = $result;
+        $empDetails = $this->model->getEmployeeDetails();
+        $_SESSION['employeeDetails'] = $empDetails;
 
-        $result = $this->model->getTeamCount();
-        $_SESSION['teamCount'] = $result;
+        $empAttendance = $this->model->getEmployeeAttendanceDetails();
+        $_SESSION['employeeAttendanceDetails'] = $empAttendance;
+
+        $stlData = $this->model->getStlData();
+        $_SESSION['stlData'] = $stlData;
+
+        $stlAttendance = $this->model->getStlAttendanceDetails();
+        $_SESSION['stlAttendanceDetails'] = $stlAttendance;
+
+        // $result = $this->model->getTeamCount();
+        // $_SESSION['teamCount'] = $result;
 
         //User Autherization
         if ($_SESSION['role'] == "systemadmin") {
@@ -42,13 +51,12 @@ class Employee extends Controller
             $dateEnrolled = $_POST['dateEnrolled'];
             $salary = $_POST['salary'];
             $nic = $_POST['nicNo'];
-            $team = $_POST['team'];
 
-            if (isset($firstName) && isset($lastName) && isset($contactNumber) && isset($email) && isset($dateEnrolled) && isset($salary) && isset($nic) && isset($team)) {
+            if (isset($firstName) && isset($lastName) && isset($contactNumber) && isset($email) && isset($dateEnrolled) && isset($salary) && isset($nic)) {
 
                 //insert employee
                 $flag = 1;
-                if ($this->model->makeEmployee($firstName, $lastName, $contactNumber, $email, $dateEnrolled, $salary, $nic, $team, $flag)) {
+                if ($this->model->makeEmployee($firstName, $lastName, $contactNumber, $email, $dateEnrolled, $salary, $nic, $flag)) {
                     $_SESSION['insertSuccess'] = 'Employee added successfully';
                     header("Location: /employee/");
                 }
@@ -60,11 +68,55 @@ class Employee extends Controller
         }
     }
 
+    function stlAdd()
+    {
+        // add uname, pwd, email , stlid to users tb
+        // add stlid, photo to stl table
+
+        if ($_SESSION['role'] == "systemadmin") {
+            $nic = $_POST['NIC'];
+            $stlUserName = $_POST['stlUserName'];
+            $stlEmail = $_POST['stlEmail'];
+            $stlPassword = $_POST['stlPassword'];
+            // $stlPhoto = $_POST['stlPhoto'];
+
+            if (isset($nic) && isset($stlUserName) && isset($stlEmail) && isset($stlPassword)) {
+
+                // $options = ['cost' => 12];
+                // $hashedpwd = password_hash($stlPassword, PASSWORD_BCRYPT, $options);
+
+                // $filename = $_FILES["stlPhoto"]["name"];
+                $tempname = $_FILES["stlPhoto"]["tmp_name"];
+
+                if ($this->model->stlPhotoAdd($tempname)) {
+                    $options = ['cost' => 12];
+                    $hashedpwd = password_hash($stlPassword, PASSWORD_BCRYPT, $options);
+
+                    $stlDetails = $this->model->getStlDetails();
+                    $_SESSION['stlDetails'] = $stlDetails;
+
+                    $stlCount = $_SESSION['rowCount'];
+                    $stlId = $_SESSION['stlDetails'][$stlCount - 1]['STL_ID'];
+                    echo $stlCount;
+                    echo $stlId;
+
+                    if ($this->model->stlUserAdd($stlId, $stlUserName, $hashedpwd, $stlEmail)) {
+                        header("Location: /employee/");
+                    }
+                }
+            }
+        }
+    }
+
     function saveEditEmployee($empId, $contactNumberVal, $emailData, $salaryData)
     {
+        echo $empId;
+        echo $contactNumberVal;
+        echo $emailData;
         if ($_SESSION['role'] == "systemadmin") {
 
             $values = array($contactNumberVal, $emailData, $salaryData);
+            // print_r($values);
 
             if ($this->model->employeeSaveEdit($empId, $values)) {
                 header("Location: /employee/");

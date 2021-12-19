@@ -26,7 +26,9 @@ class BookingModel extends Model
         // define a dictionary and keep key as the Date and value as the Time
         $bookedDatesDict = array();
         for ($i = 0; $i < count($groupedSlots); $i += 1) {
-            $bookedDatesDict[$groupedSlots[$i][0]] = $groupedSlots[$i][1];
+            if ($groupedSlots[$i][2] >= $stlCount) {
+                $bookedDatesDict[$groupedSlots[$i][0]] = $groupedSlots[$i][1];
+            }
         }
         return $bookedDatesDict;
     }
@@ -37,7 +39,8 @@ class BookingModel extends Model
         return $result;
     }
 
-    function getServicePrice(){
+    function getServicePrice()
+    {
         $result = $this->db->select("*", "wash_package_vehicle_category", "Null");
         return $result;
     }
@@ -48,7 +51,8 @@ class BookingModel extends Model
         return $result;
     }
 
-    function getAddress($uid){
+    function getAddress($uid)
+    {
         $result = $this->db->select("*", "customer_location", "WHERE User_ID = :uid ;", ':uid', $uid);
         return $result;
     }
