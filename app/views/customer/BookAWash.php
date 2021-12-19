@@ -15,7 +15,7 @@ $booked = $_SESSION['booked'];
             <div class="heading">
                 <h2 style="font-size: 30px;">Start Your Booking!</h2>
             </div>
-            
+            <div id = "xx"></div>
             <p id="sub-heading-p" style="font-size: 15px;"></p>
             <div id = "completeMsg" style="text-align:center; color:red; margin-top:10px;"></div>
         </div>

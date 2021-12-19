@@ -37,16 +37,58 @@ function getVehicle() {
   var x = document.getElementById("vehicles").value;
   document.cookie = "vehicle =" + x + "; path=/";
 }
-
+insertCookie();
 getVehicle();
 
-function checkDetails(){
+function checkDetails() {
   var slash = document.getElementById("slash1").innerHTML;
   var price = document.getElementById("priceValue").innerHTML;
-  if(slash != "/" || price == ""){
+  if (slash != "/" || price == "") {
     document.getElementById("completeMsg").innerHTML = "Please make sure the details are complete";
   }
-  else{
+  else {
     window.location = "/booking/location";
   }
 }
+
+function insertCookie() {
+
+  var cookieArray = document.cookie.split(";");
+  var i = 0;
+  for (i = 0; i < cookieArray.length; i++) {
+    cookieArray[i] = cookieArray[i].trim();
+    if (cookieArray[i].substring(0, 3) === "day") {
+      var date = cookieArray[i].substring(4);
+      document.getElementById("day").innerHTML = date;
+      document.getElementById("slash1").innerHTML = "/";
+      document.getElementById("slash2").innerHTML = "/";
+    }
+    if (cookieArray[i].substring(0, 5) === "month") {
+      var month = cookieArray[i].substring(6);
+      document.getElementById("month").innerHTML = month;
+    }
+    if (cookieArray[i].substring(0, 4) === "year") {
+      var year = cookieArray[i].substring(5);
+      document.getElementById("year").innerHTML = year;
+    }
+    if (cookieArray[i].substring(0, 4) === "time") {
+      var time = cookieArray[i].substring(5);
+      document.getElementById("timeSlot").innerHTML = time;
+    }
+    if (cookieArray[i].substring(0, 7) === "vehicle") {
+      var vehicle = cookieArray[i].substring(8);
+      document.getElementById("vehicles").value = vehicle;
+      document.cookie = "vehicle =" + vehicle + "; path=/";
+    }
+    if (cookieArray[i].substring(0, 15) === "washPackageName") {
+      var washPackage = cookieArray[i].substring(16);
+    }
+    if (cookieArray[i].substring(0, 5) === "price") {
+      var price = cookieArray[i].substring(6);
+      document.getElementById("priceValue").style = "display:block;";
+      document.getElementById("priceValue").innerHTML = "Rs. " + price;
+    }
+  }
+  document.getElementById("xx").innerHTML = document.cookie;
+}
+
