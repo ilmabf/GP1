@@ -1,4 +1,5 @@
 <?php
+require 'libs/Mailer.php';
 session_start();
 class Booking extends Controller
 {
@@ -95,45 +96,35 @@ class Booking extends Controller
         }
     }
 
-    function makeReservation($details){
+    function makeReservation($details)
+    {
         $details = explode(';', $details);
 
-        for($i = 0; $i<sizeof($details); $i++){
-            if(strncmp($details[$i], "day", 3) == 0){
+        for ($i = 0; $i < sizeof($details); $i++) {
+            if (strncmp($details[$i], "day", 3) == 0) {
                 $day = substr($details[$i], 4);
-            }
-            else if(strncmp($details[$i], "month", 5) == 0){
+            } else if (strncmp($details[$i], "month", 5) == 0) {
                 $month = substr($details[$i], 6);
-            }
-            else if(strncmp($details[$i], "year", 4) == 0){
+            } else if (strncmp($details[$i], "year", 4) == 0) {
                 $year = substr($details[$i], 5);
-            }
-            else if(strncmp($details[$i], "time", 4) == 0){
-                $time = substr($details[$i],5);
-            }
-            else if(strncmp($details[$i], "vehicle", 7) == 0){
+            } else if (strncmp($details[$i], "time", 4) == 0) {
+                $time = substr($details[$i], 5);
+            } else if (strncmp($details[$i], "vehicle", 7) == 0) {
                 $vehicle = substr($details[$i], 8);
-            }
-            else if(strncmp($details[$i], "washPackageName", 15) == 0){
+            } else if (strncmp($details[$i], "washPackageName", 15) == 0) {
                 $washPackageName = substr($details[$i], 16);
-            }
-            else if(strncmp($details[$i], "washPackage", 11) == 0){
+            } else if (strncmp($details[$i], "washPackage", 11) == 0) {
                 $washPackage = substr($details[$i], 12);
-            }
-            else if(strncmp($details[$i], "price", 5) == 0){
+            } else if (strncmp($details[$i], "price", 5) == 0) {
                 $price = substr($details[$i], 6);
-            }
-            else if(strncmp($details[$i], "total", 5) == 0){
+            } else if (strncmp($details[$i], "total", 5) == 0) {
                 $total = substr($details[$i], 6);
-            }
-            else if(strncmp($details[$i], "address", 7) == 0){
+            } else if (strncmp($details[$i], "address", 7) == 0) {
                 $address = substr($details[$i], 8);
-            }
-            else if(strncmp($details[$i], "latitude", 8) == 0){
+            } else if (strncmp($details[$i], "latitude", 8) == 0) {
                 $latitude = substr($details[$i], 9);
-            }
-            else if(strncmp($details[$i], "longitude", 9) == 0){
-                $longitude = substr($details[$i],10);
+            } else if (strncmp($details[$i], "longitude", 9) == 0) {
+                $longitude = substr($details[$i], 10);
             }
         }
 
@@ -141,7 +132,27 @@ class Booking extends Controller
 
         $reservationDetails = array($vehicle, $address, $latitude, $longitude, $price, $total, $washPackage, $date, $time, $_SESSION['userDetails'][0]['User_ID']);
         if ($this->model->AddReserevation($reservationDetails)) {
-            header("Location: /user/home");
+
+            $mail = new Mailer();
+
+            $output = '<p>Dear customer,</p>';
+            $output .= '<p>Thank you for using WandiWash!</p>';
+            $output .= '<p>You have made a reservation on ' . $date . ' with the following details.</p>';
+            $output .= '<p>Vehicle - ' .$vehicle . '</p>';
+            $output .= '<p>Wash Package - ' .$washPackageName . '</p>';
+            $output .= '<p>Location - ' .$address . '</p>';
+            $output .= '<p></p>';
+            $output .= '<p>Service Price - Rs.' .$price . '.00</p>';
+            $output .= '<p>Total Price - Rs.' .$total . '.00</p>';
+            $output .= '<p>We will let you know once a service team is assigned for you. Make sure to check your email or your upcoming reservations.</p>';
+            $output .= '<p>Thanks,</p>';
+            $output .= '<p>WandiWash.</p>';
+            $body = $output;
+            $subject = "We received your reservation - wandiwash.com";
+
+            if ($mail->mailto($subject, $_SESSION['userDetails'][0]['Email'], $body)) {
+                header("Location: /user/home");
+            }
         }
     }
 }
