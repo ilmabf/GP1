@@ -16,20 +16,20 @@ include 'views/user/LoggedInHeader.php';
         <div class="boxOrderSum">
             <div class="res">
                 <div class="orderitem">Date</div>
-                <div class="orderitemx" id = "date">2021 / 10 / 20</div>
+                <div class="orderitemx" id="date">2021 / 10 / 20</div>
                 <div class="orderitem2"><button class="changebutton"><a href="/booking/details" style="color:white;">Change</a></button></div>
 
             </div>
             <div class="res">
                 <div class="orderitem" style="margin-right: 0px;">Time</div>
-                <div class="orderitemx" id = "time">8 am - 10 am</div>
+                <div class="orderitemx" id="time">8 am - 10 am</div>
                 <div class="orderitem2"><button class="changebutton"><a href="/booking/details" style="color:white;">Change</a></button></div>
 
             </div>
 
             <div class="res">
                 <div class="orderitem" style="margin-right: 0px;">Location</div>
-                <div class="orderitemx" id = "address" style="font-size: small;">ABC Road Kandy</div>
+                <div class="orderitemx" id="address" style="font-size: small;">ABC Road Kandy</div>
                 <div class="orderitem2"><button class="changebutton"><a href="/booking/location" style="color:white;">Change</a></button></div>
 
             </div>
@@ -41,13 +41,13 @@ include 'views/user/LoggedInHeader.php';
             <div class="res">
 
                 <div class="orderitem">Vehicle</div>
-                <div class="orderitemx" id = "vehicle">AD - 2315</div>
+                <div class="orderitemx" id="vehicle">AD - 2315</div>
                 <div class="orderitem2"><button class="changebutton"><a href="/booking/details" style="color:white;">Change</a></button></div>
             </div>
 
             <div class="res">
                 <div class="orderitem">Wash Type</div>
-                <div class="orderitemx" id = "washPackage">Interior Cleaning</div>
+                <div class="orderitemx" id="washPackage">Interior Cleaning</div>
                 <div class="orderitem2"><button class="changebutton"><a href="/booking/details" style="color:white;">Change</a></button></div>
 
             </div>
@@ -58,12 +58,12 @@ include 'views/user/LoggedInHeader.php';
             <br>
             <div class="res">
                 <div class="orderitem">Wash Price Rs.</div>
-                <div class="orderitemx" id = "price">1000/-</div>
+                <div class="orderitemx" id="price">1000/-</div>
 
             </div>
             <div class="res">
                 <div class="orderitem">Total Price Rs.</div>
-                <div class="orderitemx">1050/-</div>
+                <div class="orderitemx" id="total">1050/-</div>
 
             </div>
             <div style="width:100%;float: left;position: absolute;    top: 91%;">
@@ -90,7 +90,7 @@ include 'views/user/LoggedInHeader.php';
 
         <form action="" method="post" id="customer-signup">
 
-            <button id="VehicleFormSubmitButton" class="formSubmitButton" type="button" name="signup"><a href="/user/home" style="color:White;">Yes</a></button>
+            <button id="VehicleFormSubmitButton" class="formSubmitButton" type="button" name="signup" onclick="cancelOrderProcess();">Yes</button>
             <button id="VehicleFormCloseButton" class="formCancelButton" type="button" name="signup" onclick="closeCancelOrder()">No</button>
         </form>
 
@@ -104,7 +104,7 @@ include 'views/user/LoggedInHeader.php';
 
         <form action="" method="post" id="customer-signup">
 
-            <button id="VehicleFormSubmitButton" class="formSubmitButton" type="button" name="signup" style="width: 115px;"><a href="/user/home" style="color:White; ">Return Home</a></button>
+            <button id="VehicleFormSubmitButton" onclick="makeOrder();" class="formSubmitButton" type="button" name="signup" style="width: 115px;">Return Home</button>
         </form>
 
     </div>
@@ -116,39 +116,75 @@ include 'views/user/LoggedInHeader.php';
     document.getElementById("test").innerHTML = x;
 
     var cookieArray = document.cookie.split(";");
-    var i =0; 
-    for( i =0;i<cookieArray.length; i++){
+    var i = 0;
+    for (i = 0; i < cookieArray.length; i++) {
         cookieArray[i] = cookieArray[i].trim();
-        if(cookieArray[i].substring(0,4) === "date"){
-            var date = cookieArray[i].substring(5);
+        if (cookieArray[i].substring(0, 3) === "day") {
+            var date = cookieArray[i].substring(4);
         }
-        if(cookieArray[i].substring(0,5) === "month"){
+        if (cookieArray[i].substring(0, 5) === "month") {
             var month = cookieArray[i].substring(6);
         }
-        if(cookieArray[i].substring(0,4) === "year"){
+        if (cookieArray[i].substring(0, 4) === "year") {
             var year = cookieArray[i].substring(5);
         }
-        if(cookieArray[i].substring(0,4) === "time"){
+        if (cookieArray[i].substring(0, 4) === "time") {
             var time = cookieArray[i].substring(5);
         }
-        if(cookieArray[i].substring(0,7) === "address"){
+        if (cookieArray[i].substring(0, 7) === "address") {
             var address = cookieArray[i].substring(8);
         }
-        if(cookieArray[i].substring(0,7) === "vehicle"){
+        if (cookieArray[i].substring(0, 7) === "vehicle") {
             var vehicle = cookieArray[i].substring(8);
         }
-        if(cookieArray[i].substring(0,15) === "washPackageName"){
+        if (cookieArray[i].substring(0, 15) === "washPackageName") {
             var washPackage = cookieArray[i].substring(16);
         }
-        if(cookieArray[i].substring(0,5) === "price"){
+        if (cookieArray[i].substring(0, 5) === "price") {
             var price = cookieArray[i].substring(6);
         }
+        if (cookieArray[i].substring(0, 5) === "total") {
+            var total = cookieArray[i].substring(6);
+        }
     }
-    let p = price.substring(6);
-    document.getElementById("date").innerHTML = year + " / " + month + "/ " + date; 
-    document.getElementById("time").innerHTML = time + " a.m."; 
-    document.getElementById("address").innerHTML = address; 
-    document.getElementById("vehicle").innerHTML = vehicle; 
-    document.getElementById("washPackage").innerHTML = washPackage; 
+    //let p = price.substring(6);
+    document.getElementById("date").innerHTML = year + " / " + month + "/ " + date;
+    document.getElementById("time").innerHTML = time;
+    document.getElementById("address").innerHTML = address;
+    document.getElementById("vehicle").innerHTML = vehicle;
+    document.getElementById("washPackage").innerHTML = washPackage;
     document.getElementById("price").innerHTML = "Rs. " + price + ".00";
+    document.getElementById("total").innerHTML = "Rs. " + total + ".00";
+
+    function deleteCookie() {
+        document.cookie = "day=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "month=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "year=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "washPackage=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "washPackageName=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "price=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "total=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "address=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "latitude=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "longitude=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "time=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "vehicle=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    }
+
+    function makeOrder() {
+
+        var parameters = document.cookie;
+        //delete cookies
+
+        deleteCookie();
+        window.location = "/booking/makeReservation/" + parameters;
+    }
+
+    function cancelOrderProcess() {
+
+        //delete cookies
+
+        deleteCookie();
+        window.location = "/user/home";
+    }
 </script>
