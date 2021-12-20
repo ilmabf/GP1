@@ -2,7 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\controllers",
+    "\\app\\models",
     "\\app\\views",
     "\\app\\views\\customer",
     "\\app\\views\\manager",
@@ -11,6 +11,6 @@
     "\\public\\css",
     "\\public\\js"
   ],
-  "SelectedNode": "\\app\\controllers\\service.php",
+  "SelectedNode": "\\public\\js\\managerViewCompletedOrder.js",
   "PreviewInSolutionExplorer": false
 }
