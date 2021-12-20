@@ -134,4 +134,9 @@ class Employee extends Controller
             }
         }
     }
+    
+    function insertAttendance(){
+        print_r($_POST['EmpAttTeamData']);
+        print_r($_POST['EmpAttonWorkData']);
+    }
 }
