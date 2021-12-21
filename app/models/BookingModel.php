@@ -75,6 +75,16 @@ class BookingModel extends Model
         return $result;
         
     }
+
+    function getUpcomingReservationList(){
+        
+        $date = date('Y/m/d');
+        
+        $result = $this->db->select("*", "reservation", "WHERE Completed = 0 ;");
+        return $result;
+        
+    }
+
     // For get details of selected completed reservation
     function getCompletedReservationDetails($order_id){
         $result = $this->db->select("*", "reservation", "WHERE Reservation_ID = :order_id ;",':order_id',$order_id);
