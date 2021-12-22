@@ -14,6 +14,7 @@ class Employee extends Controller
     function index()
     {
 
+        // stl
         $empDetails = $this->model->getEmployeeDetails();
         $_SESSION['employeeDetails'] = $empDetails;
 
@@ -26,8 +27,12 @@ class Employee extends Controller
         $stlAttendance = $this->model->getStlAttendanceDetails();
         $_SESSION['stlAttendanceDetails'] = $stlAttendance;
 
-        // $result = $this->model->getTeamCount();
-        // $_SESSION['teamCount'] = $result;
+        // manager
+        $empData = $this->model->getEmpData();
+        $_SESSION['EmpAttendanceData'] = $empData;
+
+        $stlData = $this->model->getStlAttendanceData();
+        $_SESSION['StlAttendanceData'] = $stlData;
 
         //User Autherization
         if ($_SESSION['role'] == "systemadmin") {

@@ -108,6 +108,22 @@ class EmployeeModel extends Model
         $result = $this->db->insert("users", $columns, $param, $values);
         return $result;
     }
+
+    function getEmpData()
+    {
+        $selection = array("employee.First_Name", "employee.Last_Name", "employee.Contact_Number", "employee.Email", "employee.Date_Enrolled", "employee.Salary", "employee.NIC_No", "employee_records.team", "employee_records.onWork");
+        $today = date("Y-m-d");
+        $result = $this->db->select($selection, "employee", "LEFT JOIN employee_records ON (employee.Employee_ID = employee_records.EmpID AND employee_records.date = :day) WHERE (employee.STL_ID IS NULL AND employee.Flag = 1);", ":day", $today);
+        return $result;
+    }
+
+    function getStlAttendanceData()
+    {
+        $selection = array("employee.First_Name", "employee.Last_Name", "employee.Contact_Number", "employee.Email", "employee.Date_Enrolled", "employee.Salary", "employee.NIC_No", "employee_records.team", "employee_records.onWork");
+        $today = date("Y-m-d");
+        $result = $this->db->select($selection, "employee", "LEFT JOIN employee_records ON (employee.Employee_ID = employee_records.EmpID AND employee_records.date = :day) WHERE (employee.STL_ID IS NOT NULL AND employee.Flag = 1);", ":day", $today);
+        return $result;
+    }
 }
 
 
