@@ -44,7 +44,7 @@ class Booking extends Controller
     // upcoming reservations
     function upcoming()
     {
-
+        $_SESSION['upcomingReservations'] = $this->model->getUpcomingReservationList();
         if ($_SESSION['role'] == "customer") {
             $this->view->render('customer/UpcomingReservations');
             exit;
@@ -57,6 +57,7 @@ class Booking extends Controller
     function upcomingOrder()
     {
 
+        
         if ($_SESSION['role'] == "customer") {
             $this->view->render('customer/UpcomingOrder');
             exit;
