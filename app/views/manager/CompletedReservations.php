@@ -1,6 +1,6 @@
 <?php
 include 'views/user/LoggedInHeader.php';
-
+ $orderList = $_SESSION['completedReservations'];
 ?>
 
 <div class="bgImage">
@@ -20,28 +20,34 @@ include 'views/user/LoggedInHeader.php';
             <h3 style="color:white; text-shadow:1px 1px 4px #000000, 1px 1px 4px #0000fa;">Reservations on :</h3>
             <input type="date" value="date" name="managerDateofCompletedBooking" class="dateBooking" onclick="viewList()" id="ManagerCompletedDate">
 
+
         </div>
     </div>
     <div class="mainUpcoming">
         <div class="upcomingOrders" id="managerCompleteReservations">
-            <!--<div class="sub-box1" >
+        <?php 
+        $count = sizeof($_SESSION['completedReservations']) - 1;
+         while ($count >= 0 ) { ?>
+            <div class="sub-box1" >
                 <div class="order">
                     <div class="orderitem">Order ID</div>
-                    <div class="orderitem1">1257</div>
+                    <div class="orderitem1"><?php echo $orderList[$count]['Reservation_ID'] ?></div>
                 </div>
                 <div class="order">
                     <div class="orderitem">Vecicle No</div>
-                    <div class="orderitem1">AD - 2234</div>
+                    <div class="orderitem1"><?php echo $orderList[$count]['Vehicle_ID'] ?></div>
                 </div>
                 <div class="order">
                     <div class="orderitem">Time</div>
-                    <div class="orderitem1">8 am - 10 am</div>
+                    <div class="orderitem1"><?php echo $orderList[$count]['Time'] ?></div>
                 </div>
                 <div class="orderView">
-                    <p class="viewLink"><a href="/booking/completedOrder">View order</a></p>
-                    <p class="team">Completed by Service Team 1</p>
+                    <p class="viewLink"><a href="/booking/completedOrder/<?php echo $orderList[$count]['Reservation_ID'] ?>" >View order</a></p>
+                    <p class="team">Completed by Service Team <?php echo $orderList[$count]['Service_team_leader_ID'] ?></p>
                 </div>
-            </div>-->
+            </div>
+            <?php $count = $count - 1;
+            } ?>
           
         </div>
     </div>

@@ -4,13 +4,13 @@
     "\\app",
     "\\app\\models",
     "\\app\\views",
-    "\\app\\views\\customer",
+    "\\app\\views\\admin",
     "\\app\\views\\manager",
     "\\app\\views\\user",
     "\\public",
     "\\public\\css",
     "\\public\\js"
   ],
-  "SelectedNode": "\\public\\js\\managerViewCompletedOrder.js",
+  "SelectedNode": "\\app\\views\\admin\\Equipment.php",
   "PreviewInSolutionExplorer": false
 }

@@ -4,7 +4,7 @@ include 'views/user/LoggedInHeader.php';
     $customerDetails = $_SESSION['customer'];
     $vehicleDetails = $_SESSION['vehicle'];
     $washPackageDetails = $_SESSION['washpackage'];
-
+    $images = $_SESSION['images'] ;
 ?>
 
 <div class="bgImage">
@@ -111,11 +111,11 @@ include 'views/user/LoggedInHeader.php';
 
         <div class="viewPhotos vp1">
             <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Before Service</h3>
-            <img src="/public/images/ImageIcon.png" style="width:20%; border-radius: 8px;"></img>
-        </div>
+            <img src= "data:image/ . $type . ;base64, <?php echo base64_encode($images[0]['Picture_before']); ?>" style="width:30%; border-radius: 8px;"></img>
+
         <div class="viewPhotos vp2">
             <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">After Service</h3>
-            <img src="/public/images/ImageIcon.png" style="width:20%; border-radius: 8px;"></img>
+            <img src= "data:image/ . $type . ;base64, <?php echo base64_encode($images[0]['Picture_after']); ?>" style="width:30%; border-radius: 8px;"></img>
         </div>
 
     </div>
