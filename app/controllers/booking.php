@@ -44,7 +44,7 @@ class Booking extends Controller
     // upcoming reservations
     function upcoming()
     {
-
+        $_SESSION['upcomingReservations'] = $this->model->getUpcomingReservationList();
         if ($_SESSION['role'] == "customer") {
             $this->view->render('customer/UpcomingReservations');
             exit;
@@ -57,6 +57,7 @@ class Booking extends Controller
     function upcomingOrder()
     {
 
+        
         if ($_SESSION['role'] == "customer") {
             $this->view->render('customer/UpcomingOrder');
             exit;
@@ -81,12 +82,17 @@ class Booking extends Controller
     function completedOrder($order_id)
     {
 
-        $_SESSION['completedOrder'] = $this->model->getCompletedReservationDetails($order_id);
+        $_SESSION['completedOrder'] = $this->model->getCompletedReservationDetails($order_id);//order details
+        $_SESSION['customer'] = $this->model->getCustomer($_SESSION['completedOrder'][0]['Customer_ID']);//customer details who booked order
+        $_SESSION['vehicle'] = $this->model->getSelectedVehicle($_SESSION['completedOrder'][0]['Vehicle_ID']);//vehicle details service done
+        $_SESSION['washpackage'] = $this->model->getSelectedWashPackage($_SESSION['completedOrder'][0]['Wash_Package_ID']);//wash package selected
         
         if ($_SESSION['role'] == "customer") {
+            $order_id = str_replace('_', ' ', $order_id);
             $this->view->render('customer/CompletedOrder');
             exit;
         } else if ($_SESSION['role'] == "manager") {
+            $order_id = str_replace('_', ' ', $order_id);
             $this->view->render('manager/CompletedOrder');
         }
     }
