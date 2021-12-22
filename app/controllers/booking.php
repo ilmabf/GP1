@@ -86,7 +86,8 @@ class Booking extends Controller
         $_SESSION['customer'] = $this->model->getCustomer($_SESSION['completedOrder'][0]['Customer_ID']);//customer details who booked order
         $_SESSION['vehicle'] = $this->model->getSelectedVehicle($_SESSION['completedOrder'][0]['Vehicle_ID']);//vehicle details service done
         $_SESSION['washpackage'] = $this->model->getSelectedWashPackage($_SESSION['completedOrder'][0]['Wash_Package_ID']);//wash package selected
-        
+        $_SESSION['images'] = $this->model->getSelectedImages($_SESSION['completedOrder'][0]['Reservation_ID']);//Before after images
+
         if ($_SESSION['role'] == "customer") {
             $order_id = str_replace('_', ' ', $order_id);
             $this->view->render('customer/CompletedOrder');
