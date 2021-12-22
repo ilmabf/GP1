@@ -66,10 +66,10 @@ include 'views/user/LoggedInHeader.php';
                     <div class="orderitemx" style="font-size:12px;"><?php echo $orderDetails[0]['Address'] ?></div>
 
                 </div>
-                <div class="res">
+                <!-- <div class="res">
                     <div class="orderitem">Location</div>
                     <div class="orderitemx"><button class="reservationButtons a12" id="cancelAssignBtn" style="color:white; padding: 1px 3px; margin-bottom:0px" onclick=""><a>View Location</a></button></div>
-                </div>
+                </div> -->
                 <div class="res">
                     <div class="orderitem">Completed by</div>
                     <div class="orderitemx">Service Team <?php echo $orderDetails[0]['Service_team_leader_ID'] ?></div>

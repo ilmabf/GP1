@@ -74,11 +74,11 @@
 }
 
 .orderitemx{
-    float: right;
+    /* float: right; */
     color: #000000;
     position: relative;
-    left: -34%;
-    transform: translate(95%, 4%);
+    /* left: -34%; */
+    transform: translate(95%, -97%);
     max-width: 240px;
 }
 .orderitem2{

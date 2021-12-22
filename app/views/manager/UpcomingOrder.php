@@ -6,6 +6,19 @@ $customerDetails = $_SESSION['customer'];
 $vehicleDetails = $_SESSION['vehicle'];
 $washPackageDetails = $_SESSION['washpackage'];
 ?>
+
+<style>
+    table,
+    tr {
+        border: hidden;
+    }
+
+    td,
+    th {
+        border: hidden;
+    }
+</style>
+
 <div class="bgImage">
 
     <div class="cancelAssignForm" id="assign" style="display:none;">
@@ -27,8 +40,78 @@ $washPackageDetails = $_SESSION['washpackage'];
 
             <div class="box2">
 
+                <section class="">
+                    <table class="">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Name</td>
+                                <td style="text-align:left"><?php echo $customerDetails[0]['First_Name'] ?> <?php echo $customerDetails[0]['Last_Name'] ?></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Date</td>
+                                <td style="text-align:left"><?php echo $orderDetails[0]['Date'] ?></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Time</td>
+                                <td style="text-align:left"><?php echo $orderDetails[0]['Time'] ?></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Contact No</td>
+                                <td style="text-align:left"><?php echo $customerDetails[0]['Contact_Number'] ?></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <hr>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Vehicle Identification No.</td>
+                                <td style="text-align:left"><?php echo $vehicleDetails[0]['VID'] ?></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Model</td>
+                                <td style="text-align:left"><?php echo $vehicleDetails[0]['Model'] ?></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Type</td>
+                                <td style="text-align:left"><?php echo $vehicleDetails[0]['Type'] ?></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Manufacturer</td>
+                                <td style="text-align:left"><?php echo $vehicleDetails[0]['Manufacturer'] ?></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Color</td>
+                                <td style="text-align:left"><?php echo $vehicleDetails[0]['Colour'] ?></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <hr>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Location</td>
+                                <td style="font-size: 12px;text-align:left"><?php echo $orderDetails[0]['Address'] ?></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Wash Package</td>
+                                <td style="text-align:left"><?php echo $washPackageDetails[0]['Name'] ?></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <hr>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Total Price Rs</td>
+                                <td style="text-align:left"><?php echo $orderDetails[0]['Total_price'] ?>/-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
                 <hr><br>
-                <div class="res">
+                <!-- <div class="res">
                     <div class="orderitem">Name</div>
                     <div class="orderitemx"><?php echo $customerDetails[0]['First_Name'] ?> <?php echo $customerDetails[0]['Last_Name'] ?></div>
 
@@ -87,7 +170,7 @@ $washPackageDetails = $_SESSION['washpackage'];
                     <div class="orderitem">Total Price Rs.</div>
                     <div class="orderitemx"><?php echo $orderDetails[0]['Total_price'] ?>/-</div>
 
-                </div>
+                </div> -->
                 <hr>
                 <hr>
             </div>
