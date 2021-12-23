@@ -1,6 +1,24 @@
 <?php
 include 'views/user/LoggedInHeader.php';
+
+$orderDetails = $_SESSION['upcomingOrder'];
+$customerDetails = $_SESSION['customer'];
+$vehicleDetails = $_SESSION['vehicle'];
+$washPackageDetails = $_SESSION['washpackage'];
 ?>
+
+<style>
+    table,
+    tr {
+        border: hidden;
+    }
+
+    td,
+    th {
+        border: hidden;
+    }
+</style>
+
 <div class="bgImage">
 
     <div class="cancelAssignForm" id="assign" style="display:none;">
@@ -18,75 +36,144 @@ include 'views/user/LoggedInHeader.php';
 
     <div id="upcoming">
         <div class="box3">
-            <div class="invoiceBorder">Order - 1257</div>
+            <div class="invoiceBorder">Order - <?php echo $orderDetails[0]['Reservation_ID'] ?></div>
 
             <div class="box2">
 
+                <section class="">
+                    <table class="">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Name</td>
+                                <td style="text-align:left"><?php echo $customerDetails[0]['First_Name'] ?> <?php echo $customerDetails[0]['Last_Name'] ?></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Date</td>
+                                <td style="text-align:left"><?php echo $orderDetails[0]['Date'] ?></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Time</td>
+                                <td style="text-align:left"><?php echo $orderDetails[0]['Time'] ?></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Contact No</td>
+                                <td style="text-align:left"><?php echo $customerDetails[0]['Contact_Number'] ?></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <hr>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Vehicle Identification No.</td>
+                                <td style="text-align:left"><?php echo $vehicleDetails[0]['VID'] ?></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Model</td>
+                                <td style="text-align:left"><?php echo $vehicleDetails[0]['Model'] ?></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Type</td>
+                                <td style="text-align:left"><?php echo $vehicleDetails[0]['Type'] ?></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Manufacturer</td>
+                                <td style="text-align:left"><?php echo $vehicleDetails[0]['Manufacturer'] ?></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Color</td>
+                                <td style="text-align:left"><?php echo $vehicleDetails[0]['Colour'] ?></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <hr>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Location</td>
+                                <td style="font-size: 12px;text-align:left"><?php echo $orderDetails[0]['Address'] ?></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Wash Package</td>
+                                <td style="text-align:left"><?php echo $washPackageDetails[0]['Name'] ?></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <hr>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Total Price Rs</td>
+                                <td style="text-align:left"><?php echo $orderDetails[0]['Total_price'] ?>/-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
                 <hr><br>
-                <div class="res">
+                <!-- <div class="res">
                     <div class="orderitem">Name</div>
-                    <div class="orderitemx">Gihan Anthony</div>
+                    <div class="orderitemx"><?php echo $customerDetails[0]['First_Name'] ?> <?php echo $customerDetails[0]['Last_Name'] ?></div>
 
                 </div>
                 <div class="res">
                     <div class="orderitem">Date</div>
-                    <div class="orderitemx">2021 / 10 / 20</div>
+                    <div class="orderitemx"><?php echo $orderDetails[0]['Date'] ?></div>
 
                 </div>
                 <div class="res">
                     <div class="orderitem">Time</div>
-                    <div class="orderitemx">8 am - 10 am</div>
+                    <div class="orderitemx"><?php echo $orderDetails[0]['Time'] ?></div>
 
                 </div>
 
                 <div class="res">
                     <div class="orderitem">Contact No</div>
-                    <div class="orderitemx">0775674896</div>
+                    <div class="orderitemx"><?php echo $customerDetails[0]['Contact_Number'] ?></div>
 
 
                 </div><br>
                 <hr><br>
                 <div class="res">
                     <div class="orderitem">Vehicle Identification No.</div>
-                    <div class="orderitemx">AD - 2315</div>
+                    <div class="orderitemx"><?php echo $vehicleDetails[0]['VID'] ?></div>
                 </div>
                 <div class="res">
                     <div class="orderitem">Model</div>
-                    <div class="orderitemx">Axio</div>
+                    <div class="orderitemx"><?php echo $vehicleDetails[0]['Model'] ?></div>
                 </div>
                 <div class="res">
                     <div class="orderitem">Type</div>
-                    <div class="orderitemx">Sedan</div>
+                    <div class="orderitemx"><?php echo $vehicleDetails[0]['Type'] ?></div>
                 </div>
                 <div class="res">
                     <div class="orderitem">Manufacturer</div>
-                    <div class="orderitemx">BMW</div>
+                    <div class="orderitemx"><?php echo $vehicleDetails[0]['Manufacturer'] ?></div>
                 </div>
                 <div class="res">
                     <div class="orderitem">Color</div>
-                    <div class="orderitemx" style="background-color:blue; width: 26px;height: 24px;display: inline-block;border: 1px solid #193498;"></div>
+                    <div class="orderitemx" style="background-color:<?php echo $vehicleDetails[0]['Colour']; ?>; width: 26px;height: 24px;display: inline-block;border: 1px solid <?php echo $vehicleDetails[0]['Colour']; ?>;"></div>
                 </div><br>
                 <hr><br>
                 <div class="res">
                     <div class="orderitem">Location</div>
-                    <div class="orderitemx"><button class="reservationButtons a12" id="cancelAssignBtn" style="color:white; padding: 1px 3px; margin-bottom:0px" onclick=""><a>View Location</a></button></div>
+                    <div class="orderitemx" style="font-size:12px;"><?php echo $orderDetails[0]['Address'] ?></div>
                 </div>
                 <div class="res">
                     <div class="orderitem">Wash Package</div>
-                    <div class="orderitemx">Interior Cleaning</div>
+                    <div class="orderitemx"><?php echo $washPackageDetails[0]['Name'] ?></div>
 
                 </div>
                 <hr>
                 <hr>
                 <div class="res">
                     <div class="orderitem">Total Price Rs.</div>
-                    <div class="orderitemx">1050/-</div>
+                    <div class="orderitemx"><?php echo $orderDetails[0]['Total_price'] ?>/-</div>
 
-                </div>
+                </div> -->
                 <hr>
                 <hr>
             </div>
-
 
         </div>
         <div class="box4">

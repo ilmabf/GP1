@@ -92,7 +92,7 @@ include 'views/user/LoggedInHeader.php';
                             "<div class='orderitem1'>" + list[j]['Time'] + "</div>" +
                             "</div>" +
                             "<div class='orderView'>" +
-                            "<p class='viewLink'><a href='/booking/completedOrder/" + list[j]['Reservation_ID'] + "'>View order</a></p>" +
+                            "<p class='viewLink'><a href='/booking/upcomingOrder/" + list[j]['Reservation_ID'] + "'>View order</a></p>" +
                             "<p class='team'>Team not assigned</p>" +
                             "</div>" +
                             "</div>";
@@ -111,7 +111,7 @@ include 'views/user/LoggedInHeader.php';
                             "<div class='orderitem1'>" + list[j]['Time'] + "</div>" +
                             "</div>" +
                             "<div class='orderView'>" +
-                            "<p class='viewLink'><a href='/booking/completedOrder/" + list[j]['Reservation_ID'] + "'>View order</a></p>" +
+                            "<p class='viewLink'><a href='/booking/upcomingOrder/" + list[j]['Reservation_ID'] + "'>View order</a></p>" +
                             "<p class='team'>Assigned Service Team " + list[j]['Service_team_leader_ID'] + "</p>" +
                             "</div>" +
                             "</div>";
@@ -142,7 +142,7 @@ include 'views/user/LoggedInHeader.php';
                         "<div class='orderitem1'>" + orders[j]['Time'] + "</div>" +
                         "</div>" +
                         "<div class='orderView'>" +
-                        "<p class='viewLink'><a href='/booking/completedOrder/" + orders[j]['Reservation_ID'] + "'>View order</a></p>" +
+                        "<p class='viewLink'><a href='/booking/upcomingOrder/" + orders[j]['Reservation_ID'] + "'>View order</a></p>" +
                         "<p class='team'>Team not assigned</p>" +
                         "</div>" +
                         "</div>";
@@ -161,7 +161,7 @@ include 'views/user/LoggedInHeader.php';
                         "<div class='orderitem1'>" + orders[j]['Time'] + "</div>" +
                         "</div>" +
                         "<div class='orderView'>" +
-                        "<p class='viewLink'><a href='/booking/completedOrder/" + orders[j]['Reservation_ID'] + "'>View order</a></p>" +
+                        "<p class='viewLink'><a href='/booking/upcomingOrder/" + orders[j]['Reservation_ID'] + "'>View order</a></p>" +
                         "<p class='team'>Assigned Service Team " + orders[j]['Service_team_leader_ID'] + "</p>" +
                         "</div>" +
                         "</div>";

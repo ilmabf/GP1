@@ -86,7 +86,7 @@ class BookingModel extends Model
     }
 
     // For get details of selected completed reservation
-    function getCompletedReservationDetails($order_id){
+    function getReservationDetails($order_id){
         $result = $this->db->select("*", "reservation", "WHERE Reservation_ID = :order_id ;",':order_id',$order_id);
         return $result;
         
