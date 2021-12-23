@@ -58,7 +58,7 @@ include 'views/user/LoggedInHeader.php';
                 </div>
                 <div class="res">
                     <div class="orderitem">Color</div>
-                    <div class="orderitemx" style=" width: 26px;height: 24px;display: inline-block;border: 1px solid <?php echo $vehicleDetails[0]['Colour']; ?>;background-color:<?php echo $vehicleDetails[0]['Colour']; ?>"></div>
+                    <div class="orderitemx"> <?php echo $vehicleDetails[0]['Colour']; ?> </div>
                 </div><br>
                 <hr><br>                
                 <div class="res">
