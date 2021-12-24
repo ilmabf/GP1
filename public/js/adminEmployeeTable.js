@@ -1,3 +1,5 @@
+// emp search
+
 const searchInput = document.getElementById("adminSearchEmployee");
 const table = document.getElementById("filterTable");
 const trArray = Array.prototype.slice.call(table.querySelectorAll("tbody tr"));
@@ -17,7 +19,8 @@ const filterTable = (event) => {
 
 searchInput.addEventListener("keyup", filterTable, false);
 
-const searchInput1 = document.getElementById("adminSearchStl");
+// emp onwork search
+const searchInput1 = document.getElementById("adminSearchonWorkEmployee");
 const table1 = document.getElementById("filterTable1");
 const trArray1 = Array.prototype.slice.call(
   table1.querySelectorAll("tbody tr")
@@ -25,18 +28,68 @@ const trArray1 = Array.prototype.slice.call(
 
 const filterTable1 = (event) => {
   const searchTerm1 = event.target.value.toLowerCase();
-  trArray1.forEach((row) => {
-    row.classList.add("hidden");
-    const tdArray1 = Array.prototype.slice.call(row.getElementsByTagName("td"));
-    tdArray1.forEach((cell) => {
-      if (cell.innerText.toLowerCase().indexOf(searchTerm1) > -1) {
-        row.classList.remove("hidden");
+  trArray1.forEach((row1) => {
+    row1.classList.add("hidden");
+    const tdArray1 = Array.prototype.slice.call(
+      row1.getElementsByTagName("td")
+    );
+    tdArray1.forEach((cell1) => {
+      if (cell1.innerText.toLowerCase().indexOf(searchTerm1) > -1) {
+        row1.classList.remove("hidden");
       }
     });
   });
 };
 
 searchInput1.addEventListener("keyup", filterTable1, false);
+
+// stl search
+const searchInput2 = document.getElementById("adminSearchStl");
+const table2 = document.getElementById("filterTable2");
+const trArray2 = Array.prototype.slice.call(
+  table2.querySelectorAll("tbody tr")
+);
+
+const filterTable2 = (event) => {
+  const searchTerm2 = event.target.value.toLowerCase();
+  trArray2.forEach((row2) => {
+    row2.classList.add("hidden");
+    const tdArray2 = Array.prototype.slice.call(
+      row2.getElementsByTagName("td")
+    );
+    tdArray2.forEach((cell2) => {
+      if (cell2.innerText.toLowerCase().indexOf(searchTerm2) > -1) {
+        row2.classList.remove("hidden");
+      }
+    });
+  });
+};
+
+searchInput2.addEventListener("keyup", filterTable2, false);
+
+// stl onWork search
+const searchInput3 = document.getElementById("stlonWorkSearch");
+const table3 = document.getElementById("filterTable3");
+const trArray3 = Array.prototype.slice.call(
+  table3.querySelectorAll("tbody tr")
+);
+
+const filterTable3 = (event) => {
+  const searchTerm3 = event.target.value.toLowerCase();
+  trArray3.forEach((row3) => {
+    row3.classList.add("hidden");
+    const tdArray3 = Array.prototype.slice.call(
+      row3.getElementsByTagName("td")
+    );
+    tdArray3.forEach((cell3) => {
+      if (cell3.innerText.toLowerCase().indexOf(searchTerm3) > -1) {
+        row3.classList.remove("hidden");
+      }
+    });
+  });
+};
+
+searchInput3.addEventListener("keyup", filterTable3, false);
 
 function empEditForm(no) {
   // Get the ids of edit and save buttons.
@@ -98,7 +151,6 @@ function empSaveForm(id, no) {
 }
 
 function empEditAttendanceForm(size) {
-
   document.getElementById("editButton").style.display = "none";
   var i = 0;
   for (i = 0; i < size; i++) {
@@ -123,20 +175,23 @@ function empEditAttendanceForm(size) {
   }
 }
 
-function stlEditAttendanceForm(no) {
-  document.getElementById("edit_att_stl_btn" + no).style.display = "none";
+function stlEditAttendanceForm(size) {
+  document.getElementById("editStlAttButton").style.display = "none";
   // var StlAttTeam = document.getElementById("AttStl_Team_row" + no);
-  var StlAttonWork = document.getElementById("AttStl_onWork_row" + no);
+  var j = 0;
+  for (j = 0; j < size; j++) {
+    var StlAttonWork = document.getElementById("AttStl_onWork_row" + j);
 
-  // var StlAttTeamData = StlAttTeam.innerHTML;
-  var StlAttonWorkData = StlAttonWork.innerHTML;
+    // var StlAttTeamData = StlAttTeam.innerHTML;
+    var StlAttonWorkData = StlAttonWork.innerHTML;
 
-  StlAttonWork.innerHTML =
-    "<input type='text' id='StlAttonWork_text" +
-    no +
-    "' class='td-t3' name='StlAttonWorkData' value='" +
-    StlAttonWorkData +
-    "' />";
+    StlAttonWork.innerHTML =
+      "<input type='text' id='StlAttonWork_text" +
+      j +
+      "' class='td-t3' name='StlAttonWorkData[]' value='" +
+      StlAttonWorkData +
+      "' />";
+  }
 }
 
 function stlEditForm(no) {
@@ -193,6 +248,30 @@ function stlSaveForm(id, no) {
     stlsalaryVal;
 }
 
+function stlOnWork() {
+  document.getElementById("stlDefaultTable").style.display = "none";
+  document.getElementById("stlonWorkTable").style.display = "block";
+  document.getElementById("stlNotWorkTable").style.display = "none";
+}
+
+function stlNotWork() {
+  document.getElementById("stlonWorkTable").style.display = "none";
+  document.getElementById("stlDefaultTable").style.display = "none";
+  document.getElementById("stlNotWorkTable").style.display = "block";
+}
+
+function empOnWork() {
+  document.getElementById("empDefaultTable").style.display = "none";
+  document.getElementById("emponWorkTable").style.display = "block";
+  document.getElementById("empNotWorkTable").style.display = "none";
+}
+
+function empNotWork() {
+  document.getElementById("emponWorkTable").style.display = "none";
+  document.getElementById("empDefaultTable").style.display = "none";
+  document.getElementById("empNotWorkTable").style.display = "block";
+}
+
 function empAttendance() {
   document.getElementById("EmpAttendance-nav").style.display = "none";
   document.getElementById("EmpDetails-nav").style.display = "block";
@@ -223,4 +302,8 @@ function stlDetails() {
 
   document.getElementById("stlDetailsTable").style.display = "block";
   document.getElementById("stlAttendanceTable").style.display = "none";
+}
+
+function TeamCount() {
+  document.getElementById("teamCountInput").style.display = "none";
 }

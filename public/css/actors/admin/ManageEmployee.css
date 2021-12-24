@@ -65,7 +65,10 @@ tr {
 }
 
 #adminSearchEmployee,
-#adminSearchStl {
+#adminSearchStl,
+#adminSearchonWorkEmployee,
+#stlonWorkSearch,
+#managerSearchSTL {
   padding: 10px 10px;
   border-color: #193498;
   border-radius: 5px;
