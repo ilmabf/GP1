@@ -34,6 +34,21 @@ class Employee extends Controller
         $stlData = $this->model->getStlAttendanceData();
         $_SESSION['StlAttendanceData'] = $stlData;
 
+        $stlonWorkData = $this->model->getStlOnWorkData();
+        $_SESSION['StlOnWorkData'] = $stlonWorkData;
+
+        $stlNotWorkData = $this->model->getStlNotWorkData();
+        $_SESSION['StlNotWorkData'] = $stlNotWorkData;
+
+        $emponWorkData = $this->model->getEmpOnWorkData();
+        $_SESSION['EmponWorkData'] = $emponWorkData;
+
+        $empNotWorkData = $this->model->getEmpNotWorkData();
+        $_SESSION['EmpNotWorkData'] = $empNotWorkData;
+
+        $noOfTeams = $this->model->getTeamCount();
+        $_SESSION['teamCount'] = $noOfTeams;
+
         //User Autherization
         if ($_SESSION['role'] == "systemadmin") {
             $this->view->render('admin/Employee');
@@ -139,9 +154,40 @@ class Employee extends Controller
             }
         }
     }
-    
-    function insertAttendance(){
-        print_r($_POST['EmpAttTeamData']);
-        print_r($_POST['EmpAttonWorkData']);
+
+    function insertEmpAttendance()
+    {
+        // print_r($_POST['EmpAttTeamData']);
+        // print_r($_POST['EmpAttonWorkData']);
+        if ($_SESSION['role'] == "systemadmin") {
+
+            for ($k = 0; $k < sizeof($_SESSION['employeeAttendanceDetails']); $k++) {
+                $this->model->insertAttendance_emp($_SESSION['employeeAttendanceDetails'][$k]['Employee_ID'], $_POST['EmpAttTeamData'][$k], $_POST['EmpAttonWorkData'][$k]);
+            }
+            header("Location: /employee/");
+        }
+    }
+
+    function insertStlAttendance()
+    {
+        // print_r($_POST['EmpAttTeamData']);
+        // print_r($_POST['EmpAttonWorkData']);
+
+        if ($_SESSION['role'] == "systemadmin") {
+
+            for ($l = 0; $l < sizeof($_SESSION['stlAttendanceDetails']); $l++) {
+                $this->model->insertAttendance_stl($_SESSION['stlAttendanceDetails'][$l]['Employee_ID'], $_SESSION['stlAttendanceDetails'][$l]['STL_ID'], $_POST['StlAttonWorkData'][$l]);
+            }
+            header("Location: /employee/");
+        }
+    }
+
+    function noofTeams()
+    {
+        if ($_SESSION['role'] == "systemadmin") {
+            $noOfTeams = $_POST['teamCount'];
+            $this->model->updateNoOfTeams($noOfTeams);
+            header("Location: /employee/");
+        }
     }
 }
