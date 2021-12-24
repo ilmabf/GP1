@@ -86,7 +86,7 @@ class BookingModel extends Model
     }
 
     // For get details of selected completed reservation
-    function getCompletedReservationDetails($order_id){
+    function getReservationDetails($order_id){
         $result = $this->db->select("*", "reservation", "WHERE Reservation_ID = :order_id ;",':order_id',$order_id);
         return $result;
         
@@ -106,6 +106,12 @@ class BookingModel extends Model
     function getSelectedVehicle($v_id)
     {
         $result = $this->db->select("*", "customer_vehicle", "WHERE VID = :v_id",':v_id', $v_id);
+        return $result;
+    }
+     //For get before and after images for choosen reservation id
+    function getSelectedImages($order_id)
+    {
+        $result = $this->db->select("*", "reservation_photos", "WHERE Reservation_ID = :order_id",':order_id', $order_id);
         return $result;
     }
 }
