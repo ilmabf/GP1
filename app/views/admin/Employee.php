@@ -5,7 +5,7 @@ include 'views/user/LoggedInHeader.php';
 
   <div id="adminManageEmployee1">
     <div style="min-height: 110px;"></div>
-    <h2 class="manageEmployee-heading">Manage Employees</h2>
+    <h2 class="manageEmployee-heading">Manage Employees | <?php echo date("d-m-Y"); ?></h2>
     <div class="addBtnEmps">
       <input type="button" id="addRow" value="Add Employee" class="addTableEmp" onclick="addRow();" />
       <input type="button" id="addStlRow" value="Add Service Team Leader" class="addTableEmp" onclick="addStlRow();" />
@@ -36,6 +36,19 @@ include 'views/user/LoggedInHeader.php';
     <div style="height: 50px;"></div>
 
     <!-- ------------------------------------Emp View------------------------------------------------------- -->
+
+    <div style="margin-bottom: 40px; margin-left:130px;">
+      <span>
+        <p style="margin-bottom: 10px; color:#193498;"><b>No of Teams : <?php echo $_SESSION['teamCount'][0]['team'] ?></b></p>
+      </span>
+      <span id="teamCountInput">
+        <form action="/employee/noofTeams" method="post">
+          <input type="text" name="teamCount" placeholder="Enter Today's team count" style="padding: 7px 10px; border-radius:8px;">
+
+          <button type="submit" value="Submit" onclick="TeamCount();" class="del_btn" style="padding: 6px 10px;">Change</button>
+        </form>
+      </span>
+    </div>
 
     <div class="Table-search">
 
@@ -108,14 +121,14 @@ include 'views/user/LoggedInHeader.php';
 
           <span id="empAttendanceSearch">
             <div class="Admin-EmpSearch adEmpSearch1">
-              <input type="search" class="ad-Emp-Search" id="adminSearchEmployee22" onkeyup="myFunction11()" placeholder="Search for Employee..." title="Type in a name">
+              <input type="search" class="ad-Emp-Search" id="adminSearchonWorkEmployee" placeholder="Search for Employee..." title="Type in a name">
             </div>
           </span>
 
           <span id="todayDate" style="float: right; background-color:blue; color:white;">
             <?php echo date("d-m-Y"); ?>
           </span>
-          <form action="/employee/insertAttendance/" id="empAttendanceForm" method="POST">
+          <form action="/employee/insertEmpAttendance/" id="empAttendanceForm" method="POST">
             <table id="filterTable1">
               <thead>
                 <tr>
@@ -245,7 +258,7 @@ include 'views/user/LoggedInHeader.php';
 
           <span id="stlAttendanceSearch">
             <div class="Admin-EmpSearch adEmpSearch1">
-              <input type="search" class="ad-Emp-Search" id="stlSearchEmployee1" onkeyup="myFunction1()" placeholder="Search for Employee..." title="Type in a name">
+              <input type="search" class="ad-Emp-Search" id="stlonWorkSearch" onkeyup="myFunction1()" placeholder="Search for STL..." title="Type in a name">
             </div>
           </span>
 
@@ -253,49 +266,49 @@ include 'views/user/LoggedInHeader.php';
             <?php echo date("d-m-Y"); ?>
           </span>
 
-          <table id="filterTable2">
-            <thead>
-              <tr>
-                <th data-type="text">First Name</th>
-                <th data-type="text">Last Name</th>
-                <th data-type="text">Team</th>
-                <th data-type="text">On Work</th>
-                <th colspan="1" style="text-align: center;">Action</th>
-              </tr>
-            </thead>
-            <tbody style="max-width:100%;">
-
-              <?php
-              $count3 = 0;
-              $result3 = $_SESSION['stlAttendanceDetails'];
-
-
-              // echo $_SESSION['rowCount'];
-              while ($count3 < sizeof($result3)) { ?>
-
-                <tr id="row<?php $count3 ?>">
-                  <td id="<?php echo "AttStl_FirstName_row" . $count3 ?>" style="text-align:left" class="td-t1"><?php echo $result3[$count3]['First_Name'] ?></td>
-                  <td id="<?php echo "AttStl_LastName_row" . $count3 ?>" style="text-align:left" class="td-t1"><?php echo $result3[$count3]['Last_Name'] ?></td>
-                  <td id="<?php echo "AttStl_Team_row" . $count3 ?>" class="td-t1"><?php echo $result3[$count3]['team'] ?></td>
-                  <td id="<?php echo "AttStl_onWork_row" . $count3 ?>" style="text-align:left" class="td-t1" style="max-width:200px;"><?php echo $result3[$count3]['onWork'] ?></td>
-                  <td>
-                    <input type="button" id="<?php echo "edit_att_stl_btn" . $count3 ?>" class="edit_btn td-t1" value="Edit" onclick="stlEditAttendanceForm('<?php echo $count3 ?>')">
-
-                  </td>
-
+          <form action="/employee/insertStlAttendance/" id="stlAttendanceForm" method="POST">
+            <table id="filterTable3">
+              <thead>
+                <tr>
+                  <th data-type="text">First Name</th>
+                  <th data-type="text">Last Name</th>
+                  <th data-type="text">Team</th>
+                  <th data-type="text">On Work</th>
+                  <th colspan="1" style="text-align: center;">
+                    <input type="button" id="editStlAttButton" class="edit_btn td-t1" value="Edit" onclick="stlEditAttendanceForm('<?php echo sizeof($_SESSION['stlAttendanceDetails']) ?>')">
+                  </th>
                 </tr>
+              </thead>
+              <tbody style="max-width:100%;" id="onWorkSelectTable">
 
-              <?php $count3 = $count3 + 1;
-              } ?>
+                <?php
+                $count3 = 0;
+                $result3 = $_SESSION['stlAttendanceDetails'];
 
-            </tbody>
-          </table>
 
-          <div id="emp-attendance-submit">
-            <input type="submit" id="empAttendance-submit-1" value="Submit">
+                // echo $_SESSION['rowCount'];
+                while ($count3 < sizeof($result3)) { ?>
 
-          </div>
+                  <tr id="row<?php $count3 ?>">
+                    <td id="<?php echo "AttStl_FirstName_row" . $count3 ?>" style="text-align:left" class="td-t1"><?php echo $result3[$count3]['First_Name'] ?></td>
+                    <td id="<?php echo "AttStl_LastName_row" . $count3 ?>" style="text-align:left" class="td-t1"><?php echo $result3[$count3]['Last_Name'] ?></td>
+                    <td id="<?php echo "AttStl_Team_row" . $count3 ?>" class="td-t1"><?php echo $result3[$count3]['team'] ?></td>
+                    <td id="<?php echo "AttStl_onWork_row" . $count3 ?>" style="text-align:left" class="td-t1" style="max-width:200px;"><?php echo $result3[$count3]['onWork'] ?></td>
 
+
+                  </tr>
+
+                <?php $count3 = $count3 + 1;
+                } ?>
+
+              </tbody>
+            </table>
+
+            <div id="emp-attendance-submit">
+              <input type="submit" id="empAttendance-submit-1" value="Submit">
+
+            </div>
+          </form>
         </div>
 
       </div>
