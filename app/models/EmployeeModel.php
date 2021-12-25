@@ -43,6 +43,11 @@ class EmployeeModel extends Model
         $selection = array("employee.Employee_ID", "employee.First_Name", "employee.Last_Name", "employee_records.team", "employee_records.onWork");
 
         $yesterday = date('Y-m-d', time() - 60 * 60 * 24);
+        $today = date('Y-m-d');
+        $x = $this->db->select("*", "employee_records", "WHERE date = '$today';");
+        if(sizeof($x) == 0){
+            
+        }
         $result = $this->db->select(
             $selection,
             "employee",
