@@ -176,6 +176,8 @@ class Employee extends Controller
         if ($_SESSION['role'] == "systemadmin") {
 
             for ($l = 0; $l < sizeof($_SESSION['stlAttendanceDetails']); $l++) {
+                // echo $_SESSION['stlAttendanceDetails'][$l]['STL_ID'];
+                // echo $_SESSION['stlAttendanceDetails'][$l]['Employee_ID'];
                 $this->model->insertAttendance_stl($_SESSION['stlAttendanceDetails'][$l]['Employee_ID'], $_SESSION['stlAttendanceDetails'][$l]['STL_ID'], $_POST['StlAttonWorkData'][$l]);
             }
             header("Location: /employee/");
