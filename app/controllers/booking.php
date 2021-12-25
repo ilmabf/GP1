@@ -163,6 +163,12 @@ class Booking extends Controller
             }
         }
     }
+
+    function assignTeam($id, $resId){
+        if($this->model->assignServiceTeam($id, $resId)){
+            header("Location: /booking/upcomingOrder/".$resId);
+        }
+    }
 }
 
 // what is json_encode?
