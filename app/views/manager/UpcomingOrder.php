@@ -180,9 +180,19 @@ $washPackageDetails = $_SESSION['washpackage'];
             <div class="reservation-buttons">
                 <div class="reschedule" style="display: inline-block;">
                     <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff; margin-bottom:10px">Assign a service team</h3>
+                    <!-- <?php print_r($_SESSION['teams']);?> -->
                     <select name="serviceTeam" id="serviceTeam-types" style="width: 134px;">
-                        <option value="Not Selected">Team 1</option>
-                        <option value="Not Selected">Team 2</option>
+                        <?php
+                            for($i = 0; $i< sizeof($_SESSION['teams']); $i++){
+                                echo "<option value = '";
+                                echo $_SESSION['teams'][$i]['team'];
+                                echo "'>";
+                                echo "Team " . $_SESSION['teams'][$i]['team'];
+                                echo "</option>";
+                            }
+                        ?>
+                        <!-- <option value="Not Selected">Team 1</option>
+                        <option value="Not Selected">Team 2</option> -->
                     </select>
                     <div class="reservation-buttons" style="display: inline;">
                         <button class="reservationButtons a8" id="cancelAssignBtn" type="button" onclick="openassign()" style="float: revert; margin-left: 10px; background-color:#1597E5; border-color: #1597E5; padding: 8px 15px;"><a>Assign Team</a></button>
