@@ -72,7 +72,10 @@ include 'views/user/LoggedInHeader.php';
                 </div> -->
                 <div class="res">
                     <div class="orderitem">Completed by</div>
-                    <div class="orderitemx">Service Team <?php echo $orderDetails[0]['Service_team_leader_ID'] ?></div>
+                    <div class="orderitemx"> <?php echo $orderDetails[0]['Member1']; ?></div>
+                    <div class="orderitemx"> <?php echo $orderDetails[0]['Member2']; ?></div>
+                    <div class="orderitemx"> <?php echo $orderDetails[0]['Member3']; ?></div>
+                    <div class="orderitemx"> <?php echo $orderDetails[0]['Member4']; ?></div>
                 </div>
                 <div class="res">
                     <div class="orderitem">Wash Package</div>
@@ -97,7 +100,7 @@ include 'views/user/LoggedInHeader.php';
         <div class="rate1">
             <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Rating of the service</h3>
         </div>
-        <div class="rate1 stars1">
+        <div class="rate1 stars1" id="managerViewRating">
             <i class="rating__star far fa-star"></i>
             <i class="rating__star far fa-star"></i>
             <i class="rating__star far fa-star"></i>
@@ -123,3 +126,34 @@ include 'views/user/LoggedInHeader.php';
     <div style="min-height: 110px;"></div>
 
     <script src="/public/js/ManagerViewCompletedOrder.js"></script>
+    <script>
+    var order_details = <?php echo json_encode($_SESSION['completedReservations']); ?>;
+    var ratingLevel = order_details['Rating'];
+
+    const ratingStars = [...document.getElementsByClassName("rating__star")];
+
+    function executeRating(stars) {
+        const starClassActive = "rating__star fas fa-star";
+        const starClassInactive = "rating__star far fa-star";
+        const starsLength = stars.length;
+         let i;
+         // stars[1].className = starClassActive
+        // stars[2].className = starClassActive
+        // stars[3].className = starClassActive
+        //stars[0].className = starClassActive
+
+        stars.map((star) => {
+            star.onclick = () => {
+             i = stars.indexOf(star);
+
+             if (star.className===starClassInactive) {
+                  for (i; i >= 0; --i) stars[i].className = starClassActive;
+            } else {
+                    for (i; i < starsLength; ++i) stars[i].className = starClassInactive;
+            }
+         };
+   });
+}
+//executeRating(ratingStars);
+executeRating(ratingLevel);
+    </script>

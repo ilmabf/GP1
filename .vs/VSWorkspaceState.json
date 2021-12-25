@@ -3,14 +3,12 @@
     "",
     "\\app",
     "\\app\\config",
-    "\\app\\controllers",
-    "\\app\\models",
     "\\app\\views",
-    "\\app\\views\\manager",
+    "\\app\\views\\admin",
     "\\public",
     "\\public\\css",
     "\\public\\css\\actors"
   ],
-  "SelectedNode": "\\app\\views\\manager",
+  "SelectedNode": "\\app\\views\\admin\\Employee.php",
   "PreviewInSolutionExplorer": false
 }
