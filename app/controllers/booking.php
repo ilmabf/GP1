@@ -165,7 +165,9 @@ class Booking extends Controller
     }
 
     function assignTeam($id, $resId){
-        if($this->model->assignServiceTeam($id, $resId)){
+
+        $members = $this->model->getMembers($id);
+        if($this->model->assignServiceTeam($id, $members, $resId)){
             header("Location: /booking/upcomingOrder/".$resId);
         }
     }
