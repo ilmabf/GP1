@@ -24,11 +24,11 @@ $washPackageDetails = $_SESSION['washpackage'];
     <div class="cancelAssignForm" id="assign" style="display:none;">
 
 
-        <h2 class="login-signupheader">Do you want to assign Team 1 for this reservation?</h2>
+        <h2 id="assignMsg" class="login-signupheader"></h2>
 
 
         <button id="CloseCancelAssignButton" class="formCancelButton" type="button" name="signup" onclick="closeassign()">Close</button>
-        <button id="SubmitCancelAssignButton" class="formSubmitButton" type="button" name="signup"><a href="" style="color:white;">Yes</a></button>
+        <button id="SubmitCancelAssignButton" class="formSubmitButton" type="button" name="signup" onclick="assignTeam()">Yes</button>
 
     </div>
 
@@ -179,13 +179,39 @@ $washPackageDetails = $_SESSION['washpackage'];
         <div class="box4">
             <div class="reservation-buttons">
                 <div class="reschedule" style="display: inline-block;">
-                    <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff; margin-bottom:10px">Assign a service team</h3>
+                    <?php
+                    // print_r($orderDetails);
+                    if ($orderDetails[0]['Service_team_leader_ID'] == "") {
+                        echo "<h3 style='color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff; margin-bottom:10px'>Assign a service team</h3>";
+                    } else {
+                        echo "<h3 style='color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff; margin-bottom:10px'>Assigned Service Team : Team " . $orderDetails[0]['Service_team_leader_ID'] . "</h3>";
+                    }
+                    ?>
+                    <!-- <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff; margin-bottom:10px">Assign a service team</h3> -->
+                    <!-- <?php print_r($_SESSION['teams']); ?> -->
                     <select name="serviceTeam" id="serviceTeam-types" style="width: 134px;">
-                        <option value="Not Selected">Team 1</option>
-                        <option value="Not Selected">Team 2</option>
+                        <?php
+                        for ($i = 0; $i < sizeof($_SESSION['teams']); $i++) {
+                            echo "<option value = '";
+                            echo $_SESSION['teams'][$i]['team'];
+                            echo "'>";
+                            echo "Team " . $_SESSION['teams'][$i]['team'];
+                            echo "</option>";
+                        }
+                        ?>
+                        <!-- <option value="Not Selected">Team 1</option>
+                        <option value="Not Selected">Team 2</option> -->
                     </select>
                     <div class="reservation-buttons" style="display: inline;">
-                        <button class="reservationButtons a8" id="cancelAssignBtn" type="button" onclick="openassign()" style="float: revert; margin-left: 10px; background-color:#1597E5; border-color: #1597E5; padding: 8px 15px;"><a>Assign Team</a></button>
+                        <?php
+                        // print_r($orderDetails);
+                        if ($orderDetails[0]['Service_team_leader_ID'] == "") {
+                            echo "<button class='reservationButtons a8' id='cancelAssignBtn' type='button' onclick='openassign(document.getElementById(`serviceTeam-types`).value)' style='float: revert; margin-left: 10px; background-color:#1597E5; border-color: #1597E5; padding: 8px 15px;'><a>Assign Team</a></button>";
+                        } else {
+                            echo "<button class='reservationButtons a8' id='cancelAssignBtn' type='button' onclick='openassign(document.getElementById(`serviceTeam-types`).value)' style='float: revert; margin-left: 10px; background-color:#1597E5; border-color: #1597E5; padding: 8px 15px;'><a>Change Team</a></button>";
+                        }
+                        ?>
+                        <!-- <button class="reservationButtons a8" id="cancelAssignBtn" type="button" onclick="openassign(document.getElementById('serviceTeam-types').value)" style="float: revert; margin-left: 10px; background-color:#1597E5; border-color: #1597E5; padding: 8px 15px;"><a>Assign Team</a></button> -->
                     </div>
 
                 </div>
@@ -218,3 +244,12 @@ $washPackageDetails = $_SESSION['washpackage'];
     <div style="min-height: 110px;"></div>
 
     <script src="/public/js/ManagerViewUpcomingOrder.js"></script>
+    <script>
+        var pausecontent = <?php echo json_encode($orderDetails); ?>;
+
+        function assignTeam() {
+            var resID = pausecontent[0]['Reservation_ID'];
+            var id = document.getElementById("serviceTeam-types").value;
+            window.location = "/booking/assignTeam/" + id + "/" + resID;
+        }
+    </script>

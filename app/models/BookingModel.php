@@ -114,4 +114,17 @@ class BookingModel extends Model
         $result = $this->db->select("*", "reservation_photos", "WHERE Reservation_ID = :order_id",':order_id', $order_id);
         return $result;
     }
+
+    function getTeams(){
+
+        $today = date('Y-m-d');
+
+        $result = $this->db->select("DISTINCT team", "employee_records", "WHERE date = :date AND onWork = 1;", ":date", $today);
+        return $result;
+    }
+
+    function assignServiceTeam($id, $resId){
+        $result = $this->db->update("reservation", "Service_team_leader_ID", ":stlID",$id, ":resID", $resId, "WHERE Reservation_ID = :resID;");
+        return $result;
+    }
 }

@@ -57,6 +57,7 @@ class Booking extends Controller
     function upcomingOrder($order_id)
     {
 
+        $_SESSION['teams'] = $this->model->getTeams();
         $_SESSION['upcomingOrder'] = $this->model->getReservationDetails($order_id);//order details
         $_SESSION['customer'] = $this->model->getCustomer($_SESSION['upcomingOrder'][0]['Customer_ID']);//customer details who booked order
         $_SESSION['vehicle'] = $this->model->getSelectedVehicle($_SESSION['upcomingOrder'][0]['Vehicle_ID']);//vehicle details service done
@@ -160,6 +161,12 @@ class Booking extends Controller
             if ($mail->mailto($subject, $_SESSION['userDetails'][0]['Email'], $body)) {
                 header("Location: /user/home");
             }
+        }
+    }
+
+    function assignTeam($id, $resId){
+        if($this->model->assignServiceTeam($id, $resId)){
+            header("Location: /booking/upcomingOrder/".$resId);
         }
     }
 }
