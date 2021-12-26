@@ -48,7 +48,7 @@ include 'views/user/LoggedInHeader.php';
                 </div>
                 <div class="orderView">
                     <p class="viewLink"><a href="/booking/completedOrder/<?php echo $orderList[$count]['Reservation_ID'] ?>" >View order</a></p>
-                    <p class="team">Completed by Service Team <?php echo $orderList[$count]['Service_team_leader_ID'] ?></p>
+                    <p class="team">Completed by Service Team <?php echo $orderList[$count]['Member1'] ?></p>
                 </div>
             </div>
             <?php $count = $count - 1;
@@ -103,7 +103,7 @@ include 'views/user/LoggedInHeader.php';
                             "</div>" +
                             "<div class='orderView'>" +
                             "<p class='viewLink'><a href='/booking/completedOrder/" + list[j]['Reservation_ID'] + "'>View order</a></p>" +
-                            "<p class='team'>Assigned Service Team " + list[j]['Service_team_leader_ID'] + "</p>" +
+                            "<p class='team'>Assigned Service Team " + list[j]['Member1'] + "</p>" +
                             "</div>" +
                             "</div>";
                     

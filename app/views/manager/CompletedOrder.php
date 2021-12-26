@@ -100,7 +100,7 @@ include 'views/user/LoggedInHeader.php';
         <div class="rate1">
             <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Rating of the service</h3>
         </div>
-        <div class="rate1 stars1" id="managerViewRating">
+        <div class="rate1 stars1">
             <i class="rating__star far fa-star"></i>
             <i class="rating__star far fa-star"></i>
             <i class="rating__star far fa-star"></i>
@@ -125,10 +125,10 @@ include 'views/user/LoggedInHeader.php';
 
     <div style="min-height: 110px;"></div>
 
-    <script src="/public/js/ManagerViewCompletedOrder.js"></script>
+    <!--<script src="/public/js/ManagerViewCompletedOrder.js"></script>-->
     <script>
-    var order_details = <?php echo json_encode($_SESSION['completedReservations']); ?>;
-    var ratingLevel = order_details['Rating'];
+    var order_details = <?php echo json_encode($_SESSION['completedOrder']); ?>;
+    var ratingLevel = order_details[0]['Rating'];
 
     const ratingStars = [...document.getElementsByClassName("rating__star")];
 
@@ -136,24 +136,12 @@ include 'views/user/LoggedInHeader.php';
         const starClassActive = "rating__star fas fa-star";
         const starClassInactive = "rating__star far fa-star";
         const starsLength = stars.length;
-         let i;
-         // stars[1].className = starClassActive
-        // stars[2].className = starClassActive
-        // stars[3].className = starClassActive
-        //stars[0].className = starClassActive
+ 
+         for(j = 0; j < ratingLevel; j++){
+            stars [j].className = starClassActive;
+          }
+   
+    }
+    executeRating(ratingStars);
 
-        stars.map((star) => {
-            star.onclick = () => {
-             i = stars.indexOf(star);
-
-             if (star.className===starClassInactive) {
-                  for (i; i >= 0; --i) stars[i].className = starClassActive;
-            } else {
-                    for (i; i < starsLength; ++i) stars[i].className = starClassInactive;
-            }
-         };
-   });
-}
-//executeRating(ratingStars);
-executeRating(ratingLevel);
     </script>
