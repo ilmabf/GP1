@@ -95,12 +95,23 @@ class EmployeeModel extends Model
         } else print_r($result);
     }
 
+    function stlUpdate($empId, $columnValue)
+    {
+        $conditionParam = ':empId';
+        $conditionValue = $empId;
+
+        $result = $this->db->update("employee", "STL_ID", ":stlId", "null", $conditionParam, $conditionValue, "WHERE Employee_ID = :empId;");
+        if ($result == "Success") {
+            return true;
+        } else print_r($result);
+    }
+
     //update employee set Flag = 0 WHERE Employee_ID = :empId;
     //updateTwo("employee", "WHERE Employee_ID = :empId;", ':empId', $empId);
 
-    function stlPhotoAdd($tempname)
+    function makeSTLPhoto($image, $nic)
     {
-        $result = $this->db->insert("service_team_leader", "Photo", ":photo", $tempname);
+        $result = $this->db->insert("service_team_leader", "Photo", ":photo", $image);
         return $result;
     }
 
@@ -110,13 +121,29 @@ class EmployeeModel extends Model
         return $result;
     }
 
-    function stlUserAdd($stlId, $stlUserName, $hashedpwd, $stlEmail)
+    // get last stlid
+    function getLastSTLID()
+    {
+        $result = $this->db->select("STL_ID", "service_team_leader", "ORDER BY STL_ID DESC LIMIT 1;");
+        return $result;
+    }
+
+    function stlUserAdd($stlId, $stlUserName, $hashedpwd, $stlEmail, $flag)
     {
         $columns = array('Username', 'PASSWORD', 'Email', 'STL_ID');
         $param = array(':username', ':password', ':email', ':stlId');
         $values = array($stlUserName, $hashedpwd, $stlEmail, $stlId);
 
         $result = $this->db->insert("users", $columns, $param, $values);
+        return $result;
+    }
+
+    function empStlIDAdd($stlId, $nic)
+    {
+        $conditionParam = ':nic';
+        $conditionValue = $nic;
+
+        $result = $this->db->update("employee", 'STL_ID', ':stlId', $stlId, $conditionParam, $conditionValue, "WHERE NIC_No = :nic;");
         return $result;
     }
 
@@ -151,9 +178,9 @@ class EmployeeModel extends Model
     function insertAttendance_stl($empID, $stlID, $onWork)
     {
         $today = date("Y-m-d");
-        $columns = array('EmpID', 'Date', 'onWork', 'Stl_ID');
-        $param = array(':empId', ':date', ':onWork', ':stlID');
-        $values = array($empID, $today, $onWork, $stlID);
+        $columns = array('EmpID', 'Date', 'team', 'onWork', 'Stl_ID');
+        $param = array(':empId', ':date', ':team', ':onWork', ':stlID');
+        $values = array($empID, $today, $stlID, $onWork, $stlID);
         $result = $this->db->insert("employee_records", $columns, $param, $values);
         return $result;
     }

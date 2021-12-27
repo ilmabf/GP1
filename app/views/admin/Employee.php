@@ -25,13 +25,15 @@ include 'views/user/LoggedInHeader.php';
       <form action="/employee/stlAdd" name="Form1" method="post" enctype="multipart/form-data">
         <div id="cont2" class="addTb2"></div>
 
-        <button type="submit" id="btStl" value="Insert data" onclick="validate();">Insert Data</button>
+        <button type="submit" name="submitStl" id="btStl" value="Insert data" onclick="validate();">Insert Data</button>
       </form>
     </div>
 
-    <div class="empAddSuccess" id="empAddSuccess">
-      <?php echo ($_SESSION['insertSuccess']); ?>
-    </div>
+    <?php if (isset($_SESSION['insertSucess'])) { ?>
+      <div class="empAddSuccess" id="empAddSuccess">
+        <strong>Success!</strong> Added successfully.
+      </div>
+    <?php } ?>
 
     <div style="height: 50px;"></div>
 
