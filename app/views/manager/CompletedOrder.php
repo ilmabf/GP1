@@ -58,7 +58,7 @@ include 'views/user/LoggedInHeader.php';
                 </div>
                 <div class="res">
                     <div class="orderitem">Color</div>
-                    <div class="orderitemx" style=" width: 26px;height: 24px;display: inline-block;border: 1px solid <?php echo $vehicleDetails[0]['Colour']; ?>;background-color:<?php echo $vehicleDetails[0]['Colour']; ?>"></div>
+                    <div class="orderitemx"> <?php echo $vehicleDetails[0]['Colour']; ?> </div>
                 </div><br>
                 <hr><br>                
                 <div class="res">
@@ -72,7 +72,10 @@ include 'views/user/LoggedInHeader.php';
                 </div> -->
                 <div class="res">
                     <div class="orderitem">Completed by</div>
-                    <div class="orderitemx">Service Team <?php echo $orderDetails[0]['Service_team_leader_ID'] ?></div>
+                    <div class="orderitemx"> <?php echo $orderDetails[0]['Member1']; ?></div>
+                    <div class="orderitemx"> <?php echo $orderDetails[0]['Member2']; ?></div>
+                    <div class="orderitemx"> <?php echo $orderDetails[0]['Member3']; ?></div>
+                    <div class="orderitemx"> <?php echo $orderDetails[0]['Member4']; ?></div>
                 </div>
                 <div class="res">
                     <div class="orderitem">Wash Package</div>
@@ -122,4 +125,23 @@ include 'views/user/LoggedInHeader.php';
 
     <div style="min-height: 110px;"></div>
 
-    <script src="/public/js/ManagerViewCompletedOrder.js"></script>
+    <!--<script src="/public/js/ManagerViewCompletedOrder.js"></script>-->
+    <script>
+    var order_details = <?php echo json_encode($_SESSION['completedOrder']); ?>;
+    var ratingLevel = order_details[0]['Rating'];
+
+    const ratingStars = [...document.getElementsByClassName("rating__star")];
+
+    function executeRating(stars) {
+        const starClassActive = "rating__star fas fa-star";
+        const starClassInactive = "rating__star far fa-star";
+        const starsLength = stars.length;
+ 
+         for(j = 0; j < ratingLevel; j++){
+            stars [j].className = starClassActive;
+          }
+   
+    }
+    executeRating(ratingStars);
+
+    </script>

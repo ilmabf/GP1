@@ -114,4 +114,33 @@ class BookingModel extends Model
         $result = $this->db->select("*", "reservation_photos", "WHERE Reservation_ID = :order_id",':order_id', $order_id);
         return $result;
     }
+
+    function getTeams(){
+
+        $today = date('Y-m-d');
+
+        $result = $this->db->select("DISTINCT team", "employee_records", "WHERE date = :date AND onWork = 1;", ":date", $today);
+        return $result;
+    }
+
+    function assignServiceTeam($id, $members, $resId){
+        $member1 = $members[0]['First_Name'] . " " . $members[0]['Last_Name'];
+        $member2 = $members[1]['First_Name'] . " " . $members[1]['Last_Name'];
+        $member3 = $members[2]['First_Name'] . " " . $members[2]['Last_Name'];
+        $member4 = $members[3]['First_Name'] . " " . $members[3]['Last_Name'];
+
+        $memColumns = array("Service_team_leader_ID","Member1", "Member2", "Member3", "Member4");
+        $memParams = array(":stlID", ":Mem1", ":Mem2", ":Mem3", ":Mem4");
+        $memValues = array($id, $member1, $member2, $member3, $member4);
+
+        $result = $this->db->update("reservation", $memColumns, $memParams,$memValues, ":resID", $resId, "WHERE Reservation_ID = :resID;");
+        return $result;
+    }
+
+    function getMembers($id){
+        $today = date('Y-m-d');
+        $selection = array("First_Name", "Last_Name");
+        $result = $this->db->select($selection, "employee", "INNER JOIN employee_records ON (employee.Employee_ID = employee_records.EmpID AND date = :date) WHERE onWork = 1 AND employee_records.team = :team;", array(":date", ":team"), array($today, $id));
+        return $result;
+    }
 }
