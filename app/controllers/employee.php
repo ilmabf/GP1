@@ -100,30 +100,93 @@ class Employee extends Controller
             $stlPassword = $_POST['stlPassword'];
             // $stlPhoto = $_POST['stlPhoto'];
 
-            if (isset($nic) && isset($stlUserName) && isset($stlEmail) && isset($stlPassword)) {
-
-                // $options = ['cost' => 12];
-                // $hashedpwd = password_hash($stlPassword, PASSWORD_BCRYPT, $options);
-
-                // $filename = $_FILES["stlPhoto"]["name"];
-                $tempname = $_FILES["stlPhoto"]["tmp_name"];
-
-                if ($this->model->stlPhotoAdd($tempname)) {
-                    $options = ['cost' => 12];
-                    $hashedpwd = password_hash($stlPassword, PASSWORD_BCRYPT, $options);
-
-                    $stlDetails = $this->model->getStlDetails();
-                    $_SESSION['stlDetails'] = $stlDetails;
-
-                    $stlCount = $_SESSION['rowCount'];
-                    $stlId = $_SESSION['stlDetails'][$stlCount - 1]['STL_ID'];
-                    echo $stlCount;
-                    echo $stlId;
-
-                    if ($this->model->stlUserAdd($stlId, $stlUserName, $hashedpwd, $stlEmail)) {
-                        header("Location: /employee/");
+            if (isset($_POST["submitStl"])) {
+                echo "Submitted";
+                // for loop for check if nic not exist in $_SESSION['stlData']
+                $flag1 = 1;
+                // print_r($_SESSION['stlData']);
+                foreach ($_SESSION['employeeDetails'] as $stl) {
+                    if ($stl['NIC_No'] == $nic) {
+                        $flag1 = 0;
                     }
                 }
+
+                if ($flag1 == 0) {
+
+                    // check if stlUserName not exist in users tb
+                    $flag2 = 1;
+                    foreach ($_SESSION['stlData'] as $stl) {
+                        // echo $stl['Username'];
+                        if ($stl['Username'] == $stlUserName) {
+                            $flag2 = 0;
+                        }
+                    }
+
+                    // echo $flag2;
+
+                    if ($flag2 == 0) {
+                        $_SESSION['insertSuccess'] = 'STL UserName already exist';
+                        header("Location: /employee/");
+                    } else {
+
+                        // check if stlEmail not exist in users tb
+                        $flag3 = 1;
+                        foreach ($_SESSION['employeeDetails'] as $stl) {
+                            if ($stl['Email'] == $stlEmail) {
+                                $flag3 = 0;
+                            }
+                        }
+
+                        // echo $flag3;
+
+                        if ($flag3 == 1) {
+                            $_SESSION['insertSuccess'] = 'STL Email not exist in the Employee Pool';
+                            header("Location: /employee/");
+                        } else {
+
+                            $options = ['cost' => 12];
+                            $hashedpwd = password_hash($stlPassword, PASSWORD_BCRYPT, $options);
+
+                            // insert stl
+                            $flag = 1;
+
+                            $check = getimagesize($_FILES["stlPhoto"]["tmp_name"]);
+                            if ($check !== false) {
+                                $image = $_FILES['stlPhoto']['tmp_name'];
+                                $imgContent = addslashes(file_get_contents($image));
+
+                                if ($this->model->makeSTLPhoto($imgContent, $nic)) {
+
+                                    // select last row of the stl table
+                                    $stlId = $this->model->getLastSTLId();
+                                    $newStlID =  $stlId[0]['STL_ID'];
+                                    if ($this->model->stlUserAdd($newStlID, $stlUserName, $hashedpwd, $stlEmail, $flag)) {
+                                        // $_SESSION['insertStlSuccess'] = 'STL added successfully';
+                                        // echo "STL added successfully";
+                                        if ($this->model->empStlIDAdd($newStlID, $nic)) {
+                                            $_SESSION['insertSuccess'] = 'STL added successfully';
+                                            // echo "Employee added successfully";
+                                            header("Location: /employee/");
+                                        } else {
+                                            echo "emp stl add error";
+                                        }
+                                    } else {
+                                        echo "Error";
+                                    }
+                                } else {
+                                    echo "Error in stl photo";
+                                }
+                            } else {
+                                echo "File is not an image.";
+                            }
+                        }
+                    }
+                } else {
+                    $_SESSION['insertSuccess'] = 'STL Not exist in the Employee Pool';
+                    header("Location: /employee/");
+                }
+            } else {
+                echo "Error";
             }
         }
     }
@@ -193,3 +256,44 @@ class Employee extends Controller
         }
     }
 }
+
+
+// <?php
+//       if(isset($_POST["submit"])){
+//           $check = getimagesize($_FILES["image"]["tmp_name"]);
+//           if($check !== false){
+//               $image = $_FILES['image']['tmp_name'];
+//               $imgContent = addslashes(file_get_contents($image));
+
+//             /*
+//              * Insert image data into database
+//              */
+
+//             //DB details
+//             $dbHost     = 'localhost';
+//             $dbUsername = 'root';
+//             $dbPassword = '*****';
+//             $dbName     = 'codexworld';
+
+//             //Create connection and select DB
+//             $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
+
+//             // Check connection
+//             if($db->connect_error){
+//                 die("Connection failed: " . $db->connect_error);
+//             }
+
+//             $dataTime = date("Y-m-d H:i:s");
+
+//             //Insert image content into database
+//             $insert = $db->query("INSERT into images (image, created) VALUES ('$imgContent', '$dataTime')");
+//             if($insert){
+//                 echo "File uploaded successfully.";
+//             }else{
+//                 echo "File upload failed, please try again.";
+//             } 
+//         }else{
+//             echo "Please select an image file to upload.";
+//         }
+//     }
+//     
