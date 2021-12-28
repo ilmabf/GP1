@@ -118,9 +118,9 @@ $booked = $_SESSION['booked'];
             <div class="month">
                 <i class="fas fa-angle-left prev"></i>
                 <div class="date">
-                    <h3>Select a date & an available time <b>( Green - available )</b></h3>
-                    <h1></h1>
-                    <p></p>
+                    <h3 style="color:white;">Select an available time slot <b>( Red - unavailable )</b></h3>
+                    <h1 style="color:white;"></h1>
+                    <p style="color:white;"></p>
                 </div>
                 <i class="fas fa-angle-right next"></i>
             </div>
@@ -208,7 +208,7 @@ $booked = $_SESSION['booked'];
 
             var booked = <?php echo json_encode($booked); ?>;
 
-            var timeSlotsArr = ["8-10", "10-12", "12-2", "2-4", "4-6"];
+            var timeSlotsArr = ["08-10 A.M.", "10-12 A.M.", "12-14 P.M.", "14-16 P.M.", "16-18 P.M."];
 
             for (i = 1; i <= lastDay; i++) {
                 flag1 = 0;
@@ -223,6 +223,7 @@ $booked = $_SESSION['booked'];
                     for (a = 1; a <= 5; a++) {
                         flag1 = 0;
                         for (var key in booked) {
+                            console.log(booked[key]);
                             // split the key by '-'
                             var keyArr = key.split("-");
                             // turn the keyArr values to string
@@ -325,7 +326,7 @@ $booked = $_SESSION['booked'];
             if (t != "booked") {
                 var time;
                 if (t == 1) {
-                    time = "8-10 A.M.";
+                    time = "08-10 A.M.";
                 } else if (t == 2) {
                     time = "10-12 A.M.";
                 } else if (t == 3) {
@@ -381,10 +382,10 @@ $booked = $_SESSION['booked'];
                         document.getElementById("slash1").innerHTML = "/";
                         document.getElementById("slash2").innerHTML = "/";
 
-                        document.cookie = "day = " + date + ";  path=/";
-                        document.cookie = "month = " + month + ";  path=/";
-                        document.cookie = "year = " + year + ";  path=/";
-                        document.cookie = "time = " + time + ";  path=/";
+                        document.cookie = "day = " + date + ";path=/";
+                        document.cookie = "month = " + month + ";path=/";
+                        document.cookie = "year = " + year + ";path=/";
+                        document.cookie = "time = " + time + ";path=/";
                         
                         document.getElementById("cal1").style = "display:none;";
                         var z = document.getElementById("bookingContent");
@@ -421,7 +422,7 @@ $booked = $_SESSION['booked'];
             var price = getPrice(vehicleType, washPackage);
             document.getElementById("priceValue").innerHTML = "Rs. " + price;
             document.getElementById("priceValue").style = "display:block;";
-            document.cookie = "price = " + price + ";  path=/";
+            document.cookie = "price = " + price + ";path=/";
         }
 
         function getPrice(type, package) {

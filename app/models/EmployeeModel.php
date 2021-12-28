@@ -156,7 +156,7 @@ class EmployeeModel extends Model
     function insertAttendance_stl($empID, $stlID, $onWork)
     {
         $today = date("Y-m-d");
-        $columns = array('EmpID', 'Date', 'team','onWork', 'Stl_ID');
+        $columns = array('EmpID', 'Date', 'team','onWork', 'STL_ID');
         $param = array(':empId', ':date', ':team',':onWork', ':stlID');
         $values = array($empID, $today, $stlID, $onWork, $stlID);
         $result = $this->db->insert("employee_records", $columns, $param, $values);

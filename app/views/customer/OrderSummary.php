@@ -175,7 +175,7 @@ include 'views/user/LoggedInHeader.php';
 
         var parameters = document.cookie;
         //delete cookies
-
+        parameters = parameters.replace(/ /g, "_");
         deleteCookie();
         window.location = "/booking/makeReservation/" + parameters;
     }
