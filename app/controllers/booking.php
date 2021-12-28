@@ -106,33 +106,36 @@ class Booking extends Controller
 
     function makeReservation($details)
     {
+        // echo $details;
+        $details = str_replace('_', ' ', $details);
+        echo $details;
         $details = explode(';', $details);
 
         for ($i = 0; $i < sizeof($details); $i++) {
-            if (strncmp($details[$i], "day", 3) == 0) {
-                $day = substr($details[$i], 4);
-            } else if (strncmp($details[$i], "month", 5) == 0) {
-                $month = substr($details[$i], 6);
-            } else if (strncmp($details[$i], "year", 4) == 0) {
-                $year = substr($details[$i], 5);
-            } else if (strncmp($details[$i], "time", 4) == 0) {
-                $time = substr($details[$i], 5);
-            } else if (strncmp($details[$i], "vehicle", 7) == 0) {
-                $vehicle = substr($details[$i], 8);
-            } else if (strncmp($details[$i], "washPackageName", 15) == 0) {
-                $washPackageName = substr($details[$i], 16);
-            } else if (strncmp($details[$i], "washPackage", 11) == 0) {
-                $washPackage = substr($details[$i], 12);
-            } else if (strncmp($details[$i], "price", 5) == 0) {
-                $price = substr($details[$i], 6);
-            } else if (strncmp($details[$i], "total", 5) == 0) {
-                $total = substr($details[$i], 6);
-            } else if (strncmp($details[$i], "address", 7) == 0) {
-                $address = substr($details[$i], 8);
-            } else if (strncmp($details[$i], "latitude", 8) == 0) {
-                $latitude = substr($details[$i], 9);
-            } else if (strncmp($details[$i], "longitude", 9) == 0) {
-                $longitude = substr($details[$i], 10);
+            if (strncmp($details[$i], " day", 4) == 0) {
+                $day = substr($details[$i], 5);
+            } else if (strncmp($details[$i], " month", 6) == 0) {
+                $month = substr($details[$i], 7);
+            } else if (strncmp($details[$i], " year", 5) == 0) {
+                $year = substr($details[$i], 6);
+            } else if (strncmp($details[$i], " time", 5) == 0) {
+                $time = substr($details[$i], 6);
+            } else if (strncmp($details[$i], " vehicle", 8) == 0) {
+                $vehicle = substr($details[$i], 9);
+            } else if (strncmp($details[$i], " washPackageName", 16) == 0) {
+                $washPackageName = substr($details[$i], 17);
+            } else if (strncmp($details[$i], " washPackage", 12) == 0) {
+                $washPackage = substr($details[$i], 13);
+            } else if (strncmp($details[$i], " price", 6) == 0) {
+                $price = substr($details[$i], 7);
+            } else if (strncmp($details[$i], " total", 6) == 0) {
+                $total = substr($details[$i], 7);
+            } else if (strncmp($details[$i], " address", 8) == 0) {
+                $address = substr($details[$i], 9);
+            } else if (strncmp($details[$i], " latitude", 9) == 0) {
+                $latitude = substr($details[$i], 10);
+            } else if (strncmp($details[$i], " longitude", 10) == 0) {
+                $longitude = substr($details[$i], 11);
             }
         }
 

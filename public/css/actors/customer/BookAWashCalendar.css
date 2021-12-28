@@ -86,7 +86,8 @@ html {
   margin: 0.3rem;
   width: calc(114.2rem / 7);
   height: 8.5rem;
-  display: flex;
+  /* display: flex; */
+  display: list-item;
   justify-content: center;
   align-items: center;
   text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
@@ -95,7 +96,7 @@ html {
 }
 
 .days div:hover:not(.today) {
-  background-color: #747272;
+  background-color: #193498;
   border: 0.2rem solid #777;
 }
 
@@ -109,7 +110,7 @@ html {
 }
 
 .time-green {
-  background-color: green;
+  background-color: whitesmoke;
   border-radius: 5px;
   margin: 4rem 0.4rem 4rem 0.4rem;
   padding: 0rem 0.2rem 0rem 0.2rem;
