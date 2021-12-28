@@ -125,13 +125,13 @@ $booked = $_SESSION['booked'];
                 <i class="fas fa-angle-right next"></i>
             </div>
             <div class="weekdays">
-                <div>Sun</div>
-                <div>Mon</div>
-                <div>Tue</div>
-                <div>Wed</div>
-                <div>Thu</div>
-                <div>Fri</div>
-                <div>Sat</div>
+                <div style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Sun</div>
+                <div style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Mon</div>
+                <div style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Tue</div>
+                <div style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Wed</div>
+                <div style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Thu</div>
+                <div style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Fri</div>
+                <div style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Sat</div>
             </div>
             <div class="days"></div>
         </div>
@@ -217,7 +217,7 @@ $booked = $_SESSION['booked'];
                     i === new Date().getDate() &&
                     date.getMonth() === new Date().getMonth()
                 ) {
-                    days += `<div class="today"><span class="today-1">${i}</span><br>`;
+                    days += `<div class="today"><span class="today-1" style = "color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">${i}</span><br>`;
                     flag1 = 0;
                     flag2 = 0;
                     for (a = 1; a <= 5; a++) {
@@ -258,7 +258,7 @@ $booked = $_SESSION['booked'];
                     days += `</div>`;
 
                 } else {
-                    days += `<div><span class="today-2">${i}</span><br>`;
+                    days += `<div><span class="today-2" style = "color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">${i}</span><br>`;
                     for (a = 1; a <= 5; a++) {
                         flag2 = 0;
                         // days += `<div>`;
