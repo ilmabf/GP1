@@ -2,15 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\app",
+    "\\app\\controllers",
+    "\\app\\models",
     "\\app\\views",
-    "\\app\\views\\admin",
-    "\\app\\views\\manager",
     "\\app\\views\\stl",
     "\\public",
-    "\\public\\css",
-    "\\public\\css\\actors",
-    "\\public\\css\\actors\\admin"
+    "\\public\\css"
   ],
-  "SelectedNode": "\\app\\models\\EmployeeModel.php",
+  "SelectedNode": "\\app\\controllers\\booking.php",
   "PreviewInSolutionExplorer": false
 }

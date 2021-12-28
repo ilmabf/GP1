@@ -111,3 +111,34 @@ include 'views/user/LoggedInHeader.php';
 
         <script src="/public/js/CustomerViewUpcomingOrder.js"></script>
         <script src="/public/js/CustomerViewCompletedOrder.js"></script>
+    <script>
+    var order_details = <?php echo json_encode($_SESSION['completedOrder']); ?>;
+    var ratingLevel = order_details[0]['Rating'];
+
+    const ratingStars = [...document.getElementsByClassName("rating__star")];
+
+    function executeRating(stars) {
+        const starClassActive = "rating__star fas fa-star";
+        const starClassInactive = "rating__star far fa-star";
+        const starsLength = stars.length;
+
+         let i;
+ // stars[1].className = starClassActive
+ // stars[2].className = starClassActive
+ // stars[3].className = starClassActive
+  //stars[0].className = starClassActive
+
+    stars.map((star) => {
+         star.onclick = () => {
+         i = stars.indexOf(star);
+
+         if (star.className===starClassInactive) {
+            for (i; i >= 0; --i) stars[i].className = starClassActive;
+         } else {
+            for (i; i < starsLength; ++i) stars[i].className = starClassInactive;
+       }
+     };
+   });
+}
+executeRating(ratingStars);
+    </script>
