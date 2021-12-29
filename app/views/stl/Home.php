@@ -14,7 +14,7 @@ include 'views/user/LoggedInHeader.php';
             <div class="stl-home-main-flex">
 
                 <div class="stlHome-block1">
-                    <h3><a href="/calendar/reservations" style="color:#193498;">Reservations Today</a></h3>
+                    <h3><a href="/calendar/stlTodayReservations" style="color:#193498;">Reservations Today</a></h3>
                 </div>
 
                 <div class="stlHome-block2">

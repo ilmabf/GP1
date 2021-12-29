@@ -143,5 +143,11 @@ class UserModel extends Model
         $result = $this->db->select("*", "users", "INNER JOIN customer on users.User_ID = customer.User_ID WHERE (Username = :uname OR Email = :email);", $param, $paramValue);
         return $result;
     }
-
+     //Get stl detail to use STL_ID in calendar controller to view today's reservation
+    public function getSTLdetails($uname){
+        $param = array(':uname', ':email');
+        $paramValue = array($uname, $uname);
+        $result = $this->db->select("*", "users", "WHERE (Username = :uname OR Email = :email);", $param, $paramValue);
+        return $result;
+    }
 }
