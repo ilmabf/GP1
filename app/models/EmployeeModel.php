@@ -249,14 +249,16 @@ class EmployeeModel extends Model
     function stlDelete($stlId)
     {
         $result = $this->db->delete("service_team_leader", "WHERE STL_ID = :stlId;", ":stlId", $stlId);
+        return $result;
 
-        if ($result == "Success") {
-            $result1 = $this->db->delete("users", "WHERE STL_ID = :stlid;", ":stlid", $stlId);
+        // if ($result == "Success") {
+        //     $result1 = $this->db->delete("users", "WHERE STL_ID = :stlid;", ":stlid", $stlId);
 
-            if ($result1 == "Success") {
-                $result2 = $this->db->update("employee", "STL_ID", ":stlId", "NULL", ":stlID", $stlId, "WHERE STL_ID = :stlID");
-            }
-        }
+        //     if ($result1 == "Success") {
+        //         $result2 = $this->db->update("employee", "STL_ID", ":stlId", "NULL", ":stlID", $stlId, "WHERE STL_ID = :stlID;");
+        //         return $result2;
+        //     }
+        // }
     }
 }
 
