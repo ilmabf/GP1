@@ -49,6 +49,13 @@ class Employee extends Controller
         $noOfTeams = $this->model->getTeamCount();
         $_SESSION['teamCount'] = $noOfTeams;
 
+        $userData = $this->model->getUserData();
+        $_SESSION['userData'] = $userData;
+
+        // foreach ($_SESSION['userData'] as $stl) {
+        //     echo $stl['Email'];
+        // }
+
         //User Autherization
         if ($_SESSION['role'] == "systemadmin") {
             $this->view->render('admin/Employee');
@@ -101,8 +108,9 @@ class Employee extends Controller
             $stlPassword = $_POST['stlPassword'];
             // $stlPhoto = $_POST['stlPhoto'];
 
+
             if (isset($_POST["submitStl"])) {
-                echo "Submitted";
+                // echo "Submitted";
                 // for loop for check if nic not exist in $_SESSION['stlData']
                 $flag1 = 1;
                 // print_r($_SESSION['stlData']);
@@ -116,7 +124,7 @@ class Employee extends Controller
 
                     // check if stlUserName not exist in users tb
                     $flag2 = 1;
-                    foreach ($_SESSION['stlData'] as $stl) {        //Check ALL USER's Usernames
+                    foreach ($_SESSION['userData'] as $stl) {
                         // echo $stl['Username'];
                         if ($stl['Username'] == $stlUserName) {
                             $flag2 = 0;
@@ -161,12 +169,10 @@ class Employee extends Controller
                                     // select last row of the stl table
                                     $stlId = $this->model->getLastSTLId();
                                     $newStlID =  $stlId[0]['STL_ID'];
+                                    echo $newStlID;
                                     if ($this->model->stlUserAdd($newStlID, $stlUserName, $hashedpwd, $stlEmail, $flag)) {
-                                        // $_SESSION['insertStlSuccess'] = 'STL added successfully';
-                                        // echo "STL added successfully";
                                         if ($this->model->empStlIDAdd($newStlID, $nic)) {
                                             $_SESSION['insertSuccess'] = 'STL added successfully';
-                                            // echo "Employee added successfully";
                                             header("Location: /employee/");
                                         } else {
                                             echo "emp stl add error";
@@ -214,6 +220,16 @@ class Employee extends Controller
 
             $values = array(0, 0);
             if ($this->model->employeeUpdate($empId, $values)) {
+                header("Location: /employee/");
+            }
+        }
+    }
+
+    function deleteStl($stlId)
+    {
+        if ($_SESSION['role'] == "systemadmin") {
+
+            if ($this->model->stlDelete($stlId)) {
                 header("Location: /employee/");
             }
         }

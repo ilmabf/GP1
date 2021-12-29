@@ -19,6 +19,12 @@ class EmployeeModel extends Model
         return $result;
     }
 
+    function getUserData()
+    {
+        $result = $this->db->select("*", "users", "Null");
+        return $result;
+    }
+
     function getEmployeeDetails()
     {
         // $selection = array("First_name", "Last_Name", "Contact_Number", "Email", "Date_Enrolled", "Salary", "NIC_No");
@@ -32,7 +38,7 @@ class EmployeeModel extends Model
 
     function getStlData()
     {
-        $selection = array("employee.Employee_ID", "employee.First_Name", "employee.Last_Name", "employee.Contact_Number", "employee.Email", "employee.Date_Enrolled", "employee.Salary", "employee.NIC_No", "users.Username", "service_team_leader.Photo");
+        $selection = array("employee.Employee_ID", "employee.First_Name", "employee.Last_Name", "employee.Contact_Number", "employee.Email", "employee.Date_Enrolled", "employee.Salary", "employee.NIC_No", "users.Username", "service_team_leader.Photo", "service_team_leader.STL_ID");
         $result = $this->db->select($selection, "employee", "INNER JOIN users ON employee.STL_ID = users.STL_ID INNER JOIN service_team_leader ON employee.STL_ID = service_team_leader.STL_ID WHERE employee.Flag != 0;");
         return $result;
     }
@@ -238,5 +244,18 @@ class EmployeeModel extends Model
         $values = $count;
         $result = $this->db->update("teamcount", $columns, $param, $values, $conditionParam, $conditionValue, "WHERE countID = :countID;");
         return $result;
+    }
+
+    function stlDelete($stlId)
+    {
+        $result = $this->db->delete("service_team_leader", "WHERE STL_ID = :stlId;", ":stlId", $stlId);
+
+        if ($result == "Success") {
+            $result1 = $this->db->delete("users", "WHERE STL_ID = :stlid;", ":stlid", $stlId);
+
+            if ($result1 == "Success") {
+                $result2 = $this->db->update("employee", "STL_ID", ":stlId", "NULL", ":stlID", $stlId, "WHERE STL_ID = :stlID");
+            }
+        }
     }
 }

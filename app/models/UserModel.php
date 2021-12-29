@@ -102,7 +102,7 @@ class UserModel extends Model
         $columnValue = $newPassword;
         $conditionParam =  ':email';
         $conditionValue = $email;
-        $result = $this->db->update("users", 'PASSWORD', ':password',$columnValue, $conditionParam,$conditionValue, "WHERE Email = :email;");
+        $result = $this->db->update("users", 'PASSWORD', ':password', $columnValue, $conditionParam, $conditionValue, "WHERE Email = :email;");
         if ($result == "Success") {
             return true;
         } else print_r($result);
@@ -143,8 +143,9 @@ class UserModel extends Model
         $result = $this->db->select("*", "users", "INNER JOIN customer on users.User_ID = customer.User_ID WHERE (Username = :uname OR Email = :email);", $param, $paramValue);
         return $result;
     }
-     //Get stl detail to use STL_ID in calendar controller to view today's reservation
-    public function getSTLdetails($uname){
+    //Get stl detail to use STL_ID in calendar controller to view today's reservation
+    public function getSTLdetails($uname)
+    {
         $param = array(':uname', ':email');
         $paramValue = array($uname, $uname);
         $result = $this->db->select("*", "users", "WHERE (Username = :uname OR Email = :email);", $param, $paramValue);
