@@ -31,11 +31,11 @@ include 'views/user/LoggedInHeader.php';
 
     <div style="height: 50px;"></div>
 
-    <?php if (isset($_SESSION['insertSucess'])) { ?>
-      <div class="empAddSuccess" id="empAddSuccess">
-        <strong>Success!</strong> Added successfully.
-      </div>
-    <?php } ?>
+
+    <div class="empAddSuccess" id="empAddSuccess">
+      <?php echo $_SESSION['insertSuccess'] ?>
+    </div>
+
 
     <!-- ------------------------------------Emp View------------------------------------------------------- -->
 

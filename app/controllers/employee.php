@@ -228,8 +228,8 @@ class Employee extends Controller
     function deleteStl($stlId)
     {
         if ($_SESSION['role'] == "systemadmin") {
-
-            if ($this->model->stlDelete($stlId)) {
+            $result = $this->model->stlDelete($stlId);
+            if ($result == "Success") {
                 header("Location: /employee/");
             }
         }
