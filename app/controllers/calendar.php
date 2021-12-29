@@ -21,7 +21,8 @@ class Calendar extends Controller
     }
 
     function stlTodayReservations(){
-        $_SESSION['todayReservations'] = $this->model->getSTLtodayReservationList();
+        $id = $_SESSION['stlDetails'][0]['STL_ID'];
+        $_SESSION['todayReservations'] = $this->model->getSTLtodayReservationList($id);
         if ($_SESSION['role'] == "stl") {
             $this->view->render('stl/AssignedOrders');
             exit;
@@ -33,19 +34,32 @@ class Calendar extends Controller
 
         $_SESSION['todayOrder'] = $this->model->getReservationDetails($order_id);//order details
         $_SESSION['customer'] = $this->model->getCustomer($_SESSION['todayOrder'][0]['Customer_ID']);//customer details who booked order
-        $_SESSION['vehicle'] = $this->model->getSelectedVehicle($_SESSION['completedOrder'][0]['Vehicle_ID']);//vehicle details service done
-        $_SESSION['washpackage'] = $this->model->getSelectedWashPackage($_SESSION['completedOrder'][0]['Wash_Package_ID']);//wash package selected
+        $_SESSION['vehicle'] = $this->model->getSelectedVehicle($_SESSION['todayOrder'][0]['Vehicle_ID']);//vehicle details service done
+        $_SESSION['washpackage'] = $this->model->getSelectedWashPackage($_SESSION['todayOrder'][0]['Wash_Package_ID']);//wash package selected
 
         if ($_SESSION['role'] == "stl") {
             $this->view->render('stl/OrderDetails');
             exit;
         }
     }
-    /*    //To get assigned reservation list to stl
-    function getSTLtodayReservationList(){
-        $today = date('Y-m-d');
-       
-        $result = $this->db->select('*', "reservation", "WHERE Date = :today ; ",":today",$today);
-        return $result;
-    }*/
+    function uploadImages(){
+    //User Autherization
+        if ($_SESSION['role'] == "stl") {
+
+        $order_id = $_POST["order_id"];
+        $beforePhoto =$_POST["beforePhoto"];
+        $afterPhoto =$_POST["afterPhoto"];
+        
+            if (isset($order_id) && isset($beforePhoto) && isset($afterPhoto) ) {
+
+                if ($this->model->uploadImages($order_id, $beforePhoto, $afterPhoto) {
+                    header("Location: /calendar/stlTodayReservations");
+                }
+            } else {
+                echo "Error";
+            }
+        }
+
+    }
+ 
 }
