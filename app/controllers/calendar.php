@@ -52,7 +52,7 @@ class Calendar extends Controller
         
             if (isset($order_id) && isset($beforePhoto) && isset($afterPhoto) ) {
 
-                if ($this->model->uploadImages($order_id, $beforePhoto, $afterPhoto) {
+                if ($this->model->uploadImages($order_id, $beforePhoto, $afterPhoto)) {
                     header("Location: /calendar/stlTodayReservations");
                 }
             } else {

@@ -39,7 +39,7 @@ class CalendarModel extends Model
         $columns = array("Reservation_ID","Picture_before","Picture_after","Time_Uploaded");
         $param = array(':order_id',':beforePhoto',':afterphoto',':timeUploaded');
         $values = array($order_id, $beforePhoto, $afterPhoto,$time);
-        $result = $this->db->insert("reservation_photos", $columns, $param, $values));
+        $result = $this->db->insert("reservation_photos", $columns, $param, $values);
         return $result;
     }
 
