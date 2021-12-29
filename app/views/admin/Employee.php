@@ -160,7 +160,6 @@ include 'views/user/LoggedInHeader.php';
                     <td id="<?php echo "Att_OnWork_row" . $count1 ?>" style="text-align:left" class="td-t1" style="max-width:200px;"><?php echo $result1[$count1]['onWork'] ?></td>
                     <!-- <td>
                     <input type="button" id="<?php echo "edit_att_emp_btn" . $count1 ?>" class="edit_btn td-t1" value="Edit" onclick="empEditAttendanceForm('<?php echo $count1 ?>')">
-
                   </td> -->
 
                   </tr>
@@ -326,7 +325,6 @@ include 'views/user/LoggedInHeader.php';
 
 <!-- <script>
   
-
   document.getElementById("bts").onclick = function() {
     var team = document.getElementById("validteam");
     var i = 0;
@@ -336,7 +334,6 @@ include 'views/user/LoggedInHeader.php';
     if (i < pausecontent.length) {
       var x = parseInt(pausecontent[i]['count(Team)'])
       if ((x + 1) > 3) {
-
         team.setCustomValidity("Team cannot have more than 3 members");
       } else {
         team.setCustomValidity('');
@@ -356,7 +353,6 @@ include 'views/user/LoggedInHeader.php';
                 <option value="Team 2">Team 2</option>
               </select>
             </form>
-
           </div> -->
 
 <!-- <div class="Mg-EmpSearch mgEmpSearch2" style="    margin-right: 5px;">

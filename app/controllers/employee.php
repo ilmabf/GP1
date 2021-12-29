@@ -67,6 +67,7 @@ class Employee extends Controller
 
     function add()
     {
+        // echo $_SESSION['role'];
         //User Autherization
         if ($_SESSION['role'] == "systemadmin") {
 
@@ -140,7 +141,7 @@ class Employee extends Controller
                         // check if stlEmail not exist in users tb
                         $flag3 = 1;
                         foreach ($_SESSION['employeeDetails'] as $stl) {
-                            if ($stl['Email'] == $stlEmail) {
+                            if ($stl['Email'] == $stlEmail) {           //Check ALL USER's Email
                                 $flag3 = 0;
                             }
                         }
