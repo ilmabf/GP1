@@ -230,6 +230,7 @@ class User extends Controller
             } else if ($this->model->checkSTL($uname)) {
                 //assign user role
                 $_SESSION['role'] = "stl";
+                $_SESSION['stlDetails'] = $this->model->getSTLdetails($uname);
                 $this->view->render('stl/Home');
             } else {
                 //assign user role

@@ -4,8 +4,9 @@ class BookingModel extends Model
 {
     public function getBookedDates()
     {
-        $stl = $this->db->select("*", "service_team_leader", "Null");
-        $stlCount = $_SESSION['rowCount'];
+        $teams = $this->db->select("team", "teamcount", "WHERE countID = '1';");
+        //echo $teams[0][0];
+        //$stlCount = $_SESSION['rowCount'];
 
         $selection1 = array("Date", "Time", "count(Reservation_ID) as NoOfBooking");
 
@@ -26,10 +27,11 @@ class BookingModel extends Model
         // define a dictionary and keep key as the Date and value as the Time
         $bookedDatesDict = array();
         for ($i = 0; $i < count($groupedSlots); $i += 1) {
-            if ($groupedSlots[$i][2] >= $stlCount) {
+            if ($groupedSlots[$i][2] >= $teams[0][0]) {
                 $bookedDatesDict[$groupedSlots[$i][0]] = $groupedSlots[$i][1];
             }
         }
+    //    print_r($bookedDatesDict);
         return $bookedDatesDict;
     }
 

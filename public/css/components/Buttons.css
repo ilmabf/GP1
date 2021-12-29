@@ -430,7 +430,18 @@
 .a10:hover {
   background-color: #4e0320;
 }
+/*stl view today order*/
+.a15 {
+  margin-left: 0px;
+  background-color: #193498;
+  padding: 6px 9px;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
+.a15:hover {
+  background-color: #04185f;
+}
 /*------------------------------*/
 @media only screen and (max-width: 770px) {
   .button {

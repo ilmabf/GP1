@@ -90,9 +90,9 @@ include 'views/user/LoggedInHeader.php';
         // marker.setMap(map);
         var addr = document.getElementById("location-types").value;
         var i = 0;
-        document.cookie = "address = " + addresses[addr - 1]['Address'] + ";  path=/";
-        document.cookie = "latitude = " + addresses[addr - 1]['Latitude'] + ";  path=/";
-        document.cookie = "longitude = " + addresses[addr - 1]['Longitude'] + ";  path=/";
+        document.cookie = "address = " + addresses[addr - 1]['Address'] + ";path=/";
+        document.cookie = "latitude = " + addresses[addr - 1]['Latitude'] + ";path=/";
+        document.cookie = "longitude = " + addresses[addr - 1]['Longitude'] + ";path=/";
 
         calcRoute(addr);
 
@@ -155,7 +155,7 @@ include 'views/user/LoggedInHeader.php';
                         let p = price.substring(6);
 
                         var totalPrice = parseInt(p) + additional;
-                        document.cookie = "total = " + totalPrice + ";  path=/";
+                        document.cookie = "total = " + totalPrice + ";path=/";
                         console.log(directionsData.distance.text);
                         document.getElementById('msg').innerHTML += " Driving distance is " + kmInt + " (" + directionsData.duration.text + ").";
                     }
