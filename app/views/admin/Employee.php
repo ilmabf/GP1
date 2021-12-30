@@ -29,13 +29,13 @@ include 'views/user/LoggedInHeader.php';
       </form>
     </div>
 
-    <?php if (isset($_SESSION['insertSucess'])) { ?>
-      <div class="empAddSuccess" id="empAddSuccess">
-        <strong>Success!</strong> Added successfully.
-      </div>
-    <?php } ?>
-
     <div style="height: 50px;"></div>
+
+
+    <div class="empAddSuccess" id="empAddSuccess">
+      <?php echo $_SESSION['insertSuccess'] ?>
+    </div>
+
 
     <!-- ------------------------------------Emp View------------------------------------------------------- -->
 
@@ -160,7 +160,6 @@ include 'views/user/LoggedInHeader.php';
                     <td id="<?php echo "Att_OnWork_row" . $count1 ?>" style="text-align:left" class="td-t1" style="max-width:200px;"><?php echo $result1[$count1]['onWork'] ?></td>
                     <!-- <td>
                     <input type="button" id="<?php echo "edit_att_emp_btn" . $count1 ?>" class="edit_btn td-t1" value="Edit" onclick="empEditAttendanceForm('<?php echo $count1 ?>')">
-
                   </td> -->
 
                   </tr>
@@ -245,7 +244,7 @@ include 'views/user/LoggedInHeader.php';
                     <a href="" id="<?php echo "editStlHREF" . $count2 ?>"><input type="submit" id="<?php echo "save_stl_btn" . $count2 ?>" class="save_btn" value="Save" onclick="stlSaveForm('<?php echo $result2[$count2]['Employee_ID'] ?>', '<?php echo $count2 ?>')"></a>
 
                   </td>
-                  <td><a href="/employee/deleteEmployee/<?php echo $result2[$count2]['Employee_ID'] ?>"><input type="button" class="del_btn td-t1" value="Delete"></a></td>
+                  <td><a href="/employee/deleteStl/<?php echo $result2[$count2]['STL_ID'] ?>"><input type="button" class="del_btn td-t1" value="Delete"></a></td>
 
                 </tr>
 
@@ -326,7 +325,6 @@ include 'views/user/LoggedInHeader.php';
 
 <!-- <script>
   
-
   document.getElementById("bts").onclick = function() {
     var team = document.getElementById("validteam");
     var i = 0;
@@ -336,7 +334,6 @@ include 'views/user/LoggedInHeader.php';
     if (i < pausecontent.length) {
       var x = parseInt(pausecontent[i]['count(Team)'])
       if ((x + 1) > 3) {
-
         team.setCustomValidity("Team cannot have more than 3 members");
       } else {
         team.setCustomValidity('');
@@ -356,7 +353,6 @@ include 'views/user/LoggedInHeader.php';
                 <option value="Team 2">Team 2</option>
               </select>
             </form>
-
           </div> -->
 
 <!-- <div class="Mg-EmpSearch mgEmpSearch2" style="    margin-right: 5px;">
