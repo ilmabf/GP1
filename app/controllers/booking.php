@@ -45,7 +45,16 @@ class Booking extends Controller
     function upcoming()
     {
         $_SESSION['upcomingReservations'] = $this->model->getUpcomingReservationList();
+        
         if ($_SESSION['role'] == "customer") {
+            $myUpcomingReservations = array();
+            for ($i = 0; $i < count($_SESSION['upcomingReservations']); $i += 1) {
+                if ($_SESSION['upcomingReservations'][$i]['Customer_ID'] == $_SESSION['userDetails'][0]['User_ID']) {
+                    $myUpcomingReservations[$i] = $_SESSION['upcomingReservations'][$i];
+                }
+            }
+            // print_r($myUpcomingReservations);
+            $_SESSION['myUpcomingReservations'] = $myUpcomingReservations;
             $this->view->render('customer/UpcomingReservations');
             exit;
         } else if ($_SESSION['role'] == "manager") {
