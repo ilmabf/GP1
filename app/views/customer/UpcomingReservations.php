@@ -63,6 +63,7 @@ include 'views/user/LoggedInHeader.php';
                 for (i = 0; i < orders.length; i++) {
                     if (orders[i]['Date'] == date) {
                         var order = [];
+                        order['Reservation_ID'] = orders[i]['Reservation_ID'];
                         order['Vehicle_ID'] = orders[i]['Vehicle_ID'];
                         order['Time'] = orders[i]['Time'];
                         order['Service_team_leader_ID'] = orders[i]['Service_team_leader_ID'];
