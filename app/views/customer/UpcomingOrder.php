@@ -1,5 +1,11 @@
 <?php
 include 'views/user/LoggedInHeader.php';
+
+$orderDetails = $_SESSION['upcomingOrder'];
+$customerDetails = $_SESSION['customer'];
+$vehicleDetails = $_SESSION['vehicle'];
+$washPackageDetails = $_SESSION['washpackage'];
+$stlDetails = $_SESSION['stlDetails'];
 ?>
 <div class="bgImage">
     <div class="addVehicleform" id="stldetails">
@@ -10,8 +16,8 @@ include 'views/user/LoggedInHeader.php';
             <form action="" method="post" id="customer-signup">
                 <ul>
                     <li><img src="/public/images/userIcon.jpg" style="width: 250px;"></img></li><br>
-                    <li>Name - Mr. John Smith</li><br>
-                    <li>Contact Number - 077 123 4567</li>
+                    <li>Name - <?php echo $stlDetails[0]['First_Name']. " ". $stlDetails[0]['Last_Name'];?></li><br>
+                    <li>Contact Number - <?php echo $stlDetails[0]['Contact_Number'];?></li>
                     <button id="VehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closestlForm()" style="float:none">Close</button>
             </form>
 
@@ -34,15 +40,63 @@ include 'views/user/LoggedInHeader.php';
     <div style="min-height: 110px;"></div>
 
     <div id="upcoming">
-    <p style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff; text-align:center">You can only cancel/reschedule up until 24 hours before the reserved time</p><br>
+        <p style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff; text-align:center">You can only cancel/reschedule up until 24 hours before the reserved time</p><br>
         <div class="box3">
-            
-            <div class="invoiceBorder">Order - 1257</div>
+
+            <div class="invoiceBorder">Order - <?php echo $orderDetails[0]['Reservation_ID'] ?></div>
 
             <div class="box2">
+                <section class="">
+                    <table class="">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Date</td>
+                                <td style="text-align:left"><?php echo $orderDetails[0]['Date'] ?></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Time</td>
+                                <td style="text-align:left"><?php echo $orderDetails[0]['Time'] ?></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Location</td>
+                                <td style="font-size: 12px;text-align:left"><?php echo $orderDetails[0]['Address'] ?></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <hr>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Service Team</td>
+                                <?php
+                                    if ($orderDetails[0]['Service_team_leader_ID'] == "") {
+                                        echo "<td style='font-size: 12px;text-align:left'>Team not yet assigned</td>";
+                                    }
+                                    else{
+                                        // echo "<td style='font-size: 12px;text-align:left'>".$orderDetails[0]['Service_team_leader_ID']."</td>";
+                                        echo "<td><button class='reservationButtons a12' id='cancelAssignBtn' style='color:white; padding: 1px 3px; margin-bottom:0px' onclick='openstlForm()'><a>View Details</a></button></td>";
+                                    }
+                                ?>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <hr>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Wash Package</td>
+                                <td style="text-align:left"><?php echo $washPackageDetails[0]['Name'] ?></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Total Price Rs</td>
+                                <td style="text-align:left"><?php echo $orderDetails[0]['Total_price'] ?>/-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
 
                 <hr><br>
-                <div class="res">
+                <!-- <div class="res">
                     <div class="orderitem">Name</div>
                     <div class="orderitemx">Gihan Anthony</div>
 
@@ -63,8 +117,8 @@ include 'views/user/LoggedInHeader.php';
                     <div class="orderitemx">0775674896</div>
 
 
-                </div><br>
-                <hr><br>
+                </div><br> -->
+                <!-- <hr><br>
                 <div class="res">
                     <div class="orderitem">Vehicle Identification No.</div>
                     <div class="orderitemx">AD - 2315</div>
@@ -89,7 +143,7 @@ include 'views/user/LoggedInHeader.php';
                     <div class="orderitem">Total Price Rs.</div>
                     <div class="orderitemx">1050/-</div>
 
-                </div>
+                </div> -->
                 <hr>
                 <hr>
                 <span style="font-size:smaller; display: table; margin: auto; margin-top:10px;">Malwathugoda Auto Service, Kaudella, Galagedara.</span>

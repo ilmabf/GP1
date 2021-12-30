@@ -145,4 +145,11 @@ class BookingModel extends Model
         $result = $this->db->select($selection, "employee", "INNER JOIN employee_records ON (employee.Employee_ID = employee_records.EmpID AND date = :date) WHERE onWork = 1 AND employee_records.team = :team;", array(":date", ":team"), array($today, $id));
         return $result;
     }
+
+    function getSTLDetails($stlID){
+        $selection = array("Photo", "First_Name", "Last_Name", "Contact_Number");
+        $result = $this->db->select($selection, "employee", "INNER JOIN service_team_leader ON service_team_leader.STL_ID = employee.STL_ID WHERE service_team_leader.STL_ID = :stlid", ":stlid", $stlID);
+        // print_r($result);
+        return $result;
+    }
 }
