@@ -2,12 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\app",
+    "\\app\\controllers",
     "\\app\\views",
-    "\\app\\views\\admin",
+    "\\app\\views\\manager",
     "\\public",
-    "\\public\\css\\components",
-    "\\public\\js"
+    "\\public\\css",
+    "\\public\\css\\components"
   ],
-  "SelectedNode": "\\public\\js\\adminEquipmentTable.js",
+  "SelectedNode": "\\app\\controllers\\user.php",
   "PreviewInSolutionExplorer": false
 }
