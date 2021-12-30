@@ -45,4 +45,9 @@ class CalendarModel extends Model
         $result = $this->db->insert("reservation_photos", $columns, $param, $values);
         return $result;
     }
+
+    function completeOrder($orderID){
+        $result = $this->db->update("reservation", "Completed", ":completed", 1, ":resID", $orderID, "WHERE Reservation_ID = :resID;");
+        return $result;
+    }
 }
