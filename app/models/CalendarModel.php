@@ -21,7 +21,8 @@ class CalendarModel extends Model
     //For get customer details for order summary,completed reservation
     function getCustomer($custo_id)
     {
-        $result = $this->db->select("*", "customer", "WHERE User_ID = :custo_id ;", ':custo_id', $custo_id);
+        $result = $this->db->select("Email, customer.*","customer", "INNER JOIN users on customer.User_ID = users.User_ID WHERE customer.User_ID = :custo_id ;", ':custo_id', $custo_id);
+        // print_r($result);
         return $result;
     }
     //For get wash package name for choosen wash package id

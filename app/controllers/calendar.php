@@ -1,4 +1,7 @@
 <?php
+
+require 'libs/Mailer.php';
+date_default_timezone_set("Asia/Colombo");
 session_start();
 class Calendar extends Controller
 {
@@ -20,7 +23,8 @@ class Calendar extends Controller
         header("Location: /booking/details");
     }
 
-    function stlTodayReservations(){
+    function stlTodayReservations()
+    {
         $id = $_SESSION['stlDetails'][0]['STL_ID'];
         $_SESSION['todayReservations'] = $this->model->getSTLtodayReservationList($id);
         if ($_SESSION['role'] == "stl") {
@@ -32,25 +36,26 @@ class Calendar extends Controller
     function todayOrder($orderID)
     {
 
-        $_SESSION['todayOrder'] = $this->model->getReservationDetails($orderID);//order details
-        $_SESSION['customer'] = $this->model->getCustomer($_SESSION['todayOrder'][0]['Customer_ID']);//customer details who booked order
-        $_SESSION['vehicle'] = $this->model->getSelectedVehicle($_SESSION['todayOrder'][0]['Vehicle_ID']);//vehicle details service done
-        $_SESSION['washpackage'] = $this->model->getSelectedWashPackage($_SESSION['todayOrder'][0]['Wash_Package_ID']);//wash package selected
+        $_SESSION['todayOrder'] = $this->model->getReservationDetails($orderID); //order details
+        $_SESSION['customer'] = $this->model->getCustomer($_SESSION['todayOrder'][0]['Customer_ID']); //customer details who booked order
+        $_SESSION['vehicle'] = $this->model->getSelectedVehicle($_SESSION['todayOrder'][0]['Vehicle_ID']); //vehicle details service done
+        $_SESSION['washpackage'] = $this->model->getSelectedWashPackage($_SESSION['todayOrder'][0]['Wash_Package_ID']); //wash package selected
 
         if ($_SESSION['role'] == "stl") {
             $this->view->render('stl/OrderDetails');
             exit;
         }
     }
-    function uploadImages(){
-    //User Autherization
+    function uploadImages()
+    {
+        //User Autherization
         if ($_SESSION['role'] == "stl") {
 
-        $order_id = $_POST["order_id"];
-        $beforePhoto =$_POST["beforePhoto"];
-        $afterPhoto =$_POST["afterPhoto"];
-        
-            if (isset($order_id) && isset($beforePhoto) && isset($afterPhoto) ) {
+            $order_id = $_POST["order_id"];
+            $beforePhoto = $_POST["beforePhoto"];
+            $afterPhoto = $_POST["afterPhoto"];
+
+            if (isset($order_id) && isset($beforePhoto) && isset($afterPhoto)) {
 
                 if ($this->model->uploadImages($order_id, $beforePhoto, $afterPhoto)) {
                     header("Location: /calendar/stlTodayReservations");
@@ -59,15 +64,45 @@ class Calendar extends Controller
                 echo "Error";
             }
         }
-
     }
 
-    function completeService($orderID){
+    function completeService($orderID)
+    {
+        print_r($_SESSION['customer']);
         if ($_SESSION['role'] == "stl") {
             if ($this->model->completeOrder($orderID)) {
-                header("Location: /calendar/stlTodayReservations");
+
+                $fname = $_SESSION['customer'][0]['First_Name'];
+                $lname = $_SESSION['customer'][0]['Last_Name'];
+                $email = $_SESSION['customer'][0]['Email'];
+
+                $total = $_SESSION['todayOrder'][0]['Total_price'];
+                $washPackage = $_SESSION['washpackage'][0]['Name'];
+                $vehicle = $_SESSION['vehicle'][0]['VID'];
+
+                $mail = new Mailer();
+
+                $output = '<p>Dear ';
+                $output .= $fname . ' ' . $lname;
+                $output = '</p>';
+                $output .= '<p>Thank you for booking WandiWash! We are glad to have you as a customer.</p>';
+                $output .= '<p>Here is your invoice of the service!</p>';
+
+                $output .= '<p>Total - Rs.'. $total. '</p>';
+                $output .= '<p>Wash Package - .'. $washPackage. '</p>';
+                $output .= '<p>Vehicle - '. $vehicle. '</p>';
+                $output .= '<p>------------------------------------------------------------</p>';
+                $output .= '<p>Kindly rate our service through our website. You can also provide any feedback as a review. We hope to see you again!</p>';
+                $output .= '<p>Thank You,</p>';
+                $output .= '<p>WandiWash.</p>';
+                $body = $output;
+                $subject = "Your reservation is now complete!";
+
+                if ($mail->mailto($subject, $email, $body)) {
+                    //email has been sent
+                    header("Location: /calendar/stlTodayReservations");
+                }
             }
         }
     }
- 
 }
