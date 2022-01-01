@@ -35,7 +35,6 @@ class Calendar extends Controller
     //view order details for stl
     function todayOrder($orderID)
     {
-
         $_SESSION['todayOrder'] = $this->model->getReservationDetails($orderID); //order details
         $_SESSION['customer'] = $this->model->getCustomer($_SESSION['todayOrder'][0]['Customer_ID']); //customer details who booked order
         $_SESSION['vehicle'] = $this->model->getSelectedVehicle($_SESSION['todayOrder'][0]['Vehicle_ID']); //vehicle details service done

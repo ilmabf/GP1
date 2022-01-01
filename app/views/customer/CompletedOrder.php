@@ -1,7 +1,23 @@
 <?php
 
 include 'views/user/LoggedInHeader.php';
+    $orderDetails = $_SESSION['completedOrder'];
+    $customerDetails = $_SESSION['customer'];
+    $washPackageDetails = $_SESSION['washpackage'];
+    $stl = $_SESSION['completedSTL'] 
 ?>
+<style>
+    table,
+    tr {
+        border: hidden;
+    }
+
+    td,
+    th {
+        border: hidden;
+    }
+</style>
+
 <div class="bgImage">
     <div class="addVehicleform" id="stldetails">
         <div class="forma">
@@ -10,9 +26,9 @@ include 'views/user/LoggedInHeader.php';
 
             <form action="" method="post" id="customer-signup">
                 <ul>
-                    <li><img src="/public/images/userIcon.jpg" style="width: 250px;"></img></li><br>
-                    <li>Name - Mr. John Smith</li><br>
-                    <li>Contact Number - 077 123 4567</li>
+                    <li><img src="data:image/ . $type . ;base64, <?php echo base64_encode($stl[0]['Photo']); ?>" style="width: 250px;"></img></li><br>
+                    <li>Name - Mr. <?php echo $stl[0]['First_Name'] ?> <?php echo $stl[0]['Last_Name'] ?> </li><br>
+                    <li>Contact Number -<?php echo $stl[0]['Contact_Number'] ?></li>
                     <button id="VehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closestlForm()" style="float:none">Close</button>
             </form>
 
@@ -23,59 +39,62 @@ include 'views/user/LoggedInHeader.php';
     <div id="upcoming">
 
         <div class="box3">
-            <div class="invoiceBorder">Invoice - 1257</div>
+            <div class="invoiceBorder">Order - <?php echo $orderDetails[0]['Reservation_ID'] ?></div>
 
             <div class="box2">
-            
-                <hr><br>
-                <div class="res">
-                    <div class="orderitem">Name</div>
-                    <div class="orderitemx">Gihan Anthony</div>
 
-                </div>
-                <div class="res">
-                    <div class="orderitem">Date</div>
-                    <div class="orderitemx">2021 / 10 / 20</div>
-
-                </div>
-                <div class="res">
-                    <div class="orderitem">Time</div>
-                    <div class="orderitemx">8 am - 10 am</div>
-
-                </div>
-
-                <div class="res">
-                    <div class="orderitem">Contact No</div>
-                    <div class="orderitemx">0775674896</div>
-
-
-                </div><br>
-                <hr><br>
-                <div class="res">
-                    <div class="orderitem">Vehicle Identification No.</div>
-                    <div class="orderitemx">AD - 2315</div>
-                </div><br>
-                <hr><br>
-                <div class="res">
-                    <div class="orderitem">Service Team</div>
-                    <div class="orderitemx"><button class="reservationButtons a12" id="cancelAssignBtn" style="color:white; padding: 1px 3px; margin-bottom:0px" onclick="openstlForm()"><a>View Details</a></button></div>
-                </div>
-                <div class="res">
-                    <div class="orderitem">Location</div>
-                    <div class="orderitemx"><button class="reservationButtons a12" id="cancelAssignBtn" style="color:white; padding: 1px 3px; margin-bottom:0px" onclick=""><a>View Location</a></button></div>
-                </div>
-                <div class="res">
-                    <div class="orderitem">Wash Package</div>
-                    <div class="orderitemx">Interior Cleaning</div>
-
-                </div>
-                <hr>
-                <hr>
-                <div class="res">
-                    <div class="orderitem">Total Price Rs.</div>
-                    <div class="orderitemx">1050/-</div>
-
-                </div>
+                <section class="">
+                    <table class="" >
+                        <tbody>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Name</td>
+                                <td style="text-align:left"><?php echo $customerDetails[0]['First_Name'] ?> <?php echo $customerDetails[0]['Last_Name'] ?></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Date</td>
+                                <td style="text-align:left"><?php echo $orderDetails[0]['Date'] ?></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Time</td>
+                                <td style="text-align:left"><?php echo $orderDetails[0]['Time'] ?></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Contact No</td>
+                                <td style="text-align:left"><?php echo $customerDetails[0]['Contact_Number'] ?></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <hr>
+                                </td>
+                            </tr><tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Vehicle Identification No.</td>
+                                <td style="text-align:left"><?php echo $orderDetails[0]['Vehicle_ID'] ?></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Service team leader</td>                   
+                                <td style="text-align:left"><button class="reservationButtons a12" id="cancelAssignBtn" style="color:white; padding: 1px 3px; margin-bottom:0px" onclick="openstlForm()"><a>View Details</a></button></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Team members</td>
+                                <td style="font-size: 12px;text-align:left"><?php echo $orderDetails[0]['Member1'] ."<br />". $orderDetails[0]['Member2'] ."<br />". $orderDetails[0]['Member3']."<br />".  $orderDetails[0]['Member4']?></td>
+                            </tr>            
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Location</td>
+                                <td style="font-size: 12px;text-align:left"><?php echo $orderDetails[0]['Address'] ?></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Wash Package</td>
+                                <td style="text-align:left"><?php echo $washPackageDetails[0]['Name'] ?></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <hr>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Total Price Rs</td>
+                                <td style="text-align:left"><?php echo $orderDetails[0]['Total_price'] ?>/-</td>
+                            </tr>
                 <hr>
                 <hr>
                 <span style="font-size:smaller; display: table; margin: auto; margin-top:10px;">Malwathugoda Auto Service, Kaudella, Galagedara.</span>
@@ -92,7 +111,7 @@ include 'views/user/LoggedInHeader.php';
 
                 <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">How was the service? Give us a rating!</h3>
             </div>
-            <div class="rate1 stars1">
+            <div class="rate1 stars1" id ="RateUs">
                 <i class="rating__star far fa-star"></i>
                 <i class="rating__star far fa-star"></i>
                 <i class="rating__star far fa-star"></i>
@@ -112,9 +131,7 @@ include 'views/user/LoggedInHeader.php';
         <script src="/public/js/CustomerViewUpcomingOrder.js"></script>
         <script src="/public/js/CustomerViewCompletedOrder.js"></script>
     <script>
-    var order_details = <?php echo json_encode($_SESSION['completedOrder']); ?>;
-    var ratingLevel = order_details[0]['Rating'];
-
+    var ratingLevel = 0;
     const ratingStars = [...document.getElementsByClassName("rating__star")];
 
     function executeRating(stars) {
@@ -131,7 +148,7 @@ include 'views/user/LoggedInHeader.php';
     stars.map((star) => {
          star.onclick = () => {
          i = stars.indexOf(star);
-
+         ratingLevel = i;
          if (star.className===starClassInactive) {
             for (i; i >= 0; --i) stars[i].className = starClassActive;
          } else {
@@ -139,6 +156,7 @@ include 'views/user/LoggedInHeader.php';
        }
      };
    });
+
 }
 executeRating(ratingStars);
     </script>

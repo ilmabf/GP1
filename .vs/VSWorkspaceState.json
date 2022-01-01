@@ -1,0 +1,17 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\controllers",
+    "\\app\\models",
+    "\\app\\views",
+    "\\app\\views\\customer",
+    "\\app\\views\\stl",
+    "\\public",
+    "\\public\\css",
+    "\\public\\css\\components",
+    "\\public\\js"
+  ],
+  "SelectedNode": "\\app\\views\\stl\\OrderDetails.php",
+  "PreviewInSolutionExplorer": false
+}

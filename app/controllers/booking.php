@@ -63,11 +63,11 @@ class Booking extends Controller
     }
 
     //upcoming reservation - x
-    function upcomingOrder($order_id)
+    function upcomingOrder($orderID)
     {
 
         $_SESSION['teams'] = $this->model->getTeams();
-        $_SESSION['upcomingOrder'] = $this->model->getReservationDetails($order_id);//order details
+        $_SESSION['upcomingOrder'] = $this->model->getReservationDetails($orderID);//order details
         $_SESSION['customer'] = $this->model->getCustomer($_SESSION['upcomingOrder'][0]['Customer_ID']);//customer details who booked order
         $_SESSION['vehicle'] = $this->model->getSelectedVehicle($_SESSION['upcomingOrder'][0]['Vehicle_ID']);//vehicle details service done
         $_SESSION['washpackage'] = $this->model->getSelectedWashPackage($_SESSION['upcomingOrder'][0]['Wash_Package_ID']);//wash package selected
@@ -82,27 +82,36 @@ class Booking extends Controller
 
     //completed reservations
     function completed()
-    {
-        $_SESSION['completedReservations'] = $this->model->getCompletedReservationList();
+    {      
         if ($_SESSION['role'] == "customer") {
+
+            $custo_id = $_SESSION['userDetails'][0]['User_ID'];
+            $_SESSION['customerCompletedReservations'] = $this->model->getCustomerCompletedReservationList($custo_id);
+            
             $this->view->render('customer/CompletedReservations');
             exit;
+
         } else if ($_SESSION['role'] == "manager") {
+
+            $_SESSION['completedReservations'] = $this->model->getCompletedReservationList();
+        
             $this->view->render('manager/CompletedReservations');
         }
     }
 
     //completed reservation - x
-    function completedOrder($order_id)
+    function completedOrder($orderID)
     {
 
-        $_SESSION['completedOrder'] = $this->model->getReservationDetails($order_id);//order details
+        $_SESSION['completedOrder'] = $this->model->getReservationDetails($orderID);//order details
         $_SESSION['customer'] = $this->model->getCustomer($_SESSION['completedOrder'][0]['Customer_ID']);//customer details who booked order
         $_SESSION['vehicle'] = $this->model->getSelectedVehicle($_SESSION['completedOrder'][0]['Vehicle_ID']);//vehicle details service done
         $_SESSION['washpackage'] = $this->model->getSelectedWashPackage($_SESSION['completedOrder'][0]['Wash_Package_ID']);//wash package selected
         $_SESSION['images'] = $this->model->getSelectedImages($_SESSION['completedOrder'][0]['Reservation_ID']);//Before after images
 
         if ($_SESSION['role'] == "customer") {
+            $_SESSION['completedSTL'] =  $this->model->getSTLDetails($_SESSION['completedOrder'][0]['Service_team_leader_ID']);   
+
             $order_id = str_replace('_', ' ', $order_id);
             $this->view->render('customer/CompletedOrder');
             exit;

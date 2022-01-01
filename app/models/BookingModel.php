@@ -70,10 +70,14 @@ class BookingModel extends Model
     }
     //For get Completed reservation list before current date
     function getCompletedReservationList(){
+        $result = $this->db->select("*", "reservation", "WHERE Completed = 1 ;");
+        return $result;
         
-        $date = date('Y/m/d');
-        
-        $result = $this->db->select("*", "reservation", "WHERE Date < :date ;",':date',$date);
+    }
+    //For get Completed reservation list before current date
+    function getCustomerCompletedReservationList($custo_id){
+       
+        $result = $this->db->select("*", "reservation", "WHERE Completed = 1 AND Customer_ID = :custo_id ;",':custo_id',$custo_id);
         return $result;
         
     }
@@ -88,32 +92,33 @@ class BookingModel extends Model
     }
 
     // For get details of selected completed reservation
-    function getReservationDetails($order_id){
-        $result = $this->db->select("*", "reservation", "WHERE Reservation_ID = :order_id ;",':order_id',$order_id);
+    function getReservationDetails($orderID)
+    {
+        $result = $this->db->select("*", "reservation", "WHERE Reservation_ID = :orderID ;", ':orderID', $orderID);
         return $result;
-        
     }
     //For get customer details for order summary,completed reservation
-    function getCustomer($custo_id){
-        $result = $this->db->select("*", "customer", "WHERE User_ID = :custo_id ;",':custo_id',$custo_id);
+    function getCustomer($custoID)
+    {
+        $result = $this->db->select("*", "customer", "WHERE User_ID = :custoID ;", ':custoID', $custoID);
         return $result;
     }
     //For get wash package name for choosen wash package id
-    function getSelectedWashPackage($washpackage_id)
+    function getSelectedWashPackage($washpackageID)
     {
-        $result = $this->db->select("Name", "wash_package", "WHERE Wash_Package_ID = :washpackage_id",':washpackage_id', $washpackage_id);
+        $result = $this->db->select("Name", "wash_package", "WHERE Wash_Package_ID = :washpackageID", ':washpackageID', $washpackageID);
         return $result;
     }
     //For get vehicle details for choosen vehicle id
-    function getSelectedVehicle($v_id)
+    function getSelectedVehicle($vID)
     {
-        $result = $this->db->select("*", "customer_vehicle", "WHERE VID = :v_id",':v_id', $v_id);
+        $result = $this->db->select("*", "customer_vehicle", "WHERE VID = :vID", ':vID', $vID);
         return $result;
     }
      //For get before and after images for choosen reservation id
-    function getSelectedImages($order_id)
+    function getSelectedImages($orderID)
     {
-        $result = $this->db->select("*", "reservation_photos", "WHERE Reservation_ID = :order_id",':order_id', $order_id);
+        $result = $this->db->select("*", "reservation_photos", "WHERE Reservation_ID = :orderID",':orderID', $orderID);
         return $result;
     }
 
