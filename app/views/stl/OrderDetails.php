@@ -125,7 +125,7 @@ $washPackageDetails = $_SESSION['washpackage'];
                     <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;"> &nbsp; After service</h3>
                     <input type="file" class="imageFile" name="afterService" id="afterService" style="border: 2px solid white;" required>
                 </div>
-                <button class="uploadImagesLink" type="submit" value="Upload Images" name="submit" id="completeService">Complete Service</button>
+                <button class="uploadImagesLink" type="submit" value="Upload Images" name="submit" id="completeService"><a href = "/calendar/completeService/<?php echo $orderDetails[0]['Reservation_ID'] ?>"style = "color:white;">Complete Service</a></button>
             </form>
         </div>
         <!-- <div class="box4">

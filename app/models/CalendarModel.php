@@ -21,7 +21,8 @@ class CalendarModel extends Model
     //For get customer details for order summary,completed reservation
     function getCustomer($custoID)
     {
-        $result = $this->db->select("*", "customer", "WHERE User_ID = :custoID ;", ':custoID', $custoID);
+        $result = $this->db->select("Email, customer.*","customer", "INNER JOIN users on customer.User_ID = users.User_ID WHERE customer.User_ID = :custo_id ;", ':custo_id', $custo_id);
+        // print_r($result);
         return $result;
     }
     //For get wash package name for choosen wash package id
@@ -43,6 +44,11 @@ class CalendarModel extends Model
         $param = array(':orderID', ':beforePhoto', ':afterphoto', ':timeUploaded');
         $values = array($orderID, $beforePhoto, $afterPhoto, $time);
         $result = $this->db->insert("reservation_photos", $columns, $param, $values);
+        return $result;
+    }
+
+    function completeOrder($orderID){
+        $result = $this->db->update("reservation", "Completed", ":completed", 1, ":resID", $orderID, "WHERE Reservation_ID = :resID;");
         return $result;
     }
 }
