@@ -4,44 +4,44 @@ class CalendarModel extends Model
 {
 
     //To get assigned reservation list to stl
-    function getSTLtodayReservationList($stl_id)
+    function getSTLtodayReservationList($stlID)
     {
         $today = date('Y-m-d');
-        $param = array(':today', ':stl_id');
-        $paramvalue = array($today, $stl_id);
-        $result = $this->db->select('*', "reservation", "WHERE Date = :today AND Service_team_leader_ID = :stl_id ;", $param, $paramvalue);
+        $param = array(':today', ':stlID');
+        $paramvalue = array($today, $stlID);
+        $result = $this->db->select('*', "reservation", "WHERE Date = :today AND Service_team_leader_ID = :stlID AND Completed = 0 ;", $param, $paramvalue);
         return $result;
     }
     // For get details of selected completed reservation
-    function getReservationDetails($order_id)
+    function getReservationDetails($orderID)
     {
-        $result = $this->db->select("*", "reservation", "WHERE Reservation_ID = :order_id ;", ':order_id', $order_id);
+        $result = $this->db->select("*", "reservation", "WHERE Reservation_ID = :orderID ;", ':orderID', $orderID);
         return $result;
     }
     //For get customer details for order summary,completed reservation
-    function getCustomer($custo_id)
+    function getCustomer($custoID)
     {
-        $result = $this->db->select("*", "customer", "WHERE User_ID = :custo_id ;", ':custo_id', $custo_id);
+        $result = $this->db->select("*", "customer", "WHERE User_ID = :custoID ;", ':custoID', $custoID);
         return $result;
     }
     //For get wash package name for choosen wash package id
-    function getSelectedWashPackage($washpackage_id)
+    function getSelectedWashPackage($washpackageID)
     {
-        $result = $this->db->select("Name", "wash_package", "WHERE Wash_Package_ID = :washpackage_id", ':washpackage_id', $washpackage_id);
+        $result = $this->db->select("Name", "wash_package", "WHERE Wash_Package_ID = :washpackageID", ':washpackageID', $washpackageID);
         return $result;
     }
     //For get vehicle details for choosen vehicle id
-    function getSelectedVehicle($v_id)
+    function getSelectedVehicle($vID)
     {
-        $result = $this->db->select("*", "customer_vehicle", "WHERE VID = :v_id", ':v_id', $v_id);
+        $result = $this->db->select("*", "customer_vehicle", "WHERE VID = :vID", ':vID', $vID);
         return $result;
     }
-    function uploadImages($order_id, $beforePhoto, $afterPhoto)
+    function uploadImages($orderID, $beforePhoto, $afterPhoto)
     {
         $time = date('y-m-d h-min-sec');
         $columns = array("Reservation_ID", "Picture_before", "Picture_after", "Time_Uploaded");
-        $param = array(':order_id', ':beforePhoto', ':afterphoto', ':timeUploaded');
-        $values = array($order_id, $beforePhoto, $afterPhoto, $time);
+        $param = array(':orderID', ':beforePhoto', ':afterphoto', ':timeUploaded');
+        $values = array($orderID, $beforePhoto, $afterPhoto, $time);
         $result = $this->db->insert("reservation_photos", $columns, $param, $values);
         return $result;
     }
