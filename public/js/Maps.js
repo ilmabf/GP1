@@ -9,6 +9,7 @@ function saveLocation() {
   if (document.getElementById("typedAddress").value != "") {
     address = document.getElementById("typedAddress").value;
     address = address.replace(/ /g, "_");
+    address = address.replace("/", "|");
   }
   Lattitude = latlng[0]["geometry"]["location"].lat();
   Longitude = latlng[0]["geometry"]["location"].lng();

@@ -32,7 +32,7 @@ include 'views/user/LoggedInHeader.php';
     <div style="height: 50px;"></div>
 
 
-    <div class="empAddSuccess" id="empAddSuccess">
+    <div class="empAddSuccess" id="empAddSuccess" style="color: #193498;">
       <?php echo $_SESSION['insertSuccess'] ?>
     </div>
 
