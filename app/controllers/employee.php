@@ -52,6 +52,9 @@ class Employee extends Controller
         $userData = $this->model->getUserData();
         $_SESSION['userData'] = $userData;
 
+        $stlTableData = $this->model->getStlDetails();
+        $_SESSION['stlTableData'] = $stlTableData;
+
         // foreach ($_SESSION['userData'] as $stl) {
         //     echo $stl['Email'];
         // }
