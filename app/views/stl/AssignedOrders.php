@@ -1,4 +1,7 @@
 <?php
+date_default_timezone_set("Asia/Colombo");
+// echo date_default_timezone_get();
+
 include 'views/user/LoggedInHeader.php';
 $orderList = $_SESSION['todayReservations'];
 ?>

@@ -80,6 +80,7 @@ class Customer extends Controller
     {
         if ($this->model->checkToken($uid, $token)) {
 
+            $_SESSION['newUser'] = 1;
             //customer verified. Redirect to login page
             header("Location: /login");
         }

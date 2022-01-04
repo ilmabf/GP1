@@ -82,9 +82,8 @@ function display() {
 
     "<div class = 'item1'>" +
     "<div class = 'vehicle'>Color</div>" +
-    "<div class = 'vehicle-specs'>" +
-    "<div class='color-box' id = 'vehicleColor'" +
-    "></div></div>" +
+    "<div class = 'vehicle-specs' id = 'vehicleColor'>" +
+    "</div>" +
     "</div>" +
 
     "<div class = 'item1'>" +
@@ -101,7 +100,6 @@ function display() {
     "</div>";
 }
 
-display();
 
 
 function openMap() {

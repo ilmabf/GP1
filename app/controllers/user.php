@@ -218,6 +218,14 @@ class User extends Controller
                 $value = $this->model->checkVerified($uname);
                 if ($value[0]['Verified'] == "1") {
                     $_SESSION['Verified'] = "True";
+
+                    if (isset($_SESSION['newUser'])){
+                        if($_SESSION['newUser'] == 1){
+                        $this->view->render('customer/Account');
+                        $_SESSION['newUser'] = 0;
+                        exit;
+                        }
+                    }
                     $this->view->render('customer/Home');
                 } else {
                     $_SESSION['Verified'] = "False";

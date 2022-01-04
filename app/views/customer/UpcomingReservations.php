@@ -43,12 +43,13 @@ include 'views/user/LoggedInHeader.php';
 
         </div>
     </div>
+    <?php print_r($_SESSION['myUpcomingReservations']);?>
     <div style="min-height: 110px;"></div>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
     <script>
-        var orders = <?php echo json_encode($_SESSION['myUpcomingReservations']); ?>;
+        var orders = <?php echo json_encode(array_values($_SESSION['myUpcomingReservations'])); ?>;
 
 
         $('#ManagerUpcomingDate').datepicker({

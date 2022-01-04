@@ -112,11 +112,11 @@ class Booking extends Controller
         if ($_SESSION['role'] == "customer") {
             $_SESSION['completedSTL'] =  $this->model->getSTLDetails($_SESSION['completedOrder'][0]['Service_team_leader_ID']);   
 
-            $order_id = str_replace('_', ' ', $order_id);
+            $orderID = str_replace('_', ' ', $orderID);
             $this->view->render('customer/CompletedOrder');
             exit;
         } else if ($_SESSION['role'] == "manager") {
-            $order_id = str_replace('_', ' ', $order_id);
+            $orderID = str_replace('_', ' ', $orderID);
             $this->view->render('manager/CompletedOrder');
         }
     }
