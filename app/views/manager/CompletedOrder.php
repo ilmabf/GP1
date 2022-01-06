@@ -7,15 +7,15 @@ $washPackageDetails = $_SESSION['washpackage'];
 $images = $_SESSION['images'];
 ?>
 <style>
-table,
-tr {
-    border: hidden;
-}
+    table,
+    tr {
+        border: hidden;
+    }
 
-td,
-th {
-    border: hidden;
-}
+    td,
+    th {
+        border: hidden;
+    }
 </style>
 <div class="bgImage">
 
@@ -138,13 +138,11 @@ th {
 
         <div class="viewPhotos vp1">
             <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Before Service</h3>
-            <img src="data:image/ . $type . ;base64, <?php echo base64_encode($images[0]['Picture_before']); ?>"
-                style="width:30%; border-radius: 8px;"></img>
+            <img src="data:image/ . $type . ;base64, <?php echo base64_encode($images[0]['Picture_before']); ?>" style="width:30%; border-radius: 8px;"></img>
 
             <div class="viewPhotos vp2">
                 <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">After Service</h3>
-                <img src="data:image/ . $type . ;base64, <?php echo base64_encode($images[0]['Picture_after']); ?>"
-                    style="width:30%; border-radius: 8px;"></img>
+                <img src="data:image/ . $type . ;base64, <?php echo base64_encode($images[0]['Picture_after']); ?>" style="width:30%; border-radius: 8px;"></img>
             </div>
 
         </div>
@@ -153,20 +151,20 @@ th {
 
         <!--<script src="/public/js/ManagerViewCompletedOrder.js"></script>-->
         <script>
-        var orderDetails = <?php echo json_encode($_SESSION['completedOrder']); ?>;
-        var ratingLevel = order_details[0]['Rating'];
+            var orderDetails = <?php echo json_encode($_SESSION['completedOrder']); ?>;
+            var ratingLevel = order_details[0]['Rating'];
 
-        const ratingStars = [...document.getElementsByClassName("rating__star")];
+            const ratingStars = [...document.getElementsByClassName("rating__star")];
 
-        function executeRating(stars) {
-            const starClassActive = "rating__star fas fa-star";
-            const starClassInactive = "rating__star far fa-star";
-            const starsLength = stars.length;
+            function executeRating(stars) {
+                const starClassActive = "rating__star fas fa-star";
+                const starClassInactive = "rating__star far fa-star";
+                const starsLength = stars.length;
 
-            for (j = 0; j < ratingLevel; j++) {
-                stars[j].className = starClassActive;
+                for (j = 0; j < ratingLevel; j++) {
+                    stars[j].className = starClassActive;
+                }
+
             }
-
-        }
-        executeRating(ratingStars);
+            executeRating(ratingStars);
         </script>

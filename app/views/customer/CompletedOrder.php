@@ -7,15 +7,15 @@ $washPackageDetails = $_SESSION['washpackage'];
 $stl = $_SESSION['completedSTL']
 ?>
 <style>
-table,
-tr {
-    border: hidden;
-}
+    table,
+    tr {
+        border: hidden;
+    }
 
-td,
-th {
-    border: hidden;
-}
+    td,
+    th {
+        border: hidden;
+    }
 </style>
 
 <div class="bgImage">
@@ -26,12 +26,10 @@ th {
 
             <form action="" method="post" id="customer-signup">
                 <ul>
-                    <li><img src="data:image/ . $type . ;base64, <?php echo base64_encode($stl[0]['Photo']); ?>"
-                            style="width: 250px;"></img></li><br>
+                    <li><img src="data:image/ . $type . ;base64, <?php echo base64_encode($stl[0]['Photo']); ?>" style="width: 250px;"></img></li><br>
                     <li>Name - Mr. <?php echo $stl[0]['First_Name'] ?> <?php echo $stl[0]['Last_Name'] ?> </li><br>
                     <li>Contact Number -<?php echo $stl[0]['Contact_Number'] ?></li>
-                    <button id="VehicleFormCloseButton" class="formCancelButton" type="submit" name="signup"
-                        onclick="closestlForm()" style="float:none">Close</button>
+                    <button id="VehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closestlForm()" style="float:none">Close</button>
             </form>
 
         </div>
@@ -87,9 +85,7 @@ th {
                             </tr>
                             <tr>
                                 <td style="text-align:left; color:#193498; font-weight:bold">Service team leader</td>
-                                <td style="text-align:left"><button class="reservationButtons a12" id="cancelAssignBtn"
-                                        style="color:white; padding: 1px 3px; margin-bottom:0px"
-                                        onclick="openstlForm()"><a>View Details</a></button></td>
+                                <td style="text-align:left"><button class="reservationButtons a12" id="cancelAssignBtn" style="color:white; padding: 1px 3px; margin-bottom:0px" onclick="openstlForm()"><a>View Details</a></button></td>
                             </tr>
                             <tr>
                                 <td style="text-align:left; color:#193498; font-weight:bold">Team members</td>
@@ -155,32 +151,32 @@ th {
         <script src="/public/js/CustomerViewUpcomingOrder.js"></script>
         <script src="/public/js/CustomerViewCompletedOrder.js"></script>
         <script>
-        var ratingLevel = 0;
-        const ratingStars = [...document.getElementsByClassName("rating__star")];
+            var ratingLevel = 0;
+            const ratingStars = [...document.getElementsByClassName("rating__star")];
 
-        function executeRating(stars) {
-            const starClassActive = "rating__star fas fa-star";
-            const starClassInactive = "rating__star far fa-star";
-            const starsLength = stars.length;
+            function executeRating(stars) {
+                const starClassActive = "rating__star fas fa-star";
+                const starClassInactive = "rating__star far fa-star";
+                const starsLength = stars.length;
 
-            let i;
-            // stars[1].className = starClassActive
-            // stars[2].className = starClassActive
-            // stars[3].className = starClassActive
-            //stars[0].className = starClassActive
+                let i;
+                // stars[1].className = starClassActive
+                // stars[2].className = starClassActive
+                // stars[3].className = starClassActive
+                //stars[0].className = starClassActive
 
-            stars.map((star) => {
-                star.onclick = () => {
-                    i = stars.indexOf(star);
-                    ratingLevel = i;
-                    if (star.className === starClassInactive) {
-                        for (i; i >= 0; --i) stars[i].className = starClassActive;
-                    } else {
-                        for (i; i < starsLength; ++i) stars[i].className = starClassInactive;
-                    }
-                };
-            });
+                stars.map((star) => {
+                    star.onclick = () => {
+                        i = stars.indexOf(star);
+                        ratingLevel = i;
+                        if (star.className === starClassInactive) {
+                            for (i; i >= 0; --i) stars[i].className = starClassActive;
+                        } else {
+                            for (i; i < starsLength; ++i) stars[i].className = starClassInactive;
+                        }
+                    };
+                });
 
-        }
-        executeRating(ratingStars);
+            }
+            executeRating(ratingStars);
         </script>

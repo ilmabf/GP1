@@ -127,5 +127,5 @@ include 'views/user/Footer.php';
 </div>
 
 <script>
-document.getElementById('test').innerHTML = document.cookie;
+    document.getElementById('test').innerHTML = document.cookie;
 </script>

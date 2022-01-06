@@ -6,15 +6,15 @@ $vehicleDetails = $_SESSION['vehicle'];
 $washPackageDetails = $_SESSION['washpackage'];
 ?>
 <style>
-table,
-tr {
-    border: hidden;
-}
+    table,
+    tr {
+        border: hidden;
+    }
 
-td,
-th {
-    border: hidden;
-}
+    td,
+    th {
+        border: hidden;
+    }
 </style>
 
 <div class="bgImage">
@@ -23,8 +23,7 @@ th {
         <h2 class="login-signupheader"><b>Customer location</b></h2>
         <div id="map"></div>
         <div id="mapControl">
-            <button id="AddLocationButton" class="formSubmitButton" type="submit" name="signup"
-                onclick="closeMap2();">Close</button>
+            <button id="AddLocationButton" class="formSubmitButton" type="submit" name="signup" onclick="closeMap2();">Close</button>
         </div>
     </div>
 
@@ -103,9 +102,7 @@ th {
                                 </tr>
                                 <tr>
                                     <td style="text-align:left; color:#193498; font-weight:bold">Location</td>
-                                    <td style="font-size: 12px;text-align:left"><button class="reservationButtons a15"
-                                            id="cancelAssignBtn" style="padding: 1px 3px; margin-bottom:0px"
-                                            onclick="openMap2();">View Location</button></td>
+                                    <td style="font-size: 12px;text-align:left"><button class="reservationButtons a15" id="cancelAssignBtn" style="padding: 1px 3px; margin-bottom:0px" onclick="openMap2();">View Location</button></td>
                                 </tr>
                                 <tr>
                                     <td style="text-align:left; color:#193498; font-weight:bold">Wash Package</td>
@@ -134,18 +131,13 @@ th {
             <form action="" method="post" enctype="multipart/form-data">
                 <div class="viewPhotos vp1" style="color:white;">
                     <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Before service</h3>
-                    <input type="file" class="imageFile" name="beforeService" id="beforeService"
-                        style="border: 2px solid white;" required>
+                    <input type="file" class="imageFile" name="beforeService" id="beforeService" style="border: 2px solid white;" required>
                 </div>
                 <div class="viewPhotos vp2" style="color:white;">
                     <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;"> &nbsp; After service</h3>
-                    <input type="file" class="imageFile" name="afterService" id="afterService"
-                        style="border: 2px solid white;" required>
+                    <input type="file" class="imageFile" name="afterService" id="afterService" style="border: 2px solid white;" required>
                 </div>
-                <button class="uploadImagesLink" type="submit" value="Upload Images" name="submit"
-                    id="completeService"><a
-                        href="/calendar/completeService/<?php echo $orderDetails[0]['Reservation_ID'] ?>"
-                        style="color:white;">Complete Service</a></button>
+                <button class="uploadImagesLink" type="submit" value="Upload Images" name="submit" id="completeService"><a href="/calendar/completeService/<?php echo $orderDetails[0]['Reservation_ID'] ?>" style="color:white;">Complete Service</a></button>
             </form>
         </div>
         <!-- <div class="box4">
@@ -159,36 +151,35 @@ th {
 
 
     <script>
-    var submitImages = document.getElementById("completeService");
-    var before = document.getElementById("beforeService");
-    var before = document.getElementById("afterService");
+        var submitImages = document.getElementById("completeService");
+        var before = document.getElementById("beforeService");
+        var before = document.getElementById("afterService");
     </script>
 
     <script>
-    var orderDetails = <?php echo json_encode($orderDetails); ?>;
+        var orderDetails = <?php echo json_encode($orderDetails); ?>;
 
-    function myMap() {
-        var lat = orderDetails[0]['Latitude'];
-        var lng = orderDetails[0]['Longitude'];
+        function myMap() {
+            var lat = orderDetails[0]['Latitude'];
+            var lng = orderDetails[0]['Longitude'];
 
-        var mapProp = {
-            center: new google.maps.LatLng(lat, lng),
-            zoom: 15,
-        };
+            var mapProp = {
+                center: new google.maps.LatLng(lat, lng),
+                zoom: 15,
+            };
 
-        var map2 = new google.maps.Map(document.getElementById("map"), mapProp);
-        marker = new google.maps.Marker({
-            map2,
-        });
-        latlng = new google.maps.LatLng(lat, lng);
-        marker.setPosition(latlng);
-        marker.setMap(map2);
+            var map2 = new google.maps.Map(document.getElementById("map"), mapProp);
+            marker = new google.maps.Marker({
+                map2,
+            });
+            latlng = new google.maps.LatLng(lat, lng);
+            marker.setPosition(latlng);
+            marker.setMap(map2);
 
-    }
+        }
     </script>
 
     <script src="/public/js/stlOrderDetails.js"></script>
 
-    <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxvVN9pPMljGjWLvUGWGisQwGUUMSOHco&callback=myMap&v=weekly">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxvVN9pPMljGjWLvUGWGisQwGUUMSOHco&callback=myMap&v=weekly">
     </script>

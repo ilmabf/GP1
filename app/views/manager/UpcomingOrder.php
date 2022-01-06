@@ -8,15 +8,15 @@ $washPackageDetails = $_SESSION['washpackage'];
 ?>
 
 <style>
-table,
-tr {
-    border: hidden;
-}
+    table,
+    tr {
+        border: hidden;
+    }
 
-td,
-th {
-    border: hidden;
-}
+    td,
+    th {
+        border: hidden;
+    }
 </style>
 
 <div class="bgImage">
@@ -27,10 +27,8 @@ th {
         <h2 id="assignMsg" class="login-signupheader"></h2>
 
 
-        <button id="CloseCancelAssignButton" class="formCancelButton" type="button" name="signup"
-            onclick="closeassign()">Close</button>
-        <button id="SubmitCancelAssignButton" class="formSubmitButton" type="button" name="signup"
-            onclick="assignTeam()">Yes</button>
+        <button id="CloseCancelAssignButton" class="formCancelButton" type="button" name="signup" onclick="closeassign()">Close</button>
+        <button id="SubmitCancelAssignButton" class="formSubmitButton" type="button" name="signup" onclick="assignTeam()">Yes</button>
 
     </div>
 
@@ -230,8 +228,7 @@ th {
 
                 </div>
 
-                <button class="reservationButtons a10" id="cancelReservationBtn"
-                    style="margin-top: 32px; padding: 8px 9px;" onclick="opencancel()"><a>Cancel
+                <button class="reservationButtons a10" id="cancelReservationBtn" style="margin-top: 32px; padding: 8px 9px;" onclick="opencancel()"><a>Cancel
                         Reservation</a></button>
 
 
@@ -249,11 +246,8 @@ th {
 
             <form action="" method="post" id="customer-signup">
 
-                <button id="VehicleFormCloseButton" class="formCancelButton" type="submit" name="signup"
-                    onclick="closecancel()">Close</button>
-                <button id="VehicleFormSubmitButton" class="formSubmitButton" type="submit" name="signup"><a
-                        href="/booking/deleteReservation/<?php echo $orderDetails[0]['Reservation_ID'] ?>"
-                        style="color:white;">Yes</a></button>
+                <button id="VehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closecancel()">Close</button>
+                <button id="VehicleFormSubmitButton" class="formSubmitButton" type="submit" name="signup"><a href="/booking/deleteReservation/<?php echo $orderDetails[0]['Reservation_ID'] ?>" style="color:white;">Yes</a></button>
             </form>
 
         </div>
@@ -264,11 +258,11 @@ th {
 
     <script src="/public/js/ManagerViewUpcomingOrder.js"></script>
     <script>
-    var pausecontent = <?php echo json_encode($orderDetails); ?>;
+        var pausecontent = <?php echo json_encode($orderDetails); ?>;
 
-    function assignTeam() {
-        var resID = pausecontent[0]['Reservation_ID'];
-        var id = document.getElementById("serviceTeam-types").value;
-        window.location = "/booking/assignTeam/" + id + "/" + resID;
-    }
+        function assignTeam() {
+            var resID = pausecontent[0]['Reservation_ID'];
+            var id = document.getElementById("serviceTeam-types").value;
+            window.location = "/booking/assignTeam/" + id + "/" + resID;
+        }
     </script>

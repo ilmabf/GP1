@@ -18,10 +18,10 @@ $orderList = $_SESSION['todayReservations'];
                 <?php
                 $count = sizeof($_SESSION['todayReservations']) - 1;
                 while ($count >= 0) { ?>
-                <div class="sub-box1">
-                    <div class="order">
-                        <div class="orderitem">Order ID</div>
-                        <div class="orderitem1"><?php
+                    <div class="sub-box1">
+                        <div class="order">
+                            <div class="orderitem">Order ID</div>
+                            <div class="orderitem1"><?php
                                                     if (strlen($orderList[$count]['Reservation_ID']) == 1) {
                                                         echo "000" . $orderList[$count]['Reservation_ID'];
                                                     } else if (strlen($orderList[$count]['Reservation_ID']) == 2) {
@@ -31,21 +31,20 @@ $orderList = $_SESSION['todayReservations'];
                                                     } else {
                                                         echo $orderList[$count]['Reservation_ID'];
                                                     } ?></div>
+                        </div>
+                        <div class="order">
+                            <div class="orderitem">Vecicle No</div>
+                            <div class="orderitem1"><?php echo $orderList[$count]['Vehicle_ID'] ?></div>
+                        </div>
+                        <div class="order">
+                            <div class="orderitem">Time</div>
+                            <div class="orderitem1"><?php echo $orderList[$count]['Time'] ?></div>
+                        </div>
+                        <div class="orderView">
+                            <p class="viewLink"><a href="/calendar/todayOrder/<?php echo $orderList[$count]['Reservation_ID'] ?>">View
+                                    order</a></p>
+                        </div>
                     </div>
-                    <div class="order">
-                        <div class="orderitem">Vecicle No</div>
-                        <div class="orderitem1"><?php echo $orderList[$count]['Vehicle_ID'] ?></div>
-                    </div>
-                    <div class="order">
-                        <div class="orderitem">Time</div>
-                        <div class="orderitem1"><?php echo $orderList[$count]['Time'] ?></div>
-                    </div>
-                    <div class="orderView">
-                        <p class="viewLink"><a
-                                href="/calendar/todayOrder/<?php echo $orderList[$count]['Reservation_ID'] ?>">View
-                                order</a></p>
-                    </div>
-                </div>
                 <?php $count = $count - 1;
                 } ?>
                 <!--<div class="sub-box1">

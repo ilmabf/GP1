@@ -27,10 +27,10 @@ $orderList = $_SESSION['customerCompletedReservations'];
             <?php
             $count = sizeof($_SESSION['customerCompletedReservations']) - 1;
             while ($count >= 0) { ?>
-            <div class="sub-box1">
-                <div class="order">
-                    <div class="orderitem">Order ID</div>
-                    <div class="orderitem1"><?php
+                <div class="sub-box1">
+                    <div class="order">
+                        <div class="orderitem">Order ID</div>
+                        <div class="orderitem1"><?php
                                                 if (strlen($orderList[$count]['Reservation_ID']) == 1) {
                                                     echo "000" . $orderList[$count]['Reservation_ID'];
                                                 } else if (strlen($orderList[$count]['Reservation_ID']) == 2) {
@@ -41,25 +41,24 @@ $orderList = $_SESSION['customerCompletedReservations'];
                                                     echo $orderList[$count]['Reservation_ID'];
                                                 }
                                                 ?>
+                        </div>
+                        <div class="order">
+                            <div class="orderitem">Vecicle No</div>
+                            <div class="orderitem1"><?php echo $orderList[$count]['Vehicle_ID'] ?></div>
+                        </div>
+                        <div class="order">
+                            <div class="orderitem">Date</div>
+                            <div class="orderitem1"><?php echo $orderList[$count]['Date'] ?></div>
+                        </div>
+                        <div class="order">
+                            <div class="orderitem">Time</div>
+                            <div class="orderitem1"><?php echo $orderList[$count]['Time'] ?></div>
+                        </div>
+                        <div class="orderView">
+                            <p class="viewLink"><a href="/booking/completedOrder/<?php echo $orderList[$count]['Reservation_ID'] ?>">View
+                                    invoice</a></p>
+                        </div>
                     </div>
-                    <div class="order">
-                        <div class="orderitem">Vecicle No</div>
-                        <div class="orderitem1"><?php echo $orderList[$count]['Vehicle_ID'] ?></div>
-                    </div>
-                    <div class="order">
-                        <div class="orderitem">Date</div>
-                        <div class="orderitem1"><?php echo $orderList[$count]['Date'] ?></div>
-                    </div>
-                    <div class="order">
-                        <div class="orderitem">Time</div>
-                        <div class="orderitem1"><?php echo $orderList[$count]['Time'] ?></div>
-                    </div>
-                    <div class="orderView">
-                        <p class="viewLink"><a
-                                href="/booking/completedOrder/<?php echo $orderList[$count]['Reservation_ID'] ?>">View
-                                invoice</a></p>
-                    </div>
-                </div>
                 <?php $count = $count - 1;
             } ?>
 
@@ -81,7 +80,7 @@ $orderList = $_SESSION['customerCompletedReservations'];
                 </div>
             </div>-->
 
-            </div>
+                </div>
         </div>
         <div style="min-height: 110px;"></div>
 
@@ -89,59 +88,59 @@ $orderList = $_SESSION['customerCompletedReservations'];
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
     <script>
-    var orders = <?php echo json_encode($_SESSION['customerCompletedReservations']); ?>;
+        var orders = <?php echo json_encode($_SESSION['customerCompletedReservations']); ?>;
 
-    $('#CustomerCompletedDate').datepicker({
-        dateFormat: 'yy-mm-dd',
-        onSelect: function(date) {
+        $('#CustomerCompletedDate').datepicker({
+            dateFormat: 'yy-mm-dd',
+            onSelect: function(date) {
 
-            document.getElementById("customerCompletedReservations").innerHTML = '';
+                document.getElementById("customerCompletedReservations").innerHTML = '';
 
-            var i = 0;
-            var list = [];
+                var i = 0;
+                var list = [];
 
-            for (i = 0; i < orders.length; i++) {
-                if (orders[i]['Date'] == date) {
-                    var order = [];
-                    order['Reservation_ID'] = orders[i]['Reservation_ID'];
-                    order['Vehicle_ID'] = orders[i]['Vehicle_ID'];
-                    order['Time'] = orders[i]['Time'];
-                    list.push(order);
+                for (i = 0; i < orders.length; i++) {
+                    if (orders[i]['Date'] == date) {
+                        var order = [];
+                        order['Reservation_ID'] = orders[i]['Reservation_ID'];
+                        order['Vehicle_ID'] = orders[i]['Vehicle_ID'];
+                        order['Time'] = orders[i]['Time'];
+                        list.push(order);
+                    }
                 }
+                var x = document.getElementById("customerCompletedReservations");
+
+                for (j = 0; j < list.length; j++) {
+
+                    if (list[j]['Reservation_ID'].length == 1) {
+                        var id = "000" + list[j]['Reservation_ID'];
+                    } else if (list[j]['Reservation_ID'].length == 2) {
+                        var id = "00" + list[j]['Reservation_ID'];
+                    } else if (list[j]['Reservation_ID'].length == 3) {
+                        var id = "0" + list[j]['Reservation_ID'];
+                    } else var id = list[j]['Reservation_ID'];
+
+                    x.innerHTML += "<div class='sub-box1' >" +
+                        "<div class='order'>" +
+                        "<div class='orderitem'>Order ID</div>" +
+                        "<div class='orderitem1'>" + id + "</div>" +
+                        "</div>" +
+                        "<div class='order'>" +
+                        "<div class='orderitem'>Vehicle No</div>" +
+                        "<div class='orderitem1'>" + list[j]['Vehicle_ID'] + "</div>" +
+                        "</div>" +
+                        "<div class='order'>" +
+                        "<div class='orderitem'>Time</div>" +
+                        "<div class='orderitem1'>" + list[j]['Time'] + "</div>" +
+                        "</div>" +
+                        "<div class='orderView'>" +
+                        "<p class='viewLink'><a href='/booking/completedOrder/" + list[j]['Reservation_ID'] +
+                        "'>View Invoice</a></p>" +
+                        "</div>" +
+                        "</div>";
+
+                }
+
             }
-            var x = document.getElementById("customerCompletedReservations");
-
-            for (j = 0; j < list.length; j++) {
-
-                if (list[j]['Reservation_ID'].length == 1) {
-                    var id = "000" + list[j]['Reservation_ID'];
-                } else if (list[j]['Reservation_ID'].length == 2) {
-                    var id = "00" + list[j]['Reservation_ID'];
-                } else if (list[j]['Reservation_ID'].length == 3) {
-                    var id = "0" + list[j]['Reservation_ID'];
-                } else var id = list[j]['Reservation_ID'];
-
-                x.innerHTML += "<div class='sub-box1' >" +
-                    "<div class='order'>" +
-                    "<div class='orderitem'>Order ID</div>" +
-                    "<div class='orderitem1'>" + id + "</div>" +
-                    "</div>" +
-                    "<div class='order'>" +
-                    "<div class='orderitem'>Vehicle No</div>" +
-                    "<div class='orderitem1'>" + list[j]['Vehicle_ID'] + "</div>" +
-                    "</div>" +
-                    "<div class='order'>" +
-                    "<div class='orderitem'>Time</div>" +
-                    "<div class='orderitem1'>" + list[j]['Time'] + "</div>" +
-                    "</div>" +
-                    "<div class='orderView'>" +
-                    "<p class='viewLink'><a href='/booking/completedOrder/" + list[j]['Reservation_ID'] +
-                    "'>View Invoice</a></p>" +
-                    "</div>" +
-                    "</div>";
-
-            }
-
-        }
-    });
+        });
     </script>
