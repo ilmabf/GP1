@@ -99,8 +99,11 @@ include 'views/user/LoggedInHeader.php';
                 <hr>
                 <span style="font-size:smaller; display: table; margin: auto; margin-top:10px;">Malwathugoda Auto Service, Kaudella, Galagedara.</span>
                 <span style="font-size:smaller; display: table; margin: auto; margin-top:10px;">WandiWash</span>            
+             </tbody>
+                    </table>
+                </section>
+                </div>
             </div>
-
 
         </div>
 

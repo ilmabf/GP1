@@ -9,15 +9,15 @@ class ServiceModel extends Model
     }
 
 
-    function addEquipment($item_id,$name, $price,  $dateAcquired)
+    function addEquipment($itemID,$name, $price,  $dateAcquired)
     {   
-        $columns = array('Name', 'Price', 'Date_Acquired','Item_Id');
-        $param = array(':name', ':price', ':date',':item_id');
+        $columns = array('Name', 'Price', 'Date_Acquired','Item_Id)');
+        $param = array(':name', ':price', ':date',':itemID');
         $values = array($name, $price,  $dateAcquired,$item_id);
         
-        if ( $this->db->select ('count', "item", "WHERE Item_Id = :item_id;",':item_id',$item_id) >0 ){
+        if ( $this->db->select ('count', "item", "WHERE Item_Id = :itemID;",':itemID',$itemID) >0 ){
             
-            $result=$this->db->select("Total, Free", "item", "WHERE Item_Id = :item_id;",':item_id',$item_id);
+            $result=$this->db->select("Total, Free", "item", "WHERE ItemID = :itemID;",':itemID',$itemID);
             $total  = $result[0]['Total'];
             $free  = $result[0]['Free'];
             $total++;
@@ -27,7 +27,7 @@ class ServiceModel extends Model
             $param1=array(':total',':free');
             $val1=array($total,$free);
 
-            $result1 = $this->db->update("item", $column1, $param1, $val1, ':item_id', $item_id,"WHERE (Item_Id = :item_id);");          
+            $result1 = $this->db->update("item", $column1, $param1, $val1, ':itemID', $itemID,"WHERE (Item_Id = :itemID);");          
             $result = $this->db->insert("equipment", $columns, $param, $values);
             if ($result == "Success") {
             return true;
