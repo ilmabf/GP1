@@ -16,11 +16,11 @@ include 'views/user/LoggedInHeader.php';
                 <div class="manager-home-main-flex">
 
                     <div class="managerHome-block1">
-                        <h3><a href="/booking/upcoming" style="color:#085394;">Upcoming Reservations</a></h3>
+                        <h3><a href="/booking/upcoming" style="color:#085394;">Upcoming Jobs</a></h3>
                     </div>
 
                     <div class="managerHome-block2">
-                        <h3><a href="/booking/completed" style="color:#085394;">Completed Reservations</a></h3>
+                        <h3><a href="/booking/completed" style="color:#085394;">Completed Jobs</a></h3>
                     </div>
 
                     <div class="managerHome-block3">

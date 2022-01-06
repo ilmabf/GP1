@@ -36,7 +36,16 @@ $washPackageDetails = $_SESSION['washpackage'];
 
     <div id="upcoming">
         <div class="box3">
-            <div class="invoiceBorder">Order - <?php echo $orderDetails[0]['Reservation_ID'] ?></div>
+            <div class="invoiceBorder">Order - <?php
+                                                if (strlen($orderDetails[0]['Reservation_ID']) == 1) {
+                                                    echo "000" . $orderDetails[0]['Reservation_ID'];
+                                                } else if (strlen($orderDetails[0]['Reservation_ID']) == 2) {
+                                                    echo "00" . $orderDetails[0]['Reservation_ID'];
+                                                } else if (strlen($orderDetails[0]['Reservation_ID']) == 3) {
+                                                    echo "0" . $orderDetails[0]['Reservation_ID'];
+                                                } else {
+                                                    echo $orderDetails[0]['Reservation_ID'];
+                                                } ?></div>
 
             <div class="box2">
 
@@ -45,7 +54,8 @@ $washPackageDetails = $_SESSION['washpackage'];
                         <tbody>
                             <tr>
                                 <td style="text-align:left; color:#193498; font-weight:bold">Name</td>
-                                <td style="text-align:left"><?php echo $customerDetails[0]['First_Name'] ?> <?php echo $customerDetails[0]['Last_Name'] ?></td>
+                                <td style="text-align:left"><?php echo $customerDetails[0]['First_Name'] ?>
+                                    <?php echo $customerDetails[0]['Last_Name'] ?></td>
                             </tr>
                             <tr>
                                 <td style="text-align:left; color:#193498; font-weight:bold">Date</td>
@@ -65,7 +75,8 @@ $washPackageDetails = $_SESSION['washpackage'];
                                 </td>
                             </tr>
                             <tr>
-                                <td style="text-align:left; color:#193498; font-weight:bold">Vehicle Identification No.</td>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Vehicle Identification No.
+                                </td>
                                 <td style="text-align:left"><?php echo $vehicleDetails[0]['VID'] ?></td>
                             </tr>
                             <tr>
@@ -91,7 +102,8 @@ $washPackageDetails = $_SESSION['washpackage'];
                             </tr>
                             <tr>
                                 <td style="text-align:left; color:#193498; font-weight:bold">Location</td>
-                                <td style="font-size: 12px;text-align:left"><?php echo $orderDetails[0]['Address'] ?></td>
+                                <td style="font-size: 12px;text-align:left"><?php echo $orderDetails[0]['Address'] ?>
+                                </td>
                             </tr>
                             <tr>
                                 <td style="text-align:left; color:#193498; font-weight:bold">Wash Package</td>
@@ -103,7 +115,7 @@ $washPackageDetails = $_SESSION['washpackage'];
                                 </td>
                             </tr>
                             <tr>
-                                <td style="text-align:left; color:#193498; font-weight:bold">Total Price Rs</td>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Service Charge Rs</td>
                                 <td style="text-align:left"><?php echo $orderDetails[0]['Total_price'] ?>/-</td>
                             </tr>
                         </tbody>
@@ -216,7 +228,8 @@ $washPackageDetails = $_SESSION['washpackage'];
 
                 </div>
 
-                <button class="reservationButtons a10" id="cancelReservationBtn" style="margin-top: 32px; padding: 8px 9px;" onclick="opencancel()"><a>Cancel Reservation</a></button>
+                <button class="reservationButtons a10" id="cancelReservationBtn" style="margin-top: 32px; padding: 8px 9px;" onclick="opencancel()"><a>Cancel
+                        Reservation</a></button>
 
 
 

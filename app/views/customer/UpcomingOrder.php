@@ -9,15 +9,15 @@ $stlDetails = $_SESSION['stlDetails'];
 $reservationCancel = $_SESSION['cancelReservation'];
 ?>
 <style>
-table,
-tr {
-    border: hidden;
-}
+    table,
+    tr {
+        border: hidden;
+    }
 
-td,
-th {
-    border: hidden;
-}
+    td,
+    th {
+        border: hidden;
+    }
 </style>
 
 <div class="bgImage">
@@ -31,8 +31,7 @@ th {
                     <li><img src="/public/images/userIcon.jpg" style="width: 250px;"></img></li><br>
                     <li>Name - <?php echo $stlDetails[0]['First_Name'] . " " . $stlDetails[0]['Last_Name']; ?></li><br>
                     <li>Contact Number - <?php echo $stlDetails[0]['Contact_Number']; ?></li>
-                    <button id="VehicleFormCloseButton" class="formCancelButton" type="submit" name="signup"
-                        onclick="closestlForm()" style="float:none">Close</button>
+                    <button id="VehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closestlForm()" style="float:none">Close</button>
             </form>
 
         </div>
@@ -44,11 +43,8 @@ th {
             <h2 class="login-signupheader">Do you want to cancel the reservation?</h2>
 
             <form action="" method="post" id="customer-signup">
-                <button id="VehicleFormCloseButton" class="formCancelButton" type="submit" name="signup"
-                    onclick="closecencelForm()">Close</button>
-                <button id="VehicleFormSubmitButton" class="formSubmitButton" type="submit" name="signup"><a
-                        href="/booking/deleteReservation/<?php echo $orderDetails[0]['Reservation_ID'] ?>"
-                        style="color:white;">Yes</a></button>
+                <button id="VehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closecencelForm()">Close</button>
+                <button id="VehicleFormSubmitButton" class="formSubmitButton" type="submit" name="signup"><a href="/booking/deleteReservation/<?php echo $orderDetails[0]['Reservation_ID'] ?>" style="color:white;">Yes</a></button>
             </form>
 
         </div>
@@ -61,7 +57,16 @@ th {
             cancel/reschedule up until 24 hours before the reserved time</p><br>
         <div class="box3">
 
-            <div class="invoiceBorder">Order - <?php echo $orderDetails[0]['Reservation_ID'] ?></div>
+            <div class="invoiceBorder">Order - <?php
+                                                if (strlen($orderDetails[0]['Reservation_ID']) == 1) {
+                                                    echo "000" . $orderDetails[0]['Reservation_ID'];
+                                                } else if (strlen($orderDetails[0]['Reservation_ID']) == 2) {
+                                                    echo "00" . $orderDetails[0]['Reservation_ID'];
+                                                } else if (strlen($orderDetails[0]['Reservation_ID']) == 3) {
+                                                    echo "0" . $orderDetails[0]['Reservation_ID'];
+                                                } else {
+                                                    echo $orderDetails[0]['Reservation_ID'];
+                                                } ?></div>
 
             <div class="box2">
                 <section class="">
@@ -176,12 +181,9 @@ th {
                 <div class="reschedule" style="margin-left: 0px;">
                     <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Do you want to reschedule?
                     </h3>
-                    <button class="reservationButtons a13" id="cancelAssignBtn"><a
-                            href="/booking/deleteReschedule/<?php echo $orderDetails[0]['Reservation_ID'] ?>"
-                            style="color:white;">Reschedule Reservation</a></button>
+                    <button class="reservationButtons a13" id="cancelAssignBtn"><a href="/booking/deleteReschedule/<?php echo $orderDetails[0]['Reservation_ID'] ?>" style="color:white;">Reschedule Reservation</a></button>
                 </div>
-                <button class="reservationButtons a10" style="margin-right: 0px; margin-top: 10px;"
-                    id="cancelReservationBtn" onclick="opencancelForm()"><a>Cancel Reservation</a></button>
+                <button class="reservationButtons a10" style="margin-right: 0px; margin-top: 10px;" id="cancelReservationBtn" onclick="opencancelForm()"><a>Cancel Reservation</a></button>
             </div>
         </div>
     </div>

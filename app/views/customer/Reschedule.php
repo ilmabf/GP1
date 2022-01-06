@@ -86,9 +86,9 @@ include 'views/user/LoggedInHeader.php';
         </div> -->
     <div class="next-pg">
         <span class="priceBox">Rs 1000</span>
-            <button class="next-button">
+        <button class="next-button">
 
-                <a href="/booking/location" style="color: white;">Next</a></button>
+            <a href="/booking/location" style="color: white;">Next</a></button>
     </div>
 
 

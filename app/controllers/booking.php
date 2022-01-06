@@ -125,6 +125,7 @@ class Booking extends Controller
     {
         // echo $details;
         $details = str_replace('_', ' ', $details);
+        $details = str_replace('|', '/', $details);
         echo $details;
         $details = explode(';', $details);
 

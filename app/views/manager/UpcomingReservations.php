@@ -7,7 +7,7 @@ include 'views/user/LoggedInHeader.php';
     <div style="min-height: 110px;"></div>
 
     <div class="heading">
-        <h2>Upcoming Reservations</h2>
+        <h2>Upcoming Jobs</h2>
     </div>
 
     <div class="reservation-date">
@@ -75,13 +75,23 @@ include 'views/user/LoggedInHeader.php';
                 var x = document.getElementById("managerUpcomingReservations");
 
                 for (j = 0; j < list.length; j++) {
+                    if (list[j]['Reservation_ID'].length == 1) {
+                        var id = "000" + list[j]['Reservation_ID'];
+                    } else if (list[j]['Reservation_ID'].length == 2) {
+                        var id = "00" + list[j]['Reservation_ID'];
+                    } else if (list[j]['Reservation_ID'].length == 3) {
+                        var id = "0" + list[j]['Reservation_ID'];
+                    } else var id = list[j]['Reservation_ID'];
+
                     console.log(list[j]['Service_team_leader_ID']);
                     if (list[j]['Service_team_leader_ID'] == null) {
+
+
 
                         x.innerHTML += "<div class='sub-box1' >" +
                             "<div class='order'>" +
                             "<div class='orderitem'>Order ID</div>" +
-                            "<div class='orderitem1'>" + list[j]['Reservation_ID'] + "</div>" +
+                            "<div class='orderitem1'>" + id + "</div>" +
                             "</div>" +
                             "<div class='order'>" +
                             "<div class='orderitem'>Vehicle No</div>" +
@@ -92,7 +102,8 @@ include 'views/user/LoggedInHeader.php';
                             "<div class='orderitem1'>" + list[j]['Time'] + "</div>" +
                             "</div>" +
                             "<div class='orderView'>" +
-                            "<p class='viewLink'><a href='/booking/upcomingOrder/" + list[j]['Reservation_ID'] + "'>View order</a></p>" +
+                            "<p class='viewLink'><a href='/booking/upcomingOrder/" + list[j]['Reservation_ID'] +
+                            "'>View order</a></p>" +
                             "<p class='team'>Team not assigned</p>" +
                             "</div>" +
                             "</div>";
@@ -100,7 +111,7 @@ include 'views/user/LoggedInHeader.php';
                         x.innerHTML += "<div class='sub-box1' >" +
                             "<div class='order'>" +
                             "<div class='orderitem'>Order ID</div>" +
-                            "<div class='orderitem1'>" + list[j]['Reservation_ID'] + "</div>" +
+                            "<div class='orderitem1'>" + id + "</div>" +
                             "</div>" +
                             "<div class='order'>" +
                             "<div class='orderitem'>Vehicle No</div>" +
@@ -111,8 +122,10 @@ include 'views/user/LoggedInHeader.php';
                             "<div class='orderitem1'>" + list[j]['Time'] + "</div>" +
                             "</div>" +
                             "<div class='orderView'>" +
-                            "<p class='viewLink'><a href='/booking/upcomingOrder/" + list[j]['Reservation_ID'] + "'>View order</a></p>" +
-                            "<p class='team'>Assigned Service Team " + list[j]['Service_team_leader_ID'] + "</p>" +
+                            "<p class='viewLink'><a href='/booking/upcomingOrder/" + list[j]['Reservation_ID'] +
+                            "'>View order</a></p>" +
+                            "<p class='team'>Assigned Service Team " + list[j]['Service_team_leader_ID'] +
+                            "</p>" +
                             "</div>" +
                             "</div>";
                     }
@@ -127,11 +140,19 @@ include 'views/user/LoggedInHeader.php';
             var x = document.getElementById("managerUpcomingReservations");
 
             for (j = 0; j < orders.length; j++) {
+                if (orders[j]['Reservation_ID'].length == 1) {
+                    var id = "000" + orders[j]['Reservation_ID'];
+                } else if (orders[j]['Reservation_ID'].length == 2) {
+                    var id = "00" + orders[j]['Reservation_ID'];
+                } else if (orders[j]['Reservation_ID'].length == 3) {
+                    var id = "0" + orders[j]['Reservation_ID'];
+                } else var id = orders[j]['Reservation_ID'];
+
                 if (orders[j]['Service_team_leader_ID'] == null) {
                     x.innerHTML += "<div class='sub-box1' >" +
                         "<div class='order'>" +
                         "<div class='orderitem'>Order ID</div>" +
-                        "<div class='orderitem1'>" + orders[j]['Reservation_ID'] + "</div>" +
+                        "<div class='orderitem1'>" + id + "</div>" +
                         "</div>" +
                         "<div class='order'>" +
                         "<div class='orderitem'>Vehicle No</div>" +
@@ -142,7 +163,8 @@ include 'views/user/LoggedInHeader.php';
                         "<div class='orderitem1'>" + orders[j]['Time'] + "</div>" +
                         "</div>" +
                         "<div class='orderView'>" +
-                        "<p class='viewLink'><a href='/booking/upcomingOrder/" + orders[j]['Reservation_ID'] + "'>View order</a></p>" +
+                        "<p class='viewLink'><a href='/booking/upcomingOrder/" + orders[j]['Reservation_ID'] +
+                        "'>View order</a></p>" +
                         "<p class='team'>Team not assigned</p>" +
                         "</div>" +
                         "</div>";
@@ -150,7 +172,7 @@ include 'views/user/LoggedInHeader.php';
                     x.innerHTML += "<div class='sub-box1' >" +
                         "<div class='order'>" +
                         "<div class='orderitem'>Order ID</div>" +
-                        "<div class='orderitem1'>" + orders[j]['Reservation_ID'] + "</div>" +
+                        "<div class='orderitem1'>" + id + "</div>" +
                         "</div>" +
                         "<div class='order'>" +
                         "<div class='orderitem'>Vehicle No</div>" +
@@ -161,7 +183,8 @@ include 'views/user/LoggedInHeader.php';
                         "<div class='orderitem1'>" + orders[j]['Time'] + "</div>" +
                         "</div>" +
                         "<div class='orderView'>" +
-                        "<p class='viewLink'><a href='/booking/upcomingOrder/" + orders[j]['Reservation_ID'] + "'>View order</a></p>" +
+                        "<p class='viewLink'><a href='/booking/upcomingOrder/" + orders[j]['Reservation_ID'] +
+                        "'>View order</a></p>" +
                         "<p class='team'>Assigned Service Team " + orders[j]['Service_team_leader_ID'] + "</p>" +
                         "</div>" +
                         "</div>";
