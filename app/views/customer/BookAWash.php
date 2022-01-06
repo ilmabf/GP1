@@ -402,6 +402,7 @@ $booked = $_SESSION['booked'];
             var d1 = Date.parse(todayDate);
             var d2 = Date.parse(selectedDate);
             if (d2 > d1 && t != "booked") {
+                //display selected date
                 document.getElementById("day").innerHTML = "Date: " + date;
                 document.getElementById("month").innerHTML = month;
                 document.getElementById("year").innerHTML = year;

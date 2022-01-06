@@ -61,7 +61,16 @@ th {
             cancel/reschedule up until 24 hours before the reserved time</p><br>
         <div class="box3">
 
-            <div class="invoiceBorder">Order - <?php echo $orderDetails[0]['Reservation_ID'] ?></div>
+            <div class="invoiceBorder">Order - <?php
+                                                if (strlen($orderDetails[0]['Reservation_ID']) == 1) {
+                                                    echo "000" . $orderDetails[0]['Reservation_ID'];
+                                                } else if (strlen($orderDetails[0]['Reservation_ID']) == 2) {
+                                                    echo "00" . $orderDetails[0]['Reservation_ID'];
+                                                } else if (strlen($orderDetails[0]['Reservation_ID']) == 3) {
+                                                    echo "0" . $orderDetails[0]['Reservation_ID'];
+                                                } else {
+                                                    echo $orderDetails[0]['Reservation_ID'];
+                                                } ?></div>
 
             <div class="box2">
                 <section class="">

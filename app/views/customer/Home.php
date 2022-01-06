@@ -11,7 +11,8 @@ include 'views/user/LoggedInHeader.php';
             <div class="bookAwash">
                 <h3>We wash your<br>vehicle at your doorstep!</h3>
                 <div class="bookAwash-button">
-                    <button class="customer-home-main-section1-button"><a href="/booking/details">Book a wash</a></button>
+                    <button class="customer-home-main-section1-button"><a href="/booking/details">Book a
+                            wash</a></button>
                 </div>
             </div>
 
@@ -35,7 +36,7 @@ include 'views/user/LoggedInHeader.php';
                 <div class="section2-blocks2">
                     <div class="customer-home-section2-block-img2"></div>
                     <div class="section2-block-heading"><button>
-                            <h3><a href="/booking/upcoming" style="color:#085394;">Upcoming Reservations</a></h3>
+                            <h3><a href="/booking/upcoming" style="color:#085394;">My Upcoming Reservations</a></h3>
                         </button></div>
                     <div class="section2-block-para">
                         <p>Check your upcoming reservations</p>
@@ -46,7 +47,7 @@ include 'views/user/LoggedInHeader.php';
                 <div class="section2-blocks3">
                     <div class="customer-home-section2-block-img3"></div>
                     <div class="section2-block-heading"><button>
-                            <h3><a href="/booking/completed" style="color:#085394;">Past Reservations</a></h3>
+                            <h3><a href="/booking/completed" style="color:#085394;">My Previous Reservations</a></h3>
                         </button></div>
                     <div class="section2-block-para">
                         <p>Check your past reservations</p>
@@ -66,9 +67,10 @@ include 'views/user/LoggedInHeader.php';
                 </div>
 
             </div>
-            <div id = 'test'></div>
+            <div id='test'></div>
             <h2>Check out our wash packages below!</h2>
-            <p class="section2-para1">Sit back, relax and enjoy while our team of professionals provide you services just the way you like it!</p>
+            <p class="section2-para1">Sit back, relax and enjoy while our team of professionals provide you services
+                just the way you like it!</p>
 
             <div class="section2-blocksdown">
                 <div class="section2-blocks4">
@@ -125,5 +127,5 @@ include 'views/user/Footer.php';
 </div>
 
 <script>
-    document.getElementById('test').innerHTML = document.cookie;
+document.getElementById('test').innerHTML = document.cookie;
 </script>

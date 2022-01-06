@@ -1,10 +1,10 @@
 <?php
 
 include 'views/user/LoggedInHeader.php';
-    $orderDetails = $_SESSION['completedOrder'];
-    $customerDetails = $_SESSION['customer'];
-    $washPackageDetails = $_SESSION['washpackage'];
-    $stl = $_SESSION['completedSTL'] 
+$orderDetails = $_SESSION['completedOrder'];
+$customerDetails = $_SESSION['customer'];
+$washPackageDetails = $_SESSION['washpackage'];
+$stl = $_SESSION['completedSTL']
 ?>
 <style>
 table,
@@ -41,7 +41,17 @@ th {
     <div id="upcoming">
 
         <div class="box3">
-            <div class="invoiceBorder">Order - <?php echo $orderDetails[0]['Reservation_ID'] ?></div>
+            <div class="invoiceBorder">Order - <?php
+                                                if (strlen($orderDetails[0]['Reservation_ID']) == 1) {
+                                                    echo "000" . $orderDetails[0]['Reservation_ID'];
+                                                } else if (strlen($orderDetails[0]['Reservation_ID']) == 2) {
+                                                    echo "00" . $orderDetails[0]['Reservation_ID'];
+                                                } else if (strlen($orderDetails[0]['Reservation_ID']) == 3) {
+                                                    echo "0" . $orderDetails[0]['Reservation_ID'];
+                                                } else {
+                                                    echo $orderDetails[0]['Reservation_ID'];
+                                                }
+                                                ?></div>
 
             <div class="box2">
 
@@ -84,7 +94,7 @@ th {
                             <tr>
                                 <td style="text-align:left; color:#193498; font-weight:bold">Team members</td>
                                 <td style="font-size: 12px;text-align:left">
-                                    <?php echo $orderDetails[0]['Member1'] ."<br />". $orderDetails[0]['Member2'] ."<br />". $orderDetails[0]['Member3']."<br />".  $orderDetails[0]['Member4']?>
+                                    <?php echo $orderDetails[0]['Member1'] . "<br />" . $orderDetails[0]['Member2'] . "<br />" . $orderDetails[0]['Member3'] . "<br />" .  $orderDetails[0]['Member4'] ?>
                                 </td>
                             </tr>
                             <tr>
@@ -102,7 +112,7 @@ th {
                                 </td>
                             </tr>
                             <tr>
-                                <td style="text-align:left; color:#193498; font-weight:bold">Total Price Rs</td>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Service Charge Rs</td>
                                 <td style="text-align:left"><?php echo $orderDetails[0]['Total_price'] ?>/-</td>
                             </tr>
                     </table>

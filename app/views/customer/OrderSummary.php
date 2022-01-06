@@ -273,6 +273,7 @@ function makeOrder() {
     var parameters = document.cookie;
     //delete cookies
     parameters = parameters.replace(/ /g, "_");
+    parameters = parameters.replace('\/', "|");
     deleteCookie();
     window.location = "/booking/makeReservation/" + parameters;
 }
