@@ -234,7 +234,7 @@ $washPackageDetails = $_SESSION['washpackage'];
             <form action="" method="post" id="customer-signup">
 
                 <button id="VehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closecancel()">Close</button>
-                <button id="VehicleFormSubmitButton" class="formSubmitButton" type="submit" name="signup"><a href="/booking/upcoming" style="color:white;">Yes</a></button>
+                <button id="VehicleFormSubmitButton" class="formSubmitButton" type="submit" name="signup"><a href="/booking/deleteReservation/<?php echo $orderDetails[0]['Reservation_ID'] ?>" style="color:white;">Yes</a></button>
             </form>
 
         </div>

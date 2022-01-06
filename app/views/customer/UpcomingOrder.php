@@ -6,7 +6,20 @@ $customerDetails = $_SESSION['customer'];
 $vehicleDetails = $_SESSION['vehicle'];
 $washPackageDetails = $_SESSION['washpackage'];
 $stlDetails = $_SESSION['stlDetails'];
+$reservationCancel = $_SESSION['cancelReservation'];
 ?>
+<style>
+table,
+tr {
+    border: hidden;
+}
+
+td,
+th {
+    border: hidden;
+}
+</style>
+
 <div class="bgImage">
     <div class="addVehicleform" id="stldetails">
         <div class="forma">
@@ -16,9 +29,10 @@ $stlDetails = $_SESSION['stlDetails'];
             <form action="" method="post" id="customer-signup">
                 <ul>
                     <li><img src="/public/images/userIcon.jpg" style="width: 250px;"></img></li><br>
-                    <li>Name - <?php echo $stlDetails[0]['First_Name']. " ". $stlDetails[0]['Last_Name'];?></li><br>
-                    <li>Contact Number - <?php echo $stlDetails[0]['Contact_Number'];?></li>
-                    <button id="VehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closestlForm()" style="float:none">Close</button>
+                    <li>Name - <?php echo $stlDetails[0]['First_Name'] . " " . $stlDetails[0]['Last_Name']; ?></li><br>
+                    <li>Contact Number - <?php echo $stlDetails[0]['Contact_Number']; ?></li>
+                    <button id="VehicleFormCloseButton" class="formCancelButton" type="submit" name="signup"
+                        onclick="closestlForm()" style="float:none">Close</button>
             </form>
 
         </div>
@@ -30,8 +44,11 @@ $stlDetails = $_SESSION['stlDetails'];
             <h2 class="login-signupheader">Do you want to cancel the reservation?</h2>
 
             <form action="" method="post" id="customer-signup">
-                <button id="VehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closecencelForm()">Close</button>
-                <button id="VehicleFormSubmitButton" class="formSubmitButton" type="submit" name="signup"><a href="/booking/upcoming" style="color:white;">Yes</a></button>
+                <button id="VehicleFormCloseButton" class="formCancelButton" type="submit" name="signup"
+                    onclick="closecencelForm()">Close</button>
+                <button id="VehicleFormSubmitButton" class="formSubmitButton" type="submit" name="signup"><a
+                        href="/booking/deleteReservation/<?php echo $orderDetails[0]['Reservation_ID'] ?>"
+                        style="color:white;">Yes</a></button>
             </form>
 
         </div>
@@ -40,7 +57,8 @@ $stlDetails = $_SESSION['stlDetails'];
     <div style="min-height: 110px;"></div>
 
     <div id="upcoming">
-        <p style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff; text-align:center">You can only cancel/reschedule up until 24 hours before the reserved time</p><br>
+        <p style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff; text-align:center">You can only
+            cancel/reschedule up until 24 hours before the reserved time</p><br>
         <div class="box3">
 
             <div class="invoiceBorder">Order - <?php echo $orderDetails[0]['Reservation_ID'] ?></div>
@@ -59,7 +77,8 @@ $stlDetails = $_SESSION['stlDetails'];
                             </tr>
                             <tr>
                                 <td style="text-align:left; color:#193498; font-weight:bold">Location</td>
-                                <td style="font-size: 12px;text-align:left"><?php echo $orderDetails[0]['Address'] ?></td>
+                                <td style="font-size: 12px;text-align:left"><?php echo $orderDetails[0]['Address'] ?>
+                                </td>
                             </tr>
                             <tr>
                                 <td colspan="2">
@@ -69,13 +88,12 @@ $stlDetails = $_SESSION['stlDetails'];
                             <tr>
                                 <td style="text-align:left; color:#193498; font-weight:bold">Service Team</td>
                                 <?php
-                                    if ($orderDetails[0]['Service_team_leader_ID'] == "") {
-                                        echo "<td style='font-size: 12px;text-align:left'>Team not yet assigned</td>";
-                                    }
-                                    else{
-                                        // echo "<td style='font-size: 12px;text-align:left'>".$orderDetails[0]['Service_team_leader_ID']."</td>";
-                                        echo "<td><button class='reservationButtons a12' id='cancelAssignBtn' style='color:white; padding: 1px 3px; margin-bottom:0px' onclick='openstlForm()'><a>View Details</a></button></td>";
-                                    }
+                                if ($orderDetails[0]['Service_team_leader_ID'] == "") {
+                                    echo "<td style='font-size: 12px;text-align:left'>Team not yet assigned</td>";
+                                } else {
+                                    // echo "<td style='font-size: 12px;text-align:left'>".$orderDetails[0]['Service_team_leader_ID']."</td>";
+                                    echo "<td><button class='reservationButtons a12' id='cancelAssignBtn' style='color:white; padding: 1px 3px; margin-bottom:0px' onclick='openstlForm()'><a>View Details</a></button></td>";
+                                }
                                 ?>
                             </tr>
                             <tr>
@@ -88,7 +106,7 @@ $stlDetails = $_SESSION['stlDetails'];
                                 <td style="text-align:left"><?php echo $washPackageDetails[0]['Name'] ?></td>
                             </tr>
                             <tr>
-                                <td style="text-align:left; color:#193498; font-weight:bold">Total Price Rs</td>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Service Charge Rs</td>
                                 <td style="text-align:left"><?php echo $orderDetails[0]['Total_price'] ?>/-</td>
                             </tr>
                         </tbody>
@@ -146,7 +164,8 @@ $stlDetails = $_SESSION['stlDetails'];
                 </div> -->
                 <hr>
                 <hr>
-                <span style="font-size:smaller; display: table; margin: auto; margin-top:10px;">Malwathugoda Auto Service, Kaudella, Galagedara.</span>
+                <span style="font-size:smaller; display: table; margin: auto; margin-top:10px;">Malwathugoda Auto
+                    Service, Kaudella, Galagedara.</span>
                 <span style="font-size:smaller; display: table; margin: auto; margin-top:10px;">WandiWash</span>
             </div>
 
@@ -155,10 +174,14 @@ $stlDetails = $_SESSION['stlDetails'];
         <div class="box4">
             <div class="reservation-buttons">
                 <div class="reschedule" style="margin-left: 0px;">
-                    <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Do you want to reschedule?</h3>
-                    <button class="reservationButtons a13" id="cancelAssignBtn"><a href="/booking/reschedule" style="color:white;">Reschedule Reservation</a></button>
+                    <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Do you want to reschedule?
+                    </h3>
+                    <button class="reservationButtons a13" id="cancelAssignBtn"><a
+                            href="/booking/deleteReschedule/<?php echo $orderDetails[0]['Reservation_ID'] ?>"
+                            style="color:white;">Reschedule Reservation</a></button>
                 </div>
-                <button class="reservationButtons a10" style="margin-right: 0px; margin-top: 10px;" id="cancelReservationBtn" onclick="opencancelForm()"><a>Cancel Reservation</a></button>
+                <button class="reservationButtons a10" style="margin-right: 0px; margin-top: 10px;"
+                    id="cancelReservationBtn" onclick="opencancelForm()"><a>Cancel Reservation</a></button>
             </div>
         </div>
     </div>

@@ -147,9 +147,9 @@ html {
   width: fit-content;
   /* margin-top: 200px; */
   display: none;
-  z-index: 9;
+  z-index: 15;
 }
 
-.blurCalendar{
+.blurCalendar {
   filter: blur(3px);
 }
