@@ -1,10 +1,10 @@
 <?php
 
 include 'views/user/LoggedInHeader.php';
-    $orderDetails = $_SESSION['completedOrder'];
-    $customerDetails = $_SESSION['customer'];
-    $washPackageDetails = $_SESSION['washpackage'];
-    $stl = $_SESSION['completedSTL'] 
+$orderDetails = $_SESSION['completedOrder'];
+$customerDetails = $_SESSION['customer'];
+$washPackageDetails = $_SESSION['washpackage'];
+$stl = $_SESSION['completedSTL']
 ?>
 <style>
     table,
@@ -39,16 +39,27 @@ include 'views/user/LoggedInHeader.php';
     <div id="upcoming">
 
         <div class="box3">
-            <div class="invoiceBorder">Order - <?php echo $orderDetails[0]['Reservation_ID'] ?></div>
+            <div class="invoiceBorder">Order - <?php
+                                                if (strlen($orderDetails[0]['Reservation_ID']) == 1) {
+                                                    echo "000" . $orderDetails[0]['Reservation_ID'];
+                                                } else if (strlen($orderDetails[0]['Reservation_ID']) == 2) {
+                                                    echo "00" . $orderDetails[0]['Reservation_ID'];
+                                                } else if (strlen($orderDetails[0]['Reservation_ID']) == 3) {
+                                                    echo "0" . $orderDetails[0]['Reservation_ID'];
+                                                } else {
+                                                    echo $orderDetails[0]['Reservation_ID'];
+                                                }
+                                                ?></div>
 
             <div class="box2">
 
                 <section class="">
-                    <table class="" >
+                    <table class="">
                         <tbody>
                             <tr>
                                 <td style="text-align:left; color:#193498; font-weight:bold">Name</td>
-                                <td style="text-align:left"><?php echo $customerDetails[0]['First_Name'] ?> <?php echo $customerDetails[0]['Last_Name'] ?></td>
+                                <td style="text-align:left"><?php echo $customerDetails[0]['First_Name'] ?>
+                                    <?php echo $customerDetails[0]['Last_Name'] ?></td>
                             </tr>
                             <tr>
                                 <td style="text-align:left; color:#193498; font-weight:bold">Date</td>
@@ -66,21 +77,26 @@ include 'views/user/LoggedInHeader.php';
                                 <td colspan="2">
                                     <hr>
                                 </td>
-                            </tr><tr>
-                                <td style="text-align:left; color:#193498; font-weight:bold">Vehicle Identification No.</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Vehicle Identification No.
+                                </td>
                                 <td style="text-align:left"><?php echo $orderDetails[0]['Vehicle_ID'] ?></td>
                             </tr>
                             <tr>
-                                <td style="text-align:left; color:#193498; font-weight:bold">Service team leader</td>                   
+                                <td style="text-align:left; color:#193498; font-weight:bold">Service team leader</td>
                                 <td style="text-align:left"><button class="reservationButtons a12" id="cancelAssignBtn" style="color:white; padding: 1px 3px; margin-bottom:0px" onclick="openstlForm()"><a>View Details</a></button></td>
                             </tr>
                             <tr>
                                 <td style="text-align:left; color:#193498; font-weight:bold">Team members</td>
-                                <td style="font-size: 12px;text-align:left"><?php echo $orderDetails[0]['Member1'] ."<br />". $orderDetails[0]['Member2'] ."<br />". $orderDetails[0]['Member3']."<br />".  $orderDetails[0]['Member4']?></td>
-                            </tr>            
+                                <td style="font-size: 12px;text-align:left">
+                                    <?php echo $orderDetails[0]['Member1'] . "<br />" . $orderDetails[0]['Member2'] . "<br />" . $orderDetails[0]['Member3'] . "<br />" .  $orderDetails[0]['Member4'] ?>
+                                </td>
+                            </tr>
                             <tr>
                                 <td style="text-align:left; color:#193498; font-weight:bold">Location</td>
-                                <td style="font-size: 12px;text-align:left"><?php echo $orderDetails[0]['Address'] ?></td>
+                                <td style="font-size: 12px;text-align:left"><?php echo $orderDetails[0]['Address'] ?>
+                                </td>
                             </tr>
                             <tr>
                                 <td style="text-align:left; color:#193498; font-weight:bold">Wash Package</td>
@@ -92,13 +108,16 @@ include 'views/user/LoggedInHeader.php';
                                 </td>
                             </tr>
                             <tr>
-                                <td style="text-align:left; color:#193498; font-weight:bold">Total Price Rs</td>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Service Charge Rs</td>
                                 <td style="text-align:left"><?php echo $orderDetails[0]['Total_price'] ?>/-</td>
                             </tr>
+                    </table>
+                </section>
                 <hr>
                 <hr>
-                <span style="font-size:smaller; display: table; margin: auto; margin-top:10px;">Malwathugoda Auto Service, Kaudella, Galagedara.</span>
-                <span style="font-size:smaller; display: table; margin: auto; margin-top:10px;">WandiWash</span>            
+                <span style="font-size:smaller; display: table; margin: auto; margin-top:10px;">Malwathugoda Auto
+                    Service, Kaudella, Galagedara.</span>
+                <span style="font-size:smaller; display: table; margin: auto; margin-top:10px;">WandiWash</span>
             </div>
 
 
@@ -109,9 +128,10 @@ include 'views/user/LoggedInHeader.php';
 
             <div class="rate1">
 
-                <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">How was the service? Give us a rating!</h3>
+                <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">How was the service? Give us a
+                    rating!</h3>
             </div>
-            <div class="rate1 stars1" id ="RateUs">
+            <div class="rate1 stars1" id="RateUs">
                 <i class="rating__star far fa-star"></i>
                 <i class="rating__star far fa-star"></i>
                 <i class="rating__star far fa-star"></i>
@@ -130,33 +150,33 @@ include 'views/user/LoggedInHeader.php';
 
         <script src="/public/js/CustomerViewUpcomingOrder.js"></script>
         <script src="/public/js/CustomerViewCompletedOrder.js"></script>
-    <script>
-    var ratingLevel = 0;
-    const ratingStars = [...document.getElementsByClassName("rating__star")];
+        <script>
+            var ratingLevel = 0;
+            const ratingStars = [...document.getElementsByClassName("rating__star")];
 
-    function executeRating(stars) {
-        const starClassActive = "rating__star fas fa-star";
-        const starClassInactive = "rating__star far fa-star";
-        const starsLength = stars.length;
+            function executeRating(stars) {
+                const starClassActive = "rating__star fas fa-star";
+                const starClassInactive = "rating__star far fa-star";
+                const starsLength = stars.length;
 
-         let i;
- // stars[1].className = starClassActive
- // stars[2].className = starClassActive
- // stars[3].className = starClassActive
-  //stars[0].className = starClassActive
+                let i;
+                // stars[1].className = starClassActive
+                // stars[2].className = starClassActive
+                // stars[3].className = starClassActive
+                //stars[0].className = starClassActive
 
-    stars.map((star) => {
-         star.onclick = () => {
-         i = stars.indexOf(star);
-         ratingLevel = i;
-         if (star.className===starClassInactive) {
-            for (i; i >= 0; --i) stars[i].className = starClassActive;
-         } else {
-            for (i; i < starsLength; ++i) stars[i].className = starClassInactive;
-       }
-     };
-   });
+                stars.map((star) => {
+                    star.onclick = () => {
+                        i = stars.indexOf(star);
+                        ratingLevel = i;
+                        if (star.className === starClassInactive) {
+                            for (i; i >= 0; --i) stars[i].className = starClassActive;
+                        } else {
+                            for (i; i < starsLength; ++i) stars[i].className = starClassInactive;
+                        }
+                    };
+                });
 
-}
-executeRating(ratingStars);
-    </script>
+            }
+            executeRating(ratingStars);
+        </script>

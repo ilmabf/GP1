@@ -39,6 +39,7 @@ function getVehicle() {
 insertCookie();
 getVehicle();
 
+//check if date, price and vehicle details are complete
 function checkDetails() {
   var slash = document.getElementById("slash1").innerHTML;
   var price = document.getElementById("priceValue").innerHTML;

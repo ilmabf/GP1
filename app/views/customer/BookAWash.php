@@ -43,7 +43,29 @@ $booked = $_SESSION['booked'];
             <div class="select-vehicle">
                 <h3>Select your vehicle</h3>
 
-                <div class="select-vehcile-box">
+                <?php
+                if (sizeof($_SESSION['vehicles']) == 0) {
+                    echo "<p style = 'font-size:initial;'>Please add your vehicle/s in your account page.</p>";
+                    echo "<br>";
+                    echo "<a style = 'font-size:initial; color:#085394;' href = '/account/'>Go to My Account</a>";
+                } else {
+                    echo "<div class='select-vehcile-box'>";
+                    echo "<select name='vehicle' id='vehicles' onchange='getVehicle();'>";
+                    $count = 0;
+                    while ($count < sizeof($_SESSION['vehicles'])) {
+                        echo "<option value='";
+                        echo $vehicles[$count]['VID'];
+                        echo "'>";
+                        echo $vehicles[$count]['VID'];
+                        echo "</option>";
+                        $count = $count + 1;
+                    }
+                    echo "</select>";
+                    echo "</div>";
+                }
+                ?>
+
+                <!-- <div class="select-vehcile-box">
                     <form action="" method="post">
                         <select name="vehicle" id="vehicles" onchange="getVehicle();">
                             <?php
@@ -59,7 +81,7 @@ $booked = $_SESSION['booked'];
                             ?>
                         </select>
                     </form>
-                </div>
+                </div> -->
             </div>
 
             <div class="wash-type">
@@ -217,7 +239,8 @@ $booked = $_SESSION['booked'];
                     i === new Date().getDate() &&
                     date.getMonth() === new Date().getMonth()
                 ) {
-                    days += `<div class="today"><span class="today-1" style = "color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">${i}</span><br>`;
+                    days +=
+                        `<div class="today"><span class="today-1" style = "color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">${i}</span><br>`;
                     flag1 = 0;
                     flag2 = 0;
                     for (a = 1; a <= 5; a++) {
@@ -227,7 +250,8 @@ $booked = $_SESSION['booked'];
                             // split the key by '-'
                             var keyArr = key.split("-");
                             // turn the keyArr values to string
-                            if (keyArr[0] === date.getFullYear().toString() && keyArr[1] === monthStr && keyArr[2] === i.toString() && timeSlotsArr[a - 1] === booked[key]) {
+                            if (keyArr[0] === date.getFullYear().toString() && keyArr[1] === monthStr && keyArr[2] === i
+                                .toString() && timeSlotsArr[a - 1] === booked[key]) {
                                 days +=
                                     `
                                             <span class="time-red" id = "slot1" onclick="getTimeAndDate(` +
@@ -258,7 +282,8 @@ $booked = $_SESSION['booked'];
                     days += `</div>`;
 
                 } else {
-                    days += `<div><span class="today-2" style = "color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">${i}</span><br>`;
+                    days +=
+                        `<div><span class="today-2" style = "color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">${i}</span><br>`;
                     for (a = 1; a <= 5; a++) {
                         flag2 = 0;
                         // days += `<div>`;
@@ -267,7 +292,8 @@ $booked = $_SESSION['booked'];
                             var keyArr = key.split("-");
                             // turn the keyArr values to string
 
-                            if (keyArr[0] === date.getFullYear().toString() && keyArr[1] === monthStr && keyArr[2] === i.toString() && timeSlotsArr[a - 1] === booked[key]) {
+                            if (keyArr[0] === date.getFullYear().toString() && keyArr[1] === monthStr && keyArr[2] === i
+                                .toString() && timeSlotsArr[a - 1] === booked[key]) {
                                 days +=
                                     `
                                             <span class="time-red" id = "slot1" onclick="getTimeAndDate(` +
@@ -375,6 +401,7 @@ $booked = $_SESSION['booked'];
                 var d1 = Date.parse(todayDate);
                 var d2 = Date.parse(selectedDate);
                 if (d2 > d1 && t != "booked") {
+                    //display selected date
                     document.getElementById("day").innerHTML = "Date: " + date;
                     document.getElementById("month").innerHTML = month;
                     document.getElementById("year").innerHTML = year;
@@ -401,6 +428,7 @@ $booked = $_SESSION['booked'];
         var pausecontent = <?php echo json_encode($_SESSION['washpackages']); ?>;
         var vehicles = <?php echo json_encode($_SESSION['vehicles']); ?>;
         var prices = <?php echo json_encode($_SESSION['servicePrice']); ?>;
+        document.getElementById("priceValue").innerHTML = "";
 
         function getType(x) {
             var i = 0;

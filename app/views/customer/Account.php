@@ -33,7 +33,7 @@
             <br>
             <label for="Color" style="padding: 0px 139px 0px 0px;">Color</label>
             <!-- <input type="color" name="color" required> -->
-            <select name="color" class="myColorTypes" id="editMyColor" style="margin: 10px 0px;">
+            <select name="color" class="myColorTypes" id="editMyColor" style="margin: 10px 0px;     width: 50%;">
                 <option value="Silver">Silver</option>
                 <option value="White">White</option>
                 <option value="Blue">Blue</option>
@@ -79,7 +79,7 @@
             <br>
             <label for="Color" style="padding: 0px 139px 0px 0px;">Color</label>
             <!-- <input type="color" id="editColor" name="color" required> -->
-            <select name="color" class="colorTypes" id="editColor" style="margin: 10px 0px;">
+            <select name="color" class="colorTypes" id="editColor" style="margin: 10px 0px;     width: 50%;">
                 <option value="Silver">Silver</option>
                 <option value="White">White</option>
                 <option value="Blue">Blue</option>
@@ -167,7 +167,7 @@
 
             </div>
         </div> <br>
-        <div class="account-det1">
+        <div class="account-det1" style="width: 250px;">
             <div class="account-header2"><b>My Vehicles</b>
                 <div class="carIcon"></div>
             </div>
@@ -191,17 +191,18 @@
             </div>
 
             <div class="vehicle-box">
-                <div class="btn2" onclick="openEditVehicleForm()" id="editbtn"><i class="fas fa-pencil-alt"></i></div>
+                <div class="btn2" onclick="openEditVehicleForm()" id="editbtn"></div>
                 <div id="vehicleDetails"></div>
                 <?php if (count($vehicles) > 0) { ?>
                     <span style="font-size: small;text-align: center;">
-                        <p><a href="/booking/details">Click here to make a booking!</a></p>
+                        <p style="font-size: larger;"><a style="color: red;" href="/booking/details">Proceed to booking!</a>
+                        </p>
                     </span>
                 <?php } ?>
             </div><br>
 
         </div>
-        <div class="account-det2">
+        <div class="account-det2" style="    width: 250px;">
             <div class="account-header2"><b>My Locations</b>
                 <div class="locationIcon"></div>
             </div>
@@ -225,9 +226,10 @@
             </div>
 
             <div class="map-box">
-                <div class="btn3" onclick="openDeleteAddress()" style="z-index:10;"><i class="fas fa-pencil-alt"></i></div>
-                <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.8229579296126!2d80.50619191725059!3d7.373730722101816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae341aee58e2aad%3A0xc15b721347b882fb!2sMalwathugoda%20Auto%20Service%20Station!5e0!3m2!1sen!2slk!4v1629713877312!5m2!1sen!2slk" width="100%" height="100%" style="border:0; border-radius: 27px;" allowfullscreen="" loading="lazy"></iframe> -->
-                <div id="googleMap" style="border:0; border-radius: 27px; width:100%;height:100%;"></div>
+                <div class="btn3" id="editMapBtn" onclick="openDeleteAddress()" style="z-index:10;">
+                </div>
+                <div id="googleMap" style="border:0; border-radius: 27px; width:100%;height:100%; ">
+                </div>
             </div><br>
         </div>
     </div>
@@ -240,7 +242,7 @@
         var x = document.getElementById("Customer-Vehicles").value;
         //set vehicle details on the vehicle box
         document.getElementById("vehicleModel").innerHTML = pausecontent[x - 1]['Model'];
-        document.getElementById("vehicleColor").style.backgroundColor = pausecontent[x - 1]['Colour'];
+        document.getElementById("vehicleColor").innerHTML = pausecontent[x - 1]['Colour'];
         document.getElementById("vehicleT").innerHTML = pausecontent[x - 1]['Type'];
         document.getElementById("vehicleManufacturer").innerHTML = pausecontent[x - 1]['Manufacturer'];
 
@@ -255,34 +257,59 @@
         document.getElementById("editType").value = pausecontent[x - 1]['Type'];
         document.getElementById("editManufacturer").placeholder = pausecontent[x - 1]['Manufacturer'];
     }
-    getVehicleDetails();
+
 
     var addresses = <?php echo json_encode($_SESSION['address']); ?>;
 
     function myMap() {
-        var lat = 7.2905715;
-        var lng = 80.6337262;
+        // var lat = 7.2905715;
+        // var lng = 80.6337262;
         if (addresses.length > 0) {
             var x = document.getElementById("Customer-Address").value;
             lat = addresses[x - 1]['Latitude'];
             lng = addresses[x - 1]['Longitude'];
-        }
-        var mapProp = {
-            center: new google.maps.LatLng(lat, lng),
-            zoom: 10,
-        };
 
-        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-        marker = new google.maps.Marker({
-            map,
-        });
-        latlng = new google.maps.LatLng(lat, lng);
-        marker.setPosition(latlng);
+            var mapProp = {
+                center: new google.maps.LatLng(lat, lng),
+                zoom: 10,
+            };
+
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+            marker = new google.maps.Marker({
+                map,
+            });
+            latlng = new google.maps.LatLng(lat, lng);
+            marker.setPosition(latlng);
+            document.getElementById("editMapBtn").innerHTML = "<a><i class='fas fa-pencil-alt'</i></a>";
+        } else {
+            document.getElementById("googleMap").style =
+                "background-color: whitesmoke; margin-top: 5px; text-align:center; width: 100% ; height: 100% ; border-radius:27px;  line-height: 230px;";
+            document.getElementById("googleMap").innerHTML = "Add your locations here";
+
+        }
         // marker.setMap(map);
     }
 </script>
 <script src="/public/js/Maps.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxvVN9pPMljGjWLvUGWGisQwGUUMSOHco&callback=myMap&v=weekly"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxvVN9pPMljGjWLvUGWGisQwGUUMSOHco&callback=myMap&v=weekly">
+</script>
 <script async>
     initMap();
+</script>
+
+<script>
+    //if there are vehicles display details. Else display message to add vehicles.
+    function checkVehicleBox() {
+        if (pausecontent.length == 0) {
+            var myDiv = document.getElementById("vehicleDetails");
+            myDiv.outerHTML =
+                "<div id = 'vehicleDetails' style = 'text-align:center; margin-top:5px; line-height: 175px;'> Add your vehicles here </div>";
+        } else {
+            document.getElementById("editbtn").innerHTML = "<a><i class='fas fa-pencil-alt'</i></a>";
+            display();
+            getVehicleDetails();
+        }
+    }
+
+    checkVehicleBox();
 </script>

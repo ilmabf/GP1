@@ -8,6 +8,18 @@ $washPackageDetails = $_SESSION['washpackage'];
 $stlDetails = $_SESSION['stlDetails'];
 $reservationCancel = $_SESSION['cancelReservation'];
 ?>
+<style>
+    table,
+    tr {
+        border: hidden;
+    }
+
+    td,
+    th {
+        border: hidden;
+    }
+</style>
+
 <div class="bgImage">
     <div class="addVehicleform" id="stldetails">
         <div class="forma">
@@ -41,10 +53,20 @@ $reservationCancel = $_SESSION['cancelReservation'];
     <div style="min-height: 110px;"></div>
 
     <div id="upcoming">
-        <p style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff; text-align:center">You can only cancel/reschedule up until 24 hours before the reserved time</p><br>
+        <p style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff; text-align:center">You can only
+            cancel/reschedule up until 24 hours before the reserved time</p><br>
         <div class="box3">
 
-            <div class="invoiceBorder">Order - <?php echo $orderDetails[0]['Reservation_ID'] ?></div>
+            <div class="invoiceBorder">Order - <?php
+                                                if (strlen($orderDetails[0]['Reservation_ID']) == 1) {
+                                                    echo "000" . $orderDetails[0]['Reservation_ID'];
+                                                } else if (strlen($orderDetails[0]['Reservation_ID']) == 2) {
+                                                    echo "00" . $orderDetails[0]['Reservation_ID'];
+                                                } else if (strlen($orderDetails[0]['Reservation_ID']) == 3) {
+                                                    echo "0" . $orderDetails[0]['Reservation_ID'];
+                                                } else {
+                                                    echo $orderDetails[0]['Reservation_ID'];
+                                                } ?></div>
 
             <div class="box2">
                 <section class="">
@@ -60,7 +82,8 @@ $reservationCancel = $_SESSION['cancelReservation'];
                             </tr>
                             <tr>
                                 <td style="text-align:left; color:#193498; font-weight:bold">Location</td>
-                                <td style="font-size: 12px;text-align:left"><?php echo $orderDetails[0]['Address'] ?></td>
+                                <td style="font-size: 12px;text-align:left"><?php echo $orderDetails[0]['Address'] ?>
+                                </td>
                             </tr>
                             <tr>
                                 <td colspan="2">
@@ -88,7 +111,7 @@ $reservationCancel = $_SESSION['cancelReservation'];
                                 <td style="text-align:left"><?php echo $washPackageDetails[0]['Name'] ?></td>
                             </tr>
                             <tr>
-                                <td style="text-align:left; color:#193498; font-weight:bold">Total Price Rs</td>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Service Charge Rs</td>
                                 <td style="text-align:left"><?php echo $orderDetails[0]['Total_price'] ?>/-</td>
                             </tr>
                         </tbody>
@@ -146,7 +169,8 @@ $reservationCancel = $_SESSION['cancelReservation'];
                 </div> -->
                 <hr>
                 <hr>
-                <span style="font-size:smaller; display: table; margin: auto; margin-top:10px;">Malwathugoda Auto Service, Kaudella, Galagedara.</span>
+                <span style="font-size:smaller; display: table; margin: auto; margin-top:10px;">Malwathugoda Auto
+                    Service, Kaudella, Galagedara.</span>
                 <span style="font-size:smaller; display: table; margin: auto; margin-top:10px;">WandiWash</span>
             </div>
 
