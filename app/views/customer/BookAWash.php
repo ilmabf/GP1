@@ -8,16 +8,16 @@ $booked = $_SESSION['booked'];
 <link rel="stylesheet" href="/public/css/actors/customer/BookAWashCalendar.css" />
 
 <body onload="typeWriter(0)">
-    
+
     <div style="min-height: 110px;"></div>
     <div id="bookingContent">
         <div>
             <div class="heading">
                 <h2 style="font-size: 30px;">Start Your Booking!</h2>
             </div>
-            <div id = "xx"></div>
+            <div id="xx"></div>
             <p id="sub-heading-p" style="font-size: 15px;"></p>
-            <div id = "completeMsg" style="text-align:center; color:red; margin-top:10px;"></div>
+            <div id="completeMsg" style="text-align:center; color:red; margin-top:10px;"></div>
         </div>
         <div class="dateTime">
             <div class="wash-date">
@@ -28,9 +28,9 @@ $booked = $_SESSION['booked'];
                 </div>
                 <div id="selected">
                     <span id="day"></span>
-                    <span id = "slash1">  </span>
+                    <span id="slash1"> </span>
                     <span id="month"></span>
-                    <span id = "slash2">  </span>
+                    <span id="slash2"> </span>
                     <span id="year"></span>
                     <div id="timeSlot"></div>
                 </div>
@@ -105,10 +105,10 @@ $booked = $_SESSION['booked'];
         </div>
         <div id="dd"></div>
         <div class="next-pg">
-            <span class="priceBox" style = "display:none;"id="priceValue"></span>
+            <span class="priceBox" style="display:none;" id="priceValue"></span>
             <button class="next-button" onclick="checkDetails();">Next</button>
 
-                <!-- <a href="/booking/location" style="color: white;">Next</a></button> -->
+            <!-- <a href="/booking/location" style="color: white;">Next</a></button> -->
         </div>
     </div>
 
@@ -364,33 +364,33 @@ $booked = $_SESSION['booked'];
                 //         z.classList.remove("blurCalendar");
                 //     }
                 // } else {
-                    const monthNames = ["January", "February", "March", "April", "May", "June",
-                        "July", "August", "September", "October", "November", "December"
-                    ];
-                    const mm = monthNames[today.getMonth()];
-                    const dd = String(today.getDate()).padStart(2, '0');
-                    const yyyy = today.getFullYear();
-                    var todayDate = today.getFullYear() + "-" + parseInt(today.getMonth() + 1) + "-" + today.getDate();
+                const monthNames = ["January", "February", "March", "April", "May", "June",
+                    "July", "August", "September", "October", "November", "December"
+                ];
+                const mm = monthNames[today.getMonth()];
+                const dd = String(today.getDate()).padStart(2, '0');
+                const yyyy = today.getFullYear();
+                var todayDate = today.getFullYear() + "-" + parseInt(today.getMonth() + 1) + "-" + today.getDate();
 
-                    var d1 = Date.parse(todayDate);
-                    var d2 = Date.parse(selectedDate);
-                    if (d2 > d1 && t != "booked") {
-                        document.getElementById("day").innerHTML = "Date: " + date;
-                        document.getElementById("month").innerHTML = month;
-                        document.getElementById("year").innerHTML = year;
-                        document.getElementById("timeSlot").innerHTML = "Time: " + time;
-                        document.getElementById("slash1").innerHTML = "/";
-                        document.getElementById("slash2").innerHTML = "/";
+                var d1 = Date.parse(todayDate);
+                var d2 = Date.parse(selectedDate);
+                if (d2 > d1 && t != "booked") {
+                    document.getElementById("day").innerHTML = "Date: " + date;
+                    document.getElementById("month").innerHTML = month;
+                    document.getElementById("year").innerHTML = year;
+                    document.getElementById("timeSlot").innerHTML = "Time: " + time;
+                    document.getElementById("slash1").innerHTML = "/";
+                    document.getElementById("slash2").innerHTML = "/";
 
-                        document.cookie = "day = " + date + ";path=/";
-                        document.cookie = "month = " + month + ";path=/";
-                        document.cookie = "year = " + year + ";path=/";
-                        document.cookie = "time = " + time + ";path=/";
-                        
-                        document.getElementById("cal1").style = "display:none;";
-                        var z = document.getElementById("bookingContent");
-                        z.classList.remove("blurCalendar");
-                    }
+                    document.cookie = "day = " + date + ";path=/";
+                    document.cookie = "month = " + month + ";path=/";
+                    document.cookie = "year = " + year + ";path=/";
+                    document.cookie = "time = " + time + ";path=/";
+
+                    document.getElementById("cal1").style = "display:none;";
+                    var z = document.getElementById("bookingContent");
+                    z.classList.remove("blurCalendar");
+                }
                 // }
             }
 
