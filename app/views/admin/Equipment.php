@@ -57,8 +57,8 @@ $teams = $_SESSION['teamDetails'];
         <table id="ItemTable">
           <thead>
             <tr>
-              <th data-type="text">Category ID</th>
-              <th data-type="text">Name</th>
+              <th data-type="text">ID</th>
+              <th data-type="text">Category</th>
               <th data-type="text">Total</th>
               <th data-type="text">Free</th>
               <th colspan="2" style="text-align: center;">Action</th>
@@ -116,13 +116,14 @@ $teams = $_SESSION['teamDetails'];
           </div>
         </div>
         <table id="viewAsTable">
+          <h id="CategoryNameAll" style="text-align: center;display: block;color: #085394;font-weight: bold;margin-bottom: 5px;font-size: x-large;"></h>
           <thead>
             <tr>
               <th data-type="text">Equipment ID</th>
-              <th data-type="text">Name</th>
+              <!-- <th data-type="text">Name</th> -->
               <th data-type="text">Price</th>
               <th data-type="text">Date Acquired</th>
-              <th data-type="text">Team</th>
+              <th data-type="text">Allocated to Team</th>
               <th colspan="2" style="text-align: center;">Action</th>
             </tr>
           </thead>
@@ -145,13 +146,14 @@ $teams = $_SESSION['teamDetails'];
           </div>
         </div>
         <table>
+          <h id="CategoryNameFree" style="text-align: center;display: block;color: #085394;font-weight: bold;margin-bottom: 5px;font-size: x-large;"></h>
           <thead>
             <tr>
               <th data-type="text">Equipment ID</th>
-              <th data-type="text">Name</th>
+              <!-- <th data-type="text">Name</th> -->
               <th data-type="text">Price</th>
               <th data-type="text">Date Acquired</th>
-              <th data-type="text">Team</th>
+              <th data-type="text">Allocated to Team</th>
               <th colspan="2" style="text-align: center;">Action</th>
             </tr>
           </thead>
@@ -174,13 +176,14 @@ $teams = $_SESSION['teamDetails'];
           </div>
         </div>
         <table>
+          <h id="TeamName" style="text-align: center;display: block;color: #085394;font-weight: bold;margin-bottom: 5px;font-size: x-large;"></h>
           <thead>
             <tr>
               <th data-type="text">Equipment ID</th>
-              <th data-type="text">Name</th>
+              <th data-type="text">Category</th>
               <th data-type="text">Price</th>
               <th data-type="text">Date Acquired</th>
-              <th data-type="text">Team</th>
+              <!-- <th data-type="text">Team</th> -->
               <th colspan="2" style="text-align: center;">Action</th>
             </tr>
           </thead>
@@ -205,7 +208,7 @@ $teams = $_SESSION['teamDetails'];
           <thead>
             <tr>
               <th data-type="text">Equipment ID</th>
-              <th data-type="text">Name</th>
+              <th data-type="text">Category</th>
               <th data-type="text">Price</th>
               <th data-type="text">Date Acquired</th>
               <th data-type="text">Team</th>
@@ -238,7 +241,8 @@ $teams = $_SESSION['teamDetails'];
       if (equipment[i]['Item_Id'] == n) {
         var TempEq = [];
         TempEq['Equipment_ID'] = equipment[i]['Equipment_ID'];
-        TempEq['Name'] = equipment[i]['Name'];
+        // TempEq['Name'] = equipment[i]['Name'];
+        document.getElementById("CategoryNameAll").innerHTML = equipment[i]['Name'];
         TempEq['Price'] = equipment[i]['Price'];
         TempEq['Date_Acquired'] = equipment[i]['Date_Acquired'];
         TempEq['Team'] = equipment[i]['Team'];
@@ -247,22 +251,33 @@ $teams = $_SESSION['teamDetails'];
       }
     }
 
+    // "<td style='text-align:left' class='td-t1'> " + EquipmentToDisplay[j]['Name'] + " </td>" +
     var x = document.getElementById("Equipment");
     console.log(EquipmentToDisplay);
     for (j = 0; j < EquipmentToDisplay.length; j++) {
-      x.innerHTML += "<tr id='rowNo" + j + "'>" +
-
-        "<td>" + EquipmentToDisplay[j]['Equipment_ID'] + "</td>" +
-        "<td style='text-align:left' class='td-t1'> " + EquipmentToDisplay[j]['Name'] + " </td>" +
-        "<td class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Price'] + ".00</td>" +
-        "<td class='td-t1'>" + EquipmentToDisplay[j]['Date_Acquired'] + "</td>" +
-        "<td id='assignedTeam_row" + j + "' class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Team'] + "</td>" +
-        "<td> <input type='button' id='edit_equip_btn" + j + "' class='edit_btn td-t1' value='Assign a Team' onclick='editEquipment(" + j + ")'>" +
-        "<a href='' id='editLink" + j + "'><input style='margin: auto;' type='submit' id='save_equip_btn" + j + "' class='save_btn' value='Save' onclick='saveEquipment(" + EquipmentToDisplay[j]['Equipment_ID'] + "," + j + ")'></a>" +
-        "</td> <td><a href='/service/deleteEquipment/" + EquipmentToDisplay[j]['Equipment_ID'] + "'> <input type='button' class='del_btn td-t1' value='Delete' onclick='deleteEquipment(" + j + ")'></a></td>" +
-        "</tr>" +
-        "</tbody>";
+      if (EquipmentToDisplay[j]['Team'] == null) {
+        x.innerHTML += "<tr id='rowNo" + j + "'>" +
+          "<td>" + EquipmentToDisplay[j]['Equipment_ID'] + "</td>" +
+          "<td class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Price'] + ".00</td>" +
+          "<td class='td-t1'>" + EquipmentToDisplay[j]['Date_Acquired'] + "</td>" +
+          "<td id='assignedTeam_row" + j + "' class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Team'] + "</td><td>" +
+          "<input type='button' id='edit_equip_btn" + j + "' class='edit_btn td-t1' value='Assign a Team' onclick='editEquipment(" + j + ")'>" +
+          "<a href='' id='editLink" + j + "'><input style='margin: auto;' type='submit' id='save_equip_btn" + j + "' class='save_btn' value='Save' onclick='saveEquipment(" + EquipmentToDisplay[j]['Equipment_ID'] + "," + j + ")'></a>" +
+          "<a href='/service/deleteEquipment/" + EquipmentToDisplay[j]['Equipment_ID'] + "'> <input type='button' class='del_btn td-t1' value='Delete' onclick='deleteEquipment(" + j + ")'></a></td>" +
+          "</tr>";
+      } else {
+        x.innerHTML += "<tr id='rowNo" + j + "'>" +
+          "<td>" + EquipmentToDisplay[j]['Equipment_ID'] + "</td>" +
+          "<td class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Price'] + ".00</td>" +
+          "<td class='td-t1'>" + EquipmentToDisplay[j]['Date_Acquired'] + "</td>" +
+          "<td id='assignedTeam_row" + j + "' class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Team'] + "</td><td>" +
+          "<input type='button' id='edit_equip_btn" + j + "' class='edit_btn td-t1' value='Mark as returned' onclick='markAsReturned(" + EquipmentToDisplay[j]['Equipment_ID'] + ")'>" +
+          "<a href='/service/deleteEquipment/" + EquipmentToDisplay[j]['Equipment_ID'] + "'> <input type='button' class='del_btn td-t1' value='Delete' onclick='deleteEquipment(" + j + ")'></a></td>" +
+          "</tr>";
+      }
     }
+    x.innerHTML += "</tbody>";
+    console.log(x.innerHTML);
     var y = document.getElementById("viewAllitems");
     y.style.display = "none";
     document.getElementById("viewAllequip").style = "display:flex;";
@@ -278,7 +293,8 @@ $teams = $_SESSION['teamDetails'];
       if (equipment[i]['Item_Id'] == n && equipment[i]['Team'] == null) {
         var TempEq = [];
         TempEq['Equipment_ID'] = equipment[i]['Equipment_ID'];
-        TempEq['Name'] = equipment[i]['Name'];
+        // TempEq['Name'] = equipment[i]['Name'];
+        document.getElementById("CategoryNameFree").innerHTML = equipment[i]['Name'];
         TempEq['Price'] = equipment[i]['Price'];
         TempEq['Date_Acquired'] = equipment[i]['Date_Acquired'];
         TempEq['Team'] = equipment[i]['Team'];
@@ -286,12 +302,12 @@ $teams = $_SESSION['teamDetails'];
       }
     }
 
+    // "<td style='text-align:left' class='td-t1'> " + EquipmentToDisplay[j]['Name'] + " </td>" +
     var x = document.getElementById("FreeEquipment");
     for (j = 0; j < EquipmentToDisplay.length; j++) {
       x.innerHTML += "<tr id='rowNo" + j + "'>" +
 
         "<td>" + EquipmentToDisplay[j]['Equipment_ID'] + "</td>" +
-        "<td style='text-align:left' class='td-t1'> " + EquipmentToDisplay[j]['Name'] + " </td>" +
         "<td class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Price'] + ".00</td>" +
         "<td class='td-t1'>" + EquipmentToDisplay[j]['Date_Acquired'] + "</td>" +
         "<td id='assignedTeam_row" + j + "' class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Team'] + "</td>" +
@@ -331,7 +347,8 @@ $teams = $_SESSION['teamDetails'];
         TempEq['Name'] = equipment[i]['Name'];
         TempEq['Price'] = equipment[i]['Price'];
         TempEq['Date_Acquired'] = equipment[i]['Date_Acquired'];
-        TempEq['Team'] = equipment[i]['Team'];
+        // TempEq['Team'] = equipment[i]['Team'];
+        document.getElementById("TeamName").innerHTML = "Equipment assigned to Team " + equipment[i]['Team'];
         EquipmentToDisplay.push(TempEq);
       }
     }
@@ -344,9 +361,10 @@ $teams = $_SESSION['teamDetails'];
         "<td style='text-align:left' class='td-t1'> " + EquipmentToDisplay[j]['Name'] + " </td>" +
         "<td class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Price'] + ".00</td>" +
         "<td class='td-t1'>" + EquipmentToDisplay[j]['Date_Acquired'] + "</td>" +
-        "<td id='assignedTeam_row" + j + "' class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Team'] + "</td>" +
-        "<td> <input type='button' id='edit_equip_btn" + j + "' class='edit_btn td-t1' value='Assign a Team' onclick='editEquipment(" + j + ")'>" +
-        "<a href='' id='editLink" + j + "'><input style='margin: auto;' type='submit' id='save_equip_btn" + j + "' class='save_btn' value='Save' onclick='saveEquipment(" + EquipmentToDisplay[j]['Equipment_ID'] + "," + j + ")'></a>" +
+        // "<td id='assignedTeam_row" + j + "' class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Team'] + "</td>" +
+        // "<td> <input type='button' id='edit_equip_btn" + j + "' class='edit_btn td-t1' value='Assign a Team' onclick='editEquipment(" + j + ")'>" +
+        "<td><input type='button' id='edit_equip_btn" + j + "' class='edit_btn td-t1' value='Mark as returned' onclick='markAsReturned(" + EquipmentToDisplay[j]['Equipment_ID'] + ")'>" +
+        // "<a href='' id='editLink" + j + "'><input style='margin: auto;' type='submit' id='save_equip_btn" + j + "' class='save_btn' value='Save' onclick='saveEquipment(" + EquipmentToDisplay[j]['Equipment_ID'] + "," + j + ")'></a>" +
         "</td> <td><a href='/service/deleteEquipment/" + EquipmentToDisplay[j]['Equipment_ID'] + "'> <input type='button' class='del_btn td-t1' value='Delete' onclick='deleteEquipment(" + j + ")'></a></td>" +
         "</tr>" +
         "</tbody>";
@@ -383,8 +401,9 @@ $teams = $_SESSION['teamDetails'];
         "<td class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Price'] + ".00</td>" +
         "<td class='td-t1'>" + EquipmentToDisplay[j]['Date_Acquired'] + "</td>" +
         "<td id='assignedTeam_row" + j + "' class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Team'] + "</td>" +
-        "<td> <input type='button' id='edit_equip_btn" + j + "' class='edit_btn td-t1' value='Assign a Team' onclick='editEquipment(" + j + ")'>" +
-        "<a href='' id='editLink" + j + "'><input style='margin: auto;' type='submit' id='save_equip_btn" + j + "' class='save_btn' value='Save' onclick='saveEquipment(" + EquipmentToDisplay[j]['Equipment_ID'] + "," + j + ")'></a>" +
+        // "<td> <input type='button' id='edit_equip_btn" + j + "' class='edit_btn td-t1' value='Assign a Team' onclick='editEquipment(" + j + ")'>" +
+        "<td><input type='button' id='edit_equip_btn" + j + "' class='edit_btn td-t1' value='Mark as returned' onclick='markAsReturned(" + EquipmentToDisplay[j]['Equipment_ID'] + ")'>" +
+        // "<a href='' id='editLink" + j + "'><input style='margin: auto;' type='submit' id='save_equip_btn" + j + "' class='save_btn' value='Save' onclick='saveEquipment(" + EquipmentToDisplay[j]['Equipment_ID'] + "," + j + ")'></a>" +
         "</td> <td><a href='/service/deleteEquipment/" + EquipmentToDisplay[j]['Equipment_ID'] + "'> <input type='button' class='del_btn td-t1' value='Delete' onclick='deleteEquipment(" + j + ")'></a></td>" +
         "</tr>" +
         "</tbody>";
