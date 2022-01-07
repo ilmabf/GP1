@@ -26,15 +26,56 @@ class Booking extends Controller
         $this->view->render('customer/BookAWash');
     }
 
+    function rescheduleDetails($orderID)
+    {
+
+        // today
+        $today = date("Y-m-d");
+
+        // get date and time of reservation
+        $reservation = $this->model->getReservationDetails($orderID);
+        $_SESSION['reservationDetails'] = $reservation;
+        $date = $reservation[0]['Date'];
+
+        if ($_SESSION['role'] == "customer") {
+            // if different of reservation time is more than 24 hours from today date time then delete reservation
+            if (strtotime($date) - strtotime($today) > 86400) {
+                $_SESSION['vehicles'] = $this->model->getVehicles($_SESSION['userDetails'][0]['User_ID']);
+                $_SESSION['address'] = $this->model->getAddress($_SESSION['userDetails'][0]['User_ID']);
+                $_SESSION['washpackages'] = $this->model->getWashPackage();
+                $_SESSION['servicePrice'] = $this->model->getServicePrice();
+                $_SESSION['booked'] = $this->model->getBookedDates();
+                $_SESSION['rescheduleID'] = $orderID;
+                $this->view->render('customer/Reschedule');
+            } else {
+                // session to display cannot cancel reservation
+                $_SESSION['cancelReservation'] = "cannot";
+                header("Location: /booking/upcomingOrder/" . $orderID);
+            }
+        }
+    }
+
     //get location for booking
     function location()
     {
         $this->view->render('customer/BookAWash2');
     }
 
+    function rescheduleLocation($orderID)
+    {
+        $_SESSION['rescheduleID'] = $orderID;
+        $this->view->render('customer/Reschedule2');
+    }
+
     function orderSummary()
     {
         $this->view->render('customer/OrderSummary');
+    }
+
+    function orderRescheduleSummary($orderID)
+    {
+        $_SESSION['rescheduleID'] = $orderID;
+        $this->view->render('customer/RescheduleSummary');
     }
 
     function reschedule()
@@ -181,6 +222,72 @@ class Booking extends Controller
 
             if ($mail->mailto($subject, $_SESSION['userDetails'][0]['Email'], $body)) {
                 header("Location: /user/home");
+            }
+        }
+    }
+
+    function updateReservation($details, $orderID)
+    {
+        if ($_SESSION['role'] == "customer") {
+            // echo $details;
+            $details = str_replace('_', ' ', $details);
+            $details = str_replace('|', '/', $details);
+            // echo $details;
+            $details = explode(';', $details);
+
+            for ($i = 0; $i < sizeof($details); $i++) {
+                if (strncmp($details[$i], " day", 4) == 0) {
+                    $day = substr($details[$i], 5);
+                } else if (strncmp($details[$i], " month", 6) == 0) {
+                    $month = substr($details[$i], 7);
+                } else if (strncmp($details[$i], " year", 5) == 0) {
+                    $year = substr($details[$i], 6);
+                } else if (strncmp($details[$i], " time", 5) == 0) {
+                    $time = substr($details[$i], 6);
+                } else if (strncmp($details[$i], " vehicle", 8) == 0) {
+                    $vehicle = substr($details[$i], 9);
+                } else if (strncmp($details[$i], " washPackageName", 16) == 0) {
+                    $washPackageName = substr($details[$i], 17);
+                } else if (strncmp($details[$i], " washPackage", 12) == 0) {
+                    $washPackage = substr($details[$i], 13);
+                } else if (strncmp($details[$i], " price", 6) == 0) {
+                    $price = substr($details[$i], 7);
+                } else if (strncmp($details[$i], " total", 6) == 0) {
+                    $total = substr($details[$i], 7);
+                } else if (strncmp($details[$i], " address", 8) == 0) {
+                    $address = substr($details[$i], 9);
+                } else if (strncmp($details[$i], " latitude", 9) == 0) {
+                    $latitude = substr($details[$i], 10);
+                } else if (strncmp($details[$i], " longitude", 10) == 0) {
+                    $longitude = substr($details[$i], 11);
+                }
+            }
+
+            $date = $year . "-" . $month . "-" . $day;
+
+            $reservationDetails = array($vehicle, $address, $latitude, $longitude, $price, $total, $washPackage, $date, $time, $_SESSION['userDetails'][0]['User_ID']);
+            if ($this->model->UpdateReservation($orderID, $reservationDetails)) {
+
+                $mail = new Mailer();
+
+                $output = '<p>Dear customer,</p>';
+                $output .= '<p>Thank you for using WandiWash!</p>';
+                $output .= '<p>You have reschedule a reservation on ' . $date . ' with the following details.</p>';
+                $output .= '<p>Vehicle - ' . $vehicle . '</p>';
+                $output .= '<p>Wash Package - ' . $washPackageName . '</p>';
+                $output .= '<p>Location - ' . $address . '</p>';
+                $output .= '<p></p>';
+                $output .= '<p>Service Price - Rs.' . $price . '.00</p>';
+                $output .= '<p>Total Price - Rs.' . $total . '.00</p>';
+                $output .= '<p>We will let you know once a service team is assigned for you. Make sure to check your email or your upcoming reservations.</p>';
+                $output .= '<p>Thanks,</p>';
+                $output .= '<p>WandiWash.</p>';
+                $body = $output;
+                $subject = "We received your reservation - wandiwash.com";
+
+                if ($mail->mailto($subject, $_SESSION['userDetails'][0]['Email'], $body)) {
+                    header("Location: /booking/upcoming");
+                }
             }
         }
     }

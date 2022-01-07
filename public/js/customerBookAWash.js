@@ -51,6 +51,17 @@ function checkDetails() {
   }
 }
 
+function checkRescheduleDetails(orderID) {
+  var slash = document.getElementById("slash11").innerHTML;
+  var price = document.getElementById("priceValue1").innerHTML;
+  if (slash != "/" || price == "") {
+    document.getElementById("completeMsg1").innerHTML =
+      "Please make sure the details are complete";
+  } else {
+    window.location = "/booking/rescheduleLocation/" + orderID;
+  }
+}
+
 function insertCookie() {
   var cookieArray = document.cookie.split(";");
   var i = 0;
