@@ -42,7 +42,7 @@ $booked = $_SESSION['booked'];
         <div class="vehicleWash">
             <div class="select-vehicle">
                 <h3>Select your vehicle</h3>
-
+                <!-- <?php print_r($booked);?> -->
                 <?php
                 if (sizeof($_SESSION['vehicles']) == 0) {
                     echo "<p style = 'font-size:initial;'>Please add your vehicle/s in your account page.</p>";
@@ -225,7 +225,7 @@ $booked = $_SESSION['booked'];
 
             }
 
-            var month = date.getMonth() + 1;
+            var month = ("0" + (date.getMonth() + 1)).slice(-2);
             var monthStr = month.toString();
 
             var booked = <?php echo json_encode($booked); ?>;
@@ -250,8 +250,8 @@ $booked = $_SESSION['booked'];
                             // split the key by '-'
                             var keyArr = key.split("-");
                             // turn the keyArr values to string
-                            if (keyArr[0] === date.getFullYear().toString() && keyArr[1] === monthStr && keyArr[2] === i
-                                .toString() && timeSlotsArr[a - 1] === booked[key]) {
+                            if (keyArr[0] === date.getFullYear().toString() && keyArr[1] === monthStr && keyArr[2] === ("0" + (i)).slice(-2).toString()
+                                && timeSlotsArr[a - 1] === booked[key]) {
                                 days +=
                                     `
                                             <span class="time-red" id = "slot1" onclick="getTimeAndDate(` +
@@ -292,8 +292,7 @@ $booked = $_SESSION['booked'];
                             var keyArr = key.split("-");
                             // turn the keyArr values to string
 
-                            if (keyArr[0] === date.getFullYear().toString() && keyArr[1] === monthStr && keyArr[2] === i
-                                .toString() && timeSlotsArr[a - 1] === booked[key]) {
+                            if (keyArr[0] === date.getFullYear().toString() && keyArr[1] === monthStr && keyArr[2] === ("0" + (i)).slice(-2).toString() && timeSlotsArr[a - 1] === booked[key]) {
                                 days +=
                                     `
                                             <span class="time-red" id = "slot1" onclick="getTimeAndDate(` +
