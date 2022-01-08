@@ -45,31 +45,23 @@ class Calendar extends Controller
             exit;
         }
     }
-    function uploadImages()
-    {
-        //User Autherization
-        if ($_SESSION['role'] == "stl") {
-
-            $order_id = $_POST["order_id"];
-            $beforePhoto = $_POST["beforePhoto"];
-            $afterPhoto = $_POST["afterPhoto"];
-
-            if (isset($order_id) && isset($beforePhoto) && isset($afterPhoto)) {
-
-                if ($this->model->uploadImages($order_id, $beforePhoto, $afterPhoto)) {
-                    header("Location: /calendar/stlTodayReservations");
-                }
-            } else {
-                echo "Error";
-            }
-        }
-    }
 
     function completeService($orderID)
     {
         print_r($_SESSION['customer']);
-        if ($_SESSION['role'] == "stl") {
-            if ($this->model->completeOrder($orderID)) {
+        if ($_SESSION['role'] == "stl") { 
+            $check1 = getimagesize($_FILES["beforeServiceImage"]["tmp_name"]);            
+            $check2 = getimagesize($_FILES["afterServiceImage"]["tmp_name"]);
+           
+            if ($check1 !== false && $check2 !== false) {
+                $image1 = $_FILES['beforeServiceImage']['tmp_name'];
+                $imgContent1 = addslashes(file_get_contents($image1));
+                $image2 = $_FILES['afterServiceImage']['tmp_name'];
+                $imgContent2 = addslashes(file_get_contents($image2));
+                
+                $this->model->uploadImages($orderID,$imgContent1,$imgContent2);
+            }
+           if ($this->model->completeOrder($orderID)) {
 
                 $fname = $_SESSION['customer'][0]['First_Name'];
                 $lname = $_SESSION['customer'][0]['Last_Name'];
@@ -104,4 +96,6 @@ class Calendar extends Controller
             }
         }
     }
+    
+    
 }

@@ -167,4 +167,15 @@ class BookingModel extends Model
         $result = $this->db->delete("reservation", "WHERE Reservation_ID = :resID;", ":resID", $resID);
         return $result;
     }
+    function rateService($orderID,$i)
+    {
+        $columns = array("Reservation_ID","Rating");
+        $params = array(":orderID",":i");
+        $values = array($orderID,$i);
+
+        $result = $this->db->update("reservation", $columns, $params, $values, ":i", $i, "WHERE Reservation_ID = :orderID;");
+        return $result;
+
+
+    }
 }

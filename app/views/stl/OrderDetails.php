@@ -116,16 +116,17 @@ $washPackageDetails = $_SESSION['washpackage'];
         </div>
         <div class="service-team" style="background-color:transparent; box-shadow:none;">
 
-            <form action="" method="post" enctype="multipart/form-data">
+            <form action="/calendar/completeService/<?php echo $orderDetails[0]['Reservation_ID'] ?>" method="post" enctype="multipart/form-data">
                 <div class="viewPhotos vp1" style="color:white;">
                     <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Before service</h3>
-                    <input type="file" class="imageFile" name="beforeService" id="beforeService" style="border: 2px solid white;" required>
+                    <input type="file" accept="image/*" class="imageFile" name="beforeServiceImage" id="beforeService" style="border: 2px solid white;" required>
                 </div>
                 <div class="viewPhotos vp2" style="color:white;">
                     <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;"> &nbsp; After service</h3>
-                    <input type="file" class="imageFile" name="afterService" id="afterService" style="border: 2px solid white;" required>
+                    <input type="file" accept="image/*" class="imageFile" name="afterServiceImage" id="afterService" style="border: 2px solid white;" required>
                 </div>
-                <button class="uploadImagesLink" type="submit" value="Upload Images" name="submit" id="completeService"><a href = "/calendar/completeService/<?php echo $orderDetails[0]['Reservation_ID'] ?>"style = "color:white;">Complete Service</a></button>
+                <button class="uploadImagesLink" type="submit" value="Upload Images" name="submit" id="completeService">Complete Service</button>
+                <!--<button class="uploadImagesLink" type="submit" value="Upload Images" name="submit" id="completeService"><a href = "/calendar/completeService/<?php echo $orderDetails[0]['Reservation_ID'] ?>"style = "color:white;">Complete Service</a></button>-->
             </form>
         </div>
         <!-- <div class="box4">
@@ -136,13 +137,6 @@ $washPackageDetails = $_SESSION['washpackage'];
     </div> -->
     </div>
     <!-- <div class="map" id="googleMapbox"> -->
-
-
-    <script>
-        var submitImages = document.getElementById("completeService");
-        var before = document.getElementById("beforeService");
-        var before = document.getElementById("afterService");
-    </script>
 
     <script>
         var orderDetails = <?php echo json_encode($orderDetails); ?>;

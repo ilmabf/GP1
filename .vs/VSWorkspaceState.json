@@ -4,13 +4,13 @@
     "\\app",
     "\\app\\controllers",
     "\\app\\views",
-    "\\app\\views\\admin",
-    "\\app\\views\\stl",
+    "\\app\\views\\customer",
+    "\\app\\views\\manager",
     "\\public",
     "\\public\\css",
     "\\public\\css\\components",
     "\\public\\js"
   ],
-  "SelectedNode": "\\app\\views\\stl\\AssignedOrders.php",
+  "SelectedNode": "\\app\\controllers\\service.php",
   "PreviewInSolutionExplorer": false
 }

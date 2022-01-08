@@ -239,6 +239,17 @@ class Booking extends Controller
             }
         }
     }
+    function rateService($orderID){
+       
+        $i = $_POST["rateStars"];
+       var_dump($i);
+        if ($_SESSION['role'] == "customer") {
+            if($this->model->rateService($orderID, $i)){ 
+                header("Location: /booking/completed");
+            }
+        }
+
+    }
 }
 
 // what is json_encode?
