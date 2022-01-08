@@ -35,12 +35,12 @@ $reservationDetails = $_SESSION['reservationDetails'];
                     $month = $date[1];
                     $day = $date[2];
                     ?>
-                    <span id="day1">Date: <?php echo $day; ?></span>
+                    <span id="day1"><?php echo "Day: " . $day; ?></span>
                     <span id="slash11">/</span>
                     <span id="month1"><?php echo $month; ?></span>
                     <span id="slash22">/</span>
                     <span id="year1"><?php echo $year; ?></span>
-                    <div id="timeSlot1">Time: <?php echo $reservationDetails[0]['Time'] ?></div>
+                    <div id="timeSlot1"><?php echo "Time: ".$reservationDetails[0]['Time'] ?></div>
                 </div>
 
             </div>
