@@ -282,11 +282,14 @@ $result = $_SESSION['employeeDetails'];
 
         <?php
         $result = $_SESSION['stlTableData'];
+        $result1 = $_SESSION['StlAttendanceData'];
         $count = 0;
-        while ($count < sizeof($result)) { ?>
+        while ($count < sizeof($result) - 1) { ?>
+          <?php echo sizeof($result) - 1 ?>
           <div class="row">
             <div class="col-md-4 viewPhotos vp2">
-              <img src="data:image/ . $type . ;base64, <?php echo base64_encode($result[$count]['Photo']); ?>" alt="<?php echo $result[$count]['STL_ID'] ?>" class="img-thumbnail" style="width:30%; border-radius: 8px;">
+              <img src="data:image/png;charset=utf8;base64, <?php echo base64_encode($result[$count]['Photo']); ?>" alt="<?php echo $result1[$count]['First_Name'] ?> <?php echo $result1[$count]['Last_Name'] ?>" class="img-thumbnail" style="width:30%; border-radius: 8px;">
+              <span><?php echo $result1[$count]['First_Name'] ?> <?php echo $result1[$count]['Last_Name'] ?></span>
             </div>
           </div>
         <?php $count = $count + 1;
