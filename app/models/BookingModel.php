@@ -5,9 +5,9 @@ class BookingModel extends Model
     public function getBookedDates()
     {
         $teams = $this->db->select("team", "teamcount", "WHERE countID = '1';");
-        //echo $teams[0][0];
+        // echo $teams[0][0];
         //$stlCount = $_SESSION['rowCount'];
-
+        // echo $teams;
         $selection1 = array("Date", "Time", "count(Reservation_ID) as NoOfBooking");
 
         $groupedSlots = $this->db->select($selection1, "reservation", "GROUP BY Date, Time;");
