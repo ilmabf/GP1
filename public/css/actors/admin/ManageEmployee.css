@@ -68,7 +68,9 @@ tr {
 #adminSearchStl,
 #adminSearchonWorkEmployee,
 #stlonWorkSearch,
-#managerSearchSTL {
+#managerSearchSTL,
+#managerSearchUpcomingReservations,
+#managerSearchCompletedReservations {
   padding: 10px 10px;
   border-color: #193498;
   border-radius: 5px;
@@ -131,6 +133,16 @@ tr {
 }
 
 #adminSearchStl {
+  font-size: 15px;
+  border: 2px outset #193498;
+}
+
+#managerSearchUpcomingReservations {
+  font-size: 15px;
+  border: 2px outset #193498;
+}
+
+#managerSearchCompletedReservations {
   font-size: 15px;
   border: 2px outset #193498;
 }

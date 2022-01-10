@@ -161,51 +161,82 @@ class Employee extends Controller
 
                             // insert stl
                             $flag = 1;
+                            $targetDir = "/public/images/";
+                            $fileName = basename($_FILES["file"]["name"]);
+                            $targetFilePath = $targetDir . $fileName;
+                            echo $targetFilePath;
+                            $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
 
-                            $check = getimagesize($_FILES["stlPhoto"]["tmp_name"]);
-                            if ($check !== false) {
-                                $image = $_FILES['stlPhoto']['tmp_name'];
-                                $imgContent = addslashes(file_get_contents($image));
+                            $allowTypes = array('jpg', 'png', 'jpeg', 'gif', 'pdf');
 
-                                if ($this->model->makeSTLPhoto($imgContent, $nic)) {
+                            if (in_array($fileType, $allowTypes)) {
+                                if (move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)) {
+                                    // insert to stl table
 
-                                    // select last row of the stl table
-                                    $stlId = $this->model->getLastSTLId();
-                                    $newStlID =  $stlId[0]['STL_ID'];
-                                    echo $newStlID;
-                                    if ($this->model->stlUserAdd($newStlID, $stlUserName, $hashedpwd, $stlEmail, $flag)) {
-                                        if ($this->model->empStlIDAdd($newStlID, $nic)) {
-                                            $_SESSION['insertSuccess'] = 'STL added successfully';
-                                            header("Location: /employee/");
+                                    if ($this->model->makeSTLPhoto($fileName, $nic)) {
+
+                                        // select last row of the stl table
+                                        $stlId = $this->model->getLastSTLId();
+                                        $newStlID =  $stlId[0]['STL_ID'];
+                                        echo $newStlID;
+                                        if ($this->model->stlUserAdd($newStlID, $stlUserName, $hashedpwd, $stlEmail, $flag)) {
+                                            if ($this->model->empStlIDAdd($newStlID, $nic)) {
+                                                $_SESSION['insertSuccess'] = 'STL added successfully';
+                                                header("Location: /employee/");
+                                            } else {
+                                                echo "emp stl add error";
+                                            }
                                         } else {
-                                            echo "emp stl add error";
+                                            echo "Error";
                                         }
                                     } else {
-                                        echo "Error";
+                                        echo "Error in stl photo";
                                     }
-                                } else {
-                                    echo "Error in stl photo";
                                 }
-                            } else {
-                                echo "File is not an image.";
                             }
                         }
                     }
-                } else {
-                    $_SESSION['insertSuccess'] = 'STL Not exist in the Employee Pool';
-                    header("Location: /employee/");
                 }
-            } else {
-                echo "Error";
+            }
+        }
+    }
+
+    function updateStlImage()
+    {
+        if ($_SESSION['role'] == "systemadmin") {
+            $stlId = $_POST['stl_id'];
+            $targetDir = "/public/images/";
+            $fileName = basename($_FILES["file"]["name"]);
+            $targetFilePath = $targetDir . $fileName;
+            echo $targetFilePath;
+            $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
+
+            $allowTypes = array('jpg', 'png', 'jpeg', 'gif', 'pdf');
+            // max file size 5MB
+            $maxFileSize = 5 * 1024 * 1024;
+
+            if (in_array($fileType, $allowTypes)) {
+                if (filesize($_FILES['file']['tmp_name']) < $maxFileSize) {
+                    echo "File size is less than 5MB";
+                    if (move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)) {
+                        // insert to stl table
+                        if ($this->model->updateSTLPhoto($fileName, $stlId)) {
+                            $_SESSION['insertSuccess'] = 'STL Photo updated successfully';
+                            header("Location: /employee/");
+                        } else {
+                            echo "Error in stl photo";
+                        }
+                    }
+                }
             }
         }
     }
 
     function saveEditEmployee($empId, $contactNumberVal, $emailData, $salaryData)
     {
-        echo $empId;
-        echo $contactNumberVal;
-        echo $emailData;
+        // echo $empId;
+        // echo $contactNumberVal;
+        // echo $emailData;
         if ($_SESSION['role'] == "systemadmin") {
 
             $values = array($contactNumberVal, $emailData, $salaryData);
@@ -276,44 +307,3 @@ class Employee extends Controller
         }
     }
 }
-
-
-// <?php
-//       if(isset($_POST["submit"])){
-//           $check = getimagesize($_FILES["image"]["tmp_name"]);
-//           if($check !== false){
-//               $image = $_FILES['image']['tmp_name'];
-//               $imgContent = addslashes(file_get_contents($image));
-
-//             /*
-//              * Insert image data into database
-//              */
-
-//             //DB details
-//             $dbHost     = 'localhost';
-//             $dbUsername = 'root';
-//             $dbPassword = '*****';
-//             $dbName     = 'codexworld';
-
-//             //Create connection and select DB
-//             $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
-
-//             // Check connection
-//             if($db->connect_error){
-//                 die("Connection failed: " . $db->connect_error);
-//             }
-
-//             $dataTime = date("Y-m-d H:i:s");
-
-//             //Insert image content into database
-//             $insert = $db->query("INSERT into images (image, created) VALUES ('$imgContent', '$dataTime')");
-//             if($insert){
-//                 echo "File uploaded successfully.";
-//             }else{
-//                 echo "File upload failed, please try again.";
-//             } 
-//         }else{
-//             echo "Please select an image file to upload.";
-//         }
-//     }
-//     

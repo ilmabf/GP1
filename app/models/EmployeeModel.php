@@ -38,7 +38,7 @@ class EmployeeModel extends Model
 
     function getStlData()
     {
-        $selection = array("employee.Employee_ID", "employee.First_Name", "employee.Last_Name", "employee.Contact_Number", "employee.Email", "employee.Date_Enrolled", "employee.Salary", "employee.NIC_No", "users.Username", "service_team_leader.Photo", "service_team_leader.STL_ID");
+        $selection = array("employee.Employee_ID", "employee.First_Name", "employee.Last_Name", "employee.Contact_Number", "employee.Email", "employee.Date_Enrolled", "employee.Salary", "employee.NIC_No", "users.Username", "service_team_leader.file_name", "service_team_leader.STL_ID");
         $result = $this->db->select($selection, "employee", "INNER JOIN users ON employee.STL_ID = users.STL_ID INNER JOIN service_team_leader ON employee.STL_ID = service_team_leader.STL_ID WHERE employee.Flag != 0;");
         return $result;
     }
@@ -134,9 +134,9 @@ class EmployeeModel extends Model
     //update employee set Flag = 0 WHERE Employee_ID = :empId;
     //updateTwo("employee", "WHERE Employee_ID = :empId;", ':empId', $empId);
 
-    function makeSTLPhoto($image, $nic)
+    function makeSTLPhoto($imageFile, $nic)
     {
-        $result = $this->db->insert("service_team_leader", "Photo", ":photo", $image);
+        $result = $this->db->insert("service_team_leader", "file_name", ":fileName", $imageFile);
         return $result;
     }
 
@@ -274,5 +274,16 @@ class EmployeeModel extends Model
         //         return $result2;
         //     }
         // }
+    }
+
+    function updateSTLPhoto($filename, $stlID)
+    {
+        $columns = 'file_name';
+        $param = ':filename';
+        $values = $filename;
+        $conditionParam = ':stlID';
+        $conditionValue = $stlID;
+        $result = $this->db->update("service_team_leader", $columns, $param, $values, $conditionParam, $conditionValue, "WHERE STL_ID = :stlID;");
+        return $result;
     }
 }
