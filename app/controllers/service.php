@@ -12,7 +12,7 @@ class Service extends Controller
     // <------------------------------------- Equipment ------------------------------->
     function equipment()
     {
-        
+
         $_SESSION['itemDetails'] = $this->model->getItemDetails();
         $_SESSION['equipmentDetails'] = $this->model->getEquipmentDetails();
         $_SESSION['teamDetails'] = $this->model->getTeamDetails();
@@ -24,7 +24,7 @@ class Service extends Controller
             $this->view->render('manager/Equipment');
         }
     }
-   
+
     function addNewEquipment()
     {
         //User Autherization
@@ -39,7 +39,7 @@ class Service extends Controller
             if (isset($item_id) && isset($name) && isset($price) &&  isset($dateAcquired)) {
 
                 //store equipment
-                if ($this->model->addEquipment($item_id,$name, $price, $dateAcquired)) {
+                if ($this->model->addEquipment($item_id, $name, $price, $dateAcquired)) {
                     header("Location: /service/equipment");
                 }
             } else {
@@ -77,6 +77,17 @@ class Service extends Controller
     }
 
 
+    function markReturn($eqId)
+    {
+        if ($_SESSION['role'] == "systemadmin") {
+            if ($this->model->returnEquipment($eqId)) {
+                header("Location: /service/equipment");
+            }
+        } else {
+            echo "Error";
+        }
+    }
+
     // <------------------------------------- Service ------------------------------->
     function washPackage()
     {
@@ -92,7 +103,8 @@ class Service extends Controller
         }
     }
 
-    function addWashPackage(){
+    function addWashPackage()
+    {
         $name = $_POST['washpackagename'];
         $description = $_POST['description'];
 
@@ -103,8 +115,9 @@ class Service extends Controller
         }
     }
 
-    function editWashPackage($washPackgeID){
-        
+    function editWashPackage($washPackgeID)
+    {
+
         $description = $_POST['description'];
 
         if ($_SESSION['role'] == "systemadmin") {
@@ -114,8 +127,9 @@ class Service extends Controller
         }
     }
 
-    function deleteWashPackage($washPackgeID){
-        
+    function deleteWashPackage($washPackgeID)
+    {
+
         if ($_SESSION['role'] == "systemadmin") {
             if ($this->model->deleteService($washPackgeID)) {
                 header("Location: /service/washPackage");
@@ -123,7 +137,8 @@ class Service extends Controller
         }
     }
 
-    function addVehicleType(){
+    function addVehicleType()
+    {
 
         $name = $_POST['vehicleName'];
 
@@ -134,8 +149,9 @@ class Service extends Controller
         }
     }
 
-    function deleteVehicleType($vehicleName){
-        
+    function deleteVehicleType($vehicleName)
+    {
+
         $vehicleName = str_replace('_', ' ', $vehicleName);
         $vehicleName = str_replace('|', '-', $vehicleName);
 
@@ -147,7 +163,8 @@ class Service extends Controller
         }
     }
 
-    function addPrice($washPackageID, $vehicleName, $price){
+    function addPrice($washPackageID, $vehicleName, $price)
+    {
         if ($_SESSION['role'] == "systemadmin") {
             if ($this->model->insertPrice($washPackageID, $vehicleName, $price)) {
                 header("Location: /service/washPackage");
