@@ -59,6 +59,7 @@ $orderList = $_SESSION['customerCompletedReservations'];
                                     invoice</a></p>
                         </div>
                     </div>
+                </div>
                 <?php $count = $count - 1;
             } ?>
 
