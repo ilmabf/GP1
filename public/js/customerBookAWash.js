@@ -4,7 +4,6 @@ var txt =
 var speed = 50;
 
 function typeWriter(n) {
-
   if (n < txt.length) {
     document.getElementById("sub-heading-p").innerHTML += txt.charAt(n);
     n++;
@@ -40,19 +39,30 @@ function getVehicle() {
 insertCookie();
 getVehicle();
 
+//check if date, price and vehicle details are complete
 function checkDetails() {
   var slash = document.getElementById("slash1").innerHTML;
   var price = document.getElementById("priceValue").innerHTML;
   if (slash != "/" || price == "") {
-    document.getElementById("completeMsg").innerHTML = "Please make sure the details are complete";
-  }
-  else {
+    document.getElementById("completeMsg").innerHTML =
+      "Please make sure the details are complete";
+  } else {
     window.location = "/booking/location";
   }
 }
 
-function insertCookie() {
+function checkRescheduleDetails(orderID) {
+  var slash = document.getElementById("slash11").innerHTML;
+  var price = document.getElementById("priceValue1").innerHTML;
+  if (slash != "/" || price == "") {
+    document.getElementById("completeMsg1").innerHTML =
+      "Please make sure the details are complete";
+  } else {
+    window.location = "/booking/rescheduleLocation/" + orderID;
+  }
+}
 
+function insertCookie() {
   var cookieArray = document.cookie.split(";");
   var i = 0;
   for (i = 0; i < cookieArray.length; i++) {
@@ -91,4 +101,3 @@ function insertCookie() {
   }
   document.getElementById("xx").innerHTML = document.cookie;
 }
-

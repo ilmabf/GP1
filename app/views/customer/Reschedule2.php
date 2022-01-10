@@ -1,6 +1,8 @@
 <?php
 
 include 'views/user/LoggedInHeader.php';
+$rescheduleID = $_SESSION['rescheduleID'];
+$reservationDetails = $_SESSION['reservationDetails'];
 ?>
 
 <div style="min-height: 110px;"></div>
@@ -14,8 +16,6 @@ include 'views/user/LoggedInHeader.php';
     <?php
     if (sizeof($_SESSION['address']) == 0) {
         echo "Please add your location/s in your account page.";
-        echo "<br>";
-        echo "<a style = 'font-size:initial; color:#085394;' href = '/account/'>Go to My Account</a>";
     } else {
         echo "<div class='select-location-box'>";
         echo "<form action='' method='post'>";
@@ -40,11 +40,19 @@ include 'views/user/LoggedInHeader.php';
                 <?php
                 $i = 0;
                 while ($i < sizeof($_SESSION['address'])) {
-                    echo "<option value='";
-                    echo $i + 1;
-                    echo "'>";
-                    echo $_SESSION['address'][$i]['Address'];
-                    echo "</option>";
+                    if ($reservationDetails[0]['Address'] === $_SESSION['address'][$i]['Address']) {
+                        echo "<option value='";
+                        echo $i + 1;
+                        echo "' selected>";
+                        echo $_SESSION['address'][$i]['Address'];
+                        echo "</option>";
+                    } else {
+                        echo "<option value='";
+                        echo $i + 1;
+                        echo "'>";
+                        echo $_SESSION['address'][$i]['Address'];
+                        echo "</option>";
+                    }
                     $i = $i + 1;
                 }
                 ?>
@@ -61,7 +69,7 @@ include 'views/user/LoggedInHeader.php';
 
 <div class="next-pg" style="margin-right: 15%;">
     <span class="priceBox2" id="priceValue"></span>
-    <button class="next-button" onclick="checkLocation();">Next</button>
+    <button class="next-button" onclick="checkRescheduleLocation('<?php echo $rescheduleID; ?>');">Next</button>
 </div>
 <div style="min-height: 20px;"></div>
 <script>
@@ -159,16 +167,14 @@ include 'views/user/LoggedInHeader.php';
                         var totalPrice = parseInt(p) + additional;
                         document.cookie = "total = " + totalPrice + ";path=/";
                         console.log(directionsData.distance.text);
-                        document.getElementById('msg').innerHTML += " Driving distance is " + kmInt + " (" +
-                            directionsData.duration.text + ").";
+                        document.getElementById('msg').innerHTML += " Driving distance is " + kmInt + " (" + directionsData.duration.text + ").";
                     }
                 }
             });
     }
 </script>
 <script src="/public/js/Maps.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxvVN9pPMljGjWLvUGWGisQwGUUMSOHco&callback=myMap&v=weekly">
-</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxvVN9pPMljGjWLvUGWGisQwGUUMSOHco&callback=myMap&v=weekly"></script>
 <script async>
     initMap();
 </script>
@@ -185,9 +191,9 @@ include 'views/user/LoggedInHeader.php';
     let p = price.substring(6);
     document.getElementById("priceValue").innerHTML = "Rs. " + p;
 
-    function checkLocation() {
+    function checkRescheduleLocation(rescheduleID) {
         if (addresses.length > 0) {
-            window.location = "/booking/orderSummary";
+            window.location = "/booking/orderRescheduleSummary/" + rescheduleID + "/";
         }
     }
 </script>

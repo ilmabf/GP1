@@ -27,7 +27,7 @@ $teams = $_SESSION['teamDetails'];
     </div>
 
     <!-- stock-->
- 
+
     <div style="height: 50px;"></div>
     <div class="Table-search" id="viewAllitems">
       <div class="table-wrapper">
@@ -37,19 +37,19 @@ $teams = $_SESSION['teamDetails'];
           </div>
           <div style="float: right;">
             <form action="" method="post">
-              <select id="Admin-equipment-teamvise1" name="serviceTeam" class="ad-Equip-Search" onchange="getTeamvise1()" >
+              <select id="Admin-equipment-teamvise1" name="serviceTeam" class="ad-Equip-Search" onchange="getTeamvise1()">
                 <option value="select service team">Select Service Team</option>
-                        <?php
-                        $count  = 0;
-                        while ($count < sizeof($_SESSION['teamDetails'])) {
-                            echo "<option value='";
-                            echo $count + 1;
-                            echo "'>";
-                            echo $teams[$count]['STL_ID'];
-                            echo "</option>";
-                            $count = $count + 1;
-                        }
-                        ?>
+                <?php
+                $count  = 0;
+                while ($count < sizeof($_SESSION['teamDetails'])) {
+                  echo "<option value='";
+                  echo $count + 1;
+                  echo "'>";
+                  echo $teams[$count]['STL_ID'];
+                  echo "</option>";
+                  $count = $count + 1;
+                }
+                ?>
               </select>
             </form>
           </div>
@@ -86,31 +86,31 @@ $teams = $_SESSION['teamDetails'];
       </div>
     </div>
 
-   
+
 
     <!--View All table-->
     <div id="viewAllequip" class="Table-search-selected-equip" style="display:none;">
       <div class="table-wrapper">
         <div style="display:inline-block; width: 100%;">
           <div style="float: left;">
-          <input type="button" class="backToItem-button" value="<< Items" onclick="backToItem()">
+            <input type="button" class="backToItem-button" value="<< Items" onclick="backToItem()">
           </div>
 
           <div style="float: right;">
             <form action="" method="post">
-              <select id="Admin-equipment-teamvise2" name="serviceTeam2" class="ad-Equip-Search" onchange="getTeamvise2()" >
+              <select id="Admin-equipment-teamvise2" name="serviceTeam2" class="ad-Equip-Search" onchange="getTeamvise2()">
                 <option value="select service team">Select Service Team</option>
-                        <?php
-                        $count  = 0;
-                        while ($count < sizeof($_SESSION['teamDetails'])) {
-                            echo "<option value='";
-                            echo $count + 1;
-                            echo "'>";
-                            echo $teams[$count]['STL_ID'];
-                            echo "</option>";
-                            $count = $count + 1;
-                        }
-                        ?>
+                <?php
+                $count  = 0;
+                while ($count < sizeof($_SESSION['teamDetails'])) {
+                  echo "<option value='";
+                  echo $count + 1;
+                  echo "'>";
+                  echo $teams[$count]['STL_ID'];
+                  echo "</option>";
+                  $count = $count + 1;
+                }
+                ?>
               </select>
             </form>
           </div>
@@ -131,7 +131,7 @@ $teams = $_SESSION['teamDetails'];
         </table>
       </div>
     </div>
-       
+
 
     <!--View free equipment table-->
     <div id="viewFreeEquip" class="Table-search-selected-equip" style="display:none;">
@@ -163,7 +163,7 @@ $teams = $_SESSION['teamDetails'];
 
 
     <!--View assigned equipment for selected team(click from item table)-->
-    <div id="viewAssignedEquip" class="Table-search-selected-equip" style = "display:none;">
+    <div id="viewAssignedEquip" class="Table-search-selected-equip" style="display:none;">
       <div class="table-wrapper">
         <div style="display:inline-block; width: 100%;">
           <div style="float: left;">
@@ -191,7 +191,7 @@ $teams = $_SESSION['teamDetails'];
     </div>
 
     <!--View assigned equipment for selected team(click from equipment table)-->
-    <div id="viewAssignedItems" class="Table-search-selected-equip" style = "display:none;">
+    <div id="viewAssignedItems" class="Table-search-selected-equip" style="display:none;">
       <div class="table-wrapper">
         <div style="display:inline-block; width: 100%;">
           <div style="float: left;">
@@ -228,11 +228,11 @@ $teams = $_SESSION['teamDetails'];
 <script>
   var items = <?php echo json_encode($_SESSION['itemDetails']); ?>;
   var equipment = <?php echo json_encode($_SESSION['equipmentDetails']); ?>;
-  var itemID ;//for filter team vise from equipment table
+  var itemID; //for filter team vise from equipment table
   function viewAllEquipment(n) {
     var i = 0;
     var EquipmentToDisplay = [];
-    itemID = n;//for filter team vise from equipment table(team vise 2)
+    itemID = n; //for filter team vise from equipment table(team vise 2)
     for (i = 0; i < equipment.length; i++) {
       // console.log(equipment[i]);
       if (equipment[i]['Item_Id'] == n) {
@@ -257,8 +257,8 @@ $teams = $_SESSION['teamDetails'];
         "<td class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Price'] + ".00</td>" +
         "<td class='td-t1'>" + EquipmentToDisplay[j]['Date_Acquired'] + "</td>" +
         "<td id='assignedTeam_row" + j + "' class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Team'] + "</td>" +
-        "<td> <input type='button' id='edit_equip_btn" + j + "' class='edit_btn td-t1' value='Assign a Team' onclick='editEquipment("+ j +")'>" +
-        "<a href='' id='editLink" + j + "'><input style='margin: auto;' type='submit' id='save_equip_btn" + j + "' class='save_btn' value='Save' onclick='saveEquipment(" + EquipmentToDisplay[j]['Equipment_ID'] + "," + j + ")'></a>"+
+        "<td> <input type='button' id='edit_equip_btn" + j + "' class='edit_btn td-t1' value='Assign a Team' onclick='editEquipment(" + j + ")'>" +
+        "<a href='' id='editLink" + j + "'><input style='margin: auto;' type='submit' id='save_equip_btn" + j + "' class='save_btn' value='Save' onclick='saveEquipment(" + EquipmentToDisplay[j]['Equipment_ID'] + "," + j + ")'></a>" +
         "</td> <td><a href='/service/deleteEquipment/" + EquipmentToDisplay[j]['Equipment_ID'] + "'> <input type='button' class='del_btn td-t1' value='Delete' onclick='deleteEquipment(" + j + ")'></a></td>" +
         "</tr>" +
         "</tbody>";
@@ -266,14 +266,14 @@ $teams = $_SESSION['teamDetails'];
     var y = document.getElementById("viewAllitems");
     y.style.display = "none";
     document.getElementById("viewAllequip").style = "display:flex;";
-    
+
   }
 
   function viewFreeEquipment(n) {
 
     var i = 0;
     var EquipmentToDisplay = [];
-    
+
     for (i = 0; i < equipment.length; i++) {
       if (equipment[i]['Item_Id'] == n && equipment[i]['Team'] == null) {
         var TempEq = [];
@@ -291,24 +291,24 @@ $teams = $_SESSION['teamDetails'];
       x.innerHTML += "<tr id='rowNo" + j + "'>" +
 
         "<td>" + EquipmentToDisplay[j]['Equipment_ID'] + "</td>" +
-        "<td style='text-align:left' class='td-t1'> " + EquipmentToDisplay[j]['Name'] +" </td>"+
-        "<td class='td-t1' style='text-align:right'>"+ EquipmentToDisplay[j]['Price'] +".00</td>" +
-        "<td class='td-t1'>"+EquipmentToDisplay[j]['Date_Acquired'] + "</td>" +
-        "<td id='assignedTeam_row" + j + "' class='td-t1' style='text-align:right'>"+ EquipmentToDisplay[j]['Team'] + "</td>" +
-        "<td> <input type='button' id='edit_equip_btn" + j + "' class='edit_btn td-t1' value='Assign a Team' onclick='editEquipment("+ j +")'>" +
-        "<a href='' id='editLink" + j + "'><input style='margin: auto;' type='submit' id='save_equip_btn" + j + "' class='save_btn' value='Save' onclick='saveEquipment(" + EquipmentToDisplay[j]['Equipment_ID'] + "," + j + ")'></a>"+
+        "<td style='text-align:left' class='td-t1'> " + EquipmentToDisplay[j]['Name'] + " </td>" +
+        "<td class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Price'] + ".00</td>" +
+        "<td class='td-t1'>" + EquipmentToDisplay[j]['Date_Acquired'] + "</td>" +
+        "<td id='assignedTeam_row" + j + "' class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Team'] + "</td>" +
+        "<td> <input type='button' id='edit_equip_btn" + j + "' class='edit_btn td-t1' value='Assign a Team' onclick='editEquipment(" + j + ")'>" +
+        "<a href='' id='editLink" + j + "'><input style='margin: auto;' type='submit' id='save_equip_btn" + j + "' class='save_btn' value='Save' onclick='saveEquipment(" + EquipmentToDisplay[j]['Equipment_ID'] + "," + j + ")'></a>" +
         "</td> <td><a href='/service/deleteEquipment/" + EquipmentToDisplay[j]['Equipment_ID'] + "'> <input type='button' class='del_btn td-t1' value='Delete' onclick='deleteEquipment(" + j + ")'></a></td>" +
         "</tr>" +
         "</tbody>";
     }
     var x = document.getElementById("viewAllitems");
     x.style.display = "none";
-    
+
     document.getElementById("viewFreeEquip").style = "display:flex;";
   }
 
-//back to item table
-function backToItem(){
+  //back to item table
+  function backToItem() {
     document.getElementById("viewAllitems").style = "display:flex;";
     document.getElementById("viewAllequip").style = "display:none;";
     document.getElementById("viewFreeEquip").style = "display:none;";
@@ -316,14 +316,14 @@ function backToItem(){
     document.getElementById("Equipment").innerHTML = '';
     document.getElementById("FreeEquipment").innerHTML = '';
     document.getElementById("teamAssignedEquipment").innerHTML = '';
-           
-}
-//filter team vise (from item table)
-  function getTeamvise1(){
-    var x =  document.getElementById("Admin-equipment-teamvise1").value;
+
+  }
+  //filter team vise (from item table)
+  function getTeamvise1() {
+    var x = document.getElementById("Admin-equipment-teamvise1").value;
     var i = 0;
     var EquipmentToDisplay = [];
-    
+
     for (i = 0; i < equipment.length; i++) {
       if (equipment[i]['Team'] == x) {
         var TempEq = [];
@@ -341,12 +341,12 @@ function backToItem(){
       x.innerHTML += "<tr id='rowNo" + j + "'>" +
 
         "<td>" + EquipmentToDisplay[j]['Equipment_ID'] + "</td>" +
-        "<td style='text-align:left' class='td-t1'> " + EquipmentToDisplay[j]['Name'] +" </td>"+
-        "<td class='td-t1' style='text-align:right'>"+ EquipmentToDisplay[j]['Price'] +".00</td>" +
-        "<td class='td-t1'>"+EquipmentToDisplay[j]['Date_Acquired'] + "</td>" +
-        "<td id='assignedTeam_row" + j + "' class='td-t1' style='text-align:right'>"+ EquipmentToDisplay[j]['Team'] + "</td>" +
-        "<td> <input type='button' id='edit_equip_btn" + j + "' class='edit_btn td-t1' value='Assign a Team' onclick='editEquipment("+ j +")'>" +
-        "<a href='' id='editLink" + j + "'><input style='margin: auto;' type='submit' id='save_equip_btn" + j + "' class='save_btn' value='Save' onclick='saveEquipment(" + EquipmentToDisplay[j]['Equipment_ID'] + "," + j + ")'></a>"+
+        "<td style='text-align:left' class='td-t1'> " + EquipmentToDisplay[j]['Name'] + " </td>" +
+        "<td class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Price'] + ".00</td>" +
+        "<td class='td-t1'>" + EquipmentToDisplay[j]['Date_Acquired'] + "</td>" +
+        "<td id='assignedTeam_row" + j + "' class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Team'] + "</td>" +
+        "<td> <input type='button' id='edit_equip_btn" + j + "' class='edit_btn td-t1' value='Assign a Team' onclick='editEquipment(" + j + ")'>" +
+        "<a href='' id='editLink" + j + "'><input style='margin: auto;' type='submit' id='save_equip_btn" + j + "' class='save_btn' value='Save' onclick='saveEquipment(" + EquipmentToDisplay[j]['Equipment_ID'] + "," + j + ")'></a>" +
         "</td> <td><a href='/service/deleteEquipment/" + EquipmentToDisplay[j]['Equipment_ID'] + "'> <input type='button' class='del_btn td-t1' value='Delete' onclick='deleteEquipment(" + j + ")'></a></td>" +
         "</tr>" +
         "</tbody>";
@@ -354,14 +354,14 @@ function backToItem(){
     var x = document.getElementById("viewAllitems");
     x.style.display = "none";
     document.getElementById("viewAssignedEquip").style = "display:flex;";
-    
-   }
-//filter team vise (from all equipment table)
-  function getTeamvise2(){
-    var x =  document.getElementById("Admin-equipment-teamvise2").value;
+
+  }
+  //filter team vise (from all equipment table)
+  function getTeamvise2() {
+    var x = document.getElementById("Admin-equipment-teamvise2").value;
     var i = 0;
     var EquipmentToDisplay = [];
-    
+
     for (i = 0; i < equipment.length; i++) {
       if (equipment[i]['Team'] == x && equipment[i]['Item_Id'] == itemID) {
         var TempEq = [];
@@ -379,12 +379,12 @@ function backToItem(){
       x.innerHTML += "<tr id='rowNo" + j + "'>" +
 
         "<td>" + EquipmentToDisplay[j]['Equipment_ID'] + "</td>" +
-        "<td style='text-align:left' class='td-t1'> " + EquipmentToDisplay[j]['Name'] +" </td>"+
-        "<td class='td-t1' style='text-align:right'>"+ EquipmentToDisplay[j]['Price'] +".00</td>" +
-        "<td class='td-t1'>"+EquipmentToDisplay[j]['Date_Acquired'] + "</td>" +
-        "<td id='assignedTeam_row" + j + "' class='td-t1' style='text-align:right'>"+ EquipmentToDisplay[j]['Team'] + "</td>" +
-        "<td> <input type='button' id='edit_equip_btn" + j + "' class='edit_btn td-t1' value='Assign a Team' onclick='editEquipment("+ j +")'>" +
-        "<a href='' id='editLink" + j + "'><input style='margin: auto;' type='submit' id='save_equip_btn" + j + "' class='save_btn' value='Save' onclick='saveEquipment(" + EquipmentToDisplay[j]['Equipment_ID'] + "," + j + ")'></a>"+
+        "<td style='text-align:left' class='td-t1'> " + EquipmentToDisplay[j]['Name'] + " </td>" +
+        "<td class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Price'] + ".00</td>" +
+        "<td class='td-t1'>" + EquipmentToDisplay[j]['Date_Acquired'] + "</td>" +
+        "<td id='assignedTeam_row" + j + "' class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Team'] + "</td>" +
+        "<td> <input type='button' id='edit_equip_btn" + j + "' class='edit_btn td-t1' value='Assign a Team' onclick='editEquipment(" + j + ")'>" +
+        "<a href='' id='editLink" + j + "'><input style='margin: auto;' type='submit' id='save_equip_btn" + j + "' class='save_btn' value='Save' onclick='saveEquipment(" + EquipmentToDisplay[j]['Equipment_ID'] + "," + j + ")'></a>" +
         "</td> <td><a href='/service/deleteEquipment/" + EquipmentToDisplay[j]['Equipment_ID'] + "'> <input type='button' class='del_btn td-t1' value='Delete' onclick='deleteEquipment(" + j + ")'></a></td>" +
         "</tr>" +
         "</tbody>";
@@ -392,14 +392,12 @@ function backToItem(){
     var y = document.getElementById("viewAllequip");
     y.style.display = "none";
     document.getElementById("viewAssignedItems").style = "display:flex;";
-    
-}
-//back to equipment table
-function backToEquipment(){   
-   document.getElementById("viewAllequip").style = "display:flex;";    
-   document.getElementById("viewAssignedItems").style = "display:none;";  
-   document.getElementById("teamAssignedItem").innerHTML = '';     
-}
+
+  }
+  //back to equipment table
+  function backToEquipment() {
+    document.getElementById("viewAllequip").style = "display:flex;";
+    document.getElementById("viewAssignedItems").style = "display:none;";
+    document.getElementById("teamAssignedItem").innerHTML = '';
+  }
 </script>
-
-

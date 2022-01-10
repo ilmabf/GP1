@@ -68,6 +68,17 @@ class BookingModel extends Model
             return true;
         } else print_r($result);
     }
+
+    function UpdateReservation($orderID, $reservationDetails)
+    {
+        $columns = array('Vehicle_ID', 'Address', 'Latitude', 'Longitude', 'Price', 'Total_price', 'Wash_Package_ID', 'Date', 'Time', 'Customer_ID');
+        $param = array(':vehicleid', ':addr', ':lat', ':lng', ':price', ':total', ':washPcakge', ':date', ':time', ':custID');
+        $result = $this->db->update("reservation", $columns, $param, $reservationDetails, ':reservationID', $orderID, "WHERE Reservation_ID = :reservationID;");
+        if ($result == "Success") {
+            return true;
+        } else print_r($result);
+    }
+
     //For get Completed reservation list before current date
     function getCompletedReservationList()
     {
@@ -75,10 +86,10 @@ class BookingModel extends Model
         return $result;
     }
     //For get Completed reservation list before current date
-    function getCustomerCompletedReservationList($custo_id)
+    function getCustomerCompletedReservationList($custoID)
     {
 
-        $result = $this->db->select("*", "reservation", "WHERE Completed = 1 AND Customer_ID = :custo_id ;", ':custo_id', $custo_id);
+        $result = $this->db->select("*", "reservation", "WHERE Completed = 1 AND Customer_ID = :custoID ;", ':custoID', $custoID);
         return $result;
     }
 
