@@ -112,3 +112,7 @@ function removeRow1(removeButton1) {
     }
     submitBtn.style.display = "none";
 }
+
+function markAsReturned(id){
+    window.location = "/service/markReturn/" + id;
+}

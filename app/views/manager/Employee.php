@@ -279,7 +279,7 @@ $result = $_SESSION['employeeDetails'];
 
       <div>
         <h4>Photos</h4>
-
+        
         <?php
         $result = $_SESSION['stlTableData'];
         $count = 0;
