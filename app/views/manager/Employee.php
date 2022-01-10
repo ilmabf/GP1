@@ -278,17 +278,20 @@ $result = $_SESSION['employeeDetails'];
       </div>
 
       <div>
-        <h4>Photos</h4>
+        <h3 style="margin-bottom: 5px; margin-top: 30px; color:#193498;">Photos</h3>
 
         <?php
         $result = $_SESSION['stlTableData'];
+        $result1 = $_SESSION['StlAttendanceData'];
         $count = 0;
         while ($count < sizeof($result)) { ?>
-          <div class="row">
-            <div class="col-md-4 viewPhotos vp2">
-              <img src="data:image/ . $type . ;base64, <?php echo base64_encode($result[$count]['Photo']); ?>" alt="<?php echo $result[$count]['STL_ID'] ?>" class="img-thumbnail" style="width:30%; border-radius: 8px;">
-            </div>
-          </div>
+          <?php $imgUrl = '/public/images/' . $result[$count]['file_name']; ?>
+          <span class="row" style="text-align: center;">
+            <span class="col-md-4 viewPhotos vp2">
+              <img src="<?php echo $imgUrl ?>" alt="<?php echo $result[$count]['file_name'] ?>" class="img-thumbnail" style="height:300px; width:300px; object-fit:contain;">
+              <div style="margin-top: -60px;"><?php echo $result1[$count]['First_Name'] ?> <?php echo $result1[$count]['Last_Name'] ?></div>
+            </span>
+          </span>
         <?php $count = $count + 1;
         } ?>
 
