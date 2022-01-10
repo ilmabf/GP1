@@ -146,6 +146,21 @@ class ServiceModel extends Model
         }       
     }
 
+    function returnEquipment($eId){
+
+        $result = $this->db->update("equipment","Team", ':team', null, ':eid', $eId,"WHERE (Equipment_ID = :eid);");
+
+        $itemIdResult = $this->db->select("Item_Id", "equipment", "WHERE Equipment_ID = :eid;",':eid',$eId);
+        $itemId = $itemIdResult[0]['Item_Id'];
+        $free = $this->db->select("Free", "item", "WHERE Item_Id = :itemId;",':itemId',$itemId);
+
+        $result1 = $this->db->update("item", "Free", ':free', ($free[0]['Free']+1), ':itemId', $itemId,"WHERE (Item_Id = :itemId);");
+
+        if ($result1 == "Success") {
+            return true;
+        } else print_r($result);
+    }
+
     // <------------------------------------- Service ------------------------------->
 
     function addService($name, $description)

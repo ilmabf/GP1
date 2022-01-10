@@ -114,7 +114,7 @@ class BookingModel extends Model
     function getUpcomingReservationList1()
     {
         // get reservation detail list with customer names
-        $selection = array("reservation.Reservation_ID", "reservation.Vehicle_ID", "reservation.Date", "reservation.Time", "customer.First_Name", "customer.Last_Name");
+        $selection = array("reservation.Reservation_ID", "reservation.Vehicle_ID", "reservation.Date", "reservation.Time", "customer.First_Name", "customer.Last_Name", "reservation.Customer_ID");
         $result = $this->db->select($selection, "reservation, customer", "WHERE reservation.Completed = 0 AND reservation.Customer_ID = customer.User_ID;");
         return $result;
     }
