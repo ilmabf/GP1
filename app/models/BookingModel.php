@@ -85,6 +85,15 @@ class BookingModel extends Model
         $result = $this->db->select("*", "reservation", "WHERE Completed = 1 ;");
         return $result;
     }
+
+    function getCompletedReservationList1()
+    {
+        // get completed reservation detail list with customer names
+        $selection = array("reservation.Reservation_ID", "reservation.Vehicle_ID", "reservation.Date", "reservation.Time", "customer.First_Name", "customer.Last_Name");
+        $result = $this->db->select($selection, "reservation, customer", "WHERE reservation.Completed = 1 AND reservation.Customer_ID = customer.User_ID;");
+        return $result;
+    }
+
     //For get Completed reservation list before current date
     function getCustomerCompletedReservationList($custo_id)
     {
@@ -99,6 +108,14 @@ class BookingModel extends Model
         $date = date('Y/m/d');
 
         $result = $this->db->select("*", "reservation", "WHERE Completed = 0 ;");
+        return $result;
+    }
+
+    function getUpcomingReservationList1()
+    {
+        // get reservation detail list with customer names
+        $selection = array("reservation.Reservation_ID", "reservation.Vehicle_ID", "reservation.Date", "reservation.Time", "customer.First_Name", "customer.Last_Name");
+        $result = $this->db->select($selection, "reservation, customer", "WHERE reservation.Completed = 0 AND reservation.Customer_ID = customer.User_ID;");
         return $result;
     }
 

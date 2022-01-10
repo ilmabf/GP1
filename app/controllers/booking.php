@@ -86,7 +86,7 @@ class Booking extends Controller
     // upcoming reservations
     function upcoming()
     {
-        $_SESSION['upcomingReservations'] = $this->model->getUpcomingReservationList();
+        $_SESSION['upcomingReservations'] = $this->model->getUpcomingReservationList1();
 
         if ($_SESSION['role'] == "customer") {
             $myUpcomingReservations = array();
@@ -134,7 +134,7 @@ class Booking extends Controller
             exit;
         } else if ($_SESSION['role'] == "manager") {
 
-            $_SESSION['completedReservations'] = $this->model->getCompletedReservationList();
+            $_SESSION['completedReservations'] = $this->model->getCompletedReservationList1();
 
             $this->view->render('manager/CompletedReservations');
         }

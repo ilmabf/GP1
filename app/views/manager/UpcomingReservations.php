@@ -21,44 +21,49 @@ include 'views/user/LoggedInHeader.php';
 
         </div>
     </div>
-    <div class="mainUpcoming">
-        <div class="upcomingOrders" id="managerUpcomingReservations">
-            <!-- <?php print_r($_SESSION['upcomingReservations']); ?> -->
-            <!-- <div class="sub-box1">
-                <div class="order">
-                    <div class="orderitem">Order ID</div>
-                    <p class="orderitem1">1257</p>
-                </div>
-                <div class="order">
-                    <div class="orderitem">Vecicle No</div>
-                    <p class="orderitem1">AD - 2234</p>
-                </div>
-                <div class="order">
-                    <div class="orderitem">Time</div>
-                    <p class="orderitem1">8 am - 10 am</p>
-                </div>
-                <div class="orderView">
-                    <p class="viewLink"><a href="/booking/upcomingOrder">View order</a></p>
-                    <p class="team">Team not assigned</p>
-                </div>
-            </div> -->
 
+    <!-- <div class="mainUpcoming"> -->
+    <!-- <div class="upcomingOrders" id="managerUpcomingReservations"> -->
+    <!-- <?php print_r($_SESSION['upcomingReservations']); ?> -->
+    <div class="Table-search" style="margin-bottom: 20px;">
 
+        <div class="table-wrapper">
+            <div style="display:inline-block; width: 100%;">
+                <div class="Admin-EmpSearch adEmpSearch1">
+                    <input type="search" class="ad-Emp-Search" id="managerSearchUpcomingReservations" placeholder="Search for Customer..." title="Type in a name">
+                </div>
+            </div>
+
+            <table id="upcomingReservationsSearch" style="margin-top: -60px;">
+                <thead>
+                    <tr>
+                        <th data-type="text">Order ID</th>
+                        <th data-type="text">Customer Name</th>
+                        <th data-type="text">Vehicle No</th>
+                        <th data-type="text">Date</th>
+                        <th data-type="text">Time</th>
+                        <th data-type="text">Team</th>
+                        <th data-type="text"></th>
+                    </tr>
+                </thead>
+                <tbody id="upcomingReservationTable"></tbody>
         </div>
     </div>
+    <!-- </div> -->
+    <!-- </div> -->
+
     <div style="min-height: 110px;"></div>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
     <script>
         var orders = <?php echo json_encode($_SESSION['upcomingReservations']); ?>;
 
-
         $('#ManagerUpcomingDate').datepicker({
             dateFormat: 'yy-mm-dd',
             onSelect: function(date) {
 
-                document.getElementById("managerUpcomingReservations").innerHTML = '';
-
+                // document.getElementById("managerUpcomingReservations").innerHTML = '';
+                document.getElementById("upcomingReservationTable").innerHTML = '';
                 var i = 0;
                 var list = [];
 
@@ -66,13 +71,17 @@ include 'views/user/LoggedInHeader.php';
                     if (orders[i]['Date'] == date) {
                         var order = [];
                         order['Reservation_ID'] = orders[i]['Reservation_ID'];
+                        order['First_Name'] = orders[i]['First_Name'];
+                        order['Last_Name'] = orders[i]['Last_Name'];
                         order['Vehicle_ID'] = orders[i]['Vehicle_ID'];
+                        order['Date'] = orders[i]['Date'];
                         order['Time'] = orders[i]['Time'];
                         order['Service_team_leader_ID'] = orders[i]['Service_team_leader_ID'];
                         list.push(order);
                     }
                 }
-                var x = document.getElementById("managerUpcomingReservations");
+                // var x = document.getElementById("managerUpcomingReservations");
+                var x = document.getElementById("upcomingReservationTable");
 
                 for (j = 0; j < list.length; j++) {
                     if (list[j]['Reservation_ID'].length == 1) {
@@ -86,58 +95,42 @@ include 'views/user/LoggedInHeader.php';
                     console.log(list[j]['Service_team_leader_ID']);
                     if (list[j]['Service_team_leader_ID'] == null) {
 
+                        x.innerHTML += "<tr>" +
+                            "<td>" + id + "</td>" +
+                            "<td>" + list[j]['First_Name'] + " " + list[j]['Last_Name'] + "</td>" +
+                            "<td>" + list[j]['Vehicle_ID'] + "</td>" +
+                            "<td>" + list[j]['Date'] + "</td>" +
+                            "<td>" + list[j]['Time'] + "</td>" +
+                            "<td class='team'>Team not assigned</td>" +
+                            "<td><a href='/booking/upcomingOrder/" + list[j]['Reservation_ID'] +
+                            "'>View Order</a></td>" +
+                            "</tr>";
+                        console.log(x);
 
 
-                        x.innerHTML += "<div class='sub-box1' >" +
-                            "<div class='order'>" +
-                            "<div class='orderitem'>Order ID</div>" +
-                            "<div class='orderitem1'>" + id + "</div>" +
-                            "</div>" +
-                            "<div class='order'>" +
-                            "<div class='orderitem'>Vehicle No</div>" +
-                            "<div class='orderitem1'>" + list[j]['Vehicle_ID'] + "</div>" +
-                            "</div>" +
-                            "<div class='order'>" +
-                            "<div class='orderitem'>Time</div>" +
-                            "<div class='orderitem1'>" + list[j]['Time'] + "</div>" +
-                            "</div>" +
-                            "<div class='orderView'>" +
-                            "<p class='viewLink'><a href='/booking/upcomingOrder/" + list[j]['Reservation_ID'] +
-                            "'>View order</a></p>" +
-                            "<p class='team'>Team not assigned</p>" +
-                            "</div>" +
-                            "</div>";
                     } else {
-                        x.innerHTML += "<div class='sub-box1' >" +
-                            "<div class='order'>" +
-                            "<div class='orderitem'>Order ID</div>" +
-                            "<div class='orderitem1'>" + id + "</div>" +
-                            "</div>" +
-                            "<div class='order'>" +
-                            "<div class='orderitem'>Vehicle No</div>" +
-                            "<div class='orderitem1'>" + list[j]['Vehicle_ID'] + "</div>" +
-                            "</div>" +
-                            "<div class='order'>" +
-                            "<div class='orderitem'>Time</div>" +
-                            "<div class='orderitem1'>" + list[j]['Time'] + "</div>" +
-                            "</div>" +
-                            "<div class='orderView'>" +
-                            "<p class='viewLink'><a href='/booking/upcomingOrder/" + list[j]['Reservation_ID'] +
-                            "'>View order</a></p>" +
-                            "<p class='team'>Assigned Service Team " + list[j]['Service_team_leader_ID'] +
-                            "</p>" +
-                            "</div>" +
-                            "</div>";
+                        x.innerHTML += "<tr>" +
+                            "<td>" + id + "</td>" +
+                            "<td>" + list[j]['First_Name'] + " " + list[j]['Last_Name'] + "</td>" +
+                            "<td>" + list[j]['Vehicle_ID'] + "<td>" +
+                            "<td>" + list[j]['Date'] + "</td>" +
+                            "<td>" + list[j]['Time'] + "</td>" +
+                            "<td>Assigned Service Team " + list[j]['Service_team_leader_ID'] +
+                            "</td>" +
+                            "<td><a href='/booking/upcomingOrder/" + list[j]['Reservation_ID'] +
+                            "'>View Order</a></td>" +
+                            "</tr>";
+                        console.log(x);
+
                     }
                 }
-
             }
         });
     </script>
 
     <script>
         function viewList() {
-            var x = document.getElementById("managerUpcomingReservations");
+            var x = document.getElementById("upcomingReservationTable");
 
             for (j = 0; j < orders.length; j++) {
                 if (orders[j]['Reservation_ID'].length == 1) {
@@ -149,48 +142,32 @@ include 'views/user/LoggedInHeader.php';
                 } else var id = orders[j]['Reservation_ID'];
 
                 if (orders[j]['Service_team_leader_ID'] == null) {
-                    x.innerHTML += "<div class='sub-box1' >" +
-                        "<div class='order'>" +
-                        "<div class='orderitem'>Order ID</div>" +
-                        "<div class='orderitem1'>" + id + "</div>" +
-                        "</div>" +
-                        "<div class='order'>" +
-                        "<div class='orderitem'>Vehicle No</div>" +
-                        "<div class='orderitem1'>" + orders[j]['Vehicle_ID'] + "</div>" +
-                        "</div>" +
-                        "<div class='order'>" +
-                        "<div class='orderitem'>Time</div>" +
-                        "<div class='orderitem1'>" + orders[j]['Time'] + "</div>" +
-                        "</div>" +
-                        "<div class='orderView'>" +
-                        "<p class='viewLink'><a href='/booking/upcomingOrder/" + orders[j]['Reservation_ID'] +
-                        "'>View order</a></p>" +
-                        "<p class='team'>Team not assigned</p>" +
-                        "</div>" +
-                        "</div>";
+                    x.innerHTML += "<tr>" +
+                        "<td>" + id + "</td>" +
+                        "<td>" + orders[j]['First_Name'] + " " + orders[j]['Last_Name'] + "</td>" +
+                        "<td>" + orders[j]['Vehicle_ID'] + "</td>" +
+                        "<td>" + orders[j]['Date'] + "</td>" +
+                        "<td>" + orders[j]['Time'] + "</td>" +
+                        "<td class='team'>Team not assigned</td>" +
+                        "<td class='viewLink'><a href='/booking/upcomingOrder/" + orders[j]['Reservation_ID'] +
+                        "'>View Order</a></td>" +
+                        "</tr>";
                 } else {
-                    x.innerHTML += "<div class='sub-box1' >" +
-                        "<div class='order'>" +
-                        "<div class='orderitem'>Order ID</div>" +
-                        "<div class='orderitem1'>" + id + "</div>" +
-                        "</div>" +
-                        "<div class='order'>" +
-                        "<div class='orderitem'>Vehicle No</div>" +
-                        "<div class='orderitem1'>" + orders[j]['Vehicle_ID'] + "</div>" +
-                        "</div>" +
-                        "<div class='order'>" +
-                        "<div class='orderitem'>Time</div>" +
-                        "<div class='orderitem1'>" + orders[j]['Time'] + "</div>" +
-                        "</div>" +
-                        "<div class='orderView'>" +
-                        "<p class='viewLink'><a href='/booking/upcomingOrder/" + orders[j]['Reservation_ID'] +
-                        "'>View order</a></p>" +
-                        "<p class='team'>Assigned Service Team " + orders[j]['Service_team_leader_ID'] + "</p>" +
-                        "</div>" +
-                        "</div>";
+                    x.innerHTML += "<tr>" +
+                        "<td>" + id + "</td>" +
+                        "<td>" + orders[j]['First_Name'] + " " + orders[j]['Last_Name'] + "</td>" +
+                        "<td>" + orders[j]['Vehicle_ID'] + "</td>" +
+                        "<td>" + orders[j]['Date'] + "</td>" +
+                        "<td>" + orders[j]['Time'] + "</td>" +
+                        "<td class='team'>Assigned Service Team " + orders[j]['Service_team_leader_ID'] + "</td>" +
+                        "<td class='viewLink'><a href='/booking/upcomingOrder/" + orders[j]['Reservation_ID'] +
+                        "'>View Order</a></td>" +
+                        "</tr>";
                 }
             }
 
         }
         viewList();
     </script>
+
+    <script src="/public/js/ManagerUpcomingReservations.js"></script>
