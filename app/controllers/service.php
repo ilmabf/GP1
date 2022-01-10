@@ -31,15 +31,16 @@ class Service extends Controller
         if ($_SESSION['role'] == "systemadmin") {
 
             //get POST data
-            $item_id = $_POST['item_id'];
+            $itemID = $_POST['item_id'];
             $name = $_POST['name'];
             $price = $_POST['price'];
             $dateAcquired = $_POST['dateAcquired'];
 
-            if (isset($item_id) && isset($name) && isset($price) &&  isset($dateAcquired)) {
+            if (isset($itemID) && isset($name) && isset($price) &&  isset($dateAcquired)) {
 
                 //store equipment
-                if ($this->model->addEquipment($item_id, $name, $price, $dateAcquired)) {
+                if ($this->model->addEquipment($itemID,$name, $price, $dateAcquired)) {
+
                     header("Location: /service/equipment");
                 }
             } else {

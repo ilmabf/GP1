@@ -127,8 +127,8 @@ class Booking extends Controller
     {
         if ($_SESSION['role'] == "customer") {
 
-            $custo_id = $_SESSION['userDetails'][0]['User_ID'];
-            $_SESSION['customerCompletedReservations'] = $this->model->getCustomerCompletedReservationList($custo_id);
+            $custoID = $_SESSION['userDetails'][0]['User_ID'];
+            $_SESSION['customerCompletedReservations'] = $this->model->getCustomerCompletedReservationList($custoID);
 
             $this->view->render('customer/CompletedReservations');
             exit;
@@ -346,6 +346,17 @@ class Booking extends Controller
                 header("Location: /booking/upcomingOrder/" . $id);
             }
         }
+    }
+    function rateService($orderID){
+       
+        $i = $_POST["rateStars"];
+       var_dump($i);
+        if ($_SESSION['role'] == "customer") {
+            if($this->model->rateService($orderID, $i)){ 
+                header("Location: /booking/completed");
+            }
+        }
+
     }
 }
 

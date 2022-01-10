@@ -21,7 +21,7 @@ class CalendarModel extends Model
     //For get customer details for order summary,completed reservation
     function getCustomer($custoID)
     {
-        $result = $this->db->select("Email, customer.*","customer", "INNER JOIN users on customer.User_ID = users.User_ID WHERE customer.User_ID = :custo_id ;", ':custo_id', $custo_id);
+        $result = $this->db->select("Email, customer.*","customer", "INNER JOIN users on customer.User_ID = users.User_ID WHERE customer.User_ID = :custoID ;", ':custoID', $custoID);
         // print_r($result);
         return $result;
     }
@@ -39,9 +39,9 @@ class CalendarModel extends Model
     }
     function uploadImages($orderID, $beforePhoto, $afterPhoto)
     {
-        $time = date('y-m-d h-min-sec');
+        $time = date('Y-m-d h:m:s');
         $columns = array("Reservation_ID", "Picture_before", "Picture_after", "Time_Uploaded");
-        $param = array(':orderID', ':beforePhoto', ':afterphoto', ':timeUploaded');
+        $param = array(':orderID', ':beforePhoto', ':afterphoto', ':time');
         $values = array($orderID, $beforePhoto, $afterPhoto, $time);
         $result = $this->db->insert("reservation_photos", $columns, $param, $values);
         return $result;

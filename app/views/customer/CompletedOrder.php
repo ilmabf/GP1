@@ -6,6 +6,7 @@ $customerDetails = $_SESSION['customer'];
 $washPackageDetails = $_SESSION['washpackage'];
 $stl = $_SESSION['completedSTL']
 ?>
+
 <style>
     table,
     tr {
@@ -115,11 +116,10 @@ $stl = $_SESSION['completedSTL']
                 </section>
                 <hr>
                 <hr>
-                <span style="font-size:smaller; display: table; margin: auto; margin-top:10px;">Malwathugoda Auto
-                    Service, Kaudella, Galagedara.</span>
-                <span style="font-size:smaller; display: table; margin: auto; margin-top:10px;">WandiWash</span>
-            </div>
 
+                <span style="font-size:smaller; display: table; margin: auto; margin-top:10px;">Malwathugoda Auto Service, Kaudella, Galagedara.</span>
+                <span style="font-size:smaller; display: table; margin: auto; margin-top:10px;">WandiWash</span>            
+             </div>
 
         </div>
 
@@ -131,16 +131,20 @@ $stl = $_SESSION['completedSTL']
                 <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">How was the service? Give us a
                     rating!</h3>
             </div>
-            <div class="rate1 stars1" id="RateUs">
+            <div class="rate1 stars1" id="RateUs" >
                 <i class="rating__star far fa-star"></i>
                 <i class="rating__star far fa-star"></i>
                 <i class="rating__star far fa-star"></i>
                 <i class="rating__star far fa-star"></i>
                 <i class="rating__star far fa-star"></i>
-            </div>
+           </div>
 
             <div class="rate2 stars2">
-
+            
+            <form action="/booking/rateService/<?php echo $orderDetails[0]['Reservation_ID']?>" method="post" style="display:inline-block;">
+            <input type ="hidden" id="textF" value="0" name="rateStars">
+            <button class="uploadImagesLink" type="submit" value="submit rate">Submit Rate</button>
+            </form>
             </div>
 
 
@@ -149,34 +153,35 @@ $stl = $_SESSION['completedSTL']
         <div style="min-height: 110px;"></div>
 
         <script src="/public/js/CustomerViewUpcomingOrder.js"></script>
-        <script src="/public/js/CustomerViewCompletedOrder.js"></script>
+        <!--<script src="/public/js/CustomerViewCompletedOrder.js"></script>-->
         <script>
-            var ratingLevel = 0;
-            const ratingStars = [...document.getElementsByClassName("rating__star")];
+        var ratingStars = [...document.getElementsByClassName("rating__star")];
 
-            function executeRating(stars) {
-                const starClassActive = "rating__star fas fa-star";
-                const starClassInactive = "rating__star far fa-star";
-                const starsLength = stars.length;
+        function executeRating(stars) {
+            const starClassActive = "rating__star fas fa-star";
+            const starClassInactive = "rating__star far fa-star";
+            const starsLength = stars.length;
 
-                let i;
-                // stars[1].className = starClassActive
-                // stars[2].className = starClassActive
-                // stars[3].className = starClassActive
-                //stars[0].className = starClassActive
+            let i;
+            // stars[1].className = starClassActive
+            // stars[2].className = starClassActive
+            // stars[3].className = starClassActive
+            //stars[0].className = starClassActive
 
-                stars.map((star) => {
-                    star.onclick = () => {
-                        i = stars.indexOf(star);
-                        ratingLevel = i;
-                        if (star.className === starClassInactive) {
-                            for (i; i >= 0; --i) stars[i].className = starClassActive;
-                        } else {
-                            for (i; i < starsLength; ++i) stars[i].className = starClassInactive;
-                        }
-                    };
-                });
+            stars.map((star) => {
+                star.onclick = () => {
+                    i = stars.indexOf(star);
 
-            }
-            executeRating(ratingStars);
+                    document.getElementById("textF").value=i+1;
+                    if (star.className === starClassInactive) {
+                        for (i; i >= 0; --i) stars[i].className = starClassActive;
+                    } else {
+                        for (i; i < starsLength; ++i) stars[i].className = starClassInactive;
+                    }
+                };
+            });
+            
+        }
+        executeRating(ratingStars);
+
         </script>

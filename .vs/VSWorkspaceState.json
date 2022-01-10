@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\models",
+    "\\app\\views",
+    "\\app\\views\\manager",
+    "\\app\\views\\stl",
+    "\\public",
+    "\\public\\css",
+    "\\public\\css\\components",
+    "\\public\\js"
+  ],
+  "SelectedNode": "\\app\\views\\manager\\CompletedReservations.php",
+  "PreviewInSolutionExplorer": false
+}

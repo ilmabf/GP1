@@ -95,10 +95,10 @@ class BookingModel extends Model
     }
 
     //For get Completed reservation list before current date
-    function getCustomerCompletedReservationList($custo_id)
+    function getCustomerCompletedReservationList($custoID)
     {
 
-        $result = $this->db->select("*", "reservation", "WHERE Completed = 1 AND Customer_ID = :custo_id ;", ':custo_id', $custo_id);
+        $result = $this->db->select("*", "reservation", "WHERE Completed = 1 AND Customer_ID = :custoID ;", ':custoID', $custoID);
         return $result;
     }
 
@@ -194,5 +194,16 @@ class BookingModel extends Model
     {
         $result = $this->db->delete("reservation", "WHERE Reservation_ID = :resID;", ":resID", $resID);
         return $result;
+    }
+    function rateService($orderID,$i)
+    {
+        $columns = array("Reservation_ID","Rating");
+        $params = array(":orderID",":i");
+        $values = array($orderID,$i);
+
+        $result = $this->db->update("reservation", $columns, $params, $values, ":i", $i, "WHERE Reservation_ID = :orderID;");
+        return $result;
+
+
     }
 }

@@ -60,6 +60,7 @@ $orderList = $_SESSION['customerCompletedReservations'];
                         </div>
                     </div>
                 </div>
+
                 <?php $count = $count - 1;
             } ?>
 
