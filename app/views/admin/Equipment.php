@@ -119,8 +119,8 @@ $teams = $_SESSION['teamDetails'];
           <h id="CategoryNameAll" style="text-align: center;display: block;color: #085394;font-weight: bold;margin-bottom: 5px;font-size: x-large;"></h>
           <thead>
             <tr>
-              <th data-type="text">Equipment ID</th>
-              <!-- <th data-type="text">Name</th> -->
+              <th data-type="text">Item Code</th>
+              <th data-type="text">Model</th>
               <th data-type="text">Price</th>
               <th data-type="text">Date Acquired</th>
               <th data-type="text">Allocated to Team</th>
@@ -149,8 +149,8 @@ $teams = $_SESSION['teamDetails'];
           <h id="CategoryNameFree" style="text-align: center;display: block;color: #085394;font-weight: bold;margin-bottom: 5px;font-size: x-large;"></h>
           <thead>
             <tr>
-              <th data-type="text">Equipment ID</th>
-              <!-- <th data-type="text">Name</th> -->
+              <th data-type="text">Item Code</th>
+              <th data-type="text">Model</th>
               <th data-type="text">Price</th>
               <th data-type="text">Date Acquired</th>
               <th data-type="text">Allocated to Team</th>
@@ -179,7 +179,7 @@ $teams = $_SESSION['teamDetails'];
           <h id="TeamName" style="text-align: center;display: block;color: #085394;font-weight: bold;margin-bottom: 5px;font-size: x-large;"></h>
           <thead>
             <tr>
-              <th data-type="text">Equipment ID</th>
+              <th data-type="text">Item Code</th>
               <th data-type="text">Category</th>
               <th data-type="text">Price</th>
               <th data-type="text">Date Acquired</th>
@@ -241,8 +241,8 @@ $teams = $_SESSION['teamDetails'];
       if (equipment[i]['Item_Id'] == n) {
         var TempEq = [];
         TempEq['Equipment_ID'] = equipment[i]['Equipment_ID'];
-        // TempEq['Name'] = equipment[i]['Name'];
-        document.getElementById("CategoryNameAll").innerHTML = equipment[i]['Name'];
+        TempEq['Model'] = equipment[i]['Model'];
+        document.getElementById("CategoryNameAll").innerHTML = items[n-1]['Name'];
         TempEq['Price'] = equipment[i]['Price'];
         TempEq['Date_Acquired'] = equipment[i]['Date_Acquired'];
         TempEq['Team'] = equipment[i]['Team'];
@@ -258,6 +258,7 @@ $teams = $_SESSION['teamDetails'];
       if (EquipmentToDisplay[j]['Team'] == null) {
         x.innerHTML += "<tr id='rowNo" + j + "'>" +
           "<td>" + EquipmentToDisplay[j]['Equipment_ID'] + "</td>" +
+          "<td class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Model'] + "</td>" +
           "<td class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Price'] + ".00</td>" +
           "<td class='td-t1'>" + EquipmentToDisplay[j]['Date_Acquired'] + "</td>" +
           "<td id='assignedTeam_row" + j + "' class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Team'] + "</td><td>" +
@@ -268,6 +269,7 @@ $teams = $_SESSION['teamDetails'];
       } else {
         x.innerHTML += "<tr id='rowNo" + j + "'>" +
           "<td>" + EquipmentToDisplay[j]['Equipment_ID'] + "</td>" +
+          "<td class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Model'] + "</td>" +
           "<td class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Price'] + ".00</td>" +
           "<td class='td-t1'>" + EquipmentToDisplay[j]['Date_Acquired'] + "</td>" +
           "<td id='assignedTeam_row" + j + "' class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Team'] + "</td><td>" +
@@ -293,8 +295,8 @@ $teams = $_SESSION['teamDetails'];
       if (equipment[i]['Item_Id'] == n && equipment[i]['Team'] == null) {
         var TempEq = [];
         TempEq['Equipment_ID'] = equipment[i]['Equipment_ID'];
-        // TempEq['Name'] = equipment[i]['Name'];
-        document.getElementById("CategoryNameFree").innerHTML = equipment[i]['Name'];
+        TempEq['Model'] = equipment[i]['Model'];
+        document.getElementById("CategoryNameFree").innerHTML = items[n-1]['Name'];
         TempEq['Price'] = equipment[i]['Price'];
         TempEq['Date_Acquired'] = equipment[i]['Date_Acquired'];
         TempEq['Team'] = equipment[i]['Team'];
@@ -308,6 +310,7 @@ $teams = $_SESSION['teamDetails'];
       x.innerHTML += "<tr id='rowNo" + j + "'>" +
 
         "<td>" + EquipmentToDisplay[j]['Equipment_ID'] + "</td>" +
+        "<td class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Model'] + "</td>" +
         "<td class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Price'] + ".00</td>" +
         "<td class='td-t1'>" + EquipmentToDisplay[j]['Date_Acquired'] + "</td>" +
         "<td id='assignedTeam_row" + j + "' class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Team'] + "</td>" +
@@ -344,7 +347,14 @@ $teams = $_SESSION['teamDetails'];
       if (equipment[i]['Team'] == x) {
         var TempEq = [];
         TempEq['Equipment_ID'] = equipment[i]['Equipment_ID'];
-        TempEq['Name'] = equipment[i]['Name'];
+        
+
+        for(j=0;j<items.length;j++){
+          if(equipment[i]['Item_Id'] == items[j]['Item_Id']){
+            TempEq['Model'] = items[j]['Name'];
+          }
+        }
+
         TempEq['Price'] = equipment[i]['Price'];
         TempEq['Date_Acquired'] = equipment[i]['Date_Acquired'];
         // TempEq['Team'] = equipment[i]['Team'];
@@ -358,7 +368,7 @@ $teams = $_SESSION['teamDetails'];
       x.innerHTML += "<tr id='rowNo" + j + "'>" +
 
         "<td>" + EquipmentToDisplay[j]['Equipment_ID'] + "</td>" +
-        "<td style='text-align:left' class='td-t1'> " + EquipmentToDisplay[j]['Name'] + " </td>" +
+        "<td style='text-align:left' class='td-t1'> " + EquipmentToDisplay[j]['Model'] + " </td>" +
         "<td class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Price'] + ".00</td>" +
         "<td class='td-t1'>" + EquipmentToDisplay[j]['Date_Acquired'] + "</td>" +
         // "<td id='assignedTeam_row" + j + "' class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Team'] + "</td>" +
@@ -384,7 +394,13 @@ $teams = $_SESSION['teamDetails'];
       if (equipment[i]['Team'] == x && equipment[i]['Item_Id'] == itemID) {
         var TempEq = [];
         TempEq['Equipment_ID'] = equipment[i]['Equipment_ID'];
-        TempEq['Name'] = equipment[i]['Name'];
+        // TempEq['Model'] = equipment[i]['Model'];
+        for(j=0;j<items.length;j++){
+          if(equipment[i]['Item_Id'] == items[j]['Item_Id']){
+            TempEq['Model'] = items[j]['Name'];
+          }
+        }
+        
         TempEq['Price'] = equipment[i]['Price'];
         TempEq['Date_Acquired'] = equipment[i]['Date_Acquired'];
         TempEq['Team'] = equipment[i]['Team'];
@@ -397,7 +413,7 @@ $teams = $_SESSION['teamDetails'];
       x.innerHTML += "<tr id='rowNo" + j + "'>" +
 
         "<td>" + EquipmentToDisplay[j]['Equipment_ID'] + "</td>" +
-        "<td style='text-align:left' class='td-t1'> " + EquipmentToDisplay[j]['Name'] + " </td>" +
+        "<td style='text-align:left' class='td-t1'> " + EquipmentToDisplay[j]['Model'] + " </td>" +
         "<td class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Price'] + ".00</td>" +
         "<td class='td-t1'>" + EquipmentToDisplay[j]['Date_Acquired'] + "</td>" +
         "<td id='assignedTeam_row" + j + "' class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Team'] + "</td>" +

@@ -11,7 +11,7 @@ class ServiceModel extends Model
 
     function addEquipment($itemID,$name, $price,  $dateAcquired)
     {   
-        $columns = array('Name', 'Price', 'Date_Acquired','Item_Id');
+        $columns = array('Model', 'Price', 'Date_Acquired','Item_Id');
         $param = array(':name', ':price', ':date',':itemID');
         $values = array($name, $price,  $dateAcquired,$itemID);
         
