@@ -1,5 +1,5 @@
 var arrHead = new Array(); // array for header.
-arrHead = ["Category", "Model", "Price", "Date Acquired", ""];
+arrHead = ["Category", "Model", "Item Code", "Price", "Date Acquired", ""];
 
 var submitBtn = document.getElementById("submitButton");
 var div1 = document.getElementById("container1");
@@ -45,8 +45,8 @@ function addNewRow() {
     var td = document.createElement("td"); // table definition.
     td = tr.insertCell(c);
 
-    if (c == 4) {
-      // the first column.
+    if (c == 5) {
+      // the last column.
       // add a button in every new row in the first column.
       var button = document.createElement("input");
 
@@ -93,6 +93,15 @@ function addNewRow() {
         td.appendChild(ele);
       } else if (c == 2) {
         var ele = document.createElement("input");
+        ele.setAttribute("name", "itemCode");
+        ele.setAttribute("type", "text");
+        ele.setAttribute("required", "");
+        ele.setAttribute("value", "");
+        ele.setAttribute("id", "tb-input");
+
+        td.appendChild(ele);
+      } else if (c == 3) {
+        var ele = document.createElement("input");
         ele.setAttribute("name", "price");
         ele.setAttribute("type", "number");
         ele.setAttribute("required", "");
@@ -100,7 +109,7 @@ function addNewRow() {
         ele.setAttribute("id", "tb-input");
 
         td.appendChild(ele);
-      } else if (c == 3) {
+      } else if (c == 4) {
         var ele = document.createElement("input");
         ele.setAttribute("name", "dateAcquired");
         ele.setAttribute("type", "date");
