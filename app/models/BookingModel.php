@@ -59,6 +59,14 @@ class BookingModel extends Model
         return $result;
     }
 
+    function checkValidity($vehicle, $date, $time)
+    {
+        $result = $this->db->select("Reservation_ID", "reservation", "WHERE Vehicle_ID = :vehicle AND Date = :date AND Time = :time;", array(":vehicle", ":date", ":time"), array($vehicle, $date, $time));
+        if (sizeof($result) > 0) {
+            return "fail";
+        } else return "success";
+    }
+    
     function AddReserevation($reservationDetails)
     {
         $columns = array('Vehicle_ID', 'Address', 'Latitude', 'Longitude', 'Price', 'Total_price', 'Wash_Package_ID', 'Date', 'Time', 'Customer_ID');
@@ -195,15 +203,13 @@ class BookingModel extends Model
         $result = $this->db->delete("reservation", "WHERE Reservation_ID = :resID;", ":resID", $resID);
         return $result;
     }
-    function rateService($orderID,$i)
+    function rateService($orderID, $i)
     {
-        $columns = array("Reservation_ID","Rating");
-        $params = array(":orderID",":i");
-        $values = array($orderID,$i);
+        $columns = array("Reservation_ID", "Rating");
+        $params = array(":orderID", ":i");
+        $values = array($orderID, $i);
 
         $result = $this->db->update("reservation", $columns, $params, $values, ":i", $i, "WHERE Reservation_ID = :orderID;");
         return $result;
-
-
     }
 }
