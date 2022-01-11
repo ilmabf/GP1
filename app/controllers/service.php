@@ -33,13 +33,14 @@ class Service extends Controller
             //get POST data
             $itemID = $_POST['item_id'];
             $name = $_POST['name'];
+            $itemCode = $_POST['itemCode'];
             $price = $_POST['price'];
             $dateAcquired = $_POST['dateAcquired'];
 
-            if (isset($itemID) && isset($name) && isset($price) &&  isset($dateAcquired)) {
+            if (isset($itemID) && isset($name) && isset($itemCode) && isset($price) &&  isset($dateAcquired)) {
 
                 //store equipment
-                if ($this->model->addEquipment($itemID,$name, $price, $dateAcquired)) {
+                if ($this->model->addEquipment($itemID,$name, $itemCode, $price, $dateAcquired)) {
 
                     header("Location: /service/equipment");
                 }

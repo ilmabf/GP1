@@ -9,11 +9,11 @@ class ServiceModel extends Model
     }
 
 
-    function addEquipment($itemID,$name, $price,  $dateAcquired)
+    function addEquipment($itemID,$name,  $itemCode, $price,  $dateAcquired)
     {   
-        $columns = array('Name', 'Price', 'Date_Acquired','Item_Id');
-        $param = array(':name', ':price', ':date',':itemID');
-        $values = array($name, $price,  $dateAcquired,$itemID);
+        $columns = array('Model', 'ItemCode','Price', 'Date_Acquired','Item_Id');
+        $param = array(':name', ':itemCode',':price', ':date',':itemID');
+        $values = array($name,  $itemCode, $price,  $dateAcquired,$itemID);
         
         if ( $this->db->select ('count', "item", "WHERE Item_Id = :itemID;",':itemID',$itemID) >0 ){
             
