@@ -126,10 +126,10 @@ $stl = $_SESSION['completedSTL']
         <div class="service-team" style="background-color:transparent; box-shadow:none; margin:0px">
 
 
-            <div class="rate1">
+            <div class="rate1" id="displayedSentence">
 
-                <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">How was the service? Give us a
-                    rating!</h3>
+                <!--<h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">How was the service? Give us a
+                    rating!</h3>-->
             </div>
             <div class="rate1 stars1" id="RateUs" >
                 <i class="rating__star far fa-star"></i>
@@ -143,7 +143,7 @@ $stl = $_SESSION['completedSTL']
             
             <form action="/booking/rateService/<?php echo $orderDetails[0]['Reservation_ID']?>" method="post" style="display:inline-block;">
             <input type ="hidden" id="textF" value="0" name="rateStars">
-            <button class="uploadImagesLink" type="submit" value="submit rate">Submit Rate</button>
+            <button class="uploadImagesLink" type="submit" value="submit rate" id="rateSubmitBut" style="display:none;">Submit Rate</button>
             </form>
             </div>
 
@@ -155,31 +155,50 @@ $stl = $_SESSION['completedSTL']
         <script src="/public/js/CustomerViewUpcomingOrder.js"></script>
         <!--<script src="/public/js/CustomerViewCompletedOrder.js"></script>-->
         <script>
+
+        var orderDetails = <?php echo json_encode($_SESSION['completedOrder']); ?>;
+        var ratingLevel = orderDetails[0]['Rating'];
+
         var ratingStars = [...document.getElementsByClassName("rating__star")];
 
         function executeRating(stars) {
+
             const starClassActive = "rating__star fas fa-star";
             const starClassInactive = "rating__star far fa-star";
             const starsLength = stars.length;
 
-            let i;
+            if(ratingLevel == null){
+
+                document.getElementById("rateSubmitBut").style.display = "block";
+                var x = document.getElementById("displayedSentence");
+                x.innerHTML += "<h3 style='color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;'>" +"How was the service? Give us a rating!"+"</h3>";
+                let i;
             // stars[1].className = starClassActive
             // stars[2].className = starClassActive
             // stars[3].className = starClassActive
             //stars[0].className = starClassActive
 
-            stars.map((star) => {
-                star.onclick = () => {
-                    i = stars.indexOf(star);
+                stars.map((star) => {
+                    star.onclick = () => {
+                        i = stars.indexOf(star);
 
-                    document.getElementById("textF").value=i+1;
-                    if (star.className === starClassInactive) {
-                        for (i; i >= 0; --i) stars[i].className = starClassActive;
-                    } else {
-                        for (i; i < starsLength; ++i) stars[i].className = starClassInactive;
+                        document.getElementById("textF").value=i+1;
+                        if (star.className === starClassInactive) {
+                            for (i; i >= 0; --i) stars[i].className = starClassActive;
+                        } else {
+                            for (i; i < starsLength; ++i) stars[i].className = starClassInactive;
+                        }
+                    };
+                });
+
+            }
+            else{
+                var x = document.getElementById("displayedSentence");
+                x.innerHTML += "<h3 style='color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;'>" +"Thank you for your valuable rate!"+"</h3>";
+                    for (j = 0; j < ratingLevel; j++) {
+                        stars[j].className = starClassActive;
                     }
-                };
-            });
+            }
             
         }
         executeRating(ratingStars);

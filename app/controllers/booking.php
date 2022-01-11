@@ -368,8 +368,8 @@ class Booking extends Controller
         $i = $_POST["rateStars"];
         var_dump($i);
         if ($_SESSION['role'] == "customer") {
-            if ($this->model->rateService($orderID, $i)) {
-                header("Location: /booking/completed");
+            if($this->model->rateService($orderID, $i)){ 
+                header("Location: /booking/completedOrder/" . $orderID);
             }
         }
     }
