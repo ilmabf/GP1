@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\controllers",
+    "\\app\\models",
+    "\\app\\views",
+    "\\app\\views\\admin",
+    "\\app\\views\\customer",
+    "\\app\\views\\manager",
+    "\\public",
+    "\\public\\css\\components"
+  ],
+  "SelectedNode": "\\app\\models\\BookingModel.php",
+  "PreviewInSolutionExplorer": false
+}
