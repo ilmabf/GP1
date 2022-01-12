@@ -42,7 +42,7 @@ $booked = $_SESSION['booked'];
         <div class="vehicleWash">
             <div class="select-vehicle">
                 <h3>Select your vehicle</h3>
-                <!-- <?php print_r($booked);?> -->
+                <!-- <?php print_r($booked); ?> -->
                 <?php
                 if (sizeof($_SESSION['vehicles']) == 0) {
                     echo "<p style = 'font-size:initial;'>Please add your vehicle/s in your account page.</p>";
@@ -73,7 +73,7 @@ $booked = $_SESSION['booked'];
                             while ($count < sizeof($_SESSION['vehicles'])) {
                                 echo "<option value='";
                                 echo $vehicles[$count]['VID'];
-                                echo "'>";
+                                echo "' onclick = 'clearWashPackage();'>";
                                 echo $vehicles[$count]['VID'];
                                 echo "</option>";
                                 $count = $count + 1;
@@ -93,8 +93,8 @@ $booked = $_SESSION['booked'];
                     $i = 0;
                     while ($i < sizeof($_SESSION['washpackages'])) {
                         echo "<div class='wash-select-radio'>";
-                        echo "<input type = 'radio' name='washType' class='washType1' value='Interior Cleaning' id='";
-                        echo $i;
+                        echo "<input type = 'radio' name='washType' class='washType1' value='Interior Cleaning' id='washPackage-";
+                        echo $_SESSION['washpackages'][$i]['Wash_Package_ID'];
                         echo "'";
                         echo " onclick='getWashPackage(";
                         echo $i;
@@ -250,8 +250,8 @@ $booked = $_SESSION['booked'];
                             // split the key by '-'
                             var keyArr = key.split("-");
                             // turn the keyArr values to string
-                            if (keyArr[0] === date.getFullYear().toString() && keyArr[1] === monthStr && keyArr[2] === ("0" + (i)).slice(-2).toString()
-                                && timeSlotsArr[a - 1] === booked[key]) {
+                            if (keyArr[0] === date.getFullYear().toString() && keyArr[1] === monthStr && keyArr[2] === ("0" + (i)).slice(-2).toString() &&
+                                timeSlotsArr[a - 1] === booked[key]) {
                                 days +=
                                     `
                                             <span class="time-red" id = "slot1" onclick="getTimeAndDate(` +
@@ -441,6 +441,7 @@ $booked = $_SESSION['booked'];
         }
 
         function getWashPackage(n) {
+            // document.getElementById("washPackage-" + n).checked = true;
             document.cookie = "washPackage = " + pausecontent[n]['Wash_Package_ID'] + ";  path=/";
             document.cookie = "washPackageName = " + pausecontent[n]['Name'] + ";  path=/";
             var x = document.getElementById("vehicles").value;
@@ -461,6 +462,33 @@ $booked = $_SESSION['booked'];
             }
         }
     </script>
+
+    <script>
+        var cookieArray = document.cookie.split(";");
+        var i = 0;
+        var price;
+        var washp;
+        for (i = 0; i < cookieArray.length; i++) {
+            cookieArray[i] = cookieArray[i].trim();
+            if (cookieArray[i].substring(0, 5) === "price") {
+                price = cookieArray[i];
+                let p = price.substring(6);
+                document.getElementById("priceValue").innerHTML = "Rs. " + p;
+                break;
+            }
+
+        }
+        for (i = 0; i < cookieArray.length; i++) {
+            if (cookieArray[i].substring(0, 11) === "washPackage") {
+                washp = cookieArray[i];
+                let w = washp.substring(12);
+                w = "washPackage-" + w;
+                document.getElementById(w).checked = true;
+                break;
+            }
+        }
+    </script>
+
 </body>
 
 <!-- </div> -->

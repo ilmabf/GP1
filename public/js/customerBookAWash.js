@@ -33,6 +33,11 @@ function viewCalendar() {
 }
 
 function getVehicle() {
+  for (i = 0; i < pausecontent.length; i++) {
+    w = "washPackage-" + pausecontent[i]['Wash_Package_ID'];
+    document.getElementById(w).checked = false;
+    document.getElementById("priceValue").innerHTML = "";
+  }
   var x = document.getElementById("vehicles").value;
   document.cookie = "vehicle =" + x + "; path=/";
 }
