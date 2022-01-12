@@ -127,8 +127,8 @@ class Booking extends Controller
     {
         if ($_SESSION['role'] == "customer") {
 
-            $custo_id = $_SESSION['userDetails'][0]['User_ID'];
-            $_SESSION['customerCompletedReservations'] = $this->model->getCustomerCompletedReservationList($custo_id);
+            $custoID = $_SESSION['userDetails'][0]['User_ID'];
+            $_SESSION['customerCompletedReservations'] = $this->model->getCustomerCompletedReservationList($custoID);
 
             $this->view->render('customer/CompletedReservations');
             exit;
@@ -200,30 +200,45 @@ class Booking extends Controller
 
         $date = $year . "-" . $month . "-" . $day;
 
-        $reservationDetails = array($vehicle, $address, $latitude, $longitude, $price, $total, $washPackage, $date, $time, $_SESSION['userDetails'][0]['User_ID']);
-        if ($this->model->AddReserevation($reservationDetails)) {
+        $result = $this->model->checkValidity($vehicle, $date, $time);
+        if ($result == "success") {
+            $reservationDetails = array($vehicle, $address, $latitude, $longitude, $price, $total, $washPackage, $date, $time, $_SESSION['userDetails'][0]['User_ID']);
+            if ($this->model->AddReserevation($reservationDetails)) {
 
-            $mail = new Mailer();
+                $mail = new Mailer();
 
-            $output = '<p>Dear customer,</p>';
-            $output .= '<p>Thank you for using WandiWash!</p>';
-            $output .= '<p>You have made a reservation on ' . $date . ' with the following details.</p>';
-            $output .= '<p>Vehicle - ' . $vehicle . '</p>';
-            $output .= '<p>Wash Package - ' . $washPackageName . '</p>';
-            $output .= '<p>Location - ' . $address . '</p>';
-            $output .= '<p></p>';
-            $output .= '<p>Service Price - Rs.' . $price . '.00</p>';
-            $output .= '<p>Total Price - Rs.' . $total . '.00</p>';
-            $output .= '<p>We will let you know once a service team is assigned for you. Make sure to check your email or your upcoming reservations.</p>';
-            $output .= '<p>Thanks,</p>';
-            $output .= '<p>WandiWash.</p>';
-            $body = $output;
-            $subject = "We received your reservation - wandiwash.com";
+                $output = '<p>Dear customer,</p>';
+                $output .= '<p>Thank you for using WandiWash!</p>';
+                $output .= '<p>You have made a reservation on ' . $date . ' with the following details.</p>';
+                $output .= '<p>Vehicle - ' . $vehicle . '</p>';
+                $output .= '<p>Wash Package - ' . $washPackageName . '</p>';
+                $output .= '<p>Location - ' . $address . '</p>';
+                $output .= '<p></p>';
+                $output .= '<p>Service Price - Rs.' . $price . '.00</p>';
+                $output .= '<p>Total Price - Rs.' . $total . '.00</p>';
+                $output .= '<p>We will let you know once a service team is assigned for you. Make sure to check your email or your upcoming reservations.</p>';
+                $output .= '<p>Thanks,</p>';
+                $output .= '<p>WandiWash.</p>';
+                $body = $output;
+                $subject = "We received your reservation - wandiwash.com";
 
-            if ($mail->mailto($subject, $_SESSION['userDetails'][0]['Email'], $body)) {
-                header("Location: /user/home");
+                if ($mail->mailto($subject, $_SESSION['userDetails'][0]['Email'], $body)) {
+                    header("Location: /user/home");
+                }
             }
         }
+        else{
+            $_SESSION['bookingError'] = "Looks like we already have a reservation for that vehicle at the same time slot. Please check if you have entered the correct details.";
+            header("Location: /booking/error");
+        }
+    }
+
+    function error(){
+        if(!isset($_SESSION['bookingError'])){
+            header("Location: /user/home");
+            exit;
+        }
+        $this->view->render('customer/ReservationError');
     }
 
     function updateReservation($details, $orderID)
@@ -344,6 +359,17 @@ class Booking extends Controller
                 // session to display cannot cancel reservation
                 $_SESSION['cancelReservation'] = "cannot";
                 header("Location: /booking/upcomingOrder/" . $id);
+            }
+        }
+    }
+    function rateService($orderID)
+    {
+
+        $i = $_POST["rateStars"];
+        var_dump($i);
+        if ($_SESSION['role'] == "customer") {
+            if($this->model->rateService($orderID, $i)){ 
+                header("Location: /booking/completedOrder/" . $orderID);
             }
         }
     }

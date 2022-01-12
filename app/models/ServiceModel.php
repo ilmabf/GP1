@@ -9,15 +9,15 @@ class ServiceModel extends Model
     }
 
 
-    function addEquipment($item_id,$name, $price,  $dateAcquired)
+    function addEquipment($itemID,$name,  $itemCode, $price,  $dateAcquired)
     {   
-        $columns = array('Name', 'Price', 'Date_Acquired','Item_Id');
-        $param = array(':name', ':price', ':date',':item_id');
-        $values = array($name, $price,  $dateAcquired,$item_id);
+        $columns = array('Model', 'ItemCode','Price', 'Date_Acquired','Item_Id');
+        $param = array(':name', ':itemCode',':price', ':date',':itemID');
+        $values = array($name,  $itemCode, $price,  $dateAcquired,$itemID);
         
-        if ( $this->db->select ('count', "item", "WHERE Item_Id = :item_id;",':item_id',$item_id) >0 ){
+        if ( $this->db->select ('count', "item", "WHERE Item_Id = :itemID;",':itemID',$itemID) >0 ){
             
-            $result=$this->db->select("Total, Free", "item", "WHERE Item_Id = :item_id;",':item_id',$item_id);
+            $result=$this->db->select("*", "item", "WHERE Item_Id = :itemID ; ",':itemID',$itemID);
             $total  = $result[0]['Total'];
             $free  = $result[0]['Free'];
             $total++;
@@ -27,21 +27,21 @@ class ServiceModel extends Model
             $param1=array(':total',':free');
             $val1=array($total,$free);
 
-            $result1 = $this->db->update("item", $column1, $param1, $val1, ':item_id', $item_id,"WHERE (Item_Id = :item_id);");          
+            $result1 = $this->db->update("item", $column1, $param1, $val1, ':itemID', $itemID,"WHERE (Item_Id = :itemID);");          
             $result = $this->db->insert("equipment", $columns, $param, $values);
             if ($result == "Success") {
-            return true;
-        } else print_r($result);
+                 return true;
+            } else print_r($result);
         }
         else{
             $column1=array('Item_Id','Name','Total','Free');
             $param1=array(':item_id',':name',':total',':free');
-            $val1=array($item_id,$name,1,1);
+            $val1=array($itemID,$name,1,1);
 
             $result1=$this->db->insert("item",$column1,$param1,$val1);
             $result = $this->db->insert("equipment", $columns, $param, $values);
             if ($result == "Success") {
-            return true;
+                return true;
             } else print_r($result);
         }          
     }
@@ -144,6 +144,21 @@ class ServiceModel extends Model
                 return true;
             } else print_r($result);
         }       
+    }
+
+    function returnEquipment($eId){
+
+        $result = $this->db->update("equipment","Team", ':team', null, ':eid', $eId,"WHERE (Equipment_ID = :eid);");
+
+        $itemIdResult = $this->db->select("Item_Id", "equipment", "WHERE Equipment_ID = :eid;",':eid',$eId);
+        $itemId = $itemIdResult[0]['Item_Id'];
+        $free = $this->db->select("Free", "item", "WHERE Item_Id = :itemId;",':itemId',$itemId);
+
+        $result1 = $this->db->update("item", "Free", ':free', ($free[0]['Free']+1), ':itemId', $itemId,"WHERE (Item_Id = :itemId);");
+
+        if ($result1 == "Success") {
+            return true;
+        } else print_r($result);
     }
 
     // <------------------------------------- Service ------------------------------->

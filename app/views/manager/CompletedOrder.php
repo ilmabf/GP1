@@ -152,7 +152,7 @@ $images = $_SESSION['images'];
         <!--<script src="/public/js/ManagerViewCompletedOrder.js"></script>-->
         <script>
             var orderDetails = <?php echo json_encode($_SESSION['completedOrder']); ?>;
-            var ratingLevel = order_details[0]['Rating'];
+            var ratingLevel = orderDetails[0]['Rating'];
 
             const ratingStars = [...document.getElementsByClassName("rating__star")];
 

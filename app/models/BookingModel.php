@@ -59,6 +59,14 @@ class BookingModel extends Model
         return $result;
     }
 
+    function checkValidity($vehicle, $date, $time)
+    {
+        $result = $this->db->select("Reservation_ID", "reservation", "WHERE Vehicle_ID = :vehicle AND Date = :date AND Time = :time;", array(":vehicle", ":date", ":time"), array($vehicle, $date, $time));
+        if (sizeof($result) > 0) {
+            return "fail";
+        } else return "success";
+    }
+    
     function AddReserevation($reservationDetails)
     {
         $columns = array('Vehicle_ID', 'Address', 'Latitude', 'Longitude', 'Price', 'Total_price', 'Wash_Package_ID', 'Date', 'Time', 'Customer_ID');
@@ -89,16 +97,16 @@ class BookingModel extends Model
     function getCompletedReservationList1()
     {
         // get completed reservation detail list with customer names
-        $selection = array("reservation.Reservation_ID", "reservation.Vehicle_ID", "reservation.Date", "reservation.Time", "customer.First_Name", "customer.Last_Name");
+        $selection = array("reservation.Reservation_ID", "reservation.Vehicle_ID", "reservation.Date", "reservation.Time", "customer.First_Name", "customer.Last_Name","reservation.Member1");
         $result = $this->db->select($selection, "reservation, customer", "WHERE reservation.Completed = 1 AND reservation.Customer_ID = customer.User_ID;");
         return $result;
     }
 
     //For get Completed reservation list before current date
-    function getCustomerCompletedReservationList($custo_id)
+    function getCustomerCompletedReservationList($custoID)
     {
 
-        $result = $this->db->select("*", "reservation", "WHERE Completed = 1 AND Customer_ID = :custo_id ;", ':custo_id', $custo_id);
+        $result = $this->db->select("*", "reservation", "WHERE Completed = 1 AND Customer_ID = :custoID ;", ':custoID', $custoID);
         return $result;
     }
 
@@ -114,7 +122,7 @@ class BookingModel extends Model
     function getUpcomingReservationList1()
     {
         // get reservation detail list with customer names
-        $selection = array("reservation.Reservation_ID", "reservation.Vehicle_ID", "reservation.Date", "reservation.Time", "customer.First_Name", "customer.Last_Name");
+        $selection = array("reservation.Reservation_ID", "reservation.Vehicle_ID", "reservation.Date", "reservation.Time", "customer.First_Name", "customer.Last_Name", "reservation.Customer_ID");
         $result = $this->db->select($selection, "reservation, customer", "WHERE reservation.Completed = 0 AND reservation.Customer_ID = customer.User_ID;");
         return $result;
     }
@@ -193,6 +201,15 @@ class BookingModel extends Model
     function deleteReservation($resID)
     {
         $result = $this->db->delete("reservation", "WHERE Reservation_ID = :resID;", ":resID", $resID);
+        return $result;
+    }
+    function rateService($orderID, $i)
+    {
+        $columns = array("Reservation_ID", "Rating");
+        $params = array(":orderID", ":i");
+        $values = array($orderID, $i);
+
+        $result = $this->db->update("reservation", $columns, $params, $values, ":i", $i, "WHERE Reservation_ID = :orderID;");
         return $result;
     }
 }
