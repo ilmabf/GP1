@@ -162,17 +162,18 @@ class Employee extends Controller
                             // insert stl
                             $flag = 1;
                             $targetDir = "/public/images/";
-                            $fileName = basename($_FILES["file"]["name"]);
+                            $fileName = basename($_FILES["stlPhoto"]["name"]);
                             $targetFilePath = $targetDir . $fileName;
                             echo $targetFilePath;
-                            $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
+                            $fileType = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
 
                             $allowTypes = array('jpg', 'png', 'jpeg', 'gif', 'pdf');
 
                             if (in_array($fileType, $allowTypes)) {
-                                if (move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)) {
+                                echo "heretop";
+                                if (move_uploaded_file($_FILES["stlPhoto"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'].$targetFilePath)) {
                                     // insert to stl table
-
+                                    echo "herexxx";
                                     if ($this->model->makeSTLPhoto($fileName, $nic)) {
 
                                         // select last row of the stl table
@@ -218,7 +219,7 @@ class Employee extends Controller
             if (in_array($fileType, $allowTypes)) {
                 if (filesize($_FILES['file']['tmp_name']) < $maxFileSize) {
                     echo "File size is less than 5MB";
-                    if (move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)) {
+                    if (move_uploaded_file($_FILES["file"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'].$targetFilePath)) {
                         // insert to stl table
                         if ($this->model->updateSTLPhoto($fileName, $stlId)) {
                             $_SESSION['insertSuccess'] = 'STL Photo updated successfully';
