@@ -42,7 +42,12 @@ function checkRescheduleDetails(orderID) {
     var month = document.getElementById("month1").innerHTML;
     var year = document.getElementById("year1").innerHTML;
     var time = document.getElementById("timeSlot1").innerHTML.substring(6);
-
+    if(price[0] == "R"){
+      document.cookie = "price = " + price.substring(4) + ";path=/";
+    }
+    else{
+      document.cookie = "price = " + price + ";path=/";
+    }
     document.cookie = "day = " + date + ";path=/";
     document.cookie = "month = " + month + ";path=/";
     document.cookie = "year = " + year + ";path=/";
@@ -61,25 +66,3 @@ function insertCookie() {
   document.getElementById(washPackage).checked = true;
 //   document.getElementById("xx").innerHTML = document.cookie;
 }
-
-function checkRescheduleDetails(orderID) {
-    var slash = document.getElementById("slash11").innerHTML;
-    var price = document.getElementById("priceValue1").innerHTML;
-    if (slash != "/" || price == "") {
-      document.getElementById("completeMsg1").innerHTML =
-        "Please make sure the details are complete";
-    } else {
-      var date = document.getElementById("day1").innerHTML.substring(5);
-      // console.log(date.substring(5));
-      var month = document.getElementById("month1").innerHTML;
-      var year = document.getElementById("year1").innerHTML;
-      var time = document.getElementById("timeSlot1").innerHTML.substring(6);
-  
-      document.cookie = "day = " + date + ";path=/";
-      document.cookie = "month = " + month + ";path=/";
-      document.cookie = "year = " + year + ";path=/";
-      document.cookie = "time = " + time + ";path=/";
-  
-      window.location = "/booking/rescheduleLocation/" + orderID;
-    }
-  }
