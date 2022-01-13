@@ -100,8 +100,8 @@ $reservationDetails = $_SESSION['reservationDetails'];
                         //     echo "</div>";
                         // } else {
                         echo "<div class='wash-select-radio'>";
-                        echo "<input type = 'radio' name='washType' class='washType1' value='Interior Cleaning' id='";
-                        echo $i;
+                        echo "<input type = 'radio' name='washType' class='washType1' value='Interior Cleaning' id='washPackage-";
+                        echo $_SESSION['washpackages'][$i]['Wash_Package_ID'];
                         echo "'";
                         echo " onclick='getWashPackage(";
                         echo $i;
@@ -138,15 +138,16 @@ $reservationDetails = $_SESSION['reservationDetails'];
             <?php
             // echo $_SESSION['servicePrice'][0]['Price'];
             // echo $reservationDetails[0]['Price'];
-            if ($reservationDetails[0]['Price'] === $_SESSION['servicePrice'][0]['Price']) {
-                echo '<span class="priceBox" id="priceValue1">';
-                echo $reservationDetails[0]['Price'];
+            // if ($reservationDetails[0]['Price'] === $_SESSION['servicePrice'][0]['Price']) {
+            //     echo '<span class="priceBox" id="priceValue1">';
+            //     echo "Rs. " .$reservationDetails[0]['Price'];
+            //     echo "</span>";
+            // } else {
+                echo '<span class="priceBox" style="display:block;" id="priceValue1">';
+                echo "Rs. " .$reservationDetails[0]['Price'];
                 echo "</span>";
-            } else {
-                echo '<span class="priceBox" style="display:none;" id="priceValue1">';
-                echo $reservationDetails[0]['Price'];
-                echo "</span>";
-            } ?>
+            // }
+             ?>
             <button class="next-button" onclick="checkRescheduleDetails('<?php echo $rescheduleID; ?>');">Next</button>
 
             <!-- <a href="/booking/location" style="color: white;">Next</a></button> -->
@@ -178,9 +179,9 @@ $reservationDetails = $_SESSION['reservationDetails'];
         </div>
 
     </div>
-
+    <script> reservationDetails = <?php echo json_encode($_SESSION['reservationDetails']); ?>;</script>
     <script src="/public/js/CustomerCalendar.js"></script>
-    <script src="/public/js/CustomerBookAWash.js"></script>
+    <script src="/public/js/CustomerReschedule.js"></script>
     <script type="text/javascript">
         const date = new Date();
         var h, i, j, z, a, flag1, flag2;
@@ -443,7 +444,7 @@ $reservationDetails = $_SESSION['reservationDetails'];
         var pausecontent = <?php echo json_encode($_SESSION['washpackages']); ?>;
         var vehicles = <?php echo json_encode($_SESSION['vehicles']); ?>;
         var prices = <?php echo json_encode($_SESSION['servicePrice']); ?>;
-
+        
         function getType(x) {
             var i = 0;
             var type = "";
