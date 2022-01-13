@@ -2,15 +2,16 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\controllers",
-    "\\app\\models",
+    "\\app\\config",
     "\\app\\views",
-    "\\app\\views\\admin",
-    "\\app\\views\\customer",
     "\\app\\views\\manager",
     "\\public",
+    "\\public\\css\\actors",
+    "\\public\\css\\actors\\admin",
+    "\\public\\css\\actors\\customer",
+    "\\public\\css\\actors\\stl",
     "\\public\\css\\components"
   ],
-  "SelectedNode": "\\app\\models\\BookingModel.php",
+  "SelectedNode": "\\app\\views\\manager\\CompletedReservations.php",
   "PreviewInSolutionExplorer": false
 }
