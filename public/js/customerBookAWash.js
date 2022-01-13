@@ -32,9 +32,10 @@ function viewCalendar() {
   z.classList.add("blurCalendar");
 }
 
+//set vehicle cookie
 function getVehicle() {
   for (i = 0; i < pausecontent.length; i++) {
-    w = "washPackage-" + pausecontent[i]['Wash_Package_ID'];
+    w = "washPackage-" + pausecontent[i]["Wash_Package_ID"];
     document.getElementById(w).checked = false;
     document.getElementById("priceValue").innerHTML = "";
   }
@@ -42,7 +43,7 @@ function getVehicle() {
   document.cookie = "vehicle =" + x + "; path=/";
 }
 insertCookie();
-getVehicle();
+// getVehicle();
 
 //check if date, price and vehicle details are complete
 function checkDetails() {
@@ -52,32 +53,13 @@ function checkDetails() {
     document.getElementById("completeMsg").innerHTML =
       "Please make sure the details are complete";
   } else {
+    var x = document.getElementById("vehicles").value;
+    document.cookie = "vehicle =" + x + "; path=/";
     window.location = "/booking/location";
   }
 }
 
-function checkRescheduleDetails(orderID) {
-  var slash = document.getElementById("slash11").innerHTML;
-  var price = document.getElementById("priceValue1").innerHTML;
-  if (slash != "/" || price == "") {
-    document.getElementById("completeMsg1").innerHTML =
-      "Please make sure the details are complete";
-  } else {
-    var date = document.getElementById("day1").innerHTML.substring(5);
-    // console.log(date.substring(5));
-    var month = document.getElementById("month1").innerHTML;
-    var year = document.getElementById("year1").innerHTML;
-    var time = document.getElementById("timeSlot1").innerHTML.substring(6);
-
-    document.cookie = "day = " + date + ";path=/";
-    document.cookie = "month = " + month + ";path=/";
-    document.cookie = "year = " + year + ";path=/";
-    document.cookie = "time = " + time + ";path=/";
-
-    window.location = "/booking/rescheduleLocation/" + orderID;
-  }
-}
-
+//set cookies
 function insertCookie() {
   var cookieArray = document.cookie.split(";");
   var i = 0;
@@ -88,28 +70,26 @@ function insertCookie() {
       document.getElementById("day").innerHTML = date;
       document.getElementById("slash1").innerHTML = "/";
       document.getElementById("slash2").innerHTML = "/";
-    }
-    if (cookieArray[i].substring(0, 5) === "month") {
+    } else if (cookieArray[i].substring(0, 5) === "month") {
       var month = cookieArray[i].substring(6);
       document.getElementById("month").innerHTML = month;
-    }
-    if (cookieArray[i].substring(0, 4) === "year") {
+    } else if (cookieArray[i].substring(0, 4) === "year") {
       var year = cookieArray[i].substring(5);
       document.getElementById("year").innerHTML = year;
-    }
-    if (cookieArray[i].substring(0, 4) === "time") {
+    } else if (cookieArray[i].substring(0, 4) === "time") {
       var time = cookieArray[i].substring(5);
       document.getElementById("timeSlot").innerHTML = time;
-    }
-    if (cookieArray[i].substring(0, 7) === "vehicle") {
+    } else if (cookieArray[i].substring(0, 7) === "vehicle") {
       var vehicle = cookieArray[i].substring(8);
       document.getElementById("vehicles").value = vehicle;
       document.cookie = "vehicle =" + vehicle + "; path=/";
-    }
-    if (cookieArray[i].substring(0, 15) === "washPackageName") {
-      var washPackage = cookieArray[i].substring(16);
-    }
-    if (cookieArray[i].substring(0, 5) === "price") {
+    } else if (cookieArray[i].substring(0, 15) === "washPackageName") {
+      var washPackageName = cookieArray[i].substring(16);
+    } else if (cookieArray[i].substring(0, 11) === "washPackage") {
+      var washPackage = cookieArray[i].substring(12);
+      washPackage = "washPackage-" + washPackage;
+      document.getElementById(washPackage).checked = true;
+    } else if (cookieArray[i].substring(0, 5) === "price") {
       var price = cookieArray[i].substring(6);
       document.getElementById("priceValue").style = "display:block;";
       document.getElementById("priceValue").innerHTML = "Rs. " + price;

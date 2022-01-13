@@ -423,11 +423,12 @@ $booked = $_SESSION['booked'];
         }
     </script>
 
+<!-- set price and washpackage cookies  -->
     <script>
         var pausecontent = <?php echo json_encode($_SESSION['washpackages']); ?>;
         var vehicles = <?php echo json_encode($_SESSION['vehicles']); ?>;
         var prices = <?php echo json_encode($_SESSION['servicePrice']); ?>;
-        document.getElementById("priceValue").innerHTML = "";
+        // document.getElementById("priceValue").innerHTML = "";
 
         function getType(x) {
             var i = 0;
@@ -463,7 +464,8 @@ $booked = $_SESSION['booked'];
         }
     </script>
 
-    <script>
+<!-- Include price and washpackage cookies if there are any -->
+    <!-- <script>
         var cookieArray = document.cookie.split(";");
         var i = 0;
         var price;
@@ -487,7 +489,7 @@ $booked = $_SESSION['booked'];
                 break;
             }
         }
-    </script>
+    </script> -->
 
 </body>
 
