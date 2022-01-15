@@ -117,7 +117,7 @@
     <div class="forma">
         <div class="loguser-icon"></div>
         <h2 class="login-signupheader">Update your mobile</h2>
-        <form action="/account/editDetails" method="post" id="customer-signup">
+        <form action="/account/editMobile" method="post" id="customer-mob">
             <label for="fname" style="padding: 0px 40px 0px 0px;">Mobile number</label>
             <input class="input-box" type="text2" pattern="[0-9]{10}" name="mobile" autofocus placeholder="<?php echo $details[0]['Contact_Number'] ?>" required>
             <br>
