@@ -25,6 +25,11 @@ class Account extends Controller
         header("Location: /account/");
     }
 
+    function deleteAccount(){
+        $this->model->deleteCustomerAccount($_SESSION['userDetails'][0]['User_ID']);
+        header("Location: /user/logout");
+    }
+
     function addVehicle()
     {
         $vin = $_POST['vin'];

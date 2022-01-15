@@ -128,6 +128,18 @@
     </div>
 </div>
 
+<div class="addVehicleform" id="deleteAccountForm">
+    <div class="forma">
+        <div class="loguser-icon"></div>
+        <h2 class="login-signupheader">Do you want to delete your account?</h2>
+        <form action="/account/deleteAccount" method="post" id="customer-mob">
+            <button id="EditDetailsFormSubmitButton" class="formSubmitButton" type="submit" name="signup">Yes</button>
+            <button id="EditDetailsFormCloseButton" class="formCancelButton" type="button" name="signup" onclick="closeDeleteAccount()">No</button>
+        </form>
+
+    </div>
+</div>
+
 <div class="addVehicleform" id="deleteAddressForm" style="min-width: 300px;">
     <div class="forma">
         <h2 class="login-signupheader">Delete Location?</h2>
@@ -231,6 +243,7 @@
                 <div id="googleMap" style="border:0; border-radius: 27px; width:100%;height:100%; ">
                 </div>
             </div><br>
+            <p style="float:right; font-size:smaller; color:red; cursor:pointer;" onclick="openDeleteAccount();">Delete Account</p>
         </div>
     </div>
 </div>
