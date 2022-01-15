@@ -162,3 +162,29 @@ function closeDeleteAddress() {
 
   }
 }
+
+function openDeleteAccount() {
+
+  var x = document.getElementById("deleteAccountForm");
+  var y = document.getElementById("mainbox");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    y.classList.add("blurAccount");
+  } else {
+    x.style.display = "none";
+
+  }
+
+}
+
+function closeDeleteAccount() {
+  var x = document.getElementById("deleteAccountForm");
+  var y = document.getElementById("mainbox");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+    y.classList.remove("blurAccount");
+  } else {
+    x.style.display = "block";
+
+  }
+}
