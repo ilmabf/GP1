@@ -1,3 +1,3 @@
 # Wandiwash
 
-A Mobile Car Wash Booking & Managment System.
+Mobile Car Wash Booking & Managment System.
