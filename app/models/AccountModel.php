@@ -19,6 +19,30 @@ class AccountModel extends Model
         return $result;
     }
 
+    public function editMobileNum($newMob, $uid)
+    {
+        $result = $this->db->update("customer", "Contact_Number", ":mob", $newMob, ":uid", $uid, "WHERE User_ID = :uid ;");
+        return $result;
+    }
+
+    public function deleteCustomerAccount($uid)
+    {
+
+        $columns = array('Flag', 'Email', 'Username');
+        $param = array(':flag', ':email', ':uname');
+        $values = array(0, "null", "null", "null");
+
+        $result = $this->db->update("users",  $columns, $param, $values, ":uid", $uid, "WHERE User_ID = :uid ;");
+        $result = $this->db->update("customer", "Contact_Number", ":mob", "0000000000", ":uid", $uid, "WHERE User_ID = :uid ;");
+        return $result;
+    }
+
+    public function getCustDetails($uid)
+    {
+        $result = $this->db->select("*", "users", "INNER JOIN customer on users.User_ID = customer.User_ID WHERE (customer.User_ID = :uid);", ":uid", $uid);
+        return $result;
+    }
+
     function vehicleEdit($uid, $vid, $columnValue)
     {
         $columns = array('Model', 'Colour', 'Type', 'Manufacturer');

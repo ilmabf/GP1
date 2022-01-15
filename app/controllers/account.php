@@ -11,10 +11,23 @@ class Account extends Controller
 
     function index()
     {
-        // get customer vehicles
+        // get customer details
+        $_SESSION['userDetails'] = $this->model->getCustDetails($_SESSION['userDetails'][0]['User_ID']);
         $_SESSION['vehicles'] = $this->model->getVehicles($_SESSION['userDetails'][0]['User_ID']);
         $_SESSION['address'] = $this->model->getAddress($_SESSION['userDetails'][0]['User_ID']);
+        
         $this->view->render('customer/Account');
+    }
+
+    function editMobile(){
+        $newMobile = $_POST['mobile'];
+        $this->model->editMobileNum($newMobile, $_SESSION['userDetails'][0]['User_ID']);
+        header("Location: /account/");
+    }
+
+    function deleteAccount(){
+        $this->model->deleteCustomerAccount($_SESSION['userDetails'][0]['User_ID']);
+        header("Location: /user/logout");
     }
 
     function addVehicle()

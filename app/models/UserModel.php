@@ -11,7 +11,7 @@ class UserModel extends Model
     // -------------------- Authentication --------------------------------------- // 
     public function authenticate($uname, $pwd)
     {
-        if ($this->db->select('count', "users", "WHERE Username = :uname OR Email = :email ;", array(':uname', ':email'), array($uname, $uname)) > 0) {
+        if ($this->db->select('count', "users", "WHERE (Username = :uname OR Email = :email) AND Flag = 1;", array(':uname', ':email'), array($uname, $uname)) > 0) {
             $hashed = $this->db->select("PASSWORD", "users", "WHERE Username = :uname OR Email = :email ;", array(':uname', ':email'), array($uname, $uname));
             if (password_verify($pwd, $hashed[0]['PASSWORD'])) {
                 return true;
