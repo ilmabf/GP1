@@ -1,3 +1,3 @@
-# GP1
+# Wandiwash
 
 A Mobile Car Wash Booking & Managment System.
