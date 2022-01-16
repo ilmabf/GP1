@@ -233,7 +233,7 @@ function addStlRow() {
         ele2.setAttribute("required", "");
       } else if (c2 == 5) {
         ele2.setAttribute("id", "stlphoto");
-        ele2.setAttribute("name", "file");
+        ele2.setAttribute("name", "stlPhoto");
         ele2.setAttribute("type", "file");
         ele2.setAttribute("required", "");
       }
