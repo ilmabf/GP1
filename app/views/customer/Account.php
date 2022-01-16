@@ -117,12 +117,24 @@
     <div class="forma">
         <div class="loguser-icon"></div>
         <h2 class="login-signupheader">Update your mobile</h2>
-        <form action="/account/editDetails" method="post" id="customer-signup">
+        <form action="/account/editMobile" method="post" id="customer-mob">
             <label for="fname" style="padding: 0px 40px 0px 0px;">Mobile number</label>
             <input class="input-box" type="text2" pattern="[0-9]{10}" name="mobile" autofocus placeholder="<?php echo $details[0]['Contact_Number'] ?>" required>
             <br>
             <button id="EditDetailsFormSubmitButton" class="formSubmitButton" type="submit" name="signup">Update</button>
             <button id="EditDetailsFormCloseButton" class="formCancelButton" type="button" name="signup" onclick="closeDetailsVehicleForm()">Cancel</button>
+        </form>
+
+    </div>
+</div>
+
+<div class="addVehicleform" id="deleteAccountForm">
+    <div class="forma">
+        <div class="loguser-icon"></div>
+        <h2 class="login-signupheader">Do you want to delete your account?</h2>
+        <form action="/account/deleteAccount" method="post" id="customer-mob">
+            <button id="EditDetailsFormSubmitButton" class="formSubmitButton" type="submit" name="signup">Yes</button>
+            <button id="EditDetailsFormCloseButton" class="formCancelButton" type="button" name="signup" onclick="closeDeleteAccount()">No</button>
         </form>
 
     </div>
@@ -231,6 +243,7 @@
                 <div id="googleMap" style="border:0; border-radius: 27px; width:100%;height:100%; ">
                 </div>
             </div><br>
+            <p style="float:right; font-size:smaller; color:red; cursor:pointer;" onclick="openDeleteAccount();">Delete Account</p>
         </div>
     </div>
 </div>
