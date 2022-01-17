@@ -27,7 +27,7 @@ $stl = $_SESSION['completedSTL']
 
             <form action="" method="post" id="customer-signup">
                 <ul>
-                    <li><img src="data:image/ . $type . ;base64, <?php echo base64_encode($stl[0]['Photo']); ?>" style="width: 250px;"></img></li><br>
+                    <li><img src="<?php echo '/public/images/' . $stl[0]['file_name']; ?>" style="width: 250px;"></img></li><br>
                     <li>Name - Mr. <?php echo $stl[0]['First_Name'] ?> <?php echo $stl[0]['Last_Name'] ?> </li><br>
                     <li>Contact Number -<?php echo $stl[0]['Contact_Number'] ?></li>
                     <button id="VehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closestlForm()" style="float:none">Close</button>

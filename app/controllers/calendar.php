@@ -50,16 +50,28 @@ class Calendar extends Controller
     {
         print_r($_SESSION['customer']);
         if ($_SESSION['role'] == "stl") { 
-            $check1 = getimagesize($_FILES["beforeServiceImage"]["tmp_name"]);            
-            $check2 = getimagesize($_FILES["afterServiceImage"]["tmp_name"]);
-           
-            if ($check1 !== false && $check2 !== false) {
-                $image1 = $_FILES['beforeServiceImage']['tmp_name'];
-                $imgContent1 = addslashes(file_get_contents($image1));
-                $image2 = $_FILES['afterServiceImage']['tmp_name'];
-                $imgContent2 = addslashes(file_get_contents($image2));
-                
-                $this->model->uploadImages($orderID,$imgContent1,$imgContent2);
+
+            $targetDir = "/public/images/";
+            $fileName1 = basename($_FILES["beforeServiceImage"]["name"]);
+            $fileName2 = basename($_FILES["afterServiceImage"]["name"]);
+            $targetFilePath1 = $targetDir . $fileName1;
+            $targetFilePath2 = $targetDir . $fileName2;
+            
+            $fileType1 = strtolower(pathinfo($targetFilePath1, PATHINFO_EXTENSION));
+            $fileType2 = strtolower(pathinfo($targetFilePath2, PATHINFO_EXTENSION));
+
+            $allowTypes = array('jpg', 'png', 'jpeg', 'gif', 'pdf');
+
+            if (in_array($fileType1, $allowTypes) && in_array($fileType2, $allowTypes) ) {
+
+                if ( move_uploaded_file($_FILES["beforeServiceImage"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'].$targetFilePath1)  ) {
+                    if (move_uploaded_file($_FILES["afterServiceImage"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'].$targetFilePath2 ) ) {
+              
+                    $this->model->uploadImages($orderID, $fileName1, $fileName2);
+
+                    }
+                }
+
             }
            if ($this->model->completeOrder($orderID)) {
 

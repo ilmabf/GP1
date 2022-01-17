@@ -192,7 +192,7 @@ class BookingModel extends Model
 
     function getSTLDetails($stlID)
     {
-        $selection = array("Photo", "First_Name", "Last_Name", "Contact_Number");
+        $selection = array("file_name", "First_Name", "Last_Name", "Contact_Number");
         $result = $this->db->select($selection, "employee", "INNER JOIN service_team_leader ON service_team_leader.STL_ID = employee.STL_ID WHERE service_team_leader.STL_ID = :stlid", ":stlid", $stlID);
         // print_r($result);
         return $result;
