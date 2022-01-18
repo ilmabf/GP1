@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\config",
-    "\\app\\controllers",
-    "\\app\\libs",
     "\\app\\models",
     "\\app\\views",
+    "\\app\\views\\admin",
+    "\\app\\views\\customer",
     "\\app\\views\\manager",
+    "\\app\\views\\stl",
     "\\public",
     "\\public\\images"
   ],
-  "SelectedNode": "\\app\\views\\manager\\Employee.php",
+  "SelectedNode": "\\public\\images\\istockphoto-1125613956-612x612.jpg",
   "PreviewInSolutionExplorer": false
 }
