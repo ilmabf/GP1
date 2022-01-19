@@ -289,7 +289,7 @@ $result = $_SESSION['employeeDetails'];
           <span class="row" style="text-align: center;">
             <span class="col-md-4 viewPhotos vp2">
               <img src="<?php echo $imgUrl ?>" alt="<?php echo $result[$count]['file_name'] ?>" class="img-thumbnail" style="height:300px; width:300px; object-fit:contain;">
-              <div style="margin-top: -60px;"><?php echo $result1[$count]['First_Name'] ?> <?php echo $result1[$count]['Last_Name'] ?></div>
+              <div style="margin-top: -60px;"><b><?php echo $result1[$count]['First_Name'] ?> <?php echo $result1[$count]['Last_Name'] ?></b></div>
             </span>
           </span>
         <?php $count = $count + 1;
