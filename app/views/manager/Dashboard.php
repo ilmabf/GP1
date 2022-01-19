@@ -7,6 +7,7 @@ include 'views/user/LoggedInHeader.php';
 
 <div class="heading">
     <h2>Dashboard</h2>
+    <?php print_r($_SESSION['teamBookings']);?>
 </div>
 
 <div class="managerChartsR1">
