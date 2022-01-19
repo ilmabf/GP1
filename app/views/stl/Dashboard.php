@@ -11,7 +11,7 @@ $typeOfBookings = $_SESSION['typeOfBookings'];
 
 <div style="min-height: 50px;"></div>
 
-<div style="display: block;" class="stlChartsR1">
+<div style="display: block; text-align" class="stlChartsR1">
 
     <div id="myPlot1" style="max-width:50%;"></div>
     <div id="myPlot2" style="max-width:50%;"></div>
