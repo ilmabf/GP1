@@ -105,6 +105,7 @@ class Employee extends Controller
         // add stlid, photo to stl table
 
         if ($_SESSION['role'] == "systemadmin") {
+            // echo "systemadmin";
             $nic = $_POST['NIC'];
             $stlUserName = $_POST['stlUserName'];
             $stlEmail = $_POST['stlEmail'];
@@ -113,7 +114,7 @@ class Employee extends Controller
 
 
             if (isset($_POST["submitStl"])) {
-                // echo "Submitted";
+                echo "Submitted";
                 // for loop for check if nic not exist in $_SESSION['stlData']
                 $flag1 = 1;
                 // print_r($_SESSION['stlData']);
@@ -171,15 +172,15 @@ class Employee extends Controller
 
                             if (in_array($fileType, $allowTypes)) {
                                 echo "heretop";
-                                if (move_uploaded_file($_FILES["stlPhoto"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'].$targetFilePath)) {
+                                if (move_uploaded_file($_FILES["stlPhoto"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'] . $targetFilePath)) {
                                     // insert to stl table
-                                    echo "herexxx";
+                                    // echo "herexxx";
                                     if ($this->model->makeSTLPhoto($fileName, $nic)) {
 
                                         // select last row of the stl table
                                         $stlId = $this->model->getLastSTLId();
                                         $newStlID =  $stlId[0]['STL_ID'];
-                                        echo $newStlID;
+                                        // echo $newStlID;
                                         if ($this->model->stlUserAdd($newStlID, $stlUserName, $hashedpwd, $stlEmail, $flag)) {
                                             if ($this->model->empStlIDAdd($newStlID, $nic)) {
                                                 $_SESSION['insertSuccess'] = 'STL added successfully';
@@ -213,20 +214,19 @@ class Employee extends Controller
             $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
 
             $allowTypes = array('jpg', 'png', 'jpeg', 'gif', 'pdf');
-            // max file size 5MB
-            $maxFileSize = 5 * 1024 * 1024;
+            // // max file size 5MB
+            // $maxFileSize = 5 * 1024 * 1024;
 
             if (in_array($fileType, $allowTypes)) {
-                if (filesize($_FILES['file']['tmp_name']) < $maxFileSize) {
-                    echo "File size is less than 5MB";
-                    if (move_uploaded_file($_FILES["file"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'].$targetFilePath)) {
-                        // insert to stl table
-                        if ($this->model->updateSTLPhoto($fileName, $stlId)) {
-                            $_SESSION['insertSuccess'] = 'STL Photo updated successfully';
-                            header("Location: /employee/");
-                        } else {
-                            echo "Error in stl photo";
-                        }
+                // if (filesize($_FILES['file']['tmp_name']) < $maxFileSize) {
+                //     echo "File size is less than 5MB";
+                if (move_uploaded_file($_FILES["file"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'] . $targetFilePath)) {
+                    // insert to stl table
+                    if ($this->model->updateSTLPhoto($fileName, $stlId)) {
+                        $_SESSION['insertSuccess'] = 'STL Photo updated successfully';
+                        header("Location: /employee/");
+                    } else {
+                        echo "Error in stl photo";
                     }
                 }
             }
