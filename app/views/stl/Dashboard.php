@@ -6,15 +6,15 @@ $typeOfBookings = $_SESSION['typeOfBookings'];
 <div style="min-height: 110px;"></div>
 <div>
     <h1 class="stl-dashboard-h1">Dashboard</h1>
-    <?php print_r($_SESSION['typeOfBookings']); ?>
+    <!-- <?php print_r($_SESSION['typeOfBookings']); ?> -->
 </div>
 
 <div style="min-height: 50px;"></div>
 
 <div style="display: block; text-align:center;" class="stlChartsR1">
 
-    <div id="myPlot1" style="max-width:50%;"></div>
-    <div id="myPlot2" style="max-width:50%;"></div>
+    <div id="myPlot1" class="managerChart1" style="max-width:50%;"></div>
+    <div id="myPlot2" class="managerChart2" style="max-width:50%;"></div>
 
 </div>
 
