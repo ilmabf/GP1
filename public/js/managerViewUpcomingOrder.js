@@ -54,3 +54,32 @@ function closeassign(){
     
   }
 }
+
+function changeAssign(n){
+  document.getElementById("assignMsg2").innerHTML = "Do you want to change currently assigned team to Team " + n + " for this reservation?";
+  var x = document.getElementById("changeAssign");
+  var y = document.getElementById("upcoming");
+  // var z = document.getElementById("service-team");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    y.classList.add("blur");
+    // z.classList.add("blur");
+  } 
+  else {
+    x.style.display = "none";
+  }
+}
+
+function closeChangeAssign(){
+  var x = document.getElementById("changeAssign");
+  var y = document.getElementById("upcoming");
+  // var z = document.getElementById("service-team");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+    y.classList.remove("blur");
+    // z.classList.remove("blur");
+  } else {
+    x.style.display = "block";
+    
+  }
+}
