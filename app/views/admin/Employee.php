@@ -214,11 +214,6 @@ include 'views/user/LoggedInHeader.php';
                 <th data-type="text">Salary</th>
                 <th data-type="number">NIC No</th>
                 <th data-type="text">Username</th>
-                <!-- <th data-type="text">Photo</th> -->
-                <!-- <th data-type="number">Team</th> -->
-                <!-- <th data-type="text">Team</th>
-              <th data-type="text">Leader</th>
-              <th data-type="text">Photo Link</th> -->
                 <th colspan="2" style="text-align: center;">Action</th>
               </tr>
             </thead>
@@ -313,7 +308,6 @@ include 'views/user/LoggedInHeader.php';
         </div>
 
         <div>
-          <!-- <h3 style="margin-bottom: 5px; margin-top: 30px; color:#193498;">Photos</h3> -->
 
           <?php
           $result = $_SESSION['stlTableData'];
@@ -324,11 +318,11 @@ include 'views/user/LoggedInHeader.php';
             <span class="row" style="text-align: center;">
               <span class="col-md-4 viewPhotos vp2">
                 <img src="<?php echo $imgUrl ?>" alt="<?php echo $result[$count]['file_name'] ?>" class="img-thumbnail" style="height:300px; width:300px; object-fit:contain;">
-                <div style="margin-top: -60px;"><?php echo $result1[$count]['First_Name'] ?> <?php echo $result1[$count]['Last_Name'] ?></div>
+                <div style="margin-top: -60px;"><b><?php echo $result1[$count]['First_Name'] ?> <?php echo $result1[$count]['Last_Name'] ?></b></div>
 
                 <form action="/employee/updateStlImage/" method="POST" enctype="multipart/form-data">
-                  <input type="file" name="file" id="file">
-                  <input type="submit" id="upload" value="Update">
+                  <input type="file" name="file" class="upload_image" id="file">
+                  <input type="submit" id="upload" class="edit_btn" value="Update">
                   <input type="hidden" name="stl_id" value="<?php echo $result[$count]['STL_ID'] ?>">
                 </form>
               </span>
@@ -348,45 +342,3 @@ include 'views/user/LoggedInHeader.php';
     <script src="/public/js/AdminManageEmployee.js"></script>
 
 </main>
-
-<!-- <script>
-  
-  document.getElementById("bts").onclick = function() {
-    var team = document.getElementById("validteam");
-    var i = 0;
-    while (i < pausecontent.length && team.value != pausecontent[i]['Team']) {
-      i = i + 1;
-    }
-    if (i < pausecontent.length) {
-      var x = parseInt(pausecontent[i]['count(Team)'])
-      if ((x + 1) > 3) {
-        team.setCustomValidity("Team cannot have more than 3 members");
-      } else {
-        team.setCustomValidity('');
-      }
-    } else {
-      team.setCustomValidity('');
-    }
-  }
-</script> -->
-
-
-<!-- <div class="Admin-EmpSearch adEmpSearch2">
-            <form action="" method="post">
-              <select name="serviceTeam" class="ad-Emp-Search" id="AdminserviceTeams-types">
-                <option value="select service team">Select Service Team</option>
-                <option value="Team 1">Team 1</option>
-                <option value="Team 2">Team 2</option>
-              </select>
-            </form>
-          </div> -->
-
-<!-- <div class="Mg-EmpSearch mgEmpSearch2" style="    margin-right: 5px;">
-            <form action="" method="post">
-              <select name="serviceTeamLeader" class="Mg-Emp-Search" id="serviceTeamLeaders-types">
-                <option value="select service team leader">Select Service Team Leader</option>
-                <option value="Team A">Team 1 Leader</option>
-                <option value="Team B">Team 2 Leader</option>
-              </select>
-            </form>
-          </div> -->
