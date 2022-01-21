@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\controllers",
+    "\\app\\views",
+    "\\app\\views\\customer",
+    "\\app\\views\\manager",
+    "\\app\\views\\stl",
+    "\\public",
+    "\\public\\css",
+    "\\public\\images"
+  ],
+  "SelectedNode": "\\app\\models\\ServiceDashboardModel.php",
+  "PreviewInSolutionExplorer": false
+}
