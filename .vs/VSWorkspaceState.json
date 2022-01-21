@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\models",
+    "\\app\\controllers",
     "\\app\\views",
-    "\\app\\views\\admin",
     "\\app\\views\\customer",
     "\\app\\views\\manager",
     "\\app\\views\\stl",
     "\\public",
+    "\\public\\css",
     "\\public\\images"
   ],
-  "SelectedNode": "\\public\\images\\istockphoto-1125613956-612x612.jpg",
+  "SelectedNode": "\\app\\models\\ServiceDashboardModel.php",
   "PreviewInSolutionExplorer": false
 }
