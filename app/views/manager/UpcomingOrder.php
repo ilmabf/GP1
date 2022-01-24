@@ -33,6 +33,17 @@ $display = $_SESSION['displayReservationBtn'];
 
     </div>
 
+    <div class="cancelAssignForm" id="changeAssign" style="display:none;">
+
+
+        <h2 id="assignMsg2" class="login-signupheader"></h2>
+
+
+        <button id="CloseCancelAssignButton" class="formCancelButton" type="button" name="signup" onclick="closeChangeAssign()">Close</button>
+        <button id="SubmitCancelAssignButton" class="formSubmitButton" type="button" name="signup" onclick="assignTeam()">Yes</button>
+
+    </div>
+
     <div style="min-height: 110px;"></div>
 
     <div id="upcoming">
@@ -269,7 +280,7 @@ $display = $_SESSION['displayReservationBtn'];
     <script src="/public/js/ManagerViewUpcomingOrder.js"></script>
     <script>
         var pausecontent = <?php echo json_encode($orderDetails); ?>;
-
+        
         function assignTeam() {
             var resID = pausecontent[0]['Reservation_ID'];
             var id = document.getElementById("serviceTeam-types").value;

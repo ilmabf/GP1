@@ -158,13 +158,31 @@ class BookingModel extends Model
         return $result;
     }
 
-    function getTeams()
+    function getTeams($time)
     {
 
         $today = date('Y-m-d');
 
         $result = $this->db->select("DISTINCT team", "employee_records", "WHERE date = :date AND onWork = 1;", ":date", $today);
-        return $result;
+        $result2 = $this->db->select("Service_team_leader_ID", "reservation", "WHERE Date = :date AND Time = :time;", array(":date", ":time"), array($today, $time));
+        
+        $k = 0;
+        $final = array();
+        for($i=0; $i<sizeof($result);$i++){
+            $flag = 0;
+            for($j=0; $j<sizeof($result2);$j++){
+                if($result[$i]['team'] == $result2[$j]['Service_team_leader_ID']){
+                    $flag = 1;
+                }
+            }
+            if($flag == 0){
+                $final[$k]['team'] = $result[$i]['team'];
+                $k++;
+            }
+        }
+
+        // print_r($final);
+        return $final;
     }
 
     function assignServiceTeam($id, $members, $resId)

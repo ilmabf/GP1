@@ -29,7 +29,7 @@ $display = $_SESSION['displayReservationBtn'];
 
             <form action="" method="post" id="customer-signup">
                 <ul>
-                    <li><img src="/public/images/userIcon.jpg" style="width: 250px;"></img></li><br>
+                    <li><img src="<?php echo '/public/images/' . $stlDetails[0]['file_name']; ?>" style="width: 250px;"></img></li><br>
                     <li>Name - <?php echo $stlDetails[0]['First_Name'] . " " . $stlDetails[0]['Last_Name']; ?></li><br>
                     <li>Contact Number - <?php echo $stlDetails[0]['Contact_Number']; ?></li>
                     <button id="VehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closestlForm()" style="float:none">Close</button>

@@ -108,8 +108,9 @@ class Booking extends Controller
     function upcomingOrder($orderID)
     {
 
-        $_SESSION['teams'] = $this->model->getTeams();
+        
         $_SESSION['upcomingOrder'] = $this->model->getReservationDetails($orderID); //order details
+        $_SESSION['teams'] = $this->model->getTeams($_SESSION['upcomingOrder'][0]['Time']);
         $_SESSION['customer'] = $this->model->getCustomer($_SESSION['upcomingOrder'][0]['Customer_ID']); //customer details who booked order
         $_SESSION['vehicle'] = $this->model->getSelectedVehicle($_SESSION['upcomingOrder'][0]['Vehicle_ID']); //vehicle details service done
         $_SESSION['washpackage'] = $this->model->getSelectedWashPackage($_SESSION['upcomingOrder'][0]['Wash_Package_ID']); //wash package selected
