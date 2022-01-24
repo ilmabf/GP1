@@ -5,6 +5,7 @@ $orderDetails = $_SESSION['upcomingOrder'];
 $customerDetails = $_SESSION['customer'];
 $vehicleDetails = $_SESSION['vehicle'];
 $washPackageDetails = $_SESSION['washpackage'];
+$display = $_SESSION['displayReservationBtn'];
 ?>
 
 <style>
@@ -228,8 +229,17 @@ $washPackageDetails = $_SESSION['washpackage'];
 
                 </div>
 
-                <button class="reservationButtons a10" id="cancelReservationBtn" style="margin-top: 32px; padding: 8px 9px;" onclick="opencancel()"><a>Cancel
-                        Reservation</a></button>
+
+                <?php if ($display == "false") { ?>
+
+                    <button class="reservationButtons a10" id="cancelReservationBtn" style="margin-top: 32px; padding: 8px 9px; display:none;" onclick="opencancel()"><a>Cancel
+                            Reservation</a></button>
+                <?php } ?>
+
+                <?php if ($display == "true") { ?>
+                    <button class="reservationButtons a10" id="cancelReservationBtn" style="margin-top: 32px; padding: 8px 9px;" onclick="opencancel()"><a>Cancel
+                            Reservation</a></button>
+                <?php } ?>
 
 
 

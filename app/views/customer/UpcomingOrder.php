@@ -7,6 +7,7 @@ $vehicleDetails = $_SESSION['vehicle'];
 $washPackageDetails = $_SESSION['washpackage'];
 $stlDetails = $_SESSION['stlDetails'];
 $reservationCancel = $_SESSION['cancelReservation'];
+$display = $_SESSION['displayReservationBtn'];
 ?>
 <style>
     table,
@@ -176,15 +177,35 @@ $reservationCancel = $_SESSION['cancelReservation'];
 
 
         </div>
-        <div class="box4">
-            <div class="reservation-buttons">
-                <div class="reschedule" style="margin-left: 0px;">
-                    <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Do you want to reschedule?</h3>
-                    <button class="reservationButtons a13" id="cancelAssignBtn" style="color: white;"><a href="/booking/rescheduleDetails/<?php echo $orderDetails[0]['Reservation_ID'] ?>">Reschedule Reservation</a></button>
+
+        <?php if ($display == "true") { ?>
+
+
+            <div class="box4">
+                <div class="reservation-buttons">
+                    <div class="reschedule" style="margin-left: 0px;">
+                        <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Do you want to reschedule?</h3>
+                        <button class="reservationButtons a13" id="cancelAssignBtn" style="color: white;"><a href="/booking/rescheduleDetails/<?php echo $orderDetails[0]['Reservation_ID'] ?>">Reschedule Reservation</a></button>
+                    </div>
+                    <button class="reservationButtons a10" style="margin-right: 0px; margin-top: 10px;" id="cancelReservationBtn" onclick="opencancelForm()"><a>Cancel Reservation</a></button>
                 </div>
-                <button class="reservationButtons a10" style="margin-right: 0px; margin-top: 10px;" id="cancelReservationBtn" onclick="opencancelForm()"><a>Cancel Reservation</a></button>
             </div>
-        </div>
+
+        <?php } ?>
+
+        <?php if ($display == "false") { ?>
+            <div class="box4" style="display: none;">
+                <div class="reservation-buttons">
+                    <div class="reschedule" style="margin-left: 0px;">
+                        <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Do you want to reschedule?</h3>
+                        <button class="reservationButtons a13" id="cancelAssignBtn" style="color: white;"><a href="/booking/rescheduleDetails/<?php echo $orderDetails[0]['Reservation_ID'] ?>">Reschedule Reservation</a></button>
+                    </div>
+                    <button class="reservationButtons a10" style="margin-right: 0px; margin-top: 10px;" id="cancelReservationBtn" onclick="opencancelForm()"><a>Cancel Reservation</a></button>
+                </div>
+            </div>
+        <?php } ?>
+
+
     </div>
     <div id="cancelReservationPopUpId" class="cancelReservationPopUpclass">
 
