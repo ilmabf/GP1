@@ -280,7 +280,7 @@ $display = $_SESSION['displayReservationBtn'];
     <script src="/public/js/ManagerViewUpcomingOrder.js"></script>
     <script>
         var pausecontent = <?php echo json_encode($orderDetails); ?>;
-        
+
         function assignTeam() {
             var resID = pausecontent[0]['Reservation_ID'];
             var id = document.getElementById("serviceTeam-types").value;
