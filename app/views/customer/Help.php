@@ -13,7 +13,7 @@ include 'views/user/LoggedInHeader.php';
 
     <div class="navigation-clicks">
         <div class="previous nav-btn">
-            << /div>
+            << </div>
                 <div class="next nav-btn">></div>
         </div>
 

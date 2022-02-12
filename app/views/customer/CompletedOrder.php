@@ -143,7 +143,7 @@ $stl = $_SESSION['completedSTL']
             
             <form action="/booking/rateService/<?php echo $orderDetails[0]['Reservation_ID']?>" method="post" style="display:inline-block;">
             <input type ="hidden" id="textF" value="0" name="rateStars">
-            <button class="uploadImagesLink" type="submit" value="submit rate" id="rateSubmitBut" style="display:none;">Submit Rate</button>
+            <button class="uploadImagesLink" type="submit" value="submit rate" id="rateSubmitBut" style="display:none;">Submit</button>
             </form>
             </div>
 

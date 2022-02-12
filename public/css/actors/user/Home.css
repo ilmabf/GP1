@@ -121,7 +121,7 @@ section .home-main-section1-button a{
     text-align: center;    
 }
 
-.section2-blocks4{
+.section2-blocks4, .section3-blocks4{
     margin: 50px 20px 0px;
     width: calc(100%-40px);
     background-color: whitesmoke;
@@ -236,6 +236,65 @@ section .home-main-section1-button a{
     line-height: 150%;
 }
 
+.section3-block-img4{
+    position: relative;
+    top: 20px;
+    width: 200px;
+    height: 200px;
+    background-image: url('/public/images/H-Back.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    border-radius: 27px;
+}
+
+.section3-block-img5{
+    position: relative;
+    top: 20px;
+    width: 200px;
+    height: 200px;
+    background-image: url('/public/images/Luxury.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    border-radius: 27px;
+}
+
+.section3-block-img6{
+    position: relative;
+    top: 20px;
+    width: 200px;
+    height: 200px;
+    background-image: url('/public/images/Sedan.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    border-radius: 27px;
+}
+
+.section3-block-img7{
+    position: relative;
+    top: 20px;
+    width: 200px;
+    height: 200px;
+    background-image: url('/public/images/Suv.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    border-radius: 27px;
+}
+
+.section3-block-img8{
+    position: relative;
+    top: 20px;
+    width: 200px;
+    height: 200px;
+    background-image: url('/public/images/Van.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    border-radius: 27px;
+}
 
 @media only screen and (min-width: 770px) {
 
@@ -280,6 +339,10 @@ section .home-main-section1-button a{
 
     .section2-blocks4{
         flex: 25%;
+    }
+
+    .section3-blocks4{
+        flex: 20%;
     }
 
     .section2-blocks5{
