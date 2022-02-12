@@ -88,6 +88,44 @@ include 'views/user/Header.php';
 
             </div>
 
+            <h2>We provide services for the following vehicle types!</h2>
+
+            <div class="section2-blocksdown">
+                <div class="section3-blocks4">
+                    <div class="section3-block-img4"></div>
+                    <div class="section2-block-heading">
+                        <h3></h3>
+                    </div>
+                </div>
+
+                <div class="section3-blocks4">
+                    <div class="section3-block-img5"></div>
+                    <div class="section2-block-heading">
+                        <h3></h3>
+                    </div>
+                </div>
+
+                <div class="section3-blocks4">
+                    <div class="section3-block-img6"></div>
+                    <div class="section2-block-heading">
+                        <h3></h3>
+                    </div>
+                </div>
+                <div class="section3-blocks4">
+                    <div class="section3-block-img7"></div>
+                    <div class="section2-block-heading">
+                        <h3></h3>
+                    </div>
+                </div>
+                <div class="section3-blocks4">
+                    <div class="section3-block-img8"></div>
+                    <div class="section2-block-heading">
+                        <h3></h3>
+                    </div>
+                </div>
+
+            </div>
+
         </section>
 
     </div>
