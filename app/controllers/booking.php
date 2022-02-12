@@ -108,7 +108,7 @@ class Booking extends Controller
     function upcomingOrder($orderID)
     {
 
-        
+
         $_SESSION['upcomingOrder'] = $this->model->getReservationDetails($orderID); //order details
         $_SESSION['teams'] = $this->model->getTeams($_SESSION['upcomingOrder'][0]['Time']);
         $_SESSION['customer'] = $this->model->getCustomer($_SESSION['upcomingOrder'][0]['Customer_ID']); //customer details who booked order
@@ -116,10 +116,33 @@ class Booking extends Controller
         $_SESSION['washpackage'] = $this->model->getSelectedWashPackage($_SESSION['upcomingOrder'][0]['Wash_Package_ID']); //wash package selected
         $_SESSION['stlDetails'] = $this->model->getSTLDetails($_SESSION['upcomingOrder'][0]['Service_team_leader_ID']); //get details of assigned stl
         if ($_SESSION['role'] == "customer") {
-            $this->view->render('customer/UpcomingOrder');
-            exit;
+            $today = date("Y-m-d");
+
+            $reservation = $this->model->getReservationDetails($orderID);
+            $date = $reservation[0]['Date'];
+
+            if (strtotime($date) - strtotime($today) > 86400) {
+                $_SESSION['displayReservationBtn'] = "true";
+                $this->view->render('customer/UpcomingOrder');
+            } else {
+                // session to display cannot cancel reservation
+                $_SESSION['displayReservationBtn'] = "false";
+                $this->view->render('customer/UpcomingOrder');
+            }
         } else if ($_SESSION['role'] == "manager") {
-            $this->view->render('manager/UpcomingOrder');
+
+            $today = date("Y-m-d");
+
+            $reservation = $this->model->getReservationDetails($orderID);
+            $date = $reservation[0]['Date'];
+
+            if (strtotime($date) - strtotime($today) > 86400) {
+                $_SESSION['displayReservationBtn'] = "true";
+                $this->view->render('manager/UpcomingOrder');
+            } else {
+                $_SESSION['displayReservationBtn'] = "false";
+                $this->view->render('manager/UpcomingOrder');
+            }
         }
     }
 
@@ -227,15 +250,15 @@ class Booking extends Controller
                     header("Location: /user/home");
                 }
             }
-        }
-        else{
+        } else {
             $_SESSION['bookingError'] = "Looks like we already have a reservation for that vehicle at the same time slot. Please check if you have entered the correct details.";
             header("Location: /booking/error");
         }
     }
 
-    function error(){
-        if(!isset($_SESSION['bookingError'])){
+    function error()
+    {
+        if (!isset($_SESSION['bookingError'])) {
             header("Location: /user/home");
             exit;
         }
@@ -369,7 +392,7 @@ class Booking extends Controller
         $i = $_POST["rateStars"];
         var_dump($i);
         if ($_SESSION['role'] == "customer") {
-            if($this->model->rateService($orderID, $i)){ 
+            if ($this->model->rateService($orderID, $i)) {
                 header("Location: /booking/completedOrder/" . $orderID);
             }
         }
