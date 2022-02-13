@@ -8,7 +8,6 @@ include 'views/user/LoggedInHeader.php';
     <h2 class="manageEmployee-heading">Manage Employees | <?php echo date("d-m-Y"); ?></h2>
     <div class="addBtnEmps">
       <input type="button" id="addRow" value="Add Employee" class="addTableEmp" onclick="addRow();" />
-      <input type="button" id="addStlRow" value="Add Service Team Leader" class="addTableEmp" onclick="addStlRow();" />
     </div>
 
     <div>
@@ -39,7 +38,7 @@ include 'views/user/LoggedInHeader.php';
 
     <!-- ------------------------------------Emp View------------------------------------------------------- -->
 
-    <div style="margin-bottom: 40px; margin-left:130px;">
+    <!-- <div style="margin-bottom: 40px; margin-left:130px;">
       <span>
         <p style="margin-bottom: 10px; color:#193498;"><b>No of Teams : <?php echo $_SESSION['teamCount'][0]['team'] ?></b></p>
       </span>
@@ -50,7 +49,7 @@ include 'views/user/LoggedInHeader.php';
           <button type="submit" value="Submit" onclick="TeamCount();" class="del_btn" style="padding: 6px 10px;">Change</button>
         </form>
       </span>
-    </div>
+    </div> -->
 
     <div class="Table-search">
 
@@ -180,160 +179,7 @@ include 'views/user/LoggedInHeader.php';
 
       <div style="min-height: 110px;"></div>
     </div>
-    <!-- ------------------------------------- STL -------------------------------------------------- -->
-
-
-    <div class="Table-search">
-
-      <div class="table-wrapper">
-
-        <div id="StlAttendance-nav">
-          <input type="button" id="next-StlAttendance" value="STL Attendance >>" onclick="stlAttendance();" />
-        </div>
-
-        <div id="StlDetails-nav">
-          <input type="button" id="next-StlDetails" value="<< STL Details" onclick="stlDetails();" />
-        </div>
-
-        <div id="stlDetailsTable">
-
-          <div style="display:inline-block; width: 100%;">
-            <div class="Admin-EmpSearch adEmpSearch1">
-              <input type="search" class="ad-Emp-Search" id="adminSearchStl" onkeyup="myFunction2()" placeholder="Search for Stl..." title="Type in a name">
-            </div>
-
-          </div>
-          <table id="filterTable2">
-            <thead>
-              <tr>
-                <th data-type="text">First Name</th>
-                <th data-type="text">Last Name</th>
-                <th data-type="text">Contact No</th>
-                <th data-type="text">Email</th>
-                <th data-type="text">Date Enrolled</th>
-                <th data-type="text">Salary</th>
-                <th data-type="number">NIC No</th>
-                <th data-type="text">Username</th>
-                <th colspan="2" style="text-align: center;">Action</th>
-              </tr>
-            </thead>
-            <tbody style="max-width:100%;">
-
-              <?php
-              $count2 = 0;
-              $result2 = $_SESSION['stlData'];
-              while ($count2 < sizeof($result2)) { ?>
-
-                <tr id="row<?php $count2 ?>">
-                  <td id="<?php echo "stlFirstName_row" . $count2 ?>" style="text-align:left" class="td-t1"><?php echo $result2[$count2]['First_Name'] ?></td>
-                  <td id="<?php echo "stlLastName_row" . $count2 ?>" style="text-align:left" class="td-t1"><?php echo $result2[$count2]['Last_Name'] ?></td>
-                  <td id="<?php echo "stlContactNumber_row" . $count2 ?>" class="td-t1"><?php echo $result2[$count2]['Contact_Number'] ?></td>
-                  <td id="<?php echo "stlEmail_row" . $count2 ?>" style="text-align:left" class="td-t1" style="max-width:200px;"><?php echo $result2[$count2]['Email'] ?></td>
-                  <td id="<?php echo "stlDateEnrolled_row" . $count2 ?>" class="td-t1"><?php echo $result2[$count2]['Date_Enrolled'] ?></td>
-                  <td id="<?php echo "stlSalary_row" . $count2 ?>" style="text-align:right" class="td-t1"><?php echo $result2[$count2]['Salary'] ?>.00</td>
-                  <td id="<?php echo "stlNicNo_row" . $count2 ?>" style="text-align:right" class="td-t1"><?php echo $result2[$count2]['NIC_No'] ?></td>
-                  <td id="<?php echo "stlUsername_row" . $count2 ?>" style="text-align:right" class="td-t1"><?php echo $result2[$count2]['Username'] ?></td>
-
-                  <td>
-                    <input type="button" id="<?php echo "edit_stl_btn" . $count2 ?>" class="edit_btn td-t1" value="Edit" onclick="stlEditForm('<?php echo $count2 ?>')">
-                    <a href="" id="<?php echo "editStlHREF" . $count2 ?>"><input type="submit" id="<?php echo "save_stl_btn" . $count2 ?>" class="save_btn" value="Save" onclick="stlSaveForm('<?php echo $result2[$count2]['Employee_ID'] ?>', '<?php echo $count2 ?>')"></a>
-
-                  </td>
-                  <td><a href="/employee/deleteStl/<?php echo $result2[$count2]['STL_ID'] ?>"><input type="button" class="del_btn td-t1" value="Delete"></a></td>
-
-                </tr>
-
-              <?php $count2 = $count2 + 1;
-              } ?>
-
-            </tbody>
-          </table>
-        </div>
-
-        <div id="stlAttendanceTable">
-
-          <span id="stlAttendanceSearch">
-            <div class="Admin-EmpSearch adEmpSearch1">
-              <input type="search" class="ad-Emp-Search" id="stlonWorkSearch" onkeyup="myFunction1()" placeholder="Search for STL..." title="Type in a name">
-            </div>
-          </span>
-
-          <span id="todayDate1" style="float: right; background-color:blue; color:white;">
-            <?php echo date("d-m-Y"); ?>
-          </span>
-
-          <form action="/employee/insertStlAttendance/" id="stlAttendanceForm" method="POST">
-            <table id="filterTable3">
-              <thead>
-                <tr>
-                  <th data-type="text">First Name</th>
-                  <th data-type="text">Last Name</th>
-                  <th data-type="text">Team</th>
-                  <th data-type="text">On Work</th>
-                  <th colspan="1" style="text-align: center;">
-                    <input type="button" id="editStlAttButton" class="edit_btn td-t1" value="Edit" onclick="stlEditAttendanceForm('<?php echo sizeof($_SESSION['stlAttendanceDetails']) ?>')">
-                  </th>
-                </tr>
-              </thead>
-              <tbody style="max-width:100%;" id="onWorkSelectTable">
-
-                <?php
-                $count3 = 0;
-                $result3 = $_SESSION['stlAttendanceDetails'];
-
-
-                // echo $_SESSION['rowCount'];
-                while ($count3 < sizeof($result3)) { ?>
-
-                  <tr id="row<?php $count3 ?>">
-                    <td id="<?php echo "AttStl_FirstName_row" . $count3 ?>" style="text-align:left" class="td-t1"><?php echo $result3[$count3]['First_Name'] ?></td>
-                    <td id="<?php echo "AttStl_LastName_row" . $count3 ?>" style="text-align:left" class="td-t1"><?php echo $result3[$count3]['Last_Name'] ?></td>
-                    <td id="<?php echo "AttStl_Team_row" . $count3 ?>" class="td-t1"><?php echo $result3[$count3]['team'] ?></td>
-                    <td id="<?php echo "AttStl_onWork_row" . $count3 ?>" style="text-align:left" class="td-t1" style="max-width:200px;"><?php echo $result3[$count3]['onWork'] ?></td>
-
-
-                  </tr>
-
-                <?php $count3 = $count3 + 1;
-                } ?>
-
-              </tbody>
-            </table>
-
-            <div id="emp-attendance-submit">
-              <input type="submit" id="empAttendance-submit-1" value="Submit">
-
-            </div>
-          </form>
-        </div>
-
-        <div>
-
-          <?php
-          $result = $_SESSION['stlTableData'];
-          $result1 = $_SESSION['StlAttendanceData'];
-          $count = 0;
-          while ($count < sizeof($result)) { ?>
-            <?php $imgUrl = '/public/images/' . $result[$count]['file_name']; ?>
-            <span class="row" style="text-align: center;">
-              <span class="col-md-4 viewPhotos vp2">
-                <img src="<?php echo $imgUrl ?>" alt="<?php echo $result[$count]['file_name'] ?>" class="img-thumbnail" style="height:300px; width:300px; object-fit:contain;">
-                <div style="margin-top: -60px;"><b><?php echo $result1[$count]['First_Name'] ?> <?php echo $result1[$count]['Last_Name'] ?></b></div>
-
-                <form action="/employee/updateStlImage/" method="POST" enctype="multipart/form-data">
-                  <input type="file" name="file" class="upload_image" id="file">
-                  <input type="submit" id="upload" class="edit_btn" value="Update">
-                  <input type="hidden" name="stl_id" value="<?php echo $result[$count]['STL_ID'] ?>">
-                </form>
-              </span>
-            </span>
-          <?php $count = $count + 1;
-          } ?>
-
-        </div>
-
-      </div>
-    </div>
+   
 
     <div style="min-height: 200px;"></div>
 

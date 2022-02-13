@@ -194,7 +194,7 @@ $stl = $_SESSION['completedSTL']
             }
             else{
                 var x = document.getElementById("displayedSentence");
-                x.innerHTML += "<h3 style='color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;'>" +"Thank you for your valuable rate!"+"</h3>";
+                x.innerHTML += "<h3 style='color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;'>" +"Thank you for your valuable rating!"+"</h3>";
                     for (j = 0; j < ratingLevel; j++) {
                         stars[j].className = starClassActive;
                     }
