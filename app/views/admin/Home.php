@@ -17,11 +17,17 @@ include 'views/user/LoggedInHeader.php';
 
                 <div class="adminHome-block2">
 
+                    <h3><a href="/employee/serviceTeamLeaders/" style="color:#085394;">Manage Service Team Leaders</a></h3>
+
+                </div>
+
+                <div class="adminHome-block1">
+
                     <h3><a href="/service/equipment" style="color:#085394;">Manage Equipment</a></h3>
 
                 </div>
 
-                <div class="adminHome-block3">
+                <div class="adminHome-block2">
                     <h3 class="admin-manage-services-heading"><a href="/service/washPackage" style="color:#085394;">Manage Services</a></h3>
                 </div>
             </div>

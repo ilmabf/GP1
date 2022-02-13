@@ -68,6 +68,60 @@ class Employee extends Controller
         }
     }
 
+    function serviceTeamLeaders(){
+        // stl
+        $empDetails = $this->model->getEmployeeDetails();
+        $_SESSION['employeeDetails'] = $empDetails;
+
+        $empAttendance = $this->model->getEmployeeAttendanceDetails();
+        $_SESSION['employeeAttendanceDetails'] = $empAttendance;
+
+        $stlData = $this->model->getStlData();
+        $_SESSION['stlData'] = $stlData;
+
+        $stlAttendance = $this->model->getStlAttendanceDetails();
+        $_SESSION['stlAttendanceDetails'] = $stlAttendance;
+
+        // manager
+        $empData = $this->model->getEmpData();
+        $_SESSION['EmpAttendanceData'] = $empData;
+
+        $stlData = $this->model->getStlAttendanceData();
+        $_SESSION['StlAttendanceData'] = $stlData;
+
+        $stlonWorkData = $this->model->getStlOnWorkData();
+        $_SESSION['StlOnWorkData'] = $stlonWorkData;
+
+        $stlNotWorkData = $this->model->getStlNotWorkData();
+        $_SESSION['StlNotWorkData'] = $stlNotWorkData;
+
+        $emponWorkData = $this->model->getEmpOnWorkData();
+        $_SESSION['EmponWorkData'] = $emponWorkData;
+
+        $empNotWorkData = $this->model->getEmpNotWorkData();
+        $_SESSION['EmpNotWorkData'] = $empNotWorkData;
+
+        $noOfTeams = $this->model->getTeamCount();
+        $_SESSION['teamCount'] = $noOfTeams;
+
+        $userData = $this->model->getUserData();
+        $_SESSION['userData'] = $userData;
+
+        $stlTableData = $this->model->getStlDetails();
+        $_SESSION['stlTableData'] = $stlTableData;
+
+        // foreach ($_SESSION['userData'] as $stl) {
+        //     echo $stl['Email'];
+        // }
+
+        //User Autherization
+        if ($_SESSION['role'] == "systemadmin") {
+            $this->view->render('admin/ServiceTeamLeader');
+            exit;
+        } else if ($_SESSION['role'] == "manager") {
+            $this->view->render('manager/Employee');
+        }
+    }
     function add()
     {
         // echo $_SESSION['role'];
