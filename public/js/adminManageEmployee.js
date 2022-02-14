@@ -310,6 +310,27 @@ function viewPhoto(fn, ln,n){
   }
 }
 
+function viewPhotoManager(fn, ln,n){
+  console.log(n);
+  var x = document.getElementById("stldetails");
+  var y = document.getElementById("upcoming");
+  console.log(stlTable);
+  for(i=0;i<stlTable.length; i++){
+    if(stlTable[i][0] == n){
+      var count = i;
+    }
+  }
+  document.getElementById("stlPhotoID").src = "/public/images/" + stlTable[count]['file_name'];
+  // document.getElementById("inputID").value = stlTable[count]['STL_ID'];
+  document.getElementById("stlName").innerHTML = fn + " " + ln;
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    y.classList.add("blur");
+  } else {
+    x.style.display = "none";
+  }
+}
+
 function closestlForm() {
   var x = document.getElementById("stldetails");
   var y = document.getElementById("upcoming");

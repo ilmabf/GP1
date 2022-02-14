@@ -29,11 +29,11 @@ $result = $_SESSION['employeeDetails'];
 
             </form>
 
-            <form action="/employee/updateStlImage/" method="POST" enctype="multipart/form-data">
+            <!-- <form action="/employee/updateStlImage/" method="POST" enctype="multipart/form-data">
                 <input type="file" name="file" class="upload_image" id="file" style="    width: 64%;">
                 <input type="submit" id="upload" class="edit_btn" value="Update" style="padding: 8px 5px;">
                 <input id='inputID' type="hidden" name="stl_id" value="">
-            </form>
+            </form> -->
             <button id="VehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closestlForm()" style="float:none">Close</button>
         </div>
     </div>
@@ -86,7 +86,7 @@ $result = $_SESSION['employeeDetails'];
                                     <td><?php echo $result[$count]['Date_Enrolled'] ?></td>
                                     <td style="text-align:right"><?php echo $result[$count]['Salary'] ?>.00</td>
                                     <td style="text-align:right"><?php echo $result[$count]['NIC_No'] ?></td>
-                                    <td id="<?php echo "stlPhoto" . $count ?>" style="text-align:right" class="td-t1"><button onclick="viewPhoto('<?php echo $result[$count]['First_Name']; ?>' , '<?php echo $result[$count]['Last_Name']; ?>', <?php echo $_SESSION['stlTableData'][$count]['STL_ID']; ?>)"><a><?php echo "View"; ?></a></button></td>
+                                    <td id="<?php echo "stlPhoto" . $count ?>" style="text-align:right" class="td-t1"><button onclick="viewPhotoManager('<?php echo $result[$count]['First_Name']; ?>' , '<?php echo $result[$count]['Last_Name']; ?>', <?php echo $_SESSION['stlTableData'][$count]['STL_ID']; ?>)"><a><?php echo "View"; ?></a></button></td>
                                     <td style="text-align:right"><?php echo $result[$count]['team'] ?></td>
                                     <td style="text-align:right"><?php echo $result[$count]['onWork'] ?></td>
                                 </tr>
@@ -125,7 +125,7 @@ $result = $_SESSION['employeeDetails'];
                                     <td><?php echo $result[$count]['Date_Enrolled'] ?></td>
                                     <td style="text-align:right"><?php echo $result[$count]['Salary'] ?>.00</td>
                                     <td style="text-align:right"><?php echo $result[$count]['NIC_No'] ?></td>
-                                    <td id="<?php echo "stlPhoto" . $count ?>" style="text-align:right" class="td-t1"><button onclick="viewPhoto('<?php echo $result[$count]['First_Name']; ?>' , '<?php echo $result[$count]['Last_Name']; ?>', <?php echo $_SESSION['stlTableData'][$count]['STL_ID']; ?>)"><a><?php echo "View"; ?></a></button></td>
+                                    <td id="<?php echo "stlPhoto" . $count ?>" style="text-align:right" class="td-t1"><button onclick="viewPhotoManager('<?php echo $result[$count]['First_Name']; ?>' , '<?php echo $result[$count]['Last_Name']; ?>', <?php echo $_SESSION['stlTableData'][$count]['STL_ID']; ?>)"><a><?php echo "View"; ?></a></button></td>
                                     <td style="text-align:right"><?php echo $result[$count]['team'] ?></td>
                                     <td style="text-align:right"><?php echo $result[$count]['onWork'] ?></td>
                                 </tr>
@@ -164,7 +164,7 @@ $result = $_SESSION['employeeDetails'];
                                     <td><?php echo $result[$count]['Date_Enrolled'] ?></td>
                                     <td style="text-align:right"><?php echo $result[$count]['Salary'] ?>.00</td>
                                     <td style="text-align:right"><?php echo $result[$count]['NIC_No'] ?></td>
-                                    <td id="<?php echo "stlPhoto" . $count ?>" style="text-align:right" class="td-t1"><button onclick="viewPhoto('<?php echo $result[$count]['First_Name']; ?>' , '<?php echo $result[$count]['Last_Name']; ?>', <?php echo $_SESSION['stlTableData'][$count]['STL_ID']; ?>)"><a><?php echo "View"; ?></a></button></td>
+                                    <td id="<?php echo "stlPhoto" . $count ?>" style="text-align:right" class="td-t1"><button onclick="viewPhotoManager('<?php echo $result[$count]['First_Name']; ?>' , '<?php echo $result[$count]['Last_Name']; ?>', <?php echo $_SESSION['stlTableData'][$count]['STL_ID']; ?>)"><a><?php echo "View"; ?></a></button></td>
                                     <td style="text-align:right"><?php echo $result[$count]['team'] ?></td>
                                     <td style="text-align:right"><?php echo $result[$count]['onWork'] ?></td>
                                 </tr>
