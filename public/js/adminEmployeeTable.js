@@ -274,7 +274,7 @@ function empNotWork() {
 
 function empAttendance() {
   document.getElementById("EmpAttendance-nav").style.display = "none";
-  document.getElementById("EmpDetails-nav").style.display = "block";
+  document.getElementById("EmpDetails-nav").style.display = "inline-flex";
 
   document.getElementById("empDetailsTable").style.display = "none";
   document.getElementById("empAttendanceTable").style.display = "block";
@@ -290,7 +290,7 @@ function empDetails() {
 
 function stlAttendance() {
   document.getElementById("StlAttendance-nav").style.display = "none";
-  document.getElementById("StlDetails-nav").style.display = "block";
+  document.getElementById("StlDetails-nav").style.display = "inline-flex";
 
   document.getElementById("stlDetailsTable").style.display = "none";
   document.getElementById("stlAttendanceTable").style.display = "block";
