@@ -56,10 +56,10 @@ include 'views/user/LoggedInHeader.php';
       <div class="table-wrapper">
 
         <div id="EmpAttendance-nav">
-          <input type="button" id="next-EmpAttendance" value="Employee Attendance >>" onclick="empAttendance();" />
+          <input type="button" id="next-EmpAttendance" value="Check Attendance >>" onclick="empAttendance();" style="float:right;" />
         </div>
 
-        <div id="EmpDetails-nav">
+        <div id="EmpDetails-nav" >
           <input type="button" id="next-EmpDetails" value="<< Employee Details" onclick="empDetails();" />
         </div>
 
