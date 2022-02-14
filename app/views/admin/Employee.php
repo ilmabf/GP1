@@ -183,7 +183,9 @@ include 'views/user/LoggedInHeader.php';
 
     <div style="min-height: 200px;"></div>
 
-
+    <script>
+            var eDetails = <?php echo json_encode($_SESSION['employeeAttendanceDetails']); ?>;
+        </script>
     <script src="/public/js/AdminEmployeeTable.js"></script>
     <script src="/public/js/AdminManageEmployee.js"></script>
 

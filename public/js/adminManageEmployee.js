@@ -320,3 +320,30 @@ function closestlForm() {
     x.style.display = "block";
   }
 }
+
+document.getElementById("empAttendance-submit-1").onclick = function(){
+  var teams = new Array();
+  for(i=0;i<eDetails.length;i++){
+    teams[i] = {};
+    console.log(document.getElementById("EmpAttTeam_text"+i).value);
+    teams[i]['team'] = parseInt(document.getElementById("EmpAttTeam_text"+i).value);
+    teams[i]['onwork'] = parseInt(document.getElementById("EmpAttonWork_text"+i).value);
+  }
+
+  var x = 0;
+  const result = teams.reduce(function (r, o) {
+    (r[o.team])? r[o.team] += o.onwork : r[o.team] = o.onwork;
+    return r;
+  }, {});
+
+  console.log(result);
+  for(key in result){
+    if(result[key] != 3){
+      document.getElementById("EmpAttTeam_text0").setCustomValidity("Please insert 3 employees for each team");
+      console.log("NO");
+    }
+    else{
+      document.getElementById("EmpAttTeam_text0").setCustomValidity("");
+    }
+  }
+}
