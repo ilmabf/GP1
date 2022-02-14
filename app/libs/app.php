@@ -11,7 +11,7 @@ class App
         $this->_getURL();
 
         if (empty($this->_url[0])) {
-            $this->_loadDeafultController();
+            $this->_loadDefaultController();
             return false;
         }
 
@@ -28,10 +28,14 @@ class App
         $this->_url = explode('/', $url);
     }
 
-    private function _loadDeafultController()
+    private function _loadDefaultController()
     {
         require 'controllers/index.php';
+        require 'models/IndexModel.php';
+
         $this->_controller = new Index();
+        $this->_controller->model = new IndexModel();
+
         $this->_controller->index();
     }
 
