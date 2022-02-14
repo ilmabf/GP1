@@ -24,11 +24,11 @@ include 'views/user/LoggedInHeader.php';
                     </div>
 
                     <div class="managerHome-block3">
-                        <h3><a href="/service/washPackage" style="color:#085394;">Service Details</a></h3>
+                        <h3><a href="/employee/" style="color:#085394;">Employee Details</a></h3>
                     </div>
 
                     <div class="managerHome-block4">
-                        <h3><a href="/employee/" style="color:#085394;">Employee Details</a></h3>
+                        <h3><a href="/employee/ServiceTeamLeaders" style="color:#085394;">Service Team Leader Details</a></h3>
                     </div>
 
                     <div class="managerHome-block5">
@@ -36,9 +36,12 @@ include 'views/user/LoggedInHeader.php';
                     </div>
 
                     <div class="managerHome-block6">
-                        <h3><a href="/dashboard/" style="color:#085394;">Dashboard</a></h3>
+                        <h3><a href="/service/washPackage" style="color:#085394;">Service Details</a></h3>
                     </div>
 
+                    <div class="managerHome-block7">
+                        <h3><a href="/dashboard/" style="color:#085394;">Dashboard</a></h3>
+                    </div>
                 </div>
 
             </div>

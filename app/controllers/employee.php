@@ -119,7 +119,7 @@ class Employee extends Controller
             $this->view->render('admin/ServiceTeamLeader');
             exit;
         } else if ($_SESSION['role'] == "manager") {
-            $this->view->render('manager/Employee');
+            $this->view->render('manager/ServiceTeamLeader');
         }
     }
     function add()
@@ -192,7 +192,7 @@ class Employee extends Controller
                     // echo $flag2;
 
                     if ($flag2 == 0) {
-                        $_SESSION['insertSuccess'] = 'STL UserName already exist';
+                        $_SESSION['insertSuccess'] = 'UserName already exists';
                         header("Location: /employee/");
                     } else {
 
@@ -207,8 +207,8 @@ class Employee extends Controller
                         // echo $flag3;
 
                         if ($flag3 == 1) {
-                            $_SESSION['insertSuccess'] = 'STL Email not exist in the Employee Pool';
-                            header("Location: /employee/");
+                            $_SESSION['insertSuccess'] = 'Email does not belong to an employee';
+                            header("Location: /employee/ServiceTeamLeader");
                         } else {
 
                             $options = ['cost' => 12];
@@ -237,8 +237,8 @@ class Employee extends Controller
                                         // echo $newStlID;
                                         if ($this->model->stlUserAdd($newStlID, $stlUserName, $hashedpwd, $stlEmail, $flag)) {
                                             if ($this->model->empStlIDAdd($newStlID, $nic)) {
-                                                $_SESSION['insertSuccess'] = 'STL added successfully';
-                                                header("Location: /employee/");
+                                                $_SESSION['insertSuccess'] = 'Service Team Leader added successfully';
+                                                header("Location: /employee/ServiceTeamLeader");
                                             } else {
                                                 echo "emp stl add error";
                                             }
@@ -278,7 +278,7 @@ class Employee extends Controller
                     // insert to stl table
                     if ($this->model->updateSTLPhoto($fileName, $stlId)) {
                         $_SESSION['insertSuccess'] = 'STL Photo updated successfully';
-                        header("Location: /employee/");
+                        header("Location: /employee/ServiceTeamLeader");
                     } else {
                         echo "Error in stl photo";
                     }
@@ -319,7 +319,7 @@ class Employee extends Controller
         if ($_SESSION['role'] == "systemadmin") {
             $result = $this->model->stlDelete($stlId);
             if ($result == "Success") {
-                header("Location: /employee/");
+                header("Location: /employee/ServiceTeamLeader");
             }
         }
     }
@@ -349,7 +349,7 @@ class Employee extends Controller
                 // echo $_SESSION['stlAttendanceDetails'][$l]['Employee_ID'];
                 $this->model->insertAttendance_stl($_SESSION['stlAttendanceDetails'][$l]['Employee_ID'], $_SESSION['stlAttendanceDetails'][$l]['STL_ID'], $_POST['StlAttonWorkData'][$l]);
             }
-            header("Location: /employee/");
+            header("Location: /employee/ServiceTeamLeader");
         }
     }
 
