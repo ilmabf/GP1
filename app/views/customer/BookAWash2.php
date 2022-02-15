@@ -166,12 +166,12 @@ include 'views/user/LoggedInHeader.php';
             });
     }
 </script>
-<script src="/public/js/Maps.js"></script>
+<!-- <script src="/public/js/Maps.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxvVN9pPMljGjWLvUGWGisQwGUUMSOHco&callback=myMap&v=weekly">
 </script>
 <script async>
     initMap();
-</script>
+</script> -->
 <script>
     var cookieArray = document.cookie.split(";");
     var i = 0;

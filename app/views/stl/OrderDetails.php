@@ -152,7 +152,7 @@ $washPackageDetails = $_SESSION['washpackage'];
     </div>
     <!-- <div class="map" id="googleMapbox"> -->
 
-    <script>
+    <!-- <script>
         var orderDetails = <?php echo json_encode($orderDetails); ?>;
 
         function myMap() {
@@ -178,4 +178,4 @@ $washPackageDetails = $_SESSION['washpackage'];
     <script src="/public/js/stlOrderDetails.js"></script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxvVN9pPMljGjWLvUGWGisQwGUUMSOHco&callback=myMap&v=weekly">
-    </script>
+    </script> -->

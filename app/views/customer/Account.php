@@ -303,12 +303,12 @@
         // marker.setMap(map);
     }
 </script>
-<script src="/public/js/Maps.js"></script>
+<!-- <script src="/public/js/Maps.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxvVN9pPMljGjWLvUGWGisQwGUUMSOHco&callback=myMap&v=weekly">
 </script>
 <script async>
     initMap();
-</script>
+</script> -->
 
 <script>
     //if there are vehicles display details. Else display message to add vehicles.
