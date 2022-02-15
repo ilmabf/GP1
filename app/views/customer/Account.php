@@ -172,8 +172,10 @@
                         <div class="phoneIcon"></div>
                         <?php echo $details[0]['Contact_Number']; ?>
                         <div class="btn" onclick="openDetailsVehicleForm()"><i class="fas fa-pencil-alt"></i></div>
+                        
                     </div>
-
+                    <!-- existing mobile number error message -->
+                    <p style="font-size: x-small; color:red;"><?php echo $_SESSION['MobileError']; $_SESSION['MobileError'] = "";?></p>
                 </div>
 
 

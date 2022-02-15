@@ -25,6 +25,14 @@ class AccountModel extends Model
         return $result;
     }
 
+    public function checkMobile($mob){
+        $result = $this->db->select("count", "customer", "WHERE Contact_Number = :mob ;", ':mob', $mob);
+        if($result>0){
+            return true;
+        }
+        else return false;
+    }
+
     public function deleteCustomerAccount($uid)
     {
 
