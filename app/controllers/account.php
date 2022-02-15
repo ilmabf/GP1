@@ -21,6 +21,11 @@ class Account extends Controller
 
     function editMobile(){
         $newMobile = $_POST['mobile'];
+        if($this->model->checkMobile($newMobile)){
+            $_SESSION['MobileError'] = "Sorry, that mobile number already exists for another account";
+            header("Location: /account/");
+            exit;
+        }
         $this->model->editMobileNum($newMobile, $_SESSION['userDetails'][0]['User_ID']);
         header("Location: /account/");
     }
