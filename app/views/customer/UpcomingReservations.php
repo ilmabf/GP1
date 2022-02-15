@@ -15,7 +15,8 @@ include 'views/user/LoggedInHeader.php';
             <!-- <button class="btnclss" onclick="closeOnClickDemo()">Click to open calendar</button><br> -->
             <br>
             <div style="color:white; text-shadow:1px 1px 4px #000000, 1px 1px 4px #0000fa; display:inline;">Date :</div>
-            <input id="ManagerUpcomingDate" name="managerDateofUpcomingBooking" class="dateBooking" style="width: 50%;">
+            <input id="ManagerUpcomingDate" name="managerDateofUpcomingBooking" class="dateBooking" style="width: 50%; padding: unset;
+    border-radius: unset; text-align: center;">
 
         </div>
     </div>
@@ -43,7 +44,7 @@ include 'views/user/LoggedInHeader.php';
 
         </div>
     </div>
-    <?php print_r($_SESSION['myUpcomingReservations']); ?>
+    <!-- <?php print_r($_SESSION['myUpcomingReservations']); ?> -->
     <div style="min-height: 110px;"></div>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>

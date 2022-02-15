@@ -40,6 +40,9 @@ class User extends Controller
 
         if ($this->model->passwordExists($email)) {
 
+            //get email from username
+            $email = $this->model->checkEmail($email);
+
             //set expiration date for key
             $expFormat = mktime(
                 date("H"),
@@ -176,6 +179,10 @@ class User extends Controller
         //if already logged in redirect according to user roles
         if (isset($_SESSION['login'])) {
             if ($_SESSION['role'] == "customer") {
+
+                $_SESSION['Vehicles'] = $this->model->getVehicle();
+                $_SESSION['WashPackages'] = $this->model->getWashPackage();
+
                 $this->view->render('customer/Home');
                 exit;
             } else if ($_SESSION['role'] == "manager") {
@@ -211,6 +218,10 @@ class User extends Controller
                 $vehicles = $this->model->getVehicles($_SESSION['userDetails'][0]['User_ID']);
                 $_SESSION['vehicles'] = $vehicles;
 
+                //get details for customer homepage
+                $_SESSION['Vehicles'] = $this->model->getVehicle();
+                $_SESSION['WashPackages'] = $this->model->getWashPackage();
+
                 //assign user role
                 $_SESSION['role'] = "customer";
 
@@ -219,11 +230,11 @@ class User extends Controller
                 if ($value[0]['Verified'] == "1") {
                     $_SESSION['Verified'] = "True";
 
-                    if (isset($_SESSION['newUser'])){
-                        if($_SESSION['newUser'] == 1){
-                        $this->view->render('customer/Account');
-                        $_SESSION['newUser'] = 0;
-                        exit;
+                    if (isset($_SESSION['newUser'])) {
+                        if ($_SESSION['newUser'] == 1) {
+                            $this->view->render('customer/Account');
+                            $_SESSION['newUser'] = 0;
+                            exit;
                         }
                     }
                     $this->view->render('customer/Home');

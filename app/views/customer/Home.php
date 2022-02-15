@@ -67,13 +67,27 @@ include 'views/user/LoggedInHeader.php';
                 </div>
 
             </div>
-            <div id='test'></div>
+            <!-- <div id='test'></div> -->
             <h2>Check out our wash packages below!</h2>
             <p class="section2-para1">Sit back, relax and enjoy while our team of professionals provide you services
                 just the way you like it!</p>
 
             <div class="section2-blocksdown">
-                <div class="section2-blocks4">
+                <?php
+                $count = 0;
+                while ($count < sizeof($_SESSION['WashPackages'])) {
+                    echo "<div class='section2-blocks4'>";
+                    echo "<div class='section2-block-heading'>";
+                    echo "<h3>" . $_SESSION['WashPackages'][$count]['Name'] . "</h3>";
+                    echo "</div>";
+                    echo "<div class='section2-block-para'>";
+                    echo "<p>" . $_SESSION['WashPackages'][$count]['Description'] . "</p>";
+                    echo "</div>";
+                    echo "</div>";
+                    $count = $count + 1;
+                }
+                ?>
+                <!-- <div class="section2-blocks4">
                     <div class="section2-block-img4"></div>
                     <div class="section2-block-heading">
                         <h3>EXTERIOR WASH</h3>
@@ -101,7 +115,57 @@ include 'views/user/LoggedInHeader.php';
                     <div class="section2-block-para">
                         <p>Disinfecting your vehicle to protect you from germs.</p>
                     </div>
+                </div> -->
+
+            </div>
+
+            <h2>We provide services for the following vehicle types!</h2>
+
+            <div class="section2-blocksdown">
+                <?php
+                $count = 0;
+                while ($count < sizeof($_SESSION['Vehicles'])) {
+                    echo "<div class='section3-blocks4'>";
+                    echo "<div class='section2-block-heading'>";
+                    echo "<h3>" . $_SESSION['Vehicles'][$count]['Vehicle_Type'] . "</h3>";
+                    echo "</div>";
+                    echo "</div>";
+                    $count = $count + 1;
+                }
+                ?>
+
+                <!-- <div class="section3-blocks4">
+                    <div class="section3-block-img4"></div>
+                    <div class="section2-block-heading">
+                        <h3></h3>
+                    </div>
                 </div>
+
+                <div class="section3-blocks4">
+                    <div class="section3-block-img5"></div>
+                    <div class="section2-block-heading">
+                        <h3></h3>
+                    </div>
+                </div>
+
+                <div class="section3-blocks4">
+                    <div class="section3-block-img6"></div>
+                    <div class="section2-block-heading">
+                        <h3></h3>
+                    </div>
+                </div>
+                <div class="section3-blocks4">
+                    <div class="section3-block-img7"></div>
+                    <div class="section2-block-heading">
+                        <h3></h3>
+                    </div>
+                </div>
+                <div class="section3-blocks4">
+                    <div class="section3-block-img8"></div>
+                    <div class="section2-block-heading">
+                        <h3></h3>
+                    </div>
+                </div> -->
 
             </div>
 
@@ -125,7 +189,3 @@ include 'views/user/Footer.php';
 <div class="help-icon-mob">
     <a href="/customer/help"><img src="https://img.icons8.com/fluency/48/000000/help.png" /></a>
 </div>
-
-<script>
-    document.getElementById('test').innerHTML = document.cookie;
-</script>

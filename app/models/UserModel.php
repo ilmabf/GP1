@@ -60,11 +60,19 @@ class UserModel extends Model
 
     public function passwordExists($email)
     {
-        if ($this->db->select('count', "users", "WHERE Email = :email ;", ':email', $email) > 0) {
+        if ($this->db->select('count', "users", "WHERE Email = :email OR Username = :email;", array(':email', ':email'), array($email, $email)) > 0) {
             return true;
         } else {
             return false;
         }
+    }
+
+    public function checkEmail($uname){
+        if ($this->db->select('count', "users", "WHERE Username = :uname;", ':uname', $uname) > 0) {
+            $email = $this->db->select('Email', "users", "WHERE Username = :uname;", ':uname', $uname);
+            return $email[0]['Email'];
+        }
+        else return  $uname;
     }
 
     public function insertToPwdTemp($email, $key, $expDate)
@@ -149,6 +157,20 @@ class UserModel extends Model
         $param = array(':uname', ':email');
         $paramValue = array($uname, $uname);
         $result = $this->db->select("*", "users", "WHERE (Username = :uname OR Email = :email);", $param, $paramValue);
+        return $result;
+    }
+
+    //Details for customer home page
+    
+    public function getVehicle()
+    {
+        $result = $this->db->select("DISTINCT Vehicle_Type", "wash_package_vehicle_category", "Null");
+        return $result;
+    }
+    
+    public function getWashPackage()
+    {
+        $result = $this->db->select("*", "wash_package", "Null");
         return $result;
     }
 }

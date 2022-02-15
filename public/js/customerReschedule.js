@@ -48,6 +48,12 @@ function checkRescheduleDetails(orderID) {
     else{
       document.cookie = "price = " + price + ";path=/";
     }
+    for(m = 0;m<pausecontent.length;m++){
+      w = "washPackage-" + pausecontent[m]["Wash_Package_ID"];
+      if(document.getElementById(w).checked){
+        document.cookie = "washPackageName = " + pausecontent[m]['Name'] + ";  path=/";
+      }
+    }
     document.cookie = "day = " + date + ";path=/";
     document.cookie = "month = " + month + ";path=/";
     document.cookie = "year = " + year + ";path=/";

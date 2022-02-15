@@ -143,7 +143,7 @@ $stl = $_SESSION['completedSTL']
             
             <form action="/booking/rateService/<?php echo $orderDetails[0]['Reservation_ID']?>" method="post" style="display:inline-block;">
             <input type ="hidden" id="textF" value="0" name="rateStars">
-            <button class="uploadImagesLink" type="submit" value="submit rate" id="rateSubmitBut" style="display:none;">Submit Rate</button>
+            <button class="uploadImagesLink" type="submit" value="submit rate" id="rateSubmitBut" style="display:none;">Submit</button>
             </form>
             </div>
 
@@ -194,7 +194,7 @@ $stl = $_SESSION['completedSTL']
             }
             else{
                 var x = document.getElementById("displayedSentence");
-                x.innerHTML += "<h3 style='color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;'>" +"Thank you for your valuable rate!"+"</h3>";
+                x.innerHTML += "<h3 style='color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;'>" +"Thank you for your valuable rating!"+"</h3>";
                     for (j = 0; j < ratingLevel; j++) {
                         stars[j].className = starClassActive;
                     }
