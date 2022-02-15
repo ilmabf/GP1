@@ -40,6 +40,9 @@ class User extends Controller
 
         if ($this->model->passwordExists($email)) {
 
+            //get email from username
+            $email = $this->model->checkEmail($email);
+
             //set expiration date for key
             $expFormat = mktime(
                 date("H"),
