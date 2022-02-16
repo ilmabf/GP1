@@ -153,3 +153,32 @@ html {
 .blurCalendar {
   filter: blur(3px);
 }
+
+@media only screen and (max-width: 770px){
+
+  .container {
+    overflow: scroll;
+  }
+
+  #cal1{
+    top: auto;
+    left: auto;
+    transform: none;
+  }
+
+  .month{
+    position: fixed;
+  }
+
+  .days{
+    margin-top: -80px;
+  }
+
+  .weekdays{
+    height: 23rem;
+  }
+
+  #bookingContent{
+    position: fixed;
+  }
+}

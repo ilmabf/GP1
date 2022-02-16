@@ -31,7 +31,7 @@ class App
     private function _loadDefaultController()
     {
         require 'controllers/index.php';
-        require 'models/IndexModel.php';
+        require 'models/indexModel.php';
 
         $this->_controller = new Index();
         $this->_controller->model = new IndexModel();

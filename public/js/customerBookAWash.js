@@ -95,5 +95,5 @@ function insertCookie() {
       document.getElementById("priceValue").innerHTML = "Rs. " + price;
     }
   }
-  document.getElementById("xx").innerHTML = document.cookie;
+  // document.getElementById("xx").innerHTML = document.cookie;
 }
