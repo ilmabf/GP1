@@ -10,12 +10,12 @@ $booked = $_SESSION['booked'];
 <body onload="typeWriter(0)">
 
     <div style="min-height: 110px;"></div>
-    <div id="bookingContent">
+    <div id="bookingContent" >
         <div>
             <div class="heading">
                 <h2 style="font-size: 30px;">Start Your Booking!</h2>
             </div>
-            <div id="xx"></div>
+            <!-- <div id="xx"></div> -->
             <p id="sub-heading-p" style="font-size: 15px;"></p>
             <div id="completeMsg" style="text-align:center; color:red; margin-top:10px;"></div>
         </div>

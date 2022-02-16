@@ -175,7 +175,7 @@
                         
                     </div>
                     <!-- existing mobile number error message -->
-                    <p style="font-size: x-small; color:red;"><?php echo $_SESSION['MobileError']; $_SESSION['MobileError'] = "";?></p>
+                    <p style="font-size: x-small; color:red;"><?php if(isset($_SESSION['MobileError'])){echo $_SESSION['MobileError']; $_SESSION['MobileError'] = "";} ?></p>
                 </div>
 
 
