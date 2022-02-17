@@ -10,17 +10,7 @@ include 'views/user/LoggedInHeader.php';
         <h2>Upcoming Jobs</h2>
     </div>
 
-    <div class="reservation-date">
-        <!-- <h3 style="text-align: center; color:#085394;">Pick a date</h3> -->
 
-        <div id="closeClick">
-            <!-- <button class="btnclss" onclick="closeOnClickDemo()">Click to open calendar</button><br> -->
-            <br>
-            <div style="color:white; text-shadow:1px 1px 4px #000000, 1px 1px 4px #0000fa; display:inline;">Date :</div>
-            <input id="ManagerUpcomingDate" type="text" name="managerDateofUpcomingBooking" class="dateBooking" style="width: 50%;">
-
-        </div>
-    </div>
 
     <!-- <div class="mainUpcoming"> -->
     <!-- <div class="upcomingOrders" id="managerUpcomingReservations"> -->
@@ -32,7 +22,19 @@ include 'views/user/LoggedInHeader.php';
                 <div class="Admin-EmpSearch adEmpSearch1">
                     <input type="search" class="ad-Emp-Search" id="managerSearchUpcomingReservations" placeholder="Search for Customer..." title="Type in a name">
                 </div>
+                <div class="reservation-date" style="    margin: auto; display: inline-block;     float: right;">
+                    <!-- <h3 style="text-align: center; color:#085394;">Pick a date</h3> -->
+
+                    <div id="closeClick" style="    margin: -27px -46px 5px auto;">
+                        <!-- <button class="btnclss" onclick="closeOnClickDemo()">Click to open calendar</button><br> -->
+                        <br>
+                        <div style="color:black; display:inline;">Date :</div>
+                        <input id="ManagerUpcomingDate" type="text" name="managerDateofUpcomingBooking" class="dateBooking" style="width: 50%; border-radius: 5px;">
+
+                    </div>
+                </div>
             </div>
+
 
             <table id="upcomingReservationsSearch" style="margin-top: -60px;">
                 <thead>
@@ -102,24 +104,24 @@ include 'views/user/LoggedInHeader.php';
                             "<td>" + list[j]['Date'] + "</td>" +
                             "<td>" + list[j]['Time'] + "</td>" +
                             "<td class='team'>Team not assigned</td>" +
-                            "<td><a href='/booking/upcomingOrder/" + list[j]['Reservation_ID'] +
+                            "<td class='viewLink'><a href='/booking/upcomingOrder/" + list[j]['Reservation_ID'] +
                             "'>View Order</a></td>" +
                             "</tr>";
                         console.log(x);
-
+                        
 
                     } else {
                         x.innerHTML += "<tr>" +
                             "<td>" + id + "</td>" +
                             "<td>" + list[j]['First_Name'] + " " + list[j]['Last_Name'] + "</td>" +
-                            "<td>" + list[j]['Vehicle_ID'] + "<td>" +
+                            "<td>" + list[j]['Vehicle_ID'] + "</td>" +
                             "<td>" + list[j]['Date'] + "</td>" +
                             "<td>" + list[j]['Time'] + "</td>" +
-                            "<td>Assigned Service Team " + list[j]['Service_team_leader_ID'] +
-                            "</td>" +
-                            "<td><a href='/booking/upcomingOrder/" + list[j]['Reservation_ID'] +
+                            "<td class='team'>Assigned Service Team " + list[j]['Service_team_leader_ID'] + "</td>" +
+                            "<td class='viewLink'><a href='/booking/upcomingOrder/" + list[j]['Reservation_ID'] +
                             "'>View Order</a></td>" +
                             "</tr>";
+                            
                         console.log(x);
 
                     }

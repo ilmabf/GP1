@@ -12,18 +12,7 @@ $orderList = $_SESSION['completedReservations'];
         <h2>Completed Jobs</h2>
     </div>
 
-    <div class="reservation-date">
-        <!-- <h3 style="text-align: center; color:#085394;">Pick a date</h3> -->
 
-        <div id="closeClick">
-            <!-- <button class="btnclss" onclick="closeOnClickDemo()">Click to open calendar</button><br> -->
-            <br>
-            <div style="color:white; text-shadow:1px 1px 4px #000000, 1px 1px 4px #0000fa; display:inline;">Date :</div>
-            <input id="ManagerCompletedDate" type="text" name="managerDateofCompletedBooking" class="dateBooking" style="width: 50%;">
-
-
-        </div>
-    </div>
 
     <div class="Table-search" style="margin-bottom: 20px;">
 
@@ -31,6 +20,19 @@ $orderList = $_SESSION['completedReservations'];
             <div style="display:inline-block; width: 100%;">
                 <div class="Admin-EmpSearch adEmpSearch1">
                     <input type="search" class="ad-Emp-Search" id="managerSearchCompletedReservations" placeholder="Search for Customer..." title="Type in a name">
+                </div>
+
+                <div class="reservation-date" style="    margin: auto; display: inline-block;     float: right;">
+                    <!-- <h3 style="text-align: center; color:#085394;">Pick a date</h3> -->
+
+                    <div id="closeClick" style="    margin: -27px -46px 5px auto;">
+                        <!-- <button class="btnclss" onclick="closeOnClickDemo()">Click to open calendar</button><br> -->
+                        <br>
+                        <div style="color:white; text-shadow:1px 1px 4px #000000, 1px 1px 4px #0000fa; display:inline;">Date :</div>
+                        <input id="ManagerCompletedDate" type="text" name="managerDateofCompletedBooking" class="dateBooking" style="width: 50%; border-radius: 5px;">
+
+
+                    </div>
                 </div>
             </div>
 

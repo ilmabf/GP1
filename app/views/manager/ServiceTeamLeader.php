@@ -54,7 +54,7 @@ $result = $_SESSION['employeeDetails'];
 
                     <div style="margin-bottom: 30px;">
                         <input type="button" value="Employees On Work" class="edit_btn" onclick="stlOnWork()">
-                        <input type="button" value="Employees Not Work" class="edit_btn" onclick="stlNotWork()">
+                        <input type="button" value="Employees Not On Work" class="edit_btn" onclick="stlNotWork()">
                     </div>
 
                     <table id="stlDefaultTable">
