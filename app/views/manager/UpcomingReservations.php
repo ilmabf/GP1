@@ -7,7 +7,7 @@ include 'views/user/LoggedInHeader.php';
     <div style="min-height: 110px;"></div>
 
     <div class="heading">
-        <h2>Upcoming Jobs</h2>
+        <h2>Upcoming Jobs: <span id = 'resCount'></span></h2>
     </div>
 
 
@@ -85,6 +85,7 @@ include 'views/user/LoggedInHeader.php';
                 // var x = document.getElementById("managerUpcomingReservations");
                 var x = document.getElementById("upcomingReservationTable");
 
+                document.getElementById('resCount').innerHTML = list.length;
                 for (j = 0; j < list.length; j++) {
                     if (list[j]['Reservation_ID'].length == 1) {
                         var id = "000" + list[j]['Reservation_ID'];
@@ -132,6 +133,7 @@ include 'views/user/LoggedInHeader.php';
 
     <script>
         function viewList() {
+            document.getElementById('resCount').innerHTML = orders.length;
             var x = document.getElementById("upcomingReservationTable");
 
             for (j = 0; j < orders.length; j++) {

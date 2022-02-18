@@ -9,7 +9,7 @@ $orderList = $_SESSION['completedReservations'];
     <div style="min-height: 110px;"></div>
 
     <div class="heading">
-        <h2>Completed Jobs</h2>
+        <h2>Completed Jobs: <span id='resCount'></span></h2>
     </div>
 
 
@@ -82,7 +82,8 @@ $orderList = $_SESSION['completedReservations'];
                     }
                 }
                 var x = document.getElementById("completedReservationTable");
-
+                document.getElementById('resCount').innerHTML = list.length;
+                
                 for (j = 0; j < list.length; j++) {
 
                     if (list[j]['Reservation_ID'].length == 1) {
@@ -112,7 +113,7 @@ $orderList = $_SESSION['completedReservations'];
     <script>
         function viewList() {
             var x = document.getElementById("completedReservationTable");
-
+            document.getElementById('resCount').innerHTML = orders.length;
             // document.getElementById("managerCompleteReservations").innerHTML = '';
 
             for (j = 0; j < orders.length; j++) {
