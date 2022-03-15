@@ -19,6 +19,8 @@
     </div>
 </div>
 
+
+
 <div class="addVehicleform" id="vehicleForm">
     <div class="forma">
         <div class="loguser-icon"></div>
@@ -64,6 +66,16 @@
             <button id="VehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closeVehicleForm()">Cancel</button>
         </form>
 
+    </div>
+</div>
+
+<div class= "addVehicleform" id="errorForm" >
+    <div class="forma">
+        <h2 class="login-signupheader">Error</h2>
+        <div id="error-msg"></div>
+        <form action="" method="post" id="delete-Address-Form"><br>
+            <button id="closeErrorBtn" class="formSubmitButton" type="submit" name="signup" onclick="closeError()" >Close</button>
+        </form>
     </div>
 </div>
 
@@ -150,7 +162,7 @@
     </div>
 </div>
 
-<div class="box">
+<div class="box" id = "upcoming">
     <div class="account-box1" id="mainbox">
         <div class="account-prof">
             <div class="account-header">Account Details</div>
@@ -306,7 +318,8 @@
     }
 </script>
 <script src="/public/js/Maps.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxvVN9pPMljGjWLvUGWGisQwGUUMSOHco&callback=myMap&v=weekly">
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxvVN9pPMljGjWLvUGWGisQwGUUMSOHco&callback=myMap&v=weekly"> -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFq7IClah9EyedO6MTv12hIzbW_Iq-Aq8&callback=myMap&v=weekly">
 </script>
 <script async>
     initMap();
@@ -328,3 +341,9 @@
 
     checkVehicleBox();
 </script>
+<script src="/public/js/ErrorMessage.js"></script>
+<?php
+if(isset($_SESSION['Error'])){?>
+    <script> popError(<?php echo json_encode($_SESSION['Error']); ?>); </script>";
+    
+<?php unset($_SESSION['Error']); }  ?>
