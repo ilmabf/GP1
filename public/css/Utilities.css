@@ -43,6 +43,10 @@ input[type="color"] {
   height: 100%;
 }
 
+.blurError{
+  filter: blur(3px);
+}
+
 .blurAccount {
   filter: blur(3px);
   position: absolute;

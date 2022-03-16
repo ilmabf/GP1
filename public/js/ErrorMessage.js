@@ -3,7 +3,7 @@ function popError(msg){
     var y = document.getElementById("mainbox");
       x.style.display = "block";
       document.getElementById("error-msg").innerHTML = msg;
-      y.classList.add("blurAccount");
+      y.classList.add("blurError");
     
 }
 
@@ -12,7 +12,7 @@ function closeError(){
     var y = document.getElementById("mainbox");
         document.getElementById("error-msg").innerHTML = "";
       x.style.display = "none";
-      y.classList.remove("blurAccount");
+      y.classList.remove("blurError");
       
   }
 

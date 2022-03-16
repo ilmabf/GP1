@@ -70,12 +70,8 @@ function closeCancelOrder(){
 function openConfirmOrder(){
   var x = document.getElementById("confirmPopUpId");
   var y = document.getElementById("box3");
-  if (x.style.display === "none") {
     x.style.display = "block";
     y.classList.add("blurOrder");
-  } else {
-    x.style.display = "none";
-  }
 }
 
 let x = document.cookie

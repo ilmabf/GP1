@@ -248,23 +248,25 @@ class Booking extends Controller
                 $subject = "We received your reservation - wandiwash.com";
 
                 if ($mail->mailto($subject, $_SESSION['userDetails'][0]['Email'], $body)) {
-                    header("Location: /user/home");
+                    $_SESSION['BookingSuccess'] = "true";
+                    header("Location: /booking/orderSummary");
                 }
             }
         } else {
-            $_SESSION['bookingError'] = "Looks like we already have a reservation for that vehicle at the same time slot. Please check if you have entered the correct details.";
-            header("Location: /booking/error");
+            $_SESSION['Error'] = "Looks like we already have a reservation for that vehicle at the same time slot. Please check if you have entered the correct details.";
+            // header("Location: /booking/error");
+            header("Location: /booking/details");
         }
     }
 
-    function error()
-    {
-        if (!isset($_SESSION['bookingError'])) {
-            header("Location: /user/home");
-            exit;
-        }
-        $this->view->render('customer/ReservationError');
-    }
+    // function error()
+    // {
+    //     if (!isset($_SESSION['bookingError'])) {
+    //         header("Location: /user/home");
+    //         exit;
+    //     }
+    //     $this->view->render('customer/ReservationError');
+    // }
 
     function updateReservation($details, $orderID)
     {
