@@ -16,17 +16,14 @@ var lName = document.getElementById("signUpLastName");
 myInput.onfocus = function () {
   document.getElementById("pwd-validate-message").style.display = "block";
   document.getElementById("link-to-go-login").style.top = "115%";
-}
-
+};
 
 myInput.onblur = function () {
   document.getElementById("pwd-validate-message").style.display = "none";
   document.getElementById("link-to-go-login").style.top = "109%";
-}
-
+};
 
 myInput.onkeyup = function () {
-
   var lowerCaseLetters = /[a-z]/g;
 
   if (myInput.value.match(lowerCaseLetters)) {
@@ -46,7 +43,6 @@ myInput.onkeyup = function () {
     capital.classList.add("invalid");
   }
 
-
   var numbers = /[0-9]/g;
   if (myInput.value.match(numbers)) {
     number.classList.remove("invalid");
@@ -63,13 +59,13 @@ myInput.onkeyup = function () {
     length.classList.remove("valid");
     length.classList.add("invalid");
   }
-}
+};
 
 function validatePassword() {
   if (myInput.value != confirm_pwd.value) {
     confirm_pwd.setCustomValidity("Passwords Don't Match");
   } else {
-    confirm_pwd.setCustomValidity('');
+    confirm_pwd.setCustomValidity("");
   }
 }
 
@@ -81,16 +77,39 @@ function checkLetter() {
   var fName = document.getElementById("signUpFirstName");
   if (!fName.value.match(letters)) {
     fName.setCustomValidity("Please input alphabet characters only");
-  }
-  else {
-    fName.setCustomValidity('');
+  } else {
+    fName.setCustomValidity("");
   }
 
   var lName = document.getElementById("signUpLastName");
   if (!lName.value.match(letters)) {
     lName.setCustomValidity("Please input alphabet characters only");
+  } else {
+    lName.setCustomValidity("");
   }
-  else {
-    lName.setCustomValidity('');
+}
+
+document.getElementById("signUpFirstName").value =
+  getSavedValue("signUpFirstName"); // set the value to this input
+document.getElementById("signUpLastName").value =
+  getSavedValue("signUpLastName"); // set the value to this input
+document.getElementById("signUpUsername").value =
+  getSavedValue("signUpUsername");
+document.getElementById("signUpEmail").value = getSavedValue("signUpEmail");
+document.getElementById("signUpMobile").value = getSavedValue("signUpMobile");
+/* Here you can add more inputs to set value. if it's saved */
+
+//Save the value function - save it to localStorage as (ID, VALUE)
+function saveValue(e) {
+  var id = e.id; // get the sender's id to save it .
+  var val = e.value; // get the value.
+  localStorage.setItem(id, val); // Every time user writing something, the localStorage's value will override .
+}
+
+//get the saved value function - return the value of "v" from localStorage.
+function getSavedValue(v) {
+  if (!localStorage.getItem(v)) {
+    return ""; // You can change this to your defualt value.
   }
+  return localStorage.getItem(v);
 }

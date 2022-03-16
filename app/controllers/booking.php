@@ -1,5 +1,6 @@
 <?php
 require 'libs/Mailer.php';
+date_default_timezone_set("Asia/Colombo");
 session_start();
 $_SESSION['cancelReservation'] = "";
 class Booking extends Controller
@@ -117,10 +118,10 @@ class Booking extends Controller
         $_SESSION['stlDetails'] = $this->model->getSTLDetails($_SESSION['upcomingOrder'][0]['Service_team_leader_ID']); //get details of assigned stl
         if ($_SESSION['role'] == "customer") {
             $today = date("Y-m-d");
-
+            
             $reservation = $this->model->getReservationDetails($orderID);
             $date = $reservation[0]['Date'];
-
+            // echo strtotime($today);
             if (strtotime($date) - strtotime($today) > 86400) {
                 $_SESSION['displayReservationBtn'] = "true";
                 $this->view->render('customer/UpcomingOrder');

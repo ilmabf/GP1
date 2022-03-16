@@ -1,6 +1,5 @@
 <?php
-// echo getcwd();
-require 'libs/Error.php';
+
 
 session_start();
 class Account extends Controller

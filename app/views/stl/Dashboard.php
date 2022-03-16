@@ -34,30 +34,12 @@ $typeOfBookings = $_SESSION['typeOfBookings'];
         type: 'bar'
     }];
 
-    var layout1 = {
-        title: 'Number of Bookings per Week on past month',
-        xaxis: {
-            title: 'Week'
-        },
-        yaxis: {
-            title: 'Number of Bookings'
-        }
-    };
-
-    Plotly.newPlot('myPlot1', data1, layout1);
+    
 
     var xArray = <?php echo json_encode(array_column($typeOfBookings, 'Name')) ?>;
     var yArray = <?php echo json_encode(array_column($typeOfBookings, 'Reservations')) ?>;
 
-    var layout2 = {
-        title: "Number of Bookings per Wash Package on past month"
-    };
-
-    var data2 = [{
-        labels: xArray,
-        values: yArray,
-        type: "pie"
-    }];
-
-    Plotly.newPlot('myPlot2', data2, layout2);
+    
 </script>
+
+<script src = "/public/js/StlDashboard.js"></script>
