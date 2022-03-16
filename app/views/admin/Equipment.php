@@ -12,12 +12,36 @@ $teams = $_SESSION['teamDetails'];
   <div style="min-height: 110px;"></div>
   <h2 class="manageEmployee-heading">Manage Equipment</h2>
 
-  <div style="display:block;text-align:center;">
+  <div id="equipmentNewBtns">
     <input type="button" id="addNewRow" value="Add Equipment" style="display:inline-block;text-align:center;" onclick="addNewRow();" />
+    <!-- <input type="button" id="addNewCategoryRow" value="Add Category" style="display:inline-block;text-align:center;" onclick="addNewCategroyRow();" /> -->
   </div>
 
+  <div id="addAnewCategory">
+
+    <form action="/service/addNewCategory" method="post">
+      <table>
+        <thead>
+          <tr style="padding: 10px 10px;">
+            <th data-type="text" style="padding: -10px -10px;">Category</th>
+            <th colspan="2" style="text-align: center;"> </th>
+          </tr>
+        </thead>
+        <tbody id="newEquipmentCategory">
+          <tr>
+            <td class='td-t1'><input type="text" name="category" id="category" /></td>
+            <td class='td-t1'><input type="submit" name="addCategory" id="submitCategory" value="Add" class="addCategory-button"></td>
+          </tr>
+        </tbody>
+      </table>
+
+    </form>
+
+  </div>
+
+
   <body onload="createEquipTable()">
-    <div>
+    <div id="newEquipTable">
       <form action="/service/addNewEquipment" name="Form" method="post">
         <div id="container1">
 
@@ -25,10 +49,11 @@ $teams = $_SESSION['teamDetails'];
         <input type="submit" id="submitButton" value="Insert Data" />
       </form>
     </div>
+    <!-- </div> -->
 
     <!-- stock-->
 
-    <div style="height: 50px;"></div>
+    <div style="height: 100px;"></div>
     <div class="Table-search" id="viewAllitems">
       <div class="table-wrapper">
         <div style="display:inline-block; width: 100%;">
@@ -183,7 +208,7 @@ $teams = $_SESSION['teamDetails'];
               <th data-type="text">Category</th>
               <th data-type="text">Price</th>
               <th data-type="text">Date Acquired</th>
-              <!-- <th data-type="text">Team</th> -->
+              <th data-type="text">Team</th>
               <th colspan="2" style="text-align: center;">Action</th>
             </tr>
           </thead>

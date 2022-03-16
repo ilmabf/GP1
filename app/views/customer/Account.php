@@ -187,10 +187,14 @@
 
                     </div>
                     <!-- existing mobile number error message -->
-                    <p style="font-size: x-small; color:red;"><?php if (isset($_SESSION['MobileError'])) {
-                                                                    echo $_SESSION['MobileError'];
-                                                                    $_SESSION['MobileError'] = "";
-                                                                } ?></p>
+                    <<<<<<< HEAD <p style="font-size: x-small; color:red;"><?php echo $_SESSION['MobileError'];
+                                                                            $_SESSION['MobileError'] = ""; ?></p>
+                        =======
+                        <p style="font-size: x-small; color:red;"><?php if (isset($_SESSION['MobileError'])) {
+                                                                        echo $_SESSION['MobileError'];
+                                                                        $_SESSION['MobileError'] = "";
+                                                                    } ?></p>
+                        >>>>>>> 58d55d441c7b74664d5de544d1d1cbf1431a46d0
                 </div>
 
 
