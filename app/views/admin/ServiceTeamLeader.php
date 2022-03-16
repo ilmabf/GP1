@@ -5,7 +5,7 @@ include 'views/user/LoggedInHeader.php';
 
     <div class="addVehicleform" id="stldetails">
         <div class="forma">
-            <h2 id = 'stlName' class="login-signupheader"></h2>
+            <h2 id='stlName' class="login-signupheader"></h2>
             <form action="" method="post" id="customer-signup">
                 <ul>
                     <li><img id='stlPhotoID' src="" style="width: 250px;"></img></li><br>
@@ -109,7 +109,7 @@ include 'views/user/LoggedInHeader.php';
                                     <td id="<?php echo "stlSalary_row" . $count2 ?>" style="text-align:right" class="td-t1"><?php echo $result2[$count2]['Salary'] ?>.00</td>
                                     <td id="<?php echo "stlNicNo_row" . $count2 ?>" style="text-align:right" class="td-t1"><?php echo $result2[$count2]['NIC_No'] ?></td>
                                     <td id="<?php echo "stlUsername_row" . $count2 ?>" style="text-align:right" class="td-t1"><?php echo $result2[$count2]['Username'] ?></td>
-                                    <td id="<?php echo "stlPhoto" . $count2 ?>" style="text-align:right" class="td-t1"><button onclick="viewPhoto('<?php echo $result2[$count2]['First_Name']; ?>' , '<?php echo $result2[$count2]['Last_Name'] ;?>', <?php echo $result2[$count2]['STL_ID']; ?>)"><a><?php echo "View"; ?></a></button></td>
+                                    <td id="<?php echo "stlPhoto" . $count2 ?>" style="text-align:right" class="td-t1"><button onclick="viewPhoto('<?php echo $result2[$count2]['First_Name']; ?>' , '<?php echo $result2[$count2]['Last_Name']; ?>', <?php echo $result2[$count2]['STL_ID']; ?>)"><a><?php echo "View"; ?></a></button></td>
                                     <td>
                                         <input type="button" id="<?php echo "edit_stl_btn" . $count2 ?>" class="edit_btn td-t1" value="Edit" onclick="stlEditForm('<?php echo $count2 ?>')">
                                         <a href="" id="<?php echo "editStlHREF" . $count2 ?>"><input type="submit" id="<?php echo "save_stl_btn" . $count2 ?>" class="save_btn" value="Save" onclick="stlSaveForm('<?php echo $result2[$count2]['Employee_ID'] ?>', '<?php echo $count2 ?>')"></a>

@@ -1,3 +1,31 @@
+function Price() {
+    document.getElementById("inputAddPrice").style = "display:none;";
+    document.getElementById("addPriceButton").style = "display:none;";
+    document.getElementById("editPriceButton").style = "display:none;";
+
+    var x = document.getElementById("admin-wash-types").value;
+    var y = document.getElementById("admin-vehicle-types").value;
+    var i = 0;
+    var price = 0;
+    for (i = 0; i < servicePrices.length; i++) {
+        if (servicePrices[i]['Wash_Package_ID'] == x && servicePrices[i]['Vehicle_Type'] == y) {
+            if (servicePrices[i]['Price'] != null) {
+                price = servicePrices[i]['Price'];
+            }
+        }
+    }
+    if (price == 0) {
+        document.getElementById("add").style = "display:inline-block;";
+        document.getElementById("edit").style = "display:none;";
+        document.getElementById("PriceValue").innerHTML = "Rs. ";
+    } else {
+        document.getElementById("add").style = "display:none;";
+        document.getElementById("edit").style = "display:inline-block;";
+        document.getElementById("PriceValue").innerHTML = "Rs. " + price;
+    }
+}
+
+Price();
 
 function openAddServiceForm() {
     var x = document.getElementById("serviceForm");
