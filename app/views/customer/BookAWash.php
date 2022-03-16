@@ -10,7 +10,18 @@ $booked = $_SESSION['booked'];
 <body onload="typeWriter(0)">
 
     <div style="min-height: 110px;"></div>
-    <div id="bookingContent">
+
+    <div class="addVehicleform" id="errorForm">
+        <div class="forma">
+            <h2 class="login-signupheader">Error</h2>
+            <div id="error-msg" style="font-size: medium;"></div>
+            <form action="" method="post" id="delete-Address-Form"><br>
+                <button id="closeErrorBtn" class="formSubmitButton" type="submit" name="signup" onclick="closeError()">Close</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="mainbox">
         <div>
             <div class="heading">
                 <h2 style="font-size: 30px;">Start Your Booking!</h2>
@@ -198,3 +209,12 @@ $booked = $_SESSION['booked'];
 </body>
 
 <!-- </div> -->
+<script src="/public/js/ErrorMessage.js"></script>
+<?php
+if (isset($_SESSION['Error'])) { ?>
+    <script>
+        popError(<?php echo json_encode($_SESSION['Error']); ?>);
+    </script>";
+
+<?php unset($_SESSION['Error']);
+}  ?>

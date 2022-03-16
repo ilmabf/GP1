@@ -166,7 +166,7 @@ include 'views/user/LoggedInHeader.php';
     <div class="box4">
         <div class="order-buttons">
             <button class="bt" id="cancelBtn" onclick="openCancelOrder()"><a>Cancel Order</a></button>
-            <button class="bt2" id="confirmBtn" onclick="openConfirmOrder()"><a>Confirm Order</a></button>
+            <button class="bt2" id="confirmBtn" onclick="makeOrder();"><a>Confirm Order</a></button>
         </div>
     </div>
 
@@ -193,10 +193,19 @@ include 'views/user/LoggedInHeader.php';
 
         <form action="" method="post" id="customer-signup">
 
-            <button id="VehicleFormSubmitButton" onclick="makeOrder();" class="formSubmitButton" type="button" name="signup" style="width: 115px;">Return Home</button>
+            <button id="VehicleFormSubmitButton" class="formSubmitButton" type="button" name="signup" style="width: 115px;"><a href="/user/home" style="color: white;">Return Home</a></button>
         </form>
 
     </div>
 </div>
 <script src="/public/js/CustomerOrderSummary.js"></script>
 <div style="min-height: 110px;"></div>
+
+<?php
+if (isset($_SESSION['BookingSuccess'])) { ?>
+    <script>
+        openConfirmOrder();
+    </script>";
+
+<?php unset($_SESSION['BookingSuccess']);
+}  ?>
