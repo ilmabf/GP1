@@ -172,10 +172,11 @@
                         <div class="phoneIcon"></div>
                         <?php echo $details[0]['Contact_Number']; ?>
                         <div class="btn" onclick="openDetailsVehicleForm()"><i class="fas fa-pencil-alt"></i></div>
-                        
+
                     </div>
                     <!-- existing mobile number error message -->
-                    <p style="font-size: x-small; color:red;"><?php echo $_SESSION['MobileError']; $_SESSION['MobileError'] = "";?></p>
+                    <p style="font-size: x-small; color:red;"><?php echo $_SESSION['MobileError'];
+                                                                $_SESSION['MobileError'] = ""; ?></p>
                 </div>
 
 
@@ -305,12 +306,12 @@
         // marker.setMap(map);
     }
 </script>
-<!-- <script src="/public/js/Maps.js"></script>
+<script src="/public/js/Maps.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxvVN9pPMljGjWLvUGWGisQwGUUMSOHco&callback=myMap&v=weekly">
 </script>
 <script async>
     initMap();
-</script> -->
+</script>
 
 <script>
     //if there are vehicles display details. Else display message to add vehicles.

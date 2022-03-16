@@ -42,8 +42,7 @@
 .edit_btn {
   text-decoration: none;
   padding: 2px 5px;
-  background: #1597BB
-  ;
+  background: #1597bb;
   color: white;
   border-radius: 3px;
   cursor: pointer;
@@ -53,7 +52,7 @@
   display: none;
   text-decoration: none;
   padding: 2px 5px;
-  background: #150E56;
+  background: #150e56;
   color: white;
   border-radius: 3px;
   cursor: pointer;
@@ -128,6 +127,7 @@
 /* -------------------------Admin- Manage Equipment ----------------------------------- */
 
 #addNewRow:hover,
+#addNewCategoryRow:hover,
 #bt:hover {
   background-color: #041553;
   color: white;
@@ -138,6 +138,7 @@
   background-color: #041553;
 }
 #submitButton,
+#submitCategoryButton,
 #saveButton {
   display: none;
   margin: 20px auto;
@@ -149,8 +150,20 @@
   cursor: pointer;
 }
 
+#submitCategory {
+  background-color: #1597e5;
+  color: white;
+  border-radius: 8px;
+  border-color: white;
+  padding: 2px 6px;
+  cursor: pointer;
+  text-align: center;
+}
+
 #submitButton:hover,
-#saveButton:hover {
+#submitCategoryButton:hover,
+#saveButton:hover,
+#submitCategory:hover {
   background-color: #041553;
 }
 

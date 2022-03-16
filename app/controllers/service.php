@@ -25,6 +25,15 @@ class Service extends Controller
         }
     }
 
+    function addNewCategory()
+    {
+        if ($_SESSION['role'] == "systemadmin") {
+            $category = $_POST['category'];
+            $this->model->addCategory($category);
+            header("Location: /service/equipment");
+        }
+    }
+
     function addNewEquipment()
     {
         //User Autherization
@@ -37,10 +46,10 @@ class Service extends Controller
             $price = $_POST['price'];
             $dateAcquired = $_POST['dateAcquired'];
 
-            if (isset($itemID) && isset($name) && isset($itemCode) && isset($price) &&  isset($dateAcquired)) {
+            if (isset($itemID)  && isset($name) && isset($itemCode) && isset($price) &&  isset($dateAcquired)) {
 
                 //store equipment
-                if ($this->model->addEquipment($itemID,$name, $itemCode, $price, $dateAcquired)) {
+                if ($this->model->addEquipment($itemID, $name, $itemCode, $price, $dateAcquired)) {
 
                     header("Location: /service/equipment");
                 }
