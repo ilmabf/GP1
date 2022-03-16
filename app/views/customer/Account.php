@@ -19,6 +19,8 @@
     </div>
 </div>
 
+
+
 <div class="addVehicleform" id="vehicleForm">
     <div class="forma">
         <div class="loguser-icon"></div>
@@ -64,6 +66,16 @@
             <button id="VehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closeVehicleForm()">Cancel</button>
         </form>
 
+    </div>
+</div>
+
+<div class="addVehicleform" id="errorForm">
+    <div class="forma">
+        <h2 class="login-signupheader">Error</h2>
+        <div id="error-msg"></div>
+        <form action="" method="post" id="delete-Address-Form"><br>
+            <button id="closeErrorBtn" class="formSubmitButton" type="submit" name="signup" onclick="closeError()">Close</button>
+        </form>
     </div>
 </div>
 
@@ -150,7 +162,7 @@
     </div>
 </div>
 
-<div class="box">
+<div class="box" id="upcoming">
     <div class="account-box1" id="mainbox">
         <div class="account-prof">
             <div class="account-header">Account Details</div>
@@ -175,8 +187,14 @@
 
                     </div>
                     <!-- existing mobile number error message -->
-                    <p style="font-size: x-small; color:red;"><?php echo $_SESSION['MobileError'];
-                                                                $_SESSION['MobileError'] = ""; ?></p>
+                    <<<<<<< HEAD <p style="font-size: x-small; color:red;"><?php echo $_SESSION['MobileError'];
+                                                                            $_SESSION['MobileError'] = ""; ?></p>
+                        =======
+                        <p style="font-size: x-small; color:red;"><?php if (isset($_SESSION['MobileError'])) {
+                                                                        echo $_SESSION['MobileError'];
+                                                                        $_SESSION['MobileError'] = "";
+                                                                    } ?></p>
+                        >>>>>>> 58d55d441c7b74664d5de544d1d1cbf1431a46d0
                 </div>
 
 
@@ -250,82 +268,24 @@
         </div>
     </div>
 </div>
-<script src="/public/js/CustomerAccount.js"></script>
 <script>
     var pausecontent = <?php echo json_encode($vehicles); ?>;
-
-    function getVehicleDetails() {
-        var x = document.getElementById("Customer-Vehicles").value;
-        //set vehicle details on the vehicle box
-        document.getElementById("vehicleModel").innerHTML = pausecontent[x - 1]['Model'];
-        document.getElementById("vehicleColor").innerHTML = pausecontent[x - 1]['Colour'];
-        document.getElementById("vehicleT").innerHTML = pausecontent[x - 1]['Type'];
-        document.getElementById("vehicleManufacturer").innerHTML = pausecontent[x - 1]['Manufacturer'];
-
-        //set vehicle details on the edit form
-        var vid = pausecontent[x - 1]['VID'];
-        vid = vid.replace(/ /g, "_");
-        document.getElementById("editVehicleForm").action = "/account/editVehicle/" + vid;
-        document.getElementById("deleteVehicle").href = "/account/deleteVehicle/" + vid;
-        document.getElementById("editVID").innerHTML = "Edit Vehicle - " + pausecontent[x - 1]['VID'];
-        document.getElementById("editModel").placeholder = pausecontent[x - 1]['Model'];
-        document.getElementById("editColor").value = pausecontent[x - 1]['Colour'];
-        document.getElementById("editType").value = pausecontent[x - 1]['Type'];
-        document.getElementById("editManufacturer").placeholder = pausecontent[x - 1]['Manufacturer'];
-    }
-
-
     var addresses = <?php echo json_encode($_SESSION['address']); ?>;
-
-    function myMap() {
-        // var lat = 7.2905715;
-        // var lng = 80.6337262;
-        if (addresses.length > 0) {
-            var x = document.getElementById("Customer-Address").value;
-            lat = addresses[x - 1]['Latitude'];
-            lng = addresses[x - 1]['Longitude'];
-
-            var mapProp = {
-                center: new google.maps.LatLng(lat, lng),
-                zoom: 10,
-            };
-
-            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-            marker = new google.maps.Marker({
-                map,
-            });
-            latlng = new google.maps.LatLng(lat, lng);
-            marker.setPosition(latlng);
-            document.getElementById("editMapBtn").innerHTML = "<a><i class='fas fa-pencil-alt'</i></a>";
-        } else {
-            document.getElementById("googleMap").style =
-                "background-color: whitesmoke; margin-top: 5px; text-align:center; width: 100% ; height: 100% ; border-radius:27px;  line-height: 230px;";
-            document.getElementById("googleMap").innerHTML = "Add your locations here";
-
-        }
-        // marker.setMap(map);
-    }
 </script>
+<script src="/public/js/CustomerAccount.js"></script>
 <script src="/public/js/Maps.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxvVN9pPMljGjWLvUGWGisQwGUUMSOHco&callback=myMap&v=weekly">
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxvVN9pPMljGjWLvUGWGisQwGUUMSOHco&callback=myMap&v=weekly"> -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFq7IClah9EyedO6MTv12hIzbW_Iq-Aq8&callback=myMap&v=weekly">
 </script>
 <script async>
     initMap();
 </script>
+<script src="/public/js/ErrorMessage.js"></script>
+<?php
+if (isset($_SESSION['Error'])) { ?>
+    <script>
+        popError(<?php echo json_encode($_SESSION['Error']); ?>);
+    </script>";
 
-<script>
-    //if there are vehicles display details. Else display message to add vehicles.
-    function checkVehicleBox() {
-        if (pausecontent.length == 0) {
-            var myDiv = document.getElementById("vehicleDetails");
-            myDiv.outerHTML =
-                "<div id = 'vehicleDetails' style = 'text-align:center; margin-top:5px; line-height: 175px;'> Add your vehicles here </div>";
-        } else {
-            document.getElementById("editbtn").innerHTML = "<a><i class='fas fa-pencil-alt'</i></a>";
-            display();
-            getVehicleDetails();
-        }
-    }
-
-    checkVehicleBox();
-</script>
+<?php unset($_SESSION['Error']);
+}  ?>

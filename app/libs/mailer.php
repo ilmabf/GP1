@@ -6,12 +6,12 @@ require 'vendor/autoload.php';
         public function mailto($subject,$to,$body){
             $mail = new PHPMailer;
             $mail->isSMTP();
-            $mail->SMTPDebug = 0;
+            $mail->SMTPDebug = 1;
             $mail->Host = 'smtp.hostinger.com';
             $mail->Port = 587;
             $mail->SMTPAuth = true;
             $mail->Username = 'hello@wandiwash.com';
-            $mail->Password = 'Abuwandiwash123@.com';
+            $mail->Password = 'Abu1999@.com';
             $mail->setFrom('hello@wandiwash.com', 'wandiwash');
             $mail->addReplyTo('wandiwash@gmail.com', 'wandiwash');
             $mail->addAddress($to); 

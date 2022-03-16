@@ -138,7 +138,7 @@ $images = $_SESSION['images'];
 
         <div class="viewPhotos vp1">
             <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Before Service</h3>
-            <img src="<?php echo '/public/images/' . $images[0]['Picture_before']; ?>"  class="img-thumbnail" style="height:300px; width:300px; object-fit:contain;"></img>
+            <img src="<?php echo '/public/images/' . $images[0]['Picture_before']; ?>" class="img-thumbnail" style="height:300px; width:300px; object-fit:contain;"></img>
 
             <div class="viewPhotos vp2">
                 <h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">After Service</h3>

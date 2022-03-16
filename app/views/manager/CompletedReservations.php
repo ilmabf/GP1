@@ -9,21 +9,10 @@ $orderList = $_SESSION['completedReservations'];
     <div style="min-height: 110px;"></div>
 
     <div class="heading">
-        <h2>Completed Jobs</h2>
+        <h2>Completed Jobs: <span id='resCount'></span></h2>
     </div>
 
-    <div class="reservation-date">
-        <!-- <h3 style="text-align: center; color:#085394;">Pick a date</h3> -->
 
-        <div id="closeClick">
-            <!-- <button class="btnclss" onclick="closeOnClickDemo()">Click to open calendar</button><br> -->
-            <br>
-            <div style="color:white; text-shadow:1px 1px 4px #000000, 1px 1px 4px #0000fa; display:inline;">Date :</div>
-            <input id="ManagerCompletedDate" type="text" name="managerDateofCompletedBooking" class="dateBooking" style="width: 50%;">
-
-
-        </div>
-    </div>
 
     <div class="Table-search" style="margin-bottom: 20px;">
 
@@ -31,6 +20,19 @@ $orderList = $_SESSION['completedReservations'];
             <div style="display:inline-block; width: 100%;">
                 <div class="Admin-EmpSearch adEmpSearch1">
                     <input type="search" class="ad-Emp-Search" id="managerSearchCompletedReservations" placeholder="Search for Customer..." title="Type in a name">
+                </div>
+
+                <div class="reservation-date" style="    margin: auto; display: inline-block;     float: right;">
+                    <!-- <h3 style="text-align: center; color:#085394;">Pick a date</h3> -->
+
+                    <div id="closeClick" style="    margin: -27px -46px 5px auto;">
+                        <!-- <button class="btnclss" onclick="closeOnClickDemo()">Click to open calendar</button><br> -->
+                        <br>
+                        <div style="color:white; text-shadow:1px 1px 4px #000000, 1px 1px 4px #0000fa; display:inline;">Date :</div>
+                        <input id="ManagerCompletedDate" type="text" name="managerDateofCompletedBooking" class="dateBooking" style="width: 50%; border-radius: 5px;">
+
+
+                    </div>
                 </div>
             </div>
 
@@ -56,84 +58,5 @@ $orderList = $_SESSION['completedReservations'];
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
     <script>
         var orders = <?php echo json_encode($_SESSION['completedReservations']); ?>;
-
-        $('#ManagerCompletedDate').datepicker({
-            dateFormat: 'yy-mm-dd',
-            onSelect: function(date) {
-
-                document.getElementById("completedReservationTable").innerHTML = '';
-
-                var i = 0;
-                var list = [];
-
-                for (i = 0; i < orders.length; i++) {
-                    if (orders[i]['Date'] == date) {
-                        var order = [];
-                        order['Reservation_ID'] = orders[i]['Reservation_ID'];
-                        order['First_Name'] = orders[i]['First_Name'];
-                        order['Last_Name'] = orders[i]['Last_Name'];
-                        order['Vehicle_ID'] = orders[i]['Vehicle_ID'];
-                        order['Date'] = orders[i]['Date'];
-                        order['Time'] = orders[i]['Time'];
-                        order['Member1'] = orders[i]['Member1'];
-                        list.push(order);
-                    }
-                }
-                var x = document.getElementById("completedReservationTable");
-
-                for (j = 0; j < list.length; j++) {
-
-                    if (list[j]['Reservation_ID'].length == 1) {
-                        var id = "000" + list[j]['Reservation_ID'];
-                    } else if (list[j]['Reservation_ID'].length == 2) {
-                        var id = "00" + list[j]['Reservation_ID'];
-                    } else if (list[j]['Reservation_ID'].length == 3) {
-                        var id = "0" + list[j]['Reservation_ID'];
-                    } else var id = list[j]['Reservation_ID'];
-
-                    x.innerHTML += "<tr>" +
-                        "<td>" + id + "</td>" +
-                        "<td>" + list[j]['First_Name'] + " " + list[j]['Last_Name'] + "</td>" +
-                        "<td>" + list[j]['Vehicle_ID'] + "</td>" +
-                        "<td>" + list[j]['Date'] + "</td>" +
-                        "<td>" + list[j]['Time'] + "</td>" +
-                        "<td class='team'>Completed by " + list[j]['Member1'] + "'s Team</td>" +
-                        "<td><a href='/booking/completedOrder/" + list[j]['Reservation_ID'] +
-                        "'>View Order</a></td>" +
-                        "</tr>";
-                }
-
-            }
-        });
-    </script>
-
-    <script>
-        function viewList() {
-            var x = document.getElementById("completedReservationTable");
-
-            // document.getElementById("managerCompleteReservations").innerHTML = '';
-
-            for (j = 0; j < orders.length; j++) {
-                if (orders[j]['Reservation_ID'].length == 1) {
-                    var id = "000" + orders[j]['Reservation_ID'];
-                } else if (orders[j]['Reservation_ID'].length == 2) {
-                    var id = "00" + orders[j]['Reservation_ID'];
-                } else if (orders[j]['Reservation_ID'].length == 3) {
-                    var id = "0" + orders[j]['Reservation_ID'];
-                } else var id = orders[j]['Reservation_ID'];
-
-                x.innerHTML += "<tr>" +
-                    "<td>" + id + "</td>" +
-                    "<td>" + orders[j]['First_Name'] + " " + orders[j]['Last_Name'] + "</td>" +
-                    "<td>" + orders[j]['Vehicle_ID'] + "</td>" +
-                    "<td>" + orders[j]['Date'] + "</td>" +
-                    "<td>" + orders[j]['Time'] + "</td>" +
-                    "<td class='team'>Completed by " + orders[j]['Member1'] + "'s Team</td>" +
-                    "<td class='viewLink'><a href='/booking/completedOrder/" + orders[j]['Reservation_ID'] +
-                    "'>View Order</a></td>" +
-                    "</tr>";
-            }
-        }
-        viewList();
     </script>
     <script src="/public/js/ManagerCompletedReservations.js"></script>

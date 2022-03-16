@@ -59,7 +59,7 @@ include 'views/user/LoggedInHeader.php';
           <input type="button" id="next-EmpAttendance" value="Check Attendance >>" onclick="empAttendance();" style="float:right;" />
         </div>
 
-        <div id="EmpDetails-nav" >
+        <div id="EmpDetails-nav">
           <input type="button" id="next-EmpDetails" value="<< Employee Details" onclick="empDetails();" />
         </div>
 
@@ -179,13 +179,13 @@ include 'views/user/LoggedInHeader.php';
 
       <div style="min-height: 110px;"></div>
     </div>
-   
+
 
     <div style="min-height: 200px;"></div>
 
     <script>
-            var eDetails = <?php echo json_encode($_SESSION['employeeAttendanceDetails']); ?>;
-        </script>
+      var eDetails = <?php echo json_encode($_SESSION['employeeAttendanceDetails']); ?>;
+    </script>
     <script src="/public/js/AdminEmployeeTable.js"></script>
     <script src="/public/js/AdminManageEmployee.js"></script>
 

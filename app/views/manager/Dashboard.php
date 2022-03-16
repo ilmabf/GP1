@@ -7,7 +7,7 @@ include 'views/user/LoggedInHeader.php';
 
 <div class="heading">
     <h2>Dashboard</h2>
-    <!-- <?php print_r($_SESSION['bookings']);?> -->
+    <!-- <?php print_r($_SESSION['bookings']); ?> -->
 </div>
 
 <div style="min-height: 50px;"></div>
@@ -48,17 +48,7 @@ include 'views/user/LoggedInHeader.php';
         type: 'bar'
     }];
 
-    var layout1 = {
-        title: 'Number of Bookings per Week on past month',
-        xaxis: {
-            title: 'Week'
-        },
-        yaxis: {
-            title: 'Number of Bookings'
-        }
-    };
 
-    Plotly.newPlot('myPlot1', data1, layout1);
 
     var data2 = [{
         // assign the key value of data1 to x-axis
@@ -67,45 +57,15 @@ include 'views/user/LoggedInHeader.php';
         type: 'bar'
     }];
 
-    var layout2 = {
-        title: 'Revenue per Week on past month',
-        xaxis: {
-            title: 'Week'
-        },
-        yaxis: {
-            title: 'Revenue (Rs.)'
-        }
-    };
-
-    Plotly.newPlot('myPlot2', data2, layout2);
 
     var xArray = <?php echo json_encode(array_column($_SESSION['typeOfBookings'], 'Name')) ?>;
     var yArray = <?php echo json_encode(array_column($_SESSION['typeOfBookings'], 'Reservations')) ?>;
 
-    var layout3 = {
-        title: "Type of Bookings on the past month"
-    };
 
-    var data3 = [{
-        labels: xArray,
-        values: yArray,
-        type: "pie"
-    }];
-
-    Plotly.newPlot('myPlot3', data3, layout3);
 
     var xArray2 = <?php echo json_encode(array_column($_SESSION['teamBookings'], 'Service_team_leader_ID')) ?>;
     var yArray2 = <?php echo json_encode(array_column($_SESSION['teamBookings'], 'Reservations')) ?>;
-
-    var layout4 = {
-        title: "Service Teams' bookings on the past month"
-    };
-
-    var data4 = [{
-        labels: xArray2,
-        values: yArray2,
-        type: "pie"
-    }];
-
-    Plotly.newPlot('myPlot4', data4, layout4);
 </script>
+
+
+<script src="/public/js/ManagerDashboard.js"></script>
