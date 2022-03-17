@@ -349,7 +349,7 @@ class Employee extends Controller
                 // echo $_SESSION['stlAttendanceDetails'][$l]['Employee_ID'];
                 $this->model->insertAttendance_stl($_SESSION['stlAttendanceDetails'][$l]['Employee_ID'], $_SESSION['stlAttendanceDetails'][$l]['STL_ID'], $_POST['StlAttonWorkData'][$l]);
             }
-            header("Location: /employee/ServiceTeamLeader");
+            header("Location: /employee/ServiceTeamLeaders");
         }
     }
 

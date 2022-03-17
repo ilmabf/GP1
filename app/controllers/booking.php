@@ -314,7 +314,7 @@ class Booking extends Controller
 
                 $output = '<p>Dear customer,</p>';
                 $output .= '<p>Thank you for using WandiWash!</p>';
-                $output .= '<p>You have reschedule a reservation on ' . $date . ' with the following details.</p>';
+                $output .= '<p>You have rescheduled a reservation on ' . $date . ' with the following details.</p>';
                 $output .= '<p>Vehicle - ' . $vehicle . '</p>';
                 $output .= '<p>Wash Package - ' . $washPackageName . '</p>';
                 $output .= '<p>Location - ' . $address . '</p>';
@@ -325,7 +325,7 @@ class Booking extends Controller
                 $output .= '<p>Thanks,</p>';
                 $output .= '<p>WandiWash.</p>';
                 $body = $output;
-                $subject = "We received your reservation - wandiwash.com";
+                $subject = "Your reservation has been rescheduled - wandiwash.com";
 
                 if ($mail->mailto($subject, $_SESSION['userDetails'][0]['Email'], $body)) {
                     header("Location: /booking/upcoming");
@@ -336,11 +336,30 @@ class Booking extends Controller
 
     function assignTeam($id, $resId)
     {
+        if ($_SESSION['role'] == "manager"){
+            $members = $this->model->getMembers($id);
+            if ($this->model->assignServiceTeam($id, $members, $resId)) {
+                
+                //get customer
+                $custDetails = $this->model->getCustomerDetails($resId);
 
-        $members = $this->model->getMembers($id);
-        if ($this->model->assignServiceTeam($id, $members, $resId)) {
-            header("Location: /booking/upcomingOrder/" . $resId);
+                //send email to customer
+                $mail = new Mailer();
+
+                $output = '<p>Dear '. $custDetails[0]['First_Name']. ' ' . $custDetails[0]['Last_Name'] . ',</p>';
+                $output .= '<p>A service team has been assigned for your reservation.</p>';
+                $output .= '<p>Please log on to your account and check the relevant details on your upcoming reservations.</p>';
+                $output .= '<p>Thanks,</p>';
+                $output .= '<p>WandiWash.</p>';
+                $body = $output;
+                $subject = "We have assigned you a service team - wandiwash.com";
+
+                if ($mail->mailto($subject, $custDetails[0]['Email'], $body)) {
+                    header("Location: /booking/upcomingOrder/" . $resId);
+                }
+            }
         }
+        
     }
 
     function deleteReservation($id)
