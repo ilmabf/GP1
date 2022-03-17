@@ -139,9 +139,11 @@ html {
   border-radius: 5px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
   position: absolute;
-  top: 55%;
+  /* top: 55%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
+  top: 13%;
+    left: 13%;
   /* padding: 5px 50px 120px 50px; */
   height: fit-content;
   width: fit-content;
@@ -154,16 +156,29 @@ html {
   filter: blur(3px);
 }
 
+@media only screen and (min-width: 770px){
+  #scrollMsgMobile{
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 770px){
+
+  #scrollMsgMobile{
+    display: block;
+  }
 
   .container {
     overflow: scroll;
   }
 
   #cal1{
-    top: auto;
+    /* top: auto;
     left: auto;
-    transform: none;
+    transform: none; */
+    width: 100%;
+    top: 8%;
+    left: 0%;
   }
 
   .month{
