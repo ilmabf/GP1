@@ -165,7 +165,6 @@ $rescheduleID = $_SESSION['rescheduleID'];
         </div>
     </div>
 
-    <div id="test"></div>
 </div>
 <div class="addVehicleform" id="cancelPopUpId">
     <div class="forma">
