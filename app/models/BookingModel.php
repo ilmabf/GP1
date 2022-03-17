@@ -133,7 +133,7 @@ class BookingModel extends Model
         $result = $this->db->select("*", "reservation", "WHERE Reservation_ID = :orderID ;", ':orderID', $orderID);
         return $result;
     }
-    //For get customer details for order summary,completed reservation
+    //To get customer details for order summary,completed reservation
     function getCustomer($custoID)
     {
         $result = $this->db->select("*", "customer", "WHERE User_ID = :custoID ;", ':custoID', $custoID);
@@ -197,6 +197,11 @@ class BookingModel extends Model
         $memValues = array($id, $member1, $member2, $member3, $member4);
 
         $result = $this->db->update("reservation", $memColumns, $memParams, $memValues, ":resID", $resId, "WHERE Reservation_ID = :resID;");
+        return $result;
+    }
+
+    function getCustomerDetails($resID){
+        $result = $this->db->select("*", "reservation", "INNER JOIN customer ON reservation.Customer_ID = customer.User_ID INNER JOIN users ON customer.User_ID = users.User_ID;");
         return $result;
     }
 
