@@ -60,8 +60,6 @@ $reservationDetails = $_SESSION['reservationDetails'];
         </form>
     </div> -->
 </div>
-<div id="test"></div>
-<div id="msg"></div>
 <div class="google-location" style="text-align:center;">
     <div id="googleMap" style="border:0; border-radius: 27px; left:25%; width:50%; height:300px;"></div>
     <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.8229579296126!2d80.50619191725059!3d7.373730722101816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae341aee58e2aad%3A0xc15b721347b882fb!2sMalwathugoda%20Auto%20Service%20Station!5e0!3m2!1sen!2slk!4v1629713877312!5m2!1sen!2slk" width="70%" height="300px" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->

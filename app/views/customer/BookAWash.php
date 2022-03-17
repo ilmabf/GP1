@@ -146,7 +146,7 @@ $booked = $_SESSION['booked'];
     </div>
 
 
-    <div class="container" id="cal1" style="display:none;">
+    <div class="container" id="cal1">
         <div class="calendar">
             <div class="month">
                 <i class="fas fa-angle-left prev"></i>
@@ -154,9 +154,11 @@ $booked = $_SESSION['booked'];
                     <h3 style="color:white;">Select an available time slot <b>( Red - unavailable )</b></h3>
                     <h1 style="color:white;"></h1>
                     <p style="color:white;"></p>
+                    <div id = "scrollMsgMobile" style="margin-top: 5px;"><h3 style="color:white;"><-----Move-----></h3></div>
                 </div>
                 <i class="fas fa-angle-right next"></i>
             </div>
+            
             <div class="weekdays">
                 <div style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Sun</div>
                 <div style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Mon</div>

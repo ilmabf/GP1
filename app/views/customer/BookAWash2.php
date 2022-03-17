@@ -52,7 +52,7 @@ include 'views/user/LoggedInHeader.php';
         </form>
     </div> -->
 </div>
-<div id="test"></div>
+
 <div id="msg"></div>
 <div class="google-location" style="text-align:center;">
     <div id="googleMap" style="border:0; border-radius: 27px; left:25%; width:50%; height:300px;"></div>

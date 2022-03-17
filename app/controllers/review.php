@@ -19,7 +19,9 @@ class Review extends Controller
 
     function write()
     {
-        $this->view->render('customer/GiveReview');
+        if ($_SESSION['role'] == "customer") {
+            $this->view->render('customer/GiveReview');
+        }
     }
 
     function store()

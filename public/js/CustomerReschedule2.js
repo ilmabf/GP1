@@ -1,5 +1,4 @@
 let x = document.cookie;
-document.getElementById("test").innerHTML = x;
 
 function myMap() {
   var lat = 7.2905715;
@@ -89,12 +88,7 @@ function calcRoute(addr) {
         var totalPrice = parseInt(p) + additional;
         document.cookie = "total = " + totalPrice + ";path=/";
         console.log(directionsData.distance.text);
-        document.getElementById("msg").innerHTML +=
-          " Driving distance is " +
-          kmInt +
-          " (" +
-          directionsData.duration.text +
-          ").";
+        
       }
     }
   });

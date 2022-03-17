@@ -19,26 +19,28 @@ class Booking extends Controller
 
     function details()
     {
-        $_SESSION['vehicles'] = $this->model->getVehicles($_SESSION['userDetails'][0]['User_ID']);
-        $_SESSION['address'] = $this->model->getAddress($_SESSION['userDetails'][0]['User_ID']);
-        $_SESSION['washpackages'] = $this->model->getWashPackage();
-        $_SESSION['servicePrice'] = $this->model->getServicePrice();
-        $_SESSION['booked'] = $this->model->getBookedDates();
-        $this->view->render('customer/BookAWash');
+        if ($_SESSION['role'] == "customer") {
+            $_SESSION['vehicles'] = $this->model->getVehicles($_SESSION['userDetails'][0]['User_ID']);
+            $_SESSION['address'] = $this->model->getAddress($_SESSION['userDetails'][0]['User_ID']);
+            $_SESSION['washpackages'] = $this->model->getWashPackage();
+            $_SESSION['servicePrice'] = $this->model->getServicePrice();
+            $_SESSION['booked'] = $this->model->getBookedDates();
+            $this->view->render('customer/BookAWash');
+        }
     }
 
     function rescheduleDetails($orderID)
     {
-
-        // today
-        $today = date("Y-m-d");
-
-        // get date and time of reservation
-        $reservation = $this->model->getReservationDetails($orderID);
-        $_SESSION['reservationDetails'] = $reservation;
-        $date = $reservation[0]['Date'];
-
         if ($_SESSION['role'] == "customer") {
+            // today
+            $today = date("Y-m-d");
+
+            // get date and time of reservation
+            $reservation = $this->model->getReservationDetails($orderID);
+            $_SESSION['reservationDetails'] = $reservation;
+            $date = $reservation[0]['Date'];
+
+
             // if different of reservation time is more than 24 hours from today date time then delete reservation
             if (strtotime($date) - strtotime($today) > 86400) {
                 $_SESSION['vehicles'] = $this->model->getVehicles($_SESSION['userDetails'][0]['User_ID']);
@@ -59,29 +61,39 @@ class Booking extends Controller
     //get location for booking
     function location()
     {
-        $this->view->render('customer/BookAWash2');
+        if ($_SESSION['role'] == "customer") {
+            $this->view->render('customer/BookAWash2');
+        }
     }
 
     function rescheduleLocation($orderID)
     {
-        $_SESSION['rescheduleID'] = $orderID;
-        $this->view->render('customer/Reschedule2');
+        if ($_SESSION['role'] == "customer") {
+            $_SESSION['rescheduleID'] = $orderID;
+            $this->view->render('customer/Reschedule2');
+        }
     }
 
     function orderSummary()
     {
-        $this->view->render('customer/OrderSummary');
+        if ($_SESSION['role'] == "customer") {
+            $this->view->render('customer/OrderSummary');
+        }
     }
 
     function orderRescheduleSummary($orderID)
     {
-        $_SESSION['rescheduleID'] = $orderID;
-        $this->view->render('customer/RescheduleSummary');
+        if ($_SESSION['role'] == "customer") {
+            $_SESSION['rescheduleID'] = $orderID;
+            $this->view->render('customer/RescheduleSummary');
+        }
     }
 
     function reschedule()
     {
-        $this->view->render('customer/Reschedule');
+        if ($_SESSION['role'] == "customer") {
+            $this->view->render('customer/Reschedule');
+        }
     }
 
     // upcoming reservations
@@ -118,7 +130,7 @@ class Booking extends Controller
         $_SESSION['stlDetails'] = $this->model->getSTLDetails($_SESSION['upcomingOrder'][0]['Service_team_leader_ID']); //get details of assigned stl
         if ($_SESSION['role'] == "customer") {
             $today = date("Y-m-d");
-            
+
             $reservation = $this->model->getReservationDetails($orderID);
             $date = $reservation[0]['Date'];
             // echo strtotime($today);
@@ -190,84 +202,78 @@ class Booking extends Controller
     function makeReservation($details)
     {
         // echo $details;
-        $details = str_replace('_', ' ', $details);
-        $details = str_replace('|', '/', $details);
-        echo $details;
-        $details = explode(';', $details);
+        if ($_SESSION['role'] == "customer") {
 
-        for ($i = 0; $i < sizeof($details); $i++) {
-            if (strncmp($details[$i], " day", 4) == 0) {
-                $day = substr($details[$i], 5);
-            } else if (strncmp($details[$i], " month", 6) == 0) {
-                $month = substr($details[$i], 7);
-            } else if (strncmp($details[$i], " year", 5) == 0) {
-                $year = substr($details[$i], 6);
-            } else if (strncmp($details[$i], " time", 5) == 0) {
-                $time = substr($details[$i], 6);
-            } else if (strncmp($details[$i], " vehicle", 8) == 0) {
-                $vehicle = substr($details[$i], 9);
-            } else if (strncmp($details[$i], " washPackageName", 16) == 0) {
-                $washPackageName = substr($details[$i], 17);
-            } else if (strncmp($details[$i], " washPackage", 12) == 0) {
-                $washPackage = substr($details[$i], 13);
-            } else if (strncmp($details[$i], " price", 6) == 0) {
-                $price = substr($details[$i], 7);
-            } else if (strncmp($details[$i], " total", 6) == 0) {
-                $total = substr($details[$i], 7);
-            } else if (strncmp($details[$i], " address", 8) == 0) {
-                $address = substr($details[$i], 9);
-            } else if (strncmp($details[$i], " latitude", 9) == 0) {
-                $latitude = substr($details[$i], 10);
-            } else if (strncmp($details[$i], " longitude", 10) == 0) {
-                $longitude = substr($details[$i], 11);
-            }
-        }
+            $details = str_replace('_', ' ', $details);
+            $details = str_replace('|', '/', $details);
+            echo $details;
+            $details = explode(';', $details);
 
-        $date = $year . "-" . $month . "-" . $day;
-
-        $result = $this->model->checkValidity($vehicle, $date, $time);
-        if ($result == "success") {
-            $reservationDetails = array($vehicle, $address, $latitude, $longitude, $price, $total, $washPackage, $date, $time, $_SESSION['userDetails'][0]['User_ID']);
-            if ($this->model->AddReserevation($reservationDetails)) {
-
-                $mail = new Mailer();
-
-                $output = '<p>Dear customer,</p>';
-                $output .= '<p>Thank you for using WandiWash!</p>';
-                $output .= '<p>You have made a reservation on ' . $date . ' with the following details.</p>';
-                $output .= '<p>Vehicle - ' . $vehicle . '</p>';
-                $output .= '<p>Wash Package - ' . $washPackageName . '</p>';
-                $output .= '<p>Location - ' . $address . '</p>';
-                $output .= '<p></p>';
-                $output .= '<p>Service Price - Rs.' . $price . '.00</p>';
-                $output .= '<p>Total Price - Rs.' . $total . '.00</p>';
-                $output .= '<p>We will let you know once a service team is assigned for you. Make sure to check your email or your upcoming reservations.</p>';
-                $output .= '<p>Thanks,</p>';
-                $output .= '<p>WandiWash.</p>';
-                $body = $output;
-                $subject = "We received your reservation - wandiwash.com";
-
-                if ($mail->mailto($subject, $_SESSION['userDetails'][0]['Email'], $body)) {
-                    $_SESSION['BookingSuccess'] = "true";
-                    header("Location: /booking/orderSummary");
+            for ($i = 0; $i < sizeof($details); $i++) {
+                if (strncmp($details[$i], " day", 4) == 0) {
+                    $day = substr($details[$i], 5);
+                } else if (strncmp($details[$i], " month", 6) == 0) {
+                    $month = substr($details[$i], 7);
+                } else if (strncmp($details[$i], " year", 5) == 0) {
+                    $year = substr($details[$i], 6);
+                } else if (strncmp($details[$i], " time", 5) == 0) {
+                    $time = substr($details[$i], 6);
+                } else if (strncmp($details[$i], " vehicle", 8) == 0) {
+                    $vehicle = substr($details[$i], 9);
+                } else if (strncmp($details[$i], " washPackageName", 16) == 0) {
+                    $washPackageName = substr($details[$i], 17);
+                } else if (strncmp($details[$i], " washPackage", 12) == 0) {
+                    $washPackage = substr($details[$i], 13);
+                } else if (strncmp($details[$i], " price", 6) == 0) {
+                    $price = substr($details[$i], 7);
+                } else if (strncmp($details[$i], " total", 6) == 0) {
+                    $total = substr($details[$i], 7);
+                } else if (strncmp($details[$i], " address", 8) == 0) {
+                    $address = substr($details[$i], 9);
+                } else if (strncmp($details[$i], " latitude", 9) == 0) {
+                    $latitude = substr($details[$i], 10);
+                } else if (strncmp($details[$i], " longitude", 10) == 0) {
+                    $longitude = substr($details[$i], 11);
                 }
             }
-        } else {
-            $_SESSION['Error'] = "Looks like we already have a reservation for that vehicle at the same time slot. Please check if you have entered the correct details.";
-            // header("Location: /booking/error");
-            header("Location: /booking/details");
+
+            $date = $year . "-" . $month . "-" . $day;
+
+            $result = $this->model->checkValidity($vehicle, $date, $time);
+            if ($result == "success") {
+                $reservationDetails = array($vehicle, $address, $latitude, $longitude, $price, $total, $washPackage, $date, $time, $_SESSION['userDetails'][0]['User_ID']);
+                if ($this->model->AddReserevation($reservationDetails)) {
+
+                    $mail = new Mailer();
+
+                    $output = '<p>Dear customer,</p>';
+                    $output .= '<p>Thank you for using WandiWash!</p>';
+                    $output .= '<p>You have made a reservation on ' . $date . ' with the following details.</p>';
+                    $output .= '<p>Vehicle - ' . $vehicle . '</p>';
+                    $output .= '<p>Wash Package - ' . $washPackageName . '</p>';
+                    $output .= '<p>Location - ' . $address . '</p>';
+                    $output .= '<p></p>';
+                    $output .= '<p>Service Price - Rs.' . $price . '.00</p>';
+                    $output .= '<p>Total Price - Rs.' . $total . '.00</p>';
+                    $output .= '<p>We will let you know once a service team is assigned for you. Make sure to check your email or your upcoming reservations.</p>';
+                    $output .= '<p>Thanks,</p>';
+                    $output .= '<p>WandiWash.</p>';
+                    $body = $output;
+                    $subject = "We received your reservation - wandiwash.com";
+
+                    if ($mail->mailto($subject, $_SESSION['userDetails'][0]['Email'], $body)) {
+                        $_SESSION['BookingSuccess'] = "true";
+                        header("Location: /booking/orderSummary");
+                    }
+                }
+            } else {
+                $_SESSION['Error'] = "Looks like we already have a reservation for that vehicle at the same time. Please check if you have entered the correct details.";
+                // header("Location: /booking/error");
+                header("Location: /booking/details");
+            }
         }
     }
-
-    // function error()
-    // {
-    //     if (!isset($_SESSION['bookingError'])) {
-    //         header("Location: /user/home");
-    //         exit;
-    //     }
-    //     $this->view->render('customer/ReservationError');
-    // }
-
+    
     function updateReservation($details, $orderID)
     {
         if ($_SESSION['role'] == "customer") {
@@ -336,17 +342,17 @@ class Booking extends Controller
 
     function assignTeam($id, $resId)
     {
-        if ($_SESSION['role'] == "manager"){
+        if ($_SESSION['role'] == "manager") {
             $members = $this->model->getMembers($id);
             if ($this->model->assignServiceTeam($id, $members, $resId)) {
-                
+
                 //get customer
                 $custDetails = $this->model->getCustomerDetails($resId);
 
                 //send email to customer
                 $mail = new Mailer();
 
-                $output = '<p>Dear '. $custDetails[0]['First_Name']. ' ' . $custDetails[0]['Last_Name'] . ',</p>';
+                $output = '<p>Dear ' . $custDetails[0]['First_Name'] . ' ' . $custDetails[0]['Last_Name'] . ',</p>';
                 $output .= '<p>A service team has been assigned for your reservation.</p>';
                 $output .= '<p>Please log on to your account and check the relevant details on your upcoming reservations.</p>';
                 $output .= '<p>Thanks,</p>';
@@ -359,7 +365,6 @@ class Booking extends Controller
                 }
             }
         }
-        
     }
 
     function deleteReservation($id)
@@ -386,28 +391,29 @@ class Booking extends Controller
         }
     }
 
-    function deleteReschedule($id)
-    {
-        // today
-        $today = date("Y-m-d");
+    // function deleteReschedule($id)
+    // {
+    //     // today
+    //     $today = date("Y-m-d");
 
-        // get date and time of reservation
-        $reservation = $this->model->getReservationDetails($id);
-        $date = $reservation[0]['Date'];
+    //     // get date and time of reservation
+    //     $reservation = $this->model->getReservationDetails($id);
+    //     $date = $reservation[0]['Date'];
 
-        if ($_SESSION['role'] == "customer") {
-            // if different of reservation time is more than 24 hours from today date time then delete reservation
-            if (strtotime($date) - strtotime($today) > 86400) {
-                if ($this->model->deleteReservation($id)) {
-                    header("Location: /booking/details");
-                }
-            } else {
-                // session to display cannot cancel reservation
-                $_SESSION['cancelReservation'] = "cannot";
-                header("Location: /booking/upcomingOrder/" . $id);
-            }
-        }
-    }
+    //     if ($_SESSION['role'] == "customer") {
+    //         // if different of reservation time is more than 24 hours from today date time then delete reservation
+    //         if (strtotime($date) - strtotime($today) > 86400) {
+    //             if ($this->model->deleteReservation($id)) {
+    //                 header("Location: /booking/details");
+    //             }
+    //         } else {
+    //             // session to display cannot cancel reservation
+    //             $_SESSION['cancelReservation'] = "cannot";
+    //             header("Location: /booking/upcomingOrder/" . $id);
+    //         }
+    //     }
+    // }
+    
     function rateService($orderID)
     {
 

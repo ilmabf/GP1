@@ -275,7 +275,7 @@ function getTimeAndDate(date, month, year, t) {
       document.cookie = "time = " + time + ";path=/";
 
       document.getElementById("cal1").style = "display:none;";
-      var z = document.getElementById("bookingContent");
+      var z = document.getElementById("mainbox");
       z.classList.remove("blurCalendar");
     }
     // }
@@ -348,7 +348,7 @@ function typeWriter(n) {
 
 function viewCalendar() {
   document.getElementById("cal1").style = "display:block;";
-  var z = document.getElementById("bookingContent");
+  var z = document.getElementById("mainbox");
   z.classList.add("blurCalendar");
 }
 
