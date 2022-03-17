@@ -1,11 +1,9 @@
 /*Newly added*/
 .Table-search-selected-equip {
-
-    display:flex;
-    flex-direction: column;
-    padding: 1em;
-    align-items: center;
-    
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  align-items: center;
 }
 .backToItem-button {
   text-decoration: none;
@@ -14,7 +12,7 @@
   color: white;
   border-radius: 5px;
   font-size: 15px;
-  cursor: pointer;  
+  cursor: pointer;
   margin-bottom: 20px;
 }
 
@@ -23,9 +21,13 @@
 }
 
 /*----------------------------*/
-#addNewRow {
-  display: block;
-  margin: 35px auto;
+#equipmentNewBtns {
+  text-align: center;
+}
+
+#addNewRow,
+#addNewCategoryRow {
+  margin: 30px auto;
   padding: 8px 8px;
   background-color: #193498;
   color: white;
@@ -103,6 +105,7 @@
   display: block;
   font-size: 15px;
 }
+
 #adminSearchItem {
   padding: 10px 10px;
   border-color: #193498;
@@ -121,11 +124,14 @@
   border: 2px outset #193498;
 }
 
-#Admin-equipment-teamvise1,#Admin-equipment-teamvise2{
-    font-size: 15px;
-    font-weight: 600;
-    border-radius: 5px;
-    border: 2px outset #193498;
+#Admin-equipment-teamvise1,
+#Admin-equipment-teamvise2 {
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 5px;
+  border: 2px outset #193498;
 }
 
-
+#addAnewCategory {
+  display: none;
+}
