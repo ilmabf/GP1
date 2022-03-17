@@ -10,9 +10,11 @@ class ServiceDashboard extends controller
 
     function index()
     {
-        $stlID = $_SESSION['stlDetails'][0]['STL_ID'];
-        $_SESSION['bookings'] = $this->model->getNoOfBookings($stlID);
-        $_SESSION['typeOfBookings'] = $this->model->getTypeOfBookings($stlID);
-        $this->view->render('stl/Dashboard');
+        if ($_SESSION['role'] == "stl") {
+            $stlID = $_SESSION['stlDetails'][0]['STL_ID'];
+            $_SESSION['bookings'] = $this->model->getNoOfBookings($stlID);
+            $_SESSION['typeOfBookings'] = $this->model->getTypeOfBookings($stlID);
+            $this->view->render('stl/Dashboard');
+        }
     }
 }

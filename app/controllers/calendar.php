@@ -13,15 +13,15 @@ class Calendar extends Controller
 
     //Get reservations for today
 
-    function calendarDetails($date, $time, $month, $year)
-    {
-        $_SESSION['bookingDate'] = $date;
-        $_SESSION['bookingTime'] = $time;
-        $_SESSION['bookingMonth'] = $month;
-        $_SESSION['bookingYear'] = $year;
-        echo $date . " " . $time . " " . $month . " " . $year;
-        header("Location: /booking/details");
-    }
+    // function calendarDetails($date, $time, $month, $year)
+    // {
+    //     $_SESSION['bookingDate'] = $date;
+    //     $_SESSION['bookingTime'] = $time;
+    //     $_SESSION['bookingMonth'] = $month;
+    //     $_SESSION['bookingYear'] = $year;
+    //     echo $date . " " . $time . " " . $month . " " . $year;
+    //     header("Location: /booking/details");
+    // }
 
     function stlTodayReservations()
     {
@@ -48,7 +48,7 @@ class Calendar extends Controller
 
     function completeService($orderID)
     {
-        print_r($_SESSION['customer']);
+        // print_r($_SESSION['customer']);
         if ($_SESSION['role'] == "stl") { 
 
             $targetDir = "/public/images/";
