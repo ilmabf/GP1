@@ -61,7 +61,7 @@
                 <label for="Manufacturer" style="padding: 0px 80px 0px 0px;">Manufacturer</label>
                 <input class="input-box" type="text2" name="manufacturer" maxlength="50" automatic placeholder="Eg:- Toyota" pattern="[^'?()/><\][\\\x22,;|]+" required>
                 <br>
-                <button id="VehicleFormSubmitButton" class="formSubmitButton" type="submit" name="signup">Submit</button>
+                <button id="VehicleFormSubmitButton" class="formSubmitButton" type="submit" name="AddVehicleBtn">Submit</button>
                 <button id="VehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closeVehicleForm()">Cancel</button>
             </form>
 
@@ -72,7 +72,7 @@
         <div class="forma">
             <h2 class="login-signupheader">Error</h2>
             <div id="error-msg"></div>
-            <form action="" method="post" id="delete-Address-Form"><br>
+            <form action="" method="post" id="error-Form"><br>
                 <button id="closeErrorBtn" class="formSubmitButton" type="submit" name="signup" onclick="closeError()">Close</button>
             </form>
         </div>
@@ -117,7 +117,7 @@
                 <input class="input-box" type="text2" name="manufacturer" autofocus placeholder="XYZ" required pattern="[^'?()/><\][\\\x22,;|]+" id="editManufacturer"><br><br>
                 <label for="Delete Vehicle"><a id="deleteVehicle" href="" style="font-size: small;float: right;color: red;">Delete Vehicle? Click Here</a></label>
                 <br>
-                <button id="EditVehicleFormSubmitButton" class="formSubmitButton" type="submit" name="signup">Submit</button>
+                <button id="EditVehicleFormSubmitButton" class="formSubmitButton" type="submit" name="EditVehicleBtn">Submit</button>
                 <button id="EditVehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closeEditVehicleForm()">Cancel</button>
             </form>
 
@@ -144,7 +144,7 @@
             <div class="loguser-icon"></div>
             <h2 class="login-signupheader">Do you want to delete your account?</h2>
             <form action="/account/deleteAccount" method="post" id="customer-mob">
-                <button id="EditDetailsFormSubmitButton" class="formSubmitButton" type="submit" name="signup">Yes</button>
+                <button id="EditDetailsFormSubmitButton" class="formSubmitButton" type="submit" name="deleteAccountbtn">Yes</button>
                 <button id="EditDetailsFormCloseButton" class="formCancelButton" type="button" name="signup" onclick="closeDeleteAccount()">No</button>
             </form>
 
@@ -236,7 +236,7 @@
                 </div>
                 <div class="account-box3">
                     <div class="vehicle-list">
-                        <select name="Address" id="Customer-Address" onchange="myMap()">
+                        <select name="Address" id="Customer-Address" onchange="myMap()" >
                             <?php
                             $i = 0;
                             while ($i < sizeof($_SESSION['address'])) {

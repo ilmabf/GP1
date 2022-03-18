@@ -25,6 +25,10 @@ class Account extends Controller
     function editMobile()
     {
         if ($_SESSION['role'] == "customer") {
+            if (!isset($_POST['mobile'])) {
+                header("Location: /account/");
+                exit;
+            }
             $newMobile = $_POST['mobile'];
             if ($this->model->checkMobile($newMobile)) {
                 $_SESSION['Error'] = "Sorry, that mobile number already exists for another account";
@@ -39,6 +43,10 @@ class Account extends Controller
     function deleteAccount()
     {
         if ($_SESSION['role'] == "customer") {
+            if (!isset($_POST['deleteAccountbtn'])) {
+                header("Location: /account/");
+                exit;
+            }
             $this->model->deleteCustomerAccount($_SESSION['userDetails'][0]['User_ID']);
             header("Location: /user/logout");
         }
@@ -47,6 +55,10 @@ class Account extends Controller
     function addVehicle()
     {
         if ($_SESSION['role'] == "customer") {
+            if (!isset($_POST['AddVehicleBtn'])) {
+                header("Location: /account/");
+                exit;
+            }
             $vin = $_POST['vin'];
             $model = $_POST['model'];
             $color = $_POST['color'];
@@ -63,6 +75,10 @@ class Account extends Controller
     function editVehicle($vid)
     {
         if ($_SESSION['role'] == "customer") {
+            if (!isset($_POST['EditVehicleBtn'])) {
+                header("Location: /account/");
+                exit;
+            }
             $vid = str_replace('_', ' ', $vid);
             $model = $_POST['model'];
             $color = $_POST['color'];

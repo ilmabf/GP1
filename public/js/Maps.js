@@ -165,6 +165,7 @@ function geocode(request) {
       // responseDiv.style.display = "block";
       response.innerText = JSON.stringify(result, null, 2);
       console.log(results);
+      customerAddress = "";
       for (var i = 1; i < results[0]["address_components"].length; i++) {
         customerAddress += results[0]["address_components"][i]["long_name"];
         if (i != results[0]["address_components"].length - 1) {
