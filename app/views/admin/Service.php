@@ -143,7 +143,7 @@ include 'views/user/LoggedInHeader.php';
         <br>
         <label for="Model" style="padding: 0px 29px 0px 0px;">Description</label>
         <div class="input-box" style="display: inline-grid;">
-            <textarea name="description" placeholder="type here.." required style="height: 112px;    width: 90%;"></textarea>
+            <textarea name="description" placeholder="type here.." required style="height: 112px;    width: 90%;" required></textarea>
         </div>
         <br>
         <button id="AddServiceSubmitButton" class="formSubmitButton" type="submit" name="signup">Submit</button>
