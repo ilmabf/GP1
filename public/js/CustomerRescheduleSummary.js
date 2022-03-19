@@ -33,6 +33,16 @@ for (i = 0; i < cookieArray.length; i++) {
   }
 }
 //let p = price.substring(6);
+
+if(year == null || vehicle == null || price == null ){
+  window.location = "/booking/reschedule/";
+}
+
+if(address == null ){
+  window.location = "/booking/reschedule/";
+}
+
+
 document.getElementById("date").innerHTML = year + " / " + month + "/ " + date;
 document.getElementById("time").innerHTML = time;
 document.getElementById("address").innerHTML = address;
