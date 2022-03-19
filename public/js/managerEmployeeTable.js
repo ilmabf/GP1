@@ -21,13 +21,13 @@ const empDefaultTable = (event) => {
 
 searchInput4.addEventListener("keyup", empDefaultTable, false);
 
-const searchInput5 = document.getElementById("managerSearchSTL");
-const table5 = document.getElementById("stlDefaultTable");
+const searchInput5 = document.getElementById("managerMgSearchSTL");
+const table5 = document.getElementById("stlMgDefaultTable");
 const trArray5 = Array.prototype.slice.call(
   table5.querySelectorAll("tbody tr")
 );
 
-const stlDefaultTable = (event) => {
+const stlMgDefaultTable = (event) => {
   const searchTerm5 = event.target.value.toLowerCase();
   trArray5.forEach((row5) => {
     row5.classList.add("hidden");
@@ -42,4 +42,4 @@ const stlDefaultTable = (event) => {
   });
 };
 
-searchInput5.addEventListener("keyup", stlDefaultTable, false);
+searchInput5.addEventListener("keyup", stlMgDefaultTable, false);

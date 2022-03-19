@@ -29,7 +29,7 @@ $teams = $_SESSION['teamDetails'];
         </thead>
         <tbody id="newEquipmentCategory">
           <tr>
-            <td class='td-t1'><input type="text" name="category" id="category" /></td>
+            <td class='td-t1'><input type="text" name="category" id="category" required /></td>
             <td class='td-t1'><input type="submit" name="addCategory" id="submitCategory" value="Add" class="addCategory-button"></td>
           </tr>
         </tbody>
