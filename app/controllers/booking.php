@@ -89,12 +89,12 @@ class Booking extends Controller
         }
     }
 
-    function reschedule()
-    {
-        if ($_SESSION['role'] == "customer") {
-            $this->view->render('customer/Reschedule');
-        }
-    }
+    // function reschedule()
+    // {
+    //     if ($_SESSION['role'] == "customer") {
+    //         $this->view->render('customer/Reschedule');
+    //     }
+    // }
 
     // upcoming reservations
     function upcoming()
@@ -123,6 +123,12 @@ class Booking extends Controller
 
 
         $_SESSION['upcomingOrder'] = $this->model->getReservationDetails($orderID); //order details
+
+        // prevent customers from seeing reservations of other customers by typing in url
+        if($_SESSION['userDetails'][0]['User_ID'] != $_SESSION['upcomingOrder'][0]['Customer_ID']){
+            header("Location: /booking/upcoming");
+        }
+
         $_SESSION['teams'] = $this->model->getTeams($_SESSION['upcomingOrder'][0]['Time']);
         $_SESSION['customer'] = $this->model->getCustomer($_SESSION['upcomingOrder'][0]['Customer_ID']); //customer details who booked order
         $_SESSION['vehicle'] = $this->model->getSelectedVehicle($_SESSION['upcomingOrder'][0]['Vehicle_ID']); //vehicle details service done
@@ -182,6 +188,12 @@ class Booking extends Controller
     {
 
         $_SESSION['completedOrder'] = $this->model->getReservationDetails($orderID); //order details
+
+        // prevent customers from seeing reservations of other customers by typing in url
+        if($_SESSION['userDetails'][0]['User_ID'] != $_SESSION['completedOrder'][0]['Customer_ID']){
+            header("Location: /booking/completed");
+        }
+
         $_SESSION['customer'] = $this->model->getCustomer($_SESSION['completedOrder'][0]['Customer_ID']); //customer details who booked order
         $_SESSION['vehicle'] = $this->model->getSelectedVehicle($_SESSION['completedOrder'][0]['Vehicle_ID']); //vehicle details service done
         $_SESSION['washpackage'] = $this->model->getSelectedWashPackage($_SESSION['completedOrder'][0]['Wash_Package_ID']); //wash package selected
@@ -277,7 +289,7 @@ class Booking extends Controller
     function updateReservation($details, $orderID)
     {
         if ($_SESSION['role'] == "customer") {
-            // echo $details;
+            echo $details;
             $details = str_replace('_', ' ', $details);
             $details = str_replace('|', '/', $details);
             // echo $details;
@@ -334,7 +346,8 @@ class Booking extends Controller
                 $subject = "Your reservation has been rescheduled - wandiwash.com";
 
                 if ($mail->mailto($subject, $_SESSION['userDetails'][0]['Email'], $body)) {
-                    header("Location: /booking/upcoming");
+                    $_SESSION['BookingSuccess'] = "true";
+                    header("Location: /booking/orderRescheduleSummary/$orderID");
                 }
             }
         }
