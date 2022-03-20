@@ -255,19 +255,16 @@ class Booking extends Controller
                 }
             }
 
-            echo "HERE";
             //price validations
-            // if((float)$total <= (float)$price){
-            //     echo "First validation";
-            //     // header("Location: /booking/details");
-            //     exit;
-            // }
+            if((float)$total <= (float)$price){
+                header("Location: /booking/details");
+                exit;
+            }
 
-            // if($this->model->checkInvalidPrice($price, $washPackage, $vehicle)){
-            //     echo "Second";
-            //     // header("Location: /booking/details");
-            //     exit;
-            // }
+            if($this->model->checkInvalidPrice($price, $washPackage, $vehicle)){
+                header("Location: /booking/details");
+                exit;
+            }
 
             $date = $year . "-" . $month . "-" . $day;
 
