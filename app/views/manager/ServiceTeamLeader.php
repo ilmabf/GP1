@@ -49,7 +49,7 @@ $result = $_SESSION['employeeDetails'];
                 <!-- <h3 style="margin-bottom: 20px; color:#193498;">Service Team Leader</h3> -->
                 <div style="display:inline-block; width: 100%;">
                     <div class="Admin-EmpSearch adEmpSearch1">
-                        <input type="search" class="ad-Emp-Search" id="managerSearchSTL" onkeyup="myFunction()" placeholder="Search for STL..." title="Type in a name">
+                        <input type="search" class="ad-Emp-Search" id="managerMgSearchSTL" onkeyup="myFunction()" placeholder="Search for STL..." title="Type in a name">
                     </div>
 
                     <div style="margin-bottom: 30px;">
@@ -57,7 +57,7 @@ $result = $_SESSION['employeeDetails'];
                         <input type="button" value="Employees Not On Work" class="edit_btn" onclick="stlNotWork()">
                     </div>
 
-                    <table id="stlDefaultTable">
+                    <table id="stlMgDefaultTable">
                         <thead>
                             <tr>
                                 <th data-type="text">First Name</th>
@@ -204,8 +204,7 @@ $result = $_SESSION['employeeDetails'];
         <script>
             var stlTable = <?php echo json_encode($_SESSION['stlTableData']); ?>;
         </script>
-
+        <script src="/public/js/ManagerEmployeeTable.js"></script>
         <!-- <script src="/public/js/ManagerEmployeeTable.js"></script> -->
         <script src="/public/js/AdminManageEmployee.js"></script>
         <script src="/public/js/AdminEmployeeTable.js"></script>
-        <script src="/public/js/ManagerEmployeeTable.js"></script>
