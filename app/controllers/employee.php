@@ -14,6 +14,8 @@ class Employee extends Controller
     function index()
     {
 
+        echo $_SESSION['role'];
+        
         // stl
         $empDetails = $this->model->getEmployeeDetails();
         $_SESSION['employeeDetails'] = $empDetails;

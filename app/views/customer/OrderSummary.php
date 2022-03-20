@@ -186,26 +186,7 @@ include 'views/user/LoggedInHeader.php';
     </div>
 </div>
 
-<div class="addVehicleform" id="confirmPopUpId">
-    <div class="forma">
 
-        <h2 class="login-signupheader">Your order has been confirmed. Thank you!</h2>
-
-        <form action="" method="post" id="customer-signup">
-
-            <button id="VehicleFormSubmitButton" class="formSubmitButton" type="button" name="signup" style="width: 115px;"><a href="/user/home" style="color: white;">Return Home</a></button>
-        </form>
-
-    </div>
-</div>
 <script src="/public/js/CustomerOrderSummary.js"></script>
 <div style="min-height: 110px;"></div>
 
-<?php
-if (isset($_SESSION['BookingSuccess'])) { ?>
-    <script>
-        openConfirmOrder();
-    </script>";
-
-<?php unset($_SESSION['BookingSuccess']);
-}  ?>

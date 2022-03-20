@@ -235,4 +235,18 @@ class BookingModel extends Model
         $result = $this->db->update("reservation", $columns, $params, $values, ":i", $i, "WHERE Reservation_ID = :orderID;");
         return $result;
     }
+
+    function checkInvalidPrice($price, $washPackage, $vehicle){
+        $result = $this->db->select("Type", "customer_vehicle", "WHERE VID = :vid", ":vid", $vehicle);
+        $vehicleType = $result[0]['Type'];
+        $result = $this->db->select("Price", "wash_package_vehicle_category", "WHERE Wash_Package_ID = :washPackage AND Vehicle_Type = :type", array(":washPackage", ":type"), array($washPackage, $vehicleType));
+        $packagePrice = $result[0]['Price'];
+
+        echo "price = ". $price;
+        echo "packagePrice = ". $packagePrice;
+        if($price != $packagePrice){
+            return true;
+        }
+        else return false;
+    }
 }
