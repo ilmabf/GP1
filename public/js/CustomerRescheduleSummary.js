@@ -1,3 +1,32 @@
+function openCancelOrder() {
+  var x = document.getElementById("cancelPopUpId");
+  var y = document.getElementById("box3");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    y.classList.add("blurOrder");
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function closeCancelOrder() {
+  var x = document.getElementById("cancelPopUpId");
+  var y = document.getElementById("box3");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+    y.classList.remove("blurOrder");
+  } else {
+    x.style.display = "block";
+  }
+}
+
+function openConfirmOrder() {
+  var x = document.getElementById("confirmPopUpId");
+  var y = document.getElementById("box3");
+  x.style.display = "block";
+  y.classList.add("blurOrder");
+}
+
 let x = document.cookie;
 
 var cookieArray = document.cookie.split(";");
@@ -34,13 +63,13 @@ for (i = 0; i < cookieArray.length; i++) {
 }
 //let p = price.substring(6);
 
-if(year == null || vehicle == null || price == null ){
-  window.location = "/booking/reschedule/";
-}
+// if(year == null || vehicle == null || price == null ){
+//   window.location = "/booking/rescheduleDetails/"+rescheduleID;
+// }
 
-if(address == null ){
-  window.location = "/booking/reschedule/";
-}
+// if(address == null ){
+//   window.location = "/booking/rescheduleDetails/"+rescheduleID;
+// }
 
 
 document.getElementById("date").innerHTML = year + " / " + month + "/ " + date;

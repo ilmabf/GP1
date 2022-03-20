@@ -289,7 +289,7 @@ class Booking extends Controller
     function updateReservation($details, $orderID)
     {
         if ($_SESSION['role'] == "customer") {
-            // echo $details;
+            echo $details;
             $details = str_replace('_', ' ', $details);
             $details = str_replace('|', '/', $details);
             // echo $details;
@@ -346,7 +346,8 @@ class Booking extends Controller
                 $subject = "Your reservation has been rescheduled - wandiwash.com";
 
                 if ($mail->mailto($subject, $_SESSION['userDetails'][0]['Email'], $body)) {
-                    header("Location: /booking/upcoming");
+                    $_SESSION['BookingSuccess'] = "true";
+                    header("Location: /booking/orderRescheduleSummary/$orderID");
                 }
             }
         }

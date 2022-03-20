@@ -52,6 +52,8 @@ function checkRescheduleDetails(orderID) {
       if (document.getElementById(w).checked) {
         document.cookie =
           "washPackageName = " + pausecontent[m]["Name"] + ";  path=/";
+        document.cookie =
+          "washPackage = " + pausecontent[m]["Wash_Package_ID"] + ";  path=/";
       }
     }
     document.cookie = "day = " + date + ";path=/";
