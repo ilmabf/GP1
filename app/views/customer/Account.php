@@ -185,11 +185,6 @@
                             <div class="btn" onclick="openDetailsVehicleForm()"><i class="fas fa-pencil-alt"></i></div>
 
                         </div>
-                        <!-- existing mobile number error message -->
-                        <p style="font-size: x-small; color:red;"><?php if (isset($_SESSION['MobileError'])) {
-                                                                        echo $_SESSION['MobileError'];
-                                                                        $_SESSION['MobileError'] = "";
-                                                                    } ?></p>
                     </div>
 
 
