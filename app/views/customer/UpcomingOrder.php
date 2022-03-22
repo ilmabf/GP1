@@ -43,9 +43,9 @@ $display = $_SESSION['displayReservationBtn'];
             <div class="loguser-icon"></div>
             <h2 class="login-signupheader">Do you want to cancel the reservation?</h2>
 
-            <form action="" method="post" id="customer-signup">
-                <button id="VehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closecencelForm()">Close</button>
-                <button id="VehicleFormSubmitButton" class="formSubmitButton" type="submit" name="signup"><a href="/booking/deleteReservation/<?php echo $orderDetails[0]['Reservation_ID'] ?>" style="color:white;">Yes</a></button>
+            <form action="/booking/deleteReservation/<?php echo $orderDetails[0]['Reservation_ID'] ?>" method="post" id="customer-signup">
+                <button id="VehicleFormCloseButton" class="formCancelButton" type="button" name="signup" onclick="closecencelForm()">Close</button>
+                <button id="VehicleFormSubmitButton" class="formSubmitButton" type="submit" name="deleteReservationBtn">Yes</button>
             </form>
 
         </div>

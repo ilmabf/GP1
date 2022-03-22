@@ -408,7 +408,18 @@ class Booking extends Controller
         $date = $reservation[0]['Date'];
 
         if ($_SESSION['role'] == "manager" || $_SESSION['role'] == "customer") {
-            // if different of reservation time is more than 24 hours from today date time then delete reservation
+
+            // echo "here2";
+            // exit;
+            // prevent customers from deleting reservations of other customers by typing in url
+            if($_SESSION['role'] == "customer"){
+                if(!isset($_POST['deleteReservationBtn'])){
+                    // echo "here";
+                    header("Location: /booking/upcoming");
+                    exit;
+                }
+            }
+            // if difference of reservation time is more than 24 hours from today then delete reservation
             if (strtotime($date) - strtotime($today) > 86400) {
                 if ($this->model->deleteReservation($id)) {
                     header("Location: /booking/upcoming");

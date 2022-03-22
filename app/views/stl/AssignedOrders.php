@@ -44,7 +44,7 @@ $orderList = $_SESSION['todayReservations'];
                             <div class="orderitem1"><?php echo $orderList[$count]['Time'] ?></div>
                         </div>
                         <div class="orderView">
-                            <p class="viewLink"><a href="/calendar/todayOrder/<?php echo $orderList[$count]['Reservation_ID'] ?>">View
+                            <p class="viewLink"><a href="/calendar/Order/<?php echo $orderList[$count]['Reservation_ID'] ?>">View
                                     order</a></p>
                         </div>
                     </div>
