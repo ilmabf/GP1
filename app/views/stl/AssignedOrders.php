@@ -17,6 +17,9 @@ $orderList = $_SESSION['todayReservations'];
 
                 <?php
                 $count = sizeof($_SESSION['todayReservations']) - 1;
+                if($count < 0){?>
+                    <p> You have no reservations today </p> 
+                <?php }
                 while ($count >= 0) { ?>
                     <div class="sub-box1">
                         <div class="order">
