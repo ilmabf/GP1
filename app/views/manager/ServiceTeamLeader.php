@@ -53,6 +53,7 @@ $result = $_SESSION['employeeDetails'];
                     </div>
 
                     <div style="margin-bottom: 30px;">
+                        <input type="button" id="stlGoBackBtn" value="See All" class="edit_btn" onclick="stlWorkGoBack()">
                         <input type="button" value="Employees On Work" class="edit_btn" onclick="stlOnWork()">
                         <input type="button" value="Employees Not On Work" class="edit_btn" onclick="stlNotWork()">
                     </div>

@@ -67,6 +67,9 @@ include 'views/user/LoggedInHeader.php';
                         <!-- <option value="Choose a service type">Choose a service type</option> -->
                         <?php
                         $i = 0;
+                        ?>
+                        <option>Select Wash Type</option>
+                        <?php
                         while ($i < sizeof($_SESSION['washpackages'])) {
                             echo "<option value='";
                             echo $_SESSION['washpackages'][$i]['Wash_Package_ID'];
@@ -86,6 +89,9 @@ include 'views/user/LoggedInHeader.php';
                         <!-- <option value="Choose a vehicle">Choose a vehicle</option> -->
                         <?php
                         $i = 0;
+                        ?>
+                        <option>Select Vehicle Type</option>
+                        <?php
                         while ($i < sizeof($_SESSION['vehicleTypes'])) {
                             echo "<option value='";
                             echo $_SESSION['vehicleTypes'][$i]['Vehicle_Type'];

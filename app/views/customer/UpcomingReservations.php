@@ -15,8 +15,7 @@ include 'views/user/LoggedInHeader.php';
             <!-- <button class="btnclss" onclick="closeOnClickDemo()">Click to open calendar</button><br> -->
             <br>
             <div style="color:white; text-shadow:1px 1px 4px #000000, 1px 1px 4px #0000fa; display:inline;">Date :</div>
-            <input id="ManagerUpcomingDate" name="managerDateofUpcomingBooking" class="dateBooking" style="width: 50%; padding: unset;
-    border-radius: unset; text-align: center;">
+            <input id="ManagerUpcomingDate" name="managerDateofUpcomingBooking" class="dateBooking" style="width: 50%;">
 
         </div>
     </div>
@@ -53,4 +52,3 @@ include 'views/user/LoggedInHeader.php';
     var orders = <?php echo json_encode(array_values($_SESSION['myUpcomingReservations'])); ?>;
 </script>
 <script src="/public/js/CustomerUpcomingReservations.js"></script>
-

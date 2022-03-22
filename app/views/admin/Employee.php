@@ -136,7 +136,7 @@ include 'views/user/LoggedInHeader.php';
                   <th data-type="text">First Name</th>
                   <th data-type="text">Last Name</th>
                   <th data-type="text">Team</th>
-                  <th data-type="text">On Work</th>
+                  <th data-type="text">On Work (0/1)</th>
                   <th colspan="1" style="text-align: center;">
                     <input type="button" id="editButton" class="edit_btn td-t1" value="Edit" onclick="empEditAttendanceForm('<?php echo sizeof($_SESSION['employeeAttendanceDetails']) ?>')">
                   </th>
@@ -174,6 +174,14 @@ include 'views/user/LoggedInHeader.php';
 
             </div>
           </form>
+
+          <div>
+            <?php if ($_SESSION['insertSuccess'] == "On work error") { ?>
+              <div class="error-message">
+                <?php echo "Insert 0 or 1 on On Work" ?>
+              </div>
+            <?php } ?>
+          </div>
         </div>
       </div>
 
