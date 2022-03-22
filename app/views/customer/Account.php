@@ -231,7 +231,7 @@
                 </div>
                 <div class="account-box3">
                     <div class="vehicle-list">
-                        <select name="Address" id="Customer-Address" onchange="myMap()" >
+                        <select name="Address" id="Customer-Address" onchange="myMap()">
                             <?php
                             $i = 0;
                             while ($i < sizeof($_SESSION['address'])) {

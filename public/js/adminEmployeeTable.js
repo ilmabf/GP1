@@ -249,27 +249,45 @@ function stlSaveForm(id, no) {
 }
 
 function stlOnWork() {
-  document.getElementById("stlDefaultTable").style.display = "none";
+  document.getElementById("stlGoBackBtn").style.display = "block";
+  document.getElementById("stlMgDefaultTable").style.display = "none";
   document.getElementById("stlonWorkTable").style.display = "block";
   document.getElementById("stlNotWorkTable").style.display = "none";
 }
 
 function stlNotWork() {
+  document.getElementById("stlGoBackBtn").style.display = "block";
   document.getElementById("stlonWorkTable").style.display = "none";
-  document.getElementById("stlDefaultTable").style.display = "none";
+  document.getElementById("stlMgDefaultTable").style.display = "none";
   document.getElementById("stlNotWorkTable").style.display = "block";
 }
 
 function empOnWork() {
+  document.getElementById("goBackBtn").style.display = "block";
   document.getElementById("empDefaultTable").style.display = "none";
   document.getElementById("emponWorkTable").style.display = "block";
   document.getElementById("empNotWorkTable").style.display = "none";
 }
 
 function empNotWork() {
+  document.getElementById("goBackBtn").style.display = "block";
   document.getElementById("emponWorkTable").style.display = "none";
   document.getElementById("empDefaultTable").style.display = "none";
   document.getElementById("empNotWorkTable").style.display = "block";
+}
+
+function empWorkGoBack() {
+  document.getElementById("goBackBtn").style.display = "none";
+  document.getElementById("empDefaultTable").style.display = "block";
+  document.getElementById("emponWorkTable").style.display = "none";
+  document.getElementById("empNotWorkTable").style.display = "none";
+}
+
+function stlWorkGoBack() {
+  document.getElementById("stlGoBackBtn").style.display = "none";
+  document.getElementById("stlMgDefaultTable").style.display = "block";
+  document.getElementById("stlonWorkTable").style.display = "none";
+  document.getElementById("stlNotWorkTable").style.display = "none";
 }
 
 function empAttendance() {
