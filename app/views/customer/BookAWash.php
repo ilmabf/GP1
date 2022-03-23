@@ -117,21 +117,6 @@ $booked = $_SESSION['booked'];
                         $i = $i + 1;
                     }
                     ?>
-                    <!-- <div class="wash-select-radio">
-                        <input type="radio" name="washType" id="interiorCleaning" class="washType1" value="Interior Cleaning" checked>
-                        <label for="washType">Interior Cleaning</label>
-                    </div>
-
-                    <div class="wash-select-radio">
-                        <input type="radio" name="washType" id="interior&ExteriorCleaning" class="washType1" value="Exterior Washing & Interior Cleaning">
-                        <label for="washType">Exterior Washing & Interior Cleaning</label>
-                    </div>
-
-                    <div class="wash-select-radio">
-                        <input type="radio" name="washType" id="interior&ExteriorCleaning" class="washType1" value="Sanitization">
-                        <label for="washType">Sanitization</label>
-                    </div> -->
-
                 </form>
 
             </div>
@@ -154,11 +139,15 @@ $booked = $_SESSION['booked'];
                     <h3 style="color:white;">Select an available time slot <b>( Red - unavailable )</b></h3>
                     <h1 style="color:white;"></h1>
                     <p style="color:white;"></p>
-                    <div id = "scrollMsgMobile" style="margin-top: 5px;"><h3 style="color:white;"><-----Move-----></h3></div>
+                    <div id="scrollMsgMobile" style="margin-top: 5px;">
+                        <h3 style="color:white;">
+                            <-----Move----->
+                        </h3>
+                    </div>
                 </div>
                 <i class="fas fa-angle-right next"></i>
             </div>
-            
+
             <div class="weekdays">
                 <div style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Sun</div>
                 <div style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Mon</div>
