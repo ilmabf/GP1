@@ -93,15 +93,8 @@ const renderCalendar = () => {
             keyArr[2] === ("0" + i).slice(-2).toString() &&
             timeSlotsArr[a - 1] === booked[key]
           ) {
-            days +=
-              `
-                                            <span class="time-red" id = "slot1" onclick="getTimeAndDate(` +
-              i +
-              `,` +
-              month +
-              `,` +
-              date.getFullYear() +
-              `, booked)">${booked[key]}</span>`;
+            days += `
+                                            <span class="time-red" id = "slot1">${booked[key]}</span>`;
             flag1 = 1;
           }
         }
@@ -137,15 +130,8 @@ const renderCalendar = () => {
             keyArr[2] === ("0" + i).slice(-2).toString() &&
             timeSlotsArr[a - 1] === booked[key]
           ) {
-            days +=
-              `
-                                            <span class="time-red" id = "slot1" onclick="getTimeAndDate(` +
-              i +
-              `,` +
-              month +
-              `,` +
-              date.getFullYear() +
-              `, booked)">${booked[key]}</span>`;
+            days += `
+                                            <span class="time-red" id = "slot1">${booked[key]}</span>`;
 
             flag2 = 1;
           }
@@ -193,6 +179,7 @@ renderCalendar();
 
 // get time and date
 function getTimeAndDate(date, month, year, t) {
+  console.log(t);
   if (t != "booked") {
     var time;
     if (t == 1) {
@@ -370,8 +357,9 @@ function checkDetails() {
   var slash = document.getElementById("slash1").innerHTML;
   var price = document.getElementById("priceValue").innerHTML;
   if (slash != "/" || price == "") {
-    document.getElementById("completeMsg").innerHTML =
-      "Please make sure the details are complete";
+    // document.getElementById("completeMsg").innerHTML =
+    //   "Please make sure the details are complete";
+    popError("Please make sure the details are complete");
   } else {
     var x = document.getElementById("vehicles").value;
     document.cookie = "vehicle =" + x + "; path=/";
