@@ -19,10 +19,13 @@ $("#ManagerUpcomingDate").datepicker({
     }
     var x = document.getElementById("customerUpcomingReservations");
 
-    if(list.length == 0){
-      x.innerHTML = "<p>You have no upcoming reservations on " + date + ". <a href = '/booking/details' style = 'color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;'> Click here to make a reservation </a></p>";
+    if (list.length == 0) {
+      x.innerHTML =
+        "<p>You have no upcoming reservations on " +
+        date +
+        ". <a href = '/booking/details' style = 'color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;'> Click here to make a reservation </a></p>";
     }
-    
+
     for (j = 0; j < list.length; j++) {
       console.log(list[j]["Service_team_leader_ID"]);
       x.innerHTML = "";
@@ -90,8 +93,9 @@ $("#ManagerUpcomingDate").datepicker({
 function viewList() {
   var x = document.getElementById("customerUpcomingReservations");
 
-  if(orders.length == 0){
-    x.innerHTML = "<p>You have no upcoming reservations. <a href = '/booking/details' style = 'color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;'> Click here to make a reservation </a></p>";
+  if (orders.length == 0) {
+    x.innerHTML =
+      "<p>You have no upcoming reservations. <a href = '/booking/details' style = 'color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;'> Click here to make a reservation </a></p>";
   }
 
   for (j = 0; j < orders.length; j++) {

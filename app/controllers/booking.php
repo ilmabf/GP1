@@ -125,7 +125,7 @@ class Booking extends Controller
         $_SESSION['upcomingOrder'] = $this->model->getReservationDetails($orderID); //order details
 
         // prevent customers from seeing reservations of other customers by typing in url
-        if($_SESSION['userDetails'][0]['User_ID'] != $_SESSION['upcomingOrder'][0]['Customer_ID']){
+        if ($_SESSION['userDetails'][0]['User_ID'] != $_SESSION['upcomingOrder'][0]['Customer_ID']) {
             header("Location: /booking/upcoming");
         }
 
@@ -190,9 +190,9 @@ class Booking extends Controller
         $_SESSION['completedOrder'] = $this->model->getReservationDetails($orderID); //order details
 
         // prevent customers from seeing reservations of other customers by typing in url
-        if($_SESSION['userDetails'][0]['User_ID'] != $_SESSION['completedOrder'][0]['Customer_ID']){
-            header("Location: /booking/completed");
-        }
+        // if($_SESSION['userDetails'][0]['User_ID'] != $_SESSION['completedOrder'][0]['Customer_ID']){
+        //     header("Location: /booking/completed");
+        // }
 
         $_SESSION['customer'] = $this->model->getCustomer($_SESSION['completedOrder'][0]['Customer_ID']); //customer details who booked order
         $_SESSION['vehicle'] = $this->model->getSelectedVehicle($_SESSION['completedOrder'][0]['Vehicle_ID']); //vehicle details service done
@@ -285,7 +285,7 @@ class Booking extends Controller
             }
         }
     }
-    
+
     function updateReservation($details, $orderID)
     {
         if ($_SESSION['role'] == "customer") {
@@ -426,7 +426,7 @@ class Booking extends Controller
     //         }
     //     }
     // }
-    
+
     function rateService($orderID)
     {
 
