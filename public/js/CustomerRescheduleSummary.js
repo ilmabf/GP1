@@ -20,12 +20,7 @@ function closeCancelOrder() {
   }
 }
 
-function openConfirmOrder() {
-  var x = document.getElementById("confirmPopUpId");
-  var y = document.getElementById("box3");
-  x.style.display = "block";
-  y.classList.add("blurOrder");
-}
+
 
 let x = document.cookie;
 
@@ -63,13 +58,13 @@ for (i = 0; i < cookieArray.length; i++) {
 }
 //let p = price.substring(6);
 
-// if(year == null || vehicle == null || price == null ){
-//   window.location = "/booking/rescheduleDetails/"+rescheduleID;
-// }
+if(year == null || vehicle == null || price == null ){
+  window.location = "/booking/rescheduleDetails/"+rescheduleID;
+}
 
-// if(address == null ){
-//   window.location = "/booking/rescheduleDetails/"+rescheduleID;
-// }
+if(address == null ){
+  window.location = "/booking/rescheduleDetails/"+rescheduleID;
+}
 
 
 document.getElementById("date").innerHTML = year + " / " + month + "/ " + date;

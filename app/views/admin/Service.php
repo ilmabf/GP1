@@ -170,9 +170,11 @@ include 'views/user/LoggedInHeader.php';
 
 <div style="min-height: 110px;"></div>
 
-<script src="/public/js/AdminManageService.js"></script>
+
 <script>
     var pausecontent = <?php echo json_encode($_SESSION['washpackages']); ?>;
     var vehicles = <?php echo json_encode($_SESSION['vehicleTypes']); ?>;
     var servicePrices = <?php echo json_encode($_SESSION['servicePrice']); ?>;
 </script>
+
+<script src="/public/js/AdminManageService.js"></script>

@@ -14,6 +14,8 @@ class Employee extends Controller
     function index()
     {
 
+        // echo $_SESSION['role'];
+        
         // stl
         $empDetails = $this->model->getEmployeeDetails();
         $_SESSION['employeeDetails'] = $empDetails;
@@ -209,7 +211,7 @@ class Employee extends Controller
 
                         if ($flag3 == 1) {
                             $_SESSION['insertSuccess'] = 'Email does not belong to an employee';
-                            header("Location: /employee/ServiceTeamLeader");
+                            header("Location: /employee/serviceTeamLeaders");
                         } else {
 
                             $options = ['cost' => 12];
@@ -223,7 +225,7 @@ class Employee extends Controller
                             echo $targetFilePath;
                             $fileType = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
 
-                            $allowTypes = array('jpg', 'png', 'jpeg', 'gif', 'pdf');
+                            $allowTypes = array('jpg', 'png', 'jpeg', 'gif', 'pdf', 'PNG');
 
                             if (in_array($fileType, $allowTypes)) {
                                 echo "heretop";
@@ -239,7 +241,7 @@ class Employee extends Controller
                                         if ($this->model->stlUserAdd($newStlID, $stlUserName, $hashedpwd, $stlEmail, $flag)) {
                                             if ($this->model->empStlIDAdd($newStlID, $nic)) {
                                                 $_SESSION['insertSuccess'] = 'Service Team Leader added successfully';
-                                                header("Location: /employee/ServiceTeamLeader");
+                                                header("Location: /employee/serviceTeamLeaders");
                                             } else {
                                                 echo "emp stl add error";
                                             }
@@ -268,18 +270,18 @@ class Employee extends Controller
             echo $targetFilePath;
             $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
 
-            $allowTypes = array('jpg', 'png', 'jpeg', 'gif', 'pdf');
+            $allowTypes = array('jpg', 'png', 'jpeg', 'gif', 'pdf', 'PNG');
             // // max file size 5MB
             // $maxFileSize = 5 * 1024 * 1024;
 
             if (in_array($fileType, $allowTypes)) {
                 // if (filesize($_FILES['file']['tmp_name']) < $maxFileSize) {
-                //     echo "File size is less than 5MB";
+                    // echo "File size is less than 5MB";
                 if (move_uploaded_file($_FILES["file"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'] . $targetFilePath)) {
                     // insert to stl table
                     if ($this->model->updateSTLPhoto($fileName, $stlId)) {
                         $_SESSION['insertSuccess'] = 'STL Photo updated successfully';
-                        header("Location: /employee/ServiceTeamLeader");
+                        header("Location: /employee/serviceTeamLeaders");
                     } else {
                         echo "Error in stl photo";
                     }
@@ -320,7 +322,7 @@ class Employee extends Controller
         if ($_SESSION['role'] == "systemadmin") {
             $result = $this->model->stlDelete($stlId);
             if ($result == "Success") {
-                header("Location: /employee/ServiceTeamLeader");
+                header("Location: /employee/serviceTeamLeaders");
             }
         }
     }
@@ -356,10 +358,7 @@ class Employee extends Controller
             for ($l = 0; $l < sizeof($_SESSION['stlAttendanceDetails']); $l++) {
                 $this->model->insertAttendance_stl($_SESSION['stlAttendanceDetails'][$l]['Employee_ID'], $_SESSION['stlAttendanceDetails'][$l]['STL_ID'], $_POST['StlAttonWorkData'][$l]);
             }
-            // echo $_SESSION['stlAttendanceDetails'][$l]['STL_ID'];
-            // echo $_SESSION['stlAttendanceDetails'][$l]['Employee_ID'];
-        }
-        header("Location: /employee/ServiceTeamLeaders");
+            header("Location: /employee/serviceTeamLeaders");
     }
 
 

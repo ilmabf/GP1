@@ -180,18 +180,7 @@ $rescheduleID = $_SESSION['rescheduleID'];
     </div>
 </div>
 
-<div class="addVehicleform" id="confirmPopUpId">
-    <div class="forma">
 
-        <h2 class="login-signupheader">Your reschedule has been confirmed. Thank you!</h2>
-
-        <form action="" method="post" id="customer-signup">
-
-            <button id="VehicleFormSubmitButton" class="formSubmitButton" type="button" name="signup" style="width: 115px;"><a href="/user/home" style="color: white;">Return Home</a></button>
-        </form>
-
-    </div>
-</div>
 <!-- <script src="/public/js/CustomerOrderSummary.js"></script> -->
 <script>
     var rescheduleID = <?php echo json_encode($rescheduleID); ?>;
@@ -200,11 +189,3 @@ $rescheduleID = $_SESSION['rescheduleID'];
 <div style="min-height: 110px;"></div>
 
 
-<?php
-if (isset($_SESSION['BookingSuccess'])) { ?>
-    <script>
-        openConfirmOrder();
-    </script>";
-
-<?php unset($_SESSION['BookingSuccess']);
-}  ?>

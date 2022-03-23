@@ -19,7 +19,7 @@ include 'views/user/LoggedInHeader.php';
 
         </div>
     </div>
-    <div class="mainUpcoming">
+    <div class="mainUpcoming" id = "box3">
         <div class="upcomingOrders" id="customerUpcomingReservations">
 
             <!-- <div class="sub-box1">
@@ -46,9 +46,55 @@ include 'views/user/LoggedInHeader.php';
     <!-- <?php print_r($_SESSION['myUpcomingReservations']); ?> -->
     <div style="min-height: 110px;"></div>
 </div>
+
+<div class="addVehicleform" id="confirmPopUpId">
+    <div class="forma">
+
+        <h2 class="login-signupheader">Your order has been confirmed. Thank you!</h2>
+
+        <form action="" method="post" id="customer-signup">
+
+            <button id="VehicleFormSubmitButton" class="formSubmitButton" type="button" name="signup" style="width: 115px;"><a href="/booking/upcoming" style="color: white;">Return</a></button>
+        </form>
+
+    </div>
+</div>
+
+<div class="addVehicleform" id="confirmPopUpId2">
+    <div class="forma">
+
+        <h2 class="login-signupheader">You have successfully rescheduled your booking. Thank you!</h2>
+
+        <form action="" method="post" id="customer-signup">
+
+            <button id="VehicleFormSubmitButton" class="formSubmitButton" type="button" name="signup" style="width: 115px;"><a href="/booking/upcoming" style="color: white;">Return</a></button>
+        </form>
+
+    </div>
+</div>
+
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 <script>
     var orders = <?php echo json_encode(array_values($_SESSION['myUpcomingReservations'])); ?>;
 </script>
 <script src="/public/js/CustomerUpcomingReservations.js"></script>
+
+<?php
+if (isset($_SESSION['BookingSuccess'])) { ?>
+    <script>
+        openConfirmOrder();
+    </script>";
+
+<?php unset($_SESSION['BookingSuccess']);
+}  ?>
+
+<?php
+if (isset($_SESSION['RescheduleSuccess'])) { ?>
+    <script>
+        openConfirmOrder2();
+    </script>";
+
+<?php unset($_SESSION['RescheduleSuccess']);
+}  ?>
+

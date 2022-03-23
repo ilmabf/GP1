@@ -124,10 +124,7 @@ class Booking extends Controller
 
         $_SESSION['upcomingOrder'] = $this->model->getReservationDetails($orderID); //order details
 
-        // prevent customers from seeing reservations of other customers by typing in url
-        if($_SESSION['userDetails'][0]['User_ID'] != $_SESSION['upcomingOrder'][0]['Customer_ID']){
-            header("Location: /booking/upcoming");
-        }
+
 
         $_SESSION['teams'] = $this->model->getTeams($_SESSION['upcomingOrder'][0]['Time']);
         $_SESSION['customer'] = $this->model->getCustomer($_SESSION['upcomingOrder'][0]['Customer_ID']); //customer details who booked order
@@ -135,6 +132,12 @@ class Booking extends Controller
         $_SESSION['washpackage'] = $this->model->getSelectedWashPackage($_SESSION['upcomingOrder'][0]['Wash_Package_ID']); //wash package selected
         $_SESSION['stlDetails'] = $this->model->getSTLDetails($_SESSION['upcomingOrder'][0]['Service_team_leader_ID']); //get details of assigned stl
         if ($_SESSION['role'] == "customer") {
+
+            // prevent customers from seeing reservations of other customers by typing in url
+            if ($_SESSION['userDetails'][0]['User_ID'] != $_SESSION['upcomingOrder'][0]['Customer_ID']) {
+                header("Location: /booking/upcoming");
+            }
+
             $today = date("Y-m-d");
 
             $reservation = $this->model->getReservationDetails($orderID);
@@ -189,10 +192,7 @@ class Booking extends Controller
 
         $_SESSION['completedOrder'] = $this->model->getReservationDetails($orderID); //order details
 
-        // prevent customers from seeing reservations of other customers by typing in url
-        if($_SESSION['userDetails'][0]['User_ID'] != $_SESSION['completedOrder'][0]['Customer_ID']){
-            header("Location: /booking/completed");
-        }
+
 
         $_SESSION['customer'] = $this->model->getCustomer($_SESSION['completedOrder'][0]['Customer_ID']); //customer details who booked order
         $_SESSION['vehicle'] = $this->model->getSelectedVehicle($_SESSION['completedOrder'][0]['Vehicle_ID']); //vehicle details service done
@@ -200,6 +200,12 @@ class Booking extends Controller
         $_SESSION['images'] = $this->model->getSelectedImages($_SESSION['completedOrder'][0]['Reservation_ID']); //Before after images
 
         if ($_SESSION['role'] == "customer") {
+
+            // prevent customers from seeing reservations of other customers by typing in url
+            if ($_SESSION['userDetails'][0]['User_ID'] != $_SESSION['completedOrder'][0]['Customer_ID']) {
+                header("Location: /booking/completed");
+            }
+
             $_SESSION['completedSTL'] =  $this->model->getSTLDetails($_SESSION['completedOrder'][0]['Service_team_leader_ID']);
 
             $orderID = str_replace('_', ' ', $orderID);
@@ -249,6 +255,17 @@ class Booking extends Controller
                 }
             }
 
+            //price validations
+            if((float)$total <= (float)$price){
+                header("Location: /booking/details");
+                exit;
+            }
+
+            if($this->model->checkInvalidPrice($price, $washPackage, $vehicle)){
+                header("Location: /booking/details");
+                exit;
+            }
+
             $date = $year . "-" . $month . "-" . $day;
 
             $result = $this->model->checkValidity($vehicle, $date, $time);
@@ -275,7 +292,7 @@ class Booking extends Controller
 
                     if ($mail->mailto($subject, $_SESSION['userDetails'][0]['Email'], $body)) {
                         $_SESSION['BookingSuccess'] = "true";
-                        header("Location: /booking/orderSummary");
+                        header("Location: /booking/upcoming");
                     }
                 }
             } else {
@@ -285,7 +302,7 @@ class Booking extends Controller
             }
         }
     }
-    
+
     function updateReservation($details, $orderID)
     {
         if ($_SESSION['role'] == "customer") {
@@ -346,8 +363,8 @@ class Booking extends Controller
                 $subject = "Your reservation has been rescheduled - wandiwash.com";
 
                 if ($mail->mailto($subject, $_SESSION['userDetails'][0]['Email'], $body)) {
-                    $_SESSION['BookingSuccess'] = "true";
-                    header("Location: /booking/orderRescheduleSummary/$orderID");
+                    $_SESSION['RescheduleSuccess'] = "true";
+                    header("Location: /booking/upcoming");
                 }
             }
         }
@@ -391,7 +408,18 @@ class Booking extends Controller
         $date = $reservation[0]['Date'];
 
         if ($_SESSION['role'] == "manager" || $_SESSION['role'] == "customer") {
-            // if different of reservation time is more than 24 hours from today date time then delete reservation
+
+            // echo "here2";
+            // exit;
+            // prevent customers from deleting reservations of other customers by typing in url
+            if($_SESSION['role'] == "customer"){
+                if(!isset($_POST['deleteReservationBtn'])){
+                    // echo "here";
+                    header("Location: /booking/upcoming");
+                    exit;
+                }
+            }
+            // if difference of reservation time is more than 24 hours from today then delete reservation
             if (strtotime($date) - strtotime($today) > 86400) {
                 if ($this->model->deleteReservation($id)) {
                     header("Location: /booking/upcoming");
@@ -426,7 +454,7 @@ class Booking extends Controller
     //         }
     //     }
     // }
-    
+
     function rateService($orderID)
     {
 

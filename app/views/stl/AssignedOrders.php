@@ -17,6 +17,9 @@ $orderList = $_SESSION['todayReservations'];
 
                 <?php
                 $count = sizeof($_SESSION['todayReservations']) - 1;
+                if($count < 0){?>
+                    <p> You have no reservations today </p> 
+                <?php }
                 while ($count >= 0) { ?>
                     <div class="sub-box1">
                         <div class="order">
@@ -41,7 +44,7 @@ $orderList = $_SESSION['todayReservations'];
                             <div class="orderitem1"><?php echo $orderList[$count]['Time'] ?></div>
                         </div>
                         <div class="orderView">
-                            <p class="viewLink"><a href="/calendar/todayOrder/<?php echo $orderList[$count]['Reservation_ID'] ?>">View
+                            <p class="viewLink"><a href="/calendar/Order/<?php echo $orderList[$count]['Reservation_ID'] ?>">View
                                     order</a></p>
                         </div>
                     </div>
