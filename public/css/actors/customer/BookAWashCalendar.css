@@ -143,7 +143,7 @@ html {
   left: 50%;
   transform: translate(-50%, -50%); */
   top: 13%;
-    left: 13%;
+  left: 13%;
   /* padding: 5px 50px 120px 50px; */
   height: fit-content;
   width: fit-content;
@@ -156,15 +156,14 @@ html {
   filter: blur(3px);
 }
 
-@media only screen and (min-width: 770px){
-  #scrollMsgMobile{
+@media only screen and (min-width: 770px) {
+  #scrollMsgMobile {
     display: none;
   }
 }
 
-@media only screen and (max-width: 770px){
-
-  #scrollMsgMobile{
+@media only screen and (max-width: 770px) {
+  #scrollMsgMobile {
     display: block;
   }
 
@@ -172,7 +171,7 @@ html {
     overflow: scroll;
   }
 
-  #cal1{
+  #cal1 {
     /* top: auto;
     left: auto;
     transform: none; */
@@ -181,19 +180,19 @@ html {
     left: 0%;
   }
 
-  .month{
+  .month {
     position: fixed;
   }
 
-  .days{
+  .days {
     margin-top: -80px;
   }
 
-  .weekdays{
+  .weekdays {
     height: 23rem;
   }
 
-  #bookingContent{
+  #bookingContent {
     position: fixed;
   }
 }

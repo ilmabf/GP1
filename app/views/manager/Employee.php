@@ -32,6 +32,7 @@ $result = $_SESSION['employeeDetails'];
         </div>
 
         <div style="margin-bottom: 30px;">
+          <input type="button" id="goBackBtn" value=" See All " class="edit_btn" onclick="empWorkGoBack()">
           <input type="button" value="Employees On Work" class="edit_btn" onclick="empOnWork()">
           <input type="button" value="Employees Not On Work" class="edit_btn" onclick="empNotWork()">
         </div>
@@ -149,7 +150,7 @@ $result = $_SESSION['employeeDetails'];
   </div>
 
 
-  
+
 
   <div style="min-height: 110px;"></div>
 
