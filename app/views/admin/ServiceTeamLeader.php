@@ -138,7 +138,7 @@ include 'views/user/LoggedInHeader.php';
                         <?php echo date("d-m-Y"); ?>
                     </span>
 
-                    <form action="/employee/insertStlAttendance/" id="stlAttendanceForm" method="POST">
+                    <!-- <form action="/employee/insertStlAttendance/" id="stlAttendanceForm" method="POST"> -->
                         <table id="filterTable3">
                             <thead>
                                 <tr>
@@ -177,10 +177,10 @@ include 'views/user/LoggedInHeader.php';
                         </table>
 
                         <div id="emp-attendance-submit">
-                            <input type="submit" id="empAttendance-submit-1" value="Submit">
+                            <input type="submit" id="stlAttendance-submit-1" value="Submit">
 
                         </div>
-                    </form>
+                    <!-- </form> -->
                     <div>
                         <?php if ($_SESSION['insertSuccess'] == "Stl On work error") { ?>
                             <div class="error-message">
@@ -226,4 +226,5 @@ include 'views/user/LoggedInHeader.php';
         <script src="/public/js/AdminEmployeeTable.js"></script>
         <script src="/public/js/AdminManageEmployee.js"></script>
 
+        <script src="/public/js/AdminManageSTL.js"></script>
 </main>

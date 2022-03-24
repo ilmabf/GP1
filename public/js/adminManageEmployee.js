@@ -345,12 +345,18 @@ function closestlForm() {
 }
 
 document.getElementById("empAttendance-submit-1").onclick = function () {
-  var teams = new Array();
+  var teams = [];
   for (i = 0; i < eDetails.length; i++) {
     teams[i] = {};
-    console.log(document.getElementById("EmpAttTeam_text"+i).value);
+    // console.log(document.getElementById("EmpAttTeam_text"+i).value);
     teams[i]['team'] = parseInt(document.getElementById("EmpAttTeam_text"+i).value);
-    teams[i]['onwork'] = document.getElementById("EmpAttonWork_text"+i).checked;
+    if(document.getElementById("EmpAttonWork_text"+i).checked){
+      teams[i]['onwork'] = 1;
+    }
+    else{
+      teams[i]['onwork'] = 0;
+    }
+    //  = document.getElementById("EmpAttonWork_text"+i).checked;
   }
 
   var x = 0;
@@ -359,13 +365,20 @@ document.getElementById("empAttendance-submit-1").onclick = function () {
     return r;
   }, {});
 
-  console.log(teams);
+  
   for(key in result){
     if(result[key] != 3){
-      document.getElementById("EmpAttTeam_text0").setCustomValidity("Please insert 3 employees for each team");
-      console.log("NO");
+      document.getElementById("EmpAttonWork_text0").setCustomValidity("Please insert 3 employees for each team");
+      document.getElementById("EmpAttonWork_text0").reportValidity();
+      // $("input[name='EmpAttonWorkData']")[0].setCustomValidity('Please select at least one checkbox.');
+      //   return false;
+      break;
     } else {
-      document.getElementById("EmpAttTeam_text0").setCustomValidity("");
+      document.getElementById("EmpAttonWork_text0").setCustomValidity("");
+      console.log(teams);
+      window.location = "/employee/insertEmpAttendance/" + JSON.stringify(teams);
     }
   }
 };
+
+

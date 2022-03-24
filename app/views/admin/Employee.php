@@ -129,7 +129,7 @@ include 'views/user/LoggedInHeader.php';
           <span id="todayDate" style="float: right; background-color:blue; color:white;">
             <?php echo date("d-m-Y"); ?>
           </span>
-          <form action="/employee/insertEmpAttendance/" id="empAttendanceForm" method="POST">
+          <!-- <form action="" id="empAttendanceForm" method="POST"> -->
             <table id="filterTable1">
               <thead>
                 <tr>
@@ -173,7 +173,7 @@ include 'views/user/LoggedInHeader.php';
               <input type="submit" id="empAttendance-submit-1" value="Submit">
 
             </div>
-          </form>
+          <!-- </form> -->
 
           <div>
             <?php if ($_SESSION['insertSuccess'] == "On work error") { ?>
