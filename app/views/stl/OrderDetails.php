@@ -102,7 +102,7 @@ $washPackageDetails = $_SESSION['washpackage'];
                                 </tr>
                                 <tr>
                                     <td style="text-align:left; color:#193498; font-weight:bold">Location</td>
-                                    <td style="font-size: 12px;text-align:left"><button class="reservationButtons a15" id="cancelAssignBtn" style="padding: 1px 3px; margin-bottom:0px" onclick="openMap2();">View Location</button></td>
+                                    <td style="font-size: 12px;text-align:left"><button class="reservationButtons a15" id="cancelAssignBtn" style="padding: 1px 3px; margin-bottom:0px; color:white;" onclick="openMap2();">View Location</button></td>
                                 </tr>
                                 <tr>
                                     <td style="text-align:left; color:#193498; font-weight:bold">Wash Package</td>

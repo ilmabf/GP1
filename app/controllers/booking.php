@@ -414,7 +414,6 @@ class Booking extends Controller
             // prevent customers from deleting reservations of other customers by typing in url
             if ($_SESSION['role'] == "customer") {
                 if (!isset($_POST['deleteReservationBtn'])) {
-                    // echo "here";
                     header("Location: /booking/upcoming");
                     exit;
                 }

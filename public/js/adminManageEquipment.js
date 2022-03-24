@@ -427,7 +427,7 @@ function addNewRow() {
 
         for (i = 0; i < items.length; i++) {
           var op = document.createElement("option");
-          op.setAttribute("value", i + 1);
+          op.setAttribute("value", items[i]['Item_Id']);
           op.innerHTML = items[i]["Name"];
           ele2.appendChild(op);
         }

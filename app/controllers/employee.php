@@ -14,6 +14,8 @@ class Employee extends Controller
     function index()
     {
 
+        // echo $_SESSION['role'];
+
         // stl
         $empDetails = $this->model->getEmployeeDetails();
         $_SESSION['employeeDetails'] = $empDetails;
@@ -21,24 +23,24 @@ class Employee extends Controller
         $empAttendance = $this->model->getEmployeeAttendanceDetails();
         $_SESSION['employeeAttendanceDetails'] = $empAttendance;
 
-        $stlData = $this->model->getStlData();
-        $_SESSION['stlData'] = $stlData;
+        // $stlData = $this->model->getStlData();
+        // $_SESSION['stlData'] = $stlData;
 
-        $stlAttendance = $this->model->getStlAttendanceDetails();
-        $_SESSION['stlAttendanceDetails'] = $stlAttendance;
+        // $stlAttendance = $this->model->getStlAttendanceDetails();
+        // $_SESSION['stlAttendanceDetails'] = $stlAttendance;
 
         // manager
         $empData = $this->model->getEmpData();
         $_SESSION['EmpAttendanceData'] = $empData;
 
-        $stlData = $this->model->getStlAttendanceData();
-        $_SESSION['StlAttendanceData'] = $stlData;
+        // $stlData = $this->model->getStlAttendanceData();
+        // $_SESSION['StlAttendanceData'] = $stlData;
 
-        $stlonWorkData = $this->model->getStlOnWorkData();
-        $_SESSION['StlOnWorkData'] = $stlonWorkData;
+        // $stlonWorkData = $this->model->getStlOnWorkData();
+        // $_SESSION['StlOnWorkData'] = $stlonWorkData;
 
-        $stlNotWorkData = $this->model->getStlNotWorkData();
-        $_SESSION['StlNotWorkData'] = $stlNotWorkData;
+        // $stlNotWorkData = $this->model->getStlNotWorkData();
+        // $_SESSION['StlNotWorkData'] = $stlNotWorkData;
 
         $emponWorkData = $this->model->getEmpOnWorkData();
         $_SESSION['EmponWorkData'] = $emponWorkData;
@@ -46,14 +48,14 @@ class Employee extends Controller
         $empNotWorkData = $this->model->getEmpNotWorkData();
         $_SESSION['EmpNotWorkData'] = $empNotWorkData;
 
-        $noOfTeams = $this->model->getTeamCount();
-        $_SESSION['teamCount'] = $noOfTeams;
+        // $noOfTeams = $this->model->getTeamCount();
+        // $_SESSION['teamCount'] = $noOfTeams;
 
         $userData = $this->model->getUserData();
         $_SESSION['userData'] = $userData;
 
-        $stlTableData = $this->model->getStlDetails();
-        $_SESSION['stlTableData'] = $stlTableData;
+        // $stlTableData = $this->model->getStlDetails();
+        // $_SESSION['stlTableData'] = $stlTableData;
 
         // foreach ($_SESSION['userData'] as $stl) {
         //     echo $stl['Email'];
@@ -71,11 +73,11 @@ class Employee extends Controller
     function serviceTeamLeaders()
     {
         // stl
-        $empDetails = $this->model->getEmployeeDetails();
-        $_SESSION['employeeDetails'] = $empDetails;
+        // $empDetails = $this->model->getEmployeeDetails();
+        // $_SESSION['employeeDetails'] = $empDetails;
 
-        $empAttendance = $this->model->getEmployeeAttendanceDetails();
-        $_SESSION['employeeAttendanceDetails'] = $empAttendance;
+        // $empAttendance = $this->model->getEmployeeAttendanceDetails();
+        // $_SESSION['employeeAttendanceDetails'] = $empAttendance;
 
         $stlData = $this->model->getStlData();
         $_SESSION['stlData'] = $stlData;
@@ -84,8 +86,8 @@ class Employee extends Controller
         $_SESSION['stlAttendanceDetails'] = $stlAttendance;
 
         // manager
-        $empData = $this->model->getEmpData();
-        $_SESSION['EmpAttendanceData'] = $empData;
+        // $empData = $this->model->getEmpData();
+        // $_SESSION['EmpAttendanceData'] = $empData;
 
         $stlData = $this->model->getStlAttendanceData();
         $_SESSION['StlAttendanceData'] = $stlData;
@@ -96,14 +98,14 @@ class Employee extends Controller
         $stlNotWorkData = $this->model->getStlNotWorkData();
         $_SESSION['StlNotWorkData'] = $stlNotWorkData;
 
-        $emponWorkData = $this->model->getEmpOnWorkData();
-        $_SESSION['EmponWorkData'] = $emponWorkData;
+        // $emponWorkData = $this->model->getEmpOnWorkData();
+        // $_SESSION['EmponWorkData'] = $emponWorkData;
 
-        $empNotWorkData = $this->model->getEmpNotWorkData();
-        $_SESSION['EmpNotWorkData'] = $empNotWorkData;
+        // $empNotWorkData = $this->model->getEmpNotWorkData();
+        // $_SESSION['EmpNotWorkData'] = $empNotWorkData;
 
-        $noOfTeams = $this->model->getTeamCount();
-        $_SESSION['teamCount'] = $noOfTeams;
+        // $noOfTeams = $this->model->getTeamCount();
+        // $_SESSION['teamCount'] = $noOfTeams;
 
         $userData = $this->model->getUserData();
         $_SESSION['userData'] = $userData;
@@ -194,7 +196,7 @@ class Employee extends Controller
 
                     if ($flag2 == 0) {
                         $_SESSION['insertSuccess'] = 'UserName already exists';
-                        header("Location: /employee/");
+                        header("Location: /employee/serviceTeamLeaders");
                     } else {
 
                         // check if stlEmail not exist in users tb
@@ -209,7 +211,7 @@ class Employee extends Controller
 
                         if ($flag3 == 1) {
                             $_SESSION['insertSuccess'] = 'Email does not belong to an employee';
-                            header("Location: /employee/ServiceTeamLeader");
+                            header("Location: /employee/serviceTeamLeaders");
                         } else {
 
                             $options = ['cost' => 12];
@@ -223,7 +225,7 @@ class Employee extends Controller
                             echo $targetFilePath;
                             $fileType = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION));
 
-                            $allowTypes = array('jpg', 'png', 'jpeg', 'gif', 'pdf');
+                            $allowTypes = array('jpg', 'png', 'jpeg', 'gif', 'pdf', 'PNG');
 
                             if (in_array($fileType, $allowTypes)) {
                                 echo "heretop";
@@ -239,7 +241,7 @@ class Employee extends Controller
                                         if ($this->model->stlUserAdd($newStlID, $stlUserName, $hashedpwd, $stlEmail, $flag)) {
                                             if ($this->model->empStlIDAdd($newStlID, $nic)) {
                                                 $_SESSION['insertSuccess'] = 'Service Team Leader added successfully';
-                                                header("Location: /employee/ServiceTeamLeader");
+                                                header("Location: /employee/serviceTeamLeaders");
                                             } else {
                                                 echo "emp stl add error";
                                             }
@@ -268,18 +270,18 @@ class Employee extends Controller
             echo $targetFilePath;
             $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
 
-            $allowTypes = array('jpg', 'png', 'jpeg', 'gif', 'pdf');
+            $allowTypes = array('jpg', 'png', 'jpeg', 'gif', 'pdf', 'PNG');
             // // max file size 5MB
             // $maxFileSize = 5 * 1024 * 1024;
 
             if (in_array($fileType, $allowTypes)) {
                 // if (filesize($_FILES['file']['tmp_name']) < $maxFileSize) {
-                //     echo "File size is less than 5MB";
+                // echo "File size is less than 5MB";
                 if (move_uploaded_file($_FILES["file"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'] . $targetFilePath)) {
                     // insert to stl table
                     if ($this->model->updateSTLPhoto($fileName, $stlId)) {
                         $_SESSION['insertSuccess'] = 'STL Photo updated successfully';
-                        header("Location: /employee/ServiceTeamLeader");
+                        header("Location: /employee/serviceTeamLeaders");
                     } else {
                         echo "Error in stl photo";
                     }
@@ -304,6 +306,22 @@ class Employee extends Controller
         }
     }
 
+    function saveEditSTL($empId, $contactNumberVal, $emailData, $salaryData)
+    {
+        // echo $empId;
+        // echo $contactNumberVal;
+        // echo $emailData;
+        if ($_SESSION['role'] == "systemadmin") {
+
+            $values = array($contactNumberVal, $emailData, $salaryData);
+            // print_r($values);
+
+            if ($this->model->employeeSaveEdit($empId, $values)) {
+                header("Location: /employee/serviceTeamLeaders");
+            }
+        }
+    }
+
     function deleteEmployee($empId)
     {
         if ($_SESSION['role'] == "systemadmin") {
@@ -320,7 +338,7 @@ class Employee extends Controller
         if ($_SESSION['role'] == "systemadmin") {
             $result = $this->model->stlDelete($stlId);
             if ($result == "Success") {
-                header("Location: /employee/ServiceTeamLeader");
+                header("Location: /employee/serviceTeamLeaders");
             }
         }
     }
@@ -350,7 +368,8 @@ class Employee extends Controller
                 // echo $_SESSION['stlAttendanceDetails'][$l]['Employee_ID'];
                 $this->model->insertAttendance_stl($_SESSION['stlAttendanceDetails'][$l]['Employee_ID'], $_SESSION['stlAttendanceDetails'][$l]['STL_ID'], $_POST['StlAttonWorkData'][$l]);
             }
-            header("Location: /employee/ServiceTeamLeaders");
+
+            header("Location: /employee/serviceTeamLeaders");
         }
     }
 

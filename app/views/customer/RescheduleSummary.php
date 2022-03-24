@@ -130,3 +130,5 @@ $rescheduleID = $_SESSION['rescheduleID'];
 </script>
 <script src="/public/js/CustomerRescheduleSummary.js"></script>
 <div style="min-height: 110px;"></div>
+
+

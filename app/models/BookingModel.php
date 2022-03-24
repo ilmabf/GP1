@@ -237,8 +237,8 @@ class BookingModel extends Model
         return $result;
     }
 
-    function checkInvalidPrice($price, $washPackage, $vehicle)
-    {
+
+    function checkInvalidPrice($price, $washPackage, $vehicle){
         $result = $this->db->select("Type", "customer_vehicle", "WHERE VID = :vid", ":vid", $vehicle);
         $vehicleType = $result[0]['Type'];
         $result = $this->db->select("Price", "wash_package_vehicle_category", "WHERE Wash_Package_ID = :washPackage AND Vehicle_Type = :type", array(":washPackage", ":type"), array($washPackage, $vehicleType));

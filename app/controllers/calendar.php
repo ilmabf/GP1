@@ -23,7 +23,7 @@ class Calendar extends Controller
     //     header("Location: /booking/details");
     // }
 
-    function stlTodayReservations()
+    function Today()
     {
         $id = $_SESSION['stlDetails'][0]['STL_ID'];
         $_SESSION['todayReservations'] = $this->model->getSTLtodayReservationList($id);
@@ -33,9 +33,15 @@ class Calendar extends Controller
         }
     }
     //view order details for stl
-    function todayOrder($orderID)
+    function Order($orderID)
     {
         $_SESSION['todayOrder'] = $this->model->getReservationDetails($orderID); //order details
+
+        //Prevent STL from seeing details of unassigned orders
+        if($_SESSION['stlDetails'][0]['STL_ID'] != $_SESSION['todayOrder'][0]['Service_team_leader_ID']){
+            header("Location: /calendar/Today");
+        }
+        
         $_SESSION['customer'] = $this->model->getCustomer($_SESSION['todayOrder'][0]['Customer_ID']); //customer details who booked order
         $_SESSION['vehicle'] = $this->model->getSelectedVehicle($_SESSION['todayOrder'][0]['Vehicle_ID']); //vehicle details service done
         $_SESSION['washpackage'] = $this->model->getSelectedWashPackage($_SESSION['todayOrder'][0]['Wash_Package_ID']); //wash package selected
@@ -101,7 +107,7 @@ class Calendar extends Controller
 
                 if ($mail->mailto($subject, $email, $body)) {
                     //email has been sent
-                    header("Location: /calendar/stlTodayReservations");
+                    header("Location: /calendar/Today");
                 }
             }
         }
