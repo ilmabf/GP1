@@ -15,7 +15,7 @@ class Employee extends Controller
     {
 
         // echo $_SESSION['role'];
-        
+
         // stl
         $empDetails = $this->model->getEmployeeDetails();
         $_SESSION['employeeDetails'] = $empDetails;
@@ -276,7 +276,7 @@ class Employee extends Controller
 
             if (in_array($fileType, $allowTypes)) {
                 // if (filesize($_FILES['file']['tmp_name']) < $maxFileSize) {
-                    // echo "File size is less than 5MB";
+                // echo "File size is less than 5MB";
                 if (move_uploaded_file($_FILES["file"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'] . $targetFilePath)) {
                     // insert to stl table
                     if ($this->model->updateSTLPhoto($fileName, $stlId)) {
@@ -347,7 +347,7 @@ class Employee extends Controller
     {
         // print_r($_POST['EmpAttTeamData']);
         // print_r($teams);
-        $AttendanceArray=  json_decode($teams,true);
+        $AttendanceArray =  json_decode($teams, true);
         print_r(array($AttendanceArray));
         // echo ($_POST['EmpAttonWorkData'][5]);
         if ($_SESSION['role'] == "systemadmin") {
@@ -360,8 +360,8 @@ class Employee extends Controller
                 }
             }
 
-            if ($flag1 == 1) {
-                $_SESSION['insertSuccess'] = "On work error";
+            for ($k = 0; $k < sizeof($_SESSION['employeeAttendanceDetails']); $k++) {
+                $this->model->insertAttendance_emp($_SESSION['employeeAttendanceDetails'][$k]['Employee_ID'], $_POST['EmpAttTeamData'][$k], $_POST['EmpAttonWorkData'][$k]);
             }
             header("Location: /employee/");
         }
@@ -371,17 +371,17 @@ class Employee extends Controller
     {
         // print_r($_POST['EmpAttTeamData']);
         // print_r($_POST['EmpAttonWorkData']);
-        $AttendanceArray=  json_decode($teams,true);
+        $AttendanceArray =  json_decode($teams, true);
         print_r(array($AttendanceArray));
         if ($_SESSION['role'] == "systemadmin") {
 
             for ($l = 0; $l < sizeof($_SESSION['stlAttendanceDetails']); $l++) {
                 $this->model->insertAttendance_stl($_SESSION['stlAttendanceDetails'][$l]['Employee_ID'], $_SESSION['stlAttendanceDetails'][$l]['STL_ID'], $AttendanceArray[$l]['onwork']);
             }
+
             header("Location: /employee/serviceTeamLeaders");
         }
     }
-
 
     function noofTeams()
     {

@@ -117,20 +117,6 @@ $booked = $_SESSION['booked'];
                         $i = $i + 1;
                     }
                     ?>
-                    <!-- <div class="wash-select-radio">
-                        <input type="radio" name="washType" id="interiorCleaning" class="washType1" value="Interior Cleaning" checked>
-                        <label for="washType">Interior Cleaning</label>
-                    </div>
-
-                    <div class="wash-select-radio">
-                        <input type="radio" name="washType" id="interior&ExteriorCleaning" class="washType1" value="Exterior Washing & Interior Cleaning">
-                        <label for="washType">Exterior Washing & Interior Cleaning</label>
-                    </div>
-
-                    <div class="wash-select-radio">
-                        <input type="radio" name="washType" id="interior&ExteriorCleaning" class="washType1" value="Sanitization">
-                        <label for="washType">Sanitization</label>
-                    </div> -->
 
                 </form>
 
@@ -154,11 +140,15 @@ $booked = $_SESSION['booked'];
                     <h3 style="color:white;">Select an available time slot <b>( Red - unavailable )</b></h3>
                     <h1 style="color:white;"></h1>
                     <p style="color:white;"></p>
-                    <div id = "scrollMsgMobile" style="margin-top: 5px;"><h3 style="color:white;"><-----Move-----></h3></div>
+                    <div id="scrollMsgMobile" style="margin-top: 5px;">
+                        <h3 style="color:white;">
+                            <-----Move----->
+                        </h3>
+                    </div>
                 </div>
                 <i class="fas fa-angle-right next"></i>
             </div>
-            
+
             <div class="weekdays">
                 <div style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Sun</div>
                 <div style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">Mon</div>
@@ -181,33 +171,6 @@ $booked = $_SESSION['booked'];
     </script>
     <script src="/public/js/CustomerCalendar.js"></script>
     <script src="/public/js/CustomerBookAWash.js"></script>
-    <!-- Include price and washpackage cookies if there are any -->
-    <!-- <script>
-        var cookieArray = document.cookie.split(";");
-        var i = 0;
-        var price;
-        var washp;
-        for (i = 0; i < cookieArray.length; i++) {
-            cookieArray[i] = cookieArray[i].trim();
-            if (cookieArray[i].substring(0, 5) === "price") {
-                price = cookieArray[i];
-                let p = price.substring(6);
-                document.getElementById("priceValue").innerHTML = "Rs. " + p;
-                break;
-            }
-
-        }
-        for (i = 0; i < cookieArray.length; i++) {
-            if (cookieArray[i].substring(0, 11) === "washPackage") {
-                washp = cookieArray[i];
-                let w = washp.substring(12);
-                w = "washPackage-" + w;
-                document.getElementById(w).checked = true;
-                break;
-            }
-        }
-    </script> -->
-
 </body>
 
 <!-- </div> -->

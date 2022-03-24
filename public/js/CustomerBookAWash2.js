@@ -70,9 +70,9 @@ function calcRoute(addr) {
         var kmInt = parseInt(km);
         var additional = 0;
         if (kmInt < 1) {
-          additional = 50;
+          additional = 20;
         } else {
-          additional = (kmInt + 1) * 50;
+          additional = (kmInt + 1) * 20;
         }
 
         var cookieArray = document.cookie.split(";");

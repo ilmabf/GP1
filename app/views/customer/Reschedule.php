@@ -12,7 +12,7 @@ $reservationDetails = $_SESSION['reservationDetails'];
 <body onload="typeWriter(0)">
 
     <div style="min-height: 110px;"></div>
-    <div id="bookingContent">
+    <div id="mainContent">
         <div>
             <div class="heading">
                 <h2 style="font-size: 30px;">Reschedule Your Booking!</h2>
@@ -118,12 +118,10 @@ $reservationDetails = $_SESSION['reservationDetails'];
                         <input type="radio" name="washType" id="interiorCleaning" class="washType1" value="Interior Cleaning" checked>
                         <label for="washType">Interior Cleaning</label>
                     </div>
-
                     <div class="wash-select-radio">
                         <input type="radio" name="washType" id="interior&ExteriorCleaning" class="washType1" value="Exterior Washing & Interior Cleaning">
                         <label for="washType">Exterior Washing & Interior Cleaning</label>
                     </div>
-
                     <div class="wash-select-radio">
                         <input type="radio" name="washType" id="interior&ExteriorCleaning" class="washType1" value="Sanitization">
                         <label for="washType">Sanitization</label>

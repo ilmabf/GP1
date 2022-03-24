@@ -256,12 +256,12 @@ class Booking extends Controller
             }
 
             //price validations
-            if((float)$total <= (float)$price){
+            if ((float)$total <= (float)$price) {
                 header("Location: /booking/details");
                 exit;
             }
 
-            if($this->model->checkInvalidPrice($price, $washPackage, $vehicle)){
+            if ($this->model->checkInvalidPrice($price, $washPackage, $vehicle)) {
                 header("Location: /booking/details");
                 exit;
             }
@@ -412,9 +412,8 @@ class Booking extends Controller
             // echo "here2";
             // exit;
             // prevent customers from deleting reservations of other customers by typing in url
-            if($_SESSION['role'] == "customer"){
-                if(!isset($_POST['deleteReservationBtn'])){
-                    // echo "here";
+            if ($_SESSION['role'] == "customer") {
+                if (!isset($_POST['deleteReservationBtn'])) {
                     header("Location: /booking/upcoming");
                     exit;
                 }

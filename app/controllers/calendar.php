@@ -55,31 +55,29 @@ class Calendar extends Controller
     function completeService($orderID)
     {
         // print_r($_SESSION['customer']);
-        if ($_SESSION['role'] == "stl") { 
+        if ($_SESSION['role'] == "stl") {
 
             $targetDir = "/public/images/";
             $fileName1 = basename($_FILES["beforeServiceImage"]["name"]);
             $fileName2 = basename($_FILES["afterServiceImage"]["name"]);
             $targetFilePath1 = $targetDir . $fileName1;
             $targetFilePath2 = $targetDir . $fileName2;
-            
+
             $fileType1 = strtolower(pathinfo($targetFilePath1, PATHINFO_EXTENSION));
             $fileType2 = strtolower(pathinfo($targetFilePath2, PATHINFO_EXTENSION));
 
             $allowTypes = array('jpg', 'png', 'jpeg', 'gif', 'pdf');
 
-            if (in_array($fileType1, $allowTypes) && in_array($fileType2, $allowTypes) ) {
+            if (in_array($fileType1, $allowTypes) && in_array($fileType2, $allowTypes)) {
 
-                if ( move_uploaded_file($_FILES["beforeServiceImage"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'].$targetFilePath1)  ) {
-                    if (move_uploaded_file($_FILES["afterServiceImage"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'].$targetFilePath2 ) ) {
-              
-                    $this->model->uploadImages($orderID, $fileName1, $fileName2);
+                if (move_uploaded_file($_FILES["beforeServiceImage"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'] . $targetFilePath1)) {
+                    if (move_uploaded_file($_FILES["afterServiceImage"]["tmp_name"], $_SERVER['DOCUMENT_ROOT'] . $targetFilePath2)) {
 
+                        $this->model->uploadImages($orderID, $fileName1, $fileName2);
                     }
                 }
-
             }
-           if ($this->model->completeOrder($orderID)) {
+            if ($this->model->completeOrder($orderID)) {
 
                 $fname = $_SESSION['customer'][0]['First_Name'];
                 $lname = $_SESSION['customer'][0]['Last_Name'];
@@ -97,9 +95,9 @@ class Calendar extends Controller
                 $output .= '<p>Thank you for booking WandiWash! We are glad to have you as a customer.</p>';
                 $output .= '<p>Here is your invoice of the service!</p>';
 
-                $output .= '<p>Total - Rs.'. $total. '</p>';
-                $output .= '<p>Wash Package - .'. $washPackage. '</p>';
-                $output .= '<p>Vehicle - '. $vehicle. '</p>';
+                $output .= '<p>Total - Rs.' . $total . '</p>';
+                $output .= '<p>Wash Package - .' . $washPackage . '</p>';
+                $output .= '<p>Vehicle - ' . $vehicle . '</p>';
                 $output .= '<p>------------------------------------------------------------</p>';
                 $output .= '<p>Kindly rate our service through our website. You can also provide any feedback as a review. We hope to see you again!</p>';
                 $output .= '<p>Thank You,</p>';
@@ -114,6 +112,4 @@ class Calendar extends Controller
             }
         }
     }
-    
-    
 }
