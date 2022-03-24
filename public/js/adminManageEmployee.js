@@ -349,12 +349,13 @@ document.getElementById("empAttendance-submit-1").onclick = function () {
   for (i = 0; i < eDetails.length; i++) {
     teams[i] = {};
     // console.log(document.getElementById("EmpAttTeam_text"+i).value);
-    teams[i]['team'] = parseInt(document.getElementById("EmpAttTeam_text"+i).value);
-    if(document.getElementById("EmpAttonWork_text"+i).checked){
-      teams[i]['onwork'] = 1;
-    }
-    else{
-      teams[i]['onwork'] = 0;
+    teams[i]["team"] = parseInt(
+      document.getElementById("EmpAttTeam_text" + i).value
+    );
+    if (document.getElementById("EmpAttonWork_text" + i).checked) {
+      teams[i]["onwork"] = 1;
+    } else {
+      teams[i]["onwork"] = 0;
     }
     //  = document.getElementById("EmpAttonWork_text"+i).checked;
   }
@@ -365,20 +366,22 @@ document.getElementById("empAttendance-submit-1").onclick = function () {
     return r;
   }, {});
 
-  
-  for(key in result){
-    if(result[key] != 3){
-      document.getElementById("EmpAttonWork_text0").setCustomValidity("Please insert 3 employees for each team");
+  var flag = 1;
+  for (key in result) {
+    if (result[key] != 3) {
+      document
+        .getElementById("EmpAttonWork_text0")
+        .setCustomValidity("Please insert 3 employees for each team");
       document.getElementById("EmpAttonWork_text0").reportValidity();
       // $("input[name='EmpAttonWorkData']")[0].setCustomValidity('Please select at least one checkbox.');
       //   return false;
-      break;
-    } else {
-      document.getElementById("EmpAttonWork_text0").setCustomValidity("");
-      console.log(teams);
-      window.location = "/employee/insertEmpAttendance/" + JSON.stringify(teams);
+      flag = 0;
     }
   }
+
+  if (flag == 1) {
+    document.getElementById("EmpAttonWork_text0").setCustomValidity("");
+    console.log(teams);
+    window.location = "/employee/insertEmpAttendance/" + JSON.stringify(teams);
+  }
 };
-
-
