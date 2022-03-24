@@ -195,7 +195,7 @@ class Employee extends Controller
 
                     if ($flag2 == 0) {
                         $_SESSION['insertSuccess'] = 'UserName already exists';
-                        header("Location: /employee/");
+                        header("Location: /employee/serviceTeamLeaders");
                     } else {
 
                         // check if stlEmail not exist in users tb

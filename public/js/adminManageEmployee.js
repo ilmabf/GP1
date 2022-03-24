@@ -348,7 +348,7 @@ document.getElementById("empAttendance-submit-1").onclick = function(){
     teams[i] = {};
     console.log(document.getElementById("EmpAttTeam_text"+i).value);
     teams[i]['team'] = parseInt(document.getElementById("EmpAttTeam_text"+i).value);
-    teams[i]['onwork'] = parseInt(document.getElementById("EmpAttonWork_text"+i).value);
+    teams[i]['onwork'] = document.getElementById("EmpAttonWork_text"+i).checked;
   }
 
   var x = 0;
@@ -357,7 +357,7 @@ document.getElementById("empAttendance-submit-1").onclick = function(){
     return r;
   }, {});
 
-  console.log(result);
+  console.log(teams);
   for(key in result){
     if(result[key] != 3){
       document.getElementById("EmpAttTeam_text0").setCustomValidity("Please insert 3 employees for each team");

@@ -161,13 +161,13 @@ function empEditAttendanceForm(size) {
     var EmpAttonWorkData = EmpAttonWork.innerHTML;
 
     EmpAttTeam.innerHTML =
-      "<input type='text' id='EmpAttTeam_text" +
+      "<input type='number' id='EmpAttTeam_text" +
       i +
       "' class='td-t7' name='EmpAttTeamData[]' value='" +
       EmpAttTeamData +
       "'/>";
     EmpAttonWork.innerHTML =
-      "<input type='text' id='EmpAttonWork_text" +
+      "<input type='checkbox' id='EmpAttonWork_text" +
       i +
       "' class='td-t3' name='EmpAttonWorkData[]' value='" +
       EmpAttonWorkData +
