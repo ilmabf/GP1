@@ -348,24 +348,9 @@ document.getElementById("empAttendance-submit-1").onclick = function () {
   var teams = new Array();
   for (i = 0; i < eDetails.length; i++) {
     teams[i] = {};
-    console.log(document.getElementById("EmpAttTeam_text" + i).value);
-    teams[i]["team"] = parseInt(
-      document.getElementById("EmpAttTeam_text" + i).value
-    );
-    if (
-      parseInt(document.getElementById("EmpAttonWork_text" + i).value) == 0 ||
-      parseInt(document.getElementById("EmpAttonWork_text" + i).value) == 1
-    ) {
-      teams[i]["onwork"] = parseInt(
-        document.getElementById("EmpAttonWork_text" + i).value
-      );
-      document.getElementById("EmpAttTeam_text" + i).setCustomValidity("");
-    } else {
-      document
-        .getElementById("EmpAttonWork_text" + i)
-        .setCustomValidity("Please insert 0 or 1 value");
-      exit;
-    }
+    console.log(document.getElementById("EmpAttTeam_text"+i).value);
+    teams[i]['team'] = parseInt(document.getElementById("EmpAttTeam_text"+i).value);
+    teams[i]['onwork'] = document.getElementById("EmpAttonWork_text"+i).checked;
   }
 
   var x = 0;
@@ -374,12 +359,10 @@ document.getElementById("empAttendance-submit-1").onclick = function () {
     return r;
   }, {});
 
-  console.log(result);
-  for (key in result) {
-    if (result[key] != 3) {
-      document
-        .getElementById("EmpAttTeam_text0")
-        .setCustomValidity("Please insert 3 employees for each team");
+  console.log(teams);
+  for(key in result){
+    if(result[key] != 3){
+      document.getElementById("EmpAttTeam_text0").setCustomValidity("Please insert 3 employees for each team");
       console.log("NO");
     } else {
       document.getElementById("EmpAttTeam_text0").setCustomValidity("");
