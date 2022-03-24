@@ -330,17 +330,9 @@ class Employee extends Controller
         // print_r($_POST['EmpAttTeamData']);
         // print_r($_POST['EmpAttonWorkData']);
         if ($_SESSION['role'] == "systemadmin") {
-            $flag1 = 0;
-            for ($k = 0; $k < sizeof($_SESSION['employeeAttendanceDetails']); $k++) {
-                if ($_POST['EmpAttonWorkData'][$k] == "0" || $_POST['EmpAttonWorkData'][$k] == "1") {
-                    $this->model->insertAttendance_emp($_SESSION['employeeAttendanceDetails'][$k]['Employee_ID'], $_POST['EmpAttTeamData'][$k], $_POST['EmpAttonWorkData'][$k]);
-                } else {
-                    $flag1 = 1;
-                }
-            }
 
-            if ($flag1 == 1) {
-                $_SESSION['insertSuccess'] = "On work error";
+            for ($k = 0; $k < sizeof($_SESSION['employeeAttendanceDetails']); $k++) {
+                $this->model->insertAttendance_emp($_SESSION['employeeAttendanceDetails'][$k]['Employee_ID'], $_POST['EmpAttTeamData'][$k], $_POST['EmpAttonWorkData'][$k]);
             }
             header("Location: /employee/");
         }
@@ -354,14 +346,13 @@ class Employee extends Controller
         if ($_SESSION['role'] == "systemadmin") {
 
             for ($l = 0; $l < sizeof($_SESSION['stlAttendanceDetails']); $l++) {
+                // echo $_SESSION['stlAttendanceDetails'][$l]['STL_ID'];
+                // echo $_SESSION['stlAttendanceDetails'][$l]['Employee_ID'];
                 $this->model->insertAttendance_stl($_SESSION['stlAttendanceDetails'][$l]['Employee_ID'], $_SESSION['stlAttendanceDetails'][$l]['STL_ID'], $_POST['StlAttonWorkData'][$l]);
             }
-            // echo $_SESSION['stlAttendanceDetails'][$l]['STL_ID'];
-            // echo $_SESSION['stlAttendanceDetails'][$l]['Employee_ID'];
+            header("Location: /employee/ServiceTeamLeaders");
         }
-        header("Location: /employee/ServiceTeamLeaders");
     }
-
 
     function noofTeams()
     {

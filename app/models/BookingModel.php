@@ -66,7 +66,7 @@ class BookingModel extends Model
             return "fail";
         } else return "success";
     }
-    
+
     function AddReserevation($reservationDetails)
     {
         $columns = array('Vehicle_ID', 'Address', 'Latitude', 'Longitude', 'Price', 'Total_price', 'Wash_Package_ID', 'Date', 'Time', 'Customer_ID');
@@ -97,7 +97,7 @@ class BookingModel extends Model
     function getCompletedReservationList1()
     {
         // get completed reservation detail list with customer names
-        $selection = array("reservation.Reservation_ID", "reservation.Vehicle_ID", "reservation.Date", "reservation.Time", "customer.First_Name", "customer.Last_Name","reservation.Member1");
+        $selection = array("reservation.Reservation_ID", "reservation.Vehicle_ID", "reservation.Date", "reservation.Time", "customer.First_Name", "customer.Last_Name", "reservation.Member1");
         $result = $this->db->select($selection, "reservation, customer", "WHERE reservation.Completed = 1 AND reservation.Customer_ID = customer.User_ID;");
         return $result;
     }
@@ -165,17 +165,17 @@ class BookingModel extends Model
 
         $result = $this->db->select("DISTINCT team", "employee_records", "WHERE date = :date AND onWork = 1;", ":date", $today);
         $result2 = $this->db->select("Service_team_leader_ID", "reservation", "WHERE Date = :date AND Time = :time;", array(":date", ":time"), array($today, $time));
-        
+
         $k = 0;
         $final = array();
-        for($i=0; $i<sizeof($result);$i++){
+        for ($i = 0; $i < sizeof($result); $i++) {
             $flag = 0;
-            for($j=0; $j<sizeof($result2);$j++){
-                if($result[$i]['team'] == $result2[$j]['Service_team_leader_ID']){
+            for ($j = 0; $j < sizeof($result2); $j++) {
+                if ($result[$i]['team'] == $result2[$j]['Service_team_leader_ID']) {
                     $flag = 1;
                 }
             }
-            if($flag == 0){
+            if ($flag == 0) {
                 $final[$k]['team'] = $result[$i]['team'];
                 $k++;
             }
@@ -200,7 +200,8 @@ class BookingModel extends Model
         return $result;
     }
 
-    function getCustomerDetails($resID){
+    function getCustomerDetails($resID)
+    {
         $result = $this->db->select("*", "reservation", "INNER JOIN customer ON reservation.Customer_ID = customer.User_ID INNER JOIN users ON customer.User_ID = users.User_ID;");
         return $result;
     }
@@ -234,5 +235,19 @@ class BookingModel extends Model
 
         $result = $this->db->update("reservation", $columns, $params, $values, ":i", $i, "WHERE Reservation_ID = :orderID;");
         return $result;
+    }
+
+    function checkInvalidPrice($price, $washPackage, $vehicle)
+    {
+        $result = $this->db->select("Type", "customer_vehicle", "WHERE VID = :vid", ":vid", $vehicle);
+        $vehicleType = $result[0]['Type'];
+        $result = $this->db->select("Price", "wash_package_vehicle_category", "WHERE Wash_Package_ID = :washPackage AND Vehicle_Type = :type", array(":washPackage", ":type"), array($washPackage, $vehicleType));
+        $packagePrice = $result[0]['Price'];
+
+        echo "price = " . $price;
+        echo "packagePrice = " . $packagePrice;
+        if ($price != $packagePrice) {
+            return true;
+        } else return false;
     }
 }

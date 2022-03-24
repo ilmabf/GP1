@@ -117,6 +117,7 @@ $booked = $_SESSION['booked'];
                         $i = $i + 1;
                     }
                     ?>
+
                 </form>
 
             </div>
@@ -184,7 +185,6 @@ $booked = $_SESSION['booked'];
                 document.getElementById("priceValue").innerHTML = "Rs. " + p;
                 break;
             }
-
         }
         for (i = 0; i < cookieArray.length; i++) {
             if (cookieArray[i].substring(0, 11) === "washPackage") {

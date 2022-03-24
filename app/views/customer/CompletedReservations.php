@@ -19,7 +19,8 @@ $orderList = $_SESSION['customerCompletedReservations'];
             <div style="color:white; text-shadow:1px 1px 4px #000000, 1px 1px 4px #0000fa; display:inline;">Date :</div>
             <!-- <input type="text" value="date" name="customerDateofPastBooking" class="dateBooking"
                 id="CustomerCompletedDate"> -->
-            <input id="CustomerCompletedDate" name="customerDateofPastBooking" class="dateBooking" style="width: 50%;">
+            <input id="CustomerCompletedDate" name="customerDateofPastBooking" class="dateBooking" style="width: 50%; padding: unset;
+    border-radius: unset; text-align: center;">
         </div>
     </div>
     <div class="mainUpcoming">

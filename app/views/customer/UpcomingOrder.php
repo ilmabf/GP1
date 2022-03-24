@@ -43,9 +43,9 @@ $display = $_SESSION['displayReservationBtn'];
             <div class="loguser-icon"></div>
             <h2 class="login-signupheader">Do you want to cancel the reservation?</h2>
 
-            <form action="" method="post" id="customer-signup">
-                <button id="VehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closecencelForm()">Close</button>
-                <button id="VehicleFormSubmitButton" class="formSubmitButton" type="submit" name="signup"><a href="/booking/deleteReservation/<?php echo $orderDetails[0]['Reservation_ID'] ?>" style="color:white;">Yes</a></button>
+            <form action="/booking/deleteReservation/<?php echo $orderDetails[0]['Reservation_ID'] ?>" method="post" id="customer-signup">
+                <button id="VehicleFormCloseButton" class="formCancelButton" type="button" name="signup" onclick="closecencelForm()">Close</button>
+                <button id="VehicleFormSubmitButton" class="formSubmitButton" type="submit" name="deleteReservationBtn">Yes</button>
             </form>
 
         </div>
@@ -123,24 +123,18 @@ $display = $_SESSION['displayReservationBtn'];
                 <!-- <div class="res">
                     <div class="orderitem">Name</div>
                     <div class="orderitemx">Gihan Anthony</div>
-
                 </div>
                 <div class="res">
                     <div class="orderitem">Date</div>
                     <div class="orderitemx">2021 / 10 / 20</div>
-
                 </div>
                 <div class="res">
                     <div class="orderitem">Time</div>
                     <div class="orderitemx">8 am - 10 am</div>
-
                 </div>
-
                 <div class="res">
                     <div class="orderitem">Contact No</div>
                     <div class="orderitemx">0775674896</div>
-
-
                 </div><br> -->
                 <!-- <hr><br>
                 <div class="res">
@@ -159,14 +153,12 @@ $display = $_SESSION['displayReservationBtn'];
                 <div class="res">
                     <div class="orderitem">Wash Package</div>
                     <div class="orderitemx">Interior Cleaning</div>
-
                 </div>
                 <hr>
                 <hr>
                 <div class="res">
                     <div class="orderitem">Total Price Rs.</div>
                     <div class="orderitemx">1050/-</div>
-
                 </div> -->
                 <hr>
                 <hr>

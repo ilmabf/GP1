@@ -97,63 +97,6 @@ $rescheduleID = $_SESSION['rescheduleID'];
                 </tbody>
             </table>
         </section>
-        <!-- <div class="boxOrderSum">
-            <div class="res">
-                <div class="orderitem">Date</div>
-                <div class="orderitemx" id="date">2021 / 10 / 20</div>
-                <div class="orderitem2"><button class="changebutton"><a href="/booking/rescheduleDetails/<?php echo $rescheduleID; ?>" style="color:white;">Change</a></button></div>
-
-            </div>
-            <div class="res">
-                <div class="orderitem" style="margin-right: 0px;">Time</div>
-                <div class="orderitemx" id="time">8 am - 10 am</div>
-                <div class="orderitem2"><button class="changebutton"><a href="/booking/rescheduleDetails/<?php echo $rescheduleID; ?>" style="color:white;">Change</a></button></div>
-
-            </div>
-
-            <div class="res">
-                <div class="orderitem" style="margin-right: 0px;">Location</div>
-                <div class="orderitemx" id="address" style="font-size: small;">ABC Road Kandy</div>
-                <div class="orderitem2"><button class="changebutton"><a href="/booking/rescheduleLocation/<?php echo $rescheduleID; ?>" style="color:white;">Change</a></button></div>
-
-            </div>
-
-            <div style="width:100%;float: left;position: absolute;top: 43%;">
-                <p>---------------------------------------------------------------------------------</p>
-            </div>
-            <br>
-            <div class="res">
-
-                <div class="orderitem">Vehicle</div>
-                <div class="orderitemx" id="vehicle">AD - 2315</div>
-                <div class="orderitem2"><button class="changebutton"><a href="/booking/rescheduleDetails/<?php echo $rescheduleID; ?>" style="color:white;">Change</a></button></div>
-            </div>
-
-            <div class="res">
-                <div class="orderitem">Wash Type</div>
-                <div class="orderitemx" id="washPackage">Interior Cleaning</div>
-                <div class="orderitem2"><button class="changebutton"><a href="/booking/rescheduleDetails/<?php echo $rescheduleID; ?>s" style="color:white;">Change</a></button></div>
-
-            </div>
-
-            <div style="width:100%;float: left;position: absolute;top: 73%;">
-                <p>---------------------------------------------------------------------------------</p>
-            </div>
-            <br>
-            <div class="res">
-                <div class="orderitem">Wash Price Rs.</div>
-                <div class="orderitemx" id="price">1000/-</div>
-
-            </div>
-            <div class="res">
-                <div class="orderitem">Total Price Rs.</div>
-                <div class="orderitemx" id="total">1050/-</div>
-
-            </div>
-            <div style="width:100%;float: left;position: absolute;    top: 91%;">
-                <p>---------------------------------------------------------------------------------</p>
-            </div>
-        </div> -->
 
 
     </div>
@@ -161,7 +104,7 @@ $rescheduleID = $_SESSION['rescheduleID'];
     <div class="box4">
         <div class="order-buttons">
             <button class="bt" id="cancelBtn" onclick="openCancelOrder()"><a>Cancel</a></button>
-            <button class="bt2" id="confirmBtn" onclick="rescheduleOrder('<?php echo $rescheduleID; ?>')">Reschedule Order</button>
+            <button class="bt2" id="confirmBtn" style="color:white;" onclick="rescheduleOrder('<?php echo $rescheduleID; ?>')">Reschedule Order</button>
         </div>
     </div>
 
@@ -180,31 +123,10 @@ $rescheduleID = $_SESSION['rescheduleID'];
     </div>
 </div>
 
-<div class="addVehicleform" id="confirmPopUpId">
-    <div class="forma">
 
-        <h2 class="login-signupheader">Your reschedule has been confirmed. Thank you!</h2>
-
-        <form action="" method="post" id="customer-signup">
-
-            <button id="VehicleFormSubmitButton" class="formSubmitButton" type="button" name="signup" style="width: 115px;"><a href="/user/home" style="color: white;">Return Home</a></button>
-        </form>
-
-    </div>
-</div>
 <!-- <script src="/public/js/CustomerOrderSummary.js"></script> -->
 <script>
     var rescheduleID = <?php echo json_encode($rescheduleID); ?>;
 </script>
 <script src="/public/js/CustomerRescheduleSummary.js"></script>
 <div style="min-height: 110px;"></div>
-
-
-<?php
-if (isset($_SESSION['BookingSuccess'])) { ?>
-    <script>
-        openConfirmOrder();
-    </script>";
-
-<?php unset($_SESSION['BookingSuccess']);
-}  ?>

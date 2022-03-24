@@ -15,61 +15,85 @@ include 'views/user/LoggedInHeader.php';
             <!-- <button class="btnclss" onclick="closeOnClickDemo()">Click to open calendar</button><br> -->
             <br>
             <div style="color:white; text-shadow:1px 1px 4px #000000, 1px 1px 4px #0000fa; display:inline;">Date :</div>
-            <input id="ManagerUpcomingDate" name="managerDateofUpcomingBooking" class="dateBooking" style="width: 50%;">
+            <input id="ManagerUpcomingDate" name="managerDateofUpcomingBooking" class="dateBooking" style="width: 50%; padding:unset; border-radius: unset; text-align: center;">
 
         </div>
     </div>
-    <div class="mainUpcoming">
+    <div class="mainUpcoming" id="box3">
         <div class="upcomingOrders" id="customerUpcomingReservations">
-            <?php
-            $count = sizeof($_SESSION['myUpcomingReservations']) - 1;
-            while ($count >= 0) { ?>
-                <div class="sub-box1">
-                    <div class="order">
-                        <div class="orderitem">Order ID</div>
-                        <div class="orderitem1"><?php
-                                                if (strlen($orderList[$count]['Reservation_ID']) == 1) {
-                                                    echo "000" . $orderList[$count]['Reservation_ID'];
-                                                } else if (strlen($orderList[$count]['Reservation_ID']) == 2) {
-                                                    echo "00" . $orderList[$count]['Reservation_ID'];
-                                                } else if (strlen($orderList[$count]['Reservation_ID']) == 3) {
-                                                    echo "0" . $orderList[$count]['Reservation_ID'];
-                                                } else {
-                                                    echo $orderList[$count]['Reservation_ID'];
-                                                }
-                                                ?>
-                        </div>
-                        <div class="order">
-                            <div class="orderitem">Vehicle No</div>
-                            <div class="orderitem1"><?php echo $orderList[$count]['Vehicle_ID'] ?></div>
-                        </div>
-                        <div class="order">
-                            <div class="orderitem">Date</div>
-                            <div class="orderitem1"><?php echo $orderList[$count]['Date'] ?></div>
-                        </div>
-                        <div class="order">
-                            <div class="orderitem">Time</div>
-                            <div class="orderitem1"><?php echo $orderList[$count]['Time'] ?></div>
-                        </div>
-                        <div class="orderView">
-                            <p class="viewLink"><a href="/booking/upcomingOrder/<?php echo $orderList[$count]['Reservation_ID'] ?>">View
-                                    invoice</a></p>
-                        </div>
-                    </div>
+
+            <!-- <div class="sub-box1">
+                <div class="order">
+                    <div class="orderitem">Vehicle No</div>
+                    <p class="orderitem1">AD - 2234</p>
                 </div>
-
-            <?php $count = $count - 1;
-            } ?>
-
+                <div class="order">
+                    <div class="orderitem">Date</div>
+                    <p class="orderitem1">2021/10/18</p>
+                </div>
+                <div class="order">
+                    <div class="orderitem">Time</div>
+                    <p class="orderitem1">8 am - 10 am</p>
+                </div>
+                <div class="orderView">
+                    <p class="viewLink"><a href="/booking/upcomingOrder">View order</a></p>
+                    <p class="team2">A service team has been assigned for you</p>
+                </div>
+            </div> -->
 
         </div>
     </div>
     <!-- <?php print_r($_SESSION['myUpcomingReservations']); ?> -->
     <div style="min-height: 110px;"></div>
 </div>
+
+<div class="addVehicleform" id="confirmPopUpId">
+    <div class="forma">
+
+        <h2 class="login-signupheader">Your order has been confirmed. Thank you!</h2>
+
+        <form action="" method="post" id="customer-signup">
+
+            <button id="VehicleFormSubmitButton" class="formSubmitButton" type="button" name="signup" style="width: 115px;"><a href="/booking/upcoming" style="color: white;">Return</a></button>
+        </form>
+
+    </div>
+</div>
+
+<div class="addVehicleform" id="confirmPopUpId2">
+    <div class="forma">
+
+        <h2 class="login-signupheader">You have successfully rescheduled your booking. Thank you!</h2>
+
+        <form action="" method="post" id="customer-signup">
+
+            <button id="VehicleFormSubmitButton" class="formSubmitButton" type="button" name="signup" style="width: 115px;"><a href="/booking/upcoming" style="color: white;">Return</a></button>
+        </form>
+
+    </div>
+</div>
+
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 <script>
     var orders = <?php echo json_encode(array_values($_SESSION['myUpcomingReservations'])); ?>;
 </script>
 <script src="/public/js/CustomerUpcomingReservations.js"></script>
+
+<?php
+if (isset($_SESSION['BookingSuccess'])) { ?>
+    <script>
+        openConfirmOrder();
+    </script>";
+
+<?php unset($_SESSION['BookingSuccess']);
+}  ?>
+
+<?php
+if (isset($_SESSION['RescheduleSuccess'])) { ?>
+    <script>
+        openConfirmOrder2();
+    </script>";
+
+<?php unset($_SESSION['RescheduleSuccess']);
+}  ?>
