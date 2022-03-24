@@ -24,19 +24,17 @@ class Review extends Controller
         }
     }
 
-    function store()
+    function store($txtInput)
     {
-        //get POST data
-        $review = $_POST['review'];
+        if ($_SESSION['role'] == "customer") {
+            $details = $_SESSION['userDetails'];
+            $id = $details[0]['User_ID'];
 
-        //get user data
-        $details = $_SESSION['userDetails'];
-        $id = $details[0]['User_ID'];
-
-        //store review
-        $reviewData = array(date('Y-m-d'), date("H:i:s"), $review, $id);
-        if ($this->model->storeReview($reviewData)) {
-            header("Location: /user/home");
-        } else echo "ERROR";
+            //store review
+            $reviewData = array(date('Y-m-d'), date("H:i:s"), $txtInput, $id);
+            if ($this->model->storeReview($reviewData)) {
+                header("Location: /user/home");
+            }
+        }
     }
 }

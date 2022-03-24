@@ -120,46 +120,6 @@ $display = $_SESSION['displayReservationBtn'];
                 </section>
 
                 <hr><br>
-                <!-- <div class="res">
-                    <div class="orderitem">Name</div>
-                    <div class="orderitemx">Gihan Anthony</div>
-                </div>
-                <div class="res">
-                    <div class="orderitem">Date</div>
-                    <div class="orderitemx">2021 / 10 / 20</div>
-                </div>
-                <div class="res">
-                    <div class="orderitem">Time</div>
-                    <div class="orderitemx">8 am - 10 am</div>
-                </div>
-                <div class="res">
-                    <div class="orderitem">Contact No</div>
-                    <div class="orderitemx">0775674896</div>
-                </div><br> -->
-                <!-- <hr><br>
-                <div class="res">
-                    <div class="orderitem">Vehicle Identification No.</div>
-                    <div class="orderitemx">AD - 2315</div>
-                </div><br>
-                <hr><br>
-                <div class="res">
-                    <div class="orderitem">Service Team</div>
-                    <div class="orderitemx"><button class="reservationButtons a12" id="cancelAssignBtn" style="color:white; padding: 1px 3px; margin-bottom:0px" onclick="openstlForm()"><a>View Details</a></button></div>
-                </div>
-                <div class="res">
-                    <div class="orderitem">Location</div>
-                    <div class="orderitemx"><button class="reservationButtons a12" id="cancelAssignBtn" style="color:white; padding: 1px 3px; margin-bottom:0px" onclick=""><a>View Location</a></button></div>
-                </div>
-                <div class="res">
-                    <div class="orderitem">Wash Package</div>
-                    <div class="orderitemx">Interior Cleaning</div>
-                </div>
-                <hr>
-                <hr>
-                <div class="res">
-                    <div class="orderitem">Total Price Rs.</div>
-                    <div class="orderitemx">1050/-</div>
-                </div> -->
                 <hr>
                 <hr>
                 <span style="font-size:smaller; display: table; margin: auto; margin-top:10px;">Malwathugoda Auto

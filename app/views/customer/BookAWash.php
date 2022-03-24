@@ -171,32 +171,6 @@ $booked = $_SESSION['booked'];
     </script>
     <script src="/public/js/CustomerCalendar.js"></script>
     <script src="/public/js/CustomerBookAWash.js"></script>
-    <!-- Include price and washpackage cookies if there are any -->
-    <!-- <script>
-        var cookieArray = document.cookie.split(";");
-        var i = 0;
-        var price;
-        var washp;
-        for (i = 0; i < cookieArray.length; i++) {
-            cookieArray[i] = cookieArray[i].trim();
-            if (cookieArray[i].substring(0, 5) === "price") {
-                price = cookieArray[i];
-                let p = price.substring(6);
-                document.getElementById("priceValue").innerHTML = "Rs. " + p;
-                break;
-            }
-        }
-        for (i = 0; i < cookieArray.length; i++) {
-            if (cookieArray[i].substring(0, 11) === "washPackage") {
-                washp = cookieArray[i];
-                let w = washp.substring(12);
-                w = "washPackage-" + w;
-                document.getElementById(w).checked = true;
-                break;
-            }
-        }
-    </script> -->
-
 </body>
 
 <!-- </div> -->
