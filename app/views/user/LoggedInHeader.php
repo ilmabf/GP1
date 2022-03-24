@@ -70,7 +70,7 @@
     <header class="header-desk">
         <div class="header-logo-1"></div>
         <div class="buttons-header-desk">
-            <button class="signupColor"><a href="/user/logout" class="header-button-login">Logout</a></button>
+            <button class="signupColor"><a href="/user/logout" class="header-button-login" onclick="deleteCookie();">Logout</a></button>
         </div>
         <nav>
             <ul>
@@ -87,7 +87,10 @@
             <ul class="nav-nav nav-links">
                 <li><a href="/user/home">Home</a></li>
                 <li><a href="/review/">Reviews</a></li>
-                <li><button style="background-color: #7B113A; border-radius:10px;"><a href="/user/logout" class="header-button-logout">Logout</a></button></li>
+                <li><button style="background-color: #7B113A; border-radius:10px;"><a href="/user/logout" class="header-button-logout" onclick="deleteCookie();">Logout</a></button></li>
             </ul>
         </nav>
     </header>
+
+    
+    <script src="/public/js/UserHeader.js"></script>
