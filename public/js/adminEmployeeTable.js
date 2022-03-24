@@ -186,7 +186,7 @@ function stlEditAttendanceForm(size) {
     var StlAttonWorkData = StlAttonWork.innerHTML;
 
     StlAttonWork.innerHTML =
-      "<input type='text' id='StlAttonWork_text" +
+      "<input type='checkbox' id='StlAttonWork_text" +
       j +
       "' class='td-t3' name='StlAttonWorkData[]' value='" +
       StlAttonWorkData +
