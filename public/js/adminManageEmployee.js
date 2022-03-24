@@ -289,18 +289,19 @@ function validate() {
   }
 }
 
-function viewPhoto(fn, ln,n){
+function viewPhoto(fn, ln, n) {
   console.log(n);
   var x = document.getElementById("stldetails");
   var y = document.getElementById("upcoming");
   console.log(stlTable);
-  for(i=0;i<stlTable.length; i++){
-    if(stlTable[i][0] == n){
+  for (i = 0; i < stlTable.length; i++) {
+    if (stlTable[i][0] == n) {
       var count = i;
     }
   }
-  document.getElementById("stlPhotoID").src = "/public/images/" + stlTable[count]['file_name'];
-  document.getElementById("inputID").value = stlTable[count]['STL_ID'];
+  document.getElementById("stlPhotoID").src =
+    "/public/images/" + stlTable[count]["file_name"];
+  document.getElementById("inputID").value = stlTable[count]["STL_ID"];
   document.getElementById("stlName").innerHTML = fn + " " + ln;
   if (x.style.display === "none") {
     x.style.display = "block";
@@ -310,17 +311,18 @@ function viewPhoto(fn, ln,n){
   }
 }
 
-function viewPhotoManager(fn, ln,n){
+function viewPhotoManager(fn, ln, n) {
   console.log(n);
   var x = document.getElementById("stldetails");
   var y = document.getElementById("upcoming");
   console.log(stlTable);
-  for(i=0;i<stlTable.length; i++){
-    if(stlTable[i][0] == n){
+  for (i = 0; i < stlTable.length; i++) {
+    if (stlTable[i][0] == n) {
       var count = i;
     }
   }
-  document.getElementById("stlPhotoID").src = "/public/images/" + stlTable[count]['file_name'];
+  document.getElementById("stlPhotoID").src =
+    "/public/images/" + stlTable[count]["file_name"];
   // document.getElementById("inputID").value = stlTable[count]['STL_ID'];
   document.getElementById("stlName").innerHTML = fn + " " + ln;
   if (x.style.display === "none") {
@@ -342,9 +344,9 @@ function closestlForm() {
   }
 }
 
-document.getElementById("empAttendance-submit-1").onclick = function(){
+document.getElementById("empAttendance-submit-1").onclick = function () {
   var teams = new Array();
-  for(i=0;i<eDetails.length;i++){
+  for (i = 0; i < eDetails.length; i++) {
     teams[i] = {};
     console.log(document.getElementById("EmpAttTeam_text"+i).value);
     teams[i]['team'] = parseInt(document.getElementById("EmpAttTeam_text"+i).value);
@@ -353,7 +355,7 @@ document.getElementById("empAttendance-submit-1").onclick = function(){
 
   var x = 0;
   const result = teams.reduce(function (r, o) {
-    (r[o.team])? r[o.team] += o.onwork : r[o.team] = o.onwork;
+    r[o.team] ? (r[o.team] += o.onwork) : (r[o.team] = o.onwork);
     return r;
   }, {});
 
@@ -362,9 +364,8 @@ document.getElementById("empAttendance-submit-1").onclick = function(){
     if(result[key] != 3){
       document.getElementById("EmpAttTeam_text0").setCustomValidity("Please insert 3 employees for each team");
       console.log("NO");
-    }
-    else{
+    } else {
       document.getElementById("EmpAttTeam_text0").setCustomValidity("");
     }
   }
-}
+};
