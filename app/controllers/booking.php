@@ -89,13 +89,6 @@ class Booking extends Controller
         }
     }
 
-    // function reschedule()
-    // {
-    //     if ($_SESSION['role'] == "customer") {
-    //         $this->view->render('customer/Reschedule');
-    //     }
-    // }
-
     // upcoming reservations
     function upcoming()
     {
@@ -108,7 +101,6 @@ class Booking extends Controller
                     $myUpcomingReservations[$i] = $_SESSION['upcomingReservations'][$i];
                 }
             }
-            // print_r($myUpcomingReservations);
             $_SESSION['myUpcomingReservations'] = $myUpcomingReservations;
             $this->view->render('customer/UpcomingReservations');
             exit;
@@ -142,7 +134,6 @@ class Booking extends Controller
 
             $reservation = $this->model->getReservationDetails($orderID);
             $date = $reservation[0]['Date'];
-            // echo strtotime($today);
             if (strtotime($date) - strtotime($today) > 86400) {
                 $_SESSION['displayReservationBtn'] = "true";
                 $this->view->render('customer/UpcomingOrder');
@@ -219,7 +210,6 @@ class Booking extends Controller
 
     function makeReservation($details)
     {
-        // echo $details;
         if ($_SESSION['role'] == "customer") {
 
             $details = str_replace('_', ' ', $details);
@@ -297,7 +287,6 @@ class Booking extends Controller
                 }
             } else {
                 $_SESSION['Error'] = "Looks like we already have a reservation for that vehicle at the same time. Please check if you have entered the correct details.";
-                // header("Location: /booking/error");
                 header("Location: /booking/details");
             }
         }
@@ -306,10 +295,8 @@ class Booking extends Controller
     function updateReservation($details, $orderID)
     {
         if ($_SESSION['role'] == "customer") {
-            echo $details;
             $details = str_replace('_', ' ', $details);
             $details = str_replace('|', '/', $details);
-            // echo $details;
             $details = explode(';', $details);
 
             for ($i = 0; $i < sizeof($details); $i++) {
@@ -409,12 +396,9 @@ class Booking extends Controller
 
         if ($_SESSION['role'] == "manager" || $_SESSION['role'] == "customer") {
 
-            // echo "here2";
-            // exit;
             // prevent customers from deleting reservations of other customers by typing in url
             if($_SESSION['role'] == "customer"){
                 if(!isset($_POST['deleteReservationBtn'])){
-                    // echo "here";
                     header("Location: /booking/upcoming");
                     exit;
                 }
@@ -431,29 +415,6 @@ class Booking extends Controller
             }
         }
     }
-
-    // function deleteReschedule($id)
-    // {
-    //     // today
-    //     $today = date("Y-m-d");
-
-    //     // get date and time of reservation
-    //     $reservation = $this->model->getReservationDetails($id);
-    //     $date = $reservation[0]['Date'];
-
-    //     if ($_SESSION['role'] == "customer") {
-    //         // if different of reservation time is more than 24 hours from today date time then delete reservation
-    //         if (strtotime($date) - strtotime($today) > 86400) {
-    //             if ($this->model->deleteReservation($id)) {
-    //                 header("Location: /booking/details");
-    //             }
-    //         } else {
-    //             // session to display cannot cancel reservation
-    //             $_SESSION['cancelReservation'] = "cannot";
-    //             header("Location: /booking/upcomingOrder/" . $id);
-    //         }
-    //     }
-    // }
 
     function rateService($orderID)
     {
