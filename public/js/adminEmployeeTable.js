@@ -238,7 +238,7 @@ function stlSaveForm(id, no) {
 
   var editStl = document.getElementById("editStlHREF" + no);
   editStl.href =
-    "/employee/saveEditEmployee/" +
+    "/employee/saveEditSTL/" +
     id +
     "/" +
     stlcontactNumberVal +

@@ -23,24 +23,24 @@ class Employee extends Controller
         $empAttendance = $this->model->getEmployeeAttendanceDetails();
         $_SESSION['employeeAttendanceDetails'] = $empAttendance;
 
-        $stlData = $this->model->getStlData();
-        $_SESSION['stlData'] = $stlData;
+        // $stlData = $this->model->getStlData();
+        // $_SESSION['stlData'] = $stlData;
 
-        $stlAttendance = $this->model->getStlAttendanceDetails();
-        $_SESSION['stlAttendanceDetails'] = $stlAttendance;
+        // $stlAttendance = $this->model->getStlAttendanceDetails();
+        // $_SESSION['stlAttendanceDetails'] = $stlAttendance;
 
         // manager
         $empData = $this->model->getEmpData();
         $_SESSION['EmpAttendanceData'] = $empData;
 
-        $stlData = $this->model->getStlAttendanceData();
-        $_SESSION['StlAttendanceData'] = $stlData;
+        // $stlData = $this->model->getStlAttendanceData();
+        // $_SESSION['StlAttendanceData'] = $stlData;
 
-        $stlonWorkData = $this->model->getStlOnWorkData();
-        $_SESSION['StlOnWorkData'] = $stlonWorkData;
+        // $stlonWorkData = $this->model->getStlOnWorkData();
+        // $_SESSION['StlOnWorkData'] = $stlonWorkData;
 
-        $stlNotWorkData = $this->model->getStlNotWorkData();
-        $_SESSION['StlNotWorkData'] = $stlNotWorkData;
+        // $stlNotWorkData = $this->model->getStlNotWorkData();
+        // $_SESSION['StlNotWorkData'] = $stlNotWorkData;
 
         $emponWorkData = $this->model->getEmpOnWorkData();
         $_SESSION['EmponWorkData'] = $emponWorkData;
@@ -48,14 +48,14 @@ class Employee extends Controller
         $empNotWorkData = $this->model->getEmpNotWorkData();
         $_SESSION['EmpNotWorkData'] = $empNotWorkData;
 
-        $noOfTeams = $this->model->getTeamCount();
-        $_SESSION['teamCount'] = $noOfTeams;
+        // $noOfTeams = $this->model->getTeamCount();
+        // $_SESSION['teamCount'] = $noOfTeams;
 
         $userData = $this->model->getUserData();
         $_SESSION['userData'] = $userData;
 
-        $stlTableData = $this->model->getStlDetails();
-        $_SESSION['stlTableData'] = $stlTableData;
+        // $stlTableData = $this->model->getStlDetails();
+        // $_SESSION['stlTableData'] = $stlTableData;
 
         // foreach ($_SESSION['userData'] as $stl) {
         //     echo $stl['Email'];
@@ -72,11 +72,11 @@ class Employee extends Controller
 
     function serviceTeamLeaders(){
         // stl
-        $empDetails = $this->model->getEmployeeDetails();
-        $_SESSION['employeeDetails'] = $empDetails;
+        // $empDetails = $this->model->getEmployeeDetails();
+        // $_SESSION['employeeDetails'] = $empDetails;
 
-        $empAttendance = $this->model->getEmployeeAttendanceDetails();
-        $_SESSION['employeeAttendanceDetails'] = $empAttendance;
+        // $empAttendance = $this->model->getEmployeeAttendanceDetails();
+        // $_SESSION['employeeAttendanceDetails'] = $empAttendance;
 
         $stlData = $this->model->getStlData();
         $_SESSION['stlData'] = $stlData;
@@ -85,8 +85,8 @@ class Employee extends Controller
         $_SESSION['stlAttendanceDetails'] = $stlAttendance;
 
         // manager
-        $empData = $this->model->getEmpData();
-        $_SESSION['EmpAttendanceData'] = $empData;
+        // $empData = $this->model->getEmpData();
+        // $_SESSION['EmpAttendanceData'] = $empData;
 
         $stlData = $this->model->getStlAttendanceData();
         $_SESSION['StlAttendanceData'] = $stlData;
@@ -97,14 +97,14 @@ class Employee extends Controller
         $stlNotWorkData = $this->model->getStlNotWorkData();
         $_SESSION['StlNotWorkData'] = $stlNotWorkData;
 
-        $emponWorkData = $this->model->getEmpOnWorkData();
-        $_SESSION['EmponWorkData'] = $emponWorkData;
+        // $emponWorkData = $this->model->getEmpOnWorkData();
+        // $_SESSION['EmponWorkData'] = $emponWorkData;
 
-        $empNotWorkData = $this->model->getEmpNotWorkData();
-        $_SESSION['EmpNotWorkData'] = $empNotWorkData;
+        // $empNotWorkData = $this->model->getEmpNotWorkData();
+        // $_SESSION['EmpNotWorkData'] = $empNotWorkData;
 
-        $noOfTeams = $this->model->getTeamCount();
-        $_SESSION['teamCount'] = $noOfTeams;
+        // $noOfTeams = $this->model->getTeamCount();
+        // $_SESSION['teamCount'] = $noOfTeams;
 
         $userData = $this->model->getUserData();
         $_SESSION['userData'] = $userData;
@@ -301,6 +301,22 @@ class Employee extends Controller
 
             if ($this->model->employeeSaveEdit($empId, $values)) {
                 header("Location: /employee/");
+            }
+        }
+    }
+
+    function saveEditSTL($empId, $contactNumberVal, $emailData, $salaryData)
+    {
+        // echo $empId;
+        // echo $contactNumberVal;
+        // echo $emailData;
+        if ($_SESSION['role'] == "systemadmin") {
+
+            $values = array($contactNumberVal, $emailData, $salaryData);
+            // print_r($values);
+
+            if ($this->model->employeeSaveEdit($empId, $values)) {
+                header("Location: /employee/serviceTeamLeaders");
             }
         }
     }
