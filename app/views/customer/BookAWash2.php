@@ -34,17 +34,6 @@ include 'views/user/LoggedInHeader.php';
         echo "</div>";
     }
     ?>
-    <?php
-    $i = 0;
-    while ($i < sizeof($_SESSION['address'])) {
-        echo "<option value='";
-        echo $i + 1;
-        echo "'>";
-        echo $_SESSION['address'][$i]['Address'];
-        echo "</option>";
-        $i = $i + 1;
-    }
-    ?>
 </div>
 
 <div id="msg"></div>

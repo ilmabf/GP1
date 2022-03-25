@@ -52,7 +52,6 @@ $booked = $_SESSION['booked'];
         <div class="vehicleWash">
             <div class="select-vehicle">
                 <h3>Select your vehicle</h3>
-                <!-- <?php print_r($booked); ?> -->
                 <?php
                 if (sizeof($_SESSION['vehicles']) == 0) {
                     echo "<p style = 'font-size:initial;'>Please add your vehicle/s in your account page.</p>";
@@ -72,17 +71,6 @@ $booked = $_SESSION['booked'];
                     }
                     echo "</select>";
                     echo "</div>";
-                }
-                ?>
-                <?php
-                $count  = 0;
-                while ($count < sizeof($_SESSION['vehicles'])) {
-                    echo "<option value='";
-                    echo $vehicles[$count]['VID'];
-                    echo "' onclick = 'clearWashPackage();'>";
-                    echo $vehicles[$count]['VID'];
-                    echo "</option>";
-                    $count = $count + 1;
                 }
                 ?>
             </div>

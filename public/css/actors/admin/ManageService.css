@@ -5,7 +5,8 @@
     font-size: larger;
 }
 .serviceManage,.vehicleManage,.priceManage{
-    display: block;
+    /* display: block; */
+    flex: 1;
     margin-left: 20px;
     margin-right: 20px;
 }
@@ -31,7 +32,8 @@
 }
 
 .serviceManageBox{
-    display: flex;
+    /* width: 50%; */
+    /* display: flex; */
     flex-wrap: wrap;
     text-align: center;
     margin: 35px 80px;
@@ -45,37 +47,46 @@
 
 .typeServices{
     text-align: center;
-    margin: auto auto;
-    padding: 20px 40px;
+    /* margin: auto auto auto auto; */
+    padding: 10px;
     background-color: white;
-    border-radius: 27px;
-    /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); */
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
     font-weight: 500;
     cursor: pointer;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
+.typeServices:hover, .typeVehicles:hover{
+    color: white;
+    background-color: #193498;
+}
 .vehicleManageBox{
-    display: flex;
-    flex-wrap: wrap;
+        /* display: flex; */
+    /* flex-wrap: wrap; */
     text-align: center;
     margin: 35px 80px;
     padding: 10px 20px;
     background-color: whitesmoke;
     border-radius: 27px;
-    /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);  */
+    /* box-shadow: 0 3px 10px rgb(0 0 0 / 40%); */
     padding-top: 40px;
     padding-bottom: 40px;
+    /* width: 50%; */
 }
 
 .typeVehicles{
     text-align: center;
-    margin: auto;
-    padding: 20px 40px;
+    /* margin: auto auto auto auto; */
+    padding: 10px;
     background-color: white;
-    border-radius: 27px;
-    /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); */
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
     font-weight: 500;
     cursor: pointer;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .priceManageBox{
@@ -95,7 +106,7 @@
     text-align: center;
     margin: auto auto;
     padding: 20px 40px;
-    background-color: white;
+    /* background-color: white; */
     border-radius: 27px;
     /* box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4); */
     font-weight: 500;

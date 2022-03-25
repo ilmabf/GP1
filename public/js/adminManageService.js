@@ -32,7 +32,7 @@ Price();
 
 function openAddServiceForm() {
   var x = document.getElementById("serviceForm");
-  var y = document.getElementById("service");
+  var y = document.getElementById("manageService");
   if (x.style.display === "none") {
     x.style.display = "block";
     y.classList.add("blur");
@@ -43,7 +43,7 @@ function openAddServiceForm() {
 
 function closeAddServiceForm() {
   var x = document.getElementById("serviceForm");
-  var y = document.getElementById("service");
+  var y = document.getElementById("manageService");
   if (x.style.display === "block") {
     x.style.display = "none";
     y.classList.remove("blur");
@@ -62,7 +62,7 @@ function openViewServiceForm(i) {
   document.getElementById("deleteServiceButton").href =
     "/service/deleteWashPackage/" + pausecontent[i]["Wash_Package_ID"];
   console.log(pausecontent[i]["Description"]);
-  var y = document.getElementById("service");
+  var y = document.getElementById("manageService");
   if (x.style.display === "none") {
     x.style.display = "block";
     y.classList.add("blur");
@@ -73,7 +73,7 @@ function openViewServiceForm(i) {
 
 function closeViewServiceForm() {
   var close = document.getElementById("viewserviceForm");
-  var y = document.getElementById("service");
+  var y = document.getElementById("manageService");
   close.style.display = "none";
   y.classList.remove("blur");
 }
@@ -87,7 +87,7 @@ function openViewVehicleType(i) {
   str = str.replace(/-/g, "|");
   document.getElementById("deleteVehicle").href =
     "/service/deleteVehicleType/" + str;
-  var y = document.getElementById("service");
+  var y = document.getElementById("manageService");
   if (x.style.display === "none") {
     x.style.display = "block";
     y.classList.add("blur");
@@ -98,7 +98,7 @@ function openViewVehicleType(i) {
 
 function closeViewVehicleType() {
   var x = document.getElementById("viewVehicleType");
-  var y = document.getElementById("service");
+  var y = document.getElementById("manageService");
   if (x.style.display === "block") {
     x.style.display = "none";
     y.classList.remove("blur");
@@ -109,7 +109,7 @@ function closeViewVehicleType() {
 
 function openVehicleAddForm() {
   var x = document.getElementById("vehicleAddForm");
-  var y = document.getElementById("service");
+  var y = document.getElementById("manageService");
   if (x.style.display === "none") {
     x.style.display = "block";
     y.classList.add("blur");
@@ -120,7 +120,7 @@ function openVehicleAddForm() {
 
 function closeVehicleAddForm() {
   var x = document.getElementById("vehicleAddForm");
-  var y = document.getElementById("service");
+  var y = document.getElementById("manageService");
   if (x.style.display === "block") {
     x.style.display = "none";
     y.classList.remove("blur");

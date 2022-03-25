@@ -174,17 +174,8 @@ include 'views/user/LoggedInHeader.php';
 
                     <div id="emp-attendance-submit">
                         <input type="submit" id="stlAttendance-submit-1" value="Submit">
-
-                    </div>
-                    <div>
-                        <?php if ($_SESSION['insertSuccess'] == "Stl On work error") { ?>
-                            <div class="error-message">
-                                <?php echo "Insert 0 or 1 on On Work" ?>
-                            </div>
-                        <?php } ?>
                     </div>
                 </div>
-
             </div>
 
         </div>

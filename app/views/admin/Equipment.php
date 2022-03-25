@@ -98,8 +98,8 @@ $teams = $_SESSION['teamDetails'];
                 <td class="td-t1" style="text-align:right"><?php echo $items[$count]['Total'] ?></td>
                 <td class="td-t1"><?php echo $items[$count]['Free'] ?></td>
                 <td>
-                  <input type="button" class="edit_btn td-t1" value="View All Items" onclick="viewAllEquipment(<?php echo $items[$count]['Item_Id'] ?>)">
-                  <input type="button" class="edit_btn td-t1" value="View Free Items" onclick="viewFreeEquipment(<?php echo $items[$count]['Item_Id'] ?>)">
+                  <input type="button" class="edit_btn td-t1" value="View All Items" onclick="viewAllEquipment(<?php echo $items[$count]['Item_Id'] ?> , <?php echo $count ?>)">
+                  <input type="button" class="edit_btn td-t1" value="View Free Items" onclick="viewFreeEquipment(<?php echo $items[$count]['Item_Id'] ?> , <?php echo $count ?>)">
                 </td>
               </tr>
             <?php $count = $count + 1;
