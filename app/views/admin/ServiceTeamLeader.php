@@ -128,15 +128,15 @@ include 'views/user/LoggedInHeader.php';
 
                 <div id="stlAttendanceTable">
 
-                    <span id="stlAttendanceSearch">
+                    <!-- <span id="stlAttendanceSearch">
                         <div class="Admin-EmpSearch adEmpSearch1">
                             <input type="search" class="ad-Emp-Search" id="stlonWorkSearch" onkeyup="myFunction1()" placeholder="Search for STL..." title="Type in a name">
                         </div>
-                    </span>
+                    </span> -->
 
-                    <span id="todayDate1" style="float: right; background-color:blue; color:white;">
+                    <div id="todayDate1" style="text-align:center; background-color:blue; color:white;">
                         <?php echo date("d-m-Y"); ?>
-                    </span>
+                    </div>
 
                     <table id="filterTable3">
                         <thead>
@@ -174,21 +174,20 @@ include 'views/user/LoggedInHeader.php';
 
                     <div id="emp-attendance-submit">
                         <input type="submit" id="stlAttendance-submit-1" value="Submit">
-
                     </div>
                 </div>
-
-
             </div>
+
         </div>
+    </div>
 
-        <div style="min-height: 200px;"></div>
+    <div style="min-height: 200px;"></div>
 
-        <script>
-            var stlTable = <?php echo json_encode($_SESSION['stlTableData']); ?>;
-        </script>
-        <script src="/public/js/AdminEmployeeTable.js"></script>
-        <script src="/public/js/AdminManageEmployee.js"></script>
+    <script>
+        var stlTable = <?php echo json_encode($_SESSION['stlTableData']); ?>;
+    </script>
+    <script src="/public/js/AdminEmployeeTable.js"></script>
+    <script src="/public/js/AdminManageEmployee.js"></script>
 
-        <script src="/public/js/AdminManageSTL.js"></script>
+    <script src="/public/js/AdminManageSTL.js"></script>
 </main>
