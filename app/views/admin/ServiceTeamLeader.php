@@ -185,28 +185,6 @@ include 'views/user/LoggedInHeader.php';
                     </div>
                 </div>
 
-          <?php
-            $result = $_SESSION['stlTableData'];
-            $result1 = $_SESSION['StlAttendanceData'];
-            $count = 0;
-            while ($count < sizeof($result)) { ?>
-            <?php $imgUrl = '/public/images/' . $result[$count]['file_name']; ?>
-            <span class="row" style="text-align: center;">
-              <span class="col-md-4 viewPhotos vp2">
-                <img src="<?php echo $imgUrl ?>" alt="<?php echo $result[$count]['file_name'] ?>" class="img-thumbnail" style="height:300px; width:300px; object-fit:contain;">
-                <div style="margin-top: -60px;"><b><?php echo $result1[$count]['First_Name'] ?> <?php echo $result1[$count]['Last_Name'] ?></b></div>
-
-                <form action="/employee/updateStlImage/" method="POST" enctype="multipart/form-data">
-                  <input type="file" name="file" class="upload_image" id="file">
-                  <input type="submit" id="upload" class="edit_btn" value="Update">
-                  <input type="hidden" name="stl_id" value="<?php echo $result[$count]['STL_ID'] ?>">
-                </form>
-              </span>
-            </span>
-          <?php $count = $count + 1;
-            } ?>
-
-        </div> -->
 
             </div>
         </div>

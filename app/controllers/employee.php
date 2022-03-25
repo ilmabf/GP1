@@ -272,7 +272,6 @@ class Employee extends Controller
     function insertEmpAttendance($teams)
     {
         $AttendanceArray=  json_decode($teams,true);
-        print_r(array($AttendanceArray));
         if ($_SESSION['role'] == "systemadmin") {
             $flag1 = 0;
             for ($k = 0; $k < sizeof($_SESSION['employeeAttendanceDetails']); $k++) {
@@ -283,8 +282,8 @@ class Employee extends Controller
                 }
             }
 
-            for ($k = 0; $k < sizeof($_SESSION['employeeAttendanceDetails']); $k++) {
-                $this->model->insertAttendance_emp($_SESSION['employeeAttendanceDetails'][$k]['Employee_ID'], $_POST['EmpAttTeamData'][$k], $_POST['EmpAttonWorkData'][$k]);
+            if ($flag1 == 1) {
+                $_SESSION['insertSuccess'] = "On work error";
             }
             header("Location: /employee/");
         }
@@ -293,23 +292,12 @@ class Employee extends Controller
     function insertStlAttendance($teams)
     {
         $AttendanceArray=  json_decode($teams,true);
-        print_r(array($AttendanceArray));
         if ($_SESSION['role'] == "systemadmin") {
 
             for ($l = 0; $l < sizeof($_SESSION['stlAttendanceDetails']); $l++) {
                 $this->model->insertAttendance_stl($_SESSION['stlAttendanceDetails'][$l]['Employee_ID'], $_SESSION['stlAttendanceDetails'][$l]['STL_ID'], $AttendanceArray[$l]['onwork']);
             }
-
             header("Location: /employee/serviceTeamLeaders");
-        }
-    }
-
-    function noofTeams()
-    {
-        if ($_SESSION['role'] == "systemadmin") {
-            $noOfTeams = $_POST['teamCount'];
-            $this->model->updateNoOfTeams($noOfTeams);
-            header("Location: /employee/");
         }
     }
 }
