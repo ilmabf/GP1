@@ -14,7 +14,6 @@ $teams = $_SESSION['teamDetails'];
 
   <div id="equipmentNewBtns">
     <input type="button" id="addNewRow" value="Add Equipment" style="display:inline-block;text-align:center;" onclick="addNewRow();" />
-    <!-- <input type="button" id="addNewCategoryRow" value="Add Category" style="display:inline-block;text-align:center;" onclick="addNewCategroyRow();" /> -->
   </div>
 
   <div id="addAnewCategory">
@@ -49,7 +48,6 @@ $teams = $_SESSION['teamDetails'];
         <input type="submit" id="submitButton" value="Insert Data" />
       </form>
     </div>
-    <!-- </div> -->
 
     <!-- stock-->
 

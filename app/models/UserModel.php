@@ -106,7 +106,6 @@ class UserModel extends Model
 
     public function updateUserPassword($email, $newPassword)
     {
-        // $result = $this->db->update("users", 'PASSWORD', $newPassword, "WHERE Email = '$email';");
         $columnValue = $newPassword;
         $conditionParam =  ':email';
         $conditionValue = $email;
@@ -118,26 +117,13 @@ class UserModel extends Model
 
     public function deletePwdTempTable($email)
     {
-        // $result = $this->db->delete("password_reset_temp", "WHERE email = '$email';");
         $result = $this->db->delete("password_reset_temp", "WHERE email = :email;", ':email', $email);
         if ($result == "Success") {
             return true;
         } else print_r($result);
     }
 
-    // -------------------- Account details --------------------------------------- // 
-    // public function getCustDetails($uname)
-    // {
-    //     $result = $this->db->select("*", "users", "INNER JOIN customer on users.User_ID = customer.User_ID WHERE (Username = '$uname' OR Email = '$uname');");
-    //     return $result;
-    // }
-
-    // public function getVehicles($uid)
-    // {
-    //     $result = $this->db->select("*", "customer_vehicle", "WHERE User_ID = '$uid';");
-    //     return $result;
-    // }
-
+    // -------------------- Account details --------------------------------------- //
     public function getVehicles($uid)
     {
         $result = $this->db->select("*", "customer_vehicle", "WHERE User_ID = :uid;", ':uid', $uid);

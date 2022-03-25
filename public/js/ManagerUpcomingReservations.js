@@ -2,7 +2,6 @@ $('#ManagerUpcomingDate').datepicker({
   dateFormat: 'yy-mm-dd',
   onSelect: function(date) {
 
-      // document.getElementById("managerUpcomingReservations").innerHTML = '';
       document.getElementById("upcomingReservationTable").innerHTML = '';
       var i = 0;
       var list = [];
@@ -20,7 +19,6 @@ $('#ManagerUpcomingDate').datepicker({
               list.push(order);
           }
       }
-      // var x = document.getElementById("managerUpcomingReservations");
       var x = document.getElementById("upcomingReservationTable");
 
       document.getElementById('resCount').innerHTML = list.length;

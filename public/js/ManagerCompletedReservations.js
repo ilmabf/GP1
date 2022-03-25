@@ -51,7 +51,6 @@ $('#ManagerCompletedDate').datepicker({
 function viewList() {
   var x = document.getElementById("completedReservationTable");
   document.getElementById('resCount').innerHTML = orders.length;
-  // document.getElementById("managerCompleteReservations").innerHTML = '';
 
   for (j = 0; j < orders.length; j++) {
       if (orders[j]['Reservation_ID'].length == 1) {

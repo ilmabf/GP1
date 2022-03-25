@@ -64,7 +64,6 @@ include 'views/user/LoggedInHeader.php';
             <div class="typesBox">
                 <form action="" method="post">
                     <select name="washType" id="admin-wash-types" onchange="Price()">
-                        <!-- <option value="Choose a service type">Choose a service type</option> -->
                         <?php
                         $i = 0;
                         ?>
@@ -86,7 +85,6 @@ include 'views/user/LoggedInHeader.php';
             <div class="typesBox">
                 <form action="" method="post">
                     <select name="vehicleType" id="admin-vehicle-types" onchange="Price()">
-                        <!-- <option value="Choose a vehicle">Choose a vehicle</option> -->
                         <?php
                         $i = 0;
                         ?>

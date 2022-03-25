@@ -1,6 +1,5 @@
 <?php
 date_default_timezone_set("Asia/Colombo");
-// echo date_default_timezone_get();
 
 include 'views/user/LoggedInHeader.php';
 $orderList = $_SESSION['todayReservations'];
@@ -50,24 +49,6 @@ $orderList = $_SESSION['todayReservations'];
                     </div>
                 <?php $count = $count - 1;
                 } ?>
-                <!--<div class="sub-box1">
-                    <div class="order">
-                        <div class="orderitem">Service</div>
-                        <p class="orderitem1">Interior</p>
-                    </div>
-                    <div class="order">
-                        <div class="orderitem">Vecicle No</div>
-                        <p class="orderitem1">AD - 2234</p>
-                    </div>
-                    <div class="order">
-                        <div class="orderitem">Time</div>
-                        <p class="orderitem1">8 am - 10 am</p>
-                    </div>
-                    <div class="orderView">
-                        <p class="viewLink"><a href="/calendar/orderDetails">View order</a></p>
-                    </div>
-                </div> -->
-
             </div>
         </div>
         <div style="min-height: 110px;"></div>

@@ -4,7 +4,6 @@ function viewAllEquipment(n) {
   var EquipmentToDisplay = [];
   itemID = n; //for filter team vise from equipment table(team vise 2)
   for (i = 0; i < equipment.length; i++) {
-    // console.log(equipment[i]);
     if (equipment[i]["Item_Id"] == n) {
       var TempEq = [];
       TempEq["Equipment_ID"] = equipment[i]["Equipment_ID"];

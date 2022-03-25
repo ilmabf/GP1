@@ -177,12 +177,9 @@ function empEditAttendanceForm(size) {
 
 function stlEditAttendanceForm(size) {
   document.getElementById("editStlAttButton").style.display = "none";
-  // var StlAttTeam = document.getElementById("AttStl_Team_row" + no);
   var j = 0;
   for (j = 0; j < size; j++) {
     var StlAttonWork = document.getElementById("AttStl_onWork_row" + j);
-
-    // var StlAttTeamData = StlAttTeam.innerHTML;
     var StlAttonWorkData = StlAttonWork.innerHTML;
 
     StlAttonWork.innerHTML =

@@ -4,7 +4,6 @@ function viewAllEquipment(n) {
   var EquipmentToDisplay = [];
   itemID = n; //for filter team vise from equipment table(team vise 2)
   for (i = 0; i < equipment.length; i++) {
-    // console.log(equipment[i]);
     if (equipment[i]["Item_Id"] == n) {
       var TempEq = [];
       TempEq["Equipment_ID"] = equipment[i]["Equipment_ID"];
@@ -20,7 +19,6 @@ function viewAllEquipment(n) {
     }
   }
 
-  // "<td style='text-align:left' class='td-t1'> " + EquipmentToDisplay[j]['Name'] + " </td>" +
   var x = document.getElementById("Equipment");
   console.log(EquipmentToDisplay);
   for (j = 0; j < EquipmentToDisplay.length; j++) {
@@ -127,7 +125,6 @@ function viewFreeEquipment(n) {
     }
   }
 
-  // "<td style='text-align:left' class='td-t1'> " + EquipmentToDisplay[j]['Name'] + " </td>" +
   var x = document.getElementById("FreeEquipment");
   for (j = 0; j < EquipmentToDisplay.length; j++) {
     x.innerHTML +=
@@ -233,15 +230,11 @@ function getTeamvise1() {
       ".00</td>" +
       "<td class='td-t1'>" +
       EquipmentToDisplay[j]["Date_Acquired"] +
-      "</td>" +
-      // "<td id='assignedTeam_row" + j + "' class='td-t1' style='text-align:right'>" + EquipmentToDisplay[j]['Team'] + "</td>" +
-      // "<td> <input type='button' id='edit_equip_btn" + j + "' class='edit_btn td-t1' value='Assign a Team' onclick='editEquipment(" + j + ")'>" +
-      "<td><input type='button' id='edit_equip_btn" +
+      "</td>" + "<td><input type='button' id='edit_equip_btn" +
       j +
       "' class='edit_btn td-t1' value='Mark as returned' onclick='markAsReturned(" +
       EquipmentToDisplay[j]["Equipment_ID"] +
       ")'>" +
-      // "<a href='' id='editLink" + j + "'><input style='margin: auto;' type='submit' id='save_equip_btn" + j + "' class='save_btn' value='Save' onclick='saveEquipment(" + EquipmentToDisplay[j]['Equipment_ID'] + "," + j + ")'></a>" +
       "</td> <td><a href='/service/deleteEquipment/" +
       EquipmentToDisplay[j]["Equipment_ID"] +
       "'> <input type='button' class='del_btn td-t1' value='Delete' onclick='deleteEquipment(" +
@@ -265,7 +258,6 @@ function getTeamvise2() {
       var TempEq = [];
       TempEq["Equipment_ID"] = equipment[i]["Equipment_ID"];
       TempEq["ItemCode"] = equipment[i]["ItemCode"];
-      // TempEq['Model'] = equipment[i]['Model'];
       for (j = 0; j < items.length; j++) {
         if (equipment[i]["Item_Id"] == items[j]["Item_Id"]) {
           TempEq["Model"] = items[j]["Name"];
@@ -302,13 +294,11 @@ function getTeamvise2() {
       "' class='td-t1' style='text-align:right'>" +
       EquipmentToDisplay[j]["Team"] +
       "</td>" +
-      // "<td> <input type='button' id='edit_equip_btn" + j + "' class='edit_btn td-t1' value='Assign a Team' onclick='editEquipment(" + j + ")'>" +
       "<td><input type='button' id='edit_equip_btn" +
       j +
       "' class='edit_btn td-t1' value='Mark as returned' onclick='markAsReturned(" +
       EquipmentToDisplay[j]["Equipment_ID"] +
       ")'>" +
-      // "<a href='' id='editLink" + j + "'><input style='margin: auto;' type='submit' id='save_equip_btn" + j + "' class='save_btn' value='Save' onclick='saveEquipment(" + EquipmentToDisplay[j]['Equipment_ID'] + "," + j + ")'></a>" +
       "</td> <td><a href='/service/deleteEquipment/" +
       EquipmentToDisplay[j]["Equipment_ID"] +
       "'> <input type='button' class='del_btn td-t1' value='Delete' onclick='deleteEquipment(" +
@@ -334,11 +324,6 @@ arrHead = ["Category", "Model", "Item Code", "Price", "Date Acquired", ""];
 var submitBtn = document.getElementById("submitButton");
 var div1 = document.getElementById("container1");
 
-//var arrHeader = new Array();	// array for header.
-//    arrHeader = ['Equipment ID', 'Team',''];
-//var saveBtn = document.getElementById('saveButton');
-//var div2 = document.getElementById('container2');
-
 // first create TABLE structure with the headers.
 function createEquipTable() {
   var equipTable = document.createElement("table");
@@ -361,10 +346,6 @@ function addNewRow() {
   submitBtn.style.display = "block";
   document.getElementById("addAnewCategory").style = "display:none;";
   document.getElementById("newEquipTable").style = "display:block;";
-
-  //saveBtn.style.display = "none";
-  //div2.style.display = "none";
-
   var equipTab = document.getElementById("equipTable");
 
   var rowCnt = equipTab.rows.length; // table row count.
@@ -408,7 +389,6 @@ function addNewRow() {
         ele3.setAttribute("value", "Add");
         ele3.setAttribute("onclick", "addItem()");
         ele3.setAttribute("id", "addNewCategoryItem");
-        // ele3 max width is 30px
         ele3.style.width = "30px";
         ele3.style.height = "20px";
         ele3.style.marginLeft = "5px";
@@ -423,7 +403,6 @@ function addNewRow() {
         ele3.style.padding = "0px";
         ele3.style.cursor = "pointer";
         ele3.innerHTML = "Add";
-        //ele.setAttribute('maxlength', '50');items
 
         for (i = 0; i < items.length; i++) {
           var op = document.createElement("option");
@@ -473,11 +452,6 @@ function addNewRow() {
 
         td.appendChild(ele);
       }
-
-      // ele.setAttribute('value', '');
-      // ele.setAttribute('id', 'tb-input');
-
-      // td.appendChild(ele);
     }
   }
 }
@@ -485,7 +459,6 @@ function addNewRow() {
 // delete TABLE row function.
 function removeRow1(removeButton1) {
   var equipTab = document.getElementById("equipTable");
-  // equipTab.deleteRow(removeButton1.parentNode.parentNode.rowIndex); // button -> td -> tr.
   if (equipTab.rows.length > 2) {
     equipTab.deleteRow(2);
   }

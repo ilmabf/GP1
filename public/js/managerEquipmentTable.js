@@ -2,7 +2,7 @@ const searchInput = document.getElementById('adminSearchItem-manager')
 const table = document.getElementById('ItemTable-manager')
 const trArray = Array.prototype.slice.call(table.querySelectorAll('tbody tr'))
 
-const ItemTable-manager = event => {
+const ItemTable_manager = event => {
 
   const searchTerm = event.target.value.toLowerCase()
   trArray.forEach(row => {
@@ -15,4 +15,4 @@ const ItemTable-manager = event => {
     })
   })
 }
-searchInput.addEventListener('keyup', ItemTable-manager, false)
+searchInput.addEventListener('keyup', ItemTable_manager, false)

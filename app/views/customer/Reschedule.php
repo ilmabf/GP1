@@ -86,19 +86,6 @@ $reservationDetails = $_SESSION['reservationDetails'];
                     <?php
                     $i = 0;
                     while ($i < sizeof($_SESSION['washpackages'])) {
-                        // if ($reservationDetails[0]['Wash_Package_ID'] === $_SESSION['washpackages'][$i]['Wash_Package_ID']) {
-                        //     echo "<div class='wash-select-radio'>";
-                        //     echo "<input type = 'radio' checked name='washType' class='washType1' value='Interior Cleaning' id='";
-                        //     echo $i;
-                        //     echo "'";
-                        //     echo " onclick='getWashPackage(";
-                        //     echo $i;
-                        //     echo ")' >";
-                        //     echo "<label for = 'washType'> ";
-                        //     echo $_SESSION['washpackages'][$i]['Name'];
-                        //     echo "</label>";
-                        //     echo "</div>";
-                        // } else {
                         echo "<div class='wash-select-radio'>";
                         echo "<input type = 'radio' name='washType' class='washType1' value='Interior Cleaning' id='washPackage-";
                         echo $_SESSION['washpackages'][$i]['Wash_Package_ID'];
@@ -110,25 +97,9 @@ $reservationDetails = $_SESSION['reservationDetails'];
                         echo $_SESSION['washpackages'][$i]['Name'];
                         echo "</label>";
                         echo "</div>";
-                        // }
                         $i = $i + 1;
                     }
                     ?>
-                    <!-- <div class="wash-select-radio">
-                        <input type="radio" name="washType" id="interiorCleaning" class="washType1" value="Interior Cleaning" checked>
-                        <label for="washType">Interior Cleaning</label>
-                    </div>
-
-                    <div class="wash-select-radio">
-                        <input type="radio" name="washType" id="interior&ExteriorCleaning" class="washType1" value="Exterior Washing & Interior Cleaning">
-                        <label for="washType">Exterior Washing & Interior Cleaning</label>
-                    </div>
-
-                    <div class="wash-select-radio">
-                        <input type="radio" name="washType" id="interior&ExteriorCleaning" class="washType1" value="Sanitization">
-                        <label for="washType">Sanitization</label>
-                    </div> -->
-
                 </form>
 
             </div>
@@ -136,21 +107,11 @@ $reservationDetails = $_SESSION['reservationDetails'];
         <div id="dd"></div>
         <div class="next-pg">
             <?php
-            // echo $_SESSION['servicePrice'][0]['Price'];
-            // echo $reservationDetails[0]['Price'];
-            // if ($reservationDetails[0]['Price'] === $_SESSION['servicePrice'][0]['Price']) {
-            //     echo '<span class="priceBox" id="priceValue1">';
-            //     echo "Rs. " .$reservationDetails[0]['Price'];
-            //     echo "</span>";
-            // } else {
             echo '<span class="priceBox" style="display:block;" id="priceValue1">';
             echo "Rs. " . $reservationDetails[0]['Price'];
             echo "</span>";
-            // }
             ?>
             <button class="next-button" onclick="checkRescheduleDetails('<?php echo $rescheduleID; ?>');">Next</button>
-
-            <!-- <a href="/booking/location" style="color: white;">Next</a></button> -->
         </div>
     </div>
 
@@ -194,5 +155,3 @@ $reservationDetails = $_SESSION['reservationDetails'];
         var prices = <?php echo json_encode($_SESSION['servicePrice']); ?>;
     </script>
 </body>
-
-<!-- </div> -->

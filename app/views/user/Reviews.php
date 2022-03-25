@@ -1,7 +1,6 @@
 <div class="bgImage">
 
     <?php
-    // echo getcwd();
     if (isset($_SESSION['login'])) {
         include 'views/user/LoggedInHeader.php';
     } else {

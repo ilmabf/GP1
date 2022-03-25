@@ -33,7 +33,6 @@
                 <input class="input-box" type="text2" name="model" maxlength="50" automatic placeholder="Eg:- Aqua" pattern="[^'?()/><\][\\\x22,;|]+" required>
                 <br>
                 <label for="Color" style="padding: 0px 139px 0px 0px;">Color</label>
-                <!-- <input type="color" name="color" required> -->
                 <select name="color" class="myColorTypes" id="editMyColor" style="margin: 10px 0px;     width: 50%;">
                     <option value="Silver">Silver</option>
                     <option value="White">White</option>
@@ -89,7 +88,6 @@
                 <input class="input-box" type="text2" name="model" autofocus placeholder="123456" id="editModel" pattern="[^'?()/><\][\\\x22,;|]+" required>
                 <br>
                 <label for="Color" style="padding: 0px 139px 0px 0px;">Color</label>
-                <!-- <input type="color" id="editColor" name="color" required> -->
                 <select name="color" class="colorTypes" id="editColor" style="margin: 10px 0px;     width: 50%;">
                     <option value="Silver">Silver</option>
                     <option value="White">White</option>
@@ -268,7 +266,6 @@
 </script>
 <script src="/public/js/CustomerAccount.js"></script>
 <script src="/public/js/Maps.js"></script>
-<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxvVN9pPMljGjWLvUGWGisQwGUUMSOHco&callback=myMap&v=weekly"> -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFq7IClah9EyedO6MTv12hIzbW_Iq-Aq8&callback=myMap&v=weekly">
 </script>
 <script async>

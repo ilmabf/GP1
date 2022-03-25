@@ -11,12 +11,6 @@ $result = $_SESSION['employeeDetails'];
 </div>
 
 <div style="height: 50px;"></div>
-
-
-<!-- <div style="color: blue; margin-left: 50px; margin-bottom:20px; text-align:center;">
-  <h3 style="color:#193498;"><?php echo date('Y-m-d') ?></h3>
-  <p style="margin-bottom: 10px; color:#193498;">No of Teams : <?php echo $_SESSION['teamCount'][0]['team'] ?></p>
-</div> -->
 <div class="main-Mg-EmpSearch">
 
 
@@ -25,7 +19,6 @@ $result = $_SESSION['employeeDetails'];
   <div class="Table-search" style="margin-bottom: 60px;">
 
     <div class="table-wrapper">
-      <!-- <h3 style="margin-bottom: 20px; color:#193498;">Employee</h3> -->
       <div style="display:inline-block; width: 100%;">
         <div class="Admin-EmpSearch adEmpSearch1">
           <input type="search" class="ad-Emp-Search" id="managerSearchEmployee" placeholder="Search for Employee..." title="Type in a name">
@@ -153,8 +146,6 @@ $result = $_SESSION['employeeDetails'];
 
 
   <div style="min-height: 110px;"></div>
-
-  <!-- <script src="/public/js/ManagerEmployeeTable.js"></script> -->
   <script src="/public/js/AdminManageEmployee.js"></script>
   <script src="/public/js/AdminEmployeeTable.js"></script>
   <script src="/public/js/ManagerEmployeeTable.js"></script>

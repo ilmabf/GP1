@@ -5,25 +5,9 @@ class BookingModel extends Model
     public function getBookedDates()
     {
         $teams = $this->db->select("team", "teamcount", "WHERE countID = '1';");
-        // echo $teams[0][0];
-        //$stlCount = $_SESSION['rowCount'];
-        // echo $teams;
         $selection1 = array("Date", "Time", "count(Reservation_ID) as NoOfBooking");
 
         $groupedSlots = $this->db->select($selection1, "reservation", "GROUP BY Date, Time;");
-        // print_r($groupedSlots);
-        // echo $groupedSlots[0]['Date'];
-
-        // define a multidimensional array to hold the data
-        // $bookedDates = array();
-        // foreach ($groupedSlots as $slot) {
-        //     if ($slot[2] == $stlCount) {
-        //         // push the $slot[0] & $slot[1] the multidimensional array
-        //         array_push($bookedDates, $slot['Date'], $slot['Time']);
-        //     }
-        // }
-        // return array
-        // print_r($bookedDates);
         // define a dictionary and keep key as the Date and value as the Time
         $bookedDatesDict = array();
         for ($i = 0; $i < count($groupedSlots); $i += 1) {
@@ -31,7 +15,6 @@ class BookingModel extends Model
                 $bookedDatesDict[$groupedSlots[$i][0]] = $groupedSlots[$i][1];
             }
         }
-        //    print_r($bookedDatesDict);
         return $bookedDatesDict;
     }
 
@@ -181,7 +164,6 @@ class BookingModel extends Model
             }
         }
 
-        // print_r($final);
         return $final;
     }
 
@@ -217,7 +199,6 @@ class BookingModel extends Model
     {
         $selection = array("file_name", "First_Name", "Last_Name", "Contact_Number");
         $result = $this->db->select($selection, "employee", "INNER JOIN service_team_leader ON service_team_leader.STL_ID = employee.STL_ID WHERE service_team_leader.STL_ID = :stlid", ":stlid", $stlID);
-        // print_r($result);
         return $result;
     }
 

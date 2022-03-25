@@ -8,7 +8,7 @@ class EmployeeModel extends Model
         parent::__construct();
     }
 
-    // admin //
+    // admin 
 
     function makeEmployee($firstName, $lastName, $contactNumber, $email, $dateEnrolled, $salary, $nic, $flag)
     {
@@ -27,13 +27,8 @@ class EmployeeModel extends Model
 
     function getEmployeeDetails()
     {
-        // $selection = array("First_name", "Last_Name", "Contact_Number", "Email", "Date_Enrolled", "Salary", "NIC_No");
         $result = $this->db->select("*", "employee", "WHERE STL_ID IS NULL && Flag = 1;");
         return $result;
-
-        //LEFT JOIN service_team_leader ON employee.STL_ID = service_team_leader.STL_ID WHERE Flag = 1 UNION (SELECT * FROM employee RIGHT JOIN service_team_leader ON employee.STL_ID = service_team_leader.STL_ID WHERE (service_team_leader.STL_ID IS NULL AND Flag = 1));
-        //LEFT JOIN service_team_leader ON employee.STL_ID = service_team_leader.STL_ID UNION (SELECT * FROM employee RIGHT JOIN service_team_leader ON employee.STL_ID = service_team_leader.STL_ID WHERE service_team_leader.STL_ID IS NULL);
-        // LEFT JOIN service_team_leader ON employee.STL_ID = service_team_leader.STL_ID WHERE Flag = 1 UNION (SELECT * FROM employee RIGHT JOIN service_team_leader ON employee.STL_ID = service_team_leader.STL_ID WHERE (service_team_leader.STL_ID IS NULL AND Flag = 1));
     }
 
     function getStlData()
@@ -45,7 +40,6 @@ class EmployeeModel extends Model
 
     function getEmployeeAttendanceDetails()
     {
-        //$employees = $this->db->select("Employee_ID", "employee", "null");
         $selection = array("employee.Employee_ID", "employee.First_Name", "employee.Last_Name", "employee_records.team", "employee_records.onWork");
 
         $yesterday = date('Y-m-d', time() - 60 * 60 * 24);
@@ -70,7 +64,7 @@ class EmployeeModel extends Model
         }
         return $result;
     }
-    // WHERE (employee.STL_ID IS NULL AND employee.Flag = 1 AND employee_records.date = :day), ":day", $yesterday
+
     function getStlAttendanceDetails()
     {
         $selection = array("employee.Employee_ID", "employee.STL_ID", "employee.First_Name", "employee.Last_Name", "employee_records.team", "employee_records.onWork");
@@ -85,13 +79,6 @@ class EmployeeModel extends Model
 
         return $result;
     }
-
-    // function getTeamCount()
-    // {
-    //     $selection = array("Team", "count(Team)");
-    //     $result = $this->db->select($selection, "employee", "GROUP BY Team;");
-    //     return $result;
-    // }
 
     function employeeSaveEdit($empId, $columnValue)
     {
@@ -109,8 +96,6 @@ class EmployeeModel extends Model
 
     function employeeUpdate($empId, $columnValue)
     {
-        // $columns = array('Flag', 'On_Work');
-        // $param = array(':flag', ':onWork');
         $conditionParam = ':empId';
         $conditionValue = $empId;
 
@@ -130,9 +115,6 @@ class EmployeeModel extends Model
             return true;
         } else print_r($result);
     }
-
-    //update employee set Flag = 0 WHERE Employee_ID = :empId;
-    //updateTwo("employee", "WHERE Employee_ID = :empId;", ':empId', $empId);
 
     function makeSTLPhoto($imageFile, $nic)
     {
@@ -172,7 +154,7 @@ class EmployeeModel extends Model
         return $result;
     }
 
-    // manager //
+    // manager 
 
     function getEmpData()
     {
@@ -265,15 +247,6 @@ class EmployeeModel extends Model
     {
         $result = $this->db->delete("service_team_leader", "WHERE STL_ID = :stlId;", ":stlId", $stlId);
         return $result;
-
-        // if ($result == "Success") {
-        //     $result1 = $this->db->delete("users", "WHERE STL_ID = :stlid;", ":stlid", $stlId);
-
-        //     if ($result1 == "Success") {
-        //         $result2 = $this->db->update("employee", "STL_ID", ":stlId", "NULL", ":stlID", $stlId, "WHERE STL_ID = :stlID;");
-        //         return $result2;
-        //     }
-        // }
     }
 
     function updateSTLPhoto($filename, $stlID)

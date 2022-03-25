@@ -11,12 +11,6 @@ $result = $_SESSION['employeeDetails'];
 </div>
 
 <div style="height: 50px;"></div>
-
-
-<!-- <div style="color: blue; margin-left: 50px; margin-bottom:20px; text-align:center;">
-  <h3 style="color:#193498;"><?php echo date('Y-m-d') ?></h3>
-  <p style="margin-bottom: 10px; color:#193498;">No of Teams : <?php echo $_SESSION['teamCount'][0]['team'] ?></p>
-</div> -->
 <div class="main-Mg-EmpSearch">
 
 
@@ -28,12 +22,6 @@ $result = $_SESSION['employeeDetails'];
                     <li><img id='stlPhotoID' src="" style="width: 250px;"></img></li><br>
 
             </form>
-
-            <!-- <form action="/employee/updateStlImage/" method="POST" enctype="multipart/form-data">
-                <input type="file" name="file" class="upload_image" id="file" style="    width: 64%;">
-                <input type="submit" id="upload" class="edit_btn" value="Update" style="padding: 8px 5px;">
-                <input id='inputID' type="hidden" name="stl_id" value="">
-            </form> -->
             <button id="VehicleFormCloseButton" class="formCancelButton" type="submit" name="signup" onclick="closestlForm()" style="float:none">Close</button>
         </div>
     </div>
@@ -46,7 +34,6 @@ $result = $_SESSION['employeeDetails'];
         <div class="Table-search">
 
             <div class="table-wrapper">
-                <!-- <h3 style="margin-bottom: 20px; color:#193498;">Service Team Leader</h3> -->
                 <div style="display:inline-block; width: 100%;">
                     <div class="Admin-EmpSearch adEmpSearch1">
                         <input type="search" class="ad-Emp-Search" id="managerMgSearchSTL" onkeyup="myFunction()" placeholder="Search for STL..." title="Type in a name">
@@ -177,26 +164,6 @@ $result = $_SESSION['employeeDetails'];
 
 
                 </div>
-
-                <!-- <div>
-                    <h3 style="margin-bottom: 5px; margin-top: 30px; color:#193498;">Photos</h3>
-
-                    <?php
-                    $result = $_SESSION['stlTableData'];
-                    $result1 = $_SESSION['StlAttendanceData'];
-                    $count = 0;
-                    while ($count < sizeof($result)) { ?>
-                        <?php $imgUrl = '/public/images/' . $result[$count]['file_name']; ?>
-                        <span class="row" style="text-align: center;">
-                            <span class="col-md-4 viewPhotos vp2">
-                                <img src="<?php echo $imgUrl ?>" alt="<?php echo $result[$count]['file_name'] ?>" class="img-thumbnail" style="height:300px; width:300px; object-fit:contain;">
-                                <div style="margin-top: -60px;"><b><?php echo $result1[$count]['First_Name'] ?> <?php echo $result1[$count]['Last_Name'] ?></b></div>
-                            </span>
-                        </span>
-                    <?php $count = $count + 1;
-                    } ?>
-
-                </div> -->
             </div>
         </div>
 
@@ -206,6 +173,5 @@ $result = $_SESSION['employeeDetails'];
             var stlTable = <?php echo json_encode($_SESSION['stlTableData']); ?>;
         </script>
         <script src="/public/js/ManagerEmployeeTable.js"></script>
-        <!-- <script src="/public/js/ManagerEmployeeTable.js"></script> -->
         <script src="/public/js/AdminManageEmployee.js"></script>
         <script src="/public/js/AdminEmployeeTable.js"></script>

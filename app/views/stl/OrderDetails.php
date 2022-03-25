@@ -139,25 +139,14 @@ $washPackageDetails = $_SESSION['washpackage'];
                 </div>
 
                 <button class="uploadImagesLink" type="submit" value="Upload Images" name="submit" id="completeService">Complete Service</button>
-                <!--<button class="uploadImagesLink" type="submit" value="Upload Images" name="submit" id="completeService"><a href = "/calendar/completeService/<?php echo $orderDetails[0]['Reservation_ID'] ?>"style = "color:white;">Complete Service</a></button>-->
-
             </form>
         </div>
-        <!-- <div class="box4">
-        <div class="reservation-buttons">
-
-            <button class="reservationButtons a10 agg" id="completeService" style="background-color: #1597BB;"><a href="/user/home">Complete Service</a></button>
-        </div>
-    </div> -->
     </div>
-    <!-- <div class="map" id="googleMapbox"> -->
 
     <script>
         var orderDetails = <?php echo json_encode($orderDetails); ?>;
     </script>
 
     <script src="/public/js/stlOrderDetails.js"></script>
-
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxvVN9pPMljGjWLvUGWGisQwGUUMSOHco&callback=myMap&v=weekly"> -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFq7IClah9EyedO6MTv12hIzbW_Iq-Aq8&callback=myMap&v=weekly">
     </script>

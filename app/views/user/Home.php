@@ -70,36 +70,6 @@ include 'views/user/Header.php';
                     $count = $count + 1;
                 }
                 ?>
-                <!-- <div class="section2-blocks4">
-                    <div class="section2-block-img4"></div>
-                    <div class="section2-block-heading">
-                        <h3>EXTERIOR WASH</h3>
-                    </div>
-                    <div class="section2-block-para">
-                        <p>Pre-cleaning, handwashing, drying, cleaning the tyres, rims and windows from the outside.</p>
-                    </div>
-                </div>
-
-                <div class="section2-blocks5">
-                    <div class="section2-block-img5"></div>
-                    <div class="section2-block-heading">
-                        <h3>INTERIOR CLEANING</h3>
-                    </div>
-                    <div class="section2-block-para">
-                        <p>Vacuuming, disposing garbage, cleaning the floor mats and windows from the inside.</p>
-                    </div>
-                </div>
-
-                <div class="section2-blocks6">
-                    <div class="section2-block-img6"></div>
-                    <div class="section2-block-heading">
-                        <h3>SANITIZATION</h3>
-                    </div>
-                    <div class="section2-block-para">
-                        <p>Disinfecting your vehicle to protect you from germs.</p>
-                    </div>
-                </div> -->
-
             </div>
 
             <h2>We provide services for the following vehicle types!</h2>
@@ -119,40 +89,6 @@ include 'views/user/Header.php';
                     $count = $count + 1;
                 }
                 ?>
-
-                <!-- <div class="section3-blocks4">
-                    <div class="section3-block-img4"></div>
-                    <div class="section2-block-heading">
-                        <h3></h3>
-                    </div>
-                </div>
-
-                <div class="section3-blocks4">
-                    <div class="section3-block-img5"></div>
-                    <div class="section2-block-heading">
-                        <h3></h3>
-                    </div>
-                </div>
-
-                <div class="section3-blocks4">
-                    <div class="section3-block-img6"></div>
-                    <div class="section2-block-heading">
-                        <h3></h3>
-                    </div>
-                </div>
-                <div class="section3-blocks4">
-                    <div class="section3-block-img7"></div>
-                    <div class="section2-block-heading">
-                        <h3></h3>
-                    </div>
-                </div>
-                <div class="section3-blocks4">
-                    <div class="section3-block-img8"></div>
-                    <div class="section2-block-heading">
-                        <h3></h3>
-                    </div>
-                </div> -->
-
             </div>
 
         </section>

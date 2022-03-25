@@ -19,7 +19,6 @@ function myMap() {
   });
   latlng = new google.maps.LatLng(lat, lng);
   marker.setPosition(latlng);
-  // marker.setMap(map);
   var addr = document.getElementById("location-types").value;
   var i = 0;
   document.cookie = "address = " + addresses[addr - 1]["Address"] + ";path=/";
