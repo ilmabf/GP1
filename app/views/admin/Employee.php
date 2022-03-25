@@ -103,15 +103,15 @@ include 'views/user/LoggedInHeader.php';
 
         <div id="empAttendanceTable">
 
-          <span id="empAttendanceSearch">
+          <!-- <span id="empAttendanceSearch">
             <div class="Admin-EmpSearch adEmpSearch1">
               <input type="search" class="ad-Emp-Search" id="adminSearchonWorkEmployee" placeholder="Search for Employee..." title="Type in a name">
             </div>
-          </span>
+          </span> -->
 
-          <span id="todayDate" style="float: right; background-color:blue; color:white;">
+          <div id="todayDate" style="text-align:center; background-color:blue; color:white;">
             <?php echo date("d-m-Y"); ?>
-          </span>
+          </div>
           <table id="filterTable1">
             <thead>
               <tr>
