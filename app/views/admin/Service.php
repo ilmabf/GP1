@@ -63,7 +63,7 @@ include 'views/user/LoggedInHeader.php';
 
     <div class="priceManage" style="text-align: center;">
         <div class="priceManageHeader">
-            <h3>Price</h3>
+            <h3>Wash Price</h3>
         </div>
         <div class="priceManageBox">
 
