@@ -128,54 +128,54 @@ include 'views/user/LoggedInHeader.php';
 
                 <div id="stlAttendanceTable">
 
-                    <span id="stlAttendanceSearch">
+                    <!-- <span id="stlAttendanceSearch">
                         <div class="Admin-EmpSearch adEmpSearch1">
                             <input type="search" class="ad-Emp-Search" id="stlonWorkSearch" onkeyup="myFunction1()" placeholder="Search for STL..." title="Type in a name">
                         </div>
-                    </span>
+                    </span> -->
 
-                    <span id="todayDate1" style="float: right; background-color:blue; color:white;">
+                    <div id="todayDate1" style="text-align:center; background-color:blue; color:white;">
                         <?php echo date("d-m-Y"); ?>
-                    </span>
+                    </div>
 
-                        <table id="filterTable3">
-                            <thead>
-                                <tr>
-                                    <th data-type="text">First Name</th>
-                                    <th data-type="text">Last Name</th>
-                                    <th data-type="text">Team</th>
-                                    <th data-type="text">On Work (0/1)</th>
-                                    <th colspan="1" style="text-align: center;">
-                                        <input type="button" id="editStlAttButton" class="edit_btn td-t1" value="Edit" onclick="stlEditAttendanceForm('<?php echo sizeof($_SESSION['stlAttendanceDetails']) ?>')">
-                                    </th>
+                    <table id="filterTable3">
+                        <thead>
+                            <tr>
+                                <th data-type="text">First Name</th>
+                                <th data-type="text">Last Name</th>
+                                <th data-type="text">Team</th>
+                                <th data-type="text">On Work (0/1)</th>
+                                <th colspan="1" style="text-align: center;">
+                                    <input type="button" id="editStlAttButton" class="edit_btn td-t1" value="Edit" onclick="stlEditAttendanceForm('<?php echo sizeof($_SESSION['stlAttendanceDetails']) ?>')">
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody style="max-width:100%;" id="onWorkSelectTable">
+
+                            <?php
+                            $count3 = 0;
+                            $result3 = $_SESSION['stlAttendanceDetails'];
+                            while ($count3 < sizeof($result3)) { ?>
+
+                                <tr id="row<?php $count3 ?>">
+                                    <td id="<?php echo "AttStl_FirstName_row" . $count3 ?>" style="text-align:left" class="td-t1"><?php echo $result3[$count3]['First_Name'] ?></td>
+                                    <td id="<?php echo "AttStl_LastName_row" . $count3 ?>" style="text-align:left" class="td-t1"><?php echo $result3[$count3]['Last_Name'] ?></td>
+                                    <td id="<?php echo "AttStl_Team_row" . $count3 ?>" class="td-t1"><?php echo $result3[$count3]['STL_ID'] ?></td>
+                                    <td id="<?php echo "AttStl_onWork_row" . $count3 ?>" style="text-align:left" class="td-t1" style="max-width:200px;"><?php echo $result3[$count3]['onWork'] ?></td>
+
+
                                 </tr>
-                            </thead>
-                            <tbody style="max-width:100%;" id="onWorkSelectTable">
 
-                                <?php
-                                $count3 = 0;
-                                $result3 = $_SESSION['stlAttendanceDetails'];
-                                while ($count3 < sizeof($result3)) { ?>
+                            <?php $count3 = $count3 + 1;
+                            } ?>
 
-                                    <tr id="row<?php $count3 ?>">
-                                        <td id="<?php echo "AttStl_FirstName_row" . $count3 ?>" style="text-align:left" class="td-t1"><?php echo $result3[$count3]['First_Name'] ?></td>
-                                        <td id="<?php echo "AttStl_LastName_row" . $count3 ?>" style="text-align:left" class="td-t1"><?php echo $result3[$count3]['Last_Name'] ?></td>
-                                        <td id="<?php echo "AttStl_Team_row" . $count3 ?>" class="td-t1"><?php echo $result3[$count3]['STL_ID'] ?></td>
-                                        <td id="<?php echo "AttStl_onWork_row" . $count3 ?>" style="text-align:left" class="td-t1" style="max-width:200px;"><?php echo $result3[$count3]['onWork'] ?></td>
+                        </tbody>
+                    </table>
 
+                    <div id="emp-attendance-submit">
+                        <input type="submit" id="stlAttendance-submit-1" value="Submit">
 
-                                    </tr>
-
-                                <?php $count3 = $count3 + 1;
-                                } ?>
-
-                            </tbody>
-                        </table>
-
-                        <div id="emp-attendance-submit">
-                            <input type="submit" id="stlAttendance-submit-1" value="Submit">
-
-                        </div>
+                    </div>
                     <div>
                         <?php if ($_SESSION['insertSuccess'] == "Stl On work error") { ?>
                             <div class="error-message">
@@ -185,39 +185,18 @@ include 'views/user/LoggedInHeader.php';
                     </div>
                 </div>
 
-          <?php
-            $result = $_SESSION['stlTableData'];
-            $result1 = $_SESSION['StlAttendanceData'];
-            $count = 0;
-            while ($count < sizeof($result)) { ?>
-            <?php $imgUrl = '/public/images/' . $result[$count]['file_name']; ?>
-            <span class="row" style="text-align: center;">
-              <span class="col-md-4 viewPhotos vp2">
-                <img src="<?php echo $imgUrl ?>" alt="<?php echo $result[$count]['file_name'] ?>" class="img-thumbnail" style="height:300px; width:300px; object-fit:contain;">
-                <div style="margin-top: -60px;"><b><?php echo $result1[$count]['First_Name'] ?> <?php echo $result1[$count]['Last_Name'] ?></b></div>
-
-                <form action="/employee/updateStlImage/" method="POST" enctype="multipart/form-data">
-                  <input type="file" name="file" class="upload_image" id="file">
-                  <input type="submit" id="upload" class="edit_btn" value="Update">
-                  <input type="hidden" name="stl_id" value="<?php echo $result[$count]['STL_ID'] ?>">
-                </form>
-              </span>
-            </span>
-          <?php $count = $count + 1;
-            } ?>
-
-        </div> -->
-
             </div>
+
         </div>
+    </div>
 
-        <div style="min-height: 200px;"></div>
+    <div style="min-height: 200px;"></div>
 
-        <script>
-            var stlTable = <?php echo json_encode($_SESSION['stlTableData']); ?>;
-        </script>
-        <script src="/public/js/AdminEmployeeTable.js"></script>
-        <script src="/public/js/AdminManageEmployee.js"></script>
+    <script>
+        var stlTable = <?php echo json_encode($_SESSION['stlTableData']); ?>;
+    </script>
+    <script src="/public/js/AdminEmployeeTable.js"></script>
+    <script src="/public/js/AdminManageEmployee.js"></script>
 
-        <script src="/public/js/AdminManageSTL.js"></script>
+    <script src="/public/js/AdminManageSTL.js"></script>
 </main>
