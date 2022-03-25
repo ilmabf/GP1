@@ -138,50 +138,43 @@ include 'views/user/LoggedInHeader.php';
                         <?php echo date("d-m-Y"); ?>
                     </span>
 
-                        <table id="filterTable3">
-                            <thead>
-                                <tr>
-                                    <th data-type="text">First Name</th>
-                                    <th data-type="text">Last Name</th>
-                                    <th data-type="text">Team</th>
-                                    <th data-type="text">On Work (0/1)</th>
-                                    <th colspan="1" style="text-align: center;">
-                                        <input type="button" id="editStlAttButton" class="edit_btn td-t1" value="Edit" onclick="stlEditAttendanceForm('<?php echo sizeof($_SESSION['stlAttendanceDetails']) ?>')">
-                                    </th>
+                    <table id="filterTable3">
+                        <thead>
+                            <tr>
+                                <th data-type="text">First Name</th>
+                                <th data-type="text">Last Name</th>
+                                <th data-type="text">Team</th>
+                                <th data-type="text">On Work (0/1)</th>
+                                <th colspan="1" style="text-align: center;">
+                                    <input type="button" id="editStlAttButton" class="edit_btn td-t1" value="Edit" onclick="stlEditAttendanceForm('<?php echo sizeof($_SESSION['stlAttendanceDetails']) ?>')">
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody style="max-width:100%;" id="onWorkSelectTable">
+
+                            <?php
+                            $count3 = 0;
+                            $result3 = $_SESSION['stlAttendanceDetails'];
+                            while ($count3 < sizeof($result3)) { ?>
+
+                                <tr id="row<?php $count3 ?>">
+                                    <td id="<?php echo "AttStl_FirstName_row" . $count3 ?>" style="text-align:left" class="td-t1"><?php echo $result3[$count3]['First_Name'] ?></td>
+                                    <td id="<?php echo "AttStl_LastName_row" . $count3 ?>" style="text-align:left" class="td-t1"><?php echo $result3[$count3]['Last_Name'] ?></td>
+                                    <td id="<?php echo "AttStl_Team_row" . $count3 ?>" class="td-t1"><?php echo $result3[$count3]['STL_ID'] ?></td>
+                                    <td id="<?php echo "AttStl_onWork_row" . $count3 ?>" style="text-align:left" class="td-t1" style="max-width:200px;"><?php echo $result3[$count3]['onWork'] ?></td>
+
+
                                 </tr>
-                            </thead>
-                            <tbody style="max-width:100%;" id="onWorkSelectTable">
 
-                                <?php
-                                $count3 = 0;
-                                $result3 = $_SESSION['stlAttendanceDetails'];
-                                while ($count3 < sizeof($result3)) { ?>
+                            <?php $count3 = $count3 + 1;
+                            } ?>
 
-                                    <tr id="row<?php $count3 ?>">
-                                        <td id="<?php echo "AttStl_FirstName_row" . $count3 ?>" style="text-align:left" class="td-t1"><?php echo $result3[$count3]['First_Name'] ?></td>
-                                        <td id="<?php echo "AttStl_LastName_row" . $count3 ?>" style="text-align:left" class="td-t1"><?php echo $result3[$count3]['Last_Name'] ?></td>
-                                        <td id="<?php echo "AttStl_Team_row" . $count3 ?>" class="td-t1"><?php echo $result3[$count3]['STL_ID'] ?></td>
-                                        <td id="<?php echo "AttStl_onWork_row" . $count3 ?>" style="text-align:left" class="td-t1" style="max-width:200px;"><?php echo $result3[$count3]['onWork'] ?></td>
+                        </tbody>
+                    </table>
 
+                    <div id="emp-attendance-submit">
+                        <input type="submit" id="stlAttendance-submit-1" value="Submit">
 
-                                    </tr>
-
-                                <?php $count3 = $count3 + 1;
-                                } ?>
-
-                            </tbody>
-                        </table>
-
-                        <div id="emp-attendance-submit">
-                            <input type="submit" id="stlAttendance-submit-1" value="Submit">
-
-                        </div>
-                    <div>
-                        <?php if ($_SESSION['insertSuccess'] == "Stl On work error") { ?>
-                            <div class="error-message">
-                                <?php echo "Insert 0 or 1 on On Work" ?>
-                            </div>
-                        <?php } ?>
                     </div>
                 </div>
 

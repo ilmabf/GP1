@@ -8,54 +8,60 @@ include 'views/user/LoggedInHeader.php';
 <div class="heading-adminManageService">
     <h2>Manage Services</h2>
 </div>
-<div id="service">
-    <div class="serviceManage">
-        <div class="serviceManageHeader">
-            <h3>Service Types</h3>
+<div id="manageService">
+    <div id="service" style="display: flex;">
+        <div class="serviceManage">
+
+            <div class="serviceManageBox">
+                <div class="serviceManageHeader">
+                    <h3>Service Types</h3>
+                </div>
+                <?php
+                $i = 0;
+                while ($i < sizeof($_SESSION['washpackages'])) {
+                    echo "<div class='typeServices' id='typeServices";
+                    echo $i;
+                    echo "'";
+                    echo " onclick='openViewServiceForm(";
+                    echo $i;
+                    echo ")' >";
+                    echo $_SESSION['washpackages'][$i]['Name'];
+                    echo "</div>";
+                    $i = $i + 1;
+                }
+                ?>
+                <div class="typeServices addBtnService" id="addServiceTypes" onclick="openAddServiceForm()">+ Add</div>
+            </div>
         </div>
-        <div class="serviceManageBox">
-            <?php
-            $i = 0;
-            while ($i < sizeof($_SESSION['washpackages'])) {
-                echo "<div class='typeServices' id='typeServices";
-                echo $i;
-                echo "'";
-                echo " onclick='openViewServiceForm(";
-                echo $i;
-                echo ")' >";
-                echo $_SESSION['washpackages'][$i]['Name'];
-                echo "</div>";
-                $i = $i + 1;
-            }
-            ?>
-            <div class="typeServices addBtnService" id="addServiceTypes" onclick="openAddServiceForm()">+ Add</div>
+
+        <div class="vehicleManage">
+
+            <div class="vehicleManageBox">
+                <div class="vehicleManageHeader">
+                    <h3 style="color: #193498;">Vehicle Types</h3>
+                </div>
+                <?php
+                $i = 0;
+                while ($i < sizeof($_SESSION['vehicleTypes'])) {
+                    echo "<div class='typeVehicles' id='typeVehicles";
+                    echo $i;
+                    echo "'";
+                    echo " onclick='openViewVehicleType(";
+                    echo $i;
+                    echo ")' >";
+                    echo $_SESSION['vehicleTypes'][$i]['Vehicle_Type'];
+                    echo "</div>";
+                    $i = $i + 1;
+                }
+                ?>
+                <div class="typeVehicles addBtnVehicles" id="addNewVehicleTypess" onclick="openVehicleAddForm()">+ Add</div>
+            </div>
         </div>
+
+
     </div>
 
-    <div class="vehicleManage">
-        <div class="vehicleManageHeader">
-            <h3 style="color: #193498;">Vehicle Types</h3>
-        </div>
-        <div class="vehicleManageBox">
-            <?php
-            $i = 0;
-            while ($i < sizeof($_SESSION['vehicleTypes'])) {
-                echo "<div class='typeVehicles' id='typeVehicles";
-                echo $i;
-                echo "'";
-                echo " onclick='openViewVehicleType(";
-                echo $i;
-                echo ")' >";
-                echo $_SESSION['vehicleTypes'][$i]['Vehicle_Type'];
-                echo "</div>";
-                $i = $i + 1;
-            }
-            ?>
-            <div class="typeVehicles addBtnVehicles" id="addNewVehicleTypess" onclick="openVehicleAddForm()">+ Add</div>
-        </div>
-    </div>
-
-    <div class="priceManage">
+    <div class="priceManage" style="text-align: center;">
         <div class="priceManageHeader">
             <h3>Price</h3>
         </div>
@@ -115,6 +121,7 @@ include 'views/user/LoggedInHeader.php';
         </div>
     </div>
 </div>
+
 <div class="addVehicleform" id="viewserviceForm">
     <span type="button" class="close_washType" style="float:right; cursor:pointer;" onclick="closeViewServiceForm()">&#10006</span>
     <h2 class="login-signupheader" id="ServiceName"></h2>
