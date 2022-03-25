@@ -160,7 +160,6 @@ $booked = $_SESSION['booked'];
     </script>
     <script src="/public/js/CustomerCalendar.js"></script>
     <script src="/public/js/CustomerBookAWash.js"></script>
-
 </body>
 <script src="/public/js/ErrorMessage.js"></script>
 <?php

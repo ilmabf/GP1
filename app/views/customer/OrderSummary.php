@@ -106,7 +106,7 @@ include 'views/user/LoggedInHeader.php';
         </div>
     </div>
 
-    
+
 </div>
 <div class="addVehicleform" id="cancelPopUpId">
     <div class="forma">
@@ -125,4 +125,3 @@ include 'views/user/LoggedInHeader.php';
 
 <script src="/public/js/CustomerOrderSummary.js"></script>
 <div style="min-height: 110px;"></div>
-

@@ -102,7 +102,7 @@ $rescheduleID = $_SESSION['rescheduleID'];
     <div class="box4">
         <div class="order-buttons">
             <button class="bt" id="cancelBtn" onclick="openCancelOrder()"><a>Cancel</a></button>
-            <button class="bt2" id="confirmBtn" onclick="rescheduleOrder('<?php echo $rescheduleID; ?>')">Reschedule Order</button>
+            <button class="bt2" id="confirmBtn" style="color:white;" onclick="rescheduleOrder('<?php echo $rescheduleID; ?>')">Reschedule Order</button>
         </div>
     </div>
 

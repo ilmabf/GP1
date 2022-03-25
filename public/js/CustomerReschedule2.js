@@ -87,7 +87,6 @@ function calcRoute(addr) {
         var totalPrice = parseInt(p) + additional;
         document.cookie = "total = " + totalPrice + ";path=/";
         console.log(directionsData.distance.text);
-        
       }
     }
   });

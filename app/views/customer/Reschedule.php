@@ -12,7 +12,7 @@ $reservationDetails = $_SESSION['reservationDetails'];
 <body onload="typeWriter(0)">
 
     <div style="min-height: 110px;"></div>
-    <div id="bookingContent">
+    <div id="mainContent">
         <div>
             <div class="heading">
                 <h2 style="font-size: 30px;">Reschedule Your Booking!</h2>
