@@ -1,5 +1,5 @@
 var itemID; //for filter team vise from equipment table
-function viewAllEquipment(n) {
+function viewAllEquipment(n, count) {
   var i = 0;
   var EquipmentToDisplay = [];
   itemID = n; //for filter team vise from equipment table(team vise 2)
@@ -10,7 +10,7 @@ function viewAllEquipment(n) {
       TempEq["ItemCode"] = equipment[i]["ItemCode"];
       TempEq["Model"] = equipment[i]["Model"];
       document.getElementById("CategoryNameAll").innerHTML =
-        items[n - 1]["Name"];
+        items[count]["Name"];
       TempEq["Price"] = equipment[i]["Price"];
       TempEq["Date_Acquired"] = equipment[i]["Date_Acquired"];
       TempEq["Team"] = equipment[i]["Team"];
@@ -49,7 +49,7 @@ function viewAllEquipment(n) {
   document.getElementById("viewAllequip-manager").style = "display:flex;";
 }
 
-function viewFreeEquipment(n) {
+function viewFreeEquipment(n, count) {
   var i = 0;
   var EquipmentToDisplay = [];
 
@@ -60,7 +60,7 @@ function viewFreeEquipment(n) {
       TempEq["ItemCode"] = equipment[i]["ItemCode"];
       TempEq["Model"] = equipment[i]["Model"];
       document.getElementById("CategoryNameFree").innerHTML =
-        items[n - 1]["Name"];
+        items[count]["Name"];
       TempEq["Price"] = equipment[i]["Price"];
       TempEq["Date_Acquired"] = equipment[i]["Date_Acquired"];
       TempEq["Team"] = equipment[i]["Team"];
