@@ -33,8 +33,6 @@ function checkVehicleBox() {
 
 checkVehicleBox();
 function myMap() {
-  // var lat = 7.2905715;
-  // var lng = 80.6337262;
   if (addresses.length > 0) {
       var x = document.getElementById("Customer-Address").value;
       lat = addresses[x - 1]['Latitude'];
@@ -58,7 +56,6 @@ function myMap() {
       document.getElementById("googleMap").innerHTML = "Add your locations here";
 
   }
-  // marker.setMap(map);
 }
 
 function openVehicleForm() {
@@ -197,11 +194,6 @@ function openDeleteAddress() {
   var y = document.getElementById("mainbox");
   var val = document.getElementById("delete-Address-Form");
   var selection = document.getElementById("Customer-Address").value;
-  // var address = addresses[selection - 1]['Address'];
-  // address = address.replace(/ /g, "_");
-  // address = address.replace(/\//g, "|");
-  // console.log(address);
-  // val.action = "/account/deleteAddress/" + address;
   val.action = "/account/deleteAddress/" + addresses[selection - 1]['Latitude'] + "/" + addresses[selection - 1]['Longitude'];
   if (x.style.display === "none") {
     x.style.display = "block";

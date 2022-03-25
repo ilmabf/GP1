@@ -1,5 +1,4 @@
 <?php
-// date_default_timezone_set("Asia/Colombo");
 class CalendarModel extends Model
 {
 
@@ -22,7 +21,6 @@ class CalendarModel extends Model
     function getCustomer($custoID)
     {
         $result = $this->db->select("Email, customer.*","customer", "INNER JOIN users on customer.User_ID = users.User_ID WHERE customer.User_ID = :custoID ;", ':custoID', $custoID);
-        // print_r($result);
         return $result;
     }
     //For get wash package name for choosen wash package id

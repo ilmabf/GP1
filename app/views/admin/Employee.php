@@ -38,19 +38,6 @@ include 'views/user/LoggedInHeader.php';
 
     <!-- ------------------------------------Emp View------------------------------------------------------- -->
 
-    <!-- <div style="margin-bottom: 40px; margin-left:130px;">
-      <span>
-        <p style="margin-bottom: 10px; color:#193498;"><b>No of Teams : <?php echo $_SESSION['teamCount'][0]['team'] ?></b></p>
-      </span>
-      <span id="teamCountInput">
-        <form action="/employee/noofTeams" method="post">
-          <input type="text" name="teamCount" placeholder="Enter Today's team count" style="padding: 7px 10px; border-radius:8px;">
-
-          <button type="submit" value="Submit" onclick="TeamCount();" class="del_btn" style="padding: 6px 10px;">Change</button>
-        </form>
-      </span>
-    </div> -->
-
     <div class="Table-search">
 
       <div class="table-wrapper">
@@ -81,10 +68,6 @@ include 'views/user/LoggedInHeader.php';
                 <th data-type="text">Date Enrolled</th>
                 <th data-type="text">Salary</th>
                 <th data-type="number">NIC No</th>
-                <!-- <th data-type="number">Team</th> -->
-                <!-- <th data-type="text">Team</th>
-              <th data-type="text">Leader</th>
-              <th data-type="text">Photo Link</th> -->
                 <th colspan="2" style="text-align: center;">Action</th>
               </tr>
             </thead>
@@ -129,51 +112,42 @@ include 'views/user/LoggedInHeader.php';
           <span id="todayDate" style="float: right; background-color:blue; color:white;">
             <?php echo date("d-m-Y"); ?>
           </span>
-          <!-- <form action="" id="empAttendanceForm" method="POST"> -->
-            <table id="filterTable1">
-              <thead>
-                <tr>
-                  <th data-type="text">First Name</th>
-                  <th data-type="text">Last Name</th>
-                  <th data-type="text">Team</th>
-                  <th data-type="text">On Work (0/1)</th>
-                  <th colspan="1" style="text-align: center;">
-                    <input type="button" id="editButton" class="edit_btn td-t1" value="Edit" onclick="empEditAttendanceForm('<?php echo sizeof($_SESSION['employeeAttendanceDetails']) ?>')">
-                  </th>
+          <table id="filterTable1">
+            <thead>
+              <tr>
+                <th data-type="text">First Name</th>
+                <th data-type="text">Last Name</th>
+                <th data-type="text">Team</th>
+                <th data-type="text">On Work (0/1)</th>
+                <th colspan="1" style="text-align: center;">
+                  <input type="button" id="editButton" class="edit_btn td-t1" value="Edit" onclick="empEditAttendanceForm('<?php echo sizeof($_SESSION['employeeAttendanceDetails']) ?>')">
+                </th>
+              </tr>
+            </thead>
+            <tbody style="max-width:100%;">
+
+              <?php
+              $count1 = 0;
+              $result1 = $_SESSION['employeeAttendanceDetails'];
+              while ($count1 < sizeof($result1)) { ?>
+
+                <tr id="row<?php $count1 ?>">
+                  <td id="<?php echo "Att_FirstName_row" . $count1 ?>" style="text-align:left" class="td-t1"><?php echo $result1[$count1]['First_Name'] ?></td>
+                  <td id="<?php echo "Att_LastName_row" . $count1 ?>" style="text-align:left" class="td-t1"><?php echo $result1[$count1]['Last_Name'] ?></td>
+                  <td id="<?php echo "Att_Team_row" . $count1 ?>" class="td-t1"><?php echo $result1[$count1]['team'] ?></td>
+                  <td id="<?php echo "Att_OnWork_row" . $count1 ?>" style="text-align:left" class="td-t1" style="max-width:200px;"><?php echo $result1[$count1]['onWork'] ?></td>
                 </tr>
-              </thead>
-              <tbody style="max-width:100%;">
 
-                <?php
-                $count1 = 0;
-                $result1 = $_SESSION['employeeAttendanceDetails'];
+              <?php $count1 = $count1 + 1;
+              } ?>
 
-                //echo $yesterday = date('Y-m-d', time() - 60 * 60 * 24);
-                //print_r($_SESSION['employeeAttendanceDetails']);
-                while ($count1 < sizeof($result1)) { ?>
+            </tbody>
+          </table>
 
-                  <tr id="row<?php $count1 ?>">
-                    <td id="<?php echo "Att_FirstName_row" . $count1 ?>" style="text-align:left" class="td-t1"><?php echo $result1[$count1]['First_Name'] ?></td>
-                    <td id="<?php echo "Att_LastName_row" . $count1 ?>" style="text-align:left" class="td-t1"><?php echo $result1[$count1]['Last_Name'] ?></td>
-                    <td id="<?php echo "Att_Team_row" . $count1 ?>" class="td-t1"><?php echo $result1[$count1]['team'] ?></td>
-                    <td id="<?php echo "Att_OnWork_row" . $count1 ?>" style="text-align:left" class="td-t1" style="max-width:200px;"><?php echo $result1[$count1]['onWork'] ?></td>
-                    <!-- <td>
-                    <input type="button" id="<?php echo "edit_att_emp_btn" . $count1 ?>" class="edit_btn td-t1" value="Edit" onclick="empEditAttendanceForm('<?php echo $count1 ?>')">
-                  </td> -->
+          <div id="emp-attendance-submit">
+            <input type="submit" id="empAttendance-submit-1" value="Submit">
 
-                  </tr>
-
-                <?php $count1 = $count1 + 1;
-                } ?>
-
-              </tbody>
-            </table>
-
-            <div id="emp-attendance-submit">
-              <input type="submit" id="empAttendance-submit-1" value="Submit">
-
-            </div>
-          <!-- </form> -->
+          </div>
 
           <div>
             <?php if ($_SESSION['insertSuccess'] == "On work error") { ?>

@@ -51,8 +51,6 @@ if (isset($_SESSION["locked"])) {
 
         </div>
     </main>
-
-    <script src="/public/js/UserLogin.js"></script>
     <?php
     include 'views/user/Footer.php';
     ?>

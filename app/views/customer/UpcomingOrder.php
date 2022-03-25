@@ -97,7 +97,6 @@ $display = $_SESSION['displayReservationBtn'];
                                 if ($orderDetails[0]['Service_team_leader_ID'] == "") {
                                     echo "<td style='font-size: 12px;text-align:left'>Team not yet assigned</td>";
                                 } else {
-                                    // echo "<td style='font-size: 12px;text-align:left'>".$orderDetails[0]['Service_team_leader_ID']."</td>";
                                     echo "<td><button class='reservationButtons a12' id='cancelAssignBtn' style='color:white; padding: 1px 3px; margin-bottom:0px' onclick='openstlForm()'><a>View Details</a></button></td>";
                                 }
                                 ?>

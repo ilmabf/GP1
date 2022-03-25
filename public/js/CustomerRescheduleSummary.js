@@ -54,10 +54,8 @@ for (i = 0; i < cookieArray.length; i++) {
     var total = cookieArray[i].substring(6);
   }
 }
-//let p = price.substring(6);
-
-if (year == null || vehicle == null || price == null) {
-  window.location = "/booking/rescheduleDetails/" + rescheduleID;
+if(year == null || vehicle == null || price == null ){
+  window.location = "/booking/rescheduleDetails/"+rescheduleID;
 }
 
 if (address == null) {

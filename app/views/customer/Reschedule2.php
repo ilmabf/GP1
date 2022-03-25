@@ -34,35 +34,28 @@ $reservationDetails = $_SESSION['reservationDetails'];
         echo "</div>";
     }
     ?>
-    <!-- <div class="select-location-box">
-        <form action="" method="post">
-            <select name="location" id="location-types" onchange="myMap()">
-                <?php
-                $i = 0;
-                while ($i < sizeof($_SESSION['address'])) {
-                    if ($reservationDetails[0]['Address'] === $_SESSION['address'][$i]['Address']) {
-                        echo "<option value='";
-                        echo $i + 1;
-                        echo "' selected>";
-                        echo $_SESSION['address'][$i]['Address'];
-                        echo "</option>";
-                    } else {
-                        echo "<option value='";
-                        echo $i + 1;
-                        echo "'>";
-                        echo $_SESSION['address'][$i]['Address'];
-                        echo "</option>";
-                    }
-                    $i = $i + 1;
-                }
-                ?>
-            </select>
-        </form>
-    </div> -->
+    <?php
+    $i = 0;
+    while ($i < sizeof($_SESSION['address'])) {
+        if ($reservationDetails[0]['Address'] === $_SESSION['address'][$i]['Address']) {
+            echo "<option value='";
+            echo $i + 1;
+            echo "' selected>";
+            echo $_SESSION['address'][$i]['Address'];
+            echo "</option>";
+        } else {
+            echo "<option value='";
+            echo $i + 1;
+            echo "'>";
+            echo $_SESSION['address'][$i]['Address'];
+            echo "</option>";
+        }
+        $i = $i + 1;
+    }
+    ?>
 </div>
 <div class="google-location" style="text-align:center;">
-    <div id="googleMap" style="border:0; border-radius: 27px; left:15%; width:70%; height:300px;"></div>
-    <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.8229579296126!2d80.50619191725059!3d7.373730722101816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae341aee58e2aad%3A0xc15b721347b882fb!2sMalwathugoda%20Auto%20Service%20Station!5e0!3m2!1sen!2slk!4v1629713877312!5m2!1sen!2slk" width="70%" height="300px" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
+    <div id="googleMap" style="border:0; border-radius: 27px; left:25%; width:50%; height:300px;"></div>
 </div>
 
 <div class="next-pg" style="margin-right: 15%;">
@@ -75,7 +68,6 @@ $reservationDetails = $_SESSION['reservationDetails'];
 </script>
 <script src="/public/js/Maps.js"></script>
 <script src="/public/js/CustomerReschedule2.js"></script>
-<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxvVN9pPMljGjWLvUGWGisQwGUUMSOHco&callback=myMap&v=weekly"></script> -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFq7IClah9EyedO6MTv12hIzbW_Iq-Aq8&callback=myMap&v=weekly"></script>
 <script async>
     initMap();

@@ -97,8 +97,6 @@ $rescheduleID = $_SESSION['rescheduleID'];
                 </tbody>
             </table>
         </section>
-
-
     </div>
 
     <div class="box4">
@@ -122,9 +120,6 @@ $rescheduleID = $_SESSION['rescheduleID'];
 
     </div>
 </div>
-
-
-<!-- <script src="/public/js/CustomerOrderSummary.js"></script> -->
 <script>
     var rescheduleID = <?php echo json_encode($rescheduleID); ?>;
 </script>

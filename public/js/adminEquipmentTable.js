@@ -24,7 +24,6 @@ function editEquipment(no){
     document.getElementById("save_equip_btn"+no).style.display="block";
 
     var team = document.getElementById("assignedTeam_row"+no);
-    // var teamData = team.innerHTML;
     team.innerHTML = "<input type='number' id='assignedTeam_text"+no+"' class='td-t5' name='teamData'>";
   
 }

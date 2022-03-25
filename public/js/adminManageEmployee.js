@@ -142,8 +142,6 @@ function addRow() {
       }
 
       ele1.setAttribute("value", "");
-      // ele1.setAttribute('id', 'tb-input');
-
       td1.appendChild(ele1);
     }
   }
@@ -152,7 +150,6 @@ function addRow() {
 // delete TABLE row function. ele1.setAttribute('id', 'tb-input');
 function removeRow(oButton) {
   var empTab = document.getElementById("empTable");
-  // button -> td -> tr.
   if (empTab.rows.length > 2) {
     empTab.deleteRow(2);
   }
@@ -160,7 +157,6 @@ function removeRow(oButton) {
   if (empTab.rows.length > 1) {
     empTab.deleteRow(1);
   }
-  // console.log(empTab.rows.length);
   submitBtn.style.display = "none";
 }
 
@@ -225,7 +221,6 @@ function addStlRow() {
         ele2.setAttribute("name", "stlPassword");
         ele2.setAttribute("type", "password");
         ele2.setAttribute("required", "");
-        // ele2.setAttribute("pattern", pattern);
       } else if (c2 == 4) {
         ele2.setAttribute("id", "confirmPass");
         ele2.setAttribute("name", "stlConfirmPassword");
@@ -239,7 +234,6 @@ function addStlRow() {
       }
 
       ele2.setAttribute("value", "");
-      // ele2.setAttribute('id', 'tb-Stlinput');
 
       td2.appendChild(ele2);
     }
@@ -248,8 +242,6 @@ function addStlRow() {
 
 function removeStlRow(oButton) {
   var stlTab = document.getElementById("stlTable");
-  // stlTab.deleteRow(oButton.parentNode.parentNode.rowIndex); // button -> td -> tr.
-
   if (stlTab.rows.length > 2) {
     stlTab.deleteRow(2);
   }
@@ -323,7 +315,6 @@ function viewPhotoManager(fn, ln, n) {
   }
   document.getElementById("stlPhotoID").src =
     "/public/images/" + stlTable[count]["file_name"];
-  // document.getElementById("inputID").value = stlTable[count]['STL_ID'];
   document.getElementById("stlName").innerHTML = fn + " " + ln;
   if (x.style.display === "none") {
     x.style.display = "block";
@@ -348,7 +339,6 @@ document.getElementById("empAttendance-submit-1").onclick = function () {
   var teams = [];
   for (i = 0; i < eDetails.length; i++) {
     teams[i] = {};
-    // console.log(document.getElementById("EmpAttTeam_text"+i).value);
     teams[i]["team"] = parseInt(
       document.getElementById("EmpAttTeam_text" + i).value
     );
@@ -357,7 +347,6 @@ document.getElementById("empAttendance-submit-1").onclick = function () {
     } else {
       teams[i]["onwork"] = 0;
     }
-    //  = document.getElementById("EmpAttonWork_text"+i).checked;
   }
 
   var x = 0;
@@ -373,8 +362,6 @@ document.getElementById("empAttendance-submit-1").onclick = function () {
         .getElementById("EmpAttonWork_text0")
         .setCustomValidity("Please insert 3 employees for each team");
       document.getElementById("EmpAttonWork_text0").reportValidity();
-      // $("input[name='EmpAttonWorkData']")[0].setCustomValidity('Please select at least one checkbox.');
-      //   return false;
       flag = 0;
     }
   }

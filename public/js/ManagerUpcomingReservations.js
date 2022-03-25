@@ -6,21 +6,24 @@ $("#ManagerUpcomingDate").datepicker({
     var i = 0;
     var list = [];
 
-    for (i = 0; i < orders.length; i++) {
-      if (orders[i]["Date"] == date) {
-        var order = [];
-        order["Reservation_ID"] = orders[i]["Reservation_ID"];
-        order["First_Name"] = orders[i]["First_Name"];
-        order["Last_Name"] = orders[i]["Last_Name"];
-        order["Vehicle_ID"] = orders[i]["Vehicle_ID"];
-        order["Date"] = orders[i]["Date"];
-        order["Time"] = orders[i]["Time"];
-        order["Service_team_leader_ID"] = orders[i]["Service_team_leader_ID"];
-        list.push(order);
+      document.getElementById("upcomingReservationTable").innerHTML = '';
+      var i = 0;
+      var list = [];
+
+      for (i = 0; i < orders.length; i++) {
+          if (orders[i]['Date'] == date) {
+              var order = [];
+              order['Reservation_ID'] = orders[i]['Reservation_ID'];
+              order['First_Name'] = orders[i]['First_Name'];
+              order['Last_Name'] = orders[i]['Last_Name'];
+              order['Vehicle_ID'] = orders[i]['Vehicle_ID'];
+              order['Date'] = orders[i]['Date'];
+              order['Time'] = orders[i]['Time'];
+              order['Service_team_leader_ID'] = orders[i]['Service_team_leader_ID'];
+              list.push(order);
+          }
       }
-    }
-    // var x = document.getElementById("managerUpcomingReservations");
-    var x = document.getElementById("upcomingReservationTable");
+      var x = document.getElementById("upcomingReservationTable");
 
     document.getElementById("resCount").innerHTML = list.length;
     for (j = 0; j < list.length; j++) {

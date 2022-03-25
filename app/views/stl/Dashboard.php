@@ -6,7 +6,6 @@ $typeOfBookings = $_SESSION['typeOfBookings'];
 <div style="min-height: 110px;"></div>
 <div>
     <h1 class="stl-dashboard-h1">Dashboard</h1>
-    <!-- <?php print_r($_SESSION['typeOfBookings']); ?> -->
 </div>
 
 <div style="min-height: 50px;"></div>
@@ -25,7 +24,6 @@ $typeOfBookings = $_SESSION['typeOfBookings'];
     // put the $booking array into a javascript array
     var booking = <?php echo json_encode($booking); ?>;
     var typeOfBookings = <?php echo json_encode($typeOfBookings); ?>;
-    // console.log(booking);
 
     var data1 = [{
         // assign the key value of data1 to x-axis

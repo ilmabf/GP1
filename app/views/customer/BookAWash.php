@@ -26,7 +26,6 @@ $booked = $_SESSION['booked'];
             <div class="heading">
                 <h2 style="font-size: 30px;">Start Your Booking!</h2>
             </div>
-            <!-- <div id="xx"></div> -->
             <p id="sub-heading-p" style="font-size: 15px;"></p>
             <div id="completeMsg" style="text-align:center; color:red; margin-top:10px;"></div>
         </div>
@@ -75,24 +74,17 @@ $booked = $_SESSION['booked'];
                     echo "</div>";
                 }
                 ?>
-
-                <!-- <div class="select-vehcile-box">
-                    <form action="" method="post">
-                        <select name="vehicle" id="vehicles" onchange="getVehicle();">
-                            <?php
-                            $count  = 0;
-                            while ($count < sizeof($_SESSION['vehicles'])) {
-                                echo "<option value='";
-                                echo $vehicles[$count]['VID'];
-                                echo "' onclick = 'clearWashPackage();'>";
-                                echo $vehicles[$count]['VID'];
-                                echo "</option>";
-                                $count = $count + 1;
-                            }
-                            ?>
-                        </select>
-                    </form>
-                </div> -->
+                <?php
+                $count  = 0;
+                while ($count < sizeof($_SESSION['vehicles'])) {
+                    echo "<option value='";
+                    echo $vehicles[$count]['VID'];
+                    echo "' onclick = 'clearWashPackage();'>";
+                    echo $vehicles[$count]['VID'];
+                    echo "</option>";
+                    $count = $count + 1;
+                }
+                ?>
             </div>
 
             <div class="wash-type">
@@ -126,8 +118,6 @@ $booked = $_SESSION['booked'];
         <div class="next-pg">
             <span class="priceBox" style="display:none;" id="priceValue"></span>
             <button class="next-button" onclick="checkDetails();">Next</button>
-
-            <!-- <a href="/booking/location" style="color: white;">Next</a></button> -->
         </div>
     </div>
 
@@ -167,13 +157,10 @@ $booked = $_SESSION['booked'];
         var vehicles = <?php echo json_encode($_SESSION['vehicles']); ?>;
         var prices = <?php echo json_encode($_SESSION['servicePrice']); ?>;
         var booked = <?php echo json_encode($booked); ?>;
-        // document.getElementById("priceValue").innerHTML = "";
     </script>
     <script src="/public/js/CustomerCalendar.js"></script>
     <script src="/public/js/CustomerBookAWash.js"></script>
 </body>
-
-<!-- </div> -->
 <script src="/public/js/ErrorMessage.js"></script>
 <?php
 if (isset($_SESSION['Error'])) { ?>

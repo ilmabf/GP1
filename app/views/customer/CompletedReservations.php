@@ -11,14 +11,9 @@ $orderList = $_SESSION['customerCompletedReservations'];
     </div>
 
     <div class="reservation-date">
-        <!-- <h3 style="text-align: center; color:#085394;">Pick a date</h3> -->
-
         <div id="closeClick">
-            <!-- <button class="btnclss" onclick="closeOnClickDemo()">Click to open calendar</button><br> -->
             <br>
             <div style="color:white; text-shadow:1px 1px 4px #000000, 1px 1px 4px #0000fa; display:inline;">Date :</div>
-            <!-- <input type="text" value="date" name="customerDateofPastBooking" class="dateBooking"
-                id="CustomerCompletedDate"> -->
             <input id="CustomerCompletedDate" name="customerDateofPastBooking" class="dateBooking" style="width: 50%; padding: unset;
     border-radius: unset; text-align: center;">
         </div>
@@ -64,24 +59,6 @@ $orderList = $_SESSION['customerCompletedReservations'];
 
             <?php $count = $count - 1;
             } ?>
-
-            <!--<div class="sub-box1">
-                <div class="order">
-                    <div class="orderitem">Vehicle No</div>
-                    <p class="orderitem1">AD - 2234</p>
-                </div>
-                <div class="order">
-                    <div class="orderitem">Date</div>
-                    <p class="orderitem1">2021/11/18</p>
-                </div>
-                <div class="order">
-                    <div class="orderitem">Time</div>
-                    <p class="orderitem1">2 pm - 4 pm</p>
-                </div>
-                <div class="orderView">
-                    <p class="viewLink"><a href="/booking/CompletedOrder">View Invoice</a></p>
-                </div>
-            </div>-->
 
         </div>
     </div>

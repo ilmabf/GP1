@@ -15,11 +15,6 @@ function executeRating(stars) {
       "How was the service? Give us a rating!" +
       "</h3>";
     let i;
-    // stars[1].className = starClassActive
-    // stars[2].className = starClassActive
-    // stars[3].className = starClassActive
-    //stars[0].className = starClassActive
-
     stars.map((star) => {
       star.onclick = () => {
         i = stars.indexOf(star);
@@ -89,16 +84,3 @@ function closecencelForm() {
     x.style.display = "block";
   }
 }
-
-// function rescheduleReservation(orderID, date) {
-//   // check the difference between date and today date is greater than 24 hours
-//   var today = new Date();
-//   var date1 = new Date(date);
-//   var diff = date1.getTime() - today.getTime();
-//   var diffDays = Math.ceil(diff / (1000 * 3600 * 24));
-//   if (diffDays > 1) {
-//     window.location = "/booking/rescheduleDetails/" + orderID;
-//   } else {
-//     alert("You can't reschedule the reservation for less than 24 hours");
-//   }
-// }

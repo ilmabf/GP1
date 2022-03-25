@@ -65,7 +65,6 @@ class CustomerModel extends Model
         $key = $this->db->select("Token", "customer", "WHERE User_ID = :uid;", ':uid', $uid);
         if ($key[0]['Token'] == $token) {
             //update verified status to 1
-            // $result = $this->db->update("customer", "Verified", "1", "WHERE User_ID = '$uid';");
             $result = $this->db->update("customer", "Verified", ':verified', "1", ':uid', $uid, "WHERE User_ID = :uid;");
             if ($result == "Success") {
                 return true;

@@ -109,7 +109,7 @@ function saveValue(e) {
 //get the saved value function - return the value of "v" from localStorage.
 function getSavedValue(v) {
   if (!localStorage.getItem(v)) {
-    return ""; // You can change this to your defualt value.
+    return ""; // You can change this to your default value.
   }
   return localStorage.getItem(v);
 }

@@ -138,7 +138,6 @@ include 'views/user/LoggedInHeader.php';
                         <?php echo date("d-m-Y"); ?>
                     </span>
 
-                    <!-- <form action="/employee/insertStlAttendance/" id="stlAttendanceForm" method="POST"> -->
                         <table id="filterTable3">
                             <thead>
                                 <tr>
@@ -156,9 +155,6 @@ include 'views/user/LoggedInHeader.php';
                                 <?php
                                 $count3 = 0;
                                 $result3 = $_SESSION['stlAttendanceDetails'];
-
-
-                                // echo $_SESSION['rowCount'];
                                 while ($count3 < sizeof($result3)) { ?>
 
                                     <tr id="row<?php $count3 ?>">
@@ -180,7 +176,6 @@ include 'views/user/LoggedInHeader.php';
                             <input type="submit" id="stlAttendance-submit-1" value="Submit">
 
                         </div>
-                    <!-- </form> -->
                     <div>
                         <?php if ($_SESSION['insertSuccess'] == "Stl On work error") { ?>
                             <div class="error-message">
@@ -189,8 +184,6 @@ include 'views/user/LoggedInHeader.php';
                         <?php } ?>
                     </div>
                 </div>
-
-                <!-- <div>
 
           <?php
             $result = $_SESSION['stlTableData'];

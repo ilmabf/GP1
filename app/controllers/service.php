@@ -166,7 +166,6 @@ class Service extends Controller
         $vehicleName = str_replace('_', ' ', $vehicleName);
         $vehicleName = str_replace('|', '-', $vehicleName);
 
-        // echo $vehicleName;
         if ($_SESSION['role'] == "systemadmin") {
             if ($this->model->deleteVehicle($vehicleName)) {
                 header("Location: /service/washPackage");

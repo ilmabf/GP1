@@ -9,12 +9,6 @@ include 'views/user/LoggedInHeader.php';
     <div class="heading">
         <h2>Upcoming Jobs: <span id='resCount'></span></h2>
     </div>
-
-
-
-    <!-- <div class="mainUpcoming"> -->
-    <!-- <div class="upcomingOrders" id="managerUpcomingReservations"> -->
-    <!-- <?php print_r($_SESSION['upcomingReservations']); ?> -->
     <div class="Table-search" style="margin-bottom: 20px;">
 
         <div class="table-wrapper">
@@ -23,10 +17,8 @@ include 'views/user/LoggedInHeader.php';
                     <input type="search" class="ad-Emp-Search" id="managerSearchUpcomingReservations" placeholder="Search for Customer..." title="Type in a name">
                 </div>
                 <div class="reservation-date" style="    margin: auto; display: inline-block;  float: right;">
-                    <!-- <h3 style="text-align: center; color:#085394;">Pick a date</h3> -->
 
                     <div id="closeClick" style="    margin: -27px -46px 5px auto;">
-                        <!-- <button class="btnclss" onclick="closeOnClickDemo()">Click to open calendar</button><br> -->
                         <br>
                         <div style="color:black; display:inline;">Date :</div>
                         <input id="ManagerUpcomingDate" type="text" name="managerDateofUpcomingBooking" class="dateBooking" style="width: 50%; border-radius: 5px;">
@@ -51,9 +43,6 @@ include 'views/user/LoggedInHeader.php';
                 <tbody id="upcomingReservationTable"></tbody>
         </div>
     </div>
-    <!-- </div> -->
-    <!-- </div> -->
-
     <div style="min-height: 110px;"></div>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>

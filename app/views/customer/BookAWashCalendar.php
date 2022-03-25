@@ -35,10 +35,6 @@
             </div>
             <div class="days"></div>
         </div>
-        <!-- <div class="button-calendar">
-            <button class="next-button">
-                <a href="/booking/details" style="color: white; text-decoration: none; z-index:2;">Next</a></button>
-        </div> -->
     </div>
     <script src="/public/js/CustomerCalendar.js"></script>
 </body>

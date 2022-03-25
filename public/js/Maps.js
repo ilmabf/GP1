@@ -37,7 +37,7 @@ function saveLocation() {
       window.alert("Directions request failed due to " + status);
       return;
     } else {
-      // directionsRenderer.setDirections(response); // Add route to the map
+     // Add route to the map
       var directionsData = response.routes[0].legs[0]; // Get data about the mapped route
       if (!directionsData) {
         window.alert("Directions request failed");
@@ -59,7 +59,6 @@ function saveLocation() {
 
           limitDiv.style.display = "block";
           limit.innerText = distanceMsg;
-          // responseDiv.appendChild(distanceMsg);
         }
       }
     }
@@ -125,8 +124,6 @@ function initMap() {
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(inputText);
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(submitButton);
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(clearButton);
-  // map.controls[google.maps.ControlPosition.LEFT_TOP].push(instructionsElement);
-  // map.controls[google.maps.ControlPosition.LEFT_TOP].push(responseDiv);
   marker = new google.maps.Marker({
     map,
   });
@@ -162,7 +159,6 @@ function geocode(request) {
       map.setCenter(results[0].geometry.location);
       marker.setPosition(results[0].geometry.location);
       marker.setMap(map);
-      // responseDiv.style.display = "block";
       response.innerText = JSON.stringify(result, null, 2);
       console.log(results);
       customerAddress = "";

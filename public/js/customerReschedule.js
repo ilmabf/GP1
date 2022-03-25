@@ -38,7 +38,6 @@ function checkRescheduleDetails(orderID) {
       "Please make sure the details are complete";
   } else {
     var date = document.getElementById("day1").innerHTML.substring(5);
-    // console.log(date.substring(5));
     var month = document.getElementById("month1").innerHTML;
     var year = document.getElementById("year1").innerHTML;
     var time = document.getElementById("timeSlot1").innerHTML.substring(6);
@@ -74,7 +73,6 @@ function insertCookie() {
   var washPackage = reservationDetails[0]["Wash_Package_ID"];
   washPackage = "washPackage-" + washPackage;
   document.getElementById(washPackage).checked = true;
-  //   document.getElementById("xx").innerHTML = document.cookie;
 }
 
 const date = new Date();
@@ -204,7 +202,6 @@ const renderCalendar = () => {
       days += `<div><span class="today-2" style = "color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">${i}</span><br>`;
       for (a = 1; a <= 5; a++) {
         flag2 = 0;
-        // days += `<div>`;
         for (var key in booked) {
           // split the key by '-'
           var keyArr = key.split("-");
@@ -231,7 +228,6 @@ const renderCalendar = () => {
         }
 
         if (flag2 == 0) {
-          // console.log(timeSlotsArr[a-1])
           days +=
             `
                                             <span class="time-green" id = "slot1" onclick="getTimeAndDate(` +
@@ -253,7 +249,6 @@ const renderCalendar = () => {
     days += `<div class="next-date">
                 
             </div>`;
-    // days += timeSlotsHTML;
     monthDays.innerHTML = days;
   }
 };
@@ -288,31 +283,6 @@ function getTimeAndDate(date, month, year, t) {
     // Check if date is today. If so , check time.
     var today = new Date();
     var selectedDate = year + "-" + month + "-" + date;
-    // if (
-    //     date == today.getDate() &&
-    //     month == today.getMonth() + 1 &&
-    //     year == today.getFullYear()
-    // ) {
-    //     console.log(today.getTimezoneOffset());
-    //     var localTime = today.toLocaleTimeString('en-GB');
-    //     var localTimeArray = localTime.split(":");
-    //     var selectedTimeArray = time.split("-");
-    //     if (parseInt(selectedTimeArray[0]) > parseInt(localTimeArray[0])) {
-    //         document.getElementById("day").innerHTML = date;
-    //         document.getElementById("month").innerHTML = month;
-    //         document.getElementById("year").innerHTML = year;
-    //         document.getElementById("timeSlot").innerHTML = time;
-
-    //         document.cookie = "day = " + date + ";  path=/";
-    //         document.cookie = "month = " + month + ";  path=/";
-    //         document.cookie = "year = " + year + ";  path=/";
-    //         document.cookie = "time = " + time + ";  path=/";
-
-    //         document.getElementById("cal1").style = "display:none;";
-    //         var z = document.getElementById("bookingContent");
-    //         z.classList.remove("blurCalendar");
-    //     }
-    // } else {
     const monthNames = [
       "January",
       "February",
@@ -356,8 +326,6 @@ function getTimeAndDate(date, month, year, t) {
       var z = document.getElementById("bookingContent");
       z.classList.remove("blurCalendar");
     }
-
-    // }
   }
 }
 

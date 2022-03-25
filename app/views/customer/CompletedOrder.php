@@ -127,9 +127,6 @@ $stl = $_SESSION['completedSTL']
 
 
             <div class="rate1" id="displayedSentence">
-
-                <!--<h3 style="color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">How was the service? Give us a
-                    rating!</h3>-->
             </div>
             <div class="rate1 stars1" id="RateUs">
                 <i class="rating__star far fa-star"></i>
@@ -155,4 +152,3 @@ $stl = $_SESSION['completedSTL']
             var orderDetails = <?php echo json_encode($_SESSION['completedOrder']); ?>;
         </script>
         <script src="/public/js/CustomerViewUpcomingOrder.js"></script>
-        <!--<script src="/public/js/CustomerViewCompletedOrder.js"></script>-->

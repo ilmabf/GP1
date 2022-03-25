@@ -6,7 +6,6 @@ class AccountModel extends Model
     {
         $columns = array('User_ID', 'VID', 'Model', 'Colour', 'Type', 'Manufacturer');
         $param = array(':userid', ':vid', ':model', ':color', ':type', ':manufacturer');
-        // $result = $this->db->insert("customer_vehicle", $columns, $values);
         $result = $this->db->insert("customer_vehicle", $columns, $param, $values);
         if ($result == "Success") {
             return true;
@@ -74,11 +73,6 @@ class AccountModel extends Model
 
     function addressAdd($id, $address, $latitude, $longitude)
     {
-        // echo $id;echo "\n";
-        
-        // echo $latitude;echo "\n";
-        // echo $longitude;
-        // echo $address;
 
         $values = array($id, $address, $latitude, $longitude);
         $columns = array('User_ID','Address', 'Latitude', 'Longitude');
