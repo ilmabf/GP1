@@ -168,10 +168,22 @@ class ServiceModel extends Model
 
     function addService($name, $description)
     {
+        //add to wash package table
         $columns = array('Name', 'Description');
         $param = array(':name', ':desc');
         $values = array($name, $description);
         $result = $this->db->insert("wash_package", $columns, $param, $values);
+
+        
+        //add to wash package vehicle category table
+        $washpackage = $this->db->select("Wash_Package_ID", "wash_package", "WHERE Name = :name;", ':name', $name);
+        print_r($washpackage);
+        $columns = array('Wash_Package_ID', 'Vehicle_Type');
+        $param = array(':packageid', ':vehicleType');
+        for($i=0;$i<sizeof($_SESSION['vehicleTypes']); $i++){
+            print $_SESSION['vehicleTypes'][$i]['Vehicle_Type'];
+            $result = $this->db->insert("wash_package_vehicle_category", $columns, $param, array($washpackage[0]['Wash_Package_ID'], $_SESSION['vehicleTypes'][$i]['Vehicle_Type']));
+        }
         if ($result == "Success") {
             return true;
         } else print_r($result);
