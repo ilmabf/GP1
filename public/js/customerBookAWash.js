@@ -1,5 +1,4 @@
 
-
 // set price and washpackage cookies
 
 function getType(x) {
@@ -14,6 +13,7 @@ function getType(x) {
 }
 
 function getWashPackage(n) {
+  // document.getElementById("washPackage-" + n).checked = true;
   document.cookie =
     "washPackage = " + pausecontent[n]["Wash_Package_ID"] + ";  path=/";
   document.cookie =
@@ -47,6 +47,22 @@ function typeWriter(n) {
     setTimeout(typeWriter(n), speed);
   }
 }
+
+// const btnsTip = document.querySelectorAll(".input");
+// let activeBtn = null;
+
+// btnsTip.forEach((btnTip) => {
+//   btnTip.addEventListener("click", (e) => {
+//     e.currentTarget.classList.add("active");
+
+//     if ((activeBtn != null && activeBtn != e.currentTarget)) {
+//       activeBtn.classList.remove("active");
+//     }
+
+//     activeBtn = e.currentTarget;
+//   });
+// });
+
 function viewCalendar() {
   document.getElementById("cal1").style = "display:block;";
   var z = document.getElementById("mainbox");
@@ -64,12 +80,15 @@ function getVehicle() {
   document.cookie = "vehicle =" + x + "; path=/";
 }
 insertCookie();
+// getVehicle();
 
 //check if date, price and vehicle details are complete
 function checkDetails() {
   var slash = document.getElementById("slash1").innerHTML;
   var price = document.getElementById("priceValue").innerHTML;
   if (slash != "/" || price == "") {
+    // document.getElementById("completeMsg").innerHTML =
+    //   "Please make sure the details are complete";
     popError("Please make sure the details are complete");
   } else {
     var x = document.getElementById("vehicles").value;
@@ -114,4 +133,5 @@ function insertCookie() {
       document.getElementById("priceValue").innerHTML = "Rs. " + price;
     }
   }
+  // document.getElementById("xx").innerHTML = document.cookie;
 }

@@ -89,7 +89,7 @@ function addRow() {
 
       // set input attributes.
       button.setAttribute("type", "button");
-      button.setAttribute("value", "Close");
+      button.setAttribute("value", "Cancel");
       button.setAttribute("id", "removeBtn");
 
       // add button's 'onclick' event.
@@ -189,7 +189,7 @@ function addStlRow() {
 
       // set input attributes.
       button1.setAttribute("type", "button");
-      button1.setAttribute("value", "Close");
+      button1.setAttribute("value", "Cancel");
       button1.setAttribute("id", "removeStlBtn");
 
       // add button's 'onclick' event.
@@ -357,7 +357,7 @@ document.getElementById("empAttendance-submit-1").onclick = function () {
 
   var flag = 1;
   for (key in result) {
-    if (result[key] != 3) {
+    if (result[key] != 3 && result[key]!= 0) {
       document
         .getElementById("EmpAttonWork_text0")
         .setCustomValidity("Please insert 3 employees for each team");

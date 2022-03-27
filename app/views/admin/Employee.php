@@ -7,7 +7,7 @@ include 'views/user/LoggedInHeader.php';
     <div style="min-height: 110px;"></div>
     <h2 class="manageEmployee-heading">Manage Employees | <?php echo date("d-m-Y"); ?></h2>
     <div class="addBtnEmps">
-      <input type="button" id="addRow" value="Add Employee" class="addTableEmp" onclick="addRow();" />
+      <input type="button" id="addRow" value="Add New Employee" class="addTableEmp" onclick="addRow();" />
     </div>
 
     <div>
@@ -15,7 +15,7 @@ include 'views/user/LoggedInHeader.php';
         <div id="cont" class="addTb1"></div>
 
 
-        <button type="submit" id="bts" name="empDatas" onclick="checkLetter();">Insert Data</button>
+        <button type="submit" id="bts" name="empDatas" onclick="checkLetter();">Submit</button>
       </form>
 
     </div>
@@ -43,11 +43,11 @@ include 'views/user/LoggedInHeader.php';
       <div class="table-wrapper">
 
         <div id="EmpAttendance-nav">
-          <input type="button" id="next-EmpAttendance" value="Check Attendance >>" onclick="empAttendance();" style="float:right;" />
+          <input type="button" id="next-EmpAttendance" value="Assign to Teams >>" onclick="empAttendance();" style="float:right;" />
         </div>
 
         <div id="EmpDetails-nav">
-          <input type="button" id="next-EmpDetails" value="<< Employee Details" onclick="empDetails();" />
+          <input type="button" id="next-EmpDetails" value="<< Back" onclick="empDetails();" />
         </div>
 
         <div id="empDetailsTable">
@@ -110,7 +110,13 @@ include 'views/user/LoggedInHeader.php';
           </span> -->
 
           <div id="todayDate" style="text-align:center; background-color:blue; color:white;">
-            <?php echo date("d-m-Y"); ?>
+            <?php if(isset($_SESSION['flagForToday'])){
+              echo date("d-m-Y");
+            }else{
+              $yesterday = new DateTime('yesterday');
+              echo $yesterday->format('d-m-Y');
+            }
+               ?>
           </div>
           <table id="filterTable1">
             <thead>
@@ -118,9 +124,9 @@ include 'views/user/LoggedInHeader.php';
                 <th data-type="text">First Name</th>
                 <th data-type="text">Last Name</th>
                 <th data-type="text">Team</th>
-                <th data-type="text">On Work (0/1)</th>
+                <th data-type="text">On Work</th>
                 <th colspan="1" style="text-align: center;">
-                  <input type="button" id="editButton" class="edit_btn td-t1" value="Edit" onclick="empEditAttendanceForm('<?php echo sizeof($_SESSION['employeeAttendanceDetails']) ?>')">
+                  <input type="button" id="editButton" class="edit_btn td-t1" value="Assign" onclick="empEditAttendanceForm('<?php echo sizeof($_SESSION['employeeAttendanceDetails']) ?>')">
                 </th>
               </tr>
             </thead>
@@ -135,7 +141,7 @@ include 'views/user/LoggedInHeader.php';
                   <td id="<?php echo "Att_FirstName_row" . $count1 ?>" style="text-align:left" class="td-t1"><?php echo $result1[$count1]['First_Name'] ?></td>
                   <td id="<?php echo "Att_LastName_row" . $count1 ?>" style="text-align:left" class="td-t1"><?php echo $result1[$count1]['Last_Name'] ?></td>
                   <td id="<?php echo "Att_Team_row" . $count1 ?>" class="td-t1"><?php echo $result1[$count1]['team'] ?></td>
-                  <td id="<?php echo "Att_OnWork_row" . $count1 ?>" style="text-align:left" class="td-t1" style="max-width:200px;"><?php echo $result1[$count1]['onWork'] ?></td>
+                  <td id="<?php echo "Att_OnWork_row" . $count1 ?>" style="text-align:left" class="td-t1" style="max-width:200px;"><?php if($result1[$count1]['onWork'] == 1){echo "Working";}else{echo "N/A";} ?></td>
                 </tr>
 
               <?php $count1 = $count1 + 1;

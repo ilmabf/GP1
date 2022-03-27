@@ -1,5 +1,5 @@
 var layout1 = {
-    title: 'Number of Bookings per Week on past month',
+    title: 'Jobs completed per Week in previous month',
     xaxis: {
         title: 'Week'
     },
@@ -11,7 +11,7 @@ var layout1 = {
 Plotly.newPlot('myPlot1', data1, layout1);
 
 var layout2 = {
-    title: "Number of Bookings per Wash Package on past month"
+    title: "Jobs completed per Wash Package in previous past month"
 };
 
 var data2 = [{
