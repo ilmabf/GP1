@@ -1,23 +1,31 @@
-.managerChartsR1, .managerChartsR2{
-   text-align: center;
-}
-  
-.managerChart1, .managerChart2{
-    width: 40%;
-    margin: auto 20px;
-    display: inline-block;
-} 
-
-.managerChart3, .managerChart4{
-    text-align: center;
-    width: 40%;
-    display: inline-block;
-    margin: auto 20px;
+.managerChartsR1,
+.managerChartsR2 {
+  text-align: center;
 }
 
-@media only screen and (max-width: 770px){
+.managerChart1,
+.managerChart2 {
+  width: 40%;
+  margin: 30px 20px;
+  display: inline-block;
+  box-shadow: 5px 7px 8px 7px #888888;
+  transition: 0.3s;
+  border-radius: 5px;
+}
 
-    .heading{
-        font-size: 15px;
-    }
+.managerChart3,
+.managerChart4 {
+  text-align: center;
+  width: 40%;
+  display: inline-block;
+  margin: 30px 20px;
+  box-shadow: 5px 7px 8px 7px #888888;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+@media only screen and (max-width: 770px) {
+  .heading {
+    font-size: 15px;
+  }
 }
