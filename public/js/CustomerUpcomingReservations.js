@@ -53,7 +53,7 @@ $("#ManagerUpcomingDate").datepicker({
             "<div class='orderView'>" +
             "<p class='viewLink'><a href='/booking/upcomingOrder/" +
             list[j]["Reservation_ID"] +
-            "'>View order</a></p>" +
+            "'>View Reservation</a></p>" +
             "<p class='team'>Team not assigned</p>" +
             "</div>" +
             "</div>";
@@ -81,7 +81,7 @@ $("#ManagerUpcomingDate").datepicker({
             "<div class='orderView'>" +
             "<p class='viewLink'><a href='/booking/upcomingOrder/" +
             list[j]["Reservation_ID"] +
-            "'>View order</a></p>" +
+            "'>View Reservation</a></p>" +
             "<p class='team'>A service team has been assigned for you</p>" +
             "</div>" +
             "</div>";
@@ -124,7 +124,7 @@ function viewList() {
           "<div class='orderView'>" +
           "<p class='viewLink'><a href='/booking/upcomingOrder/" +
           orders[j]["Reservation_ID"] +
-          "'>View order</a></p>" +
+          "'>View Reservation</a></p>" +
           "<p class='team'>Team not assigned</p>" +
           "</div>" +
           "</div>";
@@ -152,7 +152,7 @@ function viewList() {
           "<div class='orderView'>" +
           "<p class='viewLink'><a href='/booking/upcomingOrder/" +
           orders[j]["Reservation_ID"] +
-          "'>View order</a></p>" +
+          "'>View Reservation</a></p>" +
           "<p class='team'>A service team has been assigned for you</p>" +
           "</div>" +
           "</div>";

@@ -11,7 +11,7 @@ include 'views/user/LoggedInHeader.php';
 
 <div style="display: flex;">
     <div class="wash-type" style="flex: 1;">
-        <h3 style="    text-align: center;">Wash Types</h3>
+        <h3 style="    text-align: center;">Wash Packages</h3>
         <form action="" method="post" style="text-align:center;">
             <div class="select-wash-type" style="    display: grid;">
                 <?php

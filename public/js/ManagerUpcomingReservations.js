@@ -59,7 +59,7 @@ $("#ManagerUpcomingDate").datepicker({
           "<td class='team'>Team not assigned</td>" +
           "<td class='viewLink'><a href='/booking/upcomingOrder/" +
           list[j]["Reservation_ID"] +
-          "'>View Order</a></td>" +
+          "'>View Reservation</a></td>" +
           "</tr>";
         console.log(x);
       } else {
@@ -87,7 +87,7 @@ $("#ManagerUpcomingDate").datepicker({
           "</td>" +
           "<td class='viewLink'><a href='/booking/upcomingOrder/" +
           list[j]["Reservation_ID"] +
-          "'>View Order</a></td>" +
+          "'>View Reservation</a></td>" +
           "</tr>";
 
         console.log(x);
@@ -132,7 +132,7 @@ function viewList() {
         "<td class='team'>Team not assigned</td>" +
         "<td class='viewLink'><a href='/booking/upcomingOrder/" +
         orders[j]["Reservation_ID"] +
-        "'>View Order</a></td>" +
+        "'>View Reservation</a></td>" +
         "</tr>";
     } else {
       x.innerHTML +=
@@ -159,7 +159,7 @@ function viewList() {
         "</td>" +
         "<td class='viewLink'><a href='/booking/upcomingOrder/" +
         orders[j]["Reservation_ID"] +
-        "'>View Order</a></td>" +
+        "'>View Reservation</a></td>" +
         "</tr>";
     }
   }

@@ -42,7 +42,7 @@ include 'views/user/LoggedInHeader.php';
             <form action="/employee/stlAdd" name="Form1" method="post" enctype="multipart/form-data">
                 <div id="cont2" class="addTb2"></div>
 
-                <button type="submit" name="submitStl" id="btStl" value="Insert data" onclick="validate();">Insert Data</button>
+                <button type="submit" name="submitStl" id="btStl" value="Submit" onclick="validate();">Submit</button>
             </form>
         </div>
 
@@ -63,11 +63,11 @@ include 'views/user/LoggedInHeader.php';
             <div class="table-wrapper">
 
                 <div id="StlAttendance-nav">
-                    <input type="button" id="next-StlAttendance" value="Check Attendance >>" onclick="stlAttendance();" style="float:right;" />
+                    <input type="button" id="next-StlAttendance" value="Assign Leaders for Mobile Car Wash >>" onclick="stlAttendance();" style="float:right;" />
                 </div>
 
                 <div id="StlDetails-nav">
-                    <input type="button" id="next-StlDetails" value="<< Service Team Leader Details" onclick="stlDetails();" />
+                    <input type="button" id="next-StlDetails" value="<< Back" onclick="stlDetails();" />
                 </div>
 
                 <div id="stlDetailsTable">
@@ -196,7 +196,7 @@ include 'views/user/LoggedInHeader.php';
         var stlTable = <?php echo json_encode($_SESSION['stlTableData']); ?>;
     </script>
     <script src="/public/js/AdminEmployeeTable.js"></script>
-    <script src="/public/js/AdminManageEmployee.js"></script>
+    <!-- <script src="/public/js/AdminManageEmployee.js"></script> -->
 
     <script src="/public/js/AdminManageSTL.js"></script>
 </main>

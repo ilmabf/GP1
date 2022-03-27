@@ -80,7 +80,7 @@ $teams = $_SESSION['teamDetails'];
   <div class="table-wrapper">
     <div style="display:inline-block; width: 100%;">
       <div style="float: left;">
-        <input type="button" class="backToItem-button" value="<< Items" onclick="backToItem()">
+        <input type="button" class="backToItem-button" value="<< Back" onclick="backToItem()">
       </div>
 
       <div style="float: right;">
@@ -110,7 +110,7 @@ $teams = $_SESSION['teamDetails'];
           <th data-type="text">Model</th>
           <th data-type="text">Price</th>
           <th data-type="text">Date Acquired</th>
-          <th data-type="text">Allocated to Team</th>
+          <th data-type="text">Allocated Team</th>
 
         </tr>
       </thead>
@@ -126,7 +126,7 @@ $teams = $_SESSION['teamDetails'];
   <div class="table-wrapper">
     <div style="display:inline-block; width: 100%;">
       <div style="float: left;">
-        <input type="button" class="backToItem-button" value="<< Items" onclick="backToItem()">
+        <input type="button" class="backToItem-button" value="<< Back" onclick="backToItem()">
       </div>
 
       <div style="float: right;">
@@ -140,7 +140,7 @@ $teams = $_SESSION['teamDetails'];
           <th data-type="text">Model</th>
           <th data-type="text">Price</th>
           <th data-type="text">Date Acquired</th>
-          <th data-type="text">Allocated to Team</th>
+          <th data-type="text">Allocated Team</th>
 
         </tr>
       </thead>
@@ -156,7 +156,7 @@ $teams = $_SESSION['teamDetails'];
   <div class="table-wrapper">
     <div style="display:inline-block; width: 100%;">
       <div style="float: left;">
-        <input type="button" class="backToItem-button" value="<< Items" onclick="backToItem()">
+        <input type="button" class="backToItem-button" value="<< Back" onclick="backToItem()">
       </div>
 
       <div style="float: right;">
@@ -166,11 +166,10 @@ $teams = $_SESSION['teamDetails'];
       <h id="TeamName" style="text-align: center;display: block;color: #085394;font-weight: bold;margin-bottom: 5px;font-size: x-large;"></h>
       <thead>
         <tr>
-          <th data-type="text">Equipment ID</th>
-          <th data-type="text">Name</th>
+          <th data-type="text">Item Code</th>
+          <th data-type="text">Category</th>
           <th data-type="text">Price</th>
           <th data-type="text">Date Acquired</th>
-          <th data-type="text">Team</th>
 
         </tr>
       </thead>
@@ -185,7 +184,7 @@ $teams = $_SESSION['teamDetails'];
   <div class="table-wrapper">
     <div style="display:inline-block; width: 100%;">
       <div style="float: left;">
-        <input type="button" class="backToItem-button" value="<< Equipment" onclick="backToEquipment()">
+        <input type="button" class="backToItem-button" value="<< Back" onclick="backToEquipment()">
       </div>
 
       <div style="float: right;">
@@ -194,8 +193,8 @@ $teams = $_SESSION['teamDetails'];
     <table>
       <thead>
         <tr>
-          <th data-type="text">Equipment ID</th>
-          <th data-type="text">Name</th>
+          <th data-type="text">Item Code</th>
+          <th data-type="text">Category</th>
           <th data-type="text">Price</th>
           <th data-type="text">Date Acquired</th>
           <th data-type="text">Team</th>

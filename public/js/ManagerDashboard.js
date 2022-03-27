@@ -8,7 +8,7 @@ var layout1 = {
     title: "Week",
   },
   yaxis: {
-    title: "Number of Bookings",
+    title: "Number of Jobs",
   },
 };
 

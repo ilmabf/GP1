@@ -146,7 +146,7 @@ $teams = $_SESSION['teamDetails'];
               <th data-type="text">Model</th>
               <th data-type="text">Price</th>
               <th data-type="text">Date Acquired</th>
-              <th data-type="text">Allocated to Team</th>
+              <th data-type="text">Allocated Team</th>
               <th colspan="2" style="text-align: center;">Action</th>
             </tr>
           </thead>
@@ -176,7 +176,7 @@ $teams = $_SESSION['teamDetails'];
               <th data-type="text">Model</th>
               <th data-type="text">Price</th>
               <th data-type="text">Date Acquired</th>
-              <th data-type="text">Allocated to Team</th>
+              <th data-type="text">Allocated Team</th>
               <th colspan="2" style="text-align: center;">Action</th>
             </tr>
           </thead>

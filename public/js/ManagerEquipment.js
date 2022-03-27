@@ -22,6 +22,12 @@ function viewAllEquipment(n, count) {
   var x = document.getElementById("Equipment-manager");
   console.log(EquipmentToDisplay);
   for (j = 0; j < EquipmentToDisplay.length; j++) {
+    if(EquipmentToDisplay[j]["Team"] == null){
+      var assignedTeam = "N/A";
+    }
+    else{
+      var assignedTeam = EquipmentToDisplay[j]["Team"];
+    }
     x.innerHTML +=
       "<tr id='rowNo" +
       j +
@@ -39,7 +45,7 @@ function viewAllEquipment(n, count) {
       EquipmentToDisplay[j]["Date_Acquired"] +
       "</td>" +
       "<td class='td-t1' style='text-align:right'>" +
-      EquipmentToDisplay[j]["Team"] +
+      assignedTeam +
       "</td>" +
       "</tr>" +
       "</tbody>";
@@ -87,7 +93,7 @@ function viewFreeEquipment(n, count) {
       EquipmentToDisplay[j]["Date_Acquired"] +
       "</td>" +
       "<td class='td-t1' style='text-align:right'>" +
-      EquipmentToDisplay[j]["Team"] +
+      "N/A" +
       "</td>" +
       "</tr>" +
       "</tbody>";
@@ -118,10 +124,17 @@ function getTeamvise1() {
     if (equipment[i]["Team"] == x) {
       var TempEq = [];
       TempEq["Equipment_ID"] = equipment[i]["Equipment_ID"];
-      TempEq["Name"] = equipment[i]["Name"];
+      TempEq["ItemCode"] = equipment[i]["ItemCode"];
+
+      for (j = 0; j < items.length; j++) {
+        if (equipment[i]["Item_Id"] == items[j]["Item_Id"]) {
+          TempEq["Model"] = items[j]["Name"];
+        }
+      }
+
       TempEq["Price"] = equipment[i]["Price"];
       TempEq["Date_Acquired"] = equipment[i]["Date_Acquired"];
-      TempEq["Team"] = equipment[i]["Team"];
+      // TempEq['Team'] = equipment[i]['Team'];
       document.getElementById("TeamName").innerHTML =
         "Equipment assigned to Team " + equipment[i]["Team"];
       EquipmentToDisplay.push(TempEq);
@@ -135,19 +148,16 @@ function getTeamvise1() {
       j +
       "'>" +
       "<td>" +
-      EquipmentToDisplay[j]["Equipment_ID"] +
+      EquipmentToDisplay[j]["ItemCode"] +
       "</td>" +
       "<td style='text-align:left' class='td-t1'> " +
-      EquipmentToDisplay[j]["Name"] +
+      EquipmentToDisplay[j]["Model"] +
       " </td>" +
       "<td class='td-t1' style='text-align:right'>" +
       EquipmentToDisplay[j]["Price"] +
       ".00</td>" +
       "<td class='td-t1'>" +
       EquipmentToDisplay[j]["Date_Acquired"] +
-      "</td>" +
-      "<td class='td-t1' style='text-align:right'>" +
-      EquipmentToDisplay[j]["Team"] +
       "</td>" +
       "</tr>" +
       "</tbody>";
@@ -166,7 +176,13 @@ function getTeamvise2() {
     if (equipment[i]["Team"] == x && equipment[i]["Item_Id"] == itemID) {
       var TempEq = [];
       TempEq["Equipment_ID"] = equipment[i]["Equipment_ID"];
-      TempEq["Name"] = equipment[i]["Name"];
+      TempEq["ItemCode"] = equipment[i]["ItemCode"];
+      for (j = 0; j < items.length; j++) {
+        if (equipment[i]["Item_Id"] == items[j]["Item_Id"]) {
+          TempEq["Model"] = items[j]["Name"];
+        }
+      }
+
       TempEq["Price"] = equipment[i]["Price"];
       TempEq["Date_Acquired"] = equipment[i]["Date_Acquired"];
       TempEq["Team"] = equipment[i]["Team"];
@@ -181,10 +197,10 @@ function getTeamvise2() {
       j +
       "'>" +
       "<td>" +
-      EquipmentToDisplay[j]["Equipment_ID"] +
+      EquipmentToDisplay[j]["ItemCode"] +
       "</td>" +
       "<td style='text-align:left' class='td-t1'> " +
-      EquipmentToDisplay[j]["Name"] +
+      EquipmentToDisplay[j]["Model"] +
       " </td>" +
       "<td class='td-t1' style='text-align:right'>" +
       EquipmentToDisplay[j]["Price"] +

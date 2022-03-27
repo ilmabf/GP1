@@ -55,7 +55,7 @@ $("#ManagerCompletedDate").datepicker({
         "'s Team</td>" +
         "<td><a href='/booking/completedOrder/" +
         list[j]["Reservation_ID"] +
-        "'>View Order</a></td>" +
+        "'>View Reservation</a></td>" +
         "</tr>";
     }
   },
@@ -98,7 +98,7 @@ function viewList() {
       "'s Team</td>" +
       "<td class='viewLink'><a href='/booking/completedOrder/" +
       orders[j]["Reservation_ID"] +
-      "'>View Order</a></td>" +
+      "'>View Reservation</a></td>" +
       "</tr>";
   }
 }
