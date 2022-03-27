@@ -40,7 +40,7 @@ $stl = $_SESSION['completedSTL']
     <div id="upcoming">
 
         <div class="box3">
-            <div class="invoiceBorder">Order - <?php
+            <div class="invoiceBorder">Reservation - <?php
                                                 if (strlen($orderDetails[0]['Reservation_ID']) == 1) {
                                                     echo "000" . $orderDetails[0]['Reservation_ID'];
                                                 } else if (strlen($orderDetails[0]['Reservation_ID']) == 2) {
@@ -85,15 +85,15 @@ $stl = $_SESSION['completedSTL']
                                 <td style="text-align:left"><?php echo $orderDetails[0]['Vehicle_ID'] ?></td>
                             </tr>
                             <tr>
-                                <td style="text-align:left; color:#193498; font-weight:bold">Service team leader</td>
+                                <td style="text-align:left; color:#193498; font-weight:bold">Service Team Leader</td>
                                 <td style="text-align:left"><button class="reservationButtons a12" id="cancelAssignBtn" style="color:white; padding: 1px 3px; margin-bottom:0px" onclick="openstlForm()"><a>View Details</a></button></td>
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <td style="text-align:left; color:#193498; font-weight:bold">Team members</td>
                                 <td style="font-size: 12px;text-align:left">
                                     <?php echo $orderDetails[0]['Member1'] . "<br />" . $orderDetails[0]['Member2'] . "<br />" . $orderDetails[0]['Member3'] . "<br />" .  $orderDetails[0]['Member4'] ?>
                                 </td>
-                            </tr>
+                            </tr> -->
                             <tr>
                                 <td style="text-align:left; color:#193498; font-weight:bold">Location</td>
                                 <td style="font-size: 12px;text-align:left"><?php echo $orderDetails[0]['Address'] ?>

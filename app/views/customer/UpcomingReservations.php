@@ -26,7 +26,7 @@ include 'views/user/LoggedInHeader.php';
 <div class="addVehicleform" id="confirmPopUpId">
     <div class="forma">
 
-        <h2 class="login-signupheader">Your order has been confirmed. Thank you!</h2>
+        <h2 class="login-signupheader">Your reservation has been confirmed. Thank you!</h2>
 
         <form action="" method="post" id="customer-signup">
 

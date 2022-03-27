@@ -158,6 +158,12 @@ class EmployeeModel extends Model
 
     function getEmpData()
     {
+        $today = date("Y-m-d");
+        $flagForToday = $this->db->select("count", "employee_records", "WHERE date = :day;", ":day", $today);
+        if($flagForToday>0){
+            $_SESSION['flagForToday'] = 1;
+        }
+
         $selection = array("employee.First_Name", "employee.Last_Name", "employee.Contact_Number", "employee.Email", "employee.Date_Enrolled", "employee.Salary", "employee.NIC_No", "employee_records.team", "employee_records.onWork");
         $today = date("Y-m-d");
         $result = $this->db->select($selection, "employee", "LEFT JOIN employee_records ON (employee.Employee_ID = employee_records.EmpID AND employee_records.date = :day) WHERE (employee.STL_ID IS NULL AND employee.Flag = 1);", ":day", $today);
@@ -166,14 +172,22 @@ class EmployeeModel extends Model
 
     function getStlAttendanceData()
     {
-        $selection = array("employee.First_Name", "employee.Last_Name", "employee.Contact_Number", "employee.Email", "employee.Date_Enrolled", "employee.Salary", "employee.NIC_No", "employee_records.team", "employee_records.onWork");
         $today = date("Y-m-d");
+        $flagForToday = $this->db->select("count", "employee_records", "WHERE date = :day AND STL_ID IS NOT NULL;", ":day", $today);
+        if($flagForToday>0){
+            $_SESSION['flagForToday2'] = 1;
+        }
+
+        $selection = array("employee.First_Name", "employee.Last_Name", "employee.Contact_Number", "employee.Email", "employee.Date_Enrolled", "employee.Salary", "employee.NIC_No", "employee_records.team", "employee_records.onWork");
+        
         $result = $this->db->select($selection, "employee", "LEFT JOIN employee_records ON (employee.Employee_ID = employee_records.EmpID AND employee_records.date = :day) WHERE (employee.STL_ID IS NOT NULL AND employee.Flag = 1);", ":day", $today);
         return $result;
     }
 
     function insertAttendance_emp($empID, $team, $onWork)
     {
+        
+        
         $today = date("Y-m-d");
         $columns = array('EmpID', 'Date', 'team', 'onWork');
         $param = array(':empId', ':date', ':team', ':onWork');

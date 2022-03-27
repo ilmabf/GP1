@@ -210,13 +210,14 @@ class Booking extends Controller
 
     function makeReservation($details)
     {
+        echo $details;
         if ($_SESSION['role'] == "customer") {
 
             $details = str_replace('_', ' ', $details);
             $details = str_replace('|', '/', $details);
-            echo $details;
+            
             $details = explode(';', $details);
-
+            echo sizeof($details);
             for ($i = 0; $i < sizeof($details); $i++) {
                 if (strncmp($details[$i], " day", 4) == 0) {
                     $day = substr($details[$i], 5);
@@ -247,12 +248,14 @@ class Booking extends Controller
 
             //price validations
             if ((float)$total <= (float)$price) {
-                header("Location: /booking/details");
+
+                // header("Location: /booking/details");
                 exit;
             }
 
             if ($this->model->checkInvalidPrice($price, $washPackage, $vehicle)) {
-                header("Location: /booking/details");
+
+                // header("Location: /booking/details");
                 exit;
             }
 

@@ -48,13 +48,13 @@ include 'views/user/LoggedInHeader.php';
                     echo "'";
                     echo " onclick='openViewVehicleType(";
                     echo $i;
-                    echo ")' >";
+                    echo ")' ><span>";
                     echo $_SESSION['vehicleTypes'][$i]['Vehicle_Type'];
-                    echo "</div>";
+                    echo "</span></div>";
                     $i = $i + 1;
                 }
                 ?>
-                <div class="typeVehicles addBtnVehicles" id="addNewVehicleTypess" onclick="openVehicleAddForm()">+ Add</div>
+                <div class="typeVehicles2 addBtnVehicles" id="addNewVehicleTypess" onclick="openVehicleAddForm()">+ Add</div>
             </div>
         </div>
 
