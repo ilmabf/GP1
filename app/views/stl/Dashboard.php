@@ -5,7 +5,7 @@ $typeOfBookings = $_SESSION['typeOfBookings'];
 ?>
 <div style="min-height: 110px;"></div>
 <div>
-    <h1 class="stl-dashboard-h1">Dashboard</h1>
+    <h1 class="stl-dashboard-h1">Dashboard - <?php $lastMonth = Date("F", strtotime("first day of previous month")); echo $lastMonth;?></h1>
 </div>
 
 <div style="min-height: 50px;"></div>

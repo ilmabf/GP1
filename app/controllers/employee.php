@@ -32,6 +32,21 @@ class Employee extends Controller
         $userData = $this->model->getUserData();
         $_SESSION['userData'] = $userData;
 
+        $stlData = $this->model->getStlData();
+        $_SESSION['stlData'] = $stlData;
+
+        $stlAttendance = $this->model->getStlAttendanceDetails();
+        $_SESSION['stlAttendanceDetails'] = $stlAttendance;
+
+        $stlData = $this->model->getStlAttendanceData();
+        $_SESSION['StlAttendanceData'] = $stlData;
+
+        $stlonWorkData = $this->model->getStlOnWorkData();
+        $_SESSION['StlOnWorkData'] = $stlonWorkData;
+
+        $stlNotWorkData = $this->model->getStlNotWorkData();
+        $_SESSION['StlNotWorkData'] = $stlNotWorkData;
+        
         //User Autherization
         if ($_SESSION['role'] == "systemadmin") {
             $this->view->render('admin/Employee');
@@ -43,6 +58,21 @@ class Employee extends Controller
 
     function serviceTeamLeaders()
     {
+        $empDetails = $this->model->getEmployeeDetails();
+        $_SESSION['employeeDetails'] = $empDetails;
+
+        $empAttendance = $this->model->getEmployeeAttendanceDetails();
+        $_SESSION['employeeAttendanceDetails'] = $empAttendance;
+
+        $empData = $this->model->getEmpData();
+        $_SESSION['EmpAttendanceData'] = $empData;
+
+        $emponWorkData = $this->model->getEmpOnWorkData();
+        $_SESSION['EmponWorkData'] = $emponWorkData;
+
+        $empNotWorkData = $this->model->getEmpNotWorkData();
+        $_SESSION['EmpNotWorkData'] = $empNotWorkData;
+
         $stlData = $this->model->getStlData();
         $_SESSION['stlData'] = $stlData;
 

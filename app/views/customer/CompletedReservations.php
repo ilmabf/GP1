@@ -13,7 +13,7 @@ $orderList = $_SESSION['customerCompletedReservations'];
     <div class="reservation-date">
         <div id="closeClick">
             <br>
-            <div style="color:white; text-shadow:1px 1px 4px #000000, 1px 1px 4px #0000fa; display:inline;">Date :</div>
+            <div style="color:white; text-shadow:1px 1px 4px #000000, 1px 1px 4px #0000fa; display:inline;">Filter By Date :</div>
             <input id="CustomerCompletedDate" name="customerDateofPastBooking" class="dateBooking" style="width: 50%; padding: unset;
     border-radius: unset; text-align: center;">
         </div>
@@ -25,7 +25,7 @@ $orderList = $_SESSION['customerCompletedReservations'];
             while ($count >= 0) { ?>
                 <div class="sub-box1">
                     <div class="order">
-                        <div class="orderitem">Order ID</div>
+                        <div class="orderitem">Reservation ID</div>
                         <div class="orderitem1"><?php
                                                 if (strlen($orderList[$count]['Reservation_ID']) == 1) {
                                                     echo "000" . $orderList[$count]['Reservation_ID'];

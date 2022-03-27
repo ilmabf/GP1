@@ -41,7 +41,7 @@ function viewAllEquipment(n, count) {
         "<td id='assignedTeam_row" +
         j +
         "' class='td-t1' style='text-align:right'>" +
-        EquipmentToDisplay[j]["Team"] +
+        "N/A" +
         "</td><td>" +
         "<input type='button' id='edit_equip_btn" +
         j +
@@ -145,7 +145,7 @@ function viewFreeEquipment(n, count) {
       "<td id='assignedTeam_row" +
       j +
       "' class='td-t1' style='text-align:right'>" +
-      EquipmentToDisplay[j]["Team"] +
+      "N/A" +
       "</td>" +
       "<td> <input type='button' id='edit_equip_btn" +
       j +
