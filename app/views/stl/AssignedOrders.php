@@ -35,7 +35,7 @@ $orderList = $_SESSION['todayReservations'];
                                                     } ?></div>
                         </div>
                         <div class="order">
-                            <div class="orderitem">Vecicle No</div>
+                            <div class="orderitem">Vehicle No</div>
                             <div class="orderitem1"><?php echo $orderList[$count]['Vehicle_ID'] ?></div>
                         </div>
                         <div class="order">

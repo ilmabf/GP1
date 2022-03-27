@@ -45,7 +45,7 @@ $teams = $_SESSION['teamDetails'];
         <div id="container1">
 
         </div>
-        <input type="submit" id="submitButton" value="Insert Data" />
+        <input type="submit" id="submitButton" value="Submit" />
       </form>
     </div>
 
