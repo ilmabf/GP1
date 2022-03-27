@@ -46,7 +46,7 @@ class Employee extends Controller
 
         $stlNotWorkData = $this->model->getStlNotWorkData();
         $_SESSION['StlNotWorkData'] = $stlNotWorkData;
-        
+
         //User Autherization
         if ($_SESSION['role'] == "systemadmin") {
             $this->view->render('admin/Employee');
@@ -206,6 +206,8 @@ class Employee extends Controller
                                         $newStlID =  $stlId[0]['STL_ID'];
                                         if ($this->model->stlUserAdd($newStlID, $stlUserName, $hashedpwd, $stlEmail, $flag)) {
                                             if ($this->model->empStlIDAdd($newStlID, $nic)) {
+                                                $empID = $this->model->getSTLEmpID($nic);
+                                                $result = $this->model->changeSTLAttendance($empID[0]['Employee_ID'],$newStlID);
                                                 $_SESSION['insertSuccess'] = 'Service Team Leader added successfully';
                                                 header("Location: /employee/serviceTeamLeaders");
                                             } else {

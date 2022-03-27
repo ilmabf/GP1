@@ -273,4 +273,22 @@ class EmployeeModel extends Model
         $result = $this->db->update("service_team_leader", $columns, $param, $values, $conditionParam, $conditionValue, "WHERE STL_ID = :stlID;");
         return $result;
     }
+
+    function getSTLEmpID($nic){
+        $result = $this->db->select("Employee_ID", "employee", "WHERE NIC_No = :nic", ":nic", $nic);
+        return $result;
+    }
+
+    function changeSTLAttendance($empID, $stlID){
+        $date = date('Y/m/d');
+        if($this->db->select("count", "employee_records", "WHERE Date = :date AND EmpID = :empID;", array(":date", ":empID"), array($date, $empID))){
+            
+            $columns = array("STL_ID", "team");
+            $param = array(":stlID", ":t");
+            $values = array($stlID, $stlID);
+            $conditionParam = array(":date", ":empID");
+            $conditionValue = array($date, $empID);
+            $result = $this->db->update("employee_records", $columns, $param, $values, $conditionParam, $conditionValue, "WHERE Date = :date AND EmpID = :empID;");
+        }
+    }
 }
