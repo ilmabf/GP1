@@ -19,30 +19,6 @@ const filterTable = (event) => {
 
 searchInput.addEventListener("keyup", filterTable, false);
 
-// emp onwork search
-const searchInput1 = document.getElementById("adminSearchonWorkEmployee");
-const table1 = document.getElementById("filterTable1");
-const trArray1 = Array.prototype.slice.call(
-  table1.querySelectorAll("tbody tr")
-);
-
-const filterTable1 = (event) => {
-  const searchTerm1 = event.target.value.toLowerCase();
-  trArray1.forEach((row1) => {
-    row1.classList.add("hidden");
-    const tdArray1 = Array.prototype.slice.call(
-      row1.getElementsByTagName("td")
-    );
-    tdArray1.forEach((cell1) => {
-      if (cell1.innerText.toLowerCase().indexOf(searchTerm1) > -1) {
-        row1.classList.remove("hidden");
-      }
-    });
-  });
-};
-
-searchInput1.addEventListener("keyup", filterTable1, false);
-
 // stl search
 const searchInput2 = document.getElementById("adminSearchStl");
 const table2 = document.getElementById("filterTable2");
@@ -66,30 +42,6 @@ const filterTable2 = (event) => {
 };
 
 searchInput2.addEventListener("keyup", filterTable2, false);
-
-// stl onWork search
-const searchInput3 = document.getElementById("stlonWorkSearch");
-const table3 = document.getElementById("filterTable3");
-const trArray3 = Array.prototype.slice.call(
-  table3.querySelectorAll("tbody tr")
-);
-
-const filterTable3 = (event) => {
-  const searchTerm3 = event.target.value.toLowerCase();
-  trArray3.forEach((row3) => {
-    row3.classList.add("hidden");
-    const tdArray3 = Array.prototype.slice.call(
-      row3.getElementsByTagName("td")
-    );
-    tdArray3.forEach((cell3) => {
-      if (cell3.innerText.toLowerCase().indexOf(searchTerm3) > -1) {
-        row3.classList.remove("hidden");
-      }
-    });
-  });
-};
-
-searchInput3.addEventListener("keyup", filterTable3, false);
 
 function empEditForm(no) {
   // Get the ids of edit and save buttons.

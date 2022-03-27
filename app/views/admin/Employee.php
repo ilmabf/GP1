@@ -54,7 +54,7 @@ include 'views/user/LoggedInHeader.php';
 
           <div style="display:inline-block; width: 100%;">
             <div class="Admin-EmpSearch adEmpSearch1">
-              <input type="search" class="ad-Emp-Search" id="adminSearchEmployee" onkeyup="myFunction()" placeholder="Search for Employee..." title="Type in a name">
+              <input type="search" class="ad-Emp-Search" id="adminSearchEmployee" onkeyup="myFunction22()" placeholder="Search for Employee..." title="Type in a name">
             </div>
 
           </div>
