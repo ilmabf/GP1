@@ -35,7 +35,7 @@ $result = $_SESSION['employeeDetails'];
 
             <div class="table-wrapper">
                 <div style="display:inline-block; width: 100%;">
-                    <div class="Admin-EmpSearch adEmpSearch1">
+                    <div class="Admin-EmpSearch adEmpSearch1" id="search-btn-stl">
                         <input type="search" class="ad-Emp-Search" id="managerMgSearchSTL" onkeyup="myFunction()" placeholder="Search for STL..." title="Type in a name">
                     </div>
 
