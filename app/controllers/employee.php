@@ -271,7 +271,7 @@ class Employee extends Controller
 
     function insertEmpAttendance($teams)
     {
-        $AttendanceArray=  json_decode($teams,true);
+        $AttendanceArray =  json_decode($teams, true);
         if ($_SESSION['role'] == "systemadmin") {
             $flag1 = 0;
             for ($k = 0; $k < sizeof($_SESSION['employeeAttendanceDetails']); $k++) {
@@ -291,7 +291,7 @@ class Employee extends Controller
 
     function insertStlAttendance($teams)
     {
-        $AttendanceArray=  json_decode($teams,true);
+        $AttendanceArray =  json_decode($teams, true);
         if ($_SESSION['role'] == "systemadmin") {
 
             for ($l = 0; $l < sizeof($_SESSION['stlAttendanceDetails']); $l++) {
