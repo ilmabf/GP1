@@ -41,6 +41,10 @@ include 'views/user/LoggedInHeader.php';
                     </tr>
                 </thead>
                 <tbody id="upcomingReservationTable"></tbody>
+
+                <div class="show-more">
+                    <a href="#">Show more</a>
+                </div>
         </div>
     </div>
     <div style="min-height: 110px;"></div>
