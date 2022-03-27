@@ -1,5 +1,9 @@
+var  months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+var d = new Date();
+var monthName=months[d.getMonth()-1];
+
 var layout1 = {
-  title: "Number of Bookings per Week on past month",
+  title: "Number of Bookings per Week in " + monthName,
   xaxis: {
     title: "Week",
   },
@@ -11,7 +15,7 @@ var layout1 = {
 Plotly.newPlot("myPlot1", data1, layout1);
 
 var layout2 = {
-  title: "Revenue per Week on past month",
+  title: "Revenue per Week in " + monthName,
   xaxis: {
     title: "Week",
   },
@@ -23,7 +27,7 @@ var layout2 = {
 Plotly.newPlot("myPlot2", data2, layout2);
 
 var layout3 = {
-  title: "Type of Bookings on the past month",
+  title: "Type of Wash Packages booked in " + monthName,
 };
 
 var data3 = [
@@ -37,7 +41,7 @@ var data3 = [
 Plotly.newPlot("myPlot3", data3, layout3);
 
 var layout4 = {
-  title: "Service Teams' bookings on the past month",
+  title: "Jobs completed by teams in " + monthName,
 };
 
 var data4 = [

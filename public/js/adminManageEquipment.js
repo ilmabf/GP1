@@ -45,7 +45,7 @@ function viewAllEquipment(n, count) {
         "</td><td>" +
         "<input type='button' id='edit_equip_btn" +
         j +
-        "' class='edit_btn td-t1' value='Assign a Team' onclick='editEquipment(" +
+        "' class='edit_btn td-t1' value='Assign to a Team' onclick='editEquipment(" +
         j +
         ")'>" +
         "<a href='' id='editLink" +
@@ -59,7 +59,7 @@ function viewAllEquipment(n, count) {
         ")'></a>" +
         "<a href='/service/deleteEquipment/" +
         EquipmentToDisplay[j]["Equipment_ID"] +
-        "'> <input type='button' class='del_btn td-t1' value='Delete' onclick='deleteEquipment(" +
+        "'> <input type='button' class='del_btn td-t1' value='Remove' onclick='deleteEquipment(" +
         j +
         ")'></a></td>" +
         "</tr>";
@@ -92,7 +92,7 @@ function viewAllEquipment(n, count) {
         ")'>" +
         "<a href='/service/deleteEquipment/" +
         EquipmentToDisplay[j]["Equipment_ID"] +
-        "'> <input type='button' class='del_btn td-t1' value='Delete' onclick='deleteEquipment(" +
+        "'> <input type='button' class='del_btn td-t1' value='Remove' onclick='deleteEquipment(" +
         j +
         ")'></a></td>" +
         "</tr>";
@@ -149,7 +149,7 @@ function viewFreeEquipment(n, count) {
       "</td>" +
       "<td> <input type='button' id='edit_equip_btn" +
       j +
-      "' class='edit_btn td-t1' value='Assign a Team' onclick='editEquipment(" +
+      "' class='edit_btn td-t1' value='Assign to a Team' onclick='editEquipment(" +
       j +
       ")'>" +
       "<a href='' id='editLink" +
@@ -163,7 +163,7 @@ function viewFreeEquipment(n, count) {
       ")'></a>" +
       "</td> <td><a href='/service/deleteEquipment/" +
       EquipmentToDisplay[j]["Equipment_ID"] +
-      "'> <input type='button' class='del_btn td-t1' value='Delete' onclick='deleteEquipment(" +
+      "'> <input type='button' class='del_btn td-t1' value='Remove' onclick='deleteEquipment(" +
       j +
       ")'></a></td>" +
       "</tr>" +
@@ -236,7 +236,7 @@ function getTeamvise1() {
       ")'>" +
       "</td> <td><a href='/service/deleteEquipment/" +
       EquipmentToDisplay[j]["Equipment_ID"] +
-      "'> <input type='button' class='del_btn td-t1' value='Delete' onclick='deleteEquipment(" +
+      "'> <input type='button' class='del_btn td-t1' value='Remove' onclick='deleteEquipment(" +
       j +
       ")'></a></td>" +
       "</tr>" +
@@ -300,7 +300,7 @@ function getTeamvise2() {
       ")'>" +
       "</td> <td><a href='/service/deleteEquipment/" +
       EquipmentToDisplay[j]["Equipment_ID"] +
-      "'> <input type='button' class='del_btn td-t1' value='Delete' onclick='deleteEquipment(" +
+      "'> <input type='button' class='del_btn td-t1' value='Remove' onclick='deleteEquipment(" +
       j +
       ")'></a></td>" +
       "</tr>" +

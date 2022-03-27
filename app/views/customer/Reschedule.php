@@ -15,7 +15,7 @@ $reservationDetails = $_SESSION['reservationDetails'];
     <div id="mainContent">
         <div>
             <div class="heading">
-                <h2 style="font-size: 30px;">Reschedule Your Booking!</h2>
+                <h2 style="font-size: 30px;">Reschedule Your Reservation!</h2>
             </div>
             <div id="xx"></div>
             <p id="sub-heading-p" style="font-size: 15px;"></p>

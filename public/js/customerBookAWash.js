@@ -1,5 +1,4 @@
 
-
 // set price and washpackage cookies
 
 function getType(x) {

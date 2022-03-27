@@ -45,6 +45,7 @@
                     <option value="Pink">Pink</option>
                     <option value="Purple">Purple</option>
                     <option value="Red">Red</option>
+                    <option value="Red">Black</option>
                 </select>
                 <br>
                 <label for="Vehicle Type" style="padding: 0px 87px 0px 0px;">Vehicle Type</label>

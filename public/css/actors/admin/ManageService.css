@@ -58,10 +58,16 @@
     margin-bottom: 5px;
 }
 
-.typeServices:hover, .typeVehicles:hover{
+.typeServices:hover{
     color: white;
     background-color: #193498;
 }
+
+.typeVehicles:hover{
+    color: white;
+    background-color: #7b113a;
+}
+
 .vehicleManageBox{
         /* display: flex; */
     /* flex-wrap: wrap; */
@@ -89,6 +95,27 @@
     margin-bottom: 5px;
 }
 
+.typeVehicles2{
+    text-align: center;
+    /* margin: auto auto auto auto; */
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.typeVehicles:hover span {
+    display: none
+  }
+  
+  .typeVehicles:hover:before {
+    content: "Remove"
+  }
+  
 .priceManageBox{
     display: flex;
     flex-wrap: wrap;

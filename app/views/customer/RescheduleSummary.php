@@ -17,7 +17,7 @@ $rescheduleID = $_SESSION['rescheduleID'];
 <div style="min-height: 110px;"></div>
 
 <div class="heading-order">
-    <h2>Order Summary</h2>
+    <h2>Reservation Summary</h2>
 
 </div>
 <div id="box3">
@@ -110,7 +110,7 @@ $rescheduleID = $_SESSION['rescheduleID'];
 <div class="addVehicleform" id="cancelPopUpId">
     <div class="forma">
 
-        <h2 class="login-signupheader">Do you want to cancel your reschedule?</h2>
+        <h2 class="login-signupheader">Do you want to cancel rescheduling?</h2>
 
         <form action="" method="post" id="customer-signup">
 

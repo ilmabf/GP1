@@ -25,7 +25,7 @@ include 'views/user/LoggedInHeader.php';
         <div style="min-height: 110px;"></div>
         <h2 class="manageEmployee-heading">Manage Service Team Leaders | <?php echo date("d-m-Y"); ?></h2>
         <div class="addBtnEmps">
-            <input type="button" id="addStlRow" value="Add Service Team Leader" class="addTableEmp" onclick="addStlRow();" />
+            <input type="button" id="addStlRow" value="Add New Service Team Leader" class="addTableEmp" onclick="addStlRow();" />
         </div>
 
         <div>
@@ -33,7 +33,7 @@ include 'views/user/LoggedInHeader.php';
                 <div id="cont" class="addTb1"></div>
 
 
-                <button type="submit" id="bts" name="empDatas" onclick="checkLetter();">Insert Data</button>
+                <button type="submit" id="bts" name="empDatas" onclick="checkLetter();">Submit</button>
             </form>
 
         </div>
@@ -135,7 +135,12 @@ include 'views/user/LoggedInHeader.php';
                     </span> -->
 
                     <div id="todayDate1" style="text-align:center; background-color:blue; color:white;">
-                        <?php echo date("d-m-Y"); ?>
+                        <?php if (isset($_SESSION['flagForToday2'])) {
+                            echo date("d-m-Y");
+                        } else {
+                            $yesterday = new DateTime('yesterday');
+                            echo $yesterday->format('d-m-Y');
+                        } ?>
                     </div>
 
                     <table id="filterTable3">
@@ -144,9 +149,9 @@ include 'views/user/LoggedInHeader.php';
                                 <th data-type="text">First Name</th>
                                 <th data-type="text">Last Name</th>
                                 <th data-type="text">Team</th>
-                                <th data-type="text">On Work (0/1)</th>
+                                <th data-type="text">On Work</th>
                                 <th colspan="1" style="text-align: center;">
-                                    <input type="button" id="editStlAttButton" class="edit_btn td-t1" value="Edit" onclick="stlEditAttendanceForm('<?php echo sizeof($_SESSION['stlAttendanceDetails']) ?>')">
+                                    <input type="button" id="editStlAttButton" class="edit_btn td-t1" value="Assign" onclick="stlEditAttendanceForm('<?php echo sizeof($_SESSION['stlAttendanceDetails']) ?>')">
                                 </th>
                             </tr>
                         </thead>
@@ -161,7 +166,11 @@ include 'views/user/LoggedInHeader.php';
                                     <td id="<?php echo "AttStl_FirstName_row" . $count3 ?>" style="text-align:left" class="td-t1"><?php echo $result3[$count3]['First_Name'] ?></td>
                                     <td id="<?php echo "AttStl_LastName_row" . $count3 ?>" style="text-align:left" class="td-t1"><?php echo $result3[$count3]['Last_Name'] ?></td>
                                     <td id="<?php echo "AttStl_Team_row" . $count3 ?>" class="td-t1"><?php echo $result3[$count3]['STL_ID'] ?></td>
-                                    <td id="<?php echo "AttStl_onWork_row" . $count3 ?>" style="text-align:left" class="td-t1" style="max-width:200px;"><?php echo $result3[$count3]['onWork'] ?></td>
+                                    <td id="<?php echo "AttStl_onWork_row" . $count3 ?>" style="text-align:left" class="td-t1" style="max-width:200px;"><?php if ($result3[$count3]['onWork'] == 1) {
+                                                                                                                                                            echo "Working";
+                                                                                                                                                        } else {
+                                                                                                                                                            echo "N/A";
+                                                                                                                                                        } ?></td>
 
 
                                 </tr>
