@@ -44,7 +44,7 @@ $teams = $_SESSION['teamDetails'];
     <table id="ItemTable-manager">
       <thead>
         <tr>
-          <th data-type="text">Item ID</th>
+          <!-- <th data-type="text">Item ID</th> -->
           <th data-type="text">Name</th>
           <th data-type="text">Total</th>
           <th data-type="text">Free</th>
@@ -57,7 +57,7 @@ $teams = $_SESSION['teamDetails'];
 
         while ($count < sizeof($_SESSION['itemDetails'])) { ?>
           <tr>
-            <td><?php echo $items[$count]['Item_Id'] ?></td>
+            <!-- <td><?php echo $items[$count]['Item_Id'] ?></td> -->
             <td><?php echo $items[$count]['Name'] ?></td>
             <td class="td-t1" style="text-align:right"><?php echo $items[$count]['Total'] ?></td>
             <td class="td-t1"><?php echo $items[$count]['Free'] ?></td>

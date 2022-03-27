@@ -115,7 +115,7 @@ include 'views/user/LoggedInHeader.php';
                                         <a href="" id="<?php echo "editStlHREF" . $count2 ?>"><input type="submit" id="<?php echo "save_stl_btn" . $count2 ?>" class="save_btn" value="Save" onclick="stlSaveForm('<?php echo $result2[$count2]['Employee_ID'] ?>', '<?php echo $count2 ?>')"></a>
 
                                     </td>
-                                    <td><a href="/employee/deleteStl/<?php echo $result2[$count2]['STL_ID'] ?>"><input type="button" class="del_btn td-t1" value="Delete"></a></td>
+                                    <td><a href="/employee/deleteStl/<?php echo $result2[$count2]['STL_ID'] ?>"><input type="button" class="del_btn td-t1" value="Remove"></a></td>
 
                                 </tr>
 
