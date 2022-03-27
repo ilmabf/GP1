@@ -361,3 +361,27 @@ document.getElementById("stlAttendance-submit-1").onclick = function () {
         window.location = "/employee/insertStlAttendance/" + JSON.stringify(teams);
       }
   };
+
+  // stl search
+const searchInput2 = document.getElementById("adminSearchStl");
+const table2 = document.getElementById("filterTable2");
+const trArray2 = Array.prototype.slice.call(
+  table2.querySelectorAll("tbody tr")
+);
+
+const filterTable2 = (event) => {
+  const searchTerm2 = event.target.value.toLowerCase();
+  trArray2.forEach((row2) => {
+    row2.classList.add("hidden");
+    const tdArray2 = Array.prototype.slice.call(
+      row2.getElementsByTagName("td")
+    );
+    tdArray2.forEach((cell2) => {
+      if (cell2.innerText.toLowerCase().indexOf(searchTerm2) > -1) {
+        row2.classList.remove("hidden");
+      }
+    });
+  });
+};
+
+searchInput2.addEventListener("keyup", filterTable2, false);

@@ -63,11 +63,11 @@ include 'views/user/LoggedInHeader.php';
             <div class="table-wrapper">
 
                 <div id="StlAttendance-nav">
-                    <input type="button" id="next-StlAttendance" value="Check Attendance >>" onclick="stlAttendance();" style="float:right;" />
+                    <input type="button" id="next-StlAttendance" value="Assign Leaders for Mobile Car Wash >>" onclick="stlAttendance();" style="float:right;" />
                 </div>
 
                 <div id="StlDetails-nav">
-                    <input type="button" id="next-StlDetails" value="<< Service Team Leader Details" onclick="stlDetails();" />
+                    <input type="button" id="next-StlDetails" value="<< Back" onclick="stlDetails();" />
                 </div>
 
                 <div id="stlDetailsTable">

@@ -175,3 +175,4 @@ $result = $_SESSION['employeeDetails'];
         <script src="/public/js/ManagerEmployeeTable.js"></script>
         <script src="/public/js/AdminManageEmployee.js"></script>
         <script src="/public/js/AdminEmployeeTable.js"></script>
+        <script src="/public/js/ManagerSTLTable.js"></script>
