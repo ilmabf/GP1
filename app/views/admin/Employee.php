@@ -90,7 +90,7 @@ include 'views/user/LoggedInHeader.php';
                     <input type="button" id="<?php echo "edit_emp_btn" . $count ?>" class="edit_btn td-t1" value="Edit" onclick="empEditForm('<?php echo $count ?>')">
                     <a href="" id="<?php echo "editHREF" . $count ?>"><input type="submit" id="<?php echo "save_emp_btn" . $count ?>" class="save_btn" value="Save" onclick="empSaveForm('<?php echo $result[$count]['Employee_ID'] ?>', '<?php echo $count ?>')"></a>
                   </td>
-                  <td><a href="/employee/deleteEmployee/<?php echo $result[$count]['Employee_ID'] ?>"><input type="button" class="del_btn td-t1" value="Delete"></a></td>
+                  <td><a href="/employee/deleteEmployee/<?php echo $result[$count]['Employee_ID'] ?>"><input type="button" class="del_btn td-t1" value="Remove"></a></td>
                 </tr>
 
               <?php $count = $count + 1;

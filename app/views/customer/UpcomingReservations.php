@@ -11,7 +11,7 @@ include 'views/user/LoggedInHeader.php';
     <div class="reservation-date">
         <div id="closeClick">
             <br>
-            <div style="color:white; text-shadow:1px 1px 4px #000000, 1px 1px 4px #0000fa; display:inline;">Date :</div>
+            <div style="color:white; text-shadow:1px 1px 4px #000000, 1px 1px 4px #0000fa; display:inline;">Filter By Date :</div>
             <input id="ManagerUpcomingDate" name="managerDateofUpcomingBooking" class="dateBooking" style="width: 50%; padding:unset; border-radius: unset; text-align: center;">
 
         </div>

@@ -22,7 +22,7 @@ $images = $_SESSION['images'];
     <div style="min-height: 110px;"></div>
     <div>
         <div class="box3">
-            <div class="invoiceBorder">Order - <?php
+            <div class="invoiceBorder">Reservation - <?php
                                                 if (strlen($orderDetails[0]['Reservation_ID']) == 1) {
                                                     echo "000" . $orderDetails[0]['Reservation_ID'];
                                                 } else if (strlen($orderDetails[0]['Reservation_ID']) == 2) {

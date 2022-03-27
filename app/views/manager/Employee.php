@@ -59,7 +59,7 @@ $result = $_SESSION['employeeDetails'];
                 <td style="text-align:right"><?php echo $result[$count]['Salary'] ?>.00</td>
                 <td style="text-align:right"><?php echo $result[$count]['NIC_No'] ?></td>
                 <td style="text-align:right"><?php echo $result[$count]['team'] ?></td>
-                <td style="text-align:right"><?php echo $result[$count]['onWork'] ?></td>
+                <td style="text-align:right"><?php if($result[$count]['onWork'] == 1){echo "Working";}else{echo "N/A";} ?></td>
               </tr>
             <?php $count = $count + 1;
             } ?>
@@ -77,7 +77,7 @@ $result = $_SESSION['employeeDetails'];
               <th data-type="text">Salary</th>
               <th data-type="number">NIC No</th>
               <th data-type="text">Team</th>
-              <th data-type="text">On Work</th>
+              <!-- <th data-type="text">On Work</th> -->
             </tr>
           </thead>
           <tbody>
@@ -95,7 +95,7 @@ $result = $_SESSION['employeeDetails'];
                 <td style="text-align:right"><?php echo $result[$count]['Salary'] ?>.00</td>
                 <td style="text-align:right"><?php echo $result[$count]['NIC_No'] ?></td>
                 <td style="text-align:right"><?php echo $result[$count]['team'] ?></td>
-                <td style="text-align:right"><?php echo $result[$count]['onWork'] ?></td>
+                <!-- <td style="text-align:right"><?php if($result[$count]['onWork'] == 1){echo "Working";}else{echo "N/A";} ?></td> -->
               </tr>
             <?php $count = $count + 1;
             } ?>
@@ -113,7 +113,7 @@ $result = $_SESSION['employeeDetails'];
               <th data-type="text">Salary</th>
               <th data-type="number">NIC No</th>
               <th data-type="text">Team</th>
-              <th data-type="text">On Work</th>
+              <!-- <th data-type="text">On Work</th> -->
             </tr>
           </thead>
           <tbody>
@@ -131,7 +131,7 @@ $result = $_SESSION['employeeDetails'];
                 <td style="text-align:right"><?php echo $result[$count]['Salary'] ?>.00</td>
                 <td style="text-align:right"><?php echo $result[$count]['NIC_No'] ?></td>
                 <td style="text-align:right"><?php echo $result[$count]['team'] ?></td>
-                <td style="text-align:right"><?php echo $result[$count]['onWork'] ?></td>
+                <!-- <td style="text-align:right"><?php echo $result[$count]['onWork'] ?></td> -->
               </tr>
             <?php $count = $count + 1;
             } ?>

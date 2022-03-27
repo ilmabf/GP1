@@ -76,7 +76,7 @@ $result = $_SESSION['employeeDetails'];
                                     <td style="text-align:right"><?php echo $result[$count]['NIC_No'] ?></td>
                                     <td id="<?php echo "stlPhoto" . $count ?>" style="text-align:right" class="td-t1"><button onclick="viewPhotoManager('<?php echo $result[$count]['First_Name']; ?>' , '<?php echo $result[$count]['Last_Name']; ?>', <?php echo $_SESSION['stlTableData'][$count]['STL_ID']; ?>)"><a><?php echo "View"; ?></a></button></td>
                                     <td style="text-align:right"><?php echo $result[$count]['team'] ?></td>
-                                    <td style="text-align:right"><?php echo $result[$count]['onWork'] ?></td>
+                                    <td style="text-align:right"><?php if($result[$count]['onWork'] == 1){echo "Working";}else{echo "N/A";} ?></td>
                                 </tr>
                             <?php $count = $count + 1;
                             } ?>
@@ -96,7 +96,7 @@ $result = $_SESSION['employeeDetails'];
                                 <th data-type="number">NIC No</th>
                                 <th data-type="text">Photo</th>
                                 <th data-type="text">Team</th>
-                                <th data-type="text">On Work</th>
+                                <!-- <th data-type="text">On Work</th> -->
                             </tr>
                         </thead>
                         <tbody>
@@ -115,7 +115,7 @@ $result = $_SESSION['employeeDetails'];
                                     <td style="text-align:right"><?php echo $result[$count]['NIC_No'] ?></td>
                                     <td id="<?php echo "stlPhoto" . $count ?>" style="text-align:right" class="td-t1"><button onclick="viewPhotoManager('<?php echo $result[$count]['First_Name']; ?>' , '<?php echo $result[$count]['Last_Name']; ?>', <?php echo $_SESSION['stlTableData'][$count]['STL_ID']; ?>)"><a><?php echo "View"; ?></a></button></td>
                                     <td style="text-align:right"><?php echo $result[$count]['team'] ?></td>
-                                    <td style="text-align:right"><?php echo $result[$count]['onWork'] ?></td>
+                                    <!-- <td style="text-align:right"><?php echo $result[$count]['onWork'] ?></td> -->
                                 </tr>
                             <?php $count = $count + 1;
                             } ?>
@@ -135,7 +135,7 @@ $result = $_SESSION['employeeDetails'];
                                 <th data-type="number">NIC No</th>
                                 <th data-type="text">Photo</th>
                                 <th data-type="text">Team</th>
-                                <th data-type="text">On Work</th>
+                                <!-- <th data-type="text">On Work</th> -->
                             </tr>
                         </thead>
                         <tbody>
@@ -154,7 +154,7 @@ $result = $_SESSION['employeeDetails'];
                                     <td style="text-align:right"><?php echo $result[$count]['NIC_No'] ?></td>
                                     <td id="<?php echo "stlPhoto" . $count ?>" style="text-align:right" class="td-t1"><button onclick="viewPhotoManager('<?php echo $result[$count]['First_Name']; ?>' , '<?php echo $result[$count]['Last_Name']; ?>', <?php echo $_SESSION['stlTableData'][$count]['STL_ID']; ?>)"><a><?php echo "View"; ?></a></button></td>
                                     <td style="text-align:right"><?php echo $result[$count]['team'] ?></td>
-                                    <td style="text-align:right"><?php echo $result[$count]['onWork'] ?></td>
+                                    <!-- <td style="text-align:right"><?php echo $result[$count]['onWork'] ?></td> -->
                                 </tr>
                             <?php $count = $count + 1;
                             } ?>
