@@ -118,6 +118,7 @@ const renderCalendar = () => {
       days += `<div><span class="today-2" style = "color:white; text-shadow:0 0 3px #000000, 0 0 5px #0000ff;">${i}</span><br>`;
       for (a = 1; a <= 5; a++) {
         flag2 = 0;
+        // days += `<div>`;
         for (var key in booked) {
           // split the key by '-'
           var keyArr = key.split("-");
@@ -137,6 +138,7 @@ const renderCalendar = () => {
         }
 
         if (flag2 == 0) {
+          // console.log(timeSlotsArr[a-1])
           days +=
             `
                                             <span class="time-green" id = "slot1" onclick="getTimeAndDate(` +
@@ -158,8 +160,10 @@ const renderCalendar = () => {
     days += `<div class="next-date">
                 
             </div>`;
-    monthDays.innerHTML = days;
+    // days += timeSlotsHTML;
+    
   }
+  monthDays.innerHTML = days;
 };
 
 document.querySelector(".prev").addEventListener("click", () => {
@@ -193,6 +197,31 @@ function getTimeAndDate(date, month, year, t) {
     // Check if date is today. If so , check time.
     var today = new Date();
     var selectedDate = year + "-" + month + "-" + date;
+    // if (
+    //     date == today.getDate() &&
+    //     month == today.getMonth() + 1 &&
+    //     year == today.getFullYear()
+    // ) {
+    //     console.log(today.getTimezoneOffset());
+    //     var localTime = today.toLocaleTimeString('en-GB');
+    //     var localTimeArray = localTime.split(":");
+    //     var selectedTimeArray = time.split("-");
+    //     if (parseInt(selectedTimeArray[0]) > parseInt(localTimeArray[0])) {
+    //         document.getElementById("day").innerHTML = date;
+    //         document.getElementById("month").innerHTML = month;
+    //         document.getElementById("year").innerHTML = year;
+    //         document.getElementById("timeSlot").innerHTML = time;
+
+    //         document.cookie = "day = " + date + ";  path=/";
+    //         document.cookie = "month = " + month + ";  path=/";
+    //         document.cookie = "year = " + year + ";  path=/";
+    //         document.cookie = "time = " + time + ";  path=/";
+
+    //         document.getElementById("cal1").style = "display:none;";
+    //         var z = document.getElementById("bookingContent");
+    //         z.classList.remove("blurCalendar");
+    //     }
+    // } else {
     const monthNames = [
       "January",
       "February",
