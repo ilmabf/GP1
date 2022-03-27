@@ -198,6 +198,7 @@ function stlSaveForm(id, no) {
 }
 
 function stlOnWork() {
+  document.getElementById("search-btn-stl").style.display = "none";
   document.getElementById("stlGoBackBtn").style.display = "block";
   document.getElementById("stlMgDefaultTable").style.display = "none";
   document.getElementById("stlonWorkTable").style.display = "block";
@@ -205,6 +206,7 @@ function stlOnWork() {
 }
 
 function stlNotWork() {
+  document.getElementById("search-btn-stl").style.display = "none";
   document.getElementById("stlGoBackBtn").style.display = "block";
   document.getElementById("stlonWorkTable").style.display = "none";
   document.getElementById("stlMgDefaultTable").style.display = "none";
@@ -212,6 +214,7 @@ function stlNotWork() {
 }
 
 function empOnWork() {
+  document.getElementById("search-btn-emps").style.display = "none";
   document.getElementById("goBackBtn").style.display = "block";
   document.getElementById("empDefaultTable").style.display = "none";
   document.getElementById("emponWorkTable").style.display = "block";
@@ -219,6 +222,7 @@ function empOnWork() {
 }
 
 function empNotWork() {
+  document.getElementById("search-btn-emps").style.display = "none";
   document.getElementById("goBackBtn").style.display = "block";
   document.getElementById("emponWorkTable").style.display = "none";
   document.getElementById("empDefaultTable").style.display = "none";
@@ -226,6 +230,7 @@ function empNotWork() {
 }
 
 function empWorkGoBack() {
+  document.getElementById("search-btn-emps").style.display = "block";
   document.getElementById("goBackBtn").style.display = "none";
   document.getElementById("empDefaultTable").style.display = "block";
   document.getElementById("emponWorkTable").style.display = "none";
@@ -233,6 +238,7 @@ function empWorkGoBack() {
 }
 
 function stlWorkGoBack() {
+  document.getElementById("search-btn-stl").style.display = "block";
   document.getElementById("stlGoBackBtn").style.display = "none";
   document.getElementById("stlMgDefaultTable").style.display = "block";
   document.getElementById("stlonWorkTable").style.display = "none";

@@ -20,7 +20,7 @@ $result = $_SESSION['employeeDetails'];
 
     <div class="table-wrapper">
       <div style="display:inline-block; width: 100%;">
-        <div class="Admin-EmpSearch adEmpSearch1">
+        <div class="Admin-EmpSearch adEmpSearch1" id="search-btn-emps">
           <input type="search" class="ad-Emp-Search" id="managerSearchEmployee" placeholder="Search for Employee..." title="Type in a name">
         </div>
 
