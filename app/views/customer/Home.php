@@ -124,3 +124,5 @@ include 'views/user/Footer.php';
 <div class="help-icon-mob">
     <a href="/customer/help"><img src="https://img.icons8.com/fluency/48/000000/help.png" /></a>
 </div>
+
+<script>document.cookie = "ignoreLocationInterfaceFlag = 1; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";</script>

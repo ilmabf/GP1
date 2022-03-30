@@ -30,14 +30,14 @@ include 'views/user/LoggedInHeader.php';
                         <td style="text-align:left; color:#193498; font-weight:bold">Date</td>
                         <td style="text-align:left; color:#193498; " id="date"></td>
                         <td>
-                            <button class="changebutton"><a href="/booking/details" style="color:white;">Change</a></button>
+                            <button class="changebutton" onclick="goBackToDate();">Change</button>
                         </td>
                     </tr>
                     <tr>
                         <td style="text-align:left; color:#193498; font-weight:bold">Time</td>
                         <td style="text-align:left; color:#193498; " id="time"></td>
                         <td>
-                            <button class="changebutton"><a href="/booking/details" style="color:white;">Change</a></button>
+                            <button class="changebutton" onclick="goBackToDate();">Change</button>
                         </td>
                     </tr>
                     <tr>
@@ -125,3 +125,12 @@ include 'views/user/LoggedInHeader.php';
 
 <script src="/public/js/CustomerOrderSummary.js"></script>
 <div style="min-height: 110px;"></div>
+<script>
+    document.cookie = "ignoreLocationInterfaceFlag = 1; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+    function goBackToDate(){
+        document.cookie = "ignoreLocationInterfaceFlag = 1; path=/";
+        var ignoreLocationInterfaceFlag = 1;
+        window.location = "/booking/details";
+    }
+</script>
