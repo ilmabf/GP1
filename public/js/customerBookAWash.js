@@ -1,4 +1,3 @@
-
 // set price and washpackage cookies
 
 function getType(x) {
@@ -93,7 +92,24 @@ function checkDetails() {
   } else {
     var x = document.getElementById("vehicles").value;
     document.cookie = "vehicle =" + x + "; path=/";
-    window.location = "/booking/location";
+    console.log(document.cookie);
+    var cookieArray = document.cookie.split(";");
+    var i = 0;
+    for (i = 0; i < cookieArray.length; i++) {
+      cookieArray[i] = cookieArray[i].trim();
+      if (cookieArray[i].substring(0, 6) === "ignore") {
+        var ignoreLocationInterfaceFlag = 1;
+        break;
+      }
+      else{
+        var ignoreLocationInterfaceFlag = 0;
+      }
+    }
+    if (ignoreLocationInterfaceFlag == 1) {
+      window.location = "/booking/orderSummary";
+    } else {
+      window.location = "/booking/location";
+    }
   }
 }
 

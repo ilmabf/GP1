@@ -44,7 +44,7 @@ class EmployeeModel extends Model
 
         $yesterday = date('Y-m-d', time() - 60 * 60 * 24);
         $today = date('Y-m-d');
-        $x = $this->db->select("*", "employee_records", "WHERE date = '$today';");
+        $x = $this->db->select("*", "employee_records", "WHERE date = '$today' AND STL_ID IS NULL;");
         if (sizeof($x) == 0) {
             $result = $this->db->select(
                 $selection,
@@ -159,7 +159,7 @@ class EmployeeModel extends Model
     function getEmpData()
     {
         $today = date("Y-m-d");
-        $flagForToday = $this->db->select("count", "employee_records", "WHERE date = :day;", ":day", $today);
+        $flagForToday = $this->db->select("count", "employee_records", "WHERE date = :day AND STL_ID IS NULL;", ":day", $today);
         if($flagForToday>0){
             $_SESSION['flagForToday'] = 1;
         }
